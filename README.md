@@ -40,6 +40,7 @@ piece of content each:
 | `images/`        | Generated cover art (generated, not in git)              |
 | `posted.log`     | `YYYY-MM-DD HH:MM\|pillar\|topic` (operational, not in git) |
 | `performance.log`| Engagement metrics per platform (operational, not in git)|
+| `brand/`         | P mascot logo assets + generator (approved 2026-10-18)   |
 
 The cron job bodies (full step-by-step instructions) live in the scheduler,
 not in this repo. Logs and generated assets are operational data and are
