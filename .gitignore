@@ -2,3 +2,9 @@
 blog/
 images/
 sell-input.md
+hm/venv/
+hm/news.db
+hm/out/
+hm/visuals/
+hm/__pycache__/
+hm/review/
