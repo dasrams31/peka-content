@@ -55,8 +55,8 @@ def bracket_frame(d, box):
         d.line([cx, cy, cx, cy + dy * bl], fill=RED, width=bw_)
 
 
-def social_row(d):
-    """Cover bottom row, centered: IG / FB / Threads marks + website."""
+def social_row(d, pg, y_units=1004):
+    """Centered bottom row: IG / FB / Threads marks + website + page no."""
     col = "#d9d9d9"
     s = X(38)
     gap = X(24)
@@ -66,7 +66,7 @@ def social_row(d):
     web_w = d.textlength("peka.ai.id", font=web_font)
     total = s + gap + fb_w + gap + th_w + gap + web_w
     x = (W - total) / 2
-    y = X(1004)
+    y = X(y_units)
     d.rounded_rectangle([x, y, x + s, y + s], radius=X(10), outline=col,
                         width=X(3))
     d.ellipse([x + X(11), y + X(11), x + s - X(11), y + s - X(11)],
@@ -78,8 +78,7 @@ def social_row(d):
     d.text((x, y - X(4)), "@", font=th_font, fill=col)
     x += th_w + gap
     d.text((x, y + X(5)), "peka.ai.id", font=web_font, fill=col)
-    pg = f"1/{N}"
-    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), y + X(11)), pg,
            font=f(24, False), fill=GRY)
 
 
@@ -106,7 +105,7 @@ def cover():
         d.text((X(70), y), ln, font=f(29, False), fill="#cfcfcf")
         y += X(40)
     D.swipe_button(d, 918)
-    social_row(d)
+    D.footer(d, 1, N)
     return img
 
 
@@ -117,22 +116,20 @@ def evidence(ss_path, num, title, caption):
         if d.textlength(title, font=f(sz)) <= W - X(140):
             break
     d.text((X(70), X(176)), title, font=f(sz), fill=WHT)
-    box = (X(180), X(262), X(900), X(922))
+    box = (X(180), X(262), X(900), X(904))
     vis = D.load_visual(ss_path)
     if vis:
         d = D.contain_fit(img, vis, (box[0], box[1], box[2], box[3]),
                           backdrop="#ffffff")
     bracket_frame(d, box)
-    band_y = X(950)
+    band_y = X(932)
     d.rectangle([0, band_y, W, H], fill="#0a0a0a")
     d.line([0, band_y, W, band_y], fill=YEL, width=X(3))
-    y = band_y + X(22)
+    y = band_y + X(14)
     for ln in wrap(d, caption, f(28, False), W - X(300))[:2]:
         d.text((X(70), y), ln, font=f(28, False), fill="#e8e8e8")
-        y += X(38)
-    pg = f"{num + 1}/{N}"
-    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
-           font=f(24, False), fill=GRY)
+        y += X(36)
+    social_row(d, f"{num + 1}/{N}", y_units=1024)
     return img
 
 
@@ -191,7 +188,7 @@ def closing():
     d.text((X(70), y), "untuk informasi", font=f(80), fill=WHT)
     y += X(98)
     d.text((X(70), y), "AI terbaru.", font=f(80), fill=WHT)
-    D.footer(d, N, N)
+    social_row(d, f"{N}/{N}")
     return img
 
 
