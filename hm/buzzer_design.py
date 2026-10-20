@@ -56,23 +56,28 @@ def bracket_frame(d, box):
 
 
 def social_row(d):
-    """Cover bottom row: IG / FB / Threads marks + website (user request,
-    modeled on the cyberity social row)."""
-    col = "#bdbdbd"
-    y = X(1010)
-    s = X(34)
-    x = X(70)
-    d.rounded_rectangle([x, y, x + s, y + s], radius=X(9), outline=col,
+    """Cover bottom row, centered: IG / FB / Threads marks + website."""
+    col = "#d9d9d9"
+    s = X(38)
+    gap = X(24)
+    fb_font, th_font, web_font = f(46), f(40, False), f(28, False)
+    fb_w = d.textlength("f", font=fb_font)
+    th_w = d.textlength("@", font=th_font)
+    web_w = d.textlength("peka.ai.id", font=web_font)
+    total = s + gap + fb_w + gap + th_w + gap + web_w
+    x = (W - total) / 2
+    y = X(1004)
+    d.rounded_rectangle([x, y, x + s, y + s], radius=X(10), outline=col,
                         width=X(3))
-    d.ellipse([x + X(10), y + X(10), x + s - X(10), y + s - X(10)],
+    d.ellipse([x + X(11), y + X(11), x + s - X(11), y + s - X(11)],
               outline=col, width=X(3))
-    d.ellipse([x + s - X(11), y + X(7), x + s - X(7), y + X(11)], fill=col)
-    x += s + X(20)
-    d.text((x, y - X(8)), "f", font=f(42), fill=col)
-    x += X(28)
-    d.text((x, y - X(5)), "@", font=f(36, False), fill=col)
-    x += X(44)
-    d.text((x, y + X(2)), "peka.ai.id", font=f(27, False), fill=col)
+    d.ellipse([x + s - X(12), y + X(8), x + s - X(8), y + X(12)], fill=col)
+    x += s + gap
+    d.text((x, y - X(7)), "f", font=fb_font, fill=col)
+    x += fb_w + gap
+    d.text((x, y - X(4)), "@", font=th_font, fill=col)
+    x += th_w + gap
+    d.text((x, y + X(5)), "peka.ai.id", font=web_font, fill=col)
     pg = f"1/{N}"
     d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
            font=f(24, False), fill=GRY)
@@ -81,9 +86,7 @@ def social_row(d):
 def cover():
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
-    d.text((X(70), X(168)), "EDISI KHUSUS - BUZZER AI DI THREADS",
-           font=mono(30), fill=RED)
-    inner = D.browser_window(img, d, (X(70), X(216), X(1010), X(586)),
+    inner = D.browser_window(img, d, (X(70), X(200), X(1010), X(574)),
                               "THREADS")
     vis = D.load_visual(SS_CREDIT)
     if vis:
