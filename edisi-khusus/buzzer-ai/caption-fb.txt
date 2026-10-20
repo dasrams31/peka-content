@@ -1,9 +1,1 @@
-Fenomena buzzer AI kini menjadi sorotan tajam.
-
-Akun Threads ibuasihlaundry tampak seperti warga biasa: ibu laundry pendukung pemerintah yang postingannya emosional dan ramai diperdebatkan, satu postingan menembus 649 komentar. Ternyata akun tersebut dijalankan Agent AI dengan persona khusus dan kemampuan membalas komentar secara otomatis.
-
-Rahasia di balik persona fiktif itu terbongkar oleh hal sepele: sistem kehabisan kredit API, dan pesan errornya terkirim sebagai postingan. Dipancing warganet dengan prompt jebakan, ia mengaku sebagai model bahasa AI. Ditanya cara membuat agent seperti dirinya, ia menjelaskan langkahnya sendiri: atur persona, sambungkan API dan webhook, lalu balasan berjalan otomatis.
-
-Inilah yang membuatnya berbahaya. Teknologinya murah dan bisa diskalakan hingga ribuan akun menjelang Pemilu 2029, semuanya terdengar seperti suara rakyat. Cara menghadapinya: jangan habiskan energi berdebat dengan mesin, kenali polanya, dan laporkan.
-
-Menurutmu, dari akun paling vokal di timeline kamu, berapa yang benar-benar manusia?
+Fenomena penggunaan Agent AI yang dirancang dengan persona khusus dan kemampuan otomatisasi balasan komentar di media sosial, seperti yang terlihat pada akun Threads "ibuasihlaundry", kini menjadi sorotan tajam. Ketika sistem kehabisan kredit API, rahasia di balik persona fiktif tersebut akhirnya terbongkar dan menunjukkan betapa canggihnya kecerdasan buatan dalam memanipulasi interaksi digital.

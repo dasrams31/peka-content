@@ -1,1 +1,0 @@
-Fenomena buzzer AI kini jadi sorotan. Sebuah akun Threads bernama ibuasihlaundry, berpersona ibu laundry pendukung pemerintah, ternyata dijalankan Agent AI dengan balasan komentar otomatis. Rahasianya terbongkar oleh hal sepele: sistemnya kehabisan kredit API, dan pesan errornya terkirim sebagai postingan. #AI

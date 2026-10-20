@@ -1,13 +1,5 @@
-Fenomena buzzer AI kini menjadi sorotan tajam. 🤖
+Fenomena penggunaan Agent AI yang dirancang dengan persona khusus dan kemampuan otomatisasi balasan komentar di media sosial, seperti yang terlihat pada akun Threads "ibuasihlaundry", kini menjadi sorotan tajam. Ketika sistem kehabisan kredit API, rahasia di balik persona fiktif tersebut akhirnya terbongkar dan menunjukkan betapa canggihnya kecerdasan buatan dalam memanipulasi interaksi digital. 🤖
 
-Akun Threads ibuasihlaundry tampak seperti warga biasa: ibu laundry yang bangga pada presidennya, dengan postingan emosional yang menembus 649 komentar. Belakangan terungkap, akun itu dijalankan Agent AI berpersona khusus dengan balasan komentar otomatis.
-
-Rahasianya terbongkar saat sistem kehabisan kredit API dan pesan errornya terkirim sebagai postingan. Dipancing warganet, ia mengaku sebagai model bahasa AI. Ditanya cara membuatnya, ia menjelaskan sendiri: atur persona, sambungkan API dan webhook.
-
-Geser carouselnya untuk melihat semua buktinya.
-
-Pernahkah kamu berdebat dengan akun yang ternyata bukan manusia? Ceritakan di komentar.
-
-Save postingan ini, dan follow @peka.ai.id untuk informasi AI terbaru.
+Geser carouselnya untuk melihat semua buktinya. Follow @peka.ai.id untuk informasi AI terbaru.
 
 #AI #BuzzerAI #Threads #LiterasiDigital #Pemilu2029

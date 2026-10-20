@@ -55,6 +55,29 @@ def bracket_frame(d, box):
         d.line([cx, cy, cx, cy + dy * bl], fill=RED, width=bw_)
 
 
+def social_row(d):
+    """Cover bottom row: IG / FB / Threads marks + website (user request,
+    modeled on the cyberity social row)."""
+    col = "#bdbdbd"
+    y = X(1010)
+    s = X(34)
+    x = X(70)
+    d.rounded_rectangle([x, y, x + s, y + s], radius=X(9), outline=col,
+                        width=X(3))
+    d.ellipse([x + X(10), y + X(10), x + s - X(10), y + s - X(10)],
+              outline=col, width=X(3))
+    d.ellipse([x + s - X(11), y + X(7), x + s - X(7), y + X(11)], fill=col)
+    x += s + X(20)
+    d.text((x, y - X(8)), "f", font=f(42), fill=col)
+    x += X(28)
+    d.text((x, y - X(5)), "@", font=f(36, False), fill=col)
+    x += X(44)
+    d.text((x, y + X(2)), "peka.ai.id", font=f(27, False), fill=col)
+    pg = f"1/{N}"
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+           font=f(24, False), fill=GRY)
+
+
 def cover():
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
@@ -80,7 +103,7 @@ def cover():
         d.text((X(70), y), ln, font=f(29, False), fill="#cfcfcf")
         y += X(40)
     D.swipe_button(d, 918)
-    D.footer(d, 1, N)
+    social_row(d)
     return img
 
 
