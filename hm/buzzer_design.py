@@ -27,7 +27,7 @@ SS_METAAI = f"{MEDIA}/b4/b482739e72f5d8675bd93b53b494495670e022a833446b0ddcb1abb
 SS_IRONY = f"{MEDIA}/a6/a6273d83208857237de5950c697627eb144009c840f175a1e1d26ffd395a64d.jpg"
 
 OUT = "/home/hatch/workspace/peka-content/edisi-khusus/buzzer-ai"
-N = 12
+N = 5
 
 
 def head(img, badge_label="FENOMENA AI"):
@@ -75,8 +75,8 @@ def cover():
         d.text((X(70), y), ln, font=f(sz), fill=WHT)
         y += X(int(sz * 1.2))
     y += X(14)
-    sub = ("Akun ibu laundry pembela pemerintah ini kepergok sebagai "
-           "AI agent. Pembongkarnya justru pesan error API-nya sendiri.")
+    sub = ("Akun ibu laundry pendukung pemerintah ini lagi rame banget. "
+           "Yang ngepost ternyata bukan manusia, tapi AI agent.")
     for ln in wrap(d, sub, f(29, False), W - X(140))[:2]:
         d.text((X(70), y), ln, font=f(29, False), fill="#cfcfcf")
         y += X(40)
@@ -172,10 +172,10 @@ def closing():
         d.text((X(70), y), ln, font=f(36, False), fill="#cfcfcf")
         y += X(50)
     y += X(36)
-    d.text((X(70), y), "Follow @peka.ai.id", font=f(56), fill=YEL)
-    y += X(84)
-    d.text((X(70), y), "Bedah fenomena AI tiap hari, pakai bukti, bukan katanya.",
-           font=f(32, False), fill=GRY)
+    for ln in wrap(d, "Follow Peka AI untuk informasi AI terbaru.",
+                   f(50), W - X(140)):
+        d.text((X(70), y), ln, font=f(50), fill=YEL)
+        y += X(66)
     D.footer(d, N, N)
     return img
 
@@ -185,48 +185,14 @@ def main():
     slides = [
         cover(),
         evidence(SS_CREDIT, 1, "PESAN ERROR API BOCOR JADI POSTINGAN",
-                 "Saldo API-nya habis, pesan errornya terkirim jadi postingan. "
-                 "Persona ibu laundry-nya runtuh seketika."),
+                 "Ceritanya mulai dari sini. Saldo API-nya habis, pesan error buat "
+                 "developer malah terkirim jadi postingan."),
         evidence(SS_INJECT, 2, "DIPANCING PROMPT JEBAKAN, DIA NGAKU",
-                 "Dipancing prompt jebakan, dia menjawab sebagai model LLM "
-                 "dan tetap memuji pemerintah."),
+                 "Dipancing warganet pakai prompt jebakan, dia ngaku sendiri "
+                 "sebagai AI. Identitasnya aja ganti-ganti."),
         evidence(SS_HOWTO, 3, "CARA BIKINNYA DIBOCORKAN SENDIRI",
-                 "Ditanya cara bikin agent kayak dia, jawabannya: atur persona, "
-                 "sambung API dan webhook, balasan jalan otomatis."),
-        cards_slide(5, "CARA KERJANYA", "Mesin kecil, dampak besar", [
-            ("Persona fiktif",
-             "Karakter warga biasa dibuat spesifik: ibu laundry, pendukung pemerintah, selalu siap testimoni."),
-            ("API + webhook",
-             "Komentar masuk dijawab otomatis oleh model AI. Tidak ada manusia yang mengetik."),
-            ("Testimoni emosional",
-             "Ceritanya personal dan menyentuh, format yang paling gampang dipercaya orang."),
-            ("Aktif 24 jam",
-             "Tidak tidur dan tidak capek. Satu agent bisa melayani ratusan debat sehari."),
-        ]),
-        cards_slide(6, "MENUJU PEMILU 2029", "Kenapa ini berbahaya", [
-            ("Opini digiring diam-diam",
-             "Suara mirip rakyat biasa ternyata diatur satu skrip. Pembaca mengira itu mayoritas."),
-            ("Skalanya bisa ribuan",
-             "Satu persona terbukti jalan. Teknologi sama bisa menjalankan ribuan akun sekaligus."),
-            ("Makin susah dibedakan",
-             "Model AI makin natural. Di 2029, membedakan warga asli dan agent jauh lebih sulit."),
-            ("Kepercayaan publik terkikis",
-             "Kalau semua komentar dicurigai mesin, suara rakyat asli ikut tidak dipercaya."),
-        ]),
-        cards_slide(7, "HADAPI DENGAN CERDAS", "Jangan jadi korban berikutnya", [
-            ("Curigai pola, bukan orangnya",
-             "Bahasa terlalu rapi, balasan super cepat, tema pujiannya itu-itu saja.",),
-            ("Tanya hal personal dan spesifik",
-             "Agent kuat di skrip, lemah di detail hidup yang konkret dan acak.",),
-            ("Jangan habiskan energi berdebat",
-             "Mesin tidak bisa dikalahkan dengan emosi. Screenshot, laporkan, lanjutkan harimu.",),
-            ("Edukasi circle terdekatmu",
-             "Kirim postingan ini ke grup keluarga. Yang rentan tertipu biasanya paling jarang dengar soal AI.",),
-        ], check=True),
-        raw_slide(SS_VIRAL, 8),
-        raw_slide(SS_ACCUSE, 9),
-        raw_slide(SS_METAAI, 10),
-        raw_slide(SS_IRONY, 11),
+                 "Terus ada yang nanya cara bikin agent kayak dia. Dijawab dong: "
+                 "atur persona, sambung API, webhook."),
         closing(),
     ]
     for i, s in enumerate(slides, start=1):
