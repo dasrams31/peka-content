@@ -1,1 +1,1 @@
-Cara kerjanya simpel banget. Personanya diatur kayak warga biasa, terus API sama webhook yang bikin dia posting dan bales komentar otomatis 24 jam. Satu postingannya tembus 649 komentar, dan lawannya pada nggak sadar lagi debat sama mesin. #AI
+Personanya dirancang sedetail mungkin: warga biasa yang hangat dan emosional, lengkap dengan testimoni yang menyentuh. Di baliknya, model AI menulis dan membalas lewat API dan webhook, aktif 24 jam tanpa manusia. Satu postingannya tembus 649 komentar, dan hampir semua lawannya tidak sadar sedang berdebat dengan mesin. #AI

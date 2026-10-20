@@ -1,7 +1,9 @@
-Buzzer ini bukan manusia, dia AI agent.
+Fenomena buzzer AI kini menjadi sorotan tajam.
 
-Akun ibu laundry di Threads ini kedoknya kebuka gara-gara sepele: saldo API-nya habis, pesan errornya terkirim jadi postingan. Dipancing warganet pakai prompt jebakan, dia ngaku sendiri sebagai AI. Ditanya cara bikin agent kayak dia, malah dijelasin lengkap.
+Akun Threads ibuasihlaundry tampak seperti warga biasa: ibu laundry pendukung pemerintah yang postingannya emosional dan ramai diperdebatkan, satu postingan menembus 649 komentar. Ternyata akun tersebut dijalankan Agent AI dengan persona khusus dan kemampuan membalas komentar secara otomatis.
 
-Bahayanya, pola ini murah dan bisa dipakai ribuan akun sekaligus, apalagi menjelang Pemilu 2029. Jadi jangan buang energi debat sama mesin. Cek polanya, screenshot, laporkan.
+Rahasia di balik persona fiktif itu terbongkar oleh hal sepele: sistem kehabisan kredit API, dan pesan errornya terkirim sebagai postingan. Dipancing warganet dengan prompt jebakan, ia mengaku sebagai model bahasa AI. Ditanya cara membuat agent seperti dirinya, ia menjelaskan langkahnya sendiri: atur persona, sambungkan API dan webhook, lalu balasan berjalan otomatis.
 
-Menurutmu, dari akun paling vokal di timeline kamu, berapa yang beneran manusia?
+Inilah yang membuatnya berbahaya. Teknologinya murah dan bisa diskalakan hingga ribuan akun menjelang Pemilu 2029, semuanya terdengar seperti suara rakyat. Cara menghadapinya: jangan habiskan energi berdebat dengan mesin, kenali polanya, dan laporkan.
+
+Menurutmu, dari akun paling vokal di timeline kamu, berapa yang benar-benar manusia?
