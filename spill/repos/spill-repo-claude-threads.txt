@@ -1,0 +1,18 @@
+SPILL REPO SKILL: CLAUDE
+
+anthropics/skills
+Repo resmi Anthropic. Skill dokumen Office + contoh skill standar.
+
+obra/superpowers
+Framework skill + metodologi ngoding buat Claude Code.
+
+alirezarezvani/claude-skills
+380+ skill siap pakai dalam satu repo.
+
+kepano/obsidian-skills
+Bikin agent jago ngurus catatan Obsidian.
+
+ComposioHQ/awesome-claude-skills
+Daftar kurasi buat berburu skill lainnya.
+
+Save dulu, install belakangan. #AI

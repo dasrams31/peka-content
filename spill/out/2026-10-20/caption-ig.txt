@@ -1,0 +1,13 @@
+SPILL: skill agent AI yang kepakai beneran.
+
+Bukan agent-nya yang bikin kamu produktif, tapi skill yang dipasang di dalamnya. Sekali bikin file SKILL.md, agent bisa jalanin workflow yang sama berkali-kali tanpa dijelasin ulang.
+
+Claude: paling matang buat ngoding dan dokumen. Ada skill dokumen Office, code review, frontend design, sampai testing web otomatis.
+
+Hermes: agent otonom open source dari Nous Research. Dia nulis skill sendiri dari pengalamannya, jalan 24/7 di VPS, dan ingatannya nyambung di Telegram, WhatsApp, Discord, sampai email.
+
+OpenClaw: ekosistem skill komunitas paling luas, 13.700+ skill di ClawHub per Maret 2026. Local-first dan bebas diutak-atik. Catatan jujur: install skill cuma dari sumber tepercaya.
+
+Geser buat contekan lengkapnya per agent. Kamu tim yang mana?
+
+#ArtificialIntelligence #AIAgent #ClaudeCode #Produktivitas #Ngoding #OpenSource #Teknologi #AI

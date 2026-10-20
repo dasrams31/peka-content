@@ -1,0 +1,18 @@
+{"agent": "CLAUDE", "next": "Hermes", "date": "2026-10-20",
+ "repos": [
+  {"name": "anthropics/skills", "stars": "182RB",
+   "desc": "Repo resmi milik Anthropic, pembuat Claude. Isinya skill dokumen yang bikin Claude bisa membuat dan mengedit file Word, Excel, PowerPoint, dan PDF dengan format rapi, plus contoh skill lain buat desain, testing, dan bikin server MCP.",
+   "cocok": "Semua pengguna Claude. Ini titik awal paling aman sebelum berburu skill di tempat lain."},
+  {"name": "obra/superpowers", "stars": "302RB",
+   "desc": "Framework skill plus metodologi software development buat Claude Code. Skill di dalamnya ngajarin agent cara brainstorming fitur, nulis test dulu sebelum ngoding (TDD), debugging sistematis, sampai review kode sebelum merge.",
+   "cocok": "Programmer yang mau alur ngoding Claude Code-nya lebih rapi dan nggak asal jadi."},
+  {"name": "alirezarezvani/claude-skills", "stars": "28RB",
+   "desc": "Satu repo isinya 380+ skill dan plugin Claude Code, dari engineering, marketing, product, sampai operasi bisnis. Tinggal clone, pilih folder skill yang kamu butuh, lalu pasang.",
+   "cocok": "Yang mau stok skill banyak dalam sekali ambil, tanpa keliling banyak repo."},
+  {"name": "kepano/obsidian-skills", "stars": "49RB",
+   "desc": "Kumpulan skill yang ngajarin agent memakai Obsidian dengan benar: format Markdown, Bases, JSON Canvas, dan Obsidian CLI. Agent jadi bisa ngerapikan vault, bikin catatan terstruktur, dan ngelola knowledge base kamu.",
+   "cocok": "Pengguna Obsidian yang mau catatan dan second brain-nya diurus agent."},
+  {"name": "ComposioHQ/awesome-claude-skills", "stars": "77RB",
+   "desc": "Daftar kurasi bergaya awesome list: kumpulan link skill, resource, dan tools Claude yang dipilih manual oleh maintainer Composio. Isinya terus diperbarui mengikuti ekosistem.",
+   "cocok": "Buat bookmark dan berburu skill baru. Dari sini kamu bisa loncat ke ratusan repo lain."}],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-10-20/carousel-claude"}

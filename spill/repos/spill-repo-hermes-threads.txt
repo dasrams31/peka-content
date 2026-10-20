@@ -1,0 +1,18 @@
+SPILL REPO SKILL: HERMES
+
+NousResearch/hermes-agent
+Repo utamanya. Skill bawaan Hermes ada di sini.
+
+0xNyk/awesome-hermes-agent
+Direktori skill, plugin, dan tools pilihan buat Hermes.
+
+NousResearch/hermes-agent-self-evolution
+Skill dan prompt Hermes dioptimasi otomatis pakai DSPy + GEPA.
+
+kerpopule/hermes-jev-skills
+Skill routing model, memory, dan browser use.
+
+ksimback/hermes-ecosystem
+Panduan milih skill dan mode Hermes.
+
+Save dulu, install belakangan. #AI

@@ -49,6 +49,13 @@ Note: Threads/FB posts always pop a user approval card (platform rule, cannot
 be bypassed). The run waits for the tap; IG may be granted a lasting allow
 by the user in Settings.
 
+Durable caption files: keep captions in the goal workspace
+(goals/peka-ai-public-brand/hidden_files/hm-YYYY-MM-DD/), NOT in /tmp —
+a platform service restart wiped /tmp mid-run on 2026-10-20 (captions lost;
+had to rewrite and re-verify no double-post before retrying). Verify via
+instagram-cli posts / threads-cli profile-threads / facebook-cli pages posts
+list that nothing went out before any retry.
+
 ## Layout
 
 - `hm/venv/` — python venv (feedparser)

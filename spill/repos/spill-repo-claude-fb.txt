@@ -1,0 +1,20 @@
+SPILL REPO SKILL: CLAUDE
+
+Skill yang berguna itu nggak perlu dicari jauh-jauh. Ini repo GitHub tempat kamu bisa ambil skill Claude yang siap pakai:
+
+anthropics/skills
+Repo resmi Anthropic. Isinya skill dokumen Office (Word, Excel, PowerPoint, PDF) plus contoh skill standar yang bisa kamu tiru.
+
+obra/superpowers
+Framework skill dan metodologi software development yang bikin Claude Code kerja lebih terstruktur.
+
+alirezarezvani/claude-skills
+Koleksi 380+ skill dan plugin Claude Code dalam satu repo. Tinggal pilih yang cocok sama workflow kamu.
+
+kepano/obsidian-skills
+Skill biar agent jago ngurus Obsidian: catatan Markdown, Bases, sampai format terbuka lainnya.
+
+ComposioHQ/awesome-claude-skills
+Daftar kurasi skill, resource, dan tools buat custom workflow Claude.
+
+Save postingan ini buat stok. Besok giliran spill repo skill Hermes.

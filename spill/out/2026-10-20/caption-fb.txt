@@ -1,0 +1,9 @@
+SPILL: skill agent AI yang kepakai beneran.
+
+Bukan agent-nya yang bikin kamu produktif, tapi skill yang dipasang di dalamnya. Sekali bikin file SKILL.md, agent bisa jalanin workflow yang sama berkali-kali tanpa dijelasin ulang.
+
+Claude: paling matang buat ngoding dan dokumen (skill dokumen Office, code review, frontend design, testing web).
+Hermes: agent otonom dari Nous Research yang nulis skill sendiri dari pengalaman, jalan 24/7, ingatannya nyambung lintas aplikasi chat.
+OpenClaw: 13.700+ skill komunitas di ClawHub, local-first, paling bebas diutak-atik. Install skill cuma dari sumber tepercaya ya.
+
+Carousel lengkapnya ada di IG @peka.ai.id. Kamu tim agent yang mana?
