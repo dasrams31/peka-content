@@ -158,24 +158,18 @@ def raw_slide(ss_path, idx):
 
 
 def closing():
+    """Pure follow-invitation closing (user: previous closing did not
+    connect; replace with a follow CTA for the latest AI info)."""
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
-    d.text((X(70), X(168)), "MULAI SEKARANG", font=mono(30), fill=RED)
-    y = X(230)
-    for ln in ["Cek dulu siapa yang", "kamu ajak bicara."]:
-        d.text((X(70), y), ln, font=f(70), fill=WHT)
-        y += X(88)
-    y += X(30)
-    q = ("Menurutmu, dari 10 akun paling vokal di timeline kamu, berapa "
-         "yang beneran manusia? Jawab di komentar.")
-    for ln in wrap(d, q, f(36, False), W - X(140)):
-        d.text((X(70), y), ln, font=f(36, False), fill="#cfcfcf")
-        y += X(50)
-    y += X(36)
-    for ln in wrap(d, "Follow Peka AI untuk informasi AI terbaru.",
-                   f(50), W - X(140)):
-        d.text((X(70), y), ln, font=f(50), fill=YEL)
-        y += X(66)
+    y = X(330)
+    d.text((X(70), y), "Follow Peka AI", font=f(96), fill=YEL)
+    y += X(118)
+    d.text((X(70), y), "untuk informasi", font=f(80), fill=WHT)
+    y += X(98)
+    d.text((X(70), y), "AI terbaru.", font=f(80), fill=WHT)
+    y += X(130)
+    d.text((X(70), y), "@peka.ai.id", font=f(44, False), fill=GRY)
     D.footer(d, N, N)
     return img
 
