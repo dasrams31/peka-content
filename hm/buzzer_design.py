@@ -21,9 +21,13 @@ MEDIA = "/home/hatch/workspace/user/media_library/image"
 SS_CREDIT = f"{MEDIA}/0c/0c0a7538bfa238a3efd058d86b429a69770ff1c182bb8e830cd6b32a9ca61c37.jpg"
 SS_INJECT = f"{MEDIA}/17/1778b477ba3c1188493cfd222df13fdde8aac8b8941cd01b077c6cb590c8fe8f.jpg"
 SS_HOWTO = f"{MEDIA}/2c/2c21d73fa65f9878e0e80941e79b3f13eadaf4c15e65ca1a84656499a20d5fd5.jpg"
+SS_VIRAL = f"{MEDIA}/6c/6cdf5aa8d130e577313a2d1843d5e29a9cfc6240b0274c7fcc834648c05e8aa1.jpg"
+SS_ACCUSE = f"{MEDIA}/62/62783486deccca23f4e374eb7afda19b4bb44b2dc46a61f80b560ed4fed7fd0c.jpg"
+SS_METAAI = f"{MEDIA}/b4/b482739e72f5d8675bd93b53b494495670e022a833446b0ddcb1abb879c36520.jpg"
+SS_IRONY = f"{MEDIA}/a6/a6273d83208857237de5950c697627eb144009c840f175a1e1d26ffd395a64d.jpg"
 
 OUT = "/home/hatch/workspace/peka-content/edisi-khusus/buzzer-ai"
-N = 8
+N = 12
 
 
 def head(img, badge_label="FENOMENA AI"):
@@ -139,6 +143,17 @@ def cards_slide(idx, kicker, title, cards, check=False):
     return img
 
 
+def raw_slide(ss_path):
+    """Bare screenshot slide: no text, no header, no footer (user request)."""
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    vis = D.load_visual(ss_path)
+    if vis:
+        D.contain_fit(img, vis, (X(24), X(24), X(1056), X(1056)),
+                      backdrop="#111111")
+    return img
+
+
 def closing():
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
@@ -205,6 +220,10 @@ def main():
             ("Edukasi circle terdekatmu",
              "Kirim postingan ini ke grup keluarga. Yang rentan tertipu biasanya paling jarang dengar soal AI.",),
         ], check=True),
+        raw_slide(SS_VIRAL),
+        raw_slide(SS_ACCUSE),
+        raw_slide(SS_METAAI),
+        raw_slide(SS_IRONY),
         closing(),
     ]
     for i, s in enumerate(slides, start=1):
