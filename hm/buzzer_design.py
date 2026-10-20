@@ -143,14 +143,17 @@ def cards_slide(idx, kicker, title, cards, check=False):
     return img
 
 
-def raw_slide(ss_path):
-    """Bare screenshot slide: no text, no header, no footer (user request)."""
+def raw_slide(ss_path, idx):
+    """Screenshot slide with the Peka design frame (header, red bracket
+    frame, page number) but NO caption text (user request)."""
     img = Image.new("RGB", (W, H), BG)
-    d = ImageDraw.Draw(img)
+    d = head(img)
+    box = (X(150), X(196), X(930), X(962))
     vis = D.load_visual(ss_path)
     if vis:
-        D.contain_fit(img, vis, (X(24), X(24), X(1056), X(1056)),
-                      backdrop="#111111")
+        d = D.contain_fit(img, vis, box, backdrop="#ffffff")
+    bracket_frame(d, box)
+    D.footer(d, idx, N)
     return img
 
 
@@ -220,10 +223,10 @@ def main():
             ("Edukasi circle terdekatmu",
              "Kirim postingan ini ke grup keluarga. Yang rentan tertipu biasanya paling jarang dengar soal AI.",),
         ], check=True),
-        raw_slide(SS_VIRAL),
-        raw_slide(SS_ACCUSE),
-        raw_slide(SS_METAAI),
-        raw_slide(SS_IRONY),
+        raw_slide(SS_VIRAL, 8),
+        raw_slide(SS_ACCUSE, 9),
+        raw_slide(SS_METAAI, 10),
+        raw_slide(SS_IRONY, 11),
         closing(),
     ]
     for i, s in enumerate(slides, start=1):
