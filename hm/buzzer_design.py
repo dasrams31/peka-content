@@ -33,7 +33,6 @@ N = 5
 def head(img, badge_label="FENOMENA AI"):
     d = ImageDraw.Draw(img)
     D.texture(d)
-    D.badge(d, badge_label)
     D.lockup(img, d)
     return ImageDraw.Draw(img)
 
