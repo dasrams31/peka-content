@@ -88,12 +88,10 @@ def cover():
 def evidence(ss_path, num, title, caption):
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
-    chip_w = red_chip(d, 70, 168, f"BUKTI {num}")
-    avail = W - (X(70) + chip_w + X(24)) - X(70)
-    for sz in (34, 31, 28, 25):
-        if d.textlength(title, font=f(sz)) <= avail:
+    for sz in (38, 34, 31, 28):
+        if d.textlength(title, font=f(sz)) <= W - X(140):
             break
-    d.text((X(70) + chip_w + X(24), X(179)), title, font=f(sz), fill=WHT)
+    d.text((X(70), X(176)), title, font=f(sz), fill=WHT)
     box = (X(180), X(262), X(900), X(922))
     vis = D.load_visual(ss_path)
     if vis:
@@ -168,8 +166,6 @@ def closing():
     d.text((X(70), y), "untuk informasi", font=f(80), fill=WHT)
     y += X(98)
     d.text((X(70), y), "AI terbaru.", font=f(80), fill=WHT)
-    y += X(130)
-    d.text((X(70), y), "@peka.ai.id", font=f(44, False), fill=GRY)
     D.footer(d, N, N)
     return img
 
