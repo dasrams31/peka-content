@@ -121,7 +121,7 @@ def price_val(p):
 def header(d, img, th, edisi, tema_name):
     lockup(img, 128, th["lockup"], chip=th["lockup_chip"])
     d.text((110, 92), "KATALOG PEKA STORE", font=mono(44), fill=th["ink"])
-    d.text((110, 152), f"{edisi} - TEMA {tema_name}", font=fr(40), fill=th["sub"])
+    d.text((110, 152), f"{edisi}", font=fr(40), fill=th["sub"])
     d.line([110, 216, 1938, 216], fill=th["line"], width=4)
 
 
@@ -200,7 +200,7 @@ def cover(d, img, th, cats, edisi, tema_name, n, total, min_price, updated_label
     d.text((110, 330), "KATALOG", font=f(250), fill=th["ink"])
     d.text((110, 590), "PEKA STORE", font=f(250), fill=th["band_bg"])
     d.rounded_rectangle([110, 900, 1938, 1032], radius=24, fill=th["band_bg"])
-    band = f"{edisi} - {total} PRODUK - MULAI {min_price}K - TEMA {tema_name}"
+    band = f"{edisi} - {total} PRODUK - MULAI {min_price}K"
     bsz = 52
     while d.textlength(band, font=mono(bsz)) > 1768 and bsz > 30:
         bsz -= 2
