@@ -1,0 +1,1 @@
+Cara kerjanya simpel: persona warga biasa diatur dari awal, lalu API dan webhook bikin dia membalas komentar otomatis 24 jam. Isinya testimoni emosional yang mancing simpati. Satu postingannya tembus 649 komentar, dan hampir semua lawannya tidak sadar sedang berdebat dengan mesin. #AI

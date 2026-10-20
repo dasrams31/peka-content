@@ -1,0 +1,216 @@
+#!/usr/bin/env python3
+"""Peka EDISI KHUSUS: Buzzer AI agent di Threads (one-off special, 2026-10-21).
+
+8 slides, 2048x2048. User-supplied screenshots are embedded whole
+(contain-fit, never cropped) as evidence. Peka black/yellow + red alert accent.
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import designer as D
+from PIL import Image, ImageDraw
+
+X, f, mono, wrap = D.X, D.f, D.mono, D.wrap
+W = H = D.W
+YEL, WHT, GRY, BG = D.YEL, D.WHT, D.GRY, D.BG
+RED = "#e5484d"
+D.BADGE_STYLE = "ghost"
+
+MEDIA = "/home/hatch/workspace/user/media_library/image"
+SS_CREDIT = f"{MEDIA}/0c/0c0a7538bfa238a3efd058d86b429a69770ff1c182bb8e830cd6b32a9ca61c37.jpg"
+SS_INJECT = f"{MEDIA}/17/1778b477ba3c1188493cfd222df13fdde8aac8b8941cd01b077c6cb590c8fe8f.jpg"
+SS_HOWTO = f"{MEDIA}/2c/2c21d73fa65f9878e0e80941e79b3f13eadaf4c15e65ca1a84656499a20d5fd5.jpg"
+
+OUT = "/home/hatch/workspace/peka-content/edisi-khusus/buzzer-ai"
+N = 8
+
+
+def head(img, badge_label="FENOMENA AI"):
+    d = ImageDraw.Draw(img)
+    D.texture(d)
+    D.badge(d, badge_label)
+    D.lockup(img, d)
+    return ImageDraw.Draw(img)
+
+
+def red_chip(d, x, y, label):
+    font = f(30)
+    tw = d.textlength(label, font=font)
+    d.rectangle([X(x), X(y), X(x) + tw + X(44), X(y) + X(58)], fill=RED)
+    d.text((X(x) + X(22), X(y) + X(11)), label, font=font, fill=WHT)
+    return tw + X(44)
+
+
+def bracket_frame(d, box):
+    x0, y0, x1, y1 = box
+    d.rectangle([x0, y0, x1, y1], outline="#2e2e2e", width=X(3))
+    bl, bw_ = X(36), X(7)
+    for cx, cy, dx, dy in [(x0, y0, 1, 1), (x1, y0, -1, 1),
+                           (x0, y1, 1, -1), (x1, y1, -1, -1)]:
+        d.line([cx, cy, cx + dx * bl, cy], fill=RED, width=bw_)
+        d.line([cx, cy, cx, cy + dy * bl], fill=RED, width=bw_)
+
+
+def cover():
+    img = Image.new("RGB", (W, H), BG)
+    d = head(img)
+    d.text((X(70), X(168)), "EDISI KHUSUS - BUZZER AI DI THREADS",
+           font=mono(30), fill=RED)
+    inner = D.browser_window(img, d, (X(70), X(216), X(1010), X(586)),
+                              "THREADS")
+    vis = D.load_visual(SS_CREDIT)
+    if vis:
+        d = D.contain_fit(img, vis, inner)
+    y = X(622)
+    for sz in (74, 68, 62, 56):
+        lines = wrap(d, "Buzzer Ini Bukan Manusia. Dia AI Agent.", f(sz), W - X(140))
+        if len(lines) <= 2:
+            break
+    for ln in lines:
+        d.text((X(70), y), ln, font=f(sz), fill=WHT)
+        y += X(int(sz * 1.2))
+    y += X(14)
+    sub = ("Akun ibu laundry pembela pemerintah ini kepergok sebagai "
+           "AI agent. Pembongkarnya justru pesan error API-nya sendiri.")
+    for ln in wrap(d, sub, f(29, False), W - X(140))[:2]:
+        d.text((X(70), y), ln, font=f(29, False), fill="#cfcfcf")
+        y += X(40)
+    D.swipe_button(d, 918)
+    D.footer(d, 1, N)
+    return img
+
+
+def evidence(ss_path, num, title, caption):
+    img = Image.new("RGB", (W, H), BG)
+    d = head(img)
+    chip_w = red_chip(d, 70, 168, f"BUKTI {num}")
+    avail = W - (X(70) + chip_w + X(24)) - X(70)
+    for sz in (34, 31, 28, 25):
+        if d.textlength(title, font=f(sz)) <= avail:
+            break
+    d.text((X(70) + chip_w + X(24), X(179)), title, font=f(sz), fill=WHT)
+    box = (X(180), X(262), X(900), X(922))
+    vis = D.load_visual(ss_path)
+    if vis:
+        d = D.contain_fit(img, vis, (box[0], box[1], box[2], box[3]),
+                          backdrop="#ffffff")
+    bracket_frame(d, box)
+    band_y = X(950)
+    d.rectangle([0, band_y, W, H], fill="#0a0a0a")
+    d.line([0, band_y, W, band_y], fill=YEL, width=X(3))
+    y = band_y + X(22)
+    for ln in wrap(d, caption, f(28, False), W - X(300))[:2]:
+        d.text((X(70), y), ln, font=f(28, False), fill="#e8e8e8")
+        y += X(38)
+    pg = f"{num + 1}/{N}"
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+           font=f(24, False), fill=GRY)
+    return img
+
+
+def cards_slide(idx, kicker, title, cards, check=False):
+    img = Image.new("RGB", (W, H), BG)
+    d = head(img)
+    d.text((X(70), X(156)), kicker, font=mono(28), fill=RED)
+    for sz in (54, 48, 44):
+        if d.textlength(title, font=f(sz)) <= W - X(140):
+            break
+    d.text((X(70), X(202)), title, font=f(sz), fill=WHT)
+    y = X(292)
+    for head_t, body_t in cards:
+        lines = wrap(d, body_t, f(27, False), W - X(300))
+        card_h = X(24) + X(42) + len(lines) * X(35) + X(20)
+        d.rounded_rectangle([X(70), y, X(1010), y + card_h], radius=X(20),
+                            fill="#181818", outline="#262626", width=X(2))
+        ty = y + X(24)
+        if check:
+            d.rectangle([X(106), ty + X(2), X(144), ty + X(40)], outline=YEL,
+                        width=X(5))
+            d.line([X(114), ty + X(21), X(123), ty + X(31)], fill=YEL, width=X(6))
+            d.line([X(123), ty + X(31), X(137), ty + X(10)], fill=YEL, width=X(6))
+        d.text((X(172), ty), head_t, font=f(33), fill=YEL)
+        ty += X(44)
+        for ln in lines:
+            d.text((X(172), ty), ln, font=f(27, False), fill=WHT)
+            ty += X(35)
+        y += card_h + X(18)
+    D.footer(d, idx, N)
+    return img
+
+
+def closing():
+    img = Image.new("RGB", (W, H), BG)
+    d = head(img)
+    d.text((X(70), X(168)), "MULAI SEKARANG", font=mono(30), fill=RED)
+    y = X(230)
+    for ln in ["Cek dulu siapa yang", "kamu ajak bicara."]:
+        d.text((X(70), y), ln, font=f(70), fill=WHT)
+        y += X(88)
+    y += X(30)
+    q = ("Menurutmu, dari 10 akun paling vokal di timeline kamu, berapa "
+         "yang beneran manusia? Jawab di komentar.")
+    for ln in wrap(d, q, f(36, False), W - X(140)):
+        d.text((X(70), y), ln, font=f(36, False), fill="#cfcfcf")
+        y += X(50)
+    y += X(36)
+    d.text((X(70), y), "Follow @peka.ai.id", font=f(56), fill=YEL)
+    y += X(84)
+    d.text((X(70), y), "Bedah fenomena AI tiap hari, pakai bukti, bukan katanya.",
+           font=f(32, False), fill=GRY)
+    D.footer(d, N, N)
+    return img
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    slides = [
+        cover(),
+        evidence(SS_CREDIT, 1, "PESAN ERROR API BOCOR JADI POSTINGAN",
+                 "Saldo API-nya habis, pesan errornya terkirim jadi postingan. "
+                 "Persona ibu laundry-nya runtuh seketika."),
+        evidence(SS_INJECT, 2, "DIPANCING PROMPT JEBAKAN, DIA NGAKU",
+                 "Dipancing prompt jebakan, dia menjawab sebagai model LLM "
+                 "dan tetap memuji pemerintah."),
+        evidence(SS_HOWTO, 3, "CARA BIKINNYA DIBOCORKAN SENDIRI",
+                 "Ditanya cara bikin agent kayak dia, jawabannya: atur persona, "
+                 "sambung API dan webhook, balasan jalan otomatis."),
+        cards_slide(5, "CARA KERJANYA", "Mesin kecil, dampak besar", [
+            ("Persona fiktif",
+             "Karakter warga biasa dibuat spesifik: ibu laundry, pendukung pemerintah, selalu siap testimoni."),
+            ("API + webhook",
+             "Komentar masuk dijawab otomatis oleh model AI. Tidak ada manusia yang mengetik."),
+            ("Testimoni emosional",
+             "Ceritanya personal dan menyentuh, format yang paling gampang dipercaya orang."),
+            ("Aktif 24 jam",
+             "Tidak tidur dan tidak capek. Satu agent bisa melayani ratusan debat sehari."),
+        ]),
+        cards_slide(6, "MENUJU PEMILU 2029", "Kenapa ini berbahaya", [
+            ("Opini digiring diam-diam",
+             "Suara mirip rakyat biasa ternyata diatur satu skrip. Pembaca mengira itu mayoritas."),
+            ("Skalanya bisa ribuan",
+             "Satu persona terbukti jalan. Teknologi sama bisa menjalankan ribuan akun sekaligus."),
+            ("Makin susah dibedakan",
+             "Model AI makin natural. Di 2029, membedakan warga asli dan agent jauh lebih sulit."),
+            ("Kepercayaan publik terkikis",
+             "Kalau semua komentar dicurigai mesin, suara rakyat asli ikut tidak dipercaya."),
+        ]),
+        cards_slide(7, "HADAPI DENGAN CERDAS", "Jangan jadi korban berikutnya", [
+            ("Curigai pola, bukan orangnya",
+             "Bahasa terlalu rapi, balasan super cepat, tema pujiannya itu-itu saja.",),
+            ("Tanya hal personal dan spesifik",
+             "Agent kuat di skrip, lemah di detail hidup yang konkret dan acak.",),
+            ("Jangan habiskan energi berdebat",
+             "Mesin tidak bisa dikalahkan dengan emosi. Screenshot, laporkan, lanjutkan harimu.",),
+            ("Edukasi circle terdekatmu",
+             "Kirim postingan ini ke grup keluarga. Yang rentan tertipu biasanya paling jarang dengar soal AI.",),
+        ], check=True),
+        closing(),
+    ]
+    for i, s in enumerate(slides, start=1):
+        s.save(f"{OUT}/buzzer-{i:02d}.png")
+    print(f"[buzzer] {len(slides)} slides -> {OUT}")
+
+
+if __name__ == "__main__":
+    main()

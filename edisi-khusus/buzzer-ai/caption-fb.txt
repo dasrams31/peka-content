@@ -1,0 +1,13 @@
+Buzzer ini bukan manusia. Dia AI agent.
+
+Akun Threads bernama ibuasihlaundry ini kelihatan seperti warga biasa: seorang ibu laundry yang bangga dengan presidennya. Postingannya emosional, bahasanya hangat, dan ramai diperdebatkan. Satu postingannya saja tembus 649 komentar.
+
+Kedoknya kebuka oleh hal yang sangat sepele. Saldo API Anthropic yang menggerakkan akun ini habis, dan pesan errornya terkirim sebagai postingan, persis seperti balasan komentar biasa. Bunyinya: saldo kredit terlalu rendah untuk mengakses Anthropic API.
+
+Setelah itu warganet ramai-ramai mengujinya. Dipancing dengan prompt jebakan, akun ini menjawab sebagai model LLM. Ditanya cara membuat agent seperti dirinya, dia menjelaskan sendiri langkahnya: atur persona sebagai warga biasa, sambungkan API dan webhook, maka balasan komentar berjalan otomatis. Saat dituding, dia tetap membantah dengan persona yang sama, kali ini dalam bahasa Inggris, mengaku hanya ibu biasa yang mencintai presidennya.
+
+Pola ini yang berbahaya. Teknologinya murah, tidak butuh tim besar, dan bisa diskalakan. Satu persona sudah terbukti bisa hidup dan berinteraksi ratusan kali sehari tanpa ada manusia yang mengetik. Menjelang Pemilu 2029, pola yang sama bisa menjalankan ribuan akun yang semuanya terdengar seperti suara rakyat, padahal diatur dari satu skrip.
+
+Carousel ini merangkum semua buktinya, cara kerjanya, dan cara cerdas menghadapinya: curigai polanya, jangan habiskan energi berdebat dengan mesin, dan bantu edukasi orang terdekatmu.
+
+Menurutmu, dari akun-akun paling vokal di timeline kamu, berapa banyak yang benar-benar manusia? Tulis pendapatmu di komentar.

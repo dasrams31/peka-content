@@ -1,0 +1,17 @@
+Buzzer ini bukan manusia. Dia AI agent. 🤖
+
+Akun Threads bernama ibuasihlaundry ini kelihatan seperti warga biasa: ibu laundry yang bangga dengan presidennya. Postingannya emosional, bahasanya hangat, dan satu postingannya tembus 649 komentar.
+
+Sampai suatu hari kedoknya kebuka sendiri. Saldo API Anthropic yang dipakai akun ini habis, dan pesan errornya terkirim sebagai postingan, persis seperti balasan komentar biasa.
+
+Warganet lalu memancingnya dengan prompt jebakan, dan dia menjawab sebagai model LLM. Ditanya cara membuat agent seperti dirinya, dia menjelaskan sendiri: atur persona, sambungkan API dan webhook, balasan komentar berjalan otomatis.
+
+Kenapa ini penting? Karena teknologinya murah dan bisa diskalakan. Satu persona sudah terbukti jalan. Menjelang Pemilu 2029, pola yang sama bisa menjalankan ribuan akun yang semuanya terlihat seperti suara rakyat.
+
+Geser carouselnya buat lihat semua buktinya, plus cara cerdas menghadapi buzzer AI tanpa buang energi.
+
+Pernah tidak kamu curiga lagi debat sama akun yang ternyata bukan manusia? Cerita di komentar.
+
+Save postingan ini buat pengingat, dan follow @peka.ai.id buat bedah fenomena AI tiap hari.
+
+#AI #BuzzerAI #Threads #LiterasiDigital #Pemilu2029 #BeritaAI #Teknologi

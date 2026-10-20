@@ -32,6 +32,7 @@ FSR = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 LAYOUTS = ["cinematic", "split", "frame", "type"]
 DETAIL_STYLES = ["dim", "cards"]
 THEMES = ["frame", "koran", "majalah", "terminal"]
+ALL_THEMES = THEMES + ["layar"]  # layar: explicit only, never in auto rotation
 THEME = None  # set from --theme in main(); None = legacy layout behavior
 
 
@@ -379,7 +380,8 @@ def cover_type(args, n):
 def cover(args, n):
     if THEME:
         img = {"frame": cover_frame, "koran": cover_koran,
-               "majalah": cover_majalah, "terminal": cover_terminal}[THEME](args, n)
+               "majalah": cover_majalah, "terminal": cover_terminal,
+               "layar": cover_layar}[THEME](args, n)
         print(f"[designer] theme: {THEME}")
         return img
     layout = pick(args.layout, LAYOUTS)
@@ -693,15 +695,100 @@ def detail_cards(args, points, idx, n):
     return img
 
 
+def contain_fit(img, vis, box, backdrop="#0b0b0b"):
+    """Paste vis inside box (px coords) scaled to FIT entirely, never cropped."""
+    x0, y0, x1, y1 = box
+    bw, bh = x1 - x0, y1 - y0
+    d = ImageDraw.Draw(img)
+    d.rectangle([x0, y0, x1, y1], fill=backdrop)
+    scale = min(bw / vis.width, bh / vis.height)
+    nw, nh = max(1, int(vis.width * scale)), max(1, int(vis.height * scale))
+    resized = vis.resize((nw, nh), Image.LANCZOS)
+    img.paste(resized, (x0 + (bw - nw) // 2, y0 + (bh - nh) // 2))
+    return ImageDraw.Draw(img)
+
+
+def browser_window(img, d, box, label):
+    """Browser chrome frame; returns the inner screenshot box (px coords)."""
+    x0, y0, x1, y1 = box
+    d.rounded_rectangle([x0, y0, x1, y1], radius=X(22), fill="#1b1b1d",
+                        outline="#2e2e2e", width=X(2))
+    bar_h = X(64)
+    d.line([x0, y0 + bar_h, x1, y0 + bar_h], fill="#2e2e2e", width=X(2))
+    for i, col in enumerate(["#3a3a3a", "#3a3a3a", YEL]):
+        cx = x0 + X(34) + i * X(34)
+        cy = y0 + bar_h // 2
+        d.ellipse([cx - X(9), cy - X(9), cx + X(9), cy + X(9)], fill=col)
+    if label:
+        lf = mono(24)
+        tw = d.textlength(label, font=lf)
+        pw = tw + X(40)
+        px0 = x0 + (x1 - x0 - pw) // 2
+        d.rounded_rectangle([px0, y0 + X(13), px0 + pw, y0 + X(51)], radius=X(19),
+                            fill="#26262a")
+        d.text((px0 + X(20), y0 + X(19)), label, font=lf, fill="#cfcfcf")
+    return (x0 + X(16), y0 + bar_h + X(14), x1 - X(16), y1 - X(16))
+
+
+def cover_layar(args, n):
+    """Screenshot theme: the source screenshot, whole and uncropped, in a
+    browser window. Explicit only (--theme layar), never in auto rotation."""
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    texture(d)
+    badge(d, args.badge)
+    lockup(img, d)
+    d = ImageDraw.Draw(img)
+    inner = browser_window(img, d, (X(70), X(178), X(1010), X(648)),
+                           args.source.upper())
+    vis = load_visual(args.visual)
+    if vis:
+        d = contain_fit(img, vis, inner)
+    else:
+        d.text((X(120), X(400)), "TANGKAPAN LAYAR", font=f(44), fill="#2a2a2a")
+    d.text((X(70), X(664)), f"TANGKAPAN LAYAR - {args.source.upper()}",
+           font=mono(24), fill=GRY)
+    text_block(d, args, 712, 1000)
+    footer(d, 1, n)
+    return img
+
+
+def detail_layar(args, points, idx, n):
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    texture(d)
+    badge(d, args.badge)
+    lockup(img, d)
+    d = ImageDraw.Draw(img)
+    inner = browser_window(img, d, (X(70), X(180), X(1010), X(516)),
+                           args.source.upper())
+    vis = load_visual(args.visual)
+    if vis:
+        d = contain_fit(img, vis, inner)
+    y = X(580)
+    for p in points:
+        d.ellipse([X(70), y + X(14), X(100), y + X(44)], fill=YEL)
+        for sz in (42, 38, 34):
+            lines = wrap(d, p, f(sz, False), W - X(240))
+            if len(lines) <= 4:
+                break
+        for ln in lines:
+            d.text((X(130), y), ln, font=f(sz, False), fill=WHT)
+            y += X(int(sz * 1.35))
+        y += X(46)
+    footer(d, idx, n)
+    return img
+
+
 def detail(args, points, idx, n):
     if THEME:
-        img = {"frame": None, "koran": detail_koran, "majalah": detail_cards,
-               "terminal": detail_dim}[THEME] or detail_cards
         if THEME == "frame":
             style = pick(args.detail_style, DETAIL_STYLES)
             img = {"dim": detail_dim, "cards": detail_cards}[style](args, points, idx, n)
         else:
-            img = img(args, points, idx, n)
+            fn = {"koran": detail_koran, "majalah": detail_cards,
+                  "terminal": detail_dim, "layar": detail_layar}[THEME]
+            img = fn(args, points, idx, n)
         if idx == 2:
             print(f"[designer] detail via theme: {THEME}")
         return img
@@ -747,13 +834,15 @@ def main():
                     help="pill|sharp|brutal|ghost")
     ap.add_argument("--theme", default=None,
                     help="frame|koran|majalah|terminal|auto (set desain harian; "
-                         "mengabaikan --layout/--detail-style)")
+                         "mengabaikan --layout/--detail-style). layar = tema "
+                         "screenshot, hanya bila disebut eksplisit")
     args = ap.parse_args()
     global BADGE_STYLE, THEME
     if args.theme:
-        THEME = pick(args.theme, THEMES)
+        THEME = "layar" if args.theme == "layar" else pick(args.theme, THEMES)
         BADGE_STYLE = {"frame": "ghost", "koran": "sharp",
-                       "majalah": "ghost", "terminal": "sharp"}[THEME]
+                       "majalah": "ghost", "terminal": "sharp",
+                       "layar": "ghost"}[THEME]
     else:
         BADGE_STYLE = args.badge_style
 
