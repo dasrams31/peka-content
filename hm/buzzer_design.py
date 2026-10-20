@@ -90,20 +90,22 @@ def cover():
     vis = D.load_visual(SS_CREDIT)
     if vis:
         d = D.contain_fit(img, vis, inner)
-    y = X(622)
-    for sz in (74, 68, 62, 56):
-        lines = wrap(d, "Buzzer Ini Bukan Manusia. Dia AI Agent.", f(sz), W - X(140))
-        if len(lines) <= 2:
+    y = X(610)
+    head_lines = [("Buzzer satu ini bukan", WHT),
+                  ("ibu ibu laundry, tapi", WHT),
+                  ("AI Agent!", YEL)]
+    for sz in (66, 62, 58, 54):
+        if all(d.textlength(t, font=f(sz)) <= W - X(140)
+               for t, _ in head_lines):
             break
-    for ln in lines:
-        d.text((X(70), y), ln, font=f(sz), fill=WHT)
+    for ln, col in head_lines:
+        d.text((X(70), y), ln, font=f(sz), fill=col)
         y += X(int(sz * 1.2))
-    y += X(14)
-    sub = ("Akun ibu laundry pendukung pemerintah ini lagi rame banget. "
-           "Yang ngepost ternyata bukan manusia, tapi AI agent.")
-    for ln in wrap(d, sub, f(29, False), W - X(140))[:2]:
-        d.text((X(70), y), ln, font=f(29, False), fill="#cfcfcf")
-        y += X(40)
+    sub = "Akun ibu laundry pendukung pemerintah ini lagi rame banget."
+    for s2 in (27, 25, 23):
+        if d.textlength(sub, font=f(s2, False)) <= W - X(140):
+            break
+    d.text((X(70), y + X(14)), sub, font=f(s2, False), fill="#cfcfcf")
     D.swipe_button(d, 918)
     D.footer(d, 1, N)
     return img
