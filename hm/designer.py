@@ -26,9 +26,13 @@ BG = "#111111"; YEL = "#ffd60a"; WHT = "#ffffff"; BLK = "#111111"; GRY = "#9a9a9
 FB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FM = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+FSB = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+FSR = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 
 LAYOUTS = ["cinematic", "split", "frame", "type"]
 DETAIL_STYLES = ["dim", "cards"]
+THEMES = ["frame", "koran", "majalah", "terminal"]
+THEME = None  # set from --theme in main(); None = legacy layout behavior
 
 
 def X(v):
@@ -41,6 +45,14 @@ def f(sz, bold=True):
 
 def mono(sz):
     return ImageFont.truetype(FM, X(sz))
+
+
+def fs(sz):
+    return ImageFont.truetype(FSB, X(sz))
+
+
+def fsr(sz):
+    return ImageFont.truetype(FSR, X(sz))
 
 
 def pick(name, options):
@@ -77,7 +89,7 @@ LOCKUP_FONT = 34
 LOCKUP_NUDGE = 0.03
 
 
-def lockup(img, d, cy=LOCKUP_CY, mh=LOCKUP_MH):
+def lockup(img, d, cy=LOCKUP_CY, mh=LOCKUP_MH, color=YEL, chip=False):
     cy_px, mh_px = X(cy), X(mh)
     cr = _creature.resize((int(_creature.width * mh_px / _creature.height), mh_px), Image.LANCZOS)
     mr = _cmask.resize(cr.size, Image.LANCZOS)
@@ -89,8 +101,12 @@ def lockup(img, d, cy=LOCKUP_CY, mh=LOCKUP_MH):
     gap = X(LOCKUP_GAP)
     mx = tx - gap - cr.width
     my = cy_px - mh_px // 2 - int(mh_px * LOCKUP_NUDGE)
+    if chip:
+        pad = X(10)
+        d.rounded_rectangle([mx - pad, my - pad, mx + cr.width + pad, my + mh_px + pad],
+                            radius=X(16), fill=BLK)
     img.paste(cr, (int(mx), int(my)), mr)
-    d.text((tx, ty), label, font=tf, fill=YEL)
+    d.text((tx, ty), label, font=tf, fill=color)
 
 
 BADGE_STYLE = "pill"  # pill | sharp | brutal | ghost (set from --badge-style)
@@ -361,10 +377,256 @@ def cover_type(args, n):
 
 
 def cover(args, n):
+    if THEME:
+        img = {"frame": cover_frame, "koran": cover_koran,
+               "majalah": cover_majalah, "terminal": cover_terminal}[THEME](args, n)
+        print(f"[designer] theme: {THEME}")
+        return img
     layout = pick(args.layout, LAYOUTS)
     img = {"cinematic": cover_cinematic, "split": cover_split,
            "frame": cover_frame, "type": cover_type}[layout](args, n)
     print(f"[designer] cover layout: {layout}")
+    return img
+
+
+# ---- theme sets (2026-10-20: daily rotating news identities) ----
+# frame   = the locked magazine frame (anchor, unchanged)
+# koran   = broadsheet: cream paper, serif headline, ink rules
+# majalah = glossy magazine: full-bleed visual, black panel, yellow kicker
+# terminal= dark data room: dotted grid, bracketed visual window, ticker
+CREAM = "#f6f1e6"
+INK = "#161616"
+INK_SUB = "#57534a"
+
+HARI_ID = ["SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU"]
+BULAN_ID = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI",
+            "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"]
+
+
+def today_id():
+    t = datetime.date.today()
+    return f"{HARI_ID[t.weekday()]}, {t.day} {BULAN_ID[t.month - 1]} {t.year}"
+
+
+def koran_header(img, d, badge_label):
+    font = f(36)
+    tw = d.textlength(badge_label, font=font)
+    d.rectangle([X(70), X(60), X(70) + tw + X(60), X(130)], fill=INK)
+    d.text((X(100), X(74)), badge_label, font=font, fill=CREAM)
+    lockup(img, d, color=INK, chip=True)
+    d = ImageDraw.Draw(img)
+    d.rectangle([X(70), X(158), X(1010), X(164)], fill=INK)
+    d.rectangle([X(70), X(170), X(1010), X(172)], fill=INK)
+    return d
+
+
+def koran_footer(d, i, n):
+    d.text((X(70), X(1015)), "PEKA.AI.ID", font=f(24, False), fill=INK_SUB)
+    pg = f"{i}/{n}"
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+           font=f(24, False), fill=INK_SUB)
+
+
+def swipe_button_ink(d, y_top):
+    yt = X(y_top)
+    font = f(32)
+    tw = d.textlength("GESER", font=font)
+    aw = d.textlength("\u2192", font=font)
+    pad, gap = X(30), X(14)
+    d.rectangle([X(70), yt, X(70) + tw + aw + gap + pad * 2, yt + X(78)], fill=INK)
+    d.text((X(100), yt + X(17)), "GESER", font=font, fill=YEL)
+    d.text((X(100) + tw + gap, yt + X(17)), "\u2192", font=font, fill=YEL)
+
+
+def cover_koran(args, n):
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    d = koran_header(img, d, args.badge)
+    d.text((X(70), X(196)), f"EDISI {today_id()}", font=mono(26), fill=INK_SUB)
+    src = f"SUMBER: {args.source.upper()}"
+    d.text((X(1010) - d.textlength(src, font=mono(26)), X(196)), src,
+           font=mono(26), fill=INK_SUB)
+    vx0, vy0, vx1, vy1 = X(70), X(250), X(1010), X(560)
+    vis = load_visual(args.visual)
+    if vis:
+        img.paste(cover_crop(vis, vx1 - vx0, vy1 - vy0), (vx0, vy0))
+        d = ImageDraw.Draw(img)
+    d.rectangle([vx0, vy0, vx1, vy1], outline=INK, width=X(4))
+    d.rectangle([vx0 + X(10), vy0 + X(10), vx1 - X(10), vy1 - X(10)],
+                outline=INK, width=X(1))
+    cap = "ILUSTRASI AI"
+    d.text((X(70), X(578)), cap, font=mono(24), fill=INK_SUB)
+
+    # Headline + sub must fit 650..884 (rule at 892, swipe 918..996, footer 1015)
+    max_w = W - X(140)
+    sub_full = wrap(d, args.sub, fsr(32), max_w) if args.sub else []
+    chosen = None
+    for sz in (68, 60, 52, 46, 40):
+        lines = wrap(d, args.headline, fs(sz), max_w)
+        if len(lines) > 3:
+            continue
+        lh = int(sz * 1.24)
+        for n_sub in (len(sub_full), 1, 0):
+            if n_sub > len(sub_full):
+                continue
+            need = len(lines) * lh + ((20 + n_sub * 44) if n_sub else 0)
+            if need <= 232:
+                chosen = (sz, lines, lh, sub_full[:n_sub])
+                break
+        if chosen:
+            break
+    if not chosen:
+        sz = 40
+        chosen = (sz, wrap(d, args.headline, fs(sz), max_w)[:3], int(sz * 1.24), [])
+    sz, lines, lh, sub_lines = chosen
+    y = X(650)
+    for ln in lines:
+        d.text((X(70), y), ln, font=fs(sz), fill=INK)
+        y += X(lh)
+    if sub_lines:
+        y += X(20)
+        for ln in sub_lines:
+            d.text((X(70), y), ln, font=fsr(32), fill=INK_SUB)
+            y += X(44)
+    d.rectangle([X(70), X(892), X(1010), X(895)], fill=INK)
+    swipe_button_ink(d, 918)
+    koran_footer(d, 1, n)
+    return img
+
+
+def detail_koran(args, points, idx, n):
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    d = koran_header(img, d, args.badge)
+    d.text((X(70), X(196)), "DETAIL BERITA", font=mono(26), fill=INK_SUB)
+    y = X(280)
+    base_num = (idx - 2) * 2
+    for j, p in enumerate(points):
+        num = f"{base_num + j + 1:02d}"
+        d.text((X(70), y), num, font=fs(54), fill=INK)
+        for sz in (40, 36, 32):
+            lines = wrap(d, p, fsr(sz), W - X(330))
+            if len(lines) <= 5:
+                break
+        ty = y + X(6)
+        for ln in lines:
+            d.text((X(230), ty), ln, font=fsr(sz), fill=INK)
+            ty += X(int(sz * 1.4))
+        y = ty + X(34)
+        if j < len(points) - 1:
+            d.rectangle([X(70), y, X(1010), y + X(2)], fill="#d8d2c2")
+            y += X(34)
+    koran_footer(d, idx, n)
+    return img
+
+
+def cta_koran(args, n):
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    d = koran_header(img, d, args.badge)
+    y = X(360)
+    for ln in ["Jangan ketinggalan", "kabar AI terbaru."]:
+        d.text((X(70), y), ln, font=fs(68), fill=INK)
+        y += X(92)
+    y += X(36)
+    d.rectangle([X(70), y, X(1010), y + X(120)], fill=INK)
+    d.text((X(110), y + X(30)), "Follow @peka.ai.id", font=f(54), fill=YEL)
+    y += X(170)
+    d.text((X(70), y), "Update tiap hari: info AI, bansos, dan tools terbaik.",
+           font=fsr(32), fill=INK_SUB)
+    koran_footer(d, n, n)
+    return img
+
+
+def cover_majalah(args, n):
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    vis = load_visual(args.visual)
+    if vis:
+        img.paste(cover_crop(vis, W, H), (0, 0))
+        img = Image.blend(img, Image.new("RGB", (W, H), BG), 0.10)
+        d = ImageDraw.Draw(img)
+    else:
+        texture(d)
+    badge(d, args.badge)
+    lockup(img, d)
+    d = ImageDraw.Draw(img)
+    py0 = X(640)
+    panel = Image.new("RGB", (W, H - py0), (10, 10, 10))
+    img.paste(panel, (0, py0))
+    d = ImageDraw.Draw(img)
+    kick = f"{args.badge} - {args.source.upper()}"
+    kf = mono(30)
+    kw = d.textlength(kick, font=kf) + X(44)
+    d.rectangle([X(70), py0 + X(36), X(70) + kw, py0 + X(36) + X(58)], fill=YEL)
+    d.text((X(92), py0 + X(47)), kick, font=kf, fill=BLK)
+    max_w = W - X(140)
+    y = py0 + X(118)
+    sub_lines = wrap(d, args.sub, f(30, False), max_w)[:1] if args.sub else []
+    for sz in (66, 58, 50, 44, 38):
+        lines = wrap(d, args.headline, f(sz), max_w)
+        need = len(lines) * int(sz * 1.22) + (52 if sub_lines else 0)
+        if len(lines) <= 3 and need <= 190:
+            break
+    for ln in lines:
+        d.text((X(70), y), ln, font=f(sz), fill=WHT)
+        y += X(int(sz * 1.22))
+    if sub_lines:
+        y += X(14)
+        d.text((X(70), y), sub_lines[0], font=f(30, False), fill="#cfcfcf")
+    swipe_button(d, 950)
+    pg = f"1/{n}"
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+           font=f(24, False), fill=GRY)
+    return img
+
+
+def cover_terminal(args, n):
+    img = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(img)
+    for gx in range(X(46), W, X(46)):
+        for gy in range(X(46), H, X(46)):
+            d.ellipse([gx, gy, gx + X(3), gy + X(3)], fill="#1e1e1e")
+    badge(d, args.badge)
+    lockup(img, d)
+    d = ImageDraw.Draw(img)
+    vx0, vy0, vx1, vy1 = X(70), X(180), X(1010), X(520)
+    vis = load_visual(args.visual)
+    if vis:
+        img.paste(cover_crop(vis, vx1 - vx0, vy1 - vy0), (vx0, vy0))
+        d = ImageDraw.Draw(img)
+    d.rectangle([vx0, vy0, vx1, vy1], outline="#333333", width=X(2))
+    bl, bw_ = X(34), X(6)
+    for cx, cy, dx, dy in [(vx0, vy0, 1, 1), (vx1, vy0, -1, 1),
+                           (vx0, vy1, 1, -1), (vx1, vy1, -1, -1)]:
+        d.line([cx, cy, cx + dx * bl, cy], fill=YEL, width=bw_)
+        d.line([cx, cy, cx, cy + dy * bl], fill=YEL, width=bw_)
+    d.text((X(70), X(548)), "> HEADLINE", font=mono(30), fill=YEL)
+    max_w = W - X(140)
+    y = X(596)
+    for sz in (52, 46, 40, 34):
+        lines = wrap(d, args.headline, mono(sz), max_w)
+        if len(lines) <= 4:
+            break
+    for ln in lines:
+        d.text((X(70), y), ln, font=mono(sz), fill=WHT)
+        y += X(int(sz * 1.3))
+    if args.sub:
+        y += X(16)
+        for ln in wrap(d, args.sub, mono(28), max_w)[:2]:
+            d.text((X(70), y), ln, font=mono(28), fill=GRY)
+            y += X(40)
+    y += X(24)
+    d.text((X(70), y), f"// SUMBER: {args.source.upper()}", font=mono(28), fill=GRY)
+    tick = f"PEKA NEWS +++ {args.source.upper()} +++ GESER BUAT DETAIL +++ "
+    tick = tick * 3
+    ty0 = X(972)
+    d.rectangle([0, ty0, W, X(1080)], fill="#0a0a0a")
+    d.line([0, ty0, W, ty0], fill=YEL, width=X(3))
+    d.text((X(70), ty0 + X(26)), tick, font=mono(30), fill=YEL)
+    pg = f"1/{n}"
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), ty0 + X(66)), pg,
+           font=f(24, False), fill=GRY)
     return img
 
 
@@ -432,6 +694,17 @@ def detail_cards(args, points, idx, n):
 
 
 def detail(args, points, idx, n):
+    if THEME:
+        img = {"frame": None, "koran": detail_koran, "majalah": detail_cards,
+               "terminal": detail_dim}[THEME] or detail_cards
+        if THEME == "frame":
+            style = pick(args.detail_style, DETAIL_STYLES)
+            img = {"dim": detail_dim, "cards": detail_cards}[style](args, points, idx, n)
+        else:
+            img = img(args, points, idx, n)
+        if idx == 2:
+            print(f"[designer] detail via theme: {THEME}")
+        return img
     style = pick(args.detail_style, DETAIL_STYLES)
     img = {"dim": detail_dim, "cards": detail_cards}[style](args, points, idx, n)
     if idx == 2:
@@ -440,6 +713,8 @@ def detail(args, points, idx, n):
 
 
 def cta(args, n):
+    if THEME == "koran":
+        return cta_koran(args, n)
     img, d = base(args.badge)
     y = X(380)
     for ln in ["Jangan ketinggalan", "kabar AI terbaru."]:
@@ -470,9 +745,17 @@ def main():
                     help="dim|cards|auto (auto rotates daily)")
     ap.add_argument("--badge-style", default="pill",
                     help="pill|sharp|brutal|ghost")
+    ap.add_argument("--theme", default=None,
+                    help="frame|koran|majalah|terminal|auto (set desain harian; "
+                         "mengabaikan --layout/--detail-style)")
     args = ap.parse_args()
-    global BADGE_STYLE
-    BADGE_STYLE = args.badge_style
+    global BADGE_STYLE, THEME
+    if args.theme:
+        THEME = pick(args.theme, THEMES)
+        BADGE_STYLE = {"frame": "ghost", "koran": "sharp",
+                       "majalah": "ghost", "terminal": "sharp"}[THEME]
+    else:
+        BADGE_STYLE = args.badge_style
 
     points = [p.strip() for p in args.points.split("|") if p.strip()]
     chunks = [points[i:i + 2] for i in range(0, len(points), 2)] or [[]]

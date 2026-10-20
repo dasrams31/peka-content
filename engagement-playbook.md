@@ -76,3 +76,25 @@ learnings.md (data-driven lessons) and performance.log (raw metrics).
   distill 1-3 lessons into learnings.md (OBSERVED / INFERRED format),
   and report the top 3 and bottom 3 posts to the chat. Never invent
   metrics the CLI does not expose; say which platform data was missing.
+
+## Improvisation mandate (standing order from the user, 2026-10-20)
+
+The user wants this system to keep improvising on its own so content
+follows trends and keeps earning comments, likes, saves, shares, and
+follows. Standing rules:
+
+- Read trending.md (same folder) at the start of every run. It is
+  refreshed twice a week (Mon + Thu) by the peka-trend-watch cron with
+  what is currently working in the AI niche: hot topics, formats, and
+  hook styles, plus 2-3 concrete experiments for the week.
+- Every run MAY run ONE experiment: a new hook pattern, a format twist
+  inside the locked design system, a new question style, a trend tie-in.
+  Log the experiment in the run's posted.log line or report so the
+  weekly review can judge it.
+- Experiments may NEVER break locked rules: brand designs and lockups,
+  the single #AI hashtag on Threads, the no em/en-dash rule, honest
+  numbers only, fixed daily slots, sales posts off Instagram.
+- The weekly review promotes winning experiments into this playbook and
+  learnings.md, and kills losing ones. That loop is the improvement
+  engine: trend watch feeds ideas, daily runs test them, Sunday data
+  decides what stays.

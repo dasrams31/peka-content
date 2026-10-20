@@ -1,0 +1,23 @@
+{
+ "band": "VPS Oracle - Gratis Selamanya",
+ "category": "VPS / Cloud",
+ "fields": {
+  "deadline": "Tanpa deadline, selamanya",
+  "nilai": "VPS ARM 2 CPU + 12 GB RAM",
+  "sumber": "oracle.com/cloud/free",
+  "untuk": "Siapa aja, cukup verifikasi kartu"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-21-vps-oracle",
+ "program": "VPS Oracle Cloud Gratis Selamanya",
+ "steps": [
+  "Buka oracle.com/cloud/free, bikin akun",
+  "Verifikasi identitas pakai kartu debit atau kredit",
+  "Pilih region yang masih ada kapasitas",
+  "Bikin instance Ampere A1 berlabel Always Free"
+ ],
+ "syarat": [
+  "Punya kartu debit atau kredit buat verifikasi (tidak dipotong)",
+  "Satu akun per orang",
+  "Instance dipakai aktif, jangan dianggurin total"
+ ]
+}

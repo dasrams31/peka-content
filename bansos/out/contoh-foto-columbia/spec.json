@@ -1,0 +1,25 @@
+{
+ "band": "Kursus Columbia - Gratis Pakai Kode",
+ "category": "Kursus Online",
+ "fields": {
+  "deadline": "Selama kode masih aktif",
+  "nilai": "Kursus online + sertifikat",
+  "sumber": "Halaman resmi program",
+  "untuk": "Umum, tanpa syarat gelar"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/contoh-foto-columbia",
+ "photo": "/home/hatch/workspace/peka-content/images/kursus-columbia-gratis.png",
+ "program": "Kursus Columbia Gratis Pakai Kode",
+ "steps": [
+  "Buka halaman resmi program kursusnya",
+  "Pilih kursus Columbia yang kamu mau",
+  "Daftar dan masukkan kode GRADGIFT2026",
+  "Selesaikan pendaftaran sebelum kode hangus"
+ ],
+ "syarat": [
+  "Kode promo GRADGIFT2026 masih aktif",
+  "Satu akun per orang",
+  "Koneksi internet buat belajar online"
+ ],
+ "photo_align": "top"
+}
