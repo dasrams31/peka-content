@@ -109,27 +109,21 @@ def cover():
     return img
 
 
-def evidence(ss_path, num, title, caption):
+def evidence(ss_path, num, title):
+    """Evidence slide: title + big screenshot + social row footer.
+    No bottom caption (user: the caption band overlapped and got cut)."""
     img = Image.new("RGB", (W, H), BG)
     d = head(img)
     for sz in (38, 34, 31, 28):
         if d.textlength(title, font=f(sz)) <= W - X(140):
             break
     d.text((X(70), X(176)), title, font=f(sz), fill=WHT)
-    box = (X(180), X(262), X(900), X(904))
+    box = (X(150), X(252), X(930), X(956))
     vis = D.load_visual(ss_path)
     if vis:
-        d = D.contain_fit(img, vis, (box[0], box[1], box[2], box[3]),
-                          backdrop="#ffffff")
+        d = D.contain_fit(img, vis, box, backdrop="#ffffff")
     bracket_frame(d, box)
-    band_y = X(932)
-    d.rectangle([0, band_y, W, H], fill="#0a0a0a")
-    d.line([0, band_y, W, band_y], fill=YEL, width=X(3))
-    y = band_y + X(14)
-    for ln in wrap(d, caption, f(28, False), W - X(300))[:2]:
-        d.text((X(70), y), ln, font=f(28, False), fill="#e8e8e8")
-        y += X(36)
-    social_row(d, f"{num + 1}/{N}", y_units=1024)
+    social_row(d, f"{num + 1}/{N}")
     return img
 
 
@@ -196,15 +190,9 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     slides = [
         cover(),
-        evidence(SS_CREDIT, 1, "PESAN ERROR API BOCOR JADI POSTINGAN",
-                 "Ceritanya mulai dari sini. Saldo API-nya habis, pesan error buat "
-                 "developer malah terkirim jadi postingan."),
-        evidence(SS_INJECT, 2, "DIPANCING PROMPT JEBAKAN, DIA NGAKU",
-                 "Dipancing warganet pakai prompt jebakan, dia ngaku sendiri "
-                 "sebagai AI. Identitasnya aja ganti-ganti."),
-        evidence(SS_HOWTO, 3, "CARA BIKINNYA DIBOCORKAN SENDIRI",
-                 "Terus ada yang nanya cara bikin agent kayak dia. Dijawab dong: "
-                 "atur persona, sambung API, webhook."),
+        evidence(SS_CREDIT, 1, "PESAN ERROR API BOCOR JADI POSTINGAN"),
+        evidence(SS_INJECT, 2, "DIPANCING PROMPT JEBAKAN, DIA NGAKU"),
+        evidence(SS_HOWTO, 3, "CARA BIKINNYA DIBOCORKAN SENDIRI"),
         closing(),
     ]
     for i, s in enumerate(slides, start=1):
