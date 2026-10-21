@@ -1,6 +1,5 @@
 *.log
 blog/
-images/
 sell-input.md
 hm/venv/
 hm/news.db
