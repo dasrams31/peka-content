@@ -1,0 +1,10 @@
+PROMPT HARIAN #01: 10 hook konten dari 1 topik, sekali duduk
+
+Prompt lengkapnya, tinggal salin:
+
+Kamu adalah content strategist. Aku mau bikin konten tentang [TOPIK] untuk [PLATFORM]. Buatkan 10 ide hook yang bikin orang berhenti scroll: 3 hook pertanyaan, 3 hook angka, 2 hook kesalahan umum, dan 2 hook cerita pribadi. Tiap hook maksimal 12 kata, pakai Bahasa Indonesia santai, tanpa clickbait bohong.
+
+Kamu paling susah bikin hook yang mana: pertanyaan, angka, atau cerita pribadi?
+
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30.

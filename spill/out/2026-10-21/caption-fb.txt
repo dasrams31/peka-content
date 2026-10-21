@@ -1,11 +1,5 @@
-SPILL: SKILL AGENT AI YANG KEPAKAI BENERAN
+Spill Repo #02: giliran skill Hermes.
+5 repo GitHub berisi skill siap pakai, dibedah satu satu di carousel ini. Geser buat bedahnya. Link lengkap aku spill di komentar.
 
-Bukan agent-nya yang bikin produktif, tapi skill yang kamu pasang di dalamnya.
-
-Di carousel ini:
-CLAUDE, paling matang buat ngoding dan dokumen. Skill dokumen Office, code review, frontend design, sampai testing web.
-HERMES, agent otonom open source. Belajar sendiri dari pengalaman, memory persisten, jalan 24/7 di server, model bebas.
-
-Versi tulisan super lengkapnya, termasuk daftar repo GitHub buat ambil skill siap pakai, ada di blog Peka: blog.peka.ai.id/p/spill-skill-agent-claude-hermes
-
-Save postingan ini buat contekan.
+Repo mana yang mau kamu coba duluan? Tulis di komentar.
+Edisi berikutnya besok jam 21:30.

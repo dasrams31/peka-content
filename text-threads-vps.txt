@@ -1,0 +1,7 @@
+VPS gratis selamanya? Ini bukan clickbait 😎
+
+Oracle Cloud punya paket Always Free: VPS Ampere A1 ARM dengan 2 CPU + 12 GB RAM, gratis permanen, bukan trial 30 hari. Buat hosting website, bot, database kecil, atau lab ngoprek, ini lebih dari cukup.
+
+Daftar di oracle.com/cloud/free. Catatan jujur: butuh kartu debit/kredit buat verifikasi (nggak dipotong), dan kadang muncul error out of capacity, coba ganti region kalau begitu.
+
+Yang butuh server gratisan, gas. #AI

@@ -1,1 +1,1 @@
-SPILL: skill agent AI yang kepakai beneran. Claude jago ngoding + dokumen, Hermes otonom 24/7 dan bisa nulis skill sendiri dari pengalaman. Contekan lengkapnya di carousel ini, versi tulisan super lengkapnya ada di blog Peka. Save dulu. #AI
+SPILL REPO #02: SKILL HERMES. 5 repo GitHub berisi skill siap pakai, dibedah satu satu di carousel ini. Repo mana yang mau kamu coba duluan? Link lengkapnya aku spill di komentar. #AI

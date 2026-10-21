@@ -98,3 +98,8 @@ follows. Standing rules:
   learnings.md, and kills losing ones. That loop is the improvement
   engine: trend watch feeds ideas, daily runs test them, Sunday data
   decides what stays.
+
+## ATURAN JOIN KOMUNITAS DI DESAIN (2026-10-21, perintah user)
+- SEMUA desain konten Peka WAJIB memuat elemen join komunitas ke **url.peka.ai.id** (halaman hub semua link + komunitas).
+- Sudah tertanam di generator: hm/designer.py footer (pola seragam semua desain: tulisan web peka.ai.id DIHAPUS dari footer, diganti kalimat "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID" abu-abu regular di kiri, nomor halaman di kanan; semua slide berita + edisi khusus), buzzer_design social_row (teks web = url.peka.ai.id), spill/spill.py footer (pola sama), prompt/prompt_harian.py (strip slide 1: CTA dipendekkan "GESER BUAT PROMPTNYA" + kalimat gabung kanan; footer slide 2 ringkas), bansos/bansos_design.py (stub tiket tanpa peka.ai.id: "gabung ke / komunitas kami: / url.peka.ai.id" + CTA slide 3 "Gabung ke komunitas kami: url.peka.ai.id"), store/make_slides.py footer (pola sama).
+- Desain baru di luar generator ini: tambahkan elemen setara (kecil, rapi, tidak mendominasi desain) sebelum tayang.

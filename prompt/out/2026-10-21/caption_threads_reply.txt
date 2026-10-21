@@ -1,0 +1,3 @@
+Prompt-nya, tinggal salin:
+
+Kamu adalah content strategist. Aku mau bikin konten tentang [TOPIK] untuk [PLATFORM]. Buatkan 10 ide hook yang bikin orang berhenti scroll: 3 hook pertanyaan, 3 hook angka, 2 hook kesalahan umum, dan 2 hook cerita pribadi. Tiap hook maksimal 12 kata, pakai Bahasa Indonesia santai, tanpa clickbait bohong.

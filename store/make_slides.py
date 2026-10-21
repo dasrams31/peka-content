@@ -127,6 +127,11 @@ def header(d, img, th, edisi, tema_name):
 
 def footer(d, th, i, n, edisi):
     d.text((110, 1946), f"PEKA STORE - {edisi}", font=fr(36), fill=th["sub"])
+    left = f"PEKA STORE - {edisi}"
+    x = 110 + d.textlength(left, font=fr(36))
+    d.text((x + 16, 1946), "·", font=fr(36), fill=th["sub"])
+    x += 16 + d.textlength("·", font=fr(36)) + 16
+    d.text((x, 1946), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=fr(36), fill=th["sub"])
     pg = f"HAL {i}/{n}"
     d.text((1938 - d.textlength(pg, font=mono(36)), 1946), pg, font=mono(36), fill=th["sub"])
 

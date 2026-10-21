@@ -148,10 +148,11 @@ def texture(d):
         d.line([(W - i, 0), (W, i)], fill="#181818", width=X(16))
 
 
-def footer(d, i, n, left="PEKA.AI.ID"):
-    d.text((X(70), X(1015)), left, font=f(24, False), fill=GRY)
+def footer(d, i, n):
+    y = X(1015)
+    d.text((X(70), y), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=f(24, False), fill=GRY)
     pg = f"{i}/{n}"
-    d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg, font=f(24, False), fill=GRY)
+    d.text((X(1010) - d.textlength(pg, font=f(24, False)), y), pg, font=f(24, False), fill=GRY)
 
 
 def wrap(d, text, font, max_w):
@@ -423,7 +424,7 @@ def koran_header(img, d, badge_label):
 
 
 def koran_footer(d, i, n):
-    d.text((X(70), X(1015)), "PEKA.AI.ID", font=f(24, False), fill=INK_SUB)
+    d.text((X(70), X(1015)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=f(24, False), fill=INK_SUB)
     pg = f"{i}/{n}"
     d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
            font=f(24, False), fill=INK_SUB)

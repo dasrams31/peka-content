@@ -232,8 +232,10 @@ def slide1_photo(spec):
     lab_layer = lab_layer.rotate(90, resample=Image.BICUBIC, expand=True)
     layer.paste(lab_layer, (perf_x + 378, oy + 150), lab_layer)
     barcode(ld, perf_x + 70, oy + 150, 270, 600, spec["program"])
-    ld.text((perf_x + 68, oy + 810), "peka.ai.id", font=mono(44, bold=True), fill=INK)
-    ld.text((perf_x + 68, oy + 880), "verified", font=fr(44), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 824), "verified", font=fr(44), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 898), "gabung ke", font=mono(34), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 950), "komunitas kami:", font=mono(34), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 1006), "url.peka.ai.id", font=mono(36, bold=True), fill=INK)
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
     img.paste(layer, ((S - layer.width) // 2, 330), layer)
@@ -312,8 +314,10 @@ def slide1(spec):
     lab_layer = lab_layer.rotate(90, resample=Image.BICUBIC, expand=True)
     layer.paste(lab_layer, (perf_x + 378, oy + 150), lab_layer)
     barcode(ld, perf_x + 70, oy + 150, 270, 600, spec["program"])
-    ld.text((perf_x + 68, oy + 810), "peka.ai.id", font=mono(44, bold=True), fill=INK)
-    ld.text((perf_x + 68, oy + 880), "verified", font=fr(44), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 824), "verified", font=fr(44), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 898), "gabung ke", font=mono(34), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 950), "komunitas kami:", font=mono(34), fill=DGRAY)
+    ld.text((perf_x + 68, oy + 1006), "url.peka.ai.id", font=mono(36, bold=True), fill=INK)
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
     img.paste(layer, ((S - layer.width) // 2, 330), layer)
@@ -395,7 +399,8 @@ def slide3(spec):
 
     ctas = ["Tag teman yang lagi butuh ini",
             "Save postingan ini buat pas daftar nanti",
-            "Follow @peka.ai.id, bansos baru tiap ada yang verified"]
+            "Follow @peka.ai.id, bansos baru tiap ada yang verified",
+            "Gabung ke komunitas kami: url.peka.ai.id"]
     yy = 1180
     for c in ctas:
         cl = wrap(d, c, f(64), 1560)
