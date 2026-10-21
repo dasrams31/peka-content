@@ -126,14 +126,19 @@ def header(d, img, th, edisi, tema_name):
 
 
 def footer(d, th, i, n, edisi):
-    d.text((110, 1946), f"PEKA STORE - {edisi}", font=fr(36), fill=th["sub"])
-    left = f"PEKA STORE - {edisi}"
-    x = 110 + d.textlength(left, font=fr(36))
-    d.text((x + 16, 1946), "·", font=fr(36), fill=th["sub"])
-    x += 16 + d.textlength("·", font=fr(36)) + 16
-    d.text((x, 1946), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=fr(36), fill=th["sub"])
+    # One line: store label + join-community phrase (left), page (right).
+    # Auto-shrink the left text so it never collides with the page label
+    # (long edisi labels overflowed into "HAL i/n" at fr(36), found in the
+    # 2026-10-22 footer collision audit).
     pg = f"HAL {i}/{n}"
-    d.text((1938 - d.textlength(pg, font=mono(36)), 1946), pg, font=mono(36), fill=th["sub"])
+    pg_x = 1938 - d.textlength(pg, font=mono(36))
+    left = (f"PEKA STORE - {edisi} · "
+            "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID")
+    for sz in (36, 33, 30, 27, 24):
+        if 110 + d.textlength(left, font=fr(sz)) <= pg_x - 30:
+            break
+    d.text((110, 1946), left, font=fr(sz), fill=th["sub"])
+    d.text((pg_x, 1946), pg, font=mono(36), fill=th["sub"])
 
 
 def draw_price(d, th, x_right, y_mid, price, sold):

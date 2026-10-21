@@ -56,14 +56,19 @@ def bracket_frame(d, box):
 
 
 def social_row(d, pg, y_units=1004):
-    """Centered bottom row: IG / FB / Threads marks + website + page no."""
+    """Centered bottom row: IG / FB / Threads marks + "peka.ai.id" + page.
+
+    User rule 2026-10-22: keep the platform icons, but the text is just
+    "peka.ai.id" (no "url." prefix). Applies to all special editions
+    that use this row (buzzer, metaai, warganet).
+    """
     col = "#d9d9d9"
     s = X(38)
     gap = X(24)
     fb_font, th_font, web_font = f(46), f(40, False), f(28, False)
     fb_w = d.textlength("f", font=fb_font)
     th_w = d.textlength("@", font=th_font)
-    web_w = d.textlength("url.peka.ai.id", font=web_font)
+    web_w = d.textlength("peka.ai.id", font=web_font)
     total = s + gap + fb_w + gap + th_w + gap + web_w
     x = (W - total) / 2
     y = X(y_units)
@@ -77,7 +82,7 @@ def social_row(d, pg, y_units=1004):
     x += fb_w + gap
     d.text((x, y - X(4)), "@", font=th_font, fill=col)
     x += th_w + gap
-    d.text((x, y + X(5)), "url.peka.ai.id", font=web_font, fill=col)
+    d.text((x, y + X(5)), "peka.ai.id", font=web_font, fill=col)
     d.text((X(1010) - d.textlength(pg, font=f(24, False)), y + X(11)), pg,
            font=f(24, False), fill=GRY)
 

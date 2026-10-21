@@ -156,7 +156,7 @@ def slide1_photo(spec):
     img = Image.new("RGB", (S, S), BLACK)
     d = ImageDraw.Draw(img)
     lockup(img, cy=128, mh=104, color=YELLOW)
-    d.text((110, 96), "INFO BANTUAN GRATIS", font=mono(46, bold=True), fill=YELLOW)
+    d.text((110, 96), "INFO BANSOS", font=mono(46, bold=True), fill=YELLOW)
     d.text((110, 158), "buat yang lagi butuh, bukan buat yang lagi iseng",
            font=fr(44), fill=GRAY)
 
@@ -255,7 +255,7 @@ def slide1(spec):
     img = Image.new("RGB", (S, S), BLACK)
     d = ImageDraw.Draw(img)
     lockup(img, cy=128, mh=104, color=YELLOW)
-    d.text((110, 96), "INFO BANTUAN GRATIS", font=mono(46, bold=True), fill=YELLOW)
+    d.text((110, 96), "INFO BANSOS", font=mono(46, bold=True), fill=YELLOW)
     d.text((110, 158), "buat yang lagi butuh, bukan buat yang lagi iseng",
            font=fr(44), fill=GRAY)
 

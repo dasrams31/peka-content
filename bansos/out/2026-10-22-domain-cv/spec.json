@@ -1,0 +1,23 @@
+{
+ "band": "Domain .CV - Gratis Buat Portofolio",
+ "category": "DOMAIN",
+ "fields": {
+  "deadline": "Sampai 17 November 2026",
+  "nilai": "1 domain .CV + WHOIS privacy gratis",
+  "sumber": "codehost.in",
+  "untuk": "Siapa aja, 1 orang 1 domain"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-22-domain-cv",
+ "program": "Domain .CV Gratis dari CodeHost",
+ "steps": [
+  "Buka codehost.in/free-cv-for-everyone",
+  "Cari nama .CV kamu, klik Add to Cart",
+  "Checkout, isi kode CODEHOST, harga jadi nol",
+  "Daftar pakai nama dan email, Complete Order"
+ ],
+ "syarat": [
+  "Siapkan kartu kredit dan KYC buat verifikasi",
+  "Nama domain mirip nama pribadi, misal namakamu.cv",
+  "Yang gratis hanya domain .CV; perpanjang berbayar"
+ ]
+}
