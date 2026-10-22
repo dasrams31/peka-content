@@ -1,0 +1,9 @@
+Kemarin banyak yang berhasil klaim VPS Oracle Always Free, terus berhenti di pertanyaan yang sama: console-nya di mana dan deploy-nya lewat mana.
+
+Nih lanjutannya. Panelnya di cloud.oracle.com, bukan oracle.com (itu situs marketingnya). Bikin instance VM.Standard.A1.Flex yang Always Free Eligible, unduh SSH key, konek, buka port di dua lapis, deploy pakai Docker. Beres, aplikasimu online di server gratis.
+
+Panduan lengkap langkah demi langkah plus FAQ (out of capacity, key hilang, port nggak kebuka) ada di blog peka.ai.id: blog.peka.ai.id/p/cara-deploy-pertama-oracle-cloud
+
+Kamu sudah deploy apa di VPS gratisanmu? Cerita di komentar ya.
+
+#AI

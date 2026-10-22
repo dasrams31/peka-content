@@ -1,0 +1,23 @@
+{
+ "band": "VPS Oracle Gratis - Edisi Lanjutan",
+ "category": "VPS",
+ "fields": {
+  "deadline": "Selamanya (Always Free)",
+  "nilai": "Panduan deploy dari nol sampai online",
+  "sumber": "cloud.oracle.com",
+  "untuk": "Yang sudah klaim Always Free"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-23-oracle-deploy",
+ "program": "Deploy Pertama di Oracle Cloud",
+ "steps": [
+  "Login di cloud.oracle.com (bukan oracle.com)",
+  "Compute > Instances > Create Instance",
+  "Pilih A1.Flex Always Free Eligible + unduh SSH key",
+  "Konek SSH, buka port dua lapis, deploy pakai Docker"
+ ],
+ "syarat": [
+  "Panduan lengkap + FAQ ada di blog peka.ai.id",
+  "Port wajib dibuka dua lapis: console dan server",
+  "Instance nganggur bisa direklamasi Oracle, pakai beneran ya"
+ ]
+}

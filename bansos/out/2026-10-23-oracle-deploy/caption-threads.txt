@@ -1,0 +1,2 @@
+Sudah dapat VPS Oracle gratis, tapi bingung deploy-nya dari mana? Tenang, kamu nggak sendirian. Panelnya memang bukan di oracle.com, tapi di cloud.oracle.com. Dari sana bikin instance A1.Flex, konek SSH, buka port, langsung deploy. Ringkasannya di carousel ini, panduan lengkapnya ada di blog.peka.ai.id. Kamu sudah deploy apa di VPS gratisanmu?
+#AI
