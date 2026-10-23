@@ -1,0 +1,9 @@
+PekaAI sekarang punya kantor. Isinya kerja beneran.
+
+Kantor virtual 3D ini isinya 18 staf AI dari 11 divisi: redaksi, sosmed, bansos, blog, prompt, store, riset, marketing, produk, sampai infrastruktur. Ada lounge, pantry, ruang meeting, dan satpam yang patroli beneran.
+
+Status tiap staf ngikutin jam kerja asli PekaAI. Pagi tim redaksi yang BEKERJA rilis berita, siang Prama kirim Prompt Harian, malam Pandu spill repo GitHub. Di luar jamnya mereka SANTAI atau LIBUR, kursinya kosong.
+
+Mampir lihat sendiri, kantornya buka 24 jam: https://virtual.peka.ai.id
+
+Menurutmu divisi mana yang paling sibuk di kantor ini?

@@ -105,3 +105,15 @@ follows. Standing rules:
 - Desain baru di luar generator ini: tambahkan elemen setara (kecil, rapi, tidak mendominasi desain) sebelum tayang.
 - BARIS SOSMED SLIDE PENUTUP/BUKTI (2026-10-22, perintah user): baris bawah di slide penutup dan bukti edisi khusus (buzzer_design.social_row) = ikon platform (IG/FB/Threads) TETAP ADA, teksnya cukup "peka.ai.id" TANPA awalan "url." — berlaku untuk semua edisi khusus (buzzer, metaai, warganet, dan berikutnya).
 - AUDIT BENTROK FOOTER (2026-10-22, perintah user): footer teks mulai di y=1015 (skala 1080); tombol GESER (tinggi 78) AMAN maks di y=918 (bawahnya 996). Warganet cover awalnya 942 = bentrok, sudah diperbaiki ke 912 + jendela SS dipendekkan. Store footer: label edisi panjang menabrak "HAL i/n", sudah diperbaiki dengan auto-shrink font (36 turun bertahap sampai muat). Cover HM tema MAJALAH dan TERMINAL memang TANPA kalimat gabung (di majalah tombol GESER-nya di 950 dan ruang bawahnya penuh; di terminal ada ticker) — kalimat gabung tetap ada di slide detail + penutup kedua tema itu. Tema frame, koran, layar, bansos, spill, prompt, buzzer/metaai terverifikasi bersih lewat render contoh.
+
+## ATURAN DARI DATA (2026-10-23, dikunci user)
+
+Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Tencent 0 views di hari yang sama) dan WAJIB dipatuhi semua cron konten:
+
+1. **DILARANG hapus + repost konten mirip dalam waktu dekat.** Konten yang sudah tayang diperbaiki lewat balasan/komentar, bukan recreate. Revisi besar dilakukan SEBELUM posting.
+2. **Hook = keuntungan pembaca, bukan berita tentang brand.** Pengumuman brand (kantor, fitur, milestone) adalah konten komunitas: distribusi utamanya grup WhatsApp dan follower setia, bukan target reach.
+3. **Utamakan topik dengan langkah nyata dan titik bingung** (orang mencoba lalu bertanya) karena replies adalah bahan bakar distribusi Threads. Pertanyaan pemicu harus lahir dari pengalaman mencoba, bukan opini generik.
+4. **Topik dua sisi (dua versi cerita) adalah format pemancing komentar yang terbukti.** Pertanyaan generik tipe "gimana menurutmu" terbukti menghasilkan 0 komentar; jangan jadikan pemicu utama.
+5. **Keputusan berbasis snapshot laporan harian 22:30**, bukan angka menit awal (metrik Threads telat dan berbatch). Tidak ada keputusan hapus/revisi sebelum ada snapshot beberapa jam.
+6. **Jam posting bukan penentu.** Kekuatan tawaran dan caption mengalahkan jam tayang; jangan menggeser jadwal demi mengejar jam ramai.
+7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = reactions + shares. Satu angka dari satu platform tidak memvonis konten.

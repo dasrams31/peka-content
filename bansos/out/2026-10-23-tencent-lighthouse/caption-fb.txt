@@ -1,0 +1,9 @@
+Bansos VPS gratis buat jalanin AI agent 24 jam.
+
+Tencent Cloud lagi bagi trial Lighthouse gratis 3 bulan buat pengguna baru. Speknya 2 vCPU + 2 GB RAM, cukup buat jalanin AI agent ringan kayak Hermes atau OpenCode biar online terus tanpa laptop kamu harus nyala 24 jam. Buat bot Telegram, API sederhana, atau web kecil juga masuk.
+
+Syaratnya: pengguna baru Lighthouse (belum pernah beli atau coba), satu kali per orang, dan selesaikan verifikasi akun buat membuka trialnya. Cara klaim lengkapnya ada di gambar dan di blog peka.ai.id.
+
+Catatan jujur: ini trial 3 bulan, bukan gratis selamanya. Habis masa trial, lanjut bayar atau berhenti.
+
+Simpan postingan ini, dan bagikan ke temanmu yang lagi pengen punya AI agent online 24 jam. Kamu bakal jalanin agent apa kalau punya VPS gratis ini?

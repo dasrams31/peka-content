@@ -1,0 +1,23 @@
+{
+ "band": "BANSOS VPS - Gratis 3 Bulan",
+ "category": "VPS",
+ "fields": {
+  "deadline": "Selama program Free Tier jalan",
+  "nilai": "Lighthouse 2 vCPU + 2 GB RAM, 3 bulan",
+  "sumber": "tencentcloud.com",
+  "untuk": "Pengguna baru Tencent Cloud"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-23-tencent-lighthouse",
+ "program": "VPS Gratis buat AI Agent",
+ "steps": [
+  "Buka halaman Free Tier di tencentcloud.com",
+  "Daftar akun baru, selesaikan verifikasi akun",
+  "Pilih Lighthouse Free Trial 2C2G, durasi 3 bulan",
+  "Klaim, buat instance, pilih region Singapura"
+ ],
+ "syarat": [
+  "Pengguna baru Lighthouse, belum pernah beli atau coba",
+  "Satu kali per orang, akun senama ikut terhitung",
+  "Verifikasi akun dulu buat membuka trialnya"
+ ]
+}

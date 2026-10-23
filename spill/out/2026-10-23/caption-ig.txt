@@ -1,0 +1,14 @@
+5 repo skill Claude, 556 ribu star totalnya.
+
+Spill Repo #03 sudah tayang, dibedah satu satu di carousel ini. Repo mana yang mau kamu coba duluan?
+
+Geser buat bedahnya. Link lengkap ada di komentar. Edisi berikutnya besok jam 21:30.
+
+#AI #ClaudeCode #AIAgent #GitHub #OpenSource #Ngoding #DeveloperIndonesia #SkillAI
+
+Link repo:
+https://github.com/multica-ai/andrej-karpathy-skills
+https://github.com/addyosmani/agent-skills
+https://github.com/Leonxlnx/taste-skill
+https://github.com/mvanhorn/last30days-skill
+https://github.com/blader/humanizer
