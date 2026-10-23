@@ -1,0 +1,23 @@
+{
+ "band": "BANSOS DOMAIN - Gratis 1 Tahun",
+ "category": "DOMAIN",
+ "fields": {
+  "deadline": "Selama promo di Discord NicNames jalan",
+  "nilai": "Domain .BOND atau .CYOU, gratis 1 tahun",
+  "sumber": "nicnames.com",
+  "untuk": "Buat portofolio, project, landing page"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-24-nicnames-domain",
+ "program": "Domain Gratis 1 Tahun",
+ "steps": [
+  "Daftar akun di nicnames.com, verifikasi email",
+  "Gabung Discord NicNames, verifikasi di #verify",
+  "Di #promotions ketik /promos, salin Coupon ID",
+  "Pesan domain .BOND/.CYOU, bayar pakai kupon, total $0"
+ ],
+ "syarat": [
+  "Punya akun NicNames dan akun Discord",
+  "Klaim kuponnya lewat Discord resmi NicNames",
+  "Tanpa kartu kredit, total checkout harus $0"
+ ]
+}

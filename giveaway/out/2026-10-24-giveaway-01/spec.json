@@ -1,0 +1,26 @@
+{
+ "series": "EDISI #01",
+ "prize_top": "GEMINI PRO",
+ "prize_bottom": "3 BULAN",
+ "subline": "Dua akun beruntung dapat Gemini Pro 3 bulan dari Peka AI.",
+ "subline2": "Gratis. Nggak perlu beli apa pun.",
+ "deadline_line": "Deadline: Senin, 26 Oktober 2026, 18.00 WIB",
+ "requirements": [
+  "Follow @peka.ai.id di Threads, Instagram, dan TikTok",
+  "Like postingan giveaway ini",
+  "Repost postingan ini di Threads",
+  "Komentar: tulis MAU + Gemini Pro mau kamu pakai buat apa",
+  "Gabung grup WA Peka AI lewat url.peka.ai.id, pemenang diumumkan di sana"
+ ],
+ "note": "Pemenang dipilih acak dari komentar yang memenuhi semua syarat. Satu akun, satu komentar yang dihitung.",
+ "deadline_lines": [
+  "Senin, 26 Oktober 2026",
+  "pukul 18.00 WIB"
+ ],
+ "announce_lines": [
+  "Senin, 26 Oktober 2026",
+  "pukul 19.00 WIB di grup WA + Threads"
+ ],
+ "closing": "Follow @peka.ai.id biar nggak ketinggalan edisi #02.",
+ "out_dir": "/home/hatch/workspace/peka-content/giveaway/out/2026-10-24-giveaway-01"
+}
