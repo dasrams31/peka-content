@@ -1,0 +1,14 @@
+5 repo skill OpenCode, 551 ribu star totalnya.
+
+Spill Repo #04 versi Reels, dibedah satu satu di video ini. Repo mana yang mau kamu coba duluan?
+
+Tonton sampai habis. Link lengkap ada di bawah. Edisi berikutnya besok jam 21:30.
+
+#AI #OpenCode #AIAgent #GitHub #OpenSource #Ngoding #DeveloperIndonesia #SkillAI
+
+Link repo:
+https://github.com/anomalyco/opencode
+https://github.com/affaan-m/ECC
+https://github.com/OthmanAdi/planning-with-files
+https://github.com/awesome-opencode/awesome-opencode
+https://github.com/Tarquinen/opencode-dynamic-context-pruning

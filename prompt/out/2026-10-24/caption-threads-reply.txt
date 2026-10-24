@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Tulis 3 caption jualan untuk [PRODUK] yang dijual ke [TARGET PEMBELI], gaya [SANTAI/PROFESIONAL]. Tiap caption maks 3 kalimat: manfaat utama, bukti atau keunggulan, lalu akhiri dengan ajakan tanya harga. Tandai yang paling menjual.

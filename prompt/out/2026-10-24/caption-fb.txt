@@ -1,0 +1,16 @@
+PROMPT HARIAN #02: salin prompt ini buat bikin caption jualan yang bikin orang tanya harga
+
+Kamu dapat 3 pilihan caption siap posting, bukan 1 kalimat buntu yang cuma bisa ditatap.
+
+Prompt-nya, tinggal salin:
+Tulis 3 caption jualan untuk [PRODUK] yang dijual ke [TARGET PEMBELI], gaya [SANTAI/PROFESIONAL]. Tiap caption maks 3 kalimat: manfaat utama, bukti atau keunggulan, lalu akhiri dengan ajakan tanya harga. Tandai yang paling menjual.
+
+Cara pakai:
+1. Ganti teks di dalam kurung siku dengan detail produkmu
+2. Pilih 1 caption paling nendang, jangan posting ketiganya
+3. Balas chat pembeli dalam 5 menit, momentum itu emas
+
+Kamu jualan apa sekarang? Spill hasil captionnya di komentar!
+
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30, follow biar nggak ketinggalan.
