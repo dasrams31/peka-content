@@ -17,20 +17,16 @@ judges the experiments from real metrics.
 
 ## Experiments this week (refresh 2026-10-22)
 
-Carried over from the seed set, still awaiting the first Sunday review
-(performance.log is empty, no metrics judged yet). Do not archive them
-until the review scores them.
+Seed and weekly experiments below were judged by the Sunday review
+2026-10-25 and moved to the archive, except the Store experiment,
+which stays paused (jualan libur sampai 28 Okt, lanjut 29 Okt 19:00).
 
-- (seed, ongoing) HM news: rotate the closing debate question style
-  (choice question vs prediction question) and let Sunday metrics judge.
-- (seed, ongoing) Prompt Harian: alternate the Threads question between
-  a pain-point question and a show-your-result invitation. Edisi #01
-  (2026-10-21) ran the pain-point variant.
-- (seed, paused) Store: test the choice question ("tim bulanan atau
-  tahunan?") against the tag-a-friend close. PAUSED: jualan libur
-  sampai 28 Okt, lanjut 29 Okt 19:00.
+- (seed, paused, NOT JUDGED) Store: test the choice question
+  ("tim bulanan atau tahunan?") against the tag-a-friend close.
+  PAUSED: no store run this week, so no verdict yet.
 
-New experiments for the runs left this week:
+New experiments for the runs left this week (all judged Sun
+2026-10-25, see archive; do not rerun as open experiments):
 
 1. SPILL Repo #03 (Threads, 21:30 today): hook pattern test. Pillar
    SPILL Repo. Variable: opening hook, honest topical tie-in ("yang
@@ -124,4 +120,33 @@ New experiments for the runs left this week:
 
 ## Archive (experiments judged by Sunday review)
 
-- (empty: first review runs Sun 2026-10-25 20:00, nothing judged yet)
+Judged Sun 2026-10-25 (first review). No experiment won, so nothing
+was promoted to the playbook this week.
+
+- (seed) HM closing debate question style (choice vs prediction):
+  verdict KALAH, tidak terbukti. Varian per edisi tidak tercatat di
+  posted.log, dan HM minggu ini tetap datar (Threads likes 5-7,
+  balasan 0-4) tanpa pola varian yang jelas. Do not reuse as a
+  tested tactic; log the variant per edition if retried.
+- (seed) Prompt Harian Threads question (pain-point vs
+  show-your-result): verdict KALAH, tidak terbukti. Edisi #01
+  (pain-point) tidak tertangkap snapshot harian (snapshot mulai
+  23 Okt), dan #03 yang memakai pertanyaan pain-point ("tugas apa
+  yang paling sering kamu tunda?") meraih 0 balasan penonton.
+- SPILL Repo #03 hook test (honest topical tie-in vs plain
+  specific-number hook): verdict KALAH. Hipotesisnya balasan Threads
+  naik; nyatanya komentar 1, sama dengan #04, dan IG likes 2 di
+  bawah #02 (9) dan #04 (7). Sinyal samping: FB views #03 708,
+  tertinggi di pilar Spill, layak diuji ulang dengan desain yang
+  lebih bersih, bukan dipromosikan sekarang.
+- HM save-trigger add-on test (23 Okt, OpenAI): verdict KALAH,
+  tidak terbukti. Saves tidak terekspos CLI manapun, komentar
+  Threads tetap 0, dan edisi terganggu (IG tayang tanpa caption,
+  rantai Threads terpotong), jadi uji ini tidak mengukur
+  hipotesisnya.
+- Prompt Harian hot-topic test (24 Okt, SynthID angle): verdict
+  KALAH, tidak jalan sesuai desain. Edisi #02 yang tayang memakai
+  tema rotasi "caption jualan" (bisnis), bukan tema hot-topic
+  SynthID, jadi angkanya yang bagus (Threads 9-10 likes, 1 balasan,
+  3 repost, 183 views) tidak menguji hipotesis. Variabel hot-topic
+  masih belum teruji.

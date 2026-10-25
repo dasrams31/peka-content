@@ -1,0 +1,16 @@
+5 repo skill Antigravity, 97 ribu star totalnya. Anak AI wajib save.
+
+Spill Repo #05 versi Reels, dibedah satu satu di video ini. Repo mana yang langsung kamu install?
+
+Link lengkap di bawah. Edisi berikutnya besok jam 21:30.
+
+#AI #Antigravity #AIAgent #GitHub #OpenSource #Ngoding #DeveloperIndonesia #SkillAI
+
+Link repo:
+https://github.com/rmyndharis/antigravity-skills
+https://github.com/google-labs-code/stitch-skills
+https://github.com/tech-leads-club/agent-skills
+https://github.com/google-antigravity/antigravity-sdk-python
+https://github.com/colbymchenry/codegraph
+
+Music: Tech Live by Kevin MacLeod

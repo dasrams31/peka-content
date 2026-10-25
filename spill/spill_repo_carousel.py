@@ -31,7 +31,7 @@ def cover(spec):
     agent = spec["agent"].upper()
     repos = spec["repos"]
     img, d = base(1)
-    total = len(repos) + 2
+    total = len(repos) + 3
     ep = spec.get("episode")
     kick = f"SPILL REPO // HARI INI: {agent}"
     if ep:
@@ -62,7 +62,7 @@ def cover(spec):
 
 def repo_slide(spec, idx, repo):
     agent = spec["agent"].upper()
-    total = len(spec["repos"]) + 2
+    total = len(spec["repos"]) + 3
     page = idx + 2
     img, d = base(page)
     # ghost index behind everything else on this slide
@@ -102,8 +102,8 @@ def repo_slide(spec, idx, repo):
 def closing(spec):
     agent = spec["agent"].upper()
     nxt = spec["next"]
-    total = len(spec["repos"]) + 2
-    img, d = base(total)
+    total = len(spec["repos"]) + 3
+    img, d = base(total - 1)
     ep = spec.get("episode")
     kick = f"PENUTUP // SPILL REPO {agent}"
     if ep:
@@ -124,6 +124,29 @@ def closing(spec):
             d.text((X(70), X(ly)), ln, font=f(32, False), fill=DESC)
             ly += 46
         ly += 22
+    footer(d, total - 1, total)
+    return img
+
+
+def follow(spec):
+    """Closing CTA slide (standing rule 2026-10-25): follow + community."""
+    total = len(spec["repos"]) + 3
+    img, d = base(total)
+    d.text((X(70), X(168)), "IKUTI PEKA AI", font=mono(26), fill=GRY)
+    tf = f(80)
+    d.text((X(70), X(210)), "FOLLOW", font=tf, fill=INK)
+    highlight(d, X(70), X(302), "DAN GABUNG.", tf)
+    lines = [
+        "Follow @peka.ai.id di Instagram, Threads, dan TikTok.",
+        "Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.",
+        "Save dan share postingan ini biar makin banyak yang kebantu.",
+    ]
+    ly = 452
+    for text in lines:
+        for ln in wrap(d, text, f(32, False), X(930)):
+            d.text((X(70), X(ly)), ln, font=f(32, False), fill=DESC)
+            ly += 46
+        ly += 22
     footer(d, total, total)
     return img
 
@@ -137,6 +160,7 @@ def main():
     for i, repo in enumerate(spec["repos"]):
         repo_slide(spec, i, repo).save(os.path.join(out, f"repo-{i + 2:02d}.png"))
     closing(spec).save(os.path.join(out, f"repo-{len(spec['repos']) + 2:02d}.png"))
+    follow(spec).save(os.path.join(out, f"repo-{len(spec['repos']) + 3:02d}.png"))
     print("done:", sorted(os.listdir(out)))
 
 

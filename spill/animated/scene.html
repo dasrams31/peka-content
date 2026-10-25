@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #FAF5EC; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #FAF5EC; overflow: hidden; }
+  .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
+  .hairline { height: 3px; background: #D2CBBC; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 26px; }
+  .kicker { font-family: DejaVuMonoB; font-size: 34px; color: #141414; letter-spacing: 1px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .chip { width: 84px; height: 84px; background: #141414; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+  .chip img { width: 62px; height: 62px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #141414; }
+  h1 { font-family: PoppinsXB; font-size: 118px; line-height: 1.04; color: #141414; margin-top: 100px; }
+  .agent { display: inline-block; background: #ffd60a; padding: 6px 26px; }
+  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.45; color: #141414; margin-top: 48px; }
+  .geser { font-family: DejaVuMonoB; font-size: 38px; color: #141414; margin-top: 70px; }
+  h2 { font-family: PoppinsXB; font-size: 84px; line-height: 1.1; color: #141414; margin-top: 60px; }
+  .card { background: #141414; border-radius: 28px; padding: 40px 40px 36px 40px; margin-top: 44px; }
+  .card .head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+  .card .name { font-family: PoppinsB; font-size: 44px; color: #ffffff; }
+  .card .stars { font-family: DejaVuMonoB; font-size: 34px; color: #ffd60a; white-space: nowrap; }
+  .card p { font-family: DejaVu; font-size: 36px; line-height: 1.45; color: #e9dfc6; margin-top: 18px; }
+  .q { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #141414; margin-top: 80px; }
+  .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #6E695F; margin-top: 44px; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #6E695F; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #ffd60a; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene" id="s1">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40" id="kick">SPILL REPO</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h1>
+      <span data-in="0.45,0.50,0,70" style="display:block">REPO SKILL</span>
+      <span data-in="0.65,0.50,0,70" style="display:block"><span class="agent" id="agent">AGENT</span></span>
+    </h1>
+    <p class="sub" data-in="1.05,0.50,0,40" id="sub">5 repo GitHub berisi skill siap pakai, dibedah satu satu.</p>
+    <div class="geser" data-in="1.45,0.50,0,30">GESER BUAT BEDAHNYA</div>
+  </div>
+  <div class="scene" id="s2" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker kicker-ep" data-in="0.10,0.40,0,40">SPILL REPO</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.45,0,60">Bedah 1-2</h2>
+    <div id="cards-a"></div>
+  </div>
+  <div class="scene" id="s3" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker kicker-ep" data-in="0.10,0.40,0,40">SPILL REPO</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.45,0,60">Bedah 3-5</h2>
+    <div id="cards-b"></div>
+  </div>
+  <div class="scene" id="s4" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker kicker-ep" data-in="0.10,0.40,0,40">SPILL REPO</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <p class="q" data-in="0.30,0.50,0,60">Repo mana yang mau kamu coba duluan?</p>
+    <p class="next" data-in="0.80,0.50,0,40">Link lengkap kelima repo ada di komentar.</p>
+    <p class="next" data-in="1.10,0.50,0,40" id="next">Besok giliran repo skill lain.</p>
+  </div>
+  <div class="scene" id="s5" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker kicker-ep" data-in="0.10,0.40,0,40">SPILL REPO</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <p class="q" data-in="0.30,0.50,0,60">Follow dan gabung.</p>
+    <p class="next" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>
+    <p class="next" data-in="1.10,0.50,0,40">Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.</p>
+    <p class="next" data-in="1.40,0.50,0,40">Save dan share biar makin banyak yang kebantu.</p>
+  </div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 3.75, TOTAL = 18.75;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  window.buildScene = function(spec) {
+    const ep = String(spec.episode).padStart(2, '0');
+    const kickText = 'SPILL REPO // EDISI #' + ep + ' // ' + spec.agent.toUpperCase();
+    document.getElementById('kick').textContent = kickText;
+    document.querySelectorAll('.kicker-ep').forEach(el => { el.textContent = kickText; });
+    document.getElementById('agent').textContent = spec.agent.toUpperCase();
+    document.getElementById('sub').textContent =
+      spec.repos.length + ' repo GitHub berisi skill siap pakai, dibedah satu satu.';
+    const card = (r, i, d) =>
+      '<div class="card" data-in="' + d + ',0.50,80,0">' +
+      '<div class="head"><div class="name">' + r.name + '</div>' +
+      '<div class="stars">' + r.stars + ' STAR</div></div>' +
+      '<p>' + r.short + '</p></div>';
+    document.getElementById('cards-a').innerHTML =
+      card(spec.repos[0], 0, 0.65) + card(spec.repos[1], 1, 1.05);
+    document.getElementById('cards-b').innerHTML =
+      card(spec.repos[2], 2, 0.65) + card(spec.repos[3], 3, 1.05) + card(spec.repos[4], 4, 1.45);
+    const nextEp = String(spec.episode + 1).padStart(2, '0');
+    document.getElementById('next').textContent =
+      'Besok giliran repo skill ' + spec.next + ', edisi #' + nextEp + ', jam 21:30.';
+  };
+  window.renderAt = function(t) {
+    const si = Math.min(4, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 5; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+Desain AI yang nggak kelihatan buatan mesin.
+
+Hallmark itu skill desain buat Claude Code, Cursor, Codex, dan OpenCode. 48 tema material, Sloplint yang ngecek hasil di browser asli, dan redesign tanpa merusak wiring. Gratis, lisensi MIT.
+
+Install: npx skills add nutlope/hallmark -g
+
+Hasil AI kamu paling ketahuan slop di bagian apa? Ceritain di komentar. Save dulu biar nggak nyari lagi pas butuh. Link repo lengkap ada di komentar.
+
+#Hallmark #AIDesign #ClaudeCode #Cursor #Codex #OpenCode #AntiAISlop #WebDesign #DeveloperIndonesia #PekaAI

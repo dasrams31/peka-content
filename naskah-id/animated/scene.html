@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #FAF5EC; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #FAF5EC; overflow: hidden; }
+  .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
+  .hairline { height: 3px; background: #D2CBBC; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 26px; }
+  .kicker { font-family: DejaVuMonoB; font-size: 34px; color: #141414; letter-spacing: 1px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .chip { width: 84px; height: 84px; background: #141414; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+  .chip img { width: 62px; height: 62px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #141414; }
+  .amberbar { width: 120px; height: 12px; background: #E8A34C; margin-top: 110px; }
+  h1 { font-family: PoppinsXB; font-size: 100px; line-height: 1.08; color: #141414; margin-top: 36px; }
+  h2 { font-family: PoppinsXB; font-size: 92px; line-height: 1.08; color: #141414; margin-top: 60px; }
+  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.45; color: #141414; margin-top: 44px; }
+  .badges { display: flex; gap: 28px; margin-top: 56px; }
+  .badge { border: 4px solid #141414; border-radius: 60px; padding: 22px 40px; font-family: PoppinsSB; font-size: 40px; color: #141414; }
+  .cta { font-family: DejaVuMonoB; font-size: 38px; color: #2B4FE0; margin-top: 70px; }
+  .tell { display: flex; gap: 26px; margin-top: 48px; align-items: flex-start; }
+  .dot { width: 26px; height: 26px; background: #E8A34C; border-radius: 50%; flex-shrink: 0; margin-top: 16px; }
+  .tell p { font-family: DejaVu; font-size: 44px; line-height: 1.4; color: #141414; }
+  .row { display: flex; gap: 30px; margin-top: 56px; }
+  .num { font-family: DejaVuMonoB; font-size: 48px; color: #E8A34C; flex-shrink: 0; }
+  .row h3 { font-family: PoppinsB; font-size: 52px; color: #141414; line-height: 1.2; }
+  .row p { font-family: DejaVu; font-size: 40px; color: #6E695F; line-height: 1.45; margin-top: 12px; }
+  .cmd { background: #181818; border-radius: 28px; padding: 34px 36px; margin-top: 10px; }
+  .cmd span { font-family: DejaVuMonoB; font-size: 32px; color: #FAF5EC; }
+  .q { font-family: PoppinsB; font-size: 46px; line-height: 1.35; color: #141414; margin-top: 44px; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #6E695F; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #E8A34C; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- SCENE 1 : cover -->
+  <div class="scene" id="s1">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">SKILL BARU DARI<br>KREATOR INDONESIA</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <div class="amberbar" data-grow="0.30,0.50,120"></div>
+    <h1>
+      <span data-in="0.45,0.50,0,70" style="display:block">Naskah Indonesia</span>
+      <span data-in="0.60,0.50,0,70" style="display:block">yang nggak</span>
+      <span data-in="0.75,0.50,0,70" style="display:block">kedengeran</span>
+      <span data-in="0.90,0.50,0,70" style="display:block">terjemahan AI.</span>
+    </h1>
+    <p class="sub" data-in="1.25,0.50,0,40">Skill agen AI buat nulis dan nyunting karya ilmiah.</p>
+    <div class="badges">
+      <div class="badge" data-pop="1.60,0.40">81 stars</div>
+      <div class="badge" data-pop="1.75,0.40">MIT</div>
+    </div>
+    <div class="cta" data-in="2.05,0.50,0,30">GESER BUAT BEDAHNYA</div>
+  </div>
+
+  <!-- SCENE 2 : tanda bahasa AI kaku -->
+  <div class="scene" id="s2" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">NASKAH-ID</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.50,0,60">Kenapa ini<br>beda?</h2>
+    <div class="tell" data-in="0.70,0.45,60,0"><div class="dot"></div><p>Di era digital ini, tidak dapat dipungkiri bahwa...</p></div>
+    <div class="tell" data-in="0.95,0.45,60,0"><div class="dot"></div><p>Dari hasil analisis menunjukkan bahwa...</p></div>
+    <div class="tell" data-in="1.20,0.45,60,0"><div class="dot"></div><p>...di mana kelompok tani memainkan peran penting...</p></div>
+    <p class="sub" data-in="1.70,0.50,0,40">Lima tanda kayak gini yang dibetulkan, tanpa mengubah isi.</p>
+  </div>
+
+  <!-- SCENE 3 : proteksi -->
+  <div class="scene" id="s3" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">NASKAH-ID</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.50,0,60">Proteksinya</h2>
+    <div class="row" data-in="0.70,0.45,60,0">
+      <div class="num">01</div>
+      <div><h3>Nggak ngarang data atau rujukan</h3><p>Yang belum terverifikasi ditulis [PERLU RUJUKAN].</p></div>
+    </div>
+    <div class="row" data-in="1.05,0.45,60,0">
+      <div class="num">02</div>
+      <div><h3>Nolak joki skripsi utuh</h3><p>Juga nolak permintaan nyamarin hasil AI dari detektor.</p></div>
+    </div>
+    <div class="row" data-in="1.40,0.45,60,0">
+      <div class="num">03</div>
+      <div><h3>Penulis tetap manusia</h3><p>AI nggak dicantumkan sebagai penulis.</p></div>
+    </div>
+  </div>
+
+  <!-- SCENE 4 : install -->
+  <div class="scene" id="s4" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">NASKAH-ID</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.45,0,60">Cobain sendiri</h2>
+    <div class="cmd" data-in="0.70,0.50,0,50"><span>npx skills add nothinx/naskah-id -g</span></div>
+    <p class="sub" data-in="1.10,0.50,0,40">Gratis, lisensi MIT. Buat Claude Code, Codex, Cursor, dan banyak agen lain.</p>
+    <p class="q" data-in="1.55,0.50,0,40">Kalimat AI apa yang paling sering kamu temui di naskah?</p>
+  </div>
+
+  <div class="scene" id="s5" style="display:none">
+    <div class="hairline"></div>
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">NASKAH-ID</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <div class="chip"><img src="assets/mascot-p.png"></div><span>peka.ai.id</span>
+      </div>
+    </div>
+    <h2 data-in="0.30,0.50,0,60">Follow dan<br>gabung.</h2>
+    <p class="sub" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>
+    <p class="sub" data-in="1.10,0.50,0,40">Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.</p>
+    <p class="sub" data-in="1.40,0.50,0,40">Save dan share biar makin banyak yang kebantu.</p>
+  </div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 3.75, TOTAL = 18.75;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  window.renderAt = function(t) {
+    const si = Math.min(4, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 5; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    scene.querySelectorAll('[data-pop]').forEach(el => {
+      const [d, dur] = el.dataset.pop.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `scale(${0.7 + 0.3 * p})`;
+    });
+    scene.querySelectorAll('[data-grow]').forEach(el => {
+      const [d, dur, w] = el.dataset.grow.split(',').map(Number);
+      el.style.width = (w * easeOut(clamp01((lt - d) / dur))) + 'px';
+    });
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

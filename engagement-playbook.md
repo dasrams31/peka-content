@@ -106,6 +106,74 @@ follows. Standing rules:
 - BARIS SOSMED SLIDE PENUTUP/BUKTI (2026-10-22, perintah user): baris bawah di slide penutup dan bukti edisi khusus (buzzer_design.social_row) = ikon platform (IG/FB/Threads) TETAP ADA, teksnya cukup "peka.ai.id" TANPA awalan "url." — berlaku untuk semua edisi khusus (buzzer, metaai, warganet, dan berikutnya).
 - AUDIT BENTROK FOOTER (2026-10-22, perintah user): footer teks mulai di y=1015 (skala 1080); tombol GESER (tinggi 78) AMAN maks di y=918 (bawahnya 996). Warganet cover awalnya 942 = bentrok, sudah diperbaiki ke 912 + jendela SS dipendekkan. Store footer: label edisi panjang menabrak "HAL i/n", sudah diperbaiki dengan auto-shrink font (36 turun bertahap sampai muat). Cover HM tema MAJALAH dan TERMINAL memang TANPA kalimat gabung (di majalah tombol GESER-nya di 950 dan ruang bawahnya penuh; di terminal ada ticker) — kalimat gabung tetap ada di slide detail + penutup kedua tema itu. Tema frame, koran, layar, bansos, spill, prompt, buzzer/metaai terverifikasi bersih lewat render contoh.
 
+## ATURAN DUAL-VERSI POST + REELS (2026-10-25, perintah user)
+
+Mulai sekarang, SETIAP konten visual Peka tayang dalam DUA versi di IG
+dan FB secara otomatis, tanpa diminta lagi per edisi:
+
+- Versi POST: carousel/feed post seperti biasa (aturan per pilar tetap).
+- Versi REELS: MODEL ANIMASI (perintah user 2026-10-25, berlaku
+  untuk FB, IG, dan TikTok). Reels adalah motion-graphics beneran:
+  elemen bergerak di dalam scene (headline stagger, badge pop, bar
+  tumbuh, gambar geser masuk), BUKAN slideshow dan BUKAN Ken Burns.
+  Pipeline: desain HTML/CSS vertikal + render frame per frame
+  (Playwright, window.renderAt(t), 24fps) lalu ffmpeg + musik.
+  Template pertama: peka-content/hallmark/animated/ (scene.html +
+  render.py, mendukung scale 1.3333 untuk 2K). Template per pilar
+  lain dibangun mengikuti pola yang sama.
+- Resolusi reels: 2K 1440x2560 (perintah user 2026-10-25), yuv420p,
+  cover dari frame detik ke-1. Slideshow lama (make_reel.sh) hanya
+  jadi fallback kalau render animasi gagal, supaya slot tidak kosong.
+- FYP (FB + IG + TikTok): hook visual dalam 3 detik pertama, durasi
+  15 detik (bagus buat completion rate), TEPAT SATU pertanyaan
+  penutup, ajakan save, hashtag relevan per platform (IG 5-10,
+  TikTok campur #fyp + niche, FB tanpa hashtag), dan ending yang
+  nyambung kalau di-loop. TikTok: file yang sama dipakai manual oleh
+  user; kalau mau kejar audio trending, mute musik file di aplikasi
+  dan pakai sound trending (musik bawaan tetap CC-BY dan aman).
+- ATURAN COPY (perintah user 2026-10-25, berlaku ke depan): kata
+  "mesin" diganti "AI" di semua copy Peka. Tulis "terjemahan AI"
+  dan "buatan AI", bukan "terjemahan mesin" atau "buatan mesin".
+- SLIDE/Scene PENUTUP FOLLOW + KOMUNITAS (perintah user 2026-10-25,
+  berlaku ke depan): setiap carousel ditutup satu slide "Follow dan
+  gabung" (Follow @peka.ai.id di IG/Threads/TikTok + gabung grup WA
+  lewat url.peka.ai.id + save/share), dan setiap reels ditutup satu
+  scene yang sama. Sudah diterapkan di template SPILL dan spotlight
+  naskah-id; generator pilar lain (HM, Prompt, Store, Bansos,
+  Gratisan) menyusul retrofit yang sama.
+- IG: post-feed carousel + post-feed 1 file MP4 + cover = Reels.
+- FB: pages posts create dengan MP4 TERBIT SEBAGAI REEL (terverifikasi
+  2026-10-25: URL facebook.com/reel/), jadi FB dapat carousel post +
+  reel post dari slide yang sama.
+- Musik: CYBERPUNK, BEDA TIAP REELS (perintah user 2026-10-25).
+  Semua reels ke depan pakai lane cyberpunk saja (9 track CC-BY
+  Kevin MacLeod di brand/music/CYBERPUNK_TRACKS.txt: Aitech,
+  Mechanolith, Oppressive Gloom, Volatile Reaction, Crypto,
+  Tech Live, Black Vortex, Vortex, Darkling). Tiap render reels
+  panggil SATU KALI ~/workspace/peka-content/brand/music/pick_reel_track.sh
+  (counter persisten + flock, jadi reels berurutan selalu beda lagu
+  sampai lane 9 lagu itu muter penuh). IG dan FB mempublish file
+  yang sama, jadi satu pick per konten, bukan per platform.
+  Kredit "Music: <Judul> by Kevin MacLeod" ditulis di caption reel
+  (judul = nama file tanpa "-kevin-macleod.mp3", dash jadi spasi,
+  title case). Jangan pakai musik berhak cipta lain. Lagu ceria lama
+  (Carefree, Cheery Monday, dst) sudah pensiun dari rotasi reels.
+- Caption reel: gaya FYP, hook keuntungan pembaca + catatan jujur
+  (deadline, syarat) + ajakan save + TEPAT SATU pertanyaan + hashtag
+  relevan (IG) / tanpa hashtag (FB) + kredit musik.
+- Threads TIDAK berubah: tetap carousel/teks seperti biasa, tidak ada
+  reels lewat tools.
+- Catat media id/link KEDUA versi (post dan reels) di posted.log dan
+  laporan run.
+- CARVE-OUT yang tetap berlaku: (1) Pancingan adalah pilar teks-only
+  tanpa IG, tetap teks di Threads + FB saja, tidak dibuatkan reel.
+  (2) Jualan (Store/Spotlight) TETAP TIDAK KE IG (aturan 2026-10-20):
+  dual-versi untuk jualan hanya berlaku di FB (post + reel), dan
+  Threads seperti biasa. Aturan dual-versi ini TIDAK membatalkan
+  larangan jualan di IG.
+- Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi
+  lama, kecuali user minta backfill eksplisit.
+
 ## ATURAN DARI DATA (2026-10-23, dikunci user)
 
 Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Tencent 0 views di hari yang sama) dan WAJIB dipatuhi semua cron konten:

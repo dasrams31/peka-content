@@ -1,0 +1,10 @@
+PROMPT HARIAN #03: salin prompt ini buat rencana kerja harian yang benar-benar kelar
+Tempel daftar tugasmu, langsung dapat urutan kerja paling berdampak plus estimasi waktunya.
+
+Buatkan rencana kerja harianku untuk [HARI/TANGGAL] dari daftar tugasku: [DAFTAR TUGAS]. Urutkan dari yang paling berdampak, beri estimasi waktu tiap tugas, sisipkan 2 jeda istirahat, dan akhiri dengan 1 tugas kecil pemenang awal biar langsung jalan.
+
+Tugas apa yang paling sering kamu tunda? Ceritain di komentar.
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30.
+
+#PromptAI #Produktivitas #AIUntukKerja #ChatGPT #TipsAI #KerjaEfektif #PekaAI #BelajarAI #AIIndonesia #ManajemenWaktu

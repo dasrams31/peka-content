@@ -1,0 +1,1 @@
+Skill desain yang bikin hasil AI nggak kelihatan buatan mesin: Hallmark. 48 tema material, Sloplint cek di browser asli, redesign tanpa merusak wiring. Install: npx skills add nutlope/hallmark -g. Hasil AI kamu paling ketahuan slop di bagian apa? #AI

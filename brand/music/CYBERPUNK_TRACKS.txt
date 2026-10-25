@@ -1,0 +1,14 @@
+# Reel music lane (active since 2026-10-25, user order: cyberpunk-style,
+# a DIFFERENT track for every reel). One track per reel render, cycling
+# in order via pick_reel_track.sh (persistent counter), NOT per day.
+# All tracks CC-BY Kevin MacLeod (incompetech.com); credit the title
+# in every reel caption.
+aitech-kevin-macleod.mp3
+mechanolith-kevin-macleod.mp3
+oppressive-gloom-kevin-macleod.mp3
+volatile-reaction-kevin-macleod.mp3
+crypto-kevin-macleod.mp3
+tech-live-kevin-macleod.mp3
+black-vortex-kevin-macleod.mp3
+vortex-kevin-macleod.mp3
+darkling-kevin-macleod.mp3

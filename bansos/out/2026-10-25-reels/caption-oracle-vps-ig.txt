@@ -1,0 +1,13 @@
+VPS gratis selamanya, 2 CPU 12 GB RAM, beneran bukan trial.
+
+Oracle Cloud punya paket Always Free: instance Ampere A1 yang gratis selamanya. Caranya: bikin akun di oracle.com/cloud/free, verifikasi pakai kartu debit atau kredit, pilih region yang masih ada kapasitas, bikin instance berlabel Always Free.
+
+Jujur-jujuran: kartunya cuma buat verifikasi, tidak dipotong. Satu akun per orang, dan instance harus dipakai aktif, jangan dianggurin total.
+
+Save dulu biar nggak hilang pas butuh. Kamu mau pakai VPS gratis ini buat apa?
+
+Versi lengkap di blog Peka.
+
+#AI #VPS #VPSgratis #OracleCloud #CloudGratis #ServerGratis #DeveloperIndonesia #SelfHosting
+
+Music: Carefree by Kevin MacLeod

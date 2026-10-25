@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Buatkan rencana kerja harianku untuk [HARI/TANGGAL] dari daftar tugasku: [DAFTAR TUGAS]. Urutkan dari yang paling berdampak, beri estimasi waktu tiap tugas, sisipkan 2 jeda istirahat, dan akhiri dengan 1 tugas kecil pemenang awal biar langsung jalan.
