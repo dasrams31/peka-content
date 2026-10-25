@@ -401,15 +401,21 @@ def slide3(spec):
             "Save postingan ini buat pas daftar nanti",
             "Follow @peka.ai.id, bansos baru tiap ada yang verified",
             "Gabung ke komunitas kami: url.peka.ai.id"]
-    yy = 1180
+    if spec.get("store_cta"):
+        ctas.append(spec["store_cta"])
+    # Edisi dengan CTA tambahan pakai spasi lebih rapat supaya muat.
+    tight = len(ctas) > 4
+    line_h = 78 if tight else 84
+    gap = 36 if tight else 44
+    yy = 1160 if tight else 1180
     for c in ctas:
         cl = wrap(d, c, f(64), 1560)
         d.rectangle([150, yy + 20, 190, yy + 60], fill=INK)
         for ln in cl:
             d.text((245, yy), ln, font=f(64), fill=INK)
-            yy += 84
-        yy += 44
-    d.text((150, S - 190), "Info diverifikasi dari sumber resmi sebelum tayang.",
+            yy += line_h
+        yy += gap
+    d.text((150, S - 160 if tight else S - 190), "Info diverifikasi dari sumber resmi sebelum tayang.",
            font=fr(46), fill=INK)
     return img
 

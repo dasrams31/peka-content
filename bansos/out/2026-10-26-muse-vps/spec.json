@@ -1,1 +1,25 @@
-{"band":"BANSOS VPS + TOKEN MUSE - GRATIS","category":"VPS / AI","fields":{"deadline":"Selama slot masih ada","nilai":"VPS 2 vCPU, RAM 7,7 GB + token Muse 1 miliar","sumber":"muse.ai","untuk":"Buat ngoding, jalanin AI, hosting project"},"out_dir":"/home/hatch/workspace/peka-content/bansos/out/2026-10-26-muse-vps","program":"VPS Gratis + Token Muse","steps":["Download Pawxy di Play Store","Buka app-nya, connect VPN, pilih US","Siapin akun IG buat konfirmasi umur","Masuk muse.ai, isi kode QZMLZ3, token 1 miliar masuk"],"syarat":["Punya akun IG aktif buat konfirmasi umur","VPN wilayah US waktu daftar","Kode QZMLZ3 diisi waktu daftar","Token dan VPS berlaku selama akun aktif"]}
+{
+ "band": "BANSOS VPS + TOKEN MUSE - GRATIS",
+ "category": "VPS / AI",
+ "fields": {
+  "deadline": "Selama slot masih ada",
+  "nilai": "VPS 2 vCPU, RAM 7,7 GB + token Muse 1 miliar",
+  "sumber": "muse.ai",
+  "untuk": "Buat ngoding, jalanin AI, hosting project"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-26-muse-vps",
+ "program": "VPS Gratis + Token Muse",
+ "steps": [
+  "Download Pawxy di Play Store",
+  "Buka app-nya, connect VPN, pilih US",
+  "Siapin akun IG buat konfirmasi umur",
+  "Masuk muse.ai, isi kode QZMLZ3, token 1 miliar masuk"
+ ],
+ "syarat": [
+  "Punya akun IG aktif buat konfirmasi umur",
+  "VPN wilayah US waktu daftar",
+  "Kode QZMLZ3 diisi waktu daftar",
+  "Token dan VPS berlaku selama akun aktif"
+ ],
+ "store_cta": "Kalo gamau ribet, beli aja di store.peka.ai.id"
+}
