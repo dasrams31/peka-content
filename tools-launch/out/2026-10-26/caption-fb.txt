@@ -1,7 +1,7 @@
-86 tools AI open source, tinggal pakai, gratis.
+86 tools AI open source, gratis, tinggal pakai.
 
-Peka Tools sudah live di tools.peka.ai.id. Isinya 86 repo dan skill open source pilihan Peka dalam 8 kategori: Claude, Hermes, OpenCode, OpenClaw, Codex, Antigravity, Desain, dan Buatan Peka. Semua diringkas Bahasa Indonesia dan diverifikasi langsung ke GitHub-nya, lengkap dengan bintang, fork, bahasa, dan lisensi.
+Udah live di tools.peka.ai.id. Isinya 86 repo dan skill open source pilihan Peka dalam 8 kategori: Claude, Hermes, OpenCode, OpenClaw, Codex, Antigravity, Desain, dan Buatan Peka. Udah diringkas Bahasa Indonesia dan dicek langsung ke GitHub-nya, lengkap sama bintang, fork, bahasa, dan lisensi.
 
-Di situsnya kamu bisa cari cepat, filter kategori dan bahasa, urutkan sesuai kebutuhan, simpan bookmark tanpa akun, dan usulkan repo kalau menemukan yang bagus. Kurasi terbaru menambah 58 tools dari ekosistem agen AI.
+Di situsnya tinggal cari, filter kategori sama bahasa, urut sesuai kebutuhan, bookmark tanpa daftar, dan usulin repo kalo nemu yang bagus. Kurasi terbaru nambah 58 tools dari ekosistem agen AI.
 
-Kamu lagi pakai tools AI apa sekarang? Save dan share kalau berguna.
+Kamu sekarang pakai tools AI apa? Save dan share kalo berguna.

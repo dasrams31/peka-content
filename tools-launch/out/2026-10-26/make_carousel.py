@@ -109,7 +109,7 @@ def url_chip(d, y, text="tools.peka.ai.id"):
 # ---- slide 1: cover ----
 img, d = base(1)
 y = headline(d, ["86 tools AI", "open source,", "tinggal pakai."], 430, 178)
-y = sub(d, "Direktori gratis pilihan Peka. Diringkas Bahasa Indonesia, diverifikasi langsung ke GitHub-nya.", y + 40)
+y = sub(d, "Direktori gratis pilihan Peka. Udah diringkas Bahasa Indonesia, udah dicek langsung ke GitHub-nya.", y + 40)
 y = stat_row(d, y + 60, [("86", "tools"), ("8", "kategori"), ("0", "rupiah")])
 url_chip(d, y + 70)
 img.save(f"{OUT}/tools-01.png")
@@ -117,11 +117,11 @@ img.save(f"{OUT}/tools-01.png")
 # ---- slide 2: apa itu ----
 img, d = base(2)
 y = headline(d, ["Bukan sekadar", "daftar link."], 430, 168)
-y = sub(d, "Tiap repo di Peka Tools diringkas Bahasa Indonesia dan dicek langsung ke GitHub-nya. Lengkap dengan bintang, fork, bahasa, dan lisensi.", y + 40)
+y = sub(d, "Tiap repo di Peka Tools udah diringkas Bahasa Indonesia dan dicek langsung ke GitHub-nya. Lengkap sama bintang, fork, bahasa, sama lisensi.", y + 40)
 y = rows(d, y + 60, [
-    ("Ringkasan jujur", "Ditulis dari repo aslinya, tanpa klaim tak terbukti."),
-    ("Angka dari GitHub", "Bintang dan fork diambil saat data disusun."),
-    ("Gratis, tanpa akun", "Buka, cari, simpan bookmark, langsung pakai."),
+    ("Ringkasan jujur", "Ditulis dari repo aslinya, tanpa klaim yang nggak terbukti."),
+    ("Angka dari GitHub", "Bintang dan fork diambil pas data disusun."),
+    ("Gratis, tanpa daftar", "Buka, cari, simpan bookmark, langsung pakai."),
 ])
 img.save(f"{OUT}/tools-02.png")
 
@@ -129,12 +129,12 @@ img.save(f"{OUT}/tools-02.png")
 img, d = base(3)
 y = headline(d, ["8 kategori,", "satu tempat."], 430, 168)
 y = rows(d, y + 50, [
-    ("Claude  23", "Skill, CLI, dan template untuk Claude Code."),
-    ("OpenCode  17", "Plugin, TUI, dan perkakas OpenCode."),
-    ("OpenClaw  14", "Asisten, skill, dan registry OpenClaw."),
-    ("Hermes  13", "Agen, plugin, dan desktop Hermes."),
-    ("Codex  11", "CLI dan perkakas ekosistem Codex."),
-    ("Antigravity  5  ·  Desain  1  ·  Buatan Peka  2", "Plus skill Antigravity dan tools buatan Peka."),
+    ("Claude  23", "Skill, CLI, sama template buat Claude Code."),
+    ("OpenCode  17", "Plugin, TUI, sama perkakas OpenCode."),
+    ("OpenClaw  14", "Asisten, skill, sama registry OpenClaw."),
+    ("Hermes  13", "Agen, plugin, sama desktop Hermes."),
+    ("Codex  11", "CLI sama perkakas ekosistem Codex."),
+    ("Antigravity  5  ·  Desain  1  ·  Buatan Peka  2", "Plus skill Antigravity sama tools buatan Peka."),
 ], row_h=168)
 img.save(f"{OUT}/tools-03.png")
 
@@ -143,9 +143,9 @@ img, d = base(4)
 y = headline(d, ["Cari, saring,", "simpan, usulkan."], 430, 168)
 y = rows(d, y + 50, [
     ("Cari cepat", "Ketik kata kunci, atau tekan tombol / di keyboard."),
-    ("Filter kategori dan bahasa", "Persempit hasil sesuai kebutuhanmu."),
+    ("Filter kategori dan bahasa", "Persempit hasil sesuai kebutuhan kamu."),
     ("Urut sesukamu", "Peringkat, nama A-Z, atau terbaru."),
-    ("Bookmark tanpa akun", "Tersimpan di browser, tidak perlu daftar."),
+    ("Bookmark tanpa daftar", "Tersimpan di browser, nggak perlu daftar."),
     ("Usulkan repo", "Nemu repo bagus? Usulin, nanti direview admin."),
 ])
 img.save(f"{OUT}/tools-04.png")
@@ -153,11 +153,11 @@ img.save(f"{OUT}/tools-04.png")
 # ---- slide 5: 58 baru ----
 img, d = base(5)
 y = headline(d, ["Baru: 58 tools", "agen AI."], 430, 168)
-y = sub(d, "Kurasi terbaru dari ekosistem agen AI yang sedang naik daun. Ini sebagian contohnya:", y + 40)
+y = sub(d, "Kurasi terbaru dari ekosistem agen AI yang lagi naik daun. Ini sebagian contohnya:", y + 40)
 y = rows(d, y + 50, [
     ("openai/codex", "Coding agent terminal resmi dari OpenAI."),
     ("anthropics/claude-code", "Coding agent terminal resmi dari Anthropic."),
-    ("openclaw/openclaw", "Asisten AI self-hosted yang benar-benar bertindak."),
+    ("openclaw/openclaw", "Asisten AI self-hosted yang beneran bertindak."),
     ("obra/superpowers", "Framework skill dan metodologi untuk coding agent."),
     ("openclaw/clawhub", "Registry resmi skill dan plugin OpenClaw."),
 ], row_h=150)
@@ -166,8 +166,8 @@ img.save(f"{OUT}/tools-05.png")
 # ---- slide 6: penutup follow ----
 img, d = base(6)
 y = headline(d, ["Mampir,", "terus simpan."], 430, 178)
-y = sub(d, "Semua tools di atas bisa langsung dibuka dan dipakai gratis. Tidak perlu daftar, tidak perlu bayar.", y + 40)
+y = sub(d, "Semua tools di atas bisa langsung dibuka dan dipakai gratis. Nggak perlu daftar, nggak perlu bayar.", y + 40)
 y = url_chip(d, y + 60)
-y = sub(d, "Follow @peka.ai.id biar tidak ketinggalan edisi baru. Gabung komunitas lewat url.peka.ai.id. Save dan share postingan ini kalau berguna.", y + 70, size=62)
+y = sub(d, "Follow @peka.ai.id biar nggak ketinggalan edisi baru. Gabung komunitas lewat url.peka.ai.id. Save dan share postingan ini kalo berguna.", y + 70, size=62)
 img.save(f"{OUT}/tools-06.png")
 print("done 6 slides")

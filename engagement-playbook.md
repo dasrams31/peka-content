@@ -41,6 +41,21 @@ learnings.md (data-driven lessons) and performance.log (raw metrics).
    engagement bait ("like kalau setuju"), rage bait on SARA or party
    politics. Honest urgency only.
 
+## Model bahasa (standing order from the user, 2026-10-26)
+
+Selalu pakai bahasa santai kayak ngobrol, di SEMUA konten Peka:
+caption, teks slide, teks reels, dan copy lainnya. Referensi:
+caption revisi tools-launch 26 Okt 2026
+(peka-content/tools-launch/out/2026-10-26/caption-*.txt).
+
+- "udah" (bukan "sudah"), "sampe" (bukan "sampai"), "kalo"
+  (bukan "kalau"), "sama" ganti "dan" di daftar, "nggak"
+  (bukan "tidak"). Subjek sering dibuang, kalimat pendek.
+- DILARANG bahasa kaku gaya siaran pers ("sudah live", "berisi",
+  "dilengkapi dengan", "dapat dilakukan", kalimat pasif panjang).
+- Aturan lain tetap berlaku: tanpa em-dash/en-dash, Threads tepat
+  1 #AI, angka jujur, satu pemicu interaksi per caption.
+
 ## Per platform
 
 - Threads: replies are king. End with a question (before the single #AI
