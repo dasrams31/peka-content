@@ -1,0 +1,38 @@
+--- IG_CAROUSEL ---
+RC=0
+STDOUT: {"_meta":{"data":{"fbids":[],"message_ids":[]},"tool_call_id":"call_01a1784c2837750ba69feb25d971238f"},"media_fbid":"18132090043828770"}
+
+IG_CAROUSEL_OK see stdout
+--- IG_REELS ---
+RC=0
+STDOUT: {"_meta":{"data":{"fbids":[],"message_ids":[]},"tool_call_id":"call_01a1784c2837750ba69feb25d971238f"},"media_fbid":"17951095596301282"}
+
+IG_REELS_OK see stdout
+--- THREADS ---
+RC=0
+STDOUT: {"post_id":"18639233866019934"}
+
+--- THREADS_RESOLVE ---
+RC=0
+STDOUT: anpa daftar. Nemu repo bagus? Bisa diusulin juga.\n\nKamu sekarang pakai tools AI apa? AI","post_id":"18639233866019934","profile_picture_url":"https://scontent-den2-1.cdninstagram.com/v/t51.82787-19/852744207_18141756385572134_92130411474738632_n.jpg?_nc_cat=105&ccb=7-5&_nc_sid=30ff31&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xNTAuQzIifQ%3D%3D&_nc_ohc=gC2iJBHiyYAQ7kNvwHujkad&_nc_oc=Adpz82tM16QJe5yk0JwF9X1Beklw8oDBE_yacIGsCjKvt3zNgq_A8xc9F-OA0oyhpVNwWEw7tt6TP5LK_GWC9v52&_nc_zt=24&_nc_ht=scontent-den2-1.cdninstagram.com&_nc_gid=4GdkuY4d-BrOrdwxYsRXzQ&oh=00_AQNPSMiaZ9TRPKMy2hd0MflgDbaQ9_G8wjj5ZadoJfyF8A&oe=6AE52301","profile_url":"https://www.threads.net/@peka.ai.id","rank":1,"source_app":"THREADS","thumbnail_url":"https://scontent-den2-1.cdninstagram.com/v/t51.82787-15/865741833_18144721516572134_5299837950220272511_n.png?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMiJ9&_nc_ohc=ZV1sAqIki0QQ7kNvwELj2_3&_nc_oc=AdoLisOIiiU4aR6CDKhyzSNgKRf3_vdHedaoXUVD9K1ZeWD_mOqjaA2Tvv3CGpCmupaueUS0C3HEorkHnNkUiSWv&_nc_zt=23&_nc_ht=scontent-den2-1.cdninstagram.com&_nc_gid=4GdkuY4d-BrOrdwxYsRXzQ&oh=00_AQM22AdLzu-JZdDa9FxoJe3opqeEW1iKEq01FkUWNKCsCQ&oe=6AE536EF","url":"https://www.threads.com/@peka.ai.id/post/De9V8R-j-Kv","username":"peka.ai.id","visibility":"public","visibility_verified":true}],"retrieved_at":{"user_local":"2026-10-26T20:02:04.623+07:00","user_timezone":"Asia/Jakarta","utc":"2026-10-26T13:02:04.623Z"}}
+
+THREADS_OK https://www.threads.com/@peka.ai.id/post/De9V8R-j-Kv
+--- FB_CAROUSEL ---
+RC=0
+STDOUT: {"_meta":{"data":{"fbids":[61595055513198,1399217353266190,122113970751497807,122113970805497807,122113970853497807,122113970895497807,122113970949497807,122113970997497807,122113971027497807],"message_ids":[]},"tool_call_id":"call_01a1784c2837750ba69feb25d971238f"},"acting_account_id":"61595055513198","media_captions":["","","","","",""],"media_captions_verified":true,"media_ids":["122113970751497807","122113970805497807","122113970853497807","122113970895497807","122113970949497807","122113970997497807"],"page_id":"1399217353266190","post_id":"122113971027497807","post_url":"https://facebook.com/61594934228841/posts/pfbid0mRaekFNXkAvjjZxP4a5eYgXGkYKFMpnMWSSSZ1oYEsmkZPhEB9fZXbmDUo6SNTorl/","request_id":"7ea21b60-3542-49e8-bf80-498700aaf98d","state":"published","text":"86 tools AI open source, gratis, tinggal pakai.\n\nUdah live di tools.peka.ai.id. Isinya 86 repo dan skill open source pilihan Peka dalam 8 kategori: Claude, Hermes, OpenCode, OpenClaw, Codex, Antigravity, Desain, dan Buatan Peka. Udah diringkas Bahasa Indonesia dan dicek langsung ke GitHub-nya, lengkap sama bintang, fork, bahasa, dan lisensi.\n\nDi situsnya tinggal cari, filter kategori sama bahasa, urut sesuai kebutuhan, bookmark tanpa daftar, dan usulin repo kalo nemu yang bagus. Kurasi terbaru nambah 58 tools dari ekosistem agen AI.\n\nKamu sekarang pakai tools AI apa? Save dan share kalo berguna."}
+
+--- FB_CAROUSEL_RESOLVE ---
+RC=0
+STDOUT:  pasting the source text.","posts":[{"comments":0,"created_at":"2026-10-26T13:02:51+00:00","media_type":"enttimelinestatusphoto","owner_id":"61594934228841","owner_name":"Peka AI","platform":"facebook","post_caption":"86 tools AI open source, gratis, tinggal pakai.\n\nUdah live di tools.peka.ai.id. Isinya 86 repo dan skill open source pilihan Peka dalam 8 kategori: Claude, Hermes, OpenCode, OpenClaw, Codex, Antigravity, Desain, dan Buatan Peka. Udah diringkas Bahasa Indonesia dan dicek langsung ke GitHub-nya, lengkap sama bintang, fork, bahasa, dan lisensi.\n\nDi situsnya tinggal cari, filter kategori sama bahasa, urut sesuai kebutuhan, bookmark tanpa daftar, dan usulin repo kalo nemu yang bagus. Kurasi terbaru nambah 58 tools dari ekosistem agen AI.\n\nKamu sekarang pakai tools AI apa? Save dan share kalo berguna.","post_created_at":{"user_local":"2026-10-26T20:02:51.000+07:00","user_timezone":"Asia/Jakarta","utc":"2026-10-26T13:02:51.000Z"},"post_id":"122113971027497807","profile_url":"https://facebook.com/peka.ai.id","rank":1,"source_app":"FACEBOOK","thumbnail_url":"https://www.facebook.com/photo.php?fbid=122113970751497807&set=a.122101187097497807&type=3","url":"https://facebook.com/61594934228841/posts/pfbid0mRaekFNXkAvjjZxP4a5eYgXGkYKFMpnMWSSSZ1oYEsmkZPhEB9fZXbmDUo6SNTorl/","username":"Peka AI","visibility":"public","visibility_verified":true}],"retrieved_at":{"user_local":"2026-10-26T20:02:57.628+07:00","user_timezone":"Asia/Jakarta","utc":"2026-10-26T13:02:57.628Z"}}
+
+FB_CAROUSEL_OK 122113971027497807
+--- FB_REELS ---
+RC=0
+STDOUT: {"_meta":{"data":{"fbids":[61595055513198,1399217353266190,1488011496716812,122113971147497807],"message_ids":[]},"tool_call_id":"call_01a1784c2837750ba69feb25d971238f"},"acting_account_id":"61595055513198","media_captions":["86 tools AI open source, gratis, tinggal pakai.\n\nSemuanya ada di tools.peka.ai.id, udah diringkas Bahasa Indonesia dan dicek ke GitHub-nya. Tinggal cari, filter, bookmark tanpa daftar, gratis.\n\nKamu sekarang pakai tools AI apa? Save dan share kalo berguna.\n\nMusic: Vortex by Kevin MacLeod"],"media_captions_verified":true,"media_ids":["1488011496716812"],"page_id":"1399217353266190","post_id":"122113971147497807","post_url":"https://facebook.com/reel/1488011496716812/","request_id":"2bb4ed1f-6f48-4aac-baa9-f509da651836","state":"published","text":"86 tools AI open source, gratis, tinggal pakai.\n\nSemuanya ada di tools.peka.ai.id, udah diringkas Bahasa Indonesia dan dicek ke GitHub-nya. Tinggal cari, filter, bookmark tanpa daftar, gratis.\n\nKamu sekarang pakai tools AI apa? Save dan share kalo berguna.\n\nMusic: Vortex by Kevin MacLeod"}
+
+--- FB_REELS_RESOLVE ---
+RC=0
+STDOUT: ,122113971147497807],"message_ids":[]},"tool_call_id":"call_01a1784c2837750ba69feb25d971238f"},"count":1,"format":"social_posts_v1","has_next_page":false,"model_response_guidance":"Above are the raw results. Summarize or synthesize them for the user instead of copying them. Do not reproduce raw content verbatim in any file, HTML, JavaScript, or other web artifact you create from these results. If the user asks you to save or show the results, write a concise summary or extracted facts rather than pasting the source text.","posts":[{"comments":0,"created_at":"2026-10-26T13:03:05+00:00","media_type":"entfbstatusupdatevideo","owner_id":"61594934228841","owner_name":"Peka AI","platform":"facebook","post_caption":"86 tools AI open source, gratis, tinggal pakai.\n\nSemuanya ada di tools.peka.ai.id, udah diringkas Bahasa Indonesia dan dicek ke GitHub-nya. Tinggal cari, filter, bookmark tanpa daftar, gratis.\n\nKamu sekarang pakai tools AI apa? Save dan share kalo berguna.\n\nMusic: Vortex by Kevin MacLeod","post_created_at":{"user_local":"2026-10-26T20:03:05.000+07:00","user_timezone":"Asia/Jakarta","utc":"2026-10-26T13:03:05.000Z"},"post_id":"122113971147497807","profile_url":"https://facebook.com/peka.ai.id","rank":1,"source_app":"FACEBOOK","thumbnail_url":"/reel/1488011496716812/","url":"https://facebook.com/reel/1488011496716812/","username":"Peka AI"}],"retrieved_at":{"user_local":"2026-10-26T20:03:08.215+07:00","user_timezone":"Asia/Jakarta","utc":"2026-10-26T13:03:08.215Z"}}
+
+FB_REELS_OK 122113971147497807
+DONE
