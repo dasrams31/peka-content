@@ -59,7 +59,9 @@ or the review cannot judge it (lesson from the 25 Okt review).
    file is real).
 
 3. Gratisan AI (Wed 2026-10-28, 14:00, Hari Sumpah Pemuda).
-   Audience-segment test. Pillar Gratisan AI. Variable: offer =
+   Audience-segment test. Pillar Gratisan AI. USER APPROVED 26 Okt:
+   topic 3 (Google AI Plus gratis setahun buat mahasiswa) is the
+   locked student-segment offer for this edition. Variable: offer =
    segmented for Indonesian students (Google AI Plus gratis setahun
    buat mahasiswa, campus tour angle) vs a general free tool for
    everyone (the Copilot Free control, which scored Threads 15
