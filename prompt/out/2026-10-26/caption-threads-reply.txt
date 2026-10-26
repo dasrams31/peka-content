@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Buatkan paragraf pembuka untuk [TOPIK TULISANKU] buat pembaca [TARGET PEMBACA]. Pakai 1 kalimat pembuka yang mengejutkan atau relatable, lanjutkan dengan janji manfaat yang didapat pembaca, dan akhiri dengan kalimat yang bikin penasaran lanjut baca. Maksimal 120 kata, gaya santai.
