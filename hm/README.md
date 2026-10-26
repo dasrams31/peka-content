@@ -62,3 +62,30 @@ list that nothing went out before any retry.
 - `hm/news.db` — SQLite items (url UNIQUE, used flag, score)
 - `hm/out/YYYY-MM-DD/` — carousel PNGs per run
 - `hm/review/` — reserved for manual review mode (currently unused, full-auto)
+
+## ATURAN SHORTLINK (terkunci, perintah user 27 Okt 2026)
+
+Mulai sekarang, SEMUA link yang akan dishare di edisi Homeless Media WAJIB
+dipendekkan dulu lewat shortlink Peka (s.peka.ai.id) SEBELUM masuk ke desain
+dan caption. Berlaku untuk semua permukaan: slide carousel, caption IG,
+rantai Threads, teks FB, dan blog.
+
+Cara kerja di tiap run HM:
+
+1. Kumpulkan dulu semua link yang akan dishare di edisi itu (link sumber
+   berita, link blog Peka, dan link lain apa pun yang tampil ke publik).
+2. Pendekkan tiap link lewat API shortlink lokal:
+   `POST http://127.0.0.1:8095/api/shorten` dengan body
+   `{"url": "<url-panjang>", "slug": "<slug-bebas-opsional>"}`.
+   Pakai jalur tamu lokal (limit 5 link/IP/hari di bucket localhost, cukup
+   untuk 1-2 link per edisi). Simpan pasangan url-panjang -> short-url di
+   folder out edisi itu (misalnya `shortlinks.json`) agar bisa dilacak.
+3. Yang tampil di desain (teks slide) dan caption (IG/Threads/FB/blog)
+   HANYALAH versi pendek s.peka.ai.id. URL panjang TIDAK BOLEH tampil ke
+   publik di edisi HM mana pun.
+4. Bila API shortlink gagal atau limit tercapai, run BERHENTI sebelum
+   posting dan laporkan ke user. Jangan posting dengan URL panjang sebagai
+   jalan pintas.
+
+Aturan ini berlaku mulai edisi HM berikutnya setelah reaktivasi 2 Nov 2026
+(HM sedang jeda 26 Okt-1 Nov) dan seterusnya, kecuali user mengubahnya.
