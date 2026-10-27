@@ -74,10 +74,24 @@ class Renderer:
         img = Image.new("RGB", (W, H), BG)
         d = ImageDraw.Draw(img)
         d.text((MARGIN, 96), self.s["series"], font=mono(34), fill=GOLD)
-        d.text((W - MARGIN - 320, 96), f"EDISI {self.s['episode']}",
-               font=mono(34), fill=MUTED)
+        # Peka lockup top-right: yellow P mascot (black keyed out) + wordmark
+        mas = Image.open("/home/hatch/workspace/peka-logo/mascot-p.png").convert("RGB")
+        alpha = mas.convert("L").point(lambda v: 255 if v > 60 else 0)
+        bbox = alpha.getbbox()
+        mas = mas.crop(bbox)
+        alpha = alpha.crop(bbox)
+        mh = 54
+        mw = int(mas.width * mh / mas.height)
+        mas = mas.resize((mw, mh))
+        alpha = alpha.resize((mw, mh))
+        wfont = sans(40, bold=True)
+        wtxt = "peka.ai.id"
+        tw = d.textlength(wtxt, font=wfont)
+        lx = W - MARGIN - (mw + 16 + int(tw))
+        img.paste(mas, (lx, 88), alpha)
+        d.text((lx + mw + 16, 96), wtxt, font=wfont, fill=CREAM)
         d.line([(MARGIN, H - 190), (W - MARGIN, H - 190)], fill=GOLD, width=2)
-        d.text((MARGIN, H - 140), "PEKA.AI.ID", font=mono(30), fill=MUTED)
+        d.text((MARGIN, H - 140), f"EDISI {self.s['episode']}", font=mono(30), fill=MUTED)
         d.text((W - MARGIN - 200, H - 140), f"{page:02d} / {total:02d}",
                font=mono(30), fill=MUTED)
         return img, d
@@ -106,12 +120,23 @@ class Renderer:
                 from PIL import Image as _Image
                 box = (MARGIN, 420, W - MARGIN, 1300)
                 d.rectangle(box, outline=GOLD, width=2, fill=PANEL)
+                # browser window title bar: exit / minimize / maximize + URL
+                d.rectangle([box[0], box[1], box[2], box[1] + 90], fill=(26, 26, 30))
+                d.line([(box[0], box[1] + 90), (box[2], box[1] + 90)], fill=GOLD, width=2)
+                for i, col in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
+                    cx = box[0] + 44 + i * 60
+                    d.ellipse([cx - 18, box[1] + 45 - 18, cx + 18, box[1] + 45 + 18],
+                              fill=col)
+                url = s.get("url", "")
+                uf = mono(30)
+                d.text(((box[0] + box[2]) / 2 - d.textlength(url, font=uf) / 2,
+                        box[1] + 28), url, font=uf, fill=MUTED)
                 im = _Image.open(s["image"]).convert("RGB")
-                bw, bh = box[2] - box[0], box[3] - box[1]
+                bw, bh = box[2] - box[0], box[3] - (box[1] + 90)
                 sc = min(bw / im.width, bh / im.height)
                 im = im.resize((int(im.width * sc), int(im.height * sc)))
                 img.paste(im, (box[0] + (bw - im.width) // 2,
-                               box[1] + (bh - im.height) // 2))
+                               box[1] + 90 + (bh - im.height) // 2))
                 y = 1380
                 for para in s["why"]:
                     y = self.body(d, y, para, size=56, lh=84) + 40

@@ -20,6 +20,6 @@ python3 repo_week.py specs/<repo>.json out/
 ## Slide
 
 1. Cover: nama repo serif raksasa + hook + stats + URL GitHub.
-2. Kenapa repo ini: 2 paragraf penjelasan.
+2. Kenapa repo ini: screenshot repo dalam bingkai jendela browser (titik exit/minimize/maximize + URL) + penjelasan singkat. Tanpa `image` di spec, slide ini jadi 2 paragraf teks saja.
 3. Install: panel terminal + COCOK BUAT.
 4. Closing: edisi + follow + komunitas.
