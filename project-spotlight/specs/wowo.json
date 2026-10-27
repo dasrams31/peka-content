@@ -1,0 +1,91 @@
+{
+  "project": "KATA WOWO",
+  "domain": "wowo.peka.ai.id",
+  "slug": "wowo",
+  "slides": [
+    {
+      "type": "cover",
+      "title": [
+        "KATA",
+        "WOWO"
+      ],
+      "highlight": "Berapa persen pidato Wowo itu janji?",
+      "body": "Bedah pidato Presiden Prabowo, per kalimat. Papan skor pidato yang bisa kamu cek sendiri."
+    },
+    {
+      "type": "text",
+      "title": [
+        "Papan skor",
+        "pidato."
+      ],
+      "body": [
+        "Kata Wowo membedah pidato Presiden Prabowo kalimat per kalimat. Tiap kalimat diberi label, lalu dipetakan ke detik videonya, jadi kamu bisa cek sendiri ucapan itu muncul di menit ke berapa.",
+        {
+          "text": "Analisis oleh Jev AI dari TypeSafe AI.",
+          "size": 44,
+          "lh": 64
+        }
+      ]
+    },
+    {
+      "type": "chips",
+      "title": [
+        "6 label buat",
+        "tiap kalimat."
+      ],
+      "items": [
+        "JANJI",
+        "KLAIM DATA",
+        "CERITA",
+        "KRITIK",
+        "AJAKAN",
+        "SEREMONIAL"
+      ],
+      "footnote": "Satu kalimat, satu label. Tidak ada kalimat yang lolos tanpa kategori."
+    },
+    {
+      "type": "steps",
+      "title": [
+        "Tempel link,",
+        "langsung dibedah."
+      ],
+      "items": [
+        "Tempel link YouTube pidato Prabowo.",
+        "Pastikan ada subtitle bahasa Indonesia. Subtitle otomatis pun cukup.",
+        "Tiap kalimat keluar dengan label dan detik videonya."
+      ]
+    },
+    {
+      "type": "stats",
+      "title": [
+        "9 pidato sudah",
+        "dianalisis."
+      ],
+      "highlight": "2.709 kalimat.",
+      "rows": [
+        [
+          "Nota Keuangan dan RAPBN 2027",
+          "893 kalimat"
+        ],
+        [
+          "Sidang Tahunan MPR 2026",
+          "630 kalimat"
+        ],
+        [
+          "Hari Buruh Internasional",
+          "234 kalimat"
+        ]
+      ],
+      "footnote": "Plus 6 pidato lainnya di arsip."
+    },
+    {
+      "type": "cta",
+      "title": [
+        "Coba",
+        "sendiri."
+      ],
+      "body": "Buka wowo.peka.ai.id, tempel link YouTube pidato, dan lihat sendiri kalimat mana yang janji.",
+      "follow": "Follow @peka.ai.id dan gabung ke komunitas kami di url.peka.ai.id."
+    }
+  ]
+}
