@@ -1,0 +1,15 @@
+{
+  "agent": "DESIGN",
+  "date": "2026-10-28",
+  "next": "berikutnya",
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-10-28-huashu",
+  "repos": [
+    {
+      "cocok": "Cocok buat kamu yang sering bikin deck, landing page, dan prototipe buat presentasi atau launching produk tanpa tim desain.",
+      "desc": "Huashu Design itu skill desain buat agent AI, ketik satu kalimat, pulang bawa desain yang bisa langsung dipakai. Kamu bisa bikin web, prototipe App yang bisa diklik, PPT yang masih bisa diedit, sampai animasi dan infografik, tanpa buka Figma. Agent bikin 6 thumbnail dulu, lalu 3 arah terbaik yang dikembangin jadi desain beneran. Ada 84 gaya dengan contohnya, dan bacaan aset brand biar hasilnya nyambung, bukan template generik.",
+      "install": "npx skills add alchaincyf/huashu-design",
+      "name": "alchaincyf/huashu-design",
+      "stars": "27RB"
+    }
+  ]
+}
