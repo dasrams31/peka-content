@@ -27,13 +27,9 @@
   .win .titlebar { background: #000000; height: 84px; display: flex; align-items: center; gap: 14px; padding: 0 32px; }
   .win .dot { width: 26px; height: 26px; border-radius: 50%; }
   .win .titlebar .tname { font-family: DejaVuMono; font-size: 30px; color: #AAAAAA; margin-left: 14px; white-space: nowrap; overflow: hidden; }
-  .win .body { padding: 40px 40px 44px 40px; }
-  .win .rname { color: #161616; line-height: 1.15; }
-  .win .rname .owner { font-family: PoppinsSB; color: #3C3C3C; }
-  .win .rname .repo { font-family: PoppinsXB; }
-  .win .desc { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #555555; margin-top: 28px; }
-  .win .stars { font-family: PoppinsB; font-size: 40px; color: #161616; margin-top: 36px; }
-  .win .stars span { font-family: PoppinsSB; font-size: 28px; color: #999999; margin-left: 8px; }
+  .win .body { padding: 0; }
+  .win .og { display: block; width: 100%; }
+  .penjelasan { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #333333; margin-top: 36px; }
   .term { background: #14141A; border-radius: 22px; margin-top: 36px; padding: 26px 32px 32px 32px; }
   .term .thead { display: flex; align-items: center; gap: 12px; }
   .term .tdot { width: 20px; height: 20px; border-radius: 50%; }
@@ -119,17 +115,12 @@
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   function clamp01(x) { return Math.max(0, Math.min(1, x)); }
   function winCard(r, d) {
-    const [owner, repo] = r.name.split('/');
-    const size = Math.min(54, Math.floor(872 / (r.name.length * 0.62)));
     return '<div class="win" data-in="' + d + ',0.55,0,80">' +
       '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
       '<span class="dot" style="background:#FEBC2E"></span>' +
       '<span class="dot" style="background:#28C840"></span>' +
       '<span class="tname">' + r.name + '</span></div>' +
-      '<div class="body"><div class="rname" style="font-size:' + size + 'px">' +
-      '<span class="owner">' + owner + '/</span><span class="repo">' + repo + '</span></div>' +
-      '<div class="desc">' + r.short + '</div>' +
-      '<div class="stars">' + r.stars + '<span>Stars di GitHub</span></div></div></div>' +
+      '<div class="body"><img class="og" src="assets/' + r.shot + '"></div></div>' +
       '<div class="term" data-in="' + (d + 0.45) + ',0.50,0,50">' +
       '<div class="thead"><span class="tdot" style="background:#FF5F57"></span>' +
       '<span class="tdot" style="background:#FEBC2E"></span>' +
@@ -137,7 +128,8 @@
       '<span class="tlabel">terminal</span></div>' +
       '<div class="cmd"><span class="prompt">$ </span><span class="typed" data-cmd="' +
       r.install.replace(/"/g, '&quot;') + '" data-start="1.15"></span>' +
-      '<span class="cursor"></span></div></div>';
+      '<span class="cursor"></span></div></div>' +
+      '<div class="penjelasan" data-in="' + (d + 0.9) + ',0.50,0,40">' + r.short + '</div>';
   }
   window.buildScene = function(spec) {
     const ep = String(spec.episode).padStart(2, '0');
