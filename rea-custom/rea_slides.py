@@ -49,8 +49,11 @@ def base(page):
     # Top bar over hex.
     d.rectangle([0, 0, W, 220], fill=BG)
     d.text((MX, 110), "REPO OF THE DAY", font=mono(34), fill=GREEN)
-    d.text((W - MX - d.textlength("peka.ai.id", font=F("Poppins-Bold.ttf", 40)), 110),
-           "peka.ai.id", font=F("Poppins-Bold.ttf", 40), fill=(255, 255, 255))
+    _lock = Image.open(os.path.join(BASE, "peka-lockup-white-text.png")).convert("RGBA")
+    _lh = 96
+    _lw = int(_lock.width * _lh / _lock.height)
+    _lock = _lock.resize((_lw, _lh), Image.LANCZOS)
+    img.paste(_lock, (W - MX - _lw, 82), _lock)
     d.line([(MX, H - 180), (W - MX, H - 180)], fill=HAIR, width=2)
     d.text((MX, H - 140), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
            font=mono(30), fill=MUTED)
