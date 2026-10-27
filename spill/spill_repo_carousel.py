@@ -189,6 +189,15 @@ def enrich(repo):
             ireq = urllib.request.Request(m.group(1), headers=UA)
             with urllib.request.urlopen(ireq, timeout=20) as resp:
                 out["og"] = Image.open(io.BytesIO(resp.read())).convert("RGB")
+            # best-effort day cache so the reel step reuses this shot
+            # instead of re-downloading (opengraph rate-limits bursts)
+            try:
+                import datetime
+                cdir = f"/tmp/spill-shots/{datetime.date.today().isoformat()}"
+                os.makedirs(cdir, exist_ok=True)
+                out["og"].save(os.path.join(cdir, full.replace("/", "-") + ".png"))
+            except Exception:
+                pass
     except Exception as exc:
         print(f"warn: og image failed for {full}: {exc}")
     if not repo.get("install"):
@@ -303,15 +312,15 @@ def repo_slide(spec, idx, repo):
     TITLE_H = 92
     if en["og"]:
         # real GitHub social card inside the window
-        og = en["og"].resize((1400, 700), Image.LANCZOS)
-        WH = TITLE_H + 700
+        og = en["og"].resize((1200, 600), Image.LANCZOS)
+        WH = TITLE_H + 600
         win = Image.new("RGB", (WW, WH), (255, 255, 255))
         wd = ImageDraw.Draw(win)
         wd.rectangle([0, 0, WW - 1, TITLE_H - 1], fill=(0, 0, 0))
         for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
             wd.ellipse([48 + i * 60, 30, 48 + i * 60 + 36, 66], fill=c)
         wd.text((240, 26), repo["name"], font=_mono(42), fill=(170, 170, 170))
-        win.paste(og, ((WW - 1400) // 2, TITLE_H))
+        win.paste(og, ((WW - 1200) // 2, TITLE_H))
     else:
         # drawn fallback (same info, no screenshot)
         BODY_PAD, AVATAR = 76, 280
