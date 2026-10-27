@@ -114,26 +114,26 @@ def scene(t):
 
     if t < 3:
         st = t
-        for ov in [text_in(d, (80, 620), "SATU KALIMAT.", F("Poppins-ExtraBold.ttf", 96), INK, st, 0.2),
-                   text_in(d, (80, 740), "JADI DESAIN.", F("Poppins-ExtraBold.ttf", 96), RED, st, 0.5)]:
+        for ov in [text_in(d, (80, 620), "Ketik satu kalimat,", F("Poppins-ExtraBold.ttf", 80), INK, st, 0.2),
+                   text_in(d, (80, 730), "jadi desain.", F("Poppins-ExtraBold.ttf", 80), RED, st, 0.5)]:
             img.alpha_composite(ov)
         d = ImageDraw.Draw(img)
-        d.text((80, 880), "Huashu Design, skill desain buat agent AI.",
+        d.text((80, 860), "Ini Huashu Design. Kamu ketik, dia yang gambar.",
                font=F("Poppins-SemiBold.ttf", 40), fill=MUTED + (255,))
         hero = HOKUSAI.copy()
         img.paste(hero, (80, 990), hero)
         d = ImageDraw.Draw(img)
-        d.text((80, 1600), "Hasil beneran: web pameran Hokusai.",
+        d.text((80, 1600), "Contoh: web pameran Hokusai.",
                font=F("Poppins-SemiBold.ttf", 36), fill=INK + (255,))
-        d.text((80, 1660), "27RB star  •  MIT, gratis",
+        d.text((80, 1660), "Disukai 27 ribu orang  •  Gratis",
                font=F("Poppins-Bold.ttf", 36), fill=RED + (255,))
     elif t < 7:
         st = t - 3
-        for ov in [text_in(d, (80, 300), "INI HASILNYA,", F("Poppins-ExtraBold.ttf", 96), INK, st, 0.1),
-                   text_in(d, (80, 420), "BUKAN MOCKUP.", F("Poppins-ExtraBold.ttf", 96), RED, st, 0.4)]:
+        for ov in [text_in(d, (80, 300), "Ini contoh", F("Poppins-ExtraBold.ttf", 96), INK, st, 0.1),
+                   text_in(d, (80, 420), "hasil aslinya.", F("Poppins-ExtraBold.ttf", 96), RED, st, 0.4)]:
             img.alpha_composite(ov)
         d = ImageDraw.Draw(img)
-        d.text((80, 560), "Ini hasil beneran dari repo-nya.",
+        d.text((80, 560), "Bukan gambar tempelan, ini beneran jadi.",
                font=F("Poppins-SemiBold.ttf", 38), fill=MUTED + (255,))
         d.text((80, 600), "Web Hokusai, atas. App Mingji, bawah.",
                font=F("Poppins-Bold.ttf", 34), fill=INK + (255,))
@@ -141,11 +141,11 @@ def scene(t):
             img.paste(im, (80, y), im)
     elif t < 11:
         st = t - 7
-        d.text((80, 300), "6 JADI 3,", font=F("Poppins-ExtraBold.ttf", 96), fill=INK + (255,))
-        d.text((80, 420), "LALU PILIH.", font=F("Poppins-ExtraBold.ttf", 96), fill=RED + (255,))
-        steps = [("01", "Ketik satu kalimat", "Web, App, PPT, animasi. Tanpa Figma."),
-                 ("02", "Agent bikin 6 thumbnail", "3 yang paling beda, dibikin beneran."),
-                 ("03", "Pilih dan pakai", "84 gaya, plus bacaan aset brand.")]
+        d.text((80, 300), "Dari 6 pilihan,", font=F("Poppins-ExtraBold.ttf", 96), fill=INK + (255,))
+        d.text((80, 420), "jadi 3.", font=F("Poppins-ExtraBold.ttf", 96), fill=RED + (255,))
+        steps = [("01", "Ketik yang kamu mau", "Web, App, PPT, animasi. Nggak perlu Figma."),
+                 ("02", "Dibuatkan 6 contoh dulu", "3 yang paling beda, dibuat sampai jadi."),
+                 ("03", "Tinggal pilih yang kamu suka", "Ada 84 gaya, bisa disesuaikan sama gayamu.")]
         y = 620
         for i, (num, title, body) in enumerate(steps):
             ov = text_in(d, (80, y), num, F("Poppins-ExtraBold.ttf", 72), RED, st, 0.2 + i * 0.7)
@@ -155,32 +155,32 @@ def scene(t):
                 img.alpha_composite(o)
             y += 230
         d = ImageDraw.Draw(img)
-        d.text((80, 1360), "$ npx skills add alchaincyf/huashu-design",
+        d.text((80, 1360), "Cara pasang: npx skills add alchaincyf/huashu-design",
                font=F("Poppins-Bold.ttf", 34), fill=INDIGO + (255,))
-        d.text((80, 1440), "Buat deck, landing page, dan prototipe.",
+        d.text((80, 1440), "Buat deck, landing page, dan contoh App.",
                font=F("Poppins-Bold.ttf", 38), fill=INK + (255,))
-        d.text((80, 1500), "Tanpa tim desain.",
+        d.text((80, 1500), "Nggak perlu tim desain.",
                font=F("Poppins-Bold.ttf", 38), fill=INK + (255,))
     elif t < 13:
         st = t - 11
-        for ov in [text_in(d, (80, 700), "KAMU MAU", F("Poppins-ExtraBold.ttf", 96), INK, st, 0.1),
-                   text_in(d, (80, 820), "BIKIN APA DULU?", F("Poppins-ExtraBold.ttf", 96), RED, st, 0.4)]:
+        for ov in [text_in(d, (80, 700), "Kamu pengin", F("Poppins-ExtraBold.ttf", 96), INK, st, 0.1),
+                   text_in(d, (80, 820), "bikin apa dulu?", F("Poppins-ExtraBold.ttf", 96), RED, st, 0.4)]:
             img.alpha_composite(ov)
         d = ImageDraw.Draw(img)
-        d.text((80, 980), "Web, App, atau PPT?",
+        d.text((80, 980), "Web, App, atau PPT? Coba komen ya.",
                font=F("Poppins-SemiBold.ttf", 44), fill=MUTED + (255,))
     else:
         st = t - 13
-        for ov in [text_in(d, (80, 700), "FOLLOW", F("Poppins-ExtraBold.ttf", 110), INK, st, 0.1),
-                   text_in(d, (80, 830), "DAN GABUNG.", F("Poppins-ExtraBold.ttf", 110), RED, st, 0.4)]:
+        for ov in [text_in(d, (80, 700), "Follow,", F("Poppins-ExtraBold.ttf", 110), INK, st, 0.1),
+                   text_in(d, (80, 830), "kalau kamu suka.", F("Poppins-ExtraBold.ttf", 90), RED, st, 0.4)]:
             img.alpha_composite(ov)
         d = ImageDraw.Draw(img)
-        d.text((80, 1010), "Follow @peka.ai.id.",
-               font=F("Poppins-SemiBold.ttf", 44), fill=INK + (255,))
-        d.text((80, 1080), "Grup WA: url.peka.ai.id.",
-               font=F("Poppins-SemiBold.ttf", 44), fill=INK + (255,))
-        d.text((80, 1150), "Save dan share buat stok.",
-               font=F("Poppins-SemiBold.ttf", 44), fill=INK + (255,))
+        d.text((80, 1010), "Follow @peka.ai.id, kalau kontennya kepakai.",
+               font=F("Poppins-SemiBold.ttf", 36), fill=INK + (255,))
+        d.text((80, 1080), "Grup WA: url.peka.ai.id, kalau mau ngobrol.",
+               font=F("Poppins-SemiBold.ttf", 36), fill=INK + (255,))
+        d.text((80, 1150), "Save dulu, biar gampang dicari lagi.",
+               font=F("Poppins-SemiBold.ttf", 36), fill=INK + (255,))
     # Waves at the bottom, petals on top.
     d = ImageDraw.Draw(img)
     wave(d, t, H - 150, 26, INDIGO + (90,), 0)

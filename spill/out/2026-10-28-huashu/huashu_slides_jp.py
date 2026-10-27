@@ -78,25 +78,25 @@ def base(page):
 
 def cover():
     img, d = base(1)
-    d.text((MX, 300), "SATU KALIMAT.", font=F("Poppins-ExtraBold.ttf", 130), fill=INK + (255,))
-    d.text((MX, 450), "JADI DESAIN.", font=F("Poppins-ExtraBold.ttf", 130), fill=RED + (255,))
-    d.text((MX, 630), "Huashu Design, skill desain buat agent AI.",
+    d.text((MX, 300), "Ketik satu kalimat,", font=F("Poppins-ExtraBold.ttf", 110), fill=INK + (255,))
+    d.text((MX, 430), "jadi desain.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
+    d.text((MX, 600), "Ini Huashu Design. Kamu ketik, dia yang gambar.",
            font=F("Poppins-SemiBold.ttf", 44), fill=MUTED + (255,))
     hero = fit(os.path.join(SHOW, "case-hokusai-hero.jpg"), W - 2 * MX, 860)
     img.paste(hero, (MX, 720), hero)
     d = ImageDraw.Draw(img)
-    d.text((MX, 1630), "Hasil beneran: web pameran Hokusai.",
+    d.text((MX, 1630), "Contoh: web pameran Hokusai.",
            font=F("Poppins-SemiBold.ttf", 38), fill=INK + (255,))
-    d.text((MX, 1690), "27RB star  •  MIT, gratis",
+    d.text((MX, 1690), "Disukai 27 ribu orang  •  Gratis",
            font=F("Poppins-Bold.ttf", 38), fill=RED + (255,))
     return img.convert("RGB")
 
 
 def proof():
     img, d = base(2)
-    d.text((MX, 300), "INI HASILNYA,", font=F("Poppins-ExtraBold.ttf", 110), fill=INK + (255,))
-    d.text((MX, 430), "BUKAN MOCKUP.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
-    d.text((MX, 580), "Ini hasil beneran dari repo-nya.",
+    d.text((MX, 300), "Ini contoh", font=F("Poppins-ExtraBold.ttf", 110), fill=INK + (255,))
+    d.text((MX, 430), "hasil aslinya.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
+    d.text((MX, 580), "Bukan gambar tempelan, ini beneran jadi.",
            font=F("Poppins-SemiBold.ttf", 38), fill=MUTED + (255,))
     bw = (W - 2 * MX - 40) // 2
     left = fit(os.path.join(SHOW, "case-mingji-birding-app.jpg"), bw, 980)
@@ -104,44 +104,44 @@ def proof():
     img.paste(left, (MX, 680), left)
     img.paste(right, (MX + bw + 40, 680), right)
     d = ImageDraw.Draw(img)
-    d.text((MX, 1690), "App Mingji, bisa diklik",
+    d.text((MX, 1690), "App Mingji, bisa dicoba",
            font=F("Poppins-Bold.ttf", 36), fill=INK + (255,))
-    d.text((MX + bw + 40, 1690), "PPT Qianli, bisa diedit",
+    d.text((MX + bw + 40, 1690), "PPT Qianli, bisa diubah",
            font=F("Poppins-Bold.ttf", 36), fill=INK + (255,))
     return img.convert("RGB")
 
 
 def how():
     img, d = base(3)
-    d.text((MX, 300), "6 JADI 3,", font=F("Poppins-ExtraBold.ttf", 110), fill=INK + (255,))
-    d.text((MX, 430), "LALU PILIH.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
-    steps = [("01", "Ketik satu kalimat", "Web, App, PPT, animasi. Tanpa Figma."),
-             ("02", "Agent bikin 6 thumbnail", "3 yang paling beda, dibikin beneran."),
-             ("03", "Pilih dan pakai", "84 gaya, plus bacaan aset brand.")]
+    d.text((MX, 300), "Dari 6 pilihan,", font=F("Poppins-ExtraBold.ttf", 110), fill=INK + (255,))
+    d.text((MX, 430), "jadi 3.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
+    steps = [("01", "Ketik yang kamu mau", "Web, App, PPT, animasi. Nggak perlu Figma."),
+             ("02", "Dibuatkan 6 contoh dulu", "3 yang paling beda, dibuat sampai jadi."),
+             ("03", "Tinggal pilih yang kamu suka", "Ada 84 gaya, bisa disesuaikan sama gayamu.")]
     y = 620
     for num, title, body in steps:
         d.text((MX, y), num, font=F("Poppins-ExtraBold.ttf", 64), fill=RED + (255,))
         d.text((MX + 170, y), title, font=F("Poppins-Bold.ttf", 52), fill=INK + (255,))
         d.text((MX + 170, y + 80), body, font=F("Poppins-SemiBold.ttf", 38), fill=MUTED + (255,))
         y += 230
-    d.text((MX, 1360), "$ npx skills add alchaincyf/huashu-design",
+    d.text((MX, 1360), "Cara pasang: npx skills add alchaincyf/huashu-design",
            font=F("Poppins-Bold.ttf", 40), fill=INDIGO + (255,))
-    d.text((MX, 1450), "Buat deck, landing page, dan prototipe.",
+    d.text((MX, 1450), "Buat deck, landing page, dan contoh App.",
            font=F("Poppins-Bold.ttf", 40), fill=INK + (255,))
-    d.text((MX, 1510), "Tanpa tim desain.",
+    d.text((MX, 1510), "Nggak perlu tim desain.",
            font=F("Poppins-Bold.ttf", 40), fill=INK + (255,))
     return img.convert("RGB")
 
 
 def follow():
     img, d = base(4)
-    d.text((MX, 300), "FOLLOW", font=F("Poppins-ExtraBold.ttf", 130), fill=INK + (255,))
-    d.text((MX, 450), "DAN GABUNG.", font=F("Poppins-ExtraBold.ttf", 130), fill=RED + (255,))
+    d.text((MX, 300), "Follow,", font=F("Poppins-ExtraBold.ttf", 130), fill=INK + (255,))
+    d.text((MX, 450), "kalau kamu suka.", font=F("Poppins-ExtraBold.ttf", 110), fill=RED + (255,))
     y = 680
-    for line in ["Follow @peka.ai.id.",
-                 "Grup WA: url.peka.ai.id.",
-                 "Save dan share buat stok.",
-                 "Link repo ada di komentar."]:
+    for line in ["Follow @peka.ai.id, kalau kontennya kepakai.",
+                 "Grup WA: url.peka.ai.id, kalau mau ngobrol.",
+                 "Save dulu, biar gampang dicari lagi.",
+                 "Link-nya ada di komentar."]:
         d.text((MX, y), line, font=F("Poppins-SemiBold.ttf", 46), fill=INK + (255,))
         y += 90
     return img.convert("RGB")

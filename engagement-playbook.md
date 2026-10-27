@@ -56,6 +56,29 @@ caption revisi tools-launch 26 Okt 2026
 - Aturan lain tetap berlaku: tanpa em-dash/en-dash, Threads tepat
   1 #AI, angka jujur, satu pemicu interaksi per caption.
 
+## Bahasa awam lembut (standing order from the user, 2026-10-28,
+  berlaku untuk SEMUA konten Peka ke depan, melengkapi model bahasa
+  26 Okt; contoh acuan: carousel + reels Huashu Design gaya Japanese,
+  di-ACC 28 Okt 02:03 WIB)
+
+Kalimat harus langsung dimengerti orang awam, pendek, dan tidak
+terasa maksa. Perintah keras diganti ajakan bersyarat:
+- Judul dan ajakan pakai kalimat biasa, bukan teriakan perintah:
+  "Ketik satu kalimat, jadi desain." bukan "SATU KALIMAT. JADI
+  DESAIN."; "Follow, kalau kamu suka." bukan "FOLLOW DAN GABUNG."
+- Ajakan follow/grup/save selalu bersyarat dan santai: "kalau
+  kontennya kepakai", "kalau mau ngobrol", "Save dulu, biar
+  gampang dicari lagi." (di sini "kalau" dipakai utuh, bukan
+  "kalo", supaya ajakannya terasa lembut, bukan perintah singkat).
+- Jargon teknis diterjemahkan ke bahasa awam, tanpa mengubah fakta:
+  star -> "Disukai 27 ribu orang", MIT -> "Gratis", thumbnail ->
+  "contoh", prototipe -> "contoh App", diedit -> "diubah",
+  "skill desain buat agent AI" -> "Kamu ketik, dia yang gambar.",
+  "bukan mockup" -> "Ini contoh hasil aslinya. Bukan gambar
+  tempelan, ini beneran jadi."
+- Pertanyaan penutup tetap tepat satu, dengan nada santai:
+  "Kamu pengin bikin apa dulu? Web, App, atau PPT? Coba komen ya."
+
 ## Per platform
 
 - Threads: replies are king. End with a question (before the single #AI
