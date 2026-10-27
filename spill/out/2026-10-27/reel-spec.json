@@ -1,0 +1,47 @@
+{
+  "agent": "HERMES",
+  "episode": 7,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "name": "garrytan/gbrain",
+      "stars": "31RB",
+      "install": "/plugin marketplace add garrytan/gbrain",
+      "penjelasan": "Otak siap pakai buat agent Hermes dan OpenClaw, udah disetel opini Garry Tan. Agent jadi ingat konteks dan prioritas, tanpa mulai dari nol tiap sesi.",
+      "cocok": "Pengguna Hermes dan OpenClaw yang mau agentnya punya otak dan ingatan kerja yang konsisten.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-27/shots/garrytan-gbrain.png"
+    },
+    {
+      "name": "nesquena/hermes-webui",
+      "stars": "19RB",
+      "install": "npx skills add nesquena/hermes-webui -g",
+      "penjelasan": "WebUI buat pakai Hermes Agent dari browser atau HP, tanpa ribet buka terminal. Ngobrol dan pantau agent jadi gampang dari mana aja.",
+      "cocok": "Pengguna Hermes yang mau ngendaliin agent dari browser atau HP dengan nyaman.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-27/shots/nesquena-hermes-webui.png"
+    },
+    {
+      "name": "outsourc-e/hermes-workspace",
+      "stars": "7RB",
+      "install": "npx skills add outsourc-e/hermes-workspace -g",
+      "penjelasan": "Workspace web yang nyatuin chat, terminal, memori, skill, dan inspector Hermes dalam satu layar. Ngatur agent jadi kelihatan jelas dari awal sampe beres.",
+      "cocok": "Pengguna Hermes yang mau satu ruang kerja lengkap buat chat, terminal, dan skill agent.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-27/shots/outsourc-e-hermes-workspace.png"
+    },
+    {
+      "name": "conorbronsdon/avoid-ai-writing",
+      "stars": "5RB",
+      "install": "/plugin marketplace add conorbronsdon/avoid-ai-writing",
+      "penjelasan": "Skill yang mengaudit tulisan biar nggak ketahuan tulisan AI, lalu ngerapihin jadi natural. Tulisan tetap rapi tapi terasa kayak ditulis manusia.",
+      "cocok": "Penulis dan kreator konten yang pakai agent buat nulis dan mau hasilnya terasa natural.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-27/shots/conorbronsdon-avoid-ai-writing.png"
+    },
+    {
+      "name": "rlaope/oh-my-hermes",
+      "stars": "4RB",
+      "install": "npm install -g oh-my-hermes",
+      "penjelasan": "Coding agent Hermes yang langsung jalan cuma dengan ketik dag-ulw, tanpa setup panjang. Panggil, lalu agent bantu nulis dan beresin kode.",
+      "cocok": "Programmer yang mau coding bareng Hermes Agent tanpa setup ribet.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-27/shots/rlaope-oh-my-hermes.png"
+    }
+  ]
+}
