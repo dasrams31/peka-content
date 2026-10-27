@@ -61,7 +61,9 @@ def scene(t):
     img = Image.new("RGBA", (W, H), BG + (255,))
     hex_rain(img, t)
     d = ImageDraw.Draw(img)
-    d.text((80, 110), "REPO OF THE DAY  •  peka.ai.id", font=mono(30), fill=GREEN + (255,))
+    d.text((80, 110), "REPO OF THE DAY  •  ", font=mono(30), fill=GREEN + (255,))
+    _w = d.textlength("REPO OF THE DAY  •  ", font=mono(30))
+    d.text((80 + _w, 110), "peka.ai.id", font=mono(30), fill=(255, 255, 255, 255))
     if t < 3:
         st = t
         for ov in [text_in(d, (80, 500), "Lihat fitur yang", F("Poppins-ExtraBold.ttf", 88), CREAM, st, 0.2),
