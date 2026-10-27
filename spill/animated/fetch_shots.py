@@ -14,6 +14,10 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import urlparse
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from spill_repo_carousel import enrich, github_card_image
 
 UA = {"User-Agent": "peka-spill-carousel"}
 
@@ -60,18 +64,31 @@ def main():
             continue
         html = _download(f"https://github.com/{full}").decode("utf-8", "replace")
         m = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-        if not m:
-            raise SystemExit(f"no og:image found for {full}")
-        data = _download(m.group(1))
-        with open(out, "wb") as fh:
-            fh.write(data)
-        try:
-            with open(cached, "wb") as fh:
+        og_url = m.group(1) if m else None
+        if og_url and urlparse(og_url).hostname == "opengraph.githubassets.com":
+            data = _download(og_url)
+            with open(out, "wb") as fh:
                 fh.write(data)
-        except Exception:
-            pass
-        r["shot"] = out
-        print(f"shot: {full} -> {out} ({len(data)} bytes)")
+            try:
+                with open(cached, "wb") as fh:
+                    fh.write(data)
+            except Exception:
+                pass
+            r["shot"] = out
+            print(f"shot: {full} -> {out} ({len(data)} bytes)")
+        else:
+            # Custom upload (repository-images host) or no og image:
+            # draw the GitHub-default-card look from API data instead.
+            en = enrich({"name": full, "stars": r.get("stars", ""),
+                         "desc": "", "install": "x"}, fetch_og=False)
+            card = github_card_image({"name": full}, en)
+            card.save(out)
+            try:
+                card.save(cached)
+            except Exception:
+                pass
+            r["shot"] = out
+            print(f"shot (drawn card): {full} -> {out}")
     with open(spec_path, "w", encoding="utf-8") as fh:
         json.dump(spec, fh, ensure_ascii=False, indent=2)
     print("spec updated:", spec_path)

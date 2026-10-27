@@ -32,6 +32,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
+from urllib.parse import urlparse
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
@@ -151,7 +152,7 @@ def readme_install(full):
 _ENRICH = {}
 
 
-def enrich(repo):
+def enrich(repo, fetch_og=True):
     """Live GitHub data for one spec repo, with graceful fallbacks."""
     full = repo["name"]
     if full in _ENRICH:
@@ -182,10 +183,12 @@ def enrich(repo):
     except Exception as exc:
         print(f"warn: GitHub API failed for {full}: {exc} (fallbacks used)")
     try:
+        if not fetch_og:
+            raise RuntimeError("og fetch skipped by caller")
         req = urllib.request.Request(f"https://github.com/{full}", headers=UA)
         html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "replace")
         m = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-        if m:
+        if m and urlparse(m.group(1)).hostname == "opengraph.githubassets.com":
             ireq = urllib.request.Request(m.group(1), headers=UA)
             with urllib.request.urlopen(ireq, timeout=20) as resp:
                 out["og"] = Image.open(io.BytesIO(resp.read())).convert("RGB")
@@ -198,6 +201,8 @@ def enrich(repo):
                 out["og"].save(os.path.join(cdir, full.replace("/", "-") + ".png"))
             except Exception:
                 pass
+        elif m:
+            print(f"note: custom og image for {full}, drawn card used")
     except Exception as exc:
         print(f"warn: og image failed for {full}: {exc}")
     if not repo.get("install"):
@@ -263,6 +268,61 @@ def repo_header(img, d, spec, idx):
 
 # ---------------------------------------------------------------- slides
 
+def github_card_image(repo, en):
+    """GitHub-default-card-style image (1200x600), drawn from API data.
+
+    Used when a repo's og:image is a custom upload (repository-images
+    host) instead of GitHub's own card, so every slide shows the same
+    GitHub look: owner/repo, avatar, EN description, Stars/Forks/
+    Issues, language bar at the bottom edge."""
+    W, H = 1200, 600
+    img = Image.new("RGB", (W, H), (255, 255, 255))
+    d = ImageDraw.Draw(img)
+    owner, name = repo["name"].split("/", 1)
+    max_w = 700
+    size_o, size_n = 76, 110
+    while size_o > 40:
+        fo = _font("Poppins-SemiBold.ttf", size_o)
+        fn = _font("Poppins-ExtraBold.ttf", size_n)
+        if (d.textlength(owner + "/", font=fo) <= max_w
+                and d.textlength(name, font=fn) <= max_w):
+            break
+        size_o -= 4
+        size_n -= 4
+    d.text((110, 90), owner + "/", font=fo, fill=(60, 60, 60))
+    d.text((110, 90 + size_o + 14), name, font=fn, fill=INK)
+    if en.get("avatar"):
+        av = ImageOps.fit(en["avatar"], (240, 240))
+        av.putalpha(_rounded_mask((240, 240), 24))
+        img.paste(av, (850, 90), av)
+    f_desc = _font("Poppins-SemiBold.ttf", 40)
+    desc_lines = wrap(d, en["en_desc"], f_desc, 970)
+    if len(desc_lines) > 2:
+        desc_lines = desc_lines[:2]
+        desc_lines[-1] = desc_lines[-1].rsplit(" ", 1)[0] + "…"
+    y = 350
+    for line in desc_lines:
+        d.text((110, y), line, font=f_desc, fill=(85, 85, 85))
+        y += 58
+    f_num = _font("Poppins-Bold.ttf", 44)
+    f_lbl = _font("Poppins-SemiBold.ttf", 28)
+    stats = [("Stars", en["stars"]), ("Forks", en["forks"]), ("Issues", en["issues"])]
+    y = 480
+    for i, (lbl, val) in enumerate(stats):
+        x = 110 + i * 300
+        d.text((x, y), val if val else "–", font=f_num, fill=INK)
+        d.text((x, y + 56), lbl, font=f_lbl, fill=(153, 153, 153))
+    if en["langs"]:
+        bx = 0
+        for col, frac in en["langs"]:
+            seg = int(1200 * frac)
+            if seg <= 0:
+                continue
+            d.rectangle([bx, 584, min(bx + seg - 1, 1199), 599], fill=col)
+            bx += seg
+    return img
+
+
 def cover(spec):
     agent = spec["agent"].upper()
     repos = spec["repos"]
@@ -308,80 +368,20 @@ def repo_slide(spec, idx, repo):
     repo_header(img, d, spec, idx)
 
     # ---- browser-window mockup ----
+    # Body is always the GitHub look: the repo's own default card when
+    # GitHub serves one, else the drawn card from API data.
     WX, WY, WW = MX, 420, W - 2 * MX
     TITLE_H = 92
-    if en["og"]:
-        # real GitHub social card inside the window
-        og = en["og"].resize((1200, 600), Image.LANCZOS)
-        WH = TITLE_H + 600
-        win = Image.new("RGB", (WW, WH), (255, 255, 255))
-        wd = ImageDraw.Draw(win)
-        wd.rectangle([0, 0, WW - 1, TITLE_H - 1], fill=(0, 0, 0))
-        for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
-            wd.ellipse([48 + i * 60, 30, 48 + i * 60 + 36, 66], fill=c)
-        wd.text((240, 26), repo["name"], font=_mono(42), fill=(170, 170, 170))
-        win.paste(og, ((WW - 1200) // 2, TITLE_H))
-    else:
-        # drawn fallback (same info, no screenshot)
-        BODY_PAD, AVATAR = 76, 280
-        win = Image.new("RGB", (WW, 1200), (255, 255, 255))
-        wd = ImageDraw.Draw(win)
-        wd.rectangle([0, 0, WW - 1, TITLE_H - 1], fill=(0, 0, 0))
-        for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
-            wd.ellipse([48 + i * 60, 30, 48 + i * 60 + 36, 66], fill=c)
-        wd.text((240, 26), repo["name"], font=_mono(42), fill=(170, 170, 170))
-        owner, name = repo["name"].split("/", 1)
-        y = TITLE_H + BODY_PAD
-        desc_w = WW - 2 * BODY_PAD - (AVATAR + 56 if en["avatar"] else 0)
-        size = 104
-        while size > 56:
-            f_light = _font("Poppins-SemiBold.ttf", size)
-            f_bold = _font("Poppins-ExtraBold.ttf", size)
-            if wd.textlength(owner + "/", font=f_light) + wd.textlength(name, font=f_bold) <= desc_w:
-                break
-            size -= 4
-        wd.text((BODY_PAD, y), owner + "/", font=f_light, fill=(60, 60, 60))
-        w1 = wd.textlength(owner + "/", font=f_light)
-        wd.text((BODY_PAD + w1, y), name, font=f_bold, fill=INK)
-        if en["avatar"]:
-            av = ImageOps.fit(en["avatar"], (AVATAR, AVATAR))
-            av.putalpha(_rounded_mask((AVATAR, AVATAR), 36))
-            win.paste(av, (WW - BODY_PAD - AVATAR, TITLE_H + BODY_PAD), av)
-        f_desc = _font("Poppins-SemiBold.ttf", 48)
-        desc_lines = wrap(wd, en["en_desc"], f_desc, desc_w)
-        if len(desc_lines) > 3:
-            desc_lines = desc_lines[:3]
-            desc_lines[-1] = desc_lines[-1].rsplit(" ", 1)[0] + "…"
-        y += 130 + 30
-        for line in desc_lines:
-            wd.text((BODY_PAD, y), line, font=f_desc, fill=(85, 85, 85))
-            y += 68
-        y += 70
-        f_num = _font("Poppins-Bold.ttf", 56)
-        f_lbl = _font("Poppins-SemiBold.ttf", 36)
-        stats = [("Stars", en["stars"]), ("Forks", en["forks"]), ("Issues", en["issues"])]
-        col_w = (WW - 2 * BODY_PAD) // 3
-        for i, (lbl, val) in enumerate(stats):
-            x = BODY_PAD + i * col_w
-            wd.text((x, y), val if val else "–", font=f_num, fill=INK)
-            wd.text((x, y + 68), lbl, font=f_lbl, fill=(153, 153, 153))
-        y += 68 + 52 + 56
-        if en["langs"]:
-            bw_total = WW - 2 * BODY_PAD
-            bar = Image.new("RGB", (bw_total, 20), (255, 255, 255))
-            bd = ImageDraw.Draw(bar)
-            bx = 0
-            for col, frac in en["langs"]:
-                seg = int(bw_total * frac)
-                if seg <= 0:
-                    continue
-                bd.rectangle([bx, 0, min(bx + seg - 1, bw_total - 1), 19], fill=col)
-                bx += seg
-            bar.putalpha(_rounded_mask((bw_total, 20), 10))
-            win.paste(bar, (BODY_PAD, y), bar)
-            y += 20
-        WH = y + BODY_PAD
-        win = win.crop((0, 0, WW, WH))
+    body = en["og"] if en["og"] else github_card_image(repo, en)
+    body = body.resize((1200, 600), Image.LANCZOS)
+    WH = TITLE_H + 600
+    win = Image.new("RGB", (WW, WH), (255, 255, 255))
+    wd = ImageDraw.Draw(win)
+    wd.rectangle([0, 0, WW - 1, TITLE_H - 1], fill=(0, 0, 0))
+    for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
+        wd.ellipse([48 + i * 60, 30, 48 + i * 60 + 36, 66], fill=c)
+    wd.text((240, 26), repo["name"], font=_mono(42), fill=(170, 170, 170))
+    win.paste(body, ((WW - 1200) // 2, TITLE_H))
     img.paste(win, (WX, WY), _rounded_mask((WW, WH), 40))
     d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=40,
                         outline=(190, 185, 172), width=2)

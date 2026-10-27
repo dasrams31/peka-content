@@ -38,15 +38,19 @@
   .term .prompt { color: #ffd60a; }
   .term .cursor { display: inline-block; width: 22px; height: 44px; background: #ffd60a; vertical-align: -6px; margin-left: 10px; }
   .penjelasan { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #333333; margin-top: 36px; }
+  .cocok { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #333333; margin-top: 30px; }
+  .cocok-label { font-family: PoppinsB; color: #141414; }
   .q { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #141414; margin-top: 80px; }
   .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #6E695F; margin-top: 44px; }
   .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #6E695F; }
+  .foot-line { position: absolute; left: 80px; right: 80px; bottom: 112px; height: 2px; background: #141414; opacity: 0.18; }
   #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #ffd60a; width: 0; }
 </style>
 </head>
 <body>
 <div id="stage">
   <div id="scenes"></div>
+  <div class="foot-line"></div>
   <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
   <div id="progress"></div>
 </div>
@@ -94,7 +98,8 @@
         '<div class="cmd"><span class="prompt">$ </span><span class="typed" data-cmd="' +
         r.install.replace(/"/g, '&quot;') + '" data-start="1.15"></span>' +
         '<span class="cursor"></span></div></div>' +
-        '<div class="penjelasan" data-in="1.35,0.50,0,40">' + r.penjelasan + '</div></div>';
+        '<div class="penjelasan" data-in="1.35,0.50,0,40">' + r.penjelasan + '</div>' +
+        '<div class="cocok" data-in="1.80,0.50,0,40"><span class="cocok-label">COCOK BUAT:</span> ' + r.cocok + '</div></div>';
     });
     const nextEp = String(spec.episode + 1).padStart(2, '0');
     html += '<div class="scene">' + header('') +
