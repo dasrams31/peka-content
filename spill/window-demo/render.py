@@ -81,6 +81,7 @@ for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
     wd.ellipse([36 + i * 44, 30, 36 + i * 44 + 26, 56], fill=c)
 wd.text((170, 26), "JuliusBrussee/caveman", font=font(f"{DEJAVU}/DejaVuSansMono.ttf", 30), fill=(170, 170, 170))
 # repo name, auto-shrunk to fit left of the avatar
+y = TITLE_H + BODY_PAD
 name_w_max = WW - 2 * BODY_PAD - AVATAR - 40
 size = 74
 while size > 40:
@@ -110,17 +111,23 @@ for i, (num, lbl) in enumerate(stats):
     x = BODY_PAD + i * col_w
     wd.text((x, y), num, font=F_STAT_NUM, fill=DARK)
     wd.text((x, y + 48), lbl, font=F_STAT_LBL, fill=LIGHT_GRAY)
-y += 48 + 44 + 40
-# language bar
+y += 48 + 28 + 40
 langs = [(("Go", (0, 173, 216)), 6987576), (("JavaScript", (241, 224, 90)), 3822208),
          (("TypeScript", (49, 120, 198)), 2067764), (("Python", (53, 114, 165)), 1437196)]
 total = 14400000
-bx, bw_total = BODY_PAD, WW - 2 * BODY_PAD
+bw_total = WW - 2 * BODY_PAD
+# language bar (rounded ends)
+bar_img = Image.new("RGB", (bw_total, 14), (255, 255, 255))
+bd = ImageDraw.Draw(bar_img)
+bx = 0
 for (_, col), val in langs:
     seg = int(bw_total * val / total)
-    wd.rectangle([bx, y, bx + seg - 2, y + 14], fill=col)
+    bd.rectangle([bx, 0, bx + seg - 1, 13], fill=col)
     bx += seg
+bar_img.putalpha(rounded_mask((bw_total, 14), 7))
+win.paste(bar_img, (BODY_PAD, y), bar_img)
 img.paste(win, (WX, WY), rounded_mask((WW, WH), 30))
+d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=30, outline=(46, 46, 46), width=2)
 
 # ---- text below window ----
 ty = WY + WH + 80
@@ -149,14 +156,25 @@ if cur:
     lines.append(cur)
 for line in lines:
     x = TX
-    for w, hl in line:
+    i = 0
+    while i < len(line):
+        w, hl = line[i]
         if hl:
-            ww = d.textlength(w, font=F_BODY)
-            d.rectangle([x - 4, ty - 2, x + ww + 4, ty + 46], fill=YELLOW)
-            d.text((x, ty), w, font=F_BODY, fill=DARK)
+            # one continuous box over the whole highlighted run
+            j, run_w = i, 0
+            while j < len(line) and line[j][1]:
+                run_w += d.textlength(line[j][0] + " ", font=F_BODY)
+                j += 1
+            run_w -= d.textlength(" ", font=F_BODY)
+            d.rectangle([x - 4, ty - 2, x + run_w + 4, ty + 46], fill=YELLOW)
+            while i < j:
+                d.text((x, ty), line[i][0], font=F_BODY, fill=DARK)
+                x += d.textlength(line[i][0] + " ", font=F_BODY)
+                i += 1
         else:
             d.text((x, ty), w, font=F_BODY, fill=WHITE)
-        x += d.textlength(w + " ", font=F_BODY)
+            x += d.textlength(w + " ", font=F_BODY)
+            i += 1
     ty += 58
 ty += 18
 caveat = "tapi gaya jawabannya singkat ala caveman, kurang cocok buat dokumen formal."
@@ -164,7 +182,24 @@ for line in wrap_text(d, caveat, F_CAVEAT, TW):
     d.text((TX, ty), line, font=F_CAVEAT, fill=DIM)
     ty += 46
 ty += 44
-d.text((TX, ty), "pasang: npx skills add JuliusBrussee/caveman -g", font=F_INSTALL, fill=YELLOW)
+# ---- terminal console panel ----
+PANEL_H = 150
+panel = Image.new("RGB", (TW, PANEL_H), (20, 20, 26))
+pd = ImageDraw.Draw(panel)
+for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
+    pd.ellipse([28 + i * 32, 22, 28 + i * 32 + 18, 40], fill=c)
+pd.text((140, 18), "terminal", font=font(f"{DEJAVU}/DejaVuSansMono.ttf", 24), fill=(130, 130, 130))
+cmd = "npx skills add JuliusBrussee/caveman -g"
+prompt = "$ "
+px = 32
+py = 76
+pd.text((px, py), prompt, font=F_INSTALL, fill=YELLOW)
+px += pd.textlength(prompt, font=F_INSTALL)
+pd.text((px, py), cmd, font=F_INSTALL, fill=WHITE)
+cx = px + pd.textlength(cmd, font=F_INSTALL) + 12
+pd.rectangle([cx, py + 2, cx + 18, py + 36], fill=YELLOW)
+img.paste(panel, (TX, ty), rounded_mask((TW, PANEL_H), 20))
+d.rounded_rectangle([TX, ty, TX + TW - 1, ty + PANEL_H - 1], radius=20, outline=(70, 70, 80), width=2)
 
 # ---- footer ----
 d.text((TX, H - 110), "peka.ai.id", font=F_FOOT, fill=WHITE)

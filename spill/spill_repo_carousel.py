@@ -7,25 +7,239 @@ Paper spill format (see spill.py). Driven by a JSON spec:
             "desc": "...", "cocok": "..."}],
  "out_dir": "/abs/dir"}
 Slides: 01 cover, 02..N+1 one per repo, last closing.
+
+Repo slide format (locked 2026-10-27, user-approved demo v4):
+square 2048x2048, paper background, small tilted SPILL stamp + dark
+mascot lockup + repo counter header, then a browser-window mockup
+(repo name, original English description, owner avatar, stars/forks/
+issues, language bar), a terminal panel with the install command,
+and the footer zone (COCOK BUAT, faded repo number, community line,
+page number). Cover, closing, and follow slides keep the old design.
+
+Repo slides enrich the spec via the public GitHub API at render time
+(EN description, counts, languages, owner avatar, install command from
+the README). Any enrichment failure degrades gracefully: spec text,
+spec stars, a generic `npx skills add` install, no avatar, no language
+bar, never a failed edition. A spec repo may also carry an explicit
+"install" field which wins over README extraction.
 """
+import io
 import json
 import os
+import re
 import sys
+import urllib.error
+import urllib.request
+
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from spill import (DESC, GRY, HAIR, INK, PAPER, X, base, f, footer, highlight,
                    mono, wrap)
 
 GHOST = "#e9dfc6"
+UA = {"User-Agent": "peka-spill-carousel"}
+
+POPPINS = "/home/hatch/workspace/sertiku-poster/fonts"
+DEJAVU = "/usr/share/fonts/truetype/dejavu"
 
 
-def fit_font(d, text, size, max_w, min_size=40):
-    tf = f(size)
-    while size > min_size and d.textlength(text, font=tf) > max_w:
-        size -= 4
-        tf = f(size)
-    return tf
+def _font(name, size):
+    for path in (os.path.join(POPPINS, name),
+                 os.path.join(DEJAVU, "DejaVuSans-Bold.ttf")):
+        try:
+            return ImageFont.truetype(path, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
 
+
+def _mono(size, bold=False):
+    return ImageFont.truetype(
+        os.path.join(DEJAVU, "DejaVuSansMono-Bold.ttf" if bold else "DejaVuSansMono.ttf"),
+        size)
+
+
+def _rounded_mask(size, radius):
+    m = Image.new("L", size, 0)
+    md = ImageDraw.Draw(m)
+    md.rounded_rectangle([0, 0, size[0] - 1, size[1] - 1], radius=radius, fill=255)
+    return m
+
+
+# ---------------------------------------------------------------- GitHub
+
+def _get_json(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.load(resp)
+
+
+def _get_text(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return resp.read().decode("utf-8", "replace")
+
+
+def fmt_count(n):
+    # GitHub-style abbreviation: 115336 -> "115k", 6700 -> "6.7k"
+    if n >= 1_000_000:
+        v = f"{n / 1_000_000:.1f}".rstrip("0").rstrip(".")
+        return v + "M"
+    if n >= 100_000:
+        return f"{n // 1000}k"
+    if n >= 1000:
+        v = f"{n / 1000:.1f}".rstrip("0").rstrip(".")
+        return v + "k"
+    return str(n)
+
+
+def clean_desc(text):
+    """Drop emoji/symbols the slide fonts cannot render (tofu boxes),
+    keep letters, numbers, punctuation, marks, spaces, math/currency."""
+    import unicodedata
+    out = []
+    for c in text:
+        cat = unicodedata.category(c)
+        if cat[0] in "LNPM" or cat in ("Zs", "Sm", "Sc"):
+            out.append(c)
+    return re.sub(r"\s+", " ", "".join(out)).strip()
+
+
+def parse_spec_stars(s):
+    m = re.match(r"(\d+)\s*RB", (s or "").upper())
+    return int(m.group(1)) * 1000 if m else 0
+
+
+LANG_COLORS = {
+    "Go": (0, 173, 216), "JavaScript": (241, 224, 90), "TypeScript": (49, 120, 198),
+    "Python": (53, 114, 165), "Rust": (222, 165, 132), "HTML": (227, 76, 38),
+    "CSS": (86, 61, 124), "Shell": (137, 224, 81), "Ruby": (112, 21, 22),
+    "Java": (176, 114, 25), "C++": (243, 75, 65), "C": (85, 85, 85),
+    "PHP": (79, 93, 149), "Swift": (240, 81, 56), "Kotlin": (169, 123, 255),
+    "Dockerfile": (56, 77, 84),
+}
+
+INSTALL_PATTERNS = [
+    r"npx\s+skills\s+add\s+[^\s`'\"]+(?:\s+-[a-zA-Z]+)?",
+    r"/plugin\s+marketplace\s+add\s+[^\s`'\"]+",
+    r"\S+\s+plugin\s+add\s+[^\s`'\"]+",
+    r"npm\s+(?:install|i)\s+-g\s+[^\s`'\"]+",
+    r"pip\s+install\s+[^\s`'\"]+",
+    r"go\s+install\s+[^\s`'\"]+",
+    r"cargo\s+install\s+[^\s`'\"]+",
+    r"brew\s+install\s+[^\s`'\"]+",
+]
+
+
+def readme_install(full):
+    for branch in ("main", "master"):
+        try:
+            text = _get_text(f"https://raw.githubusercontent.com/{full}/{branch}/README.md")
+        except Exception:
+            continue
+        for pat in INSTALL_PATTERNS:
+            m = re.search(pat, text)
+            if m:
+                cmd = m.group(0).strip().strip("`$").strip()
+                return re.sub(r"\s+", " ", cmd)[:60]
+    return None
+
+
+_ENRICH = {}
+
+
+def enrich(repo):
+    """Live GitHub data for one spec repo, with graceful fallbacks."""
+    full = repo["name"]
+    if full in _ENRICH:
+        return _ENRICH[full]
+    out = {"en_desc": clean_desc(repo["desc"]), "stars": fmt_count(parse_spec_stars(repo.get("stars"))),
+           "forks": None, "issues": None, "langs": [], "avatar": None,
+           "install": repo.get("install") or f"npx skills add {full} -g"}
+    try:
+        data = _get_json(f"https://api.github.com/repos/{full}")
+        out["en_desc"] = clean_desc(data.get("description") or repo["desc"])
+        out["stars"] = fmt_count(data.get("stargazers_count") or 0)
+        out["forks"] = fmt_count(data.get("forks_count") or 0)
+        out["issues"] = fmt_count(data.get("open_issues_count") or 0)
+        try:
+            langs = _get_json(f"https://api.github.com/repos/{full}/languages")
+            total = sum(langs.values()) or 1
+            top = sorted(langs.items(), key=lambda kv: -kv[1])[:4]
+            out["langs"] = [(LANG_COLORS.get(k, (153, 153, 153)), v / total) for k, v in top]
+        except Exception as exc:
+            print(f"warn: languages failed for {full}: {exc}")
+        avatar_url = (data.get("owner") or {}).get("avatar_url")
+        if avatar_url:
+            sep = "&" if "?" in avatar_url else "?"
+            req = urllib.request.Request(avatar_url + sep + "s=560", headers=UA)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                out["avatar"] = Image.open(io.BytesIO(resp.read())).convert("RGB")
+    except Exception as exc:
+        print(f"warn: GitHub API failed for {full}: {exc} (fallbacks used)")
+    if not repo.get("install"):
+        try:
+            found = readme_install(full)
+            if found:
+                out["install"] = found
+            else:
+                print(f"warn: no install command in README for {full}, generic fallback used")
+        except Exception as exc:
+            print(f"warn: README fetch failed for {full}: {exc}")
+    _ENRICH[full] = out
+    return out
+
+
+# ---------------------------------------------------------------- header
+
+def _dark_mascot():
+    """Dark P-mascot (transparent) for light backgrounds, same geometry
+    as peka-logo/mascot.py::mascot_p."""
+    if _dark_mascot.cache is not None:
+        return _dark_mascot.cache
+    S = 1080
+    mask = Image.new("L", (S, S), 0)
+    d = ImageDraw.Draw(mask)
+    d.rounded_rectangle([507, 232, 523, 332], radius=8, fill=255)
+    d.ellipse([487, 177, 543, 233], fill=255)
+    d.rounded_rectangle([450, 330, 580, 822], radius=65, fill=255)
+    d.arc([600 - 140, 455 - 140, 600 + 140, 455 + 140], start=-90, end=90, fill=255, width=100)
+    d.ellipse([465, 400, 555, 490], fill=0)
+    d.arc([470, 515, 550, 595], start=25, end=155, fill=0, width=18)
+    out = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    out.paste(Image.new("RGBA", (S, S), (17, 17, 17, 255)), mask=mask)
+    _dark_mascot.cache = out
+    return out
+
+
+_dark_mascot.cache = None
+
+
+def repo_header(img, d, spec, idx):
+    """Small tilted SPILL stamp + dark lockup + counter (demo v4)."""
+    spill_f = _font("Poppins-ExtraBold.ttf", 68)
+    layer = Image.new("RGBA", (360, 170), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    ld.rectangle([6, 6, 354, 164], outline=INK, width=6)
+    ld.text((36, 36), "SPILL", font=spill_f, fill=INK)
+    layer = layer.rotate(-3, expand=True, resample=Image.BICUBIC)
+    img.paste(layer, (130, 110), layer)
+    d.text((154, 320), f"REPO {idx + 1:02d} DARI {len(spec['repos']):02d} // {spec['agent'].upper()}",
+           font=_mono(42), fill=GRY)
+    mas = _dark_mascot()
+    bbox = mas.getchannel("A").getbbox()
+    mas = mas.crop(bbox)
+    mas = mas.resize((72, int(72 * mas.height / mas.width)))
+    lock_f = _font("Poppins-Bold.ttf", 36)
+    label = "peka.ai.id"
+    lw = d.textlength(label, font=lock_f)
+    lx = 2048 - 154 - 72 - 16 - int(lw)
+    img.paste(mas, (lx, 120), mas)
+    d.text((lx + 88, 120 + (mas.height - 36) // 2), label, font=lock_f, fill=INK)
+
+
+# ---------------------------------------------------------------- slides
 
 def cover(spec):
     agent = spec["agent"].upper()
@@ -64,37 +278,117 @@ def repo_slide(spec, idx, repo):
     agent = spec["agent"].upper()
     total = len(spec["repos"]) + 3
     page = idx + 2
-    img, d = base(page)
-    # ghost index behind everything else on this slide
-    gf = f(230)
-    num = f"{idx + 1:02d}"
-    d.text((X(1010) - d.textlength(num, font=gf), X(800)), num, font=gf, fill=GHOST)
+    en = enrich(repo)
+    # keep the window bounded: card descriptions stay at most ~3 lines
+    if len(en["en_desc"]) > 220:
+        en = dict(en)
+        en["en_desc"] = en["en_desc"][:217].rsplit(" ", 1)[0] + "…"
+    W = H = 2048
+    MX = 154
+    img = Image.new("RGB", (W, H), PAPER)
+    d = ImageDraw.Draw(img)
+    repo_header(img, d, spec, idx)
     owner, name = repo["name"].split("/", 1)
-    d.text((X(70), X(164)), f"REPO {idx + 1:02d} DARI {len(spec['repos']):02d} // {agent}",
-           font=mono(26), fill=GRY)
-    d.text((X(70), X(216)), owner + "/", font=mono(38), fill=GRY)
-    nf = fit_font(d, name, 96, X(940))
-    d.text((X(70), X(262)), name, font=nf, fill=INK)
-    # star chip
-    cf = f(26)
-    label = f"{repo['stars']} STAR DI GITHUB"
-    tw = d.textlength(label, font=cf)
-    d.rectangle([X(70), X(392), X(70) + tw + X(44), X(450)], fill=INK)
-    asc, des = cf.getmetrics()
-    d.text((X(92), X(421) - (asc + des) / 2), label, font=cf, fill="#ffd60a")
-    # description
-    dy = 506
-    for ln in wrap(d, repo["desc"], f(33, False), X(930)):
-        d.text((X(70), X(dy)), ln, font=f(33, False), fill=DESC)
-        dy += 48
-    # cocok block
-    cy = dy + 26
-    d.line([X(70), X(cy), X(1010), X(cy)], fill=HAIR, width=X(2))
-    d.text((X(70), X(cy + 26)), "COCOK BUAT:", font=f(28), fill=INK)
-    wy = cy + 70
-    for ln in wrap(d, repo["cocok"], f(30, False), X(930)):
-        d.text((X(70), X(wy)), ln, font=f(30, False), fill=DESC)
-        wy += 42
+
+    # ---- browser-window mockup ----
+    WX, WY, WW = MX, 450, W - 2 * MX
+    TITLE_H, BODY_PAD, AVATAR = 120, 76, 280
+    win = Image.new("RGB", (WW, 1200), (255, 255, 255))
+    wd = ImageDraw.Draw(win)
+    wd.rounded_rectangle([0, 0, WW - 1, TITLE_H + 40], radius=40, fill=(0, 0, 0))
+    wd.rectangle([0, TITLE_H, WW - 1, TITLE_H + 40], fill=(0, 0, 0))
+    for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
+        wd.ellipse([48 + i * 60, 42, 48 + i * 60 + 36, 78], fill=c)
+    wd.text((240, 38), repo["name"], font=_mono(42), fill=(170, 170, 170))
+    y = TITLE_H + BODY_PAD
+    desc_w = WW - 2 * BODY_PAD - (AVATAR + 56 if en["avatar"] else 0)
+    name_w_max = desc_w
+    size = 104
+    while size > 56:
+        f_light = _font("Poppins-SemiBold.ttf", size)
+        f_bold = _font("Poppins-ExtraBold.ttf", size)
+        if wd.textlength(owner + "/", font=f_light) + wd.textlength(name, font=f_bold) <= name_w_max:
+            break
+        size -= 4
+    wd.text((BODY_PAD, y), owner + "/", font=f_light, fill=(60, 60, 60))
+    w1 = wd.textlength(owner + "/", font=f_light)
+    wd.text((BODY_PAD + w1, y), name, font=f_bold, fill=INK)
+    if en["avatar"]:
+        av = ImageOps.fit(en["avatar"], (AVATAR, AVATAR))
+        av.putalpha(_rounded_mask((AVATAR, AVATAR), 36))
+        win.paste(av, (WW - BODY_PAD - AVATAR, TITLE_H + BODY_PAD), av)
+    f_desc = _font("Poppins-SemiBold.ttf", 48)
+    desc_lines = wrap(wd, en["en_desc"], f_desc, desc_w)
+    y += 130 + 30
+    for line in desc_lines:
+        wd.text((BODY_PAD, y), line, font=f_desc, fill=(85, 85, 85))
+        y += 68
+    y += 70
+    f_num = _font("Poppins-Bold.ttf", 56)
+    f_lbl = _font("Poppins-SemiBold.ttf", 36)
+    stats = [("Stars", en["stars"]), ("Forks", en["forks"]), ("Issues", en["issues"])]
+    col_w = (WW - 2 * BODY_PAD) // 3
+    for i, (lbl, val) in enumerate(stats):
+        x = BODY_PAD + i * col_w
+        wd.text((x, y), val if val else "–", font=f_num, fill=INK)
+        wd.text((x, y + 68), lbl, font=f_lbl, fill=(153, 153, 153))
+    y += 68 + 52 + 56
+    if en["langs"]:
+        bw_total = WW - 2 * BODY_PAD
+        bar = Image.new("RGB", (bw_total, 20), (255, 255, 255))
+        bd = ImageDraw.Draw(bar)
+        bx = 0
+        for col, frac in en["langs"]:
+            seg = int(bw_total * frac)
+            if seg <= 0:
+                continue
+            bd.rectangle([bx, 0, min(bx + seg - 1, bw_total - 1), 19], fill=col)
+            bx += seg
+        bar.putalpha(_rounded_mask((bw_total, 20), 10))
+        win.paste(bar, (BODY_PAD, y), bar)
+        y += 20
+    WH = y + BODY_PAD
+    win = win.crop((0, 0, WW, WH))
+    img.paste(win, (WX, WY), _rounded_mask((WW, WH), 40))
+    d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=40,
+                        outline=(190, 185, 172), width=2)
+
+    # ---- terminal panel ----
+    ty = WY + WH + 60
+    PANEL_H = 180
+    panel = Image.new("RGB", (WW, PANEL_H), (20, 20, 26))
+    pd = ImageDraw.Draw(panel)
+    for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
+        pd.ellipse([40 + i * 44, 30, 40 + i * 44 + 24, 54], fill=c)
+    pd.text((196, 26), "terminal", font=_mono(32), fill=(130, 130, 130))
+    cmd = en["install"]
+    tsize = 44
+    while tsize > 30 and pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 120:
+        tsize -= 2
+    tf = _mono(tsize, True)
+    px, py = 44, 104
+    pd.text((px, py), "$ ", font=tf, fill="#ffd60a")
+    px += pd.textlength("$ ", font=tf)
+    pd.text((px, py), cmd, font=tf, fill=(255, 255, 255))
+    cx = px + pd.textlength(cmd, font=tf) + 16
+    pd.rectangle([cx, py + 2, cx + 24, py + 50], fill="#ffd60a")
+    img.paste(panel, (WX, ty), _rounded_mask((WW, PANEL_H), 28))
+    d.rounded_rectangle([WX, ty, WX + WW - 1, ty + PANEL_H - 1], radius=28,
+                        outline=(70, 70, 80), width=2)
+
+    # ---- footer zone ----
+    fy = ty + PANEL_H + 60
+    d.line([(MX, fy), (W - MX, fy)], fill=HAIR, width=2)
+    fy += 40
+    gf = _font("Poppins-ExtraBold.ttf", 240)
+    d.text((W - MX - d.textlength(f"{idx + 1:02d}", font=gf), H - 368),
+           f"{idx + 1:02d}", font=gf, fill=GHOST)
+    d.text((MX, fy), "COCOK BUAT:", font=_font("Poppins-Bold.ttf", 54), fill=INK)
+    fy += 84
+    f_cocok = _font("Poppins-SemiBold.ttf", 52)
+    for line in wrap(d, repo["cocok"], f_cocok, W - 2 * MX):
+        d.text((MX, fy), line, font=f_cocok, fill=(51, 51, 51))
+        fy += 74
     footer(d, page, total)
     return img
 
@@ -139,7 +433,7 @@ def follow(spec):
     lines = [
         "Follow @peka.ai.id di Instagram, Threads, dan TikTok.",
         "Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.",
-        "Save dan share postingan ini biar makin banyak yang kebantu.",
+        "Save dan share postingan ini buat stok.",
     ]
     ly = 452
     for text in lines:
