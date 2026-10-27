@@ -1,0 +1,17 @@
+{
+  "series": "REPO OF THE WEEK",
+  "episode": "01",
+  "repo": "browser-use",
+  "url": "github.com/browser-use/browser-use",
+  "stars": "119RB",
+  "forks": "13,3RB",
+  "issues": "616",
+  "hook": "Browser yang bisa disuruh AI.",
+  "why": [
+    "browser-use itu library Python open source buat agen AI yang bisa mengendalikan browser beneran: buka halaman, klik, isi form, baca isi situs, lalu ambil keputusan dari apa yang dia lihat.",
+    "Bedanya sama scraper biasa: agen ini nggak cuma ambil HTML, tapi berinteraksi kayak manusia. Makanya cocok buat tugas web yang jalurnya berubah-ubah dan nggak bisa di-hardcode."
+  ],
+  "install": "pip install browser-use",
+  "cocok": "Buat kamu yang bikin otomasi web atau AI agent yang harus klik dan isi halaman sendiri, bukan sekadar baca data.",
+  "slug": "rotw-sample"
+}

@@ -1,0 +1,17 @@
+{
+  "series": "REPO OF THE WEEK",
+  "episode": "01",
+  "repo": "rea",
+  "url": "github.com/morluto/rea",
+  "stars": "394RB",
+  "forks": "98,9RB",
+  "issues": "1,2RB",
+  "hook": "Reverse engineer apa pun, pakai agen AI.",
+  "why": [
+    "REA itu agen AI buat reverse engineering: dari perilaku aplikasi sampai ke native binary. Cocok buat kamu yang biasa bedah aplikasi, dan mau agen yang ikut bongkar, bukan cuma baca."
+  ],
+  "image": "/home/hatch/workspace/peka-content/repo-week/assets/rea-card.png",
+  "install": "npm install --global rea-agents",
+  "cocok": "Buat kamu yang kerja di reverse engineering atau security research, dan mau agen AI yang bantu bongkar aplikasi sampai ke binary.",
+  "slug": "rotw-01"
+}
