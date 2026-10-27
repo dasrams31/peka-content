@@ -95,7 +95,7 @@ def cover():
            font=font("Poppins-SemiBold.ttf", 44), fill=CREAM)
     hero = fit_img(os.path.join(SHOW, "case-hokusai-hero.jpg"), W - 2 * MX, 860, 40)
     img.paste(hero, (MX, 680), hero)
-    d.text((MX, 1580), "Contoh hasil: web pameran Hokusai, dibuat dari satu kalimat.",
+    d.text((MX, 1580), "Hasil beneran: web pameran Hokusai.",
            font=font("Poppins-SemiBold.ttf", 36), fill=MUTED)
     d.text((MX, 1640), "alchaincyf/huashu-design  •  27RB star  •  MIT, gratis",
            font=mono(34), fill=YEL)
@@ -110,7 +110,7 @@ def proof():
     tf = font("Poppins-ExtraBold.ttf", 110)
     d.text((MX, 230), "INI HASILNYA,", font=tf, fill=CREAM)
     d.text((MX, 350), "BUKAN MOCKUP.", font=tf, fill=CREAM)
-    d.text((MX, 500), "Semua gambar di slide ini adalah output Huashu Design v3.0 dari repo-nya sendiri.",
+    d.text((MX, 500), "Ini hasil beneran dari repo-nya.",
            font=font("Poppins-SemiBold.ttf", 36), fill=MUTED)
     # Two showcase images side by side.
     bw = (W - 2 * MX - 40) // 2
@@ -118,12 +118,10 @@ def proof():
     right = fit_img(os.path.join(SHOW, "case-qianli-cover.jpg"), bw, 980, 36)
     img.paste(left, (MX, 600), left)
     img.paste(right, (MX + bw + 40, 600), right)
-    d.text((MX, 1610), "Prototipe App: Mingji, app pencatat burung",
+    d.text((MX, 1610), "App Mingji, bisa diklik",
            font=font("Poppins-Bold.ttf", 36), fill=CREAM)
-    d.text((MX + bw + 40, 1610), "PPT: kuliah Qianli Jiangshan Tu",
+    d.text((MX + bw + 40, 1610), "PPT Qianli, bisa diedit",
            font=font("Poppins-Bold.ttf", 36), fill=CREAM)
-    d.text((MX, 1670), "Kiri: App yang bisa diklik. Kanan: PPT yang masih bisa diedit.",
-           font=font("Poppins-SemiBold.ttf", 34), fill=MUTED)
     footer(d, 2)
     return img
 
@@ -136,9 +134,9 @@ def how():
     d.text((MX, 230), "6 JADI 3,", font=tf, fill=CREAM)
     d.text((MX, 350), "LALU PILIH.", font=tf, fill=CREAM)
     steps = [
-        ("01", "Ketik satu kalimat", "Web, App, PPT, animasi, atau infografik. Tanpa buka Figma."),
-        ("02", "Agent bikin 6 thumbnail", "Dari 6 itu, 3 arah terbaik yang dikembangin jadi desain beneran."),
-        ("03", "Pilih dan pakai", "84 gaya dengan contohnya, plus bacaan aset brand biar hasilnya nyambung."),
+        ("01", "Ketik satu kalimat", "Web, App, PPT, animasi. Tanpa Figma."),
+        ("02", "Agent bikin 6 thumbnail", "3 yang paling beda, dibikin beneran."),
+        ("03", "Pilih dan pakai", "84 gaya, plus bacaan aset brand."),
     ]
     y = 520
     for num, title, body in steps:
@@ -163,9 +161,7 @@ def how():
     pd.text((44, 84), "$ ", font=tf2, fill=YEL)
     pd.text((44 + pd.textlength("$ ", font=tf2), 84), cmd, font=tf2, fill=CREAM)
     img.paste(panel, (MX, ty), rounded_mask((W - 2 * MX, 170), 28))
-    d.text((MX, ty + 200), "COCOK BUAT: deck, landing page, dan prototipe buat presentasi",
-           font=font("Poppins-Bold.ttf", 40), fill=CREAM)
-    d.text((MX, ty + 260), "atau launching produk tanpa tim desain.",
+    d.text((MX, ty + 200), "Buat deck, landing page, dan prototipe. Tanpa tim desain.",
            font=font("Poppins-Bold.ttf", 40), fill=CREAM)
     footer(d, 3)
     return img
@@ -180,10 +176,10 @@ def follow():
     d.rectangle([MX, 390, MX + d.textlength("DAN GABUNG.", font=tf) + 40, 390 + 150], fill=YEL)
     d.text((MX + 20, 395), "DAN GABUNG.", font=tf, fill=BG)
     lines = [
-        "Follow @peka.ai.id di Instagram, Threads, dan TikTok.",
-        "Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.",
-        "Save dan share postingan ini buat stok.",
-        "Link repo Huashu Design ada di komentar postingan ini.",
+        "Follow @peka.ai.id.",
+        "Gabung grup WA lewat url.peka.ai.id.",
+        "Save dan share buat stok.",
+        "Link repo ada di komentar.",
     ]
     y = 620
     for text in lines:
