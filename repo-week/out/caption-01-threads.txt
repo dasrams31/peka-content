@@ -1,0 +1,1 @@
+REPO OF THE WEEK EDISI 01: rea, reverse engineer apa pun pakai agen AI. Dari perilaku aplikasi sampai ke native binary, 394RB stars. Install-nya cukup npm install --global rea-agents. Coba di github.com/morluto/rea. Kamu mau bedah aplikasi apa dulu pakai ini? #AI
