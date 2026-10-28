@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Buatkan surat lamaran untuk posisi [POSISI YANG DILAMAR] di [NAMA PERUSAHAAN]. Buka dengan 1 kalimat kenapa saya tertarik, sebutkan 2 keahlian dari [PENGALAMAN SINGKATKU], lalu tutup dengan 1 kalimat ajakan wawancara. Total maksimal 150 kata, nada sopan dan percaya diri, tanpa kalimat template yang generik.
