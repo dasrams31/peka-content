@@ -31,7 +31,8 @@ def slide1_gratisan(spec):
     d = ImageDraw.Draw(img)
     bd.lockup(img, cy=128, mh=104, color=bd.YELLOW)
     d.text((110, 96), "GRATISAN AI", font=bd.mono(46, bold=True), fill=bd.YELLOW)
-    d.text((110, 158), "gratis beneran, bukan trial yang ujungnya bayar",
+    d.text((110, 158), spec.get("subtitle",
+           "gratis beneran, bukan trial yang ujungnya bayar"),
            font=bd.fr(44), fill=bd.GRAY)
 
     TW, TH = 1830, 1150
@@ -131,10 +132,10 @@ def slide3_gratisan(spec):
     bf = bd.mono(58, bold=True)
     d.text((150 + (1748 - d.textlength(band, font=bf)) / 2, 932), band, font=bf, fill=bd.YELLOW)
 
-    ctas = ["Tag teman yang lagi belajar ngoding",
+    ctas = spec.get("ctas", ["Tag teman yang lagi belajar ngoding",
             "Save postingan ini, jatahnya reset tiap bulan",
             "Follow @peka.ai.id, gratisan AI baru tiap Rabu + Sabtu",
-            "Gabung ke komunitas kami: url.peka.ai.id"]
+            "Gabung ke komunitas kami: url.peka.ai.id"])
     yy = 1180
     for c in ctas:
         cl = bd.wrap(d, c, bd.f(64), 1560)

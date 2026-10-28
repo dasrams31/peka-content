@@ -1,0 +1,32 @@
+{
+ "band": "GOOGLE AI PLUS - GRATIS SETAHUN",
+ "category": "AI BUAT BELAJAR",
+ "ctas": [
+  "Tag teman mahasiswa yang butuh ini",
+  "Save dulu, klaimnya sampe 31 Des 2026",
+  "Follow @peka.ai.id, gratisan AI baru tiap Rabu + Sabtu",
+  "Gabung ke komunitas kami: url.peka.ai.id"
+ ],
+ "fields": {
+  "deadline": "Klaim sampe 31 Des 2026",
+  "nilai": "Gemini Plus 1 tahun + 400 GB",
+  "sumber": "gemini.google/students",
+  "untuk": "Mahasiswa 18+ terverifikasi"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/gratisan-ai/out/2026-10-28",
+ "program": "Google AI Plus buat Mahasiswa",
+ "stamp": "GRATIS SETAHUN",
+ "steps": [
+  "Buka gemini.google/students",
+  "Login akun Google pribadi kamu",
+  "Verifikasi status mahasiswa di halaman itu",
+  "Isi metode pembayaran, aktifkan paketnya"
+ ],
+ "subtitle": "setahun gratis buat mahasiswa, catat tanggal batalnya",
+ "syarat": [
+  "Mahasiswa 18+, status diverifikasi Google",
+  "Akun Google pribadi, bukan akun diawasi",
+  "Siapkan metode pembayaran yang valid",
+  "Batalkan sebelum habis biar nggak auto-bayar"
+ ]
+}
