@@ -235,3 +235,8 @@ Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Ten
 5. **Keputusan berbasis snapshot laporan harian 22:30**, bukan angka menit awal (metrik Threads telat dan berbatch). Tidak ada keputusan hapus/revisi sebelum ada snapshot beberapa jam.
 6. **Jam posting bukan penentu.** Kekuatan tawaran dan caption mengalahkan jam tayang; jangan menggeser jadwal demi mengejar jam ramai.
 7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = reactions + shares. Satu angka dari satu platform tidak memvonis konten.
+
+## ATURAN SHORTLINK + TOOLS (2026-10-28, dikunci user, berlaku semua cron konten)
+- SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare: `POST http://127.0.0.1:8095/api/shorten` dengan `{"url": "<url panjang>"}`, pakai URL publik `https://s.peka.ai.id/<code>` yang dikembalikan. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila API gagal atau limit habis: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
+- SPILL: tiap repo edisi itu WAJIB ditambah dulu ke `~/workspace/peka-tools/tools.json` sebelum posting (cek duplikat by name; field ikut pola entry lama). Komentar SPILL berisi 5 shortlink repo (satu per baris) + baris "Cari semua skill ini di tools.peka.ai.id" + baris edisi besok. Link di caption IG/FB (pengecualian) dan di body blog juga pakai shortlink, bukan URL GitHub panjang. Tools web sudah punya kolom pencarian, tidak perlu dibangun.
+- Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi lama, kecuali user minta backfill eksplisit.
