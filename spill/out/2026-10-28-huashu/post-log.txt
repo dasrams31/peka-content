@@ -1,0 +1,16 @@
+Huashu Design special edition (Japanese style) — posted Wed 2026-10-28 ~17:00 WIB
+NOT SPILL #08; spill/series.txt untouched (still 8).
+
+Threads (carousel, 4 slides, account @peka.ai.id):
+- Post: https://www.threads.com/@peka.ai.id/post/DfCMKBcCX8t (verified via threads-cli post read; caption matches approved text, ends with exactly one #AI)
+- Link reply: https://www.threads.com/@peka.ai.id/post/DfCOyq2CWEY (reply text: https://github.com/alchaincyf/huashu-design only, verified via threads-cli post read)
+
+Instagram (reel only, account @peka.ai.id; carousel NOT posted to IG):
+- Reel: https://www.instagram.com/reel/DfCPXaaCf3U/ (verified via instagram-cli post read; caption matches approved text)
+
+Facebook (Page PekaAI, reel only):
+- Reel: https://facebook.com/reel/1503457624957784/ (state: published, verified via facebook-cli post read)
+- Link comment: https://www.facebook.com/122114670723497807?comment_id=3054544404912685 (comment text: https://github.com/alchaincyf/huashu-design only)
+
+Pre-flight: slides 2048x2048; reel 1440x2560 yuv420p 15.000 s (ffprobe verified).
+No failures. No denials.
