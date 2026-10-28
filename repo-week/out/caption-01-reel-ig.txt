@@ -1,0 +1,8 @@
+REPO OF THE WEEK EDISI 01: rea.
+Reverse engineer apa pun, pakai agen AI. Dari perilaku aplikasi sampai ke native binary, 394RB stars.
+Install-nya cukup npm install --global rea-agents.
+Coba sendiri: github.com/morluto/rea
+Kamu mau bedah aplikasi apa dulu pakai ini? Save dulu biar nggak nyari lagi pas butuh. Follow @peka.ai.id buat repo pilihan tiap minggu.
+#RepoOfTheWeek #AI #ReverseEngineering #Ngoding #OpenSource #PekaAI
+
+Musik: Volatile Reaction by Kevin MacLeod
