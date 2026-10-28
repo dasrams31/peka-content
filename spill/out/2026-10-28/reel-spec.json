@@ -1,0 +1,47 @@
+{
+  "agent": "OPENCODE",
+  "episode": 8,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "name": "nexu-io/html-anything",
+      "stars": "9RB",
+      "install": "npx skills add nexu-io/html-anything -g",
+      "penjelasan": "Editor HTML agentic dengan 75 skill dan 9 permukaan, dari majalah sampai prototipe. Agent lokal nulis HTML, kamu tinggal kirim hasilnya 1 klik.",
+      "cocok": "Kreator yang mau bikin majalah, deck, poster, atau prototipe dari prompt tanpa ribet setup.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-28/shots/nexu-io-html-anything.png"
+    },
+    {
+      "name": "Gentleman-Programming/gentle-ai",
+      "stars": "8RB",
+      "install": "go install github.com/gentleman-programming/gentle-ai/v4/cmd",
+      "penjelasan": "Satu setelan konsisten buat semua agent coding kamu, termasuk OpenCode. Pilih memori, skill kurasi, MCP, dan persona tanpa lock in vendor.",
+      "cocok": "Programmer yang pakai banyak agent dan mau setelannya konsisten di semua alat.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-28/shots/Gentleman-Programming-gentle-ai.png"
+    },
+    {
+      "name": "Oldcircle/geo-sleuth",
+      "stars": "4RB",
+      "install": "npx skills add Oldcircle/geo-sleuth",
+      "penjelasan": "Skill yang nebak lokasi foto lewat peta, skyline, satelit, dan street view. Setiap langkahnya ditunjukin, jadi hasilnya bisa kamu cek sendiri.",
+      "cocok": "Jurnalis, peneliti OSINT, dan yang suka main tebak lokasi dari foto.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-28/shots/Oldcircle-geo-sleuth.png"
+    },
+    {
+      "name": "runkids/skillshare",
+      "stars": "3RB",
+      "install": "npx skills add runkids/skillshare -g",
+      "penjelasan": "Sinkron skill, agent, MCP, dan plugin ke semua CLI agent dengan satu perintah. Satu tim pakai setelan yang sama, tanpa copy manual lagi.",
+      "cocok": "Tim developer yang mau semua anggota pakai skill dan agent yang sama.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-28/shots/runkids-skillshare.png"
+    },
+    {
+      "name": "tickernelz/opencode-mem",
+      "stars": "2RB",
+      "install": "npx skills add tickernelz/opencode-mem -g",
+      "penjelasan": "Plugin OpenCode yang ngasih memori persisten dari database vektor lokal. Agent ingat konteks proyek antar sesi, jadi nggak mulai dari nol lagi.",
+      "cocok": "Pengguna OpenCode yang kerja proyek panjang dan mau agentnya ingat konteks kemarin.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-28/shots/tickernelz-opencode-mem.png"
+    }
+  ]
+}
