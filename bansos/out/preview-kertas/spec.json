@@ -1,0 +1,25 @@
+{
+  "program": "Claude Max Gratis 6 Bulan buat OSS",
+  "category": "AI / Open Source",
+  "band": "CLAUDE MAX GRATIS 6 BULAN - BUAT OSS",
+  "fields": {
+    "nilai": "Claude Max 20x gratis 6 bulan",
+    "deadline": "Selama kuota 10.000 masih ada",
+    "untuk": "Maintainer dan kontributor open source",
+    "sumber": "claude.com"
+  },
+  "syarat": [
+    "Maintainer atau kontributor OSS aktif",
+    "500+ repo dependen / 200 ribu+ unduhan",
+    "Atau 100+ PR merged dalam 12 bulan",
+    "Akun GitHub aktif, usia 18+"
+  ],
+  "steps": [
+    "Buka claude.com, halaman Claude for OSS",
+    "Login pakai akun GitHub, isi email",
+    "Ceritakan kontribusimu, maks 500 kata",
+    "Tunggu review, tidak dijamin lolos"
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/preview-kertas",
+  "theme": "kertas"
+}
