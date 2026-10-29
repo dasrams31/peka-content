@@ -1,0 +1,24 @@
+{
+  "program": "ChatGPT Pro Gratis 6 Bulan buat OSS",
+  "category": "AI / Open Source",
+  "band": "CHATGPT PRO GRATIS 6 BULAN - BUAT OSS",
+  "fields": {
+    "nilai": "ChatGPT Pro + Codex gratis 6 bulan",
+    "deadline": "Selama program masih dibuka, review bergilir",
+    "untuk": "Maintainer inti proyek open source publik",
+    "sumber": "openai.com"
+  },
+  "syarat": [
+    "Maintainer inti proyek open source",
+    "Proyek banyak dipakai, penting buat ekosistem",
+    "Siap diverifikasi lewat akun GitHub",
+    "Security dan kredit API itu opsional"
+  ],
+  "steps": [
+    "Buka formulir Codex for OSS, openai.com",
+    "Login dan verifikasi lewat GitHub",
+    "Isi data proyek dan peran ekosistemnya",
+    "Tunggu review, manfaat bisa berbeda"
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-31-chatgpt-oss"
+}
