@@ -1,0 +1,14 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 9,
+  "next": "CLAUDE",
+  "blocked": false,
+  "reason": "K-Dense replaced with Nanako0129/sepia (never posted); sepia shortlink created directly in DB as admin-owned link per user order",
+  "links": {
+    "sickn33/agentic-awesome-skills": "https://s.peka.ai.id/apbcx2",
+    "mksglu/context-mode": "https://s.peka.ai.id/zb0qzd",
+    "gemini-cli-extensions/conductor": "https://s.peka.ai.id/zyhccw",
+    "gotalab/cc-sdd": "https://s.peka.ai.id/bm4nhg",
+    "Nanako0129/sepia": "https://s.peka.ai.id/cevxjb"
+  }
+}
