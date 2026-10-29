@@ -20,5 +20,6 @@
     "Isi data proyek dan peran ekosistemnya",
     "Tunggu review, manfaat bisa berbeda"
   ],
-  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-31-chatgpt-oss"
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-31-chatgpt-oss",
+  "theme": "kuning"
 }

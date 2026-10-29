@@ -20,5 +20,6 @@
     "Ceritakan kontribusimu, maks 500 kata",
     "Tunggu review, tidak dijamin lolos"
   ],
-  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-30-claude-oss"
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-10-30-claude-oss",
+  "theme": "kuning"
 }
