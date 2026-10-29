@@ -1,0 +1,47 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 9,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "sickn33/agentic-awesome-skills",
+      "stars": "49RB",
+      "install": "npx skills add sickn33/agentic-awesome-skills -g",
+      "penjelasan": "Katalog raksasa berisi lebih dari 2.877 skill siap pakai buat AI coding agent. Skillnya bisa dicari dari katalog lokal dan dilihat rencananya sebelum dijalankan.",
+      "cocok": "Pengguna AI coding agent yang mau punya banyak skill siap pakai tanpa berburu repo satu satu.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-29/shots/sickn33-agentic-awesome-skills.png"
+    },
+    {
+      "name": "mksglu/context-mode",
+      "stars": "33RB",
+      "install": "/plugin marketplace add mksglu/context-mode",
+      "penjelasan": "Alat optimasi context window buat sesi agent yang panjang. Output tool di-sandbox sampai jauh lebih ringkas dan memori sesi dipertahankan.",
+      "cocok": "Pengguna agent yang sesi kerjanya panjang dan context window-nya sering penuh di tengah jalan.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-29/shots/mksglu-context-mode.png"
+    },
+    {
+      "name": "gemini-cli-extensions/conductor",
+      "stars": "4RB",
+      "install": "/plugin marketplace add gemini-cli-extensions/conductor",
+      "penjelasan": "Plugin Spec-Driven Development buat Antigravity dan Claude Code. Tentukan dulu speknya, susun rencana, baru implementasikan.",
+      "cocok": "Pengguna Antigravity atau Claude Code yang mau membangun fitur lewat spesifikasi yang jelas.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-29/shots/gemini-cli-extensions-conductor.png"
+    },
+    {
+      "name": "gotalab/cc-sdd",
+      "stars": "4RB",
+      "install": "npx skills add gotalab/cc-sdd -g",
+      "penjelasan": "Harness Spec-Driven Development yang minimal dan gampang disesuaikan. Spek yang disetujui diubah jadi implementasi mandiri yang jalan lama.",
+      "cocok": "Tim atau solo developer yang speknya sudah disetujui dan mau implementasi jalan mandiri sampai beres.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-29/shots/gotalab-cc-sdd.png"
+    },
+    {
+      "name": "Nanako0129/sepia",
+      "stars": "4RB",
+      "install": "npx skills add Nanako0129/sepia -g",
+      "penjelasan": "Skill menulis yang memperbaiki tulisan supaya tidak terasa seperti hasil AI. Ada plugin native buat Antigravity, Claude Code, Codex, dan Grok Build.",
+      "cocok": "Penulis fiksi atau profesional yang pakai Antigravity dan mau tulisannya tidak terasa seperti buatan AI.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-29/shots/Nanako0129-sepia.png"
+    }
+  ]
+}
