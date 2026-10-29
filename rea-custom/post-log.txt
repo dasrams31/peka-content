@@ -1,0 +1,11 @@
+REA custom post — 2026-10-29 17:00 WIB
+Threads carousel post_id: 18132102499704735
+Threads URL: https://www.threads.com/@peka.ai.id/post/DfEwAFniVhv
+Threads reply (shortlink) post_id: 18400285981202296
+Instagram reel media_fbid: 17952486978301267
+Instagram reel URL: https://www.instagram.com/reel/DfEwY_biaeY/
+Facebook reel post_id: 122115015765497807
+Facebook reel URL: https://facebook.com/reel/2201256800794389/
+Facebook comment (shortlink) comment_id: 1636858394569688
+Facebook comment URL: https://www.facebook.com/122115015765497807?comment_id=1636858394569688
+Shortlink: https://s.peka.ai.id/xziecu -> https://github.com/morluto/rea
