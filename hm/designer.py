@@ -382,7 +382,7 @@ def cover(args, n):
     if THEME:
         img = {"frame": cover_frame, "koran": cover_koran,
                "majalah": cover_majalah, "terminal": cover_terminal,
-               "layar": cover_layar}[THEME](args, n)
+               "layar": cover_layar, "premium": cover_premium}[THEME](args, n)
         print(f"[designer] theme: {THEME}")
         return img
     layout = pick(args.layout, LAYOUTS)
@@ -633,6 +633,137 @@ def cover_terminal(args, n):
     return img
 
 
+# ---- premium theme (explicit only, never in auto rotation) ----
+# Editorial, not generic dark-tech: warm paper, wide margins, serif headline,
+# one thin gold rule, no gradient, no glow, no big colour block.
+PAPER = "#f7f4ed"
+INK2 = "#171713"
+MUTED2 = "#6b675e"
+GOLD = "#b9975b"
+
+
+def premium_header(img, d):
+    d.text((X(120), X(72)), "AI NEWS", font=mono(26), fill=INK2)
+    lockup(img, d, color=INK2)
+    d = ImageDraw.Draw(img)
+    d.rectangle([X(120), X(132), X(960), X(134)], fill="#d8d2c2")
+    d.rectangle([X(120), X(132), X(240), X(136)], fill=GOLD)
+    return d
+
+
+def premium_footer(d, i, n):
+    d.text((X(120), X(1015)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+           font=f(24, False), fill=MUTED2)
+    pg = f"{i}/{n}"
+    d.text((X(960) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
+           font=f(24, False), fill=MUTED2)
+
+
+def cover_premium(args, n):
+    img = Image.new("RGB", (W, H), PAPER)
+    d = ImageDraw.Draw(img)
+    d = premium_header(img, d)
+    d.text((X(120), X(162)), today_id(), font=mono(24), fill=MUTED2)
+    src = f"SUMBER: {args.source.upper()}"
+    d.text((X(960) - d.textlength(src, font=mono(24)), X(162)), src,
+           font=mono(24), fill=MUTED2)
+    vx0, vy0, vx1, vy1 = X(120), X(214), X(960), X(512)
+    vis = load_visual(args.visual)
+    if vis:
+        img.paste(cover_crop(vis, vx1 - vx0, vy1 - vy0), (vx0, vy0))
+        d = ImageDraw.Draw(img)
+    d.rectangle([vx0, vy0, vx1, vy1], outline="#d8d2c2", width=X(2))
+    d.text((X(120), X(530)), "ILUSTRASI AI", font=mono(22), fill=MUTED2)
+    max_w = W - X(240)
+    sub_full = wrap(d, args.sub, fsr(30), max_w) if args.sub else []
+    chosen = None
+    for sz in (62, 56, 50, 44):
+        lines = wrap(d, args.headline, fs(sz), max_w)
+        if len(lines) > 3:
+            continue
+        lh = int(sz * 1.28)
+        for n_sub in (len(sub_full), 1, 0):
+            if n_sub > len(sub_full):
+                continue
+            need = len(lines) * lh + ((18 + n_sub * 42) if n_sub else 0)
+            if need <= 300:
+                chosen = (sz, lines, lh, sub_full[:n_sub])
+                break
+        if chosen:
+            break
+    if not chosen:
+        sz = 44
+        chosen = (sz, wrap(d, args.headline, fs(sz), max_w)[:3], int(sz * 1.28), [])
+    sz, lines, lh, sub_lines = chosen
+    y = X(580)
+    for ln in lines:
+        d.text((X(120), y), ln, font=fs(sz), fill=INK2)
+        y += X(lh)
+    if sub_lines:
+        y += X(18)
+        for ln in sub_lines:
+            d.text((X(120), y), ln, font=fsr(30), fill=MUTED2)
+            y += X(42)
+    d.rectangle([X(120), X(918), X(960), X(920)], fill="#d8d2c2")
+    d.text((X(120), X(940)), "GESER", font=mono(28), fill=INK2)
+    d.text((X(120) + d.textlength("GESER", font=mono(28)) + X(14), X(940)),
+           "\u2192", font=mono(28), fill=GOLD)
+    premium_footer(d, 1, n)
+    return img
+
+
+def detail_premium(args, points, idx, n):
+    img = Image.new("RGB", (W, H), PAPER)
+    d = ImageDraw.Draw(img)
+    d = premium_header(img, d)
+    d.text((X(120), X(162)), "DETAIL BERITA", font=mono(24), fill=MUTED2)
+    base_num = (idx - 2) * 2
+    blocks = []
+    for p in points:
+        for sz in (36, 32, 30):
+            lines = wrap(d, p, fsr(sz), W - X(380))
+            if len(lines) <= 6:
+                break
+        blocks.append((sz, lines))
+    total = sum(len(lines) * int(sz * 1.45) for sz, lines in blocks)
+    total += (len(blocks) - 1) * (28 + 28 + 2)
+    y = X(200) + max(0, (X(760) - total) // 2)
+    for j, (sz, lines) in enumerate(blocks):
+        num = f"{base_num + j + 1:02d}"
+        d.text((X(120), y), num, font=fs(40), fill=GOLD)
+        ty = y + X(4)
+        for ln in lines:
+            d.text((X(240), ty), ln, font=fsr(sz), fill=INK2)
+            ty += X(int(sz * 1.45))
+        y = ty + X(28)
+        if j < len(blocks) - 1:
+            d.rectangle([X(120), y, X(960), y + X(2)], fill="#e2ddd0")
+            y += X(28)
+    premium_footer(d, idx, n)
+    return img
+
+
+def cta_premium(args, n):
+    img = Image.new("RGB", (W, H), PAPER)
+    d = ImageDraw.Draw(img)
+    d = premium_header(img, d)
+    y = X(340)
+    for ln in ["Kabar AI terbaru,", "tanpa ribut."]:
+        d.text((X(120), y), ln, font=fs(64), fill=INK2)
+        y += X(88)
+    y += X(28)
+    d.rectangle([X(120), y, X(240), y + X(4)], fill=GOLD)
+    y += X(36)
+    d.text((X(120), y), "Follow @peka.ai.id", font=f(48), fill=INK2)
+    y += X(84)
+    d.text((X(120), y), "Satu topik AI setiap hari, plus prompt dan tools",
+           font=fsr(30), fill=MUTED2)
+    d.text((X(120), y + X(44)), "yang bisa langsung dipakai.",
+           font=fsr(30), fill=MUTED2)
+    premium_footer(d, n, n)
+    return img
+
+
 # ---- detail styles ----
 
 def detail_dim(args, points, idx, n):
@@ -788,7 +919,8 @@ def detail(args, points, idx, n):
             img = {"dim": detail_dim, "cards": detail_cards}[style](args, points, idx, n)
         else:
             fn = {"koran": detail_koran, "majalah": detail_cards,
-                  "terminal": detail_dim, "layar": detail_layar}[THEME]
+                  "terminal": detail_dim, "layar": detail_layar,
+                  "premium": detail_premium}[THEME]
             img = fn(args, points, idx, n)
         if idx == 2:
             print(f"[designer] detail via theme: {THEME}")
@@ -803,6 +935,8 @@ def detail(args, points, idx, n):
 def cta(args, n):
     if THEME == "koran":
         return cta_koran(args, n)
+    if THEME == "premium":
+        return cta_premium(args, n)
     img, d = base(args.badge)
     y = X(380)
     for ln in ["Jangan ketinggalan", "kabar AI terbaru."]:
@@ -834,16 +968,16 @@ def main():
     ap.add_argument("--badge-style", default="pill",
                     help="pill|sharp|brutal|ghost")
     ap.add_argument("--theme", default=None,
-                    help="frame|koran|majalah|terminal|auto (set desain harian; "
-                         "mengabaikan --layout/--detail-style). layar = tema "
-                         "screenshot, hanya bila disebut eksplisit")
+                    help="frame|koran|majalah|terminal|premium|auto (set desain harian; "
+                         "mengabaikan --layout/--detail-style). layar dan premium = "
+                         "tema eksplisit, tidak ikut rotasi auto")
     args = ap.parse_args()
     global BADGE_STYLE, THEME
     if args.theme:
-        THEME = "layar" if args.theme == "layar" else pick(args.theme, THEMES)
+        THEME = args.theme if args.theme in ("layar", "premium") else pick(args.theme, THEMES)
         BADGE_STYLE = {"frame": "ghost", "koran": "sharp",
                        "majalah": "ghost", "terminal": "sharp",
-                       "layar": "ghost"}[THEME]
+                       "layar": "ghost", "premium": "sharp"}[THEME]
     else:
         BADGE_STYLE = args.badge_style
 
