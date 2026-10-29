@@ -1,0 +1,10 @@
+SPILL #09 ANTIGRAVITY - 2026-10-29
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfFPeg1D2j7 (post_id 18184754482426820)
+Threads reply shortlink: FAILED 3x HTTP 500 (to retry)
+IG reel: media 18083109908366629 (shortcode not returned by CLI, do not invent)
+FB reel: https://facebook.com/reel/2374599429745053/ (post_id 122115086649497807, comment 1144692451265707)
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-antigravity-edisi-09
+Music: Tech Live by Kevin MacLeod
+Reels: animated 2K (not slideshow fallback)
+Shortlinks: 4 guest + 2 admin-DB (gotalab bm4nhg, sepia cevxjb); K-Dense replaced by Nanako0129/sepia (never posted before)
+Tools: total 144 (4 added, mksglu already present)
