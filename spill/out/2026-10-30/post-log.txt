@@ -1,0 +1,8 @@
+SPILL #10 CLAUDE - 2026-10-30 (live retry, shortlink akun admin)
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfH0QVPE43S (post_id 18126432799902740)
+IG reel (animasi, Mechanolith): media 18108151421523885 (shortcode tidak dikembalikan CLI)
+FB reel: https://facebook.com/reel/978596175294404/ (post_id 122115410295497807)
+FB comment shortlink: 1073866958973201
+Threads comment shortlink: GAGAL (HTTP 500 lalu 429 rate limit Threads) - teks tersimpan di comment-threads-pending.txt, coba lagi besok
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-claude-edisi-10
+Shortlink (admin, user_id 1): 2ugayo, e2c19a, a5p59l, xy1cbq, iq5n1i (semua 307 terverifikasi)

@@ -1,0 +1,47 @@
+{
+  "agent": "CLAUDE",
+  "episode": 10,
+  "next": "HERMES",
+  "repos": [
+    {
+      "name": "hesreallyhim/awesome-claude-code",
+      "stars": "57RB",
+      "install": "npx skills add hesreallyhim/awesome-claude-code -g",
+      "penjelasan": "Koleksi kurasi resource terbaik buat Claude Code: skill, agent, status line, dan plugin dalam satu daftar rapi. Titik awal paling hemat waktu buat yang baru mulai.",
+      "cocok": "Pemula Claude Code yang mau mulai dari daftar kurasi yang sudah dipilihkan komunitas.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-30/shots/hesreallyhim-awesome-claude-code.png"
+    },
+    {
+      "name": "anthropics/claude-plugins-official",
+      "stars": "45RB",
+      "install": "npx skills add anthropics/claude-plugins-official -g",
+      "penjelasan": "Direktori plugin resmi dari Anthropic, sudah dikurasi dan nyambung ke skill dan MCP. Patokan aman buat pasang plugin baru di Claude Code.",
+      "cocok": "Pengguna Claude Code yang mau pasang plugin dari sumber resmi dan tidak mau coba coba plugin acak.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-30/shots/anthropics-claude-plugins-official.png"
+    },
+    {
+      "name": "zhaoxuya520/reverse-skill",
+      "stars": "44RB",
+      "install": "npx skills add zhaoxuya520/reverse-skill -g",
+      "penjelasan": "Paket routing skill buat reverse engineering dan penetration testing yang sudah diizinkan, dengan tool disiapkan otomatis. Jalan di Claude Code, Kiro, Cursor, dan Cline.",
+      "cocok": "Peneliti keamanan yang mau routing skill reverse engineering dan penetration testing berjalan otomatis di client coding AI-nya.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-30/shots/zhaoxuya520-reverse-skill.png"
+    },
+    {
+      "name": "Nutlope/hallmark",
+      "stars": "42RB",
+      "install": "npx skills add nutlope/hallmark -g",
+      "penjelasan": "Skill desain anti generik buat Claude Code, Cursor, dan Codex. Bikin tampilan hasil AI terlihat rapi dan profesional, bukan template itu itu saja.",
+      "cocok": "Developer yang minta AI membuat tampilan web dan mau hasilnya terlihat profesional, bukan seperti template generik.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-30/shots/Nutlope-hallmark.png"
+    },
+    {
+      "name": "Donchitos/Claude-Code-Game-Studios",
+      "stars": "30RB",
+      "install": "npx skills add Donchitos/Claude-Code-Game-Studios -g",
+      "penjelasan": "Claude Code jadi studio game lengkap: 49 agent dan 72 skill dengan koordinasi ala studio sungguhan. Mendukung Unity, Unreal Engine, dan Godot.",
+      "cocok": "Developer game indie yang mau bikin game di Unity, Unreal, atau Godot dengan bantuan tim agent AI yang terkoordinasi.",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-30/shots/Donchitos-Claude-Code-Game-Studios.png"
+    }
+  ]
+}
