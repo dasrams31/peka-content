@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bansos ticket-design carousel generator (3 slides, 2048x2048).
+"""Bansos ticket-design carousel generator (3 slides, 4096x4096).
 
 Design identity for Peka bansos posts: a physical aid ticket / coupon.
 Two themes, picked by spec["theme"] (default "tiket"):
@@ -28,7 +28,7 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-S = 2048
+S = 4096
 YELLOW = (255, 214, 10)
 BLACK = (17, 17, 17)
 INK = (22, 22, 22)
@@ -111,14 +111,14 @@ def lockup(img, cy, mh, color, chip=None):
     tf = f(int(mh * 0.74))
     label = "peka.ai.id"
     ascent, descent = tf.getmetrics()
-    tx = 1938 - d.textlength(label, font=tf)
+    tx = 3876 - d.textlength(label, font=tf)
     ty = cy - (ascent + descent) // 2
-    mx = int(tx - 26 - cr.width)
+    mx = int(tx - 52 - cr.width)
     my = cy - mh // 2
     if chip is not None:
-        pad = 20
+        pad = 40
         d.rounded_rectangle([mx - pad, my - pad, mx + cr.width + pad, my + mh + pad],
-                            radius=34, fill=chip)
+                            radius=68, fill=chip)
     img.paste(cr, (mx, my), mr)
     d.text((tx, ty), label, font=tf, fill=color)
 
@@ -138,41 +138,41 @@ def wrap(d, text, font, max_w):
     return lines
 
 
-def dashed_v(d, x, y0, y1, color, dash=26, gap=18, width=5):
+def dashed_v(d, x, y0, y1, color, dash=52, gap=36, width=10):
     y = y0
     while y < y1:
         d.line([x, y, x, min(y + dash, y1)], fill=color, width=width)
         y += dash + gap
 
 
-def dashed_h(d, y, x0, x1, color, dash=26, gap=18, width=5):
+def dashed_h(d, y, x0, x1, color, dash=52, gap=36, width=10):
     x = x0
     while x < x1:
         d.line([x, y, min(x + dash, x1), y], fill=color, width=width)
         x += dash + gap
 
 
-def pill(d, x, y, text, font, fill=None, txt=None, outline=None, pad_x=32, pad_y=15):
+def pill(d, x, y, text, font, fill=None, txt=None, outline=None, pad_x=64, pad_y=30):
     tw = d.textlength(text, font=font)
     ascent, descent = font.getmetrics()
     th = ascent + descent
     box = [x, y, x + tw + pad_x * 2, y + th + pad_y * 2]
     d.rounded_rectangle(box, radius=(box[3] - box[1]) // 2, fill=fill, outline=outline,
-                        width=5 if outline else 1)
-    d.text((x + pad_x, y + pad_y - 2), text, font=font, fill=txt)
+                        width=10 if outline else 2)
+    d.text((x + pad_x, y + pad_y - 4), text, font=font, fill=txt)
     return box[2]
 
 
 def stamp(d, cx, cy, text):
     """Red double-outline GRATIS stamp, rotated -8 degrees, drawn in place."""
-    tf = f(64)
+    tf = f(128)
     tw = d.textlength(text, font=tf)
-    w, h = int(tw + 84), 138
-    layer = Image.new("RGBA", (w + 60, h + 60), (0, 0, 0, 0))
+    w, h = int(tw + 168), 276
+    layer = Image.new("RGBA", (w + 120, h + 120), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
-    ld.rounded_rectangle([30, 30, 30 + w, 30 + h], radius=26, outline=RED, width=9)
-    ld.rounded_rectangle([48, 48, 30 + w - 18, 30 + h - 18], radius=18, outline=RED, width=4)
-    ld.text((30 + (w - tw) / 2, 30 + 34), text, font=tf, fill=RED)
+    ld.rounded_rectangle([60, 60, 60 + w, 60 + h], radius=52, outline=RED, width=18)
+    ld.rounded_rectangle([96, 96, 60 + w - 36, 60 + h - 36], radius=36, outline=RED, width=8)
+    ld.text((60 + (w - tw) / 2, 60 + 68), text, font=tf, fill=RED)
     layer = layer.rotate(8, resample=Image.BICUBIC, expand=True)
     return layer, (int(cx - layer.width / 2), int(cy - layer.height / 2))
 
@@ -181,12 +181,12 @@ def barcode(d, x, y, w, h, seed_text):
     seed = int(hashlib.md5(seed_text.encode()).hexdigest()[:8], 16)
     cx = x
     i = 0
-    while cx < x + w - 8:
+    while cx < x + w - 16:
         seed = (seed * 1103515245 + 12345) % (2 ** 31)
-        bw = 4 + (seed % 4) * 4
+        bw = 8 + (seed % 4) * 8
         if i % 2 == 0:
             d.rectangle([cx, y, cx + bw, y + h], fill=PAL["ink"])
-        cx += bw + 5
+        cx += bw + 10
         i += 1
 
 
@@ -195,97 +195,97 @@ def slide1_photo(spec):
     the ticket gains a framed photo window right of the title."""
     img = Image.new("RGB", (S, S), PAL["bg"])
     d = ImageDraw.Draw(img)
-    lockup(img, cy=128, mh=104, color=PAL["lockup"], chip=PAL["lockup_chip"])
-    d.text((110, 96), "INFO BANSOS", font=mono(46, bold=True), fill=PAL["header"])
-    d.text((110, 158), "buat yang lagi butuh, bukan buat yang lagi iseng",
-           font=fr(44), fill=PAL["subtitle"])
+    lockup(img, cy=256, mh=208, color=PAL["lockup"], chip=PAL["lockup_chip"])
+    d.text((220, 192), "INFO BANSOS", font=mono(92, bold=True), fill=PAL["header"])
+    d.text((220, 316), "buat yang lagi butuh, bukan buat yang lagi iseng",
+           font=fr(88), fill=PAL["subtitle"])
 
-    TW, TH = 1830, 1150
-    layer = Image.new("RGBA", (TW + 220, TH + 240), (0, 0, 0, 0))
+    TW, TH = 3660, 2300
+    layer = Image.new("RGBA", (TW + 440, TH + 480), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
-    ox, oy = 110, 100
-    ld.rounded_rectangle([ox + 16, oy + 26, ox + TW + 16, oy + TH + 26], radius=40, fill=PAL["shadow"])
-    ld.rounded_rectangle([ox, oy, ox + TW, oy + TH], radius=40, fill=PAL["card"])
-    perf_x = ox + TW - 470
-    dashed_v(ld, perf_x, oy + 60, oy + TH - 60, PAL["muted"])
+    ox, oy = 220, 200
+    ld.rounded_rectangle([ox + 32, oy + 52, ox + TW + 32, oy + TH + 52], radius=80, fill=PAL["shadow"])
+    ld.rounded_rectangle([ox, oy, ox + TW, oy + TH], radius=80, fill=PAL["card"])
+    perf_x = ox + TW - 940
+    dashed_v(ld, perf_x, oy + 120, oy + TH - 120, PAL["muted"])
     for yy in (oy, oy + TH):
-        ld.ellipse([perf_x - 36, yy - 36, perf_x + 36, yy + 36], fill=PAL["bg"])
+        ld.ellipse([perf_x - 72, yy - 72, perf_x + 72, yy + 72], fill=PAL["bg"])
 
-    mx = ox + 80
-    x = pill(ld, mx, oy + 64, "BANSOS", f(50), fill=PAL["pill_bg"], txt=PAL["pill_text"])
-    pill(ld, x + 24, oy + 64, spec["category"].upper(), f(50), fill=None, txt=PAL["ink"], outline=PAL["ink"])
+    mx = ox + 160
+    x = pill(ld, mx, oy + 128, "BANSOS", f(100), fill=PAL["pill_bg"], txt=PAL["pill_text"])
+    pill(ld, x + 48, oy + 128, spec["category"].upper(), f(100), fill=None, txt=PAL["ink"], outline=PAL["ink"])
 
-    title_lines = wrap(ld, spec["program"], f(92), 640)
+    title_lines = wrap(ld, spec["program"], f(184), 1280)
     if len(title_lines) > 4:
         raise SystemExit("OVERFLOW: program title wraps to >4 lines (photo variant)")
-    ty = oy + 196
+    ty = oy + 392
     for ln in title_lines:
         ld.text((mx, ty), ln, font=f(92), fill=PAL["ink"])
-        ty += 114
+        ty += 228
 
     # photo window: crop the source image into a framed slot
     # (spec "photo_align": "top" for posters/screenshots, default center)
-    px0, py0, pw, ph = ox + 880, oy + 196, perf_x - 70 - (ox + 880), 470
+    px0, py0, pw, ph = ox + 1760, oy + 392, perf_x - 140 - (ox + 1760), 940
     src = Image.open(spec["photo"]).convert("RGB")
     scale = max(pw / src.width, ph / src.height)
-    src = src.resize((int(src.width * scale) + 2, int(src.height * scale) + 2), Image.LANCZOS)
+    src = src.resize((int(src.width * scale) + 4, int(src.height * scale) + 4), Image.LANCZOS)
     cx0 = (src.width - pw) // 2
     cy0 = 0 if spec.get("photo_align") == "top" else (src.height - ph) // 2
     src = src.crop((cx0, cy0, cx0 + pw, cy0 + ph))
     mask = Image.new("L", (pw, ph), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, 0, pw, ph], radius=26, fill=255)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, pw, ph], radius=52, fill=255)
     layer.paste(src, (px0, py0), mask)
-    ld.rounded_rectangle([px0, py0, px0 + pw, py0 + ph], radius=26, outline=PAL["ink"], width=7)
+    ld.rounded_rectangle([px0, py0, px0 + pw, py0 + ph], radius=52, outline=PAL["ink"], width=14)
     chip = "FOTO PROGRAM"
-    chw = ld.textlength(chip, font=mono(32, bold=True)) + 44
-    ld.rounded_rectangle([px0 + 22, py0 + 22, px0 + 22 + chw, py0 + 78],
-                         radius=14, fill=PAL["pill_bg"])
-    ld.text((px0 + 44, py0 + 34), chip, font=mono(32, bold=True), fill=PAL["pill_text"])
+    chw = ld.textlength(chip, font=mono(64, bold=True)) + 88
+    ld.rounded_rectangle([px0 + 44, py0 + 44, px0 + 44 + chw, py0 + 156],
+                         radius=28, fill=PAL["pill_bg"])
+    ld.text((px0 + 88, py0 + 68), chip, font=mono(64, bold=True), fill=PAL["pill_text"])
 
-    dashed_h(ld, oy + 700, mx, perf_x - 70, PAL["muted"])
+    dashed_h(ld, oy + 1400, mx, perf_x - 140, PAL["muted"])
 
     fields = [("NILAI", spec["fields"]["nilai"]), ("DEADLINE", spec["fields"]["deadline"]),
               ("BUAT SIAPA", spec["fields"]["untuk"]), ("SUMBER", spec["fields"]["sumber"])]
     col_w = (perf_x - 70 - mx) // 2
-    fy = oy + 745
+    fy = oy + 1490
     for i, (lab, val) in enumerate(fields):
         fx = mx + (i % 2) * col_w
-        yy = fy + (i // 2) * 180
-        ld.text((fx, yy), lab, font=mono(40, bold=True), fill=PAL["muted"])
-        size = 52
-        while size > 36:
+        yy = fy + (i // 2) * 360
+        ld.text((fx, yy), lab, font=mono(80, bold=True), fill=PAL["muted"])
+        size = 104
+        while size > 72:
             vf = f(size)
-            vl = wrap(ld, val, vf, col_w - 50)
+            vl = wrap(ld, val, vf, col_w - 100)
             longest = max(ld.textlength(wd, font=vf) for wd in val.split())
-            if len(vl) <= 2 and longest <= col_w - 50:
+            if len(vl) <= 2 and longest <= col_w - 100:
                 break
-            size -= 4
+            size -= 8
         else:
             raise SystemExit(f"OVERFLOW: field {lab} does not fit")
         for ln in vl:
-            yy += 56
+            yy += 112
             ld.text((fx, yy), ln, font=vf, fill=PAL["ink"])
 
-    lab_layer = Image.new("RGBA", (700, 90), (0, 0, 0, 0))
+    lab_layer = Image.new("RGBA", (1400, 180), (0, 0, 0, 0))
     lld = ImageDraw.Draw(lab_layer)
-    lld.text((0, 10), "TIKET BANSOS - PEKA", font=mono(52, bold=True), fill=PAL["ink"])
+    lld.text((0, 20), "TIKET BANSOS - PEKA", font=mono(104, bold=True), fill=PAL["ink"])
     lab_layer = lab_layer.rotate(90, resample=Image.BICUBIC, expand=True)
-    layer.paste(lab_layer, (perf_x + 378, oy + 150), lab_layer)
-    barcode(ld, perf_x + 70, oy + 150, 270, 600, spec["program"])
-    ld.text((perf_x + 68, oy + 824), "verified", font=fr(44), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 898), "gabung ke", font=mono(34), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 950), "komunitas kami:", font=mono(34), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 1006), "url.peka.ai.id", font=mono(36, bold=True), fill=PAL["ink"])
+    layer.paste(lab_layer, (perf_x + 756, oy + 300), lab_layer)
+    barcode(ld, perf_x + 140, oy + 300, 540, 1200, spec["program"])
+    ld.text((perf_x + 136, oy + 1648), "verified", font=fr(88), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 1796), "gabung ke", font=mono(68), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 1900), "komunitas kami:", font=mono(68), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 2012), "url.peka.ai.id", font=mono(72, bold=True), fill=PAL["ink"])
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
-    img.paste(layer, ((S - layer.width) // 2, 330), layer)
+    img.paste(layer, ((S - layer.width) // 2, 660), layer)
 
-    st, spos = stamp(ImageDraw.Draw(img), 1290, 1085, spec.get("stamp", "100% GRATIS"))
+    st, spos = stamp(ImageDraw.Draw(img), 2580, 2170, spec.get("stamp", "100% GRATIS"))
     img.paste(st, spos, st)
 
     d = ImageDraw.Draw(img)
-    d.text((110, 1690), "Geser buat syarat dan cara klaimnya →", font=f(60), fill=PAL["text_bg"])
-    d.text((110, 1785), f"Deadline: {spec['fields']['deadline']}", font=fr(48), fill=PAL["deadline"])
+    d.text((220, 3380), "Geser buat syarat dan cara klaimnya →", font=f(120), fill=PAL["text_bg"])
+    d.text((220, 3570), f"Deadline: {spec['fields']['deadline']}", font=fr(96), fill=PAL["deadline"])
     return img
 
 
@@ -294,81 +294,81 @@ def slide1(spec):
         return slide1_photo(spec)
     img = Image.new("RGB", (S, S), PAL["bg"])
     d = ImageDraw.Draw(img)
-    lockup(img, cy=128, mh=104, color=PAL["lockup"], chip=PAL["lockup_chip"])
-    d.text((110, 96), "INFO BANSOS", font=mono(46, bold=True), fill=PAL["header"])
-    d.text((110, 158), "buat yang lagi butuh, bukan buat yang lagi iseng",
-           font=fr(44), fill=PAL["subtitle"])
+    lockup(img, cy=256, mh=208, color=PAL["lockup"], chip=PAL["lockup_chip"])
+    d.text((220, 192), "INFO BANSOS", font=mono(92, bold=True), fill=PAL["header"])
+    d.text((220, 316), "buat yang lagi butuh, bukan buat yang lagi iseng",
+           font=fr(88), fill=PAL["subtitle"])
 
     # --- ticket on its own layer, tilted -1.5 deg ---
-    TW, TH = 1830, 1150
-    layer = Image.new("RGBA", (TW + 220, TH + 240), (0, 0, 0, 0))
+    TW, TH = 3660, 2300
+    layer = Image.new("RGBA", (TW + 440, TH + 480), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
-    ox, oy = 110, 100
-    ld.rounded_rectangle([ox + 16, oy + 26, ox + TW + 16, oy + TH + 26], radius=40, fill=PAL["shadow"])
-    ld.rounded_rectangle([ox, oy, ox + TW, oy + TH], radius=40, fill=PAL["card"])
-    perf_x = ox + TW - 470
-    dashed_v(ld, perf_x, oy + 60, oy + TH - 60, PAL["muted"])
+    ox, oy = 220, 200
+    ld.rounded_rectangle([ox + 32, oy + 52, ox + TW + 32, oy + TH + 52], radius=80, fill=PAL["shadow"])
+    ld.rounded_rectangle([ox, oy, ox + TW, oy + TH], radius=80, fill=PAL["card"])
+    perf_x = ox + TW - 940
+    dashed_v(ld, perf_x, oy + 120, oy + TH - 120, PAL["muted"])
     for yy in (oy, oy + TH):
-        ld.ellipse([perf_x - 36, yy - 36, perf_x + 36, yy + 36], fill=PAL["bg"])
+        ld.ellipse([perf_x - 72, yy - 72, perf_x + 72, yy + 72], fill=PAL["bg"])
 
-    mx = ox + 80
-    x = pill(ld, mx, oy + 64, "BANSOS", f(50), fill=PAL["pill_bg"], txt=PAL["pill_text"])
-    pill(ld, x + 24, oy + 64, spec["category"].upper(), f(50), fill=None, txt=PAL["ink"], outline=PAL["ink"])
+    mx = ox + 160
+    x = pill(ld, mx, oy + 128, "BANSOS", f(100), fill=PAL["pill_bg"], txt=PAL["pill_text"])
+    pill(ld, x + 48, oy + 128, spec["category"].upper(), f(100), fill=None, txt=PAL["ink"], outline=PAL["ink"])
 
-    title_lines = wrap(ld, spec["program"], f(108), 1150)
+    title_lines = wrap(ld, spec["program"], f(216), 2300)
     if len(title_lines) > 3:
         raise SystemExit("OVERFLOW: program title wraps to >3 lines")
-    ty = oy + 190
+    ty = oy + 380
     for ln in title_lines:
         ld.text((mx, ty), ln, font=f(108), fill=PAL["ink"])
-        ty += 132
+        ty += 264
 
-    dashed_h(ld, oy + 640, mx, perf_x - 70, PAL["muted"])
+    dashed_h(ld, oy + 1280, mx, perf_x - 140, PAL["muted"])
 
     fields = [("NILAI", spec["fields"]["nilai"]), ("DEADLINE", spec["fields"]["deadline"]),
               ("BUAT SIAPA", spec["fields"]["untuk"]), ("SUMBER", spec["fields"]["sumber"])]
     col_w = (perf_x - 70 - mx) // 2
-    fy = oy + 690
+    fy = oy + 1380
     for i, (lab, val) in enumerate(fields):
         fx = mx + (i % 2) * col_w
-        yy = fy + (i // 2) * 205
-        ld.text((fx, yy), lab, font=mono(40, bold=True), fill=PAL["muted"])
-        size = 56
-        while size > 38:
+        yy = fy + (i // 2) * 410
+        ld.text((fx, yy), lab, font=mono(80, bold=True), fill=PAL["muted"])
+        size = 112
+        while size > 76:
             vf = f(size)
-            vl = wrap(ld, val, vf, col_w - 50)
+            vl = wrap(ld, val, vf, col_w - 100)
             longest = max(ld.textlength(wd, font=vf) for wd in val.split())
-            if len(vl) <= 2 and longest <= col_w - 50:
+            if len(vl) <= 2 and longest <= col_w - 100:
                 break
-            size -= 4
+            size -= 8
         else:
             raise SystemExit(f"OVERFLOW: field {lab} does not fit")
         for ln in vl:
-            yy += 62
+            yy += 124
             ld.text((fx, yy), ln, font=vf, fill=PAL["ink"])
 
     # stub: barcode left, vertical label right of it
-    lab_layer = Image.new("RGBA", (700, 90), (0, 0, 0, 0))
+    lab_layer = Image.new("RGBA", (1400, 180), (0, 0, 0, 0))
     lld = ImageDraw.Draw(lab_layer)
-    lld.text((0, 10), "TIKET BANSOS - PEKA", font=mono(52, bold=True), fill=PAL["ink"])
+    lld.text((0, 20), "TIKET BANSOS - PEKA", font=mono(104, bold=True), fill=PAL["ink"])
     lab_layer = lab_layer.rotate(90, resample=Image.BICUBIC, expand=True)
-    layer.paste(lab_layer, (perf_x + 378, oy + 150), lab_layer)
-    barcode(ld, perf_x + 70, oy + 150, 270, 600, spec["program"])
-    ld.text((perf_x + 68, oy + 824), "verified", font=fr(44), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 898), "gabung ke", font=mono(34), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 950), "komunitas kami:", font=mono(34), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 1006), "url.peka.ai.id", font=mono(36, bold=True), fill=PAL["ink"])
+    layer.paste(lab_layer, (perf_x + 756, oy + 300), lab_layer)
+    barcode(ld, perf_x + 140, oy + 300, 540, 1200, spec["program"])
+    ld.text((perf_x + 136, oy + 1648), "verified", font=fr(88), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 1796), "gabung ke", font=mono(68), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 1900), "komunitas kami:", font=mono(68), fill=PAL["muted"])
+    ld.text((perf_x + 68, oy + 2012), "url.peka.ai.id", font=mono(72, bold=True), fill=PAL["ink"])
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
-    img.paste(layer, ((S - layer.width) // 2, 330), layer)
+    img.paste(layer, ((S - layer.width) // 2, 660), layer)
 
-    st, spos = stamp(ImageDraw.Draw(img), 1300, 990, spec.get("stamp", "100% GRATIS"))
+    st, spos = stamp(ImageDraw.Draw(img), 2600, 1980, spec.get("stamp", "100% GRATIS"))
     img.paste(st, spos, st)
 
     d = ImageDraw.Draw(img)
-    d.text((110, 1690), "Geser buat syarat dan cara klaimnya →", font=f(60), fill=PAL["text_bg"])
+    d.text((220, 3380), "Geser buat syarat dan cara klaimnya →", font=f(120), fill=PAL["text_bg"])
     dl = spec["fields"]["deadline"]
-    d.text((110, 1785), f"Deadline: {dl}", font=fr(48), fill=PAL["deadline"])
+    d.text((220, 3570), f"Deadline: {dl}", font=fr(96), fill=PAL["deadline"])
     return img
 
 
@@ -376,40 +376,40 @@ def card(d, x, y, w, title, rows, numbered=False):
     """One cream ticket card with check/numbered rows. Returns card height."""
     row_h = []
     for r in rows:
-        row_h.append(len(wrap(d, r, fr(56), w - 260)))
-    total = 150 + sum(h * 76 + 18 for h in row_h) + 46
-    d.rounded_rectangle([x, y, x + w, y + total], radius=36, fill=PAL["card"],
-                        outline=PAL["card_outline"], width=3 if PAL["card_outline"] else 1)
-    dashed_v(d, x + 44, y + 40, y + total - 40, PAL["muted"], dash=20, gap=16, width=4)
-    d.text((x + 110, y + 44), title, font=mono(46, bold=True), fill=PAL["ink"])
-    yy = y + 150
+        row_h.append(len(wrap(d, r, fr(112), w - 520)))
+    total = 300 + sum(h * 152 + 36 for h in row_h) + 92
+    d.rounded_rectangle([x, y, x + w, y + total], radius=72, fill=PAL["card"],
+                        outline=PAL["card_outline"], width=6 if PAL["card_outline"] else 2)
+    dashed_v(d, x + 88, y + 80, y + total - 80, PAL["muted"], dash=40, gap=32, width=8)
+    d.text((x + 220, y + 88), title, font=mono(92, bold=True), fill=PAL["ink"])
+    yy = y + 300
     for i, r in enumerate(rows):
         if numbered:
-            d.ellipse([x + 110, yy + 2, x + 178, yy + 70], fill=PAL["num_bg"])
+            d.ellipse([x + 220, yy + 4, x + 356, yy + 140], fill=PAL["num_bg"])
             n = str(i + 1)
-            d.text((x + 144 - d.textlength(n, font=f(44)) / 2, yy + 10), n, font=f(44), fill=PAL["num_text"])
+            d.text((x + 288 - d.textlength(n, font=f(88)) / 2, yy + 20), n, font=f(88), fill=PAL["num_text"])
         else:
-            d.rectangle([x + 116, yy + 14, x + 160, yy + 58], fill=PAL["check"], outline=PAL["ink"], width=3)
-        for ln in wrap(d, r, fr(56), w - 260):
-            d.text((x + 215, yy), ln, font=fr(56), fill=PAL["ink"])
-            yy += 76
-        yy += 18
+            d.rectangle([x + 232, yy + 28, x + 320, yy + 116], fill=PAL["check"], outline=PAL["ink"], width=6)
+        for ln in wrap(d, r, fr(112), w - 520):
+            d.text((x + 430, yy), ln, font=fr(112), fill=PAL["ink"])
+            yy += 152
+        yy += 36
     return total
 
 
 def slide2(spec):
     img = Image.new("RGB", (S, S), PAL["bg"])
     d = ImageDraw.Draw(img)
-    lockup(img, cy=128, mh=104, color=PAL["lockup"], chip=PAL["lockup_chip"])
-    d.text((110, 280), "SYARAT & CARA KLAIM", font=f(104), fill=PAL["text_bg"])
-    d.rectangle([110, 420, 640, 438], fill=PAL["underline"])
-    y = 520
-    y += card(d, 110, y, 1828, "SYARATNYA", spec["syarat"][:4]) + 60
-    y += card(d, 110, y, 1828, "CARA KLAIM", spec["steps"][:4], numbered=True) + 40
-    if y > S - 210:
+    lockup(img, cy=256, mh=208, color=PAL["lockup"], chip=PAL["lockup_chip"])
+    d.text((220, 560), "SYARAT & CARA KLAIM", font=f(208), fill=PAL["text_bg"])
+    d.rectangle([220, 840, 1280, 876], fill=PAL["underline"])
+    y = 1040
+    y += card(d, 220, y, 3656, "SYARATNYA", spec["syarat"][:4]) + 120
+    y += card(d, 220, y, 3656, "CARA KLAIM", spec["steps"][:4], numbered=True) + 80
+    if y > S - 420:
         raise SystemExit("OVERFLOW: slide 2 content too tall")
-    d.text((110, S - 168), f"Sumber resmi: {spec['fields']['sumber']}", font=fr(46), fill=PAL["subtitle"])
-    d.text((110, S - 100), "Save biar nggak lupa. Tag teman yang butuh.", font=f(50), fill=PAL["text_bg"])
+    d.text((220, S - 336), f"Sumber resmi: {spec['fields']['sumber']}", font=fr(92), fill=PAL["subtitle"])
+    d.text((220, S - 200), "Save biar nggak lupa. Tag teman yang butuh.", font=f(100), fill=PAL["text_bg"])
     return img
 
 
@@ -417,26 +417,26 @@ def slide3(spec):
     img = Image.new("RGB", (S, S), PAL["closing_bg"])
     d = ImageDraw.Draw(img)
     # inset dashed ticket frame
-    m = 64
+    m = 128
     x = m
     while x < S - m:
-        d.line([x, m, min(x + 30, S - m), m], fill=PAL["ink"], width=5)
-        d.line([x, S - m, min(x + 30, S - m), S - m], fill=PAL["ink"], width=5)
-        x += 52
+        d.line([x, m, min(x + 60, S - m), m], fill=PAL["ink"], width=10)
+        d.line([x, S - m, min(x + 60, S - m), S - m], fill=PAL["ink"], width=10)
+        x += 104
     y = m
     while y < S - m:
-        d.line([m, y, m, min(y + 30, S - m)], fill=PAL["ink"], width=5)
-        d.line([S - m, y, S - m, min(y + 30, S - m)], fill=PAL["ink"], width=5)
-        y += 52
-    lockup(img, cy=190, mh=104, color=PAL["ink"], chip=BLACK)
+        d.line([m, y, m, min(y + 60, S - m)], fill=PAL["ink"], width=10)
+        d.line([S - m, y, S - m, min(y + 60, S - m)], fill=PAL["ink"], width=10)
+        y += 104
+    lockup(img, cy=380, mh=208, color=PAL["ink"], chip=BLACK)
 
-    d.text((150, 400), "JANGAN SAMPAI", font=f(196), fill=PAL["ink"])
-    d.text((150, 610), "KELEWATAN", font=f(196), fill=PAL["ink"])
+    d.text((300, 800), "JANGAN SAMPAI", font=f(392), fill=PAL["ink"])
+    d.text((300, 1220), "KELEWATAN", font=f(392), fill=PAL["ink"])
 
-    d.rounded_rectangle([150, 880, 1898, 1050], radius=28, fill=PAL["band"])
+    d.rounded_rectangle([300, 1760, 3796, 2100], radius=56, fill=PAL["band"])
     band = spec["band"].upper()
-    bf = mono(58, bold=True)
-    d.text((150 + (1748 - d.textlength(band, font=bf)) / 2, 932), band, font=bf, fill=PAL["band_text"])
+    bf = mono(116, bold=True)
+    d.text((300 + (3496 - d.textlength(band, font=bf)) / 2, 1864), band, font=bf, fill=PAL["band_text"])
 
     ctas = ["Tag teman yang lagi butuh ini",
             "Save postingan ini buat pas daftar nanti",
@@ -446,18 +446,18 @@ def slide3(spec):
         ctas.append(spec["store_cta"])
     # Edisi dengan CTA tambahan pakai spasi lebih rapat supaya muat.
     tight = len(ctas) > 4
-    line_h = 78 if tight else 84
-    gap = 36 if tight else 44
-    yy = 1160 if tight else 1180
+    line_h = 156 if tight else 168
+    gap = 72 if tight else 88
+    yy = 2320 if tight else 2360
     for c in ctas:
-        cl = wrap(d, c, f(64), 1560)
-        d.rectangle([150, yy + 20, 190, yy + 60], fill=PAL["ink"])
+        cl = wrap(d, c, f(128), 3120)
+        d.rectangle([300, yy + 40, 380, yy + 120], fill=PAL["ink"])
         for ln in cl:
-            d.text((245, yy), ln, font=f(64), fill=PAL["ink"])
+            d.text((490, yy), ln, font=f(128), fill=PAL["ink"])
             yy += line_h
         yy += gap
-    d.text((150, S - 160 if tight else S - 190), "Info diverifikasi dari sumber resmi sebelum tayang.",
-           font=fr(46), fill=PAL["ink"])
+    d.text((300, S - 320 if tight else S - 380), "Info diverifikasi dari sumber resmi sebelum tayang.",
+           font=fr(92), fill=PAL["ink"])
     return img
 
 

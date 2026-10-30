@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Peka Homeless Media - Designer: news carousel PNGs (2048x2048, 2K).
+"""Peka Homeless Media - Designer: news carousel PNGs (4096x4096, 4K).
 
 Usage:
     python3 designer.py --out <dir> --badge "AI NEWS" \\
@@ -20,8 +20,8 @@ import os
 
 from PIL import Image, ImageDraw, ImageFont
 
-S = 2048 / 1080
-W = H = 2048
+S = 4096 / 1080
+W = H = 4096
 BG = "#111111"; YEL = "#ffd60a"; WHT = "#ffffff"; BLK = "#111111"; GRY = "#9a9a9a"
 FB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"

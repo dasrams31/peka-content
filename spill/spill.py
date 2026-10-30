@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Peka SPILL series - paper cheat-sheet carousel (2048x2048, 2K).
+"""Peka SPILL series - paper cheat-sheet carousel (4096x4096, 4K).
 
 Format: light paper background, black ink type, yellow marker
 highlights, mono accents, rotated SPILL stamp. Deliberately different
@@ -15,8 +15,8 @@ import os
 
 from PIL import Image, ImageDraw, ImageFont
 
-S = 2048 / 1080
-W = H = 2048
+S = 4096 / 1080
+W = H = 4096
 PAPER = "#f6f1e6"
 INK = "#161616"
 YEL = "#ffd60a"
