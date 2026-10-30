@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111111; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  .scene { position: absolute; inset: 0; }
+  .black { background: #111111; }
+  .yellow { background: #ffd60a; }
+  .pad { padding: 72px 84px 0 84px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { width: 62px; height: 62px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #ffd60a; }
+  .lockup .chip { background: #111111; border-radius: 34px; padding: 12px 22px 12px 14px; display: flex; align-items: center; gap: 14px; }
+  .lockup .chip span { color: #ffd60a; }
+  .lockup.dark span { color: #161616; }
+  .toprow { display: flex; justify-content: space-between; align-items: flex-start; }
+  .kicker { font-family: DejaVuMonoB; font-size: 40px; color: #ffd60a; letter-spacing: 2px; }
+  .subtitle { font-family: DejaVu; font-size: 32px; color: #96968e; margin-top: 10px; }
+  .ticket { background: #fffdf4; border-radius: 36px; padding: 48px 44px 52px 44px; position: relative; transform: rotate(1.5deg); box-shadow: 14px 20px 0 #343434; display: flex; }
+  .ticket .main { flex: 1; min-width: 0; }
+  .ticket .stub { flex: none; width: 208px; margin-left: 36px; border-left: 4px dashed #696962; padding-left: 26px; display: flex; flex-direction: column; }
+  .stubrow { display: flex; gap: 14px; }
+  .pills { display: flex; gap: 18px; }
+  .pill { font-family: PoppinsB; font-size: 30px; padding: 16px 28px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
+  .pill.dark { background: #111111; color: #ffd60a; }
+  .pill.line { border: 4px solid #161616; color: #161616; }
+  .ptitle { font-family: PoppinsB; font-size: 72px; line-height: 1.15; color: #161616; }
+  .divider { border-top: 4px dashed #696962; margin: 36px 0; }
+  .fields { display: flex; gap: 28px; }
+  .fcol { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 30px; }
+  .field label { display: block; font-family: DejaVuMonoB; font-size: 26px; color: #696962; letter-spacing: 1px; margin-bottom: 8px; }
+  .field span { display: block; font-family: PoppinsB; font-size: 30px; line-height: 1.25; color: #161616; overflow-wrap: anywhere; }
+  .vlabel { writing-mode: vertical-rl; transform: rotate(180deg); font-family: DejaVuMonoB; font-size: 28px; color: #161616; letter-spacing: 2px; }
+  .barcode { flex: 1; height: 380px; background: repeating-linear-gradient(90deg, #161616 0 5px, transparent 5px 9px, #161616 9px 15px, transparent 15px 19px, #161616 19px 22px, transparent 22px 30px); }
+  .stubnote { font-family: DejaVu; font-size: 26px; color: #696962; margin-top: 24px; line-height: 1.4; }
+  .stubnote b { font-family: DejaVuMonoB; color: #161616; font-size: 27px; }
+  .stamp { position: absolute; z-index: 3; border: 7px solid #d63026; border-radius: 22px; outline: 3px solid #d63026; outline-offset: 8px; color: #d63026; font-family: PoppinsB; font-size: 36px; padding: 18px 26px; transform: rotate(-8deg); background: rgba(255, 253, 244, 0.94); text-align: center; line-height: 1.15; white-space: nowrap; }
+  .deadline { font-family: DejaVu; font-size: 34px; color: #ffffff; margin-top: 44px; }
+  .deadline b { color: #ffd60a; font-family: PoppinsB; }
+  .card { background: #fffdf4; border-radius: 36px; padding: 48px 52px 56px 52px; }
+  .card h3 { font-family: DejaVuMonoB; font-size: 38px; color: #161616; letter-spacing: 2px; padding-left: 60px; }
+  .card .rule { border-left: 4px dashed #696962; position: absolute; top: 40px; bottom: 40px; left: 40px; }
+  .row { display: flex; gap: 28px; align-items: flex-start; margin-top: 44px; }
+  .row .box { flex: none; width: 46px; height: 46px; background: #ffd60a; border: 3px solid #161616; margin-top: 6px; }
+  .row .num { flex: none; width: 68px; height: 68px; background: #111111; border-radius: 50%; color: #ffd60a; font-family: PoppinsB; font-size: 34px; display: flex; align-items: center; justify-content: center; margin-top: -4px; }
+  .row p { font-family: DejaVu; font-size: 40px; line-height: 1.4; color: #161616; }
+  .src { font-family: DejaVu; font-size: 34px; color: #ffffff; margin-top: 52px; }
+  .save { font-family: PoppinsB; font-size: 38px; color: #ffffff; margin-top: 18px; }
+  .frame { position: absolute; inset: 48px; border: 4px dashed #161616; pointer-events: none; }
+  .big { font-family: PoppinsXB; font-size: 148px; line-height: 1.02; color: #161616; }
+  .band { background: #111111; border-radius: 24px; padding: 34px 30px; text-align: center; font-family: DejaVuMonoB; font-size: 32px; color: #ffd60a; letter-spacing: 1px; margin-top: 56px; }
+  .cta { display: flex; gap: 26px; align-items: flex-start; margin-top: 44px; }
+  .cta b { flex: none; width: 34px; height: 34px; background: #161616; margin-top: 12px; }
+  .cta p { font-family: PoppinsB; font-size: 42px; line-height: 1.3; color: #161616; }
+  .verify { font-family: DejaVu; font-size: 32px; color: #161616; margin-top: 56px; }
+  .foot { position: absolute; left: 84px; right: 84px; bottom: 48px; font-family: DejaVu; font-size: 26px; color: #a8a89e; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 8px; background: #ffd60a; width: 0; z-index: 5; }
+  #progress.onyellow { background: #111111; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene black" id="s1">
+    <div class="pad">
+      <div class="toprow">
+        <div>
+          <div class="kicker" data-in="0.10,0.40,0,40">GRATISAN AI</div>
+          <div class="subtitle" id="subtitle" data-in="0.25,0.40,0,30"></div>
+        </div>
+        <div class="lockup" data-in="0.10,0.40,0,40"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div>
+      </div>
+      <div class="ticket" id="ticket" style="margin-top:56px">
+        <div class="main">
+          <div class="pills">
+            <span class="pill dark">GRATISAN</span>
+            <span class="pill line" id="catpill">AI BUAT BELAJAR</span>
+          </div>
+          <div class="ptitle" id="ptitle" style="margin-top:40px"></div>
+          <div class="divider"></div>
+          <div class="fields" id="fields"></div>
+        </div>
+        <div class="stub">
+          <div class="stubrow">
+            <div class="barcode"></div>
+            <div class="vlabel">TIKET GRATISAN - PEKA</div>
+          </div>
+          <div class="stubnote">verified<br>gabung ke<br>komunitas kami:<br><b>url.peka.ai.id</b></div>
+        </div>
+        <div class="stamp" id="stamp" data-pop="2.55,0.35" style="right:16px; top:370px">GRATIS<br>SETAHUN</div>
+      </div>
+      <div class="deadline" id="deadline" data-in="3.10,0.40,0,30"></div>
+    </div>
+  </div>
+  <div class="scene black" id="s2" style="display:none">
+    <div class="pad">
+      <div class="toprow"><div class="lockup" data-in="0.10,0.40,0,40"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div>
+      <div class="card" style="margin-top:190px; position:relative" data-in="0.30,0.50,0,60">
+        <div class="rule"></div>
+        <h3>SYARATNYA</h3>
+        <div id="syarat"></div>
+      </div>
+    </div>
+    <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  </div>
+  <div class="scene black" id="s3" style="display:none">
+    <div class="pad">
+      <div class="toprow"><div class="lockup" data-in="0.10,0.40,0,40"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div>
+      <div class="card" style="margin-top:190px; position:relative" data-in="0.30,0.50,0,60">
+        <div class="rule"></div>
+        <h3>CARA KLAIM</h3>
+        <div id="steps"></div>
+      </div>
+      <div class="src" id="src" data-in="2.60,0.40,0,30"></div>
+      <div class="save" data-in="2.90,0.40,0,30">Save biar nggak lupa. Tag teman yang butuh.</div>
+    </div>
+    <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  </div>
+  <div class="scene yellow" id="s4" style="display:none">
+    <div class="frame"></div>
+    <div class="pad">
+      <div class="toprow"><div class="lockup dark" data-in="0.10,0.40,0,40"><div class="chip"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div></div>
+      <div style="margin-top:88px">
+        <div class="big" data-in="0.30,0.50,0,60">AI GRATIS</div>
+        <div class="big" data-in="0.50,0.50,0,60">BUAT KAMU</div>
+      </div>
+      <div class="band" data-in="1.00,0.50,0,30" id="band"></div>
+      <div id="ctas"></div>
+      <div class="verify" data-in="3.00,0.40,0,30">Info diverifikasi dari sumber resmi sebelum tayang.</div>
+    </div>
+  </div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 4.0, TOTAL = 16.0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  function wrapLines(text, maxChars) {
+    const raw = text.split(/\s+/), words = [];
+    for (const w of raw) {
+      if (w.length > maxChars) {
+        for (let i = 0; i < w.length; i += maxChars) words.push(w.slice(i, i + maxChars));
+      } else words.push(w);
+    }
+    const lines = [];
+    let cur = "";
+    for (const w of words) {
+      const t = (cur + " " + w).trim();
+      if (t.length <= maxChars) cur = t;
+      else { if (cur) lines.push(cur); cur = w; }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  window.buildScene = function(spec) {
+    document.getElementById('subtitle').textContent = spec.subtitle || '';
+    document.getElementById('catpill').textContent = spec.category.toUpperCase();
+    let titleSize = 72, titleLines = [];
+    for (const s of [72, 64, 58]) {
+      titleSize = s;
+      titleLines = wrapLines(spec.program, Math.floor(620 / (s * 0.58)));
+      if (titleLines.length <= 3) break;
+    }
+    document.getElementById('ptitle').innerHTML =
+      titleLines.map((ln, i) => '<span data-in="' + (0.70 + i * 0.30).toFixed(2) + ',0.50,0,50" style="display:block;font-size:' + titleSize + 'px">' + ln + '</span>').join('');
+    document.getElementById('ticket').setAttribute('data-in', '0.40,0.60,0,90');
+    const F = [["NILAI", spec.fields.nilai], ["BUAT SIAPA", spec.fields.untuk]];
+    const G = [["DEADLINE", spec.fields.deadline], ["SUMBER", spec.fields.sumber]];
+    const fieldHtml = ([lab, val]) => {
+      const vl = wrapLines(val, 15).slice(0, 3);
+      return '<div class="field" data-in="0,0,0,0"><label>' + lab + '</label>' +
+        vl.map(ln => '<span>' + ln + '</span>').join('') + '</div>';
+    };
+    document.getElementById('fields').innerHTML =
+      '<div class="fcol" data-in="1.40,0.40,0,26">' + F.map(fieldHtml).join('') + '</div>' +
+      '<div class="fcol" data-in="1.65,0.40,0,26">' + G.map(fieldHtml).join('') + '</div>';
+    document.getElementById('stamp').textContent = spec.stamp || 'GRATIS';
+    document.getElementById('deadline').innerHTML = 'Deadline: <b>' + spec.fields.deadline + '</b>';
+    document.getElementById('syarat').innerHTML =
+      spec.syarat.slice(0, 4).map((t, i) =>
+        '<div class="row" data-in="' + (0.80 + i * 0.55).toFixed(2) + ',0.50,80,0"><span class="box"></span><p>' + t + '</p></div>').join('');
+    document.getElementById('steps').innerHTML =
+      spec.steps.slice(0, 4).map((t, i) =>
+        '<div class="row" data-in="' + (0.80 + i * 0.55).toFixed(2) + ',0.50,80,0"><span class="num">' + (i + 1) + '</span><p>' + t + '</p></div>').join('');
+    document.getElementById('src').textContent = 'Sumber resmi: ' + spec.fields.sumber;
+    document.getElementById('band').textContent = (spec.band || '').toUpperCase();
+    document.getElementById('ctas').innerHTML =
+      (spec.ctas || []).slice(0, 4).map((t, i) =>
+        '<div class="cta" data-in="' + (1.50 + i * 0.35).toFixed(2) + ',0.45,60,0"><b></b><p>' + t + '</p></div>').join('');
+  };
+  window.renderAt = function(t) {
+    const si = Math.min(3, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    scene.querySelectorAll('[data-pop]').forEach(el => {
+      const [d, dur] = el.dataset.pop.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = 'rotate(-8deg) scale(' + (1.8 - 0.8 * p) + ')';
+    });
+    const prog = document.getElementById('progress');
+    prog.style.width = (t / TOTAL * 1080) + 'px';
+    prog.className = (si === 3) ? 'onyellow' : '';
+    prog.id = 'progress';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

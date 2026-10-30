@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #ffd60a; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  .scene { position: absolute; inset: 0; }
+  .yellow { background: #ffd60a; }
+  .black { background: #111111; }
+  .pad { padding: 72px 84px 0 84px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup .chip { background: #111111; border-radius: 34px; padding: 12px 22px 12px 14px; display: flex; align-items: center; gap: 14px; }
+  .lockup img { width: 62px; height: 62px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; }
+  .lockup .chip span { color: #ffd60a; }
+  .lockup.plain span { color: #ffd60a; }
+  .toprow { display: flex; justify-content: flex-end; }
+  .chips { display: flex; gap: 22px; margin-top: 64px; }
+  .pill { font-family: PoppinsB; font-size: 34px; padding: 20px 34px; border-radius: 999px; letter-spacing: 1px; }
+  .pill.dark { background: #111111; color: #ffd60a; }
+  .pill.line { border: 4px solid #161616; color: #161616; }
+  .pill.yel { background: #ffd60a; color: #161616; }
+  .giant { font-family: PoppinsXB; font-size: 212px; line-height: 0.98; color: #161616; letter-spacing: -2px; }
+  .title { font-family: PoppinsB; font-size: 58px; line-height: 1.25; color: #161616; }
+  .bubble { background: #ffffff; border-radius: 40px; padding: 52px 48px 60px 48px; position: relative; }
+  .bubble .tag { position: absolute; top: -28px; left: 40px; background: #111111; color: #ffd60a; font-family: PoppinsB; font-size: 28px; padding: 16px 26px; border-radius: 18px; letter-spacing: 1px; }
+  .bubble .tail { position: absolute; left: 110px; bottom: -34px; width: 0; height: 0; border-left: 26px solid transparent; border-right: 26px solid transparent; border-top: 44px solid #ffffff; transform: rotate(-8deg); }
+  .bubble p { font-family: DejaVuMonoB; font-size: 32px; line-height: 1.5; color: #161616; }
+  .strip { position: absolute; left: 0; right: 0; bottom: 0; background: #111111; padding: 44px 84px 52px 84px; display: flex; justify-content: space-between; align-items: baseline; }
+  .strip b { font-family: PoppinsB; font-size: 38px; color: #ffd60a; }
+  .strip span { font-family: DejaVu; font-size: 26px; color: #ffd60a; }
+  .head { font-family: PoppinsB; font-size: 40px; color: #ffd60a; letter-spacing: 2px; }
+  .promptbox { background: #ffd60a; border-radius: 44px; padding: 56px 52px 64px 52px; position: relative; margin-top: 48px; }
+  .promptbox .tail { position: absolute; left: 90px; bottom: -34px; width: 0; height: 0; border-left: 26px solid transparent; border-right: 26px solid transparent; border-top: 44px solid #ffd60a; transform: rotate(-8deg); }
+  .promptbox p { font-family: DejaVuMonoB; color: #161616; }
+  .prompthead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+  .prompthead span { font-family: DejaVuMonoB; font-size: 26px; letter-spacing: 2px; color: #161616; }
+  .glyph { position: relative; width: 64px; height: 64px; flex: none; }
+  .glyph i { position: absolute; border: 5px solid #161616; border-radius: 10px; display: block; }
+  .glyph i:first-child { width: 56px; height: 46px; top: 0; right: 0; }
+  .glyph i:last-child { width: 56px; height: 46px; bottom: 0; left: 0; background: #ffd60a; }
+  .tip { display: flex; gap: 28px; align-items: flex-start; margin-top: 52px; }
+  .tip b { flex: none; width: 34px; height: 34px; background: #ffd60a; margin-top: 12px; }
+  .tip p { font-family: DejaVu; font-size: 44px; line-height: 1.4; color: #ffffff; }
+  .q { font-family: PoppinsXB; font-size: 128px; line-height: 1.05; color: #161616; }
+  .qsub { font-family: PoppinsSB; font-size: 52px; line-height: 1.35; color: #161616; margin-top: 36px; }
+  .band { background: #111111; border-radius: 28px; padding: 40px 36px; text-align: center; font-family: DejaVuMonoB; font-size: 34px; color: #ffd60a; letter-spacing: 1px; margin-top: 64px; }
+  .foot { position: absolute; left: 84px; right: 84px; bottom: 48px; font-family: DejaVu; font-size: 26px; }
+  .foot.y { color: #161616; }
+  .foot.b { color: #a8a89e; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 8px; background: #111111; width: 0; z-index: 5; }
+  #progress.onblack { background: #ffd60a; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene yellow" id="s1">
+    <div class="pad">
+      <div class="toprow"><div class="lockup" data-in="0.10,0.40,0,40"><div class="chip"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div></div>
+      <div class="chips">
+        <span class="pill dark" id="epchip" data-in="0.30,0.40,0,30">EDISI #08</span>
+        <span class="pill line" id="catchip" data-in="0.45,0.40,0,30">BISNIS</span>
+      </div>
+      <div style="margin-top:70px">
+        <div class="giant" data-in="0.60,0.50,-80,0">PROMPT</div>
+        <div class="giant" data-in="0.80,0.50,-80,0">HARIAN</div>
+      </div>
+      <div class="title" id="title" style="margin-top:56px"></div>
+      <div class="bubble" id="teaser" style="margin-top:88px">
+        <span class="tag">ISI PROMPT-NYA</span>
+        <span class="tail"></span>
+        <p id="teasertext"></p>
+      </div>
+    </div>
+    <div class="strip"><b>SALIN, TERUS COBA LANGSUNG</b><span>12:30 WIB</span></div>
+  </div>
+  <div class="scene black" id="s2" style="display:none">
+    <div class="pad" style="padding-top:190px">
+      <div class="toprow"><div class="lockup plain" data-in="0.10,0.40,0,40"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div>
+      <div style="margin-top:72px"><span class="pill yel" data-in="0.30,0.40,0,30">PROMPT SIAP SALIN</span></div>
+      <div class="promptbox" id="promptbox">
+        <div class="prompthead"><span>SALIN PROMPT INI</span><div class="glyph"><i></i><i></i></div></div>
+        <span class="tail"></span>
+        <div id="promptlines"></div>
+      </div>
+    </div>
+    <div class="foot b">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  </div>
+  <div class="scene black" id="s3" style="display:none">
+    <div class="pad">
+      <div class="toprow"><div class="lockup plain" data-in="0.10,0.40,0,40"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div>
+      <div class="head" style="margin-top:230px" data-in="0.30,0.45,0,50">CARA PAKAI</div>
+      <div id="tips"></div>
+    </div>
+    <div class="foot b">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  </div>
+  <div class="scene yellow" id="s4" style="display:none">
+    <div class="pad">
+      <div class="toprow"><div class="lockup" data-in="0.10,0.40,0,40"><div class="chip"><img src="assets/mascot-p-clear.png"><span>peka.ai.id</span></div></div></div>
+      <div class="q" style="margin-top:120px" data-in="0.30,0.50,0,60">Udah<br>nyoba?</div>
+      <div class="qsub" data-in="1.00,0.50,0,40">Spill hasilnya di komentar.</div>
+      <div class="band" data-in="1.70,0.50,0,30" id="band">FOLLOW @PEKA.AI.ID</div>
+    </div>
+    <div class="foot y">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  </div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 4.0, TOTAL = 16.0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  function wrapLines(text, maxChars) {
+    const raw = text.split(/\s+/), words = [];
+    for (const w of raw) {
+      if (w.length > maxChars) {
+        for (let i = 0; i < w.length; i += maxChars) words.push(w.slice(i, i + maxChars));
+      } else words.push(w);
+    }
+    const lines = [];
+    let cur = "";
+    for (const w of words) {
+      const t = (cur + " " + w).trim();
+      if (t.length <= maxChars) cur = t;
+      else { if (cur) lines.push(cur); cur = w; }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  window.buildScene = function(spec) {
+    document.getElementById('epchip').textContent = 'EDISI #' + String(spec.episode).padStart(2, '0');
+    document.getElementById('catchip').textContent = spec.category.toUpperCase();
+    const titleLines = wrapLines(spec.title, 26);
+    document.getElementById('title').innerHTML =
+      titleLines.slice(0, 2).map((ln, i) => '<span data-in="' + (1.30 + i * 0.30).toFixed(2) + ',0.50,0,50" style="display:block">' + ln + '</span>').join('');
+    let teaser = spec.prompt;
+    if (teaser.length > 118) {
+      const cut = teaser.slice(0, 118);
+      teaser = cut.slice(0, cut.lastIndexOf(" ")) + "...";
+    }
+    document.getElementById('teasertext').textContent = teaser;
+    document.getElementById('teaser').setAttribute('data-in', '2.20,0.60,0,70');
+    // Prompt bubble: word-wrap + shrink-to-fit so long prompts always fit.
+    const box = document.getElementById('promptlines');
+    let size = 30, lines = [];
+    for (const s of [36, 34, 32, 30, 28, 26, 24, 22]) {
+      const maxChars = Math.floor(820 / (s * 0.602));
+      lines = wrapLines(spec.prompt, maxChars);
+      size = s;
+      if (lines.length * s * 1.5 <= 700) break;
+    }
+    box.innerHTML = lines.map((ln, i) =>
+      '<p data-in="' + (0.55 + i * 0.22).toFixed(2) + ',0.40,0,26" style="font-size:' + size + 'px">' + ln + '</p>').join('');
+    document.getElementById('tips').innerHTML =
+      spec.tips.slice(0, 3).map((t, i) =>
+        '<div class="tip" data-in="' + (0.70 + i * 0.55).toFixed(2) + ',0.50,80,0"><b></b><p>' + t + '</p></div>').join('');
+    document.getElementById('band').textContent =
+      'FOLLOW @PEKA.AI.ID - BESOK 12:30';
+  };
+  window.renderAt = function(t) {
+    const si = Math.min(3, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    const prog = document.getElementById('progress');
+    prog.style.width = (t / TOTAL * 1080) + 'px';
+    prog.className = (si === 1 || si === 2) ? 'onblack' : '';
+    prog.id = 'progress';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>
