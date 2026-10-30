@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: DejaVuMono; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0A1A30; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: #0A1A30;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 135px 135px; }
+  .frame { position: absolute; inset: 36px; border: 3px solid #3D5A80; pointer-events: none; }
+  .cross { position: absolute; font-family: DejaVuMonoB; font-size: 44px; color: #FFD60A; line-height: 1; }
+  .cross.tl { top: 14px; left: 24px; } .cross.tr { top: 14px; right: 24px; }
+  .cross.bl { bottom: 14px; left: 24px; } .cross.br { bottom: 14px; right: 24px; }
+  .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
+  .dim { text-align: center; font-family: DejaVuMono; font-size: 26px; color: #8FA6C2; }
+  .top { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; }
+  .stamp { border: 3px dashed #F2F5F9; padding: 10px 20px; }
+  .stamp span { font-family: DejaVuMonoB; font-size: 32px; color: #F2F5F9; }
+  .lockup { display: flex; align-items: center; gap: 12px; }
+  .lockup img { height: 88px; }
+  .lockup span { font-family: PoppinsB; font-size: 34px; color: #F2F5F9; }
+  .counter { font-family: DejaVuMonoB; font-size: 34px; color: #8FA6C2; margin-top: 44px; }
+  .section { display: flex; align-items: center; gap: 24px; font-family: DejaVuMonoB; font-size: 36px; color: #FFD60A; margin-top: 90px; }
+  .section::after { content: ""; flex: 1; height: 2px; background: #3D5A80; }
+  h1 { font-family: PoppinsXB; line-height: 1.02; color: #F2F5F9; margin-top: 36px; letter-spacing: -2px; }
+  .rule { height: 5px; background: #FFD60A; margin-top: 18px; position: relative; }
+  .rule::before, .rule::after { content: ""; position: absolute; top: -12px; width: 5px; height: 29px; background: #FFD60A; }
+  .rule::before { left: 0; } .rule::after { right: 0; }
+  .repo { font-family: DejaVuMono; font-size: 34px; color: #8FA6C2; margin-top: 22px; }
+  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.35; color: #F2F5F9; margin-top: 40px; }
+  .chips { display: flex; gap: 24px; margin-top: 48px; }
+  .chip { border: 3px dashed #8FA6C2; padding: 12px 22px; font-family: DejaVuMono; font-size: 30px; color: #F2F5F9; }
+  .flow { margin-top: 84px; }
+  .labels { display: flex; justify-content: space-between; font-family: DejaVuMono; font-size: 26px; color: #8FA6C2; padding: 0 28px 12px 28px; }
+  .boxes { display: flex; align-items: center; gap: 24px; }
+  .box { flex: 1; text-align: center; font-family: PoppinsB; font-size: 32px; padding: 15px 0; border: 3px solid #F2F5F9; color: #F2F5F9; }
+  .box.mid { background: #FFD60A; color: #0A1A30; border-color: #FFD60A; }
+  .arr { color: #FFD60A; font-size: 38px; }
+  .note { margin-top: 72px; border: 3px dashed #3D5A80; padding: 20px 24px; font-family: DejaVuMono; font-size: 28px; line-height: 1.5; color: #8FA6C2; }
+  .note b { color: #FFD60A; font-family: DejaVuMonoB; }
+  .win { border: 2px solid #3D5A80; overflow: hidden; background: #10264A; margin-top: 44px; }
+  .win .titlebar { background: #061224; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 32px; }
+  .win .dot { width: 30px; height: 30px; border-radius: 50%; }
+  .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
+  .win .og { display: block; width: 100%; }
+  .term { background: #061224; border: 2px solid #3D5A80; border-radius: 28px; padding: 30px 36px 36px 36px; margin-top: 36px; }
+  .term .thead { display: flex; align-items: center; gap: 14px; }
+  .term .tdot { width: 26px; height: 26px; border-radius: 50%; }
+  .term .tlabel { font-family: DejaVuMono; font-size: 30px; color: #828282; margin-left: 12px; }
+  .term .cmd { font-family: DejaVuMonoB; font-size: 38px; color: #ffffff; margin-top: 26px; word-break: break-all; }
+  .term .prompt { color: #FFD60A; }
+  .term .cursor { display: inline-block; width: 22px; height: 44px; background: #FFD60A; vertical-align: -6px; margin-left: 10px; }
+  .penjelasan { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #E8EDF3; margin-top: 36px; }
+  .cocok { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #E8EDF3; margin-top: 30px; }
+  .cocok-label { font-family: PoppinsB; color: #F2F5F9; }
+  .q { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #F2F5F9; margin-top: 80px; }
+  .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #B9C6D8; margin-top: 44px; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #8FA6C2; }
+  .foot-line { position: absolute; left: 80px; right: 80px; bottom: 112px; height: 2px; background: #3D5A80; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #FFD60A; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="frame"></div>
+  <span class="cross tl">+</span><span class="cross tr">+</span>
+  <span class="cross bl">+</span><span class="cross br">+</span>
+  <div id="scenes"></div>
+  <div class="foot-line"></div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const COVER_DUR = 3, REPO_DUR = 8, END_DUR = 2;
+  let DURATIONS = [], TOTAL = 0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  function header(counter) {
+    return '<div class="dim">2160 x 3840</div><div class="top">' +
+      '<div class="stamp" data-in="0.10,0.40,0,40"><span>BLUEPRINT</span></div>' +
+      '<div class="lockup" data-in="0.10,0.40,0,40">' +
+      '<img src="assets/mascot-keyed.png"><span>peka.ai.id</span></div></div>' +
+      (counter ? '<div class="counter" data-in="0.30,0.40,0,30">' + counter + '</div>' : '');
+  }
+  window.buildScene = function(spec) {
+    const ep = String(spec.episode).padStart(2, '0');
+    const r = spec.repos[0];
+    const nameSize = Math.min(150, Math.floor(880 / Math.max(1, spec.agent.length)));
+    DURATIONS = [COVER_DUR, REPO_DUR, END_DUR, END_DUR];
+    TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
+    let html = '<div class="scene">' + header('') +
+      '<div class="section" data-in="0.25,0.40,0,30">EDISI #' + ep + ' / GAMBAR KERJA</div>' +
+      '<h1 data-in="0.45,0.50,0,70" style="font-size:' + nameSize + 'px">' +
+      spec.agent.toUpperCase() + '</h1>' +
+      '<div class="rule" data-in="0.75,0.40,0,20"></div>' +
+      '<p class="repo" data-in="0.85,0.40,0,30">' + r.name + '</p>' +
+      '<p class="sub" data-in="1.05,0.50,0,40">' + spec.sub + '</p>' +
+      '<div class="chips" data-in="1.35,0.50,0,30">' +
+      '<div class="chip">' + r.language.toUpperCase() + '</div>' +
+      '<div class="chip">' + r.license.toUpperCase() + '</div>' +
+      '<div class="chip">' + r.stars + ' STAR</div></div>' +
+      '<div class="flow" data-in="1.65,0.50,0,40">' +
+      '<div class="labels"><span>INPUT</span><span>TOOL</span><span>OUTPUT</span></div>' +
+      '<div class="boxes"><div class="box">LAPTOP</div><span class="arr">&rarr;</span>' +
+      '<div class="box mid">' + spec.agent.toUpperCase() + '</div><span class="arr">&rarr;</span>' +
+      '<div class="box">HP</div></div></div>' +
+      '<div class="note" data-in="1.95,0.50,0,30"><b>CATATAN:</b> ' + spec.note + '</div></div>';
+    html += '<div class="scene">' + header('REPO 01 DARI 01 // ' + spec.agent.toUpperCase()) +
+      '<div class="win" data-in="0.45,0.55,0,80">' +
+      '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
+      '<span class="dot" style="background:#FEBC2E"></span>' +
+      '<span class="dot" style="background:#28C840"></span>' +
+      '<span class="tname">' + r.name + '</span></div>' +
+      '<img class="og" src="' + r.shot + '"></div>' +
+      '<div class="term" data-in="0.90,0.50,0,50">' +
+      '<div class="thead"><span class="tdot" style="background:#FF5F57"></span>' +
+      '<span class="tdot" style="background:#FEBC2E"></span>' +
+      '<span class="tdot" style="background:#28C840"></span>' +
+      '<span class="tlabel">mulai</span></div>' +
+      '<div class="cmd"><span class="prompt">$ </span><span class="typed" data-cmd="' +
+      r.install.replace(/"/g, '&quot;') + '" data-start="1.15"></span>' +
+      '<span class="cursor"></span></div></div>' +
+      '<div class="penjelasan" data-in="1.35,0.50,0,40">' + r.penjelasan + '</div>' +
+      '<div class="cocok" data-in="1.80,0.50,0,40"><span class="cocok-label">COCOK BUAT:</span> ' + r.cocok + '</div></div>';
+    html += '<div class="scene">' + header('') +
+      '<p class="q" data-in="0.30,0.50,0,60">' + spec.question + '</p>' +
+      '<p class="next" data-in="0.80,0.50,0,40">Link repo-nya ada di komentar.</p>' +
+      '<p class="next" data-in="1.10,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
+    html += '<div class="scene">' + header('') +
+      '<p class="q" data-in="0.30,0.50,0,60">Follow dan gabung.</p>' +
+      '<p class="next" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>' +
+      '<p class="next" data-in="1.10,0.50,0,40">Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.</p>' +
+      '<p class="next" data-in="1.40,0.50,0,40">Save dan share biar makin banyak yang kebantu.</p></div>';
+    document.getElementById('scenes').innerHTML = html;
+  };
+  window.renderAt = function(t) {
+    let acc = 0, si = DURATIONS.length - 1, lt = 0;
+    for (let i = 0; i < DURATIONS.length; i++) {
+      if (t < acc + DURATIONS[i]) { si = i; lt = t - acc; break; }
+      acc += DURATIONS[i];
+      if (i === DURATIONS.length - 1) lt = DURATIONS[i];
+    }
+    const scenes = document.getElementById('scenes').children;
+    for (let i = 0; i < scenes.length; i++) {
+      const el = scenes[i];
+      if (i === si) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((DURATIONS[si] - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = scenes[si];
+    if (scene) scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    if (scene) scene.querySelectorAll('.typed').forEach(el => {
+      const start = parseFloat(el.dataset.start);
+      const cmd = el.dataset.cmd;
+      const chars = Math.max(0, Math.floor((lt - start) / 0.045));
+      el.textContent = cmd.slice(0, chars);
+    });
+    if (scene) scene.querySelectorAll('.cursor').forEach(el => {
+      el.style.opacity = (Math.floor(lt * 2) % 2 === 0) ? 1 : 0;
+    });
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

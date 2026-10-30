@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "PoppinsXB"; src: url("file:///home/hatch/workspace/sertiku-poster/fonts/Poppins-ExtraBold.ttf"); }
+@font-face { font-family: "PoppinsB"; src: url("file:///home/hatch/workspace/sertiku-poster/fonts/Poppins-Bold.ttf"); }
+@font-face { font-family: "Mono"; src: url("file:///usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"); }
+@font-face { font-family: "MonoB"; src: url("file:///usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"); }
+@font-face { font-family: "Sans"; src: url("file:///usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; }
+body {
+  background: #0A1A30; color: #F2F5F9; font-family: "Sans", sans-serif;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 135px 135px; overflow: hidden; position: relative;
+}
+.frame { position: absolute; inset: 36px; border: 3px solid #3D5A80; pointer-events: none; }
+.cross { position: absolute; color: #FFD60A; font-family: "Mono"; font-size: 44px; line-height: 1; }
+.cross.tl { top: 14px; left: 24px; } .cross.tr { top: 14px; right: 24px; }
+.cross.bl { bottom: 14px; left: 24px; } .cross.br { bottom: 14px; right: 24px; }
+.wrap { position: absolute; inset: 36px; padding: 40px 36px 0 36px; }
+.dim { text-align: center; font-family: "Mono"; font-size: 26px; color: #8FA6C2; }
+header { display: flex; align-items: center; margin-top: 26px; }
+.stamp { border: 3px dashed #F2F5F9; padding: 10px 18px; font-family: "MonoB"; font-size: 32px; }
+.tools { font-family: "Mono"; font-size: 32px; color: #8FA6C2; margin-left: 16px; }
+.lockup { margin-left: auto; display: flex; align-items: center; gap: 12px; font-family: "Sans"; font-weight: bold; font-size: 34px; }
+.lockup img { height: 46px; }
+.section { margin-top: 120px; font-family: "MonoB"; font-size: 36px; color: #FFD60A; display: flex; align-items: center; gap: 24px; }
+.section::after { content: ""; flex: 1; height: 2px; background: #3D5A80; }
+h1 { font-family: "PoppinsXB"; font-size: 262px; line-height: 1.02; margin-top: 40px; letter-spacing: -2px; }
+.rule { height: 5px; background: #FFD60A; margin-top: 18px; position: relative; }
+.rule::before, .rule::after { content: ""; position: absolute; top: -12px; width: 5px; height: 29px; background: #FFD60A; }
+.rule::before { left: 0; } .rule::after { right: 0; }
+.repo { font-family: "Mono"; font-size: 34px; color: #8FA6C2; margin-top: 22px; }
+.sub { font-size: 46px; line-height: 1.32; margin-top: 44px; }
+.chips { display: flex; gap: 28px; margin-top: 56px; }
+.chip { border: 3px dashed #8FA6C2; padding: 14px 26px; font-family: "Mono"; font-size: 32px; }
+.flow { margin-top: 110px; }
+.labels { display: flex; justify-content: space-between; font-family: "Mono"; font-size: 26px; color: #8FA6C2; padding: 0 30px 12px 30px; }
+.boxes { display: flex; align-items: center; gap: 26px; }
+.box { flex: 1; text-align: center; font-family: "PoppinsB"; font-size: 34px; padding: 16px 0; border: 3px solid #F2F5F9; }
+.box.mid { background: #FFD60A; color: #0A1A30; border-color: #FFD60A; }
+.arr { color: #FFD60A; font-size: 40px; }
+.note { margin-top: 90px; border: 3px dashed #3D5A80; padding: 22px 26px; font-family: "Mono"; font-size: 28px; line-height: 1.5; color: #8FA6C2; }
+.note b { color: #FFD60A; font-family: "MonoB"; }
+footer { position: absolute; left: 72px; right: 72px; bottom: 96px; border-top: 2px solid #3D5A80; padding-top: 18px; display: flex; justify-content: space-between; font-family: "Mono"; font-size: 27px; color: #8FA6C2; }
+.progress { position: absolute; left: 72px; right: 72px; bottom: 56px; display: flex; gap: 10px; }
+.progress i { flex: 1; height: 6px; background: #3D5A80; }
+.progress i.on { background: #FFD60A; }
+</style>
+</head>
+<body>
+<div class="frame"></div>
+<span class="cross tl">+</span><span class="cross tr">+</span>
+<span class="cross bl">+</span><span class="cross br">+</span>
+<div class="wrap">
+  <div class="dim">2160 x 3840</div>
+  <header>
+    <div class="stamp">BLUEPRINT</div>
+    <div class="tools">// TOOLS</div>
+    <div class="lockup"><img src="mascot-keyed.png" alt="">peka.ai.id</div>
+  </header>
+  <div class="section">01 / GAMBAR KERJA</div>
+  <h1>CINDY</h1>
+  <div class="rule"></div>
+  <div class="repo">makecindy/cindy</div>
+  <p class="sub">AI agent open source yang jalan di laptop dan HP dalam satu session yang nyambung.</p>
+  <div class="chips"><div class="chip">TYPESCRIPT</div><div class="chip">APACHE-2.0</div><div class="chip">8,7RB STAR</div></div>
+  <div class="flow">
+    <div class="labels"><span>INPUT</span><span>TOOL</span><span>OUTPUT</span></div>
+    <div class="boxes"><div class="box">LAPTOP</div><span class="arr">&rarr;</span><div class="box mid">CINDY</div><span class="arr">&rarr;</span><div class="box">HP</div></div>
+  </div>
+  <div class="note"><b>CATATAN:</b> komputermu jadi servernya sendiri, tanpa sewa server. Satu session lanjut di perangkat lain.</div>
+</div>
+<footer><span>GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</span><span>01 / 04</span></footer>
+<div class="progress"><i class="on"></i><i></i><i></i><i></i></div>
+</body>
+</html>
