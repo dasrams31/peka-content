@@ -289,6 +289,14 @@ def github_card_image(repo, en):
             break
         size_o -= 4
         size_n -= 4
+    # Long names may still overflow past the loop floor: shrink to fit
+    # instead of drawing under the avatar.
+    if d.textlength(name, font=fn) > max_w:
+        size_n = max(30, int(size_n * max_w / d.textlength(name, font=fn)))
+        fn = _font("Poppins-ExtraBold.ttf", size_n)
+    if d.textlength(owner + "/", font=fo) > max_w:
+        size_o = max(30, int(size_o * max_w / d.textlength(owner + "/", font=fo)))
+        fo = _font("Poppins-SemiBold.ttf", size_o)
     d.text((110, 90), owner + "/", font=fo, fill=(60, 60, 60))
     d.text((110, 90 + size_o + 14), name, font=fn, fill=INK)
     if en.get("avatar"):

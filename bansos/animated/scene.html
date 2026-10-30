@@ -9,32 +9,33 @@
   @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
   @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #111111; overflow: hidden; }
-  #stage { position: relative; width: 1080px; height: 1920px; background: #111111; overflow: hidden; }
+  body { background: #FFD60A; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #FFD60A; overflow: hidden; }
   .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
-  .hairline { height: 3px; background: #3A3A3A; }
+  .hairline { height: 3px; background: #111111; }
   .top { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 26px; }
-  .kicker { font-family: DejaVuMonoB; font-size: 34px; color: #ffd60a; letter-spacing: 1px; }
+  .kicker { font-family: DejaVuMonoB; font-size: 34px; color: #111111; letter-spacing: 1px; }
   .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup .chip { background: #111111; border-radius: 16px; padding: 8px; display: flex; }
   .lockup img { width: 62px; height: 62px; }
-  .lockup span { font-family: PoppinsB; font-size: 36px; color: #ffd60a; }
-  h1 { font-family: PoppinsXB; font-size: 118px; line-height: 1.04; color: #FFFDF4; margin-top: 100px; }
-  .hl { display: inline-block; background: #ffd60a; color: #111111; padding: 6px 26px; }
-  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.45; color: #FFFDF4; margin-top: 48px; }
-  .geser { font-family: DejaVuMonoB; font-size: 38px; color: #ffd60a; margin-top: 70px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #111111; }
+  h1 { font-family: PoppinsXB; font-size: 118px; line-height: 1.04; color: #111111; margin-top: 100px; }
+  .hl { display: inline-block; background: #111111; color: #FFD60A; padding: 6px 26px; }
+  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.45; color: #111111; margin-top: 48px; }
+  .geser { font-family: DejaVuMonoB; font-size: 38px; color: #111111; margin-top: 70px; }
   .stamp { display: inline-block; border: 5px solid #D63026; outline: 2px solid #D63026; outline-offset: -16px; border-radius: 18px; padding: 22px 34px; transform: rotate(-8deg); font-family: PoppinsB; font-size: 56px; color: #D63026; margin-top: 70px; margin-left: 430px; }
-  h2 { font-family: PoppinsXB; font-size: 84px; line-height: 1.1; color: #FFFDF4; margin-top: 60px; }
-  .card { background: #FFFDF4; border-radius: 28px; padding: 44px 44px 40px 44px; margin-top: 44px; }
+  h2 { font-family: PoppinsXB; font-size: 84px; line-height: 1.1; color: #111111; margin-top: 60px; }
+  .card { background: #111111; border-radius: 28px; padding: 44px 44px 40px 44px; margin-top: 44px; }
   .row { display: flex; gap: 26px; align-items: flex-start; margin-top: 34px; }
   .row:first-child { margin-top: 0; }
-  .sq { flex: none; width: 34px; height: 34px; background: #ffd60a; margin-top: 10px; }
-  .num { flex: none; width: 62px; height: 62px; background: #111111; border-radius: 50%; color: #ffd60a; font-family: PoppinsB; font-size: 36px; display: flex; align-items: center; justify-content: center; }
-  .row p { font-family: DejaVu; font-size: 40px; line-height: 1.4; color: #111111; }
-  .q { font-family: PoppinsB; font-size: 56px; line-height: 1.3; color: #FFFDF4; margin-top: 80px; }
-  .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #D8D2C4; margin-top: 44px; }
-  .q2 { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #ffd60a; margin-top: 56px; }
-  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #8A867C; }
-  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #ffd60a; width: 0; }
+  .sq { flex: none; width: 34px; height: 34px; background: #FFD60A; margin-top: 10px; }
+  .num { flex: none; width: 62px; height: 62px; background: #FFD60A; border-radius: 50%; color: #111111; font-family: PoppinsB; font-size: 36px; display: flex; align-items: center; justify-content: center; }
+  .row p { font-family: DejaVu; font-size: 40px; line-height: 1.4; color: #FFFDF4; }
+  .q { font-family: PoppinsB; font-size: 56px; line-height: 1.3; color: #111111; margin-top: 80px; }
+  .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #3A3A3A; margin-top: 44px; }
+  .q2 { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #111111; margin-top: 56px; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #4A4A4A; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #111111; width: 0; }
 </style>
 </head>
 <body>
@@ -44,14 +45,11 @@
     <div class="top">
       <div class="kicker" data-in="0.10,0.40,0,40">INFO BANSOS</div>
       <div class="lockup" data-in="0.10,0.40,0,40">
-        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+        <span class="chip"><img src="assets/mascot-p.png"></span><span>peka.ai.id</span>
       </div>
     </div>
-    <h1>
-      <span data-in="0.45,0.50,0,70" style="display:block">VPS GRATIS</span>
-      <span data-in="0.65,0.50,0,70" style="display:block"><span class="hl">TOKEN MUSE</span></span>
-    </h1>
-    <p class="sub" data-in="1.05,0.50,0,40" id="sub">VPS 2 vCPU, RAM 7,7 GB + token Muse 1 miliar.</p>
+    <h1 id="headline"></h1>
+    <p class="sub" data-in="1.05,0.50,0,40" id="sub"></p>
     <div data-in="1.45,0.45,0,30"><span class="stamp">100% GRATIS</span></div>
     <div class="geser" data-in="1.95,0.50,0,30">GESER BUAT CARA KLAIMNYA</div>
   </div>
@@ -60,7 +58,7 @@
     <div class="top">
       <div class="kicker" data-in="0.10,0.40,0,40">INFO BANSOS</div>
       <div class="lockup" data-in="0.10,0.40,0,40">
-        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+        <span class="chip"><img src="assets/mascot-p.png"></span><span>peka.ai.id</span>
       </div>
     </div>
     <h2 data-in="0.30,0.45,0,60">Syaratnya</h2>
@@ -71,7 +69,7 @@
     <div class="top">
       <div class="kicker" data-in="0.10,0.40,0,40">INFO BANSOS</div>
       <div class="lockup" data-in="0.10,0.40,0,40">
-        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+        <span class="chip"><img src="assets/mascot-p.png"></span><span>peka.ai.id</span>
       </div>
     </div>
     <h2 data-in="0.30,0.45,0,60">Cara klaim</h2>
@@ -82,13 +80,13 @@
     <div class="top">
       <div class="kicker" data-in="0.10,0.40,0,40">INFO BANSOS</div>
       <div class="lockup" data-in="0.10,0.40,0,40">
-        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+        <span class="chip"><img src="assets/mascot-p.png"></span><span>peka.ai.id</span>
       </div>
     </div>
     <p class="q" data-in="0.30,0.50,0,60">Jangan sampai kelewatan.</p>
-    <p class="next" data-in="0.80,0.50,0,40">Kode QZMLZ3 diisi waktu daftar, token 1 miliar masuk.</p>
-    <p class="next" data-in="1.10,0.50,0,40">Bonus 3 miliar token lewat bot Telegram Satu Digital, link di komentar.</p>
-    <p class="q2" data-in="1.50,0.50,0,40">Kamu udah klaim belum?</p>
+    <p class="next" data-in="0.80,0.50,0,40" id="close1"></p>
+    <p class="next" data-in="1.10,0.50,0,40" id="close2"></p>
+    <p class="q2" data-in="1.50,0.50,0,40" id="closeq"></p>
     <p class="next" data-in="1.90,0.50,0,40">Follow @peka.ai.id, gabung lewat url.peka.ai.id, save dan share.</p>
   </div>
   <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
@@ -99,7 +97,14 @@
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   function clamp01(x) { return Math.max(0, Math.min(1, x)); }
   window.buildScene = function(spec) {
-    document.getElementById('sub').textContent = spec.nilai + '. Berlaku selama akun aktif, tanpa biaya bulanan.';
+    const lines = spec.headline || [spec.program];
+    const hlIdx = (spec.headline_hl !== undefined) ? spec.headline_hl : (lines.length > 1 ? 1 : -1);
+    document.getElementById('headline').innerHTML = lines.map((t, i) => {
+      const d = (0.45 + i * 0.2).toFixed(2);
+      const inner = (i === hlIdx) ? '<span class="hl">' + t + '</span>' : t;
+      return '<span data-in="' + d + ',0.50,0,70" style="display:block">' + inner + '</span>';
+    }).join('');
+    document.getElementById('sub').textContent = spec.sub || (spec.nilai + '.');
     const srow = (t, d) =>
       '<div class="row" data-in="' + d + ',0.50,80,0"><div class="sq"></div><p>' + t + '</p></div>';
     document.getElementById('syarat').innerHTML =
@@ -108,6 +113,13 @@
       '<div class="row" data-in="' + d + ',0.50,80,0"><div class="num">' + (i + 1) + '</div><p>' + t + '</p></div>';
     document.getElementById('steps').innerHTML =
       spec.steps.map((t, i) => nrow(t, i, (0.65 + i * 0.4).toFixed(2))).join('');
+    const closing = spec.closing || [];
+    const c1 = document.getElementById('close1'), c2 = document.getElementById('close2');
+    c1.textContent = closing[0] || '';
+    c2.textContent = closing[1] || '';
+    if (!closing[0]) c1.style.display = 'none';
+    if (!closing[1]) c2.style.display = 'none';
+    document.getElementById('closeq').textContent = spec.closing_q || 'Kamu mau coba daftar?';
   };
   window.renderAt = function(t) {
     const si = Math.min(3, Math.floor(t / SCENE_DUR));

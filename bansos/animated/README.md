@@ -3,7 +3,7 @@
 Motion-graphics reel for Peka bansos (standard reels 2026-10-25: animated,
 2K, FYP). Same pipeline family as `peka-content/spill/animated/` and
 `peka-content/hallmark/animated/`, with the bansos ticket identity
-(black #111, cream #FFFDF4, yellow #ffd60a, red #D63026 stamp).
+(kuning theme: yellow #ffd60a, black #111, red #D63026 stamp).
 
 ## Files
 
@@ -21,13 +21,24 @@ Motion-graphics reel for Peka bansos (standard reels 2026-10-25: animated,
 ## Reel spec format
 
 ```json
-{"program": "VPS Gratis + Token Muse",
- "nilai": "VPS 2 vCPU, RAM 7,7 GB + token Muse 1 miliar",
+{"program": "Claude Max Gratis 6 Bulan buat OSS",
+ "headline": ["CLAUDE MAX", "GRATIS 6 BULAN", "BUAT OSS"],
+ "headline_hl": 1,
+ "nilai": "Claude Max 20x gratis 6 bulan",
  "syarat": ["...", "...", "...", "..."],
- "steps": ["...", "...", "...", "..."]}
+ "steps": ["...", "...", "...", "..."],
+ "closing": ["...", "..."],
+ "closing_q": "Kamu maintainer proyek apa?"}
 ```
 
-Exactly 4 syarat and 4 steps.
+Exactly 4 syarat and 4 steps. All on-screen copy comes from the spec:
+headline, sub (from `nilai`), syarat, steps, closing lines and closing
+question. Never hardcode edition copy in `scene.html` (the 2026-10-30
+Claude OSS reel shipped with the previous edition's hardcoded
+"VPS GRATIS TOKEN MUSE" headline and closing because of this).
+
+Theme: kuning (yellow #ffd60a background, black cards, red GRATIS
+stamp), matching the `kuning` slide theme.
 
 ## Render commands (per edition)
 
