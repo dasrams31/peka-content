@@ -23,9 +23,10 @@ verified 2026-10-31; posting scheduled via runonce cron the same day
   hairline `#3D5A80`, text `#F2F5F9`, muted `#8FA6C2`, accent `#FFD60A`.
 - Headlines Poppins ExtraBold, annotations DejaVu Sans Mono.
 - Motifs: faint 135-unit grid, frame with yellow corner crosses,
-  dimension labels, dashed annotation boxes and chips, flow diagrams
+  dashed annotation boxes and chips, flow diagrams
   (INPUT -> TOOL -> OUTPUT, tool node filled yellow), section labels
-  `NN / TITLE` with a hairline rule.
+  `NN / TITLE` with a hairline rule. No dimension label text
+  (removed 2026-10-31 on user order, it collided with the frame).
 - Peka lockup (mascot + peka.ai.id) top right, community footer bottom.
   Mascot must be the chroma-keyed transparent PNG
   (`preview/mascot-keyed.png`, threshold 30, also copied to

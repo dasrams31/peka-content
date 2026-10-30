@@ -22,7 +22,6 @@
   .cross.tl { top: 14px; left: 24px; } .cross.tr { top: 14px; right: 24px; }
   .cross.bl { bottom: 14px; left: 24px; } .cross.br { bottom: 14px; right: 24px; }
   .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
-  .dim { text-align: center; font-family: DejaVuMono; font-size: 26px; color: #8FA6C2; }
   .top { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; }
   .stamp { border: 3px dashed #F2F5F9; padding: 10px 20px; }
   .stamp span { font-family: DejaVuMonoB; font-size: 32px; color: #F2F5F9; }
@@ -86,7 +85,7 @@
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   function clamp01(x) { return Math.max(0, Math.min(1, x)); }
   function header(counter) {
-    return '<div class="dim">2160 x 3840</div><div class="top">' +
+    return '<div class="top">' +
       '<div class="stamp" data-in="0.10,0.40,0,40"><span>BLUEPRINT</span></div>' +
       '<div class="lockup" data-in="0.10,0.40,0,40">' +
       '<img src="assets/mascot-keyed.png"><span>peka.ai.id</span></div></div>' +

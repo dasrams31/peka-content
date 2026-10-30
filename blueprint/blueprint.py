@@ -162,9 +162,6 @@ def base():
     for cx, cy in [(36, 36), (1044, 36), (36, 1044), (1044, 1044)]:
         d.line([(X(cx - 14), X(cy)), (X(cx + 14), X(cy))], fill=YEL, width=X(3))
         d.line([(X(cx), X(cy - 14)), (X(cx), X(cy + 14))], fill=YEL, width=X(3))
-    tf = mono(26)
-    label = "4096 x 4096"
-    d.text(((W - d.textlength(label, font=tf)) / 2, X(50)), label, font=tf, fill=MUTED)
     return img, d
 
 
@@ -236,8 +233,12 @@ def cover(spec, out_dir):
     ny = X(300)
     d.text((X(72), ny), spec["agent"], font=nf, fill=WHITE)
     nw = d.textlength(spec["agent"], font=nf)
-    ascent, descent = nf.getmetrics()
-    ly = 300 + (ascent + descent) / S + 16
+    # Rule + repo name must sit below the headline's actual ink, not below
+    # its full ascent+descent box (which leaves ~95u dead space and pushed
+    # the repo name onto the tagline at y=660). textbbox bottom is the
+    # ink bottom relative to the draw anchor.
+    ink = d.textbbox((0, 0), spec["agent"], font=nf)
+    ly = 300 + ink[3] / S + 16
     d.line([(X(72), X(ly)), (X(72) + nw, X(ly))], fill=YEL, width=X(5))
     d.line([(X(72), X(ly) - X(12)), (X(72), X(ly) + X(12))], fill=YEL, width=X(5))
     d.line([(X(72) + nw, X(ly) - X(12)), (X(72) + nw, X(ly) + X(12))], fill=YEL, width=X(5))
