@@ -1,7 +1,7 @@
 # Bansos animated reel template
 
 Motion-graphics reel for Peka bansos (standard reels 2026-10-25: animated,
-2K, FYP). Same pipeline family as `peka-content/spill/animated/` and
+4K, FYP). Same pipeline family as `peka-content/spill/animated/` and
 `peka-content/hallmark/animated/`, with the bansos ticket identity
 (kuning theme: yellow #ffd60a, black #111, red #D63026 stamp).
 
@@ -46,9 +46,9 @@ stamp), matching the `kuning` slide theme.
 cd ~/workspace/peka-content/bansos/animated
 # Music: ONE pick per reel via pick_reel_track.sh; reuse the same track
 # if a slideshow was already rendered for this edition (no second pick).
-~/workspace/megumi/venv/bin/python render.py <out_dir>/bansos-reel-spec.json <out_dir>/frames 24 15 1.3333
+~/workspace/megumi/venv/bin/python render.py <out_dir>/bansos-reel-spec.json <out_dir>/frames 24 15 2.0
 ffmpeg -y -framerate 24 -i <out_dir>/frames/f%04d.png -ss 10 -t 15 -i <track> \
-  -filter_complex "[0:v]scale=1440:2560[vout];[1:a]afade=t=in:st=0:d=0.5,afade=t=out:st=14.5:d=0.5[aout]" \
+  -filter_complex "[0:v]scale=2160:3840[vout];[1:a]afade=t=in:st=0:d=0.5,afade=t=out:st=14.5:d=0.5[aout]" \
   -map "[vout]" -map "[aout]" -c:v libx264 -pix_fmt yuv420p -r 24 -c:a aac -b:a 160k -t 15 \
   <out_dir>/bansos-reel.mp4
 ffmpeg -y -ss 1 -i <out_dir>/bansos-reel.mp4 -frames:v 1 -q:v 2 <out_dir>/bansos-reel-cover.jpg

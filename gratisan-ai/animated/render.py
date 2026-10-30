@@ -5,7 +5,7 @@ Deterministic: every frame is produced by window.renderAt(t) after
 window.buildScene(spec), so the output does not depend on wall-clock
 animation timing.
 Usage: render.py <spec.json> [out_dir] [fps] [duration] [scale]
-Scale 1.0 = 1080x1920, 1.3333 = true 2K 1440x2560 (rounded to even dims).
+Scale 1.0 = 1080x1920, 2.0 = true 4K 2160x3840 (rounded to even dims).
 Spec: the edition spec used by ga_design.py (program, category, stamp,
 fields, syarat, steps, band, subtitle, ctas) works as-is.
 """

@@ -9,7 +9,7 @@ Paper spill format (see spill.py). Driven by a JSON spec:
 Slides: 01 cover, 02..N+1 one per repo, last closing.
 
 Repo slide format (locked 2026-10-27, revised same day per user feedback):
-square 2048x2048, paper background, small tilted SPILL stamp + dark
+square 4096x4096, paper background, small tilted SPILL stamp + dark
 mascot lockup + repo counter header, then a browser-window mockup
 whose body is the repo's real GitHub social card (og:image, fetched
 live), a terminal panel with the install command, then the full
@@ -245,88 +245,88 @@ _dark_mascot.cache = None
 
 def repo_header(img, d, spec, idx):
     """Small tilted SPILL stamp + dark lockup + counter (demo v4)."""
-    spill_f = _font("Poppins-ExtraBold.ttf", 68)
-    layer = Image.new("RGBA", (360, 170), (0, 0, 0, 0))
+    spill_f = _font("Poppins-ExtraBold.ttf", 136)
+    layer = Image.new("RGBA", (720, 340), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
-    ld.rectangle([6, 6, 354, 164], outline=INK, width=6)
-    ld.text((36, 36), "SPILL", font=spill_f, fill=INK)
+    ld.rectangle([12, 12, 708, 328], outline=INK, width=12)
+    ld.text((72, 72), "SPILL", font=spill_f, fill=INK)
     layer = layer.rotate(-3, expand=True, resample=Image.BICUBIC)
-    img.paste(layer, (130, 110), layer)
-    d.text((154, 320), f"REPO {idx + 1:02d} DARI {len(spec['repos']):02d} // {spec['agent'].upper()}",
-           font=_mono(42), fill=GRY)
+    img.paste(layer, (260, 220), layer)
+    d.text((308, 640), f"REPO {idx + 1:02d} DARI {len(spec['repos']):02d} // {spec['agent'].upper()}",
+           font=_mono(84), fill=GRY)
     mas = _dark_mascot()
     bbox = mas.getchannel("A").getbbox()
     mas = mas.crop(bbox)
-    mas = mas.resize((72, int(72 * mas.height / mas.width)))
-    lock_f = _font("Poppins-Bold.ttf", 36)
+    mas = mas.resize((144, int(144 * mas.height / mas.width)))
+    lock_f = _font("Poppins-Bold.ttf", 72)
     label = "peka.ai.id"
     lw = d.textlength(label, font=lock_f)
-    lx = 2048 - 154 - 72 - 16 - int(lw)
-    img.paste(mas, (lx, 120), mas)
-    d.text((lx + 88, 120 + (mas.height - 36) // 2), label, font=lock_f, fill=INK)
+    lx = 4096 - 308 - 144 - 32 - int(lw)
+    img.paste(mas, (lx, 240), mas)
+    d.text((lx + 176, 240 + (mas.height - 72) // 2), label, font=lock_f, fill=INK)
 
 
 # ---------------------------------------------------------------- slides
 
 def github_card_image(repo, en):
-    """GitHub-default-card-style image (1200x600), drawn from API data.
+    """GitHub-default-card-style image (2400x1200), drawn from API data.
 
     Used when a repo's og:image is a custom upload (repository-images
     host) instead of GitHub's own card, so every slide shows the same
     GitHub look: owner/repo, avatar, EN description, Stars/Forks/
     Issues, language bar at the bottom edge."""
-    W, H = 1200, 600
+    W, H = 2400, 1200
     img = Image.new("RGB", (W, H), (255, 255, 255))
     d = ImageDraw.Draw(img)
     owner, name = repo["name"].split("/", 1)
-    max_w = 700
-    size_o, size_n = 76, 110
-    while size_o > 40:
+    max_w = 1400
+    size_o, size_n = 152, 220
+    while size_o > 80:
         fo = _font("Poppins-SemiBold.ttf", size_o)
         fn = _font("Poppins-ExtraBold.ttf", size_n)
         if (d.textlength(owner + "/", font=fo) <= max_w
                 and d.textlength(name, font=fn) <= max_w):
             break
-        size_o -= 4
-        size_n -= 4
+        size_o -= 8
+        size_n -= 8
     # Long names may still overflow past the loop floor: shrink to fit
     # instead of drawing under the avatar.
     if d.textlength(name, font=fn) > max_w:
-        size_n = max(30, int(size_n * max_w / d.textlength(name, font=fn)))
+        size_n = max(60, int(size_n * max_w / d.textlength(name, font=fn)))
         fn = _font("Poppins-ExtraBold.ttf", size_n)
     if d.textlength(owner + "/", font=fo) > max_w:
-        size_o = max(30, int(size_o * max_w / d.textlength(owner + "/", font=fo)))
+        size_o = max(60, int(size_o * max_w / d.textlength(owner + "/", font=fo)))
         fo = _font("Poppins-SemiBold.ttf", size_o)
-    d.text((110, 90), owner + "/", font=fo, fill=(60, 60, 60))
-    d.text((110, 90 + size_o + 14), name, font=fn, fill=INK)
+    d.text((220, 180), owner + "/", font=fo, fill=(60, 60, 60))
+    d.text((220, 180 + size_o + 28), name, font=fn, fill=INK)
     if en.get("avatar"):
-        av = ImageOps.fit(en["avatar"], (240, 240))
-        av.putalpha(_rounded_mask((240, 240), 24))
-        img.paste(av, (850, 90), av)
-    f_desc = _font("Poppins-SemiBold.ttf", 40)
-    desc_lines = wrap(d, en["en_desc"], f_desc, 970)
+        av = ImageOps.fit(en["avatar"], (480, 480))
+        av.putalpha(_rounded_mask((480, 480), 48))
+        img.paste(av, (1700, 180), av)
+    f_desc = _font("Poppins-SemiBold.ttf", 80)
+    desc_lines = wrap(d, en["en_desc"], f_desc, 1940)
     if len(desc_lines) > 2:
         desc_lines = desc_lines[:2]
         desc_lines[-1] = desc_lines[-1].rsplit(" ", 1)[0] + "…"
-    y = 350
+    y = 700
     for line in desc_lines:
-        d.text((110, y), line, font=f_desc, fill=(85, 85, 85))
-        y += 58
-    f_num = _font("Poppins-Bold.ttf", 44)
-    f_lbl = _font("Poppins-SemiBold.ttf", 28)
+        d.text((220, y), line, font=f_desc, fill=(85, 85, 85))
+        y += 116
+    f_num = _font("Poppins-Bold.ttf", 88)
+    f_lbl = _font("Poppins-SemiBold.ttf", 56)
     stats = [("Stars", en["stars"]), ("Forks", en["forks"]), ("Issues", en["issues"])]
-    y = 480
+    y = 960
     for i, (lbl, val) in enumerate(stats):
-        x = 110 + i * 300
+        x = 220 + i * 600
         d.text((x, y), val if val else "–", font=f_num, fill=INK)
-        d.text((x, y + 56), lbl, font=f_lbl, fill=(153, 153, 153))
+        d.text((x, y + 112), lbl, font=f_lbl, fill=(153, 153, 153))
     if en["langs"]:
         bx = 0
         for col, frac in en["langs"]:
-            seg = int(1200 * frac)
+            seg = int(2400 * frac)
             if seg <= 0:
                 continue
-            d.rectangle([bx, 584, min(bx + seg - 1, 1199), 599], fill=col)
+            d.rectangle([bx, 1168, min(bx + seg - 1, 2399), 1199], fill=col)
             bx += seg
     return img
 
@@ -369,8 +369,8 @@ def repo_slide(spec, idx, repo):
     total = len(spec["repos"]) + 3
     page = idx + 2
     en = enrich(repo)
-    W = H = 2048
-    MX = 154
+    W = H = 4096
+    MX = 308
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
     repo_header(img, d, spec, idx)
@@ -378,71 +378,71 @@ def repo_slide(spec, idx, repo):
     # ---- browser-window mockup ----
     # Body is always the GitHub look: the repo's own default card when
     # GitHub serves one, else the drawn card from API data.
-    WX, WY, WW = MX, 420, W - 2 * MX
-    TITLE_H = 92
+    WX, WY, WW = MX, 840, W - 2 * MX
+    TITLE_H = 184
     body = en["og"] if en["og"] else github_card_image(repo, en)
-    body = body.resize((1200, 600), Image.LANCZOS)
-    WH = TITLE_H + 600
+    body = body.resize((2400, 1200), Image.LANCZOS)
+    WH = TITLE_H + 1200
     win = Image.new("RGB", (WW, WH), (255, 255, 255))
     wd = ImageDraw.Draw(win)
     wd.rectangle([0, 0, WW - 1, TITLE_H - 1], fill=(0, 0, 0))
     for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
-        wd.ellipse([48 + i * 60, 30, 48 + i * 60 + 36, 66], fill=c)
-    wd.text((240, 26), repo["name"], font=_mono(42), fill=(170, 170, 170))
-    win.paste(body, ((WW - 1200) // 2, TITLE_H))
-    img.paste(win, (WX, WY), _rounded_mask((WW, WH), 40))
-    d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=40,
-                        outline=(190, 185, 172), width=2)
+        wd.ellipse([96 + i * 120, 60, 96 + i * 120 + 72, 132], fill=c)
+    wd.text((480, 52), repo["name"], font=_mono(84), fill=(170, 170, 170))
+    win.paste(body, ((WW - 2400) // 2, TITLE_H))
+    img.paste(win, (WX, WY), _rounded_mask((WW, WH), 80))
+    d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=80,
+                        outline=(190, 185, 172), width=4)
 
     # ---- terminal panel ----
-    ty = WY + WH + 36
-    PANEL_H = 150
+    ty = WY + WH + 72
+    PANEL_H = 300
     panel = Image.new("RGB", (WW, PANEL_H), (20, 20, 26))
     pd = ImageDraw.Draw(panel)
     for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
-        pd.ellipse([40 + i * 44, 26, 40 + i * 44 + 24, 50], fill=c)
-    pd.text((196, 22), "terminal", font=_mono(32), fill=(130, 130, 130))
+        pd.ellipse([80 + i * 88, 52, 80 + i * 88 + 48, 100], fill=c)
+    pd.text((392, 44), "terminal", font=_mono(64), fill=(130, 130, 130))
     cmd = en["install"]
-    tsize = 44
-    while tsize > 30 and pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 120:
-        tsize -= 2
+    tsize = 88
+    while tsize > 60 and pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 240:
+        tsize -= 4
     tf = _mono(tsize, True)
-    px, py = 44, 84
+    px, py = 88, 168
     pd.text((px, py), "$ ", font=tf, fill="#ffd60a")
     px += pd.textlength("$ ", font=tf)
     pd.text((px, py), cmd, font=tf, fill=(255, 255, 255))
-    cx = px + pd.textlength(cmd, font=tf) + 16
-    pd.rectangle([cx, py + 2, cx + 24, py + 50], fill="#ffd60a")
-    img.paste(panel, (WX, ty), _rounded_mask((WW, PANEL_H), 28))
-    d.rounded_rectangle([WX, ty, WX + WW - 1, ty + PANEL_H - 1], radius=28,
-                        outline=(70, 70, 80), width=2)
+    cx = px + pd.textlength(cmd, font=tf) + 32
+    pd.rectangle([cx, py + 4, cx + 48, py + 100], fill="#ffd60a")
+    img.paste(panel, (WX, ty), _rounded_mask((WW, PANEL_H), 56))
+    d.rounded_rectangle([WX, ty, WX + WW - 1, ty + PANEL_H - 1], radius=56,
+                        outline=(70, 70, 80), width=4)
 
     # ---- footer zone: full explanation, then COCOK BUAT ----
-    fy = ty + PANEL_H + 36
-    d.line([(MX, fy), (W - MX, fy)], fill=HAIR, width=2)
-    fy += 24
-    gf = _font("Poppins-ExtraBold.ttf", 240)
-    d.text((W - MX - d.textlength(f"{idx + 1:02d}", font=gf), H - 368),
+    fy = ty + PANEL_H + 72
+    d.line([(MX, fy), (W - MX, fy)], fill=HAIR, width=4)
+    fy += 48
+    gf = _font("Poppins-ExtraBold.ttf", 480)
+    d.text((W - MX - d.textlength(f"{idx + 1:02d}", font=gf), H - 736),
            f"{idx + 1:02d}", font=gf, fill=GHOST)
-    f_pen = _font("Poppins-SemiBold.ttf", 42)
-    f_cocok_lbl = _font("Poppins-Bold.ttf", 44)
-    f_cocok = _font("Poppins-SemiBold.ttf", 42)
+    f_pen = _font("Poppins-SemiBold.ttf", 84)
+    f_cocok_lbl = _font("Poppins-Bold.ttf", 88)
+    f_cocok = _font("Poppins-SemiBold.ttf", 84)
     cocok_lines = wrap(d, repo["cocok"], f_cocok, W - 2 * MX)
-    cocok_h = 56 + len(cocok_lines) * 56 + 20
+    cocok_h = 112 + len(cocok_lines) * 112 + 40
     pen_lines = wrap(d, repo["desc"], f_pen, W - 2 * MX)
-    max_pen = max(1, (1930 - fy - cocok_h) // 56)
+    max_pen = max(1, (3860 - fy - cocok_h) // 112)
     if len(pen_lines) > max_pen:
         pen_lines = pen_lines[:max_pen]
         pen_lines[-1] = pen_lines[-1].rsplit(" ", 1)[0] + "…"
     for line in pen_lines:
         d.text((MX, fy), line, font=f_pen, fill=(51, 51, 51))
-        fy += 56
-    fy += 20
+        fy += 112
+    fy += 40
     d.text((MX, fy), "COCOK BUAT:", font=f_cocok_lbl, fill=INK)
-    fy += 56
+    fy += 112
     for line in cocok_lines:
         d.text((MX, fy), line, font=f_cocok, fill=(51, 51, 51))
-        fy += 56
+        fy += 112
     footer(d, page, total)
     return img
 

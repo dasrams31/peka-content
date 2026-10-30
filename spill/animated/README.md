@@ -1,7 +1,7 @@
 # SPILL animated reel template
 
 Motion-graphics reel for SPILL Repo (standard reels 2026-10-25: animated,
-2K, FYP). Window design (locked 2026-10-27): same browser-window +
+4K, FYP). Window design (locked 2026-10-27): same browser-window +
 terminal + penjelasan format as the carousel slides.
 
 ## Files
@@ -13,7 +13,7 @@ terminal + penjelasan format as the carousel slides.
    (standing rule 2026-10-25). Built from a spec via
    `window.buildScene(spec)`, animated via `window.renderAt(t)`
    (deterministic frame-by-frame).
-- `render.py` — Playwright frame renderer (2K via scale 1.3333).
+- `render.py` — Playwright frame renderer (4K via scale 2.0).
 - `fetch_shots.py` — downloads each repo's GitHub og:image into the
   edition shots dir and writes the path back into the reel spec.
   Retries 429/5xx with backoff, skips already-downloaded shots.
@@ -39,9 +39,9 @@ fallback). `shot` is written by `fetch_shots.py`.
 cd ~/workspace/peka-content/spill/animated
 TRACK=$(~/workspace/peka-content/brand/music/pick_reel_track.sh)  # ONCE per edition
 python3 fetch_shots.py <out_dir>/reel-spec.json <out_dir>/shots
-~/workspace/megumi/venv/bin/python render.py <out_dir>/reel-spec.json <out_dir>/frames 24 27 1.3333
+~/workspace/megumi/venv/bin/python render.py <out_dir>/reel-spec.json <out_dir>/frames 24 27 2.0
 ffmpeg -y -framerate 24 -i <out_dir>/frames/f%04d.png -ss 10 -t 27 -i "$TRACK" \
-  -filter_complex "[0:v]scale=1440:2560[vout];[1:a]afade=t=in:st=0:d=0.5,afade=t=out:st=26.5:d=0.5[aout]" \
+  -filter_complex "[0:v]scale=2160:3840[vout];[1:a]afade=t=in:st=0:d=0.5,afade=t=out:st=26.5:d=0.5[aout]" \
   -map "[vout]" -map "[aout]" -c:v libx264 -pix_fmt yuv420p -r 24 -c:a aac -b:a 160k -t 27 \
   <out_dir>/spill<NN>-reel.mp4
 ffmpeg -y -ss 1 -i <out_dir>/spill<NN>-reel.mp4 -frames:v 1 -q:v 2 <out_dir>/spill<NN>-reel-cover.jpg

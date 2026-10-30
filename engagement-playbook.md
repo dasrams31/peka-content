@@ -163,11 +163,15 @@ versi carousel/feed post lagi:
   Pipeline: desain HTML/CSS vertikal + render frame per frame
   (Playwright, window.renderAt(t), 24fps) lalu ffmpeg + musik.
   Template pertama: peka-content/hallmark/animated/ (scene.html +
-  render.py, mendukung scale 1.3333 untuk 2K). Template per pilar
+  render.py, mendukung scale 2.0 untuk 4K). Template per pilar
   lain dibangun mengikuti pola yang sama.
-- Resolusi reels: 2K 1440x2560 (perintah user 2026-10-25), yuv420p,
-  cover dari frame detik ke-1. Slideshow lama (make_reel.sh) hanya
-  jadi fallback kalau render animasi gagal, supaya slot tidak kosong.
+- Resolusi reels: 4K 2160x3840 (perintah user 2026-10-31, menggantikan
+  2K 1440x2560), yuv420p, cover dari frame detik ke-1. Slideshow
+  (make_reel.sh) BUKAN reels yang diterima (aturan terkunci
+  2026-10-30): bila render animasi gagal, perbaiki penyebabnya dan
+  render ulang; jangan kirim slideshow sebagai hasil akhir. Bila
+  reels animasi tidak bisa dibuat sama sekali, tayangkan carousel
+  Threads + blog saja dan laporkan reels tertunda + penyebabnya.
 - FYP (FB + IG + TikTok): hook visual dalam 3 detik pertama, durasi
   15 detik (bagus buat completion rate), TEPAT SATU pertanyaan
   penutup, ajakan save, hashtag relevan per platform (IG 5-10,
@@ -212,6 +216,10 @@ versi carousel/feed post lagi:
 - Pilar yang belum punya pipeline reels animasi memakai fallback
   slideshow (make_reel.sh) yang disebut di laporan, sampai reels
   animasinya dibangun; carousel TIDAK diposting ke IG/FB.
+  Per 31 Okt 2026 kelima pilar (HM, SPILL, Prompt, Bansos, Gratisan)
+  sudah punya pipeline reels animasi penuh; aturan slideshow di atas
+  berlaku, dan tidak ada lagi pilar yang memakai slideshow sebagai
+  reels.
 - Catat media id/link reels (IG/FB) + carousel (Threads) di posted.log
   dan laporan run.
 - CARVE-OUT yang tetap berlaku: (1) Pancingan adalah pilar teks-only
@@ -223,7 +231,7 @@ versi carousel/feed post lagi:
   (3) PROMPT HARIAN + GRATISAN AI: pengecualian opsi 2 (2026-10-27)
   BERAKHIR 31 Okt 2026. Pipeline reels animasi penuh kedua pilar sudah
   dibangun dan terverifikasi visual (prompt/animated + gratisan-ai/animated,
-  4 scene x 4 detik, 1440x2560, yuv420p). Mulai edisi 31 Okt 2026, IG + FB
+  4 scene x 4 detik, 2160x3840, yuv420p). Mulai edisi 31 Okt 2026, IG + FB
   posting REELS ANIMASI, Threads tetap carousel, blog tetap slide. Jangan
   lagi posting carousel ke IG/FB untuk kedua pilar ini, dan jangan pakai
   slideshow fallback.
@@ -243,6 +251,43 @@ Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Ten
 7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = reactions + shares. Satu angka dari satu platform tidak memvonis konten.
 
 ## ATURAN SHORTLINK + TOOLS (2026-10-28, dikunci user, berlaku semua cron konten)
-- SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare: `POST http://127.0.0.1:8095/api/shorten` dengan `{"url": "<url panjang>"}`, pakai URL publik `https://s.peka.ai.id/<code>` yang dikembalikan. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila API gagal atau limit habis: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
+- SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare, sebagai link milik ADMIN (user_id 1, admin@peka.ai.id) LANGSUNG di database s.peka.ai.id (~/workspace/peka-shortlink/data/shortlink.db, tabel links: user_id=1, ip_hash='12ca17b49af2289436f303e0166030a2', code acak 6 char unik, target_url = URL panjang, is_active=1, clicks=0). JANGAN pakai API tamu. Pakai URL publik `https://s.peka.ai.id/<code>` yang dibuat. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila shortlink gagal dibuat: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
 - SPILL: tiap repo edisi itu WAJIB ditambah dulu ke `~/workspace/peka-tools/tools.json` sebelum posting (cek duplikat by name; field ikut pola entry lama). Komentar SPILL berisi 5 shortlink repo (satu per baris) + baris "Cari semua skill ini di tools.peka.ai.id" + baris edisi besok. Link di caption IG/FB (pengecualian) dan di body blog juga pakai shortlink, bukan URL GitHub panjang. Tools web sudah punya kolom pencarian, tidak perlu dibangun.
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi lama, kecuali user minta backfill eksplisit.
+
+## RESOLUSI 4K, OTONOMI PENUH, DAN AUTO-SHARE TIKTOK (2026-10-31, perintah user, TERKUNCI)
+
+- RESOLUSI 4K (menggantikan 2K mulai 31 Okt 2026): slide carousel
+  4096x4096, reels 2160x3840 (render scale 2.0, ffmpeg
+  scale=2160:3840, yuv420p). Generator slide yang sudah 4K: HM
+  (designer.py), SPILL (spill.py + spill_repo_carousel.py), Prompt
+  (prompt_harian.py), Bansos + Gratisan (bansos_design.py +
+  ga_design.py), Repo of the Week (repo_week.py). Gambar og GitHub
+  (1200x600) di slide SPILL di-upscale ke 2400x1200, satu-satunya
+  opsi karena GitHub hanya menyajikan ukuran itu. Generator Store
+  (make_slides.py) TIDAK ikut: pilar store di-freeze, diputuskan
+  terpisah bila dihidupkan lagi.
+- OTONOMI PENUH: semua hal soal Peka berjalan otonom dalam aturan
+  terkunci di playbook ini. User hanya mengurus kartu approval
+  platform (Threads/FB). Jangan tanya di chat untuk keputusan dalam
+  scope aturan terkunci. Batas yang tetap berlaku: kartu approval
+  platform tetap di tangan user (tidak ada saklar global); uang /
+  pembayaran dan aksi tak bisa dibatalkan tetap butuh kata eksplisit
+  user.
+- AUTO-SHARE TIKTOK: SETELAH konten FB + Threads + IG sebuah edisi
+  terupload semua, cron WAJIB menyampaikan ke chat user: lampiran
+  reel edisi itu (atau slide bila pilar tanpa reel) + caption TikTok
+  siap salin + link IG + Threads + FB (+ blog bila ada). Caption
+  TikTok disusun otonom dari tag-watch.md + fyp-learning.md +
+  trending.md + playbook (pola FYP: hook manfaat/angka di depan +
+  "save dulu biar nggak hilang" + tepat satu pertanyaan + #fyp +
+  hashtag niche + kredit musik bila reels), disimpan ke
+  <out>/caption-tiktok.txt. TikTok posting-nya tetap manual user;
+  jangan posting ke TikTok. Berlaku untuk HM, Prompt Harian,
+  Gratisan AI, SPILL, Bansos, dan edisi manual Repo of the Week.
+- HM SELARAS REELS: mulai 31 Okt 2026, HM posting REELS ANIMASI ke
+  IG + FB (template hm/animated, tema premium) seperti pilar lain;
+  carousel hanya ke Threads + blog. Body cron lama yang memposting
+  carousel ke IG/FB sudah diganti.
+- Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi
+  lama, kecuali user minta backfill eksplisit.
