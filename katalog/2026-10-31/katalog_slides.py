@@ -94,7 +94,7 @@ def product_rows(d, blocks, y, gap=420):
     f_sec = ImageFont.truetype(FS, 88)
     f_item = ImageFont.truetype(FS, 124)
     f_price = ImageFont.truetype(FB, 150)
-    for sec_name, items in blocks:
+    for si, (sec_name, items) in enumerate(blocks):
         tracked(d, sec_name, f_sec, YELLOW, M, y, 10)
         y += 180
         for label, price in items:
@@ -112,7 +112,8 @@ def product_rows(d, blocks, y, gap=420):
             y += 230
             d.line([M, y, W - M, y], fill=CARD_LINE, width=3)
             y += 130
-        y += gap
+        if si < len(blocks) - 1:
+            y += gap
     return y
 
 
@@ -139,13 +140,13 @@ d.text((M - 8, 760), "AKUN", font=f_h, fill=CREAM)
 d.text((M - 8, 1080), "PREMIUM", font=f_h, fill=CREAM)
 f_h2 = ImageFont.truetype(FX, 300)
 t2 = START_LABEL
-d.text((M - 8, 1400), "MULAI ", font=f_h2, fill=CREAM)
+d.text((M - 8, 1440), "MULAI ", font=f_h2, fill=CREAM)
 w_pre = d.textlength("MULAI ", font=f_h2)
 hl_w = d.textlength(t2, font=f_h2)
-d.rounded_rectangle([M - 8 + w_pre - 24, 1400 - 40,
-                     M - 8 + w_pre + hl_w + 24, 1400 + 372],
+d.rounded_rectangle([M - 8 + w_pre - 24, 1440 - 40,
+                     M - 8 + w_pre + hl_w + 24, 1440 + 372],
                     radius=36, fill=YELLOW)
-d.text((M - 8 + w_pre, 1400), t2, font=f_h2, fill=BLACK)
+d.text((M - 8 + w_pre, 1440), t2, font=f_h2, fill=BLACK)
 
 f_sub = ImageFont.truetype(FS, 84)
 d.text((M, 1960), f"{len(PRODUCTS)} akun ready hari ini.", font=f_sub, fill=CREAM)
