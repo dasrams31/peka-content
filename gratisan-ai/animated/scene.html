@@ -20,13 +20,13 @@
   .lockup span { font-family: PoppinsB; font-size: 36px; color: #ffd60a; }
   .lockup .chip { background: #111111; border-radius: 34px; padding: 12px 22px 12px 14px; display: flex; align-items: center; gap: 14px; }
   .lockup .chip span { color: #ffd60a; }
-  .lockup.dark span { color: #161616; }
+  .lockup.dark span { color: #ffd60a; }
   .toprow { display: flex; justify-content: space-between; align-items: flex-start; }
   .kicker { font-family: DejaVuMonoB; font-size: 40px; color: #ffd60a; letter-spacing: 2px; }
   .subtitle { font-family: DejaVu; font-size: 32px; color: #96968e; margin-top: 10px; }
   .ticket { background: #fffdf4; border-radius: 36px; padding: 48px 44px 52px 44px; position: relative; transform: rotate(1.5deg); box-shadow: 14px 20px 0 #343434; display: flex; }
   .ticket .main { flex: 1; min-width: 0; }
-  .ticket .stub { flex: none; width: 208px; margin-left: 36px; border-left: 4px dashed #696962; padding-left: 26px; display: flex; flex-direction: column; }
+  .ticket .stub { flex: none; width: 236px; margin-left: 36px; border-left: 4px dashed #696962; padding-left: 26px; display: flex; flex-direction: column; }
   .stubrow { display: flex; gap: 14px; }
   .pills { display: flex; gap: 18px; }
   .pill { font-family: PoppinsB; font-size: 30px; padding: 16px 28px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
@@ -41,7 +41,8 @@
   .vlabel { writing-mode: vertical-rl; transform: rotate(180deg); font-family: DejaVuMonoB; font-size: 28px; color: #161616; letter-spacing: 2px; }
   .barcode { flex: 1; height: 380px; background: repeating-linear-gradient(90deg, #161616 0 5px, transparent 5px 9px, #161616 9px 15px, transparent 15px 19px, #161616 19px 22px, transparent 22px 30px); }
   .stubnote { font-family: DejaVu; font-size: 26px; color: #696962; margin-top: 24px; line-height: 1.4; }
-  .stubnote b { font-family: DejaVuMonoB; color: #161616; font-size: 27px; }
+  .stubnote b { font-family: DejaVuMonoB; color: #161616; font-size: 24px; overflow-wrap: anywhere; }
+  .nextline { font-family: PoppinsB; font-size: 34px; color: #ffd60a; margin-top: 44px; letter-spacing: 1px; }
   .stamp { position: absolute; z-index: 3; border: 7px solid #d63026; border-radius: 22px; outline: 3px solid #d63026; outline-offset: 8px; color: #d63026; font-family: PoppinsB; font-size: 36px; padding: 18px 26px; transform: rotate(-8deg); background: rgba(255, 253, 244, 0.94); text-align: center; line-height: 1.15; white-space: nowrap; }
   .deadline { font-family: DejaVu; font-size: 34px; color: #ffffff; margin-top: 44px; }
   .deadline b { color: #ffd60a; font-family: PoppinsB; }
@@ -97,6 +98,7 @@
         <div class="stamp" id="stamp" data-pop="2.55,0.35" style="right:16px; top:370px">GRATIS<br>SETAHUN</div>
       </div>
       <div class="deadline" id="deadline" data-in="3.10,0.40,0,30"></div>
+      <div class="nextline" data-in="3.40,0.40,0,30">SYARAT DAN CARA KLAIMNYA, LANJUT &rarr;</div>
     </div>
   </div>
   <div class="scene black" id="s2" style="display:none">
@@ -133,7 +135,7 @@
       </div>
       <div class="band" data-in="1.00,0.50,0,30" id="band"></div>
       <div id="ctas"></div>
-      <div class="verify" data-in="3.00,0.40,0,30">Info diverifikasi dari sumber resmi sebelum tayang.</div>
+      <div class="verify" data-in="2.40,0.40,0,30">Info diverifikasi dari sumber resmi sebelum tayang.</div>
     </div>
   </div>
   <div id="progress"></div>
@@ -145,9 +147,12 @@
   function wrapLines(text, maxChars) {
     const raw = text.split(/\s+/), words = [];
     for (const w of raw) {
-      if (w.length > maxChars) {
-        for (let i = 0; i < w.length; i += maxChars) words.push(w.slice(i, i + maxChars));
-      } else words.push(w);
+      const parts = w.split(/(?<=\/)/);
+      for (const part of parts) {
+        if (part.length > maxChars) {
+          for (let i = 0; i < part.length; i += maxChars) words.push(part.slice(i, i + maxChars));
+        } else words.push(part);
+      }
     }
     const lines = [];
     let cur = "";

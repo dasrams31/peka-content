@@ -119,9 +119,12 @@
   function wrapLines(text, maxChars) {
     const raw = text.split(/\s+/), words = [];
     for (const w of raw) {
-      if (w.length > maxChars) {
-        for (let i = 0; i < w.length; i += maxChars) words.push(w.slice(i, i + maxChars));
-      } else words.push(w);
+      const parts = w.split(/(?<=\/)/);
+      for (const part of parts) {
+        if (part.length > maxChars) {
+          for (let i = 0; i < part.length; i += maxChars) words.push(part.slice(i, i + maxChars));
+        } else words.push(part);
+      }
     }
     const lines = [];
     let cur = "";

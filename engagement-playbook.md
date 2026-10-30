@@ -220,14 +220,13 @@ versi carousel/feed post lagi:
   untuk jualan, FB hanya reels (tanpa post carousel), dan
   Threads seperti biasa. Aturan reels-saja ini TIDAK membatalkan
   larangan jualan di IG.
-  (3) PROMPT HARIAN + GRATISAN AI (pilihan user 2026-10-27, opsi 2):
-  kedua pilar ini TETAP CAROUSEL di IG/FB sampai pipeline reels
-  animasi masing-masing dibangun, baru pindah ke reels-saja.
-  Pengecualian ini mengalahkan baris fallback slideshow di atas
-  untuk kedua pilar ini: jangan pakai slideshow fallback, jangan
-  tahan tayangannya menunggu reels. Cron peka-prompt-harian dan
-  peka-gratisan-ai sengaja TIDAK diubah selama pengecualian ini
-  berlaku.
+  (3) PROMPT HARIAN + GRATISAN AI: pengecualian opsi 2 (2026-10-27)
+  BERAKHIR 31 Okt 2026. Pipeline reels animasi penuh kedua pilar sudah
+  dibangun dan terverifikasi visual (prompt/animated + gratisan-ai/animated,
+  4 scene x 4 detik, 1440x2560, yuv420p). Mulai edisi 31 Okt 2026, IG + FB
+  posting REELS ANIMASI, Threads tetap carousel, blog tetap slide. Jangan
+  lagi posting carousel ke IG/FB untuk kedua pilar ini, dan jangan pakai
+  slideshow fallback.
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi
   lama, kecuali user minta backfill eksplisit.
 
