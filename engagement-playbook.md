@@ -4,6 +4,13 @@ Goal: every Peka post is engineered to earn likes, comments, saves, shares,
 and follows, in line with how the IG / Threads / FB algorithms rank content.
 Read this file at the START of every Peka content run, together with
 learnings.md (data-driven lessons) and performance.log (raw metrics).
+Also read tag-watch/tag-watch.md (rolling tag engagement) and
+tag-watch/fyp-learning.md (dated FYP caption patterns, newest first)
+before writing hooks and captions, and apply the newest patterns
+automatically. The Threads closing tag is the CURRENT CLOSING TAG in
+tag-watch.md, applied automatically from 7-day evidence (user granted
+full autonomy 2026-10-30); #AI is the default until another tag beats
+it 2x with n>=10.
 
 ## How the algorithms weigh things
 
