@@ -90,29 +90,29 @@ def header_row(d, kicker):
     tracked(d, kicker, f_kick, YELLOW, M, 470, 8)
 
 
-def product_rows(d, blocks, y):
-    f_sec = ImageFont.truetype(FS, 84)
-    f_item = ImageFont.truetype(FS, 118)
-    f_price = ImageFont.truetype(FB, 138)
+def product_rows(d, blocks, y, gap=420):
+    f_sec = ImageFont.truetype(FS, 88)
+    f_item = ImageFont.truetype(FS, 124)
+    f_price = ImageFont.truetype(FB, 150)
     for sec_name, items in blocks:
         tracked(d, sec_name, f_sec, YELLOW, M, y, 10)
-        y += 170
+        y += 180
         for label, price in items:
             d.text((M, y), label, font=f_item, fill=CREAM)
             pw = d.textlength(price, font=f_price)
             d.text((W - M - pw, y - 14), price, font=f_price, fill=YELLOW)
             lx = M + d.textlength(label, font=f_item) + 70
             rx = W - M - pw - 70
-            dot_y = y + 78
+            dot_y = y + 82
             x = lx
             while x < rx:
                 d.ellipse([x, dot_y, x + 12, dot_y + 12],
                           fill=(170, 165, 150, 170))
                 x += 52
-            y += 210
+            y += 230
             d.line([M, y, W - M, y], fill=CARD_LINE, width=3)
-            y += 120
-        y += 150
+            y += 130
+        y += gap
     return y
 
 
@@ -130,9 +130,9 @@ header_row(d, "KATALOG HARI INI")
 
 mascot = Image.open(MASCOT)
 mw, mh = mascot.size
-mh2 = 1050
+mh2 = 1260
 mascot = mascot.resize((int(mh2 * mw / mh), mh2), Image.LANCZOS)
-img.paste(mascot, (W - M - mascot.width - 60, 640), mascot)
+img.paste(mascot, (W - M - mascot.width - 60, 600), mascot)
 
 f_h = ImageFont.truetype(FX, 300)
 d.text((M - 8, 760), "AKUN", font=f_h, fill=CREAM)
@@ -152,7 +152,7 @@ d.text((M, 1960), f"{len(PRODUCTS)} akun ready hari ini.", font=f_sub, fill=CREA
 d.text((M, 2075), f"{DATE_LABEL}.", font=f_sub, fill=MUTED)
 
 f_geser = ImageFont.truetype(FM, 62)
-tracked(d, "GESER BUAT LIHAT HARGANYA  >>", f_geser, YELLOW, M, 3120, 4)
+tracked(d, "GESER BUAT LIHAT HARGANYA  >>", f_geser, YELLOW, M, 3040, 4)
 
 footer(d, 1)
 img.save(f"{OUT}/peka-katalog-01.png")
@@ -172,9 +172,9 @@ print("saved slide 2")
 img, d = base()
 header_row(d, "KATALOG HARI INI  //  04 - 05")
 
-y = product_rows(d, blocks_of(PRODUCTS[3:]), 760)
+y = product_rows(d, blocks_of(PRODUCTS[3:]), 880, gap=440)
 
-band_y = y + 60
+band_y = y + 260
 d.rounded_rectangle([M, band_y, W - M, band_y + 250], radius=48, fill=YELLOW)
 f_cta = ImageFont.truetype(FB, 96)
 cta = "MAU?  CHAT:  MAU [NAMA PRODUK]"
