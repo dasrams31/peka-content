@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: SerifB; src: url(assets/DejaVuSerif-Bold.ttf); }
+  @font-face { font-family: SerifR; src: url(assets/DejaVuSerif.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f7f4ed; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #f7f4ed; overflow: hidden; }
+  .scene { position: absolute; inset: 0; padding: 96px 120px 0 120px; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .kicker { font-family: DejaVuMonoB; font-size: 34px; color: #171713; letter-spacing: 4px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { width: 62px; height: 62px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #171713; }
+  .rule { height: 3px; background: #ddd6c4; margin-top: 30px; position: relative; }
+  .rule b { position: absolute; left: 0; top: 0; height: 3px; width: 220px; background: #b9975b; }
+  .meta { display: flex; justify-content: space-between; font-family: DejaVuMonoB; font-size: 26px; color: #6b675e; margin-top: 26px; letter-spacing: 1px; }
+  .hero-wrap { margin-top: 36px; border: 2px solid #171713; overflow: hidden; height: 620px; }
+  .hero-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cap { font-family: DejaVuMonoB; font-size: 26px; color: #6b675e; margin-top: 18px; letter-spacing: 3px; }
+  h1 { font-family: SerifB; font-size: 104px; line-height: 1.12; color: #171713; margin-top: 44px; }
+  .sub { font-family: SerifR; font-size: 46px; line-height: 1.4; color: #6b675e; margin-top: 36px; }
+  .geser { font-family: DejaVuMonoB; font-size: 34px; color: #171713; margin-top: 56px; letter-spacing: 2px; }
+  .geser i { font-style: normal; color: #b9975b; }
+  h2 { font-family: SerifB; font-size: 88px; line-height: 1.1; color: #171713; margin-top: 70px; }
+  .row { display: flex; gap: 30px; align-items: flex-start; margin-top: 58px; }
+  .num { flex: none; font-family: SerifB; font-size: 52px; color: #b9975b; }
+  .row p { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #171713; }
+  .card { background: #ffffff; border: 2px solid #171713; padding: 40px 40px 36px 40px; margin-top: 40px; }
+  .card .row { margin-top: 36px; }
+  .card .row:first-child { margin-top: 0; }
+  .card .num { width: 64px; height: 64px; background: #171713; border-radius: 50%; color: #f7f4ed; font-family: PoppinsB; font-size: 34px; display: flex; align-items: center; justify-content: center; }
+  .q { font-family: SerifB; font-size: 84px; line-height: 1.18; color: #171713; margin-top: 120px; }
+  .next { font-family: DejaVu; font-size: 42px; line-height: 1.5; color: #6b675e; margin-top: 52px; }
+  .band { background: #171713; color: #b9975b; font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 2px; padding: 30px 36px; margin-top: 64px; text-align: center; }
+  .foot { position: absolute; left: 120px; right: 120px; bottom: 60px; font-family: DejaVu; font-size: 26px; color: #6b675e; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 8px; background: #b9975b; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene" id="s1">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">AI NEWS</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+      </div>
+    </div>
+    <div class="rule"><b></b></div>
+    <div class="meta"><span id="date"></span><span id="source"></span></div>
+    <div class="hero-wrap"><img id="hero" data-zoom="1"></div>
+    <div class="cap" data-in="0.30,0.40,0,30">ILUSTRASI AI</div>
+    <h1 id="headline"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="geser" data-in="2.90,0.50,0,30">GESER <i>&rarr;</i></div>
+  </div>
+  <div class="scene" id="s2" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">AI NEWS</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+      </div>
+    </div>
+    <div class="rule"><b></b></div>
+    <h2 data-in="0.30,0.45,0,60">Yang berubah</h2>
+    <div id="points"></div>
+  </div>
+  <div class="scene" id="s3" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">AI NEWS</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+      </div>
+    </div>
+    <div class="rule"><b></b></div>
+    <h2 data-in="0.30,0.45,0,60">Bisa langsung dicoba</h2>
+    <div class="card" id="steps"></div>
+  </div>
+  <div class="scene" id="s4" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">AI NEWS</div>
+      <div class="lockup" data-in="0.10,0.40,0,40">
+        <img src="assets/mascot-p.png"><span>peka.ai.id</span>
+      </div>
+    </div>
+    <div class="rule"><b></b></div>
+    <p class="q" id="question"></p>
+    <p class="next" data-in="1.20,0.50,0,40">Follow @peka.ai.id, gabung lewat url.peka.ai.id. Save dulu biar gampang dicari pas mau ujian.</p>
+    <div class="band" data-in="1.80,0.50,0,30" id="band"></div>
+  </div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 4.0, TOTAL = 16.0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  window.buildScene = function(spec) {
+    document.getElementById('date').textContent = spec.date;
+    document.getElementById('source').textContent = spec.source;
+    document.getElementById('hero').src = spec.hero;
+    document.getElementById('headline').innerHTML =
+      spec.headline.map((ln, i) => '<span data-in="' + (0.55 + i * 0.35).toFixed(2) + ',0.50,0,70" style="display:block">' + ln + '</span>').join('');
+    document.getElementById('sub').textContent = spec.sub;
+    document.getElementById('sub').setAttribute('data-in', '2.10,0.50,0,40');
+    document.getElementById('points').innerHTML =
+      spec.points.map((t, i) => '<div class="row" data-in="' + (0.70 + i * 0.55).toFixed(2) + ',0.50,80,0"><div class="num">' + (i + 1) + '</div><p>' + t + '</p></div>').join('');
+    document.getElementById('steps').innerHTML =
+      spec.steps.map((t, i) => '<div class="row" data-in="' + (0.70 + i * 0.55).toFixed(2) + ',0.50,80,0"><div class="num">' + (i + 1) + '</div><p>' + t + '</p></div>').join('');
+    const q = document.getElementById('question');
+    q.textContent = spec.question;
+    q.setAttribute('data-in', '0.30,0.50,0,60');
+    document.getElementById('band').textContent = spec.band;
+  };
+  window.renderAt = function(t) {
+    const si = Math.min(3, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    const hero = document.getElementById('hero');
+    if (hero) hero.style.transform = 'scale(' + (1 + 0.10 * clamp01(lt / SCENE_DUR)) + ')';
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>
