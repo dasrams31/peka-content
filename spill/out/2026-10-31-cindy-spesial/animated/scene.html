@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsXB; src: url(assets/Poppins-ExtraBold.ttf); }
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: DejaVuMono; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F6F1E6; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #F6F1E6; overflow: hidden; }
+  .scene { position: absolute; inset: 0; padding: 90px 80px 0 80px; }
+  .hairline { height: 3px; background: #D2CBBC; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 26px; }
+  .stamp { border: 5px solid #141414; padding: 10px 26px; transform: rotate(-3deg); }
+  .stamp span { font-family: PoppinsXB; font-size: 64px; color: #141414; letter-spacing: 1px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { height: 104px; }
+  .lockup span { font-family: PoppinsB; font-size: 36px; color: #141414; }
+  .counter { font-family: DejaVuMonoB; font-size: 34px; color: #6E695F; margin-top: 44px; }
+  h1 { font-family: PoppinsXB; font-size: 118px; line-height: 1.04; color: #141414; margin-top: 100px; }
+  .agent { display: inline-block; background: #ffd60a; padding: 6px 26px; }
+  .sub { font-family: DejaVu; font-size: 46px; line-height: 1.45; color: #141414; margin-top: 48px; }
+  .geser { font-family: DejaVuMonoB; font-size: 38px; color: #141414; margin-top: 70px; }
+  .win { border: 2px solid #BEB9AC; border-radius: 36px; overflow: hidden; background: #ffffff; margin-top: 44px; }
+  .win .titlebar { background: #141414; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 32px; }
+  .win .dot { width: 30px; height: 30px; border-radius: 50%; }
+  .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
+  .win .og { display: block; width: 100%; }
+  .term { background: #14141A; border-radius: 28px; padding: 30px 36px 36px 36px; margin-top: 36px; }
+  .term .thead { display: flex; align-items: center; gap: 14px; }
+  .term .tdot { width: 26px; height: 26px; border-radius: 50%; }
+  .term .tlabel { font-family: DejaVuMono; font-size: 30px; color: #828282; margin-left: 12px; }
+  .term .cmd { font-family: DejaVuMonoB; font-size: 38px; color: #ffffff; margin-top: 26px; word-break: break-all; }
+  .term .prompt { color: #ffd60a; }
+  .term .cursor { display: inline-block; width: 22px; height: 44px; background: #ffd60a; vertical-align: -6px; margin-left: 10px; }
+  .penjelasan { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #333333; margin-top: 36px; }
+  .cocok { font-family: PoppinsSB; font-size: 36px; line-height: 1.45; color: #333333; margin-top: 30px; }
+  .cocok-label { font-family: PoppinsB; color: #141414; }
+  .q { font-family: PoppinsB; font-size: 52px; line-height: 1.35; color: #141414; margin-top: 80px; }
+  .next { font-family: DejaVu; font-size: 42px; line-height: 1.45; color: #6E695F; margin-top: 44px; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 56px; font-family: DejaVu; font-size: 28px; color: #6E695F; }
+  .foot-line { position: absolute; left: 80px; right: 80px; bottom: 112px; height: 2px; background: #141414; opacity: 0.18; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: #ffd60a; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="scenes"></div>
+  <div class="foot-line"></div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const COVER_DUR = 3, REPO_DUR = 8, END_DUR = 2;
+  let DURATIONS = [], TOTAL = 0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  function header(counter) {
+    return '<div class="hairline"></div><div class="top">' +
+      '<div class="stamp" data-in="0.10,0.40,0,40"><span>SPILL</span></div>' +
+      '<div class="lockup" data-in="0.10,0.40,0,40">' +
+      '<img src="assets/mascot-p-dark.png"><span>peka.ai.id</span></div></div>' +
+      (counter ? '<div class="counter" data-in="0.30,0.40,0,30">' + counter + '</div>' : '');
+  }
+  window.buildScene = function(spec) {
+    const ep = String(spec.episode).padStart(2, '0');
+    const kick = 'SPILL REPO // EDISI #' + ep + ' // ' + spec.agent.toUpperCase();
+    const n = spec.repos.length;
+    DURATIONS = [COVER_DUR];
+    for (let i = 0; i < n; i++) DURATIONS.push(REPO_DUR);
+    DURATIONS.push(END_DUR, END_DUR);
+    TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
+    let html = '<div class="scene">' + header('') +
+      '<h1><span data-in="0.45,0.50,0,70" style="display:block">AI AGENT</span>' +
+      '<span data-in="0.65,0.50,0,70" style="display:block"><span class="agent">' +
+      spec.agent.toUpperCase() + '</span></span></h1>' +
+      '<p class="sub" data-in="1.05,0.50,0,40">Satu repo, dibedah sampai tuntas.</p>' +
+      '<div class="geser" data-in="1.45,0.50,0,30">GESER BUAT BEDAHNYA</div></div>';
+    spec.repos.forEach((r, i) => {
+      html += '<div class="scene">' + header('REPO ' + String(i + 1).padStart(2, '0') +
+        ' DARI ' + String(n).padStart(2, '0') + ' // ' + spec.agent.toUpperCase()) +
+        '<div class="win" data-in="0.45,0.55,0,80">' +
+        '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
+        '<span class="dot" style="background:#FEBC2E"></span>' +
+        '<span class="dot" style="background:#28C840"></span>' +
+        '<span class="tname">' + r.name + '</span></div>' +
+        '<img class="og" src="' + r.shot + '"></div>' +
+        '<div class="term" data-in="0.90,0.50,0,50">' +
+        '<div class="thead"><span class="tdot" style="background:#FF5F57"></span>' +
+        '<span class="tdot" style="background:#FEBC2E"></span>' +
+        '<span class="tdot" style="background:#28C840"></span>' +
+        '<span class="tlabel">terminal</span></div>' +
+        '<div class="cmd"><span class="prompt">$ </span><span class="typed" data-cmd="' +
+        r.install.replace(/"/g, '&quot;') + '" data-start="1.15"></span>' +
+        '<span class="cursor"></span></div></div>' +
+        '<div class="penjelasan" data-in="1.35,0.50,0,40">' + r.penjelasan + '</div>' +
+        '<div class="cocok" data-in="1.80,0.50,0,40"><span class="cocok-label">COCOK BUAT:</span> ' + r.cocok + '</div></div>';
+    });
+    const nextEp = String(spec.episode + 1).padStart(2, '0');
+    html += '<div class="scene">' + header('') +
+      '<p class="q" data-in="0.30,0.50,0,60">Kamu paling pengin Cindy bantuin kerjaan apa dulu?</p>' +
+      '<p class="next" data-in="0.80,0.50,0,40">Link repo-nya ada di komentar.</p>' +
+      '<p class="next" data-in="1.10,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
+    html += '<div class="scene">' + header('') +
+      '<p class="q" data-in="0.30,0.50,0,60">Follow dan gabung.</p>' +
+      '<p class="next" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>' +
+      '<p class="next" data-in="1.10,0.50,0,40">Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.</p>' +
+      '<p class="next" data-in="1.40,0.50,0,40">Save dan share biar makin banyak yang kebantu.</p></div>';
+    document.getElementById('scenes').innerHTML = html;
+  };
+  window.renderAt = function(t) {
+    let acc = 0, si = DURATIONS.length - 1, lt = 0;
+    for (let i = 0; i < DURATIONS.length; i++) {
+      if (t < acc + DURATIONS[i]) { si = i; lt = t - acc; break; }
+      acc += DURATIONS[i];
+      if (i === DURATIONS.length - 1) lt = DURATIONS[i];
+    }
+    const scenes = document.getElementById('scenes').children;
+    for (let i = 0; i < scenes.length; i++) {
+      const el = scenes[i];
+      if (i === si) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((DURATIONS[si] - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = scenes[si];
+    if (scene) scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    if (scene) scene.querySelectorAll('.typed').forEach(el => {
+      const start = parseFloat(el.dataset.start);
+      const cmd = el.dataset.cmd;
+      const chars = Math.max(0, Math.floor((lt - start) / 0.045));
+      el.textContent = cmd.slice(0, chars);
+    });
+    if (scene) scene.querySelectorAll('.cursor').forEach(el => {
+      el.style.opacity = (Math.floor(lt * 2) % 2 === 0) ? 1 : 0;
+    });
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

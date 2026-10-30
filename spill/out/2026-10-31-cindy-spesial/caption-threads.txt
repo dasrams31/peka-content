@@ -1,0 +1,9 @@
+Satu AI agent buat laptop dan HP, session-nya nyambung.
+
+Cindy itu AI agent open source. Komputermu jadi servernya sendiri, tanpa sewa server. Satu session bisa dilanjut dari laptop ke HP, dan bisa pakai Claude Code, Codex, atau Pi.
+
+Download gratis di cindy.app, terus sambungin langganan yang udah kamu punya.
+
+Kamu paling pengin Cindy bantuin kerjaan apa dulu? Save dulu biar nggak hilang.
+
+#AI
