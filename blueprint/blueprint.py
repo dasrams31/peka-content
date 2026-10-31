@@ -335,8 +335,14 @@ def follow(spec, out_dir):
         ("FOLLOW", "@peka.ai.id di IG, Threads, TikTok."),
         ("GABUNG", "grup WhatsApp via url.peka.ai.id."),
         ("SAVE + SHARE", "biar makin banyak yang kebantu."),
-        ("KOMENTAR", "link repo-nya ada di komentar."),
     ]
+    # Shortlink printed on the last slide (Threads no-link rule, 31 Okt
+    # 2026): the edition's link lives here, not in a Threads comment.
+    if spec.get("shortlink"):
+        shown = spec["shortlink"].replace("https://", "").replace("http://", "")
+        rows.append(("LINK REPO", shown))
+    else:
+        rows.append(("KOMENTAR", "link repo-nya ada di komentar."))
     y = X(rule_y + 24)
     for label, rest in rows:
         dashed_rect(d, (X(72), y, X(1008), y + X(88)), HAIR, width=3)

@@ -51,6 +51,7 @@
   .win .titlebar { background: #061224; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 32px; }
   .win .dot { width: 30px; height: 30px; border-radius: 50%; }
   .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
+  .win .tlink { font-family: DejaVuMonoB; font-size: 30px; color: #FFD60A; margin-left: auto; white-space: nowrap; }
   .win .og { display: block; width: 100%; }
   .term { background: #061224; border: 2px solid #3D5A80; border-radius: 28px; padding: 30px 36px 36px 36px; margin-top: 36px; }
   .term .thead { display: flex; align-items: center; gap: 14px; }
@@ -94,6 +95,9 @@
   window.buildScene = function(spec) {
     const ep = String(spec.episode).padStart(2, '0');
     const r = spec.repos[0];
+    // Shortlink printed in the repo-scene titlebar (no-link rule,
+    // 31 Okt 2026): the link lives in the video, not in any caption.
+    const short = (spec.shortlink || '').replace(/^https?:\/\//, '');
     const nameSize = Math.min(150, Math.floor(880 / Math.max(1, spec.agent.length)));
     DURATIONS = [COVER_DUR, REPO_DUR, END_DUR, END_DUR];
     TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
@@ -119,7 +123,8 @@
       '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
       '<span class="dot" style="background:#FEBC2E"></span>' +
       '<span class="dot" style="background:#28C840"></span>' +
-      '<span class="tname">' + r.name + '</span></div>' +
+      '<span class="tname">' + r.name + '</span>' +
+      (short ? '<span class="tlink">' + short + '</span>' : '') + '</div>' +
       '<img class="og" src="' + r.shot + '"></div>' +
       '<div class="term" data-in="0.90,0.50,0,50">' +
       '<div class="thead"><span class="tdot" style="background:#FF5F57"></span>' +
@@ -133,8 +138,7 @@
       '<div class="cocok" data-in="1.80,0.50,0,40"><span class="cocok-label">COCOK BUAT:</span> ' + r.cocok + '</div></div>';
     html += '<div class="scene">' + header('') +
       '<p class="q" data-in="0.30,0.50,0,60">' + spec.question + '</p>' +
-      '<p class="next" data-in="0.80,0.50,0,40">Link repo-nya ada di komentar.</p>' +
-      '<p class="next" data-in="1.10,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
+      '<p class="next" data-in="0.80,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
     html += '<div class="scene">' + header('') +
       '<p class="q" data-in="0.30,0.50,0,60">Follow dan gabung.</p>' +
       '<p class="next" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>' +

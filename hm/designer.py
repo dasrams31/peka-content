@@ -760,6 +760,11 @@ def cta_premium(args, n):
            font=fsr(30), fill=MUTED2)
     d.text((X(120), y + X(44)), "yang bisa langsung dipakai.",
            font=fsr(30), fill=MUTED2)
+    # Blog shortlink printed on the last slide (Threads no-link rule,
+    # 31 Okt 2026): the link lives here, not in a Threads reply.
+    if getattr(args, "bloglink", ""):
+        shown = args.bloglink.replace("https://", "").replace("http://", "")
+        d.text((X(120), X(840)), "Link blog: " + shown, font=mono(30), fill=INK2)
     premium_footer(d, n, n)
     return img
 
@@ -947,6 +952,11 @@ def cta(args, n):
     y += X(110)
     d.text((X(70), y), "Update tiap hari: info AI,", font=f(36, False), fill=GRY)
     d.text((X(70), y + X(48)), "bansos, dan tools terbaik.", font=f(36, False), fill=GRY)
+    # Blog shortlink printed on the last slide (Threads no-link rule,
+    # 31 Okt 2026): the link lives here, not in a Threads reply.
+    if getattr(args, "bloglink", ""):
+        shown = args.bloglink.replace("https://", "").replace("http://", "")
+        d.text((X(70), X(880)), "Link blog: " + shown, font=mono(28), fill=YEL)
     footer(d, n, n)
     return img
 
@@ -960,6 +970,9 @@ def main():
     ap.add_argument("--points", default="")
     ap.add_argument("--source", default="")
     ap.add_argument("--url", default="")
+    ap.add_argument("--bloglink", default="",
+                    help="shortlink blog edisi ini, dicetak di slide CTA "
+                         "terakhir (aturan tanpa-link Threads 31 Okt 2026)")
     ap.add_argument("--visual", default="")
     ap.add_argument("--layout", default="auto",
                     help="cinematic|split|frame|type|auto (auto rotates daily)")

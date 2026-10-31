@@ -456,6 +456,12 @@ def slide3(spec):
             d.text((490, yy), ln, font=f(128), fill=PAL["ink"])
             yy += line_h
         yy += gap
+    # Shortlink printed on the slide (Threads no-link rule, 31 Okt 2026):
+    # the edition's link lives here, not in a Threads reply/comment.
+    if spec.get("shortlink"):
+        label = spec.get("shortlink_label", "Link: ")
+        shown = spec["shortlink"].replace("https://", "").replace("http://", "")
+        d.text((300, yy + 16), label + shown, font=mono(108, bold=True), fill=PAL["band"])
     d.text((300, S - 320 if tight else S - 380), "Info diverifikasi dari sumber resmi sebelum tayang.",
            font=fr(92), fill=PAL["ink"])
     return img

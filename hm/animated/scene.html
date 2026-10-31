@@ -38,6 +38,7 @@
   .card .num { width: 64px; height: 64px; background: #171713; border-radius: 50%; color: #f7f4ed; font-family: PoppinsB; font-size: 34px; display: flex; align-items: center; justify-content: center; }
   .q { font-family: SerifB; font-size: 84px; line-height: 1.18; color: #171713; margin-top: 120px; }
   .next { font-family: DejaVu; font-size: 42px; line-height: 1.5; color: #6b675e; margin-top: 52px; }
+  .shortlink { font-family: DejaVuMonoB; font-size: 40px; color: #171713; margin-top: 48px; letter-spacing: 1px; }
   .band { background: #171713; color: #b9975b; font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 2px; padding: 30px 36px; margin-top: 64px; text-align: center; }
   .foot { position: absolute; left: 120px; right: 120px; bottom: 60px; font-family: DejaVu; font-size: 26px; color: #6b675e; }
   #progress { position: absolute; left: 0; bottom: 0; height: 8px; background: #b9975b; width: 0; }
@@ -92,6 +93,7 @@
     <div class="rule"><b></b></div>
     <p class="q" id="question"></p>
     <p class="next" data-in="1.20,0.50,0,40">Follow @peka.ai.id, gabung lewat url.peka.ai.id. Save dulu biar gampang dicari pas mau ujian.</p>
+    <p class="shortlink" data-in="1.50,0.50,0,40" id="shortlink"></p>
     <div class="band" data-in="1.80,0.50,0,30" id="band"></div>
   </div>
   <div class="foot">GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID</div>
@@ -116,6 +118,12 @@
     const q = document.getElementById('question');
     q.textContent = spec.question;
     q.setAttribute('data-in', '0.30,0.50,0,60');
+    // Blog shortlink printed in the closing scene (no-link rule,
+    // 31 Okt 2026): the link lives in the video, not in any caption.
+    const sl = document.getElementById('shortlink');
+    if (spec.shortlink) {
+      sl.textContent = 'LINK BLOG: ' + spec.shortlink.replace(/^https?:\/\//, '');
+    } else sl.style.display = 'none';
     document.getElementById('band').textContent = spec.band;
   };
   window.renderAt = function(t) {

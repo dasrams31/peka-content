@@ -389,6 +389,14 @@ def repo_slide(spec, idx, repo):
     for i, c in enumerate([(255, 95, 87), (254, 188, 46), (40, 200, 64)]):
         wd.ellipse([96 + i * 120, 60, 96 + i * 120 + 72, 132], fill=c)
     wd.text((480, 52), repo["name"], font=_mono(84), fill=(170, 170, 170))
+    # Shortlink printed on the slide (Threads no-link rule, 31 Okt 2026):
+    # each repo slide carries its own s.peka.ai.id shortlink, right
+    # aligned in the browser title bar, instead of a Threads comment.
+    _short = (repo.get("shortlink") or "").replace("https://", "").replace("http://", "")
+    if _short:
+        _lf = _mono(72, bold=True)
+        _lw = wd.textlength(_short, font=_lf)
+        wd.text((WW - 48 - _lw, 56), _short, font=_lf, fill="#ffd60a")
     win.paste(body, ((WW - 2400) // 2, TITLE_H))
     img.paste(win, (WX, WY), _rounded_mask((WW, WH), 80))
     d.rounded_rectangle([WX, WY, WX + WW - 1, WY + WH - 1], radius=80,

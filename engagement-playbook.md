@@ -25,14 +25,15 @@ it 2x with n>=10.
   trivial to answer, get the conversation started.
 - Fixed daily slots (09:36 news, 19:00 store, 21:30 spill) train both the
   audience and the algorithm. Never post two series in the same slot.
-- NO links anywhere on Threads (31 Okt 2026, perintah user, TERKUNCI,
-  eksperimen lawan views anjlok): no link in the post body, no link
-  reply, no shortlink comment. The edition's link is printed ON the
-  slide as an s.peka.ai.id shortlink, and the Threads caption carries
-  one instruction sentence saying the link is in the slide (e.g.
-  "Linknya ada di slide terakhir."). IG/FB keep their shortlink
-  lines/comments as before; on IG, caption links are not clickable:
-  point to the blog and the comments.
+- NO links in any post text, on ANY platform (31 Okt 2026, perintah
+  user, TERKUNCI, eksperimen lawan views anjlok): no link in the
+  caption/body, no link reply, no shortlink comment, on Threads, IG,
+  FB, or TikTok, for slides and reels alike. The edition's link is
+  printed IN THE VISUAL as an s.peka.ai.id shortlink (on the slide
+  for carousels, in the reel scene for reels), and the caption
+  carries one instruction sentence saying where the link is (e.g.
+  "Linknya ada di slide terakhir." / "Linknya ada di akhir video.").
+  The blog still uses shortlinks in its body.
 
 ## Caption anatomy (every pillar)
 
@@ -257,7 +258,8 @@ Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Ten
 
 ## ATURAN SHORTLINK + TOOLS (2026-10-28, dikunci user, berlaku semua cron konten)
 - SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare, sebagai link milik ADMIN (user_id 1, admin@peka.ai.id) LANGSUNG di database s.peka.ai.id (~/workspace/peka-shortlink/data/shortlink.db, tabel links: user_id=1, ip_hash='12ca17b49af2289436f303e0166030a2', code acak 6 char unik, target_url = URL panjang, is_active=1, clicks=0). JANGAN pakai API tamu. Pakai URL publik `https://s.peka.ai.id/<code>` yang dibuat. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila shortlink gagal dibuat: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
-- SPILL: tiap repo edisi itu WAJIB ditambah dulu ke `~/workspace/peka-tools/tools.json` sebelum posting (cek duplikat by name; field ikut pola entry lama). Komentar SPILL berisi 5 shortlink repo (satu per baris) + baris "Cari semua skill ini di tools.peka.ai.id" + baris edisi besok. Link di caption IG/FB (pengecualian) dan di body blog juga pakai shortlink, bukan URL GitHub panjang. Tools web sudah punya kolom pencarian, tidak perlu dibangun.
+- TANPA LINK DI TEKS POSTINGAN (31 Okt 2026, perintah user, TERKUNCI, eksperimen, DIPERLUAS 17:19 WIB ke SEMUA platform): di SEMUA pilar dan SEMUA platform (Threads, IG, FB, TikTok), teks postingan tidak boleh memuat link dalam bentuk apa pun: tidak di caption/body, tidak di balasan rantai, tidak di komentar. Link edisi itu dicetak DI DALAM VISUAL sebagai shortlink s.peka.ai.id (font mono, kontras terbaca): di slide untuk carousel, di scene reel untuk reels animasi (scene repo untuk SPILL, scene penutup untuk reel satu link). Caption memuat TEPAT SATU kalimat instruksi yang bilang linknya ada di visual (carousel: "Linknya ada di slide terakhir."; SPILL carousel: "Link tiap repo ada di slide-nya masing-masing."; reel: "Linknya ada di akhir video."; SPILL reel: "Link tiap repo ada di videonya masing-masing."). Kalimat instruksi diletakkan sesudah isi, sebelum pertanyaan penutup; bukan pemicu interaksi tambahan. Bila edisi tidak punya link (mis. Prompt Harian), tidak ada yang dicetak dan tidak ada kalimat instruksi. Blog tetap memakai shortlink di body (blog bukan postingan sosmed). Nilai eksperimen ini di laporan harian + review Minggu; bila views tidak pulih, aturan ditinjau ulang, bukan diperpanjang diam-diam.
+- SPILL: tiap repo edisi itu WAJIB ditambah dulu ke `~/workspace/peka-tools/tools.json` sebelum posting (cek duplikat by name; field ikut pola entry lama). TIDAK ADA komentar shortlink di platform mana pun (aturan tanpa-link 31 Okt): tiap slide repo DAN tiap scene repo di reel mencetak shortlink repo itu sendiri (s.peka.ai.id, font mono, terbaca), dan caption membawa kalimat instruksi link-di-visual. Link di body blog tetap pakai shortlink, bukan URL GitHub panjang. Tools web sudah punya kolom pencarian, tidak perlu dibangun.
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi lama, kecuali user minta backfill eksplisit.
 
 ## RESOLUSI 4K, OTONOMI PENUH, DAN AUTO-SHARE TIKTOK (2026-10-31, perintah user, TERKUNCI)

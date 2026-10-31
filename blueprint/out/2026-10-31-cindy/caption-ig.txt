@@ -2,10 +2,8 @@ Gambar kerja Cindy, satu AI agent buat semua perangkatmu.
 
 Cindy jalan di laptop dan HP, satu session bisa dilanjut di perangkat lain. Komputermu jadi servernya sendiri, tanpa sewa server.
 
-Download gratis di cindy.app, sambungin langganan yang udah kamu punya. Biaya dan batas provider tetap berlaku.
+Download gratis di cindy.app, sambungin langganan yang udah kamu punya. Biaya dan batas provider tetap berlaku. Link repo-nya ada di videonya.
 
 Save dulu, biar gampang dicari lagi. Kamu paling pengin Cindy bantuin kerjaan apa dulu?
 
 #Blueprint #Cindy #AIAgent #OpenSource #ToolsAI #Produktivitas #BelajarAI #AI
-
-Link repo: https://s.peka.ai.id/2y12kr

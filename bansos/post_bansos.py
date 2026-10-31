@@ -11,7 +11,10 @@ Order (locked rules):
    anything. Never publish the long URL in a caption, comment, or
    blog post.
 2. Post Threads carousel (3 slides), IG reel, FB reel.
-3. Post the shortlink comment as a Threads reply and an FB comment.
+3. NO link reply/comment on ANY platform (no-link rule, 31 Okt 2026,
+   extended to IG/FB/TikTok): the shortlink is printed ON the last
+   slide and in the reel's closing scene, and the captions point to
+   it. The comment text is kept only as a file record.
 4. Copy slides to peka-content/images/, write the blog JSON, append logs.
 Prints a summary for the cron report. Exits non-zero on any failure.
 """
@@ -110,19 +113,10 @@ def main():
     fb_post_id = fb.get("post_id", "")
     print(f"facebook: {fb_link}")
 
-    # Comments with shortlink
-    run([
-        "/opt/hatch/bin/threads-cli", "publish-post",
-        "--account-id", "17841417164011141",
-        "--reply-to-post-fbid", t_id, "--text", comment,
-    ])
-    print("threads comment posted")
-    if fb_post_id:
-        run([
-            "/opt/hatch/bin/facebook-cli", "post", "comments", "add",
-            "--post-id", fb_post_id, "--text", comment,
-        ])
-        print("facebook comment posted")
+    # No shortlink comment is posted anywhere (no-link rule, 31 Okt
+    # 2026): the shortlink is printed on the last slide and in the
+    # reel's closing scene; comment-final.txt stays as a file record.
+    print("no link comment posted (no-link rule)")
 
     # Blog + images
     for i in range(1, 4):
