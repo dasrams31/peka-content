@@ -1,0 +1,9 @@
+PROMPT HARIAN #09: salin prompt ini buat tugas menumpuk jadi urutan kerja yang jelas
+Hasilnya: 3 prioritas utama yang jelas, lengkap sama perkiraan waktu dan alasan kenapa didahulukan.
+Prompt-nya, tinggal salin:
+Urutkan tugasku hari ini dari yang paling penting. Daftar tugasku: [DAFTAR TUGAS]. Waktu kerjaku: [JAM MULAI SAMPAI JAM SELESAI]. Buat urutan kerja berisi 3 prioritas utama, tiap tugas dikasih perkiraan waktu dan alasan kenapa didahulukan. Tutup dengan 1 tugas yang boleh ditunda besok dan kenapa.
+Tugas apa yang paling sering bikin harimu berantakan? Ceritain di komentar.
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30. Follow @peka.ai.id biar nggak ketinggalan.
+#PromptAI #Produktivitas #TipsProduktif #KerjaFokus #AIUntukKerja #BelajarAI #PekaAI
+Music: Black Vortex by Kevin MacLeod

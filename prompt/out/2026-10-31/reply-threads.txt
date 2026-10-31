@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Urutkan tugasku hari ini dari yang paling penting. Daftar tugasku: [DAFTAR TUGAS]. Waktu kerjaku: [JAM MULAI SAMPAI JAM SELESAI]. Buat urutan kerja berisi 3 prioritas utama, tiap tugas dikasih perkiraan waktu dan alasan kenapa didahulukan. Tutup dengan 1 tugas yang boleh ditunda besok dan kenapa.
