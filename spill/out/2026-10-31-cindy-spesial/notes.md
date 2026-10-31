@@ -7,3 +7,10 @@
 - Eksperimen minggu ini: first-step framing (langkah pertama yang konkret).
 - Link repo sudah dipendekkan lewat metode admin dan disimpan di shortlinks.json. Repo sudah ditambah ke tools.json (total 146).
 - Belum diposting ke platform mana pun. Paket ini hanya bahan yang dikirim ke chat.
+
+## Rework tanpa-link (31 Okt 2026, perintah user "boleh rombak dulu")
+- Slide 6: baris "LINK REPO: s.peka.ai.id/2y12kr" (highlight kuning).
+- Reel: shortlink dicetak di title bar scene repo; baris "ada di komentar" dihapus.
+- Caption IG/FB/TikTok/Threads: kalimat instruksi link-di-visual, tanpa link.
+- comment-threads.txt / comment-fb.txt TIDAK DIPOSTING (aturan tanpa-link).
+- Track tetap Oppressive Gloom (tanpa pick baru).

@@ -105,6 +105,10 @@ def follow_slide():
             d.text((X(70), X(ly)), ln, font=f(32, False), fill=DESC)
             ly += 46
         ly += 22
+    # Shortlink printed on the last slide (no-link rule, 31 Okt 2026):
+    # the link lives in the visual, not in any caption or comment.
+    highlight(d, X(70), X(ly + 60), "LINK REPO: s.peka.ai.id/2y12kr",
+              _mono(120, bold=True))
     footer(d, TOTAL, TOTAL)
     return img
 

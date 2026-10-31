@@ -23,7 +23,13 @@ Adapted to vertical with slight modifications only, no redesign.
 
 The edition spec used by `ga_design.py` works as-is:
 `{"program", "category", "stamp", "fields": {...}, "syarat": [...],
-"steps": [...], "band", "subtitle", "ctas": [...]}`
+"steps": [...], "band", "subtitle", "ctas": [...],
+"shortlink": "https://s.peka.ai.id/xxxxxx",
+"shortlink_label": "Link klaim: "}`
+
+`shortlink` (no-link rule 31 Okt 2026) is printed in the closing scene
+with `shortlink_label` (default `LINK KLAIM: `). Omit both only for
+editions with no link.
 
 ## Worker render commands (per edition)
 

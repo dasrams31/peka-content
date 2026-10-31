@@ -11,6 +11,7 @@ scene (8 s) + question (2 s) + follow (2 s) = 15 s, 2160x3840, yuv420p.
 {
   "agent": "CINDY",
   "episode": 1,
+  "shortlink": "https://s.peka.ai.id/2y12kr",
   "sub": "AI agent open source yang jalan di laptop dan HP dalam satu session yang nyambung.",
   "note": "Komputermu jadi servernya sendiri, tanpa sewa server.",
   "question": "Kamu paling pengin Cindy bantuin kerjaan apa dulu?",

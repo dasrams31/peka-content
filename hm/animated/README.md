@@ -26,8 +26,13 @@ gold line, no gradient/glow/large colour blocks).
  "hero": "file:///abs/path/to/hero.webp",
  "headline": ["line 1", "line 2", "line 3"], "sub": "...",
  "points": ["...", "...", "..."], "steps": ["...", "...", "..."],
- "question": "...", "band": "GEMINI NOTEBOOK - BUKU TEKS GRATIS"}
+ "question": "...", "band": "GEMINI NOTEBOOK - BUKU TEKS GRATIS",
+ "shortlink": "https://s.peka.ai.id/xxxxxx"}
 ```
+
+`shortlink` (blog shortlink, no-link rule 31 Okt 2026) is printed in the
+closing scene as `LINK BLOG: s.peka.ai.id/xxxxxx`. Omit it only for
+editions with no link.
 
 ## Worker render commands (per edition)
 

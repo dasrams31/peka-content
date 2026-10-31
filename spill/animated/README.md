@@ -31,7 +31,9 @@ terminal + penjelasan format as the carousel slides.
 Exactly 5 repos. `penjelasan` is 2 sentences distilled from the
 carousel desc (not a truncation). `install` comes from
 `../install_cmd.py` (README extraction, generic `npx skills add`
-fallback). `shot` is written by `fetch_shots.py`.
+fallback). `shot` is written by `fetch_shots.py`. Each repo carries
+`shortlink` (admin-DB s.peka.ai.id URL, no-link rule 31 Okt 2026),
+printed in the repo scene's browser titlebar.
 
 ## Worker render commands (per edition)
 

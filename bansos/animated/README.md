@@ -40,6 +40,11 @@ Claude OSS reel shipped with the previous edition's hardcoded
 Theme: kuning (yellow #ffd60a background, black cards, red GRATIS
 stamp), matching the `kuning` slide theme.
 
+Spec: `bansos-reel-spec.json` accepts `shortlink` (s.peka.ai.id URL)
+plus `shortlink_label` (default `LINK: `), printed in the closing
+scene (no-link rule 31 Okt 2026). Omit both only for editions with
+no link.
+
 ## Render commands (per edition)
 
 ```bash

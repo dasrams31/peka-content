@@ -9,7 +9,8 @@
       "name": "makecindy/cindy",
       "penjelasan": "Cindy itu AI agent open source yang jalan di laptop dan HP, satu session bisa dilanjut di perangkat lain. Komputermu jadi servernya sendiri, tanpa sewa server, dan bisa pakai Claude Code, Codex, atau Pi.",
       "stars": "8,7RB",
-      "shot": "shots/makecindy-cindy.png"
+      "shot": "shots/makecindy-cindy.png",
+      "shortlink": "https://s.peka.ai.id/2y12kr"
     }
   ]
 }

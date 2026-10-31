@@ -29,6 +29,7 @@
   .win .titlebar { background: #141414; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 32px; }
   .win .dot { width: 30px; height: 30px; border-radius: 50%; }
   .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
+  .win .tlink { font-family: DejaVuMonoB; font-size: 30px; color: #ffd60a; margin-left: auto; white-space: nowrap; }
   .win .og { display: block; width: 100%; }
   .term { background: #14141A; border-radius: 28px; padding: 30px 36px 36px 36px; margin-top: 36px; }
   .term .thead { display: flex; align-items: center; gap: 14px; }
@@ -81,13 +82,17 @@
       '<p class="sub" data-in="1.05,0.50,0,40">Satu repo, dibedah sampai tuntas.</p>' +
       '<div class="geser" data-in="1.45,0.50,0,30">GESER BUAT BEDAHNYA</div></div>';
     spec.repos.forEach((r, i) => {
+      // Shortlink printed in the repo-scene titlebar (no-link rule,
+      // 31 Okt 2026): the link lives in the video, not in any caption.
+      const short = (r.shortlink || '').replace(/^https?:\/\//, '');
       html += '<div class="scene">' + header('REPO ' + String(i + 1).padStart(2, '0') +
         ' DARI ' + String(n).padStart(2, '0') + ' // ' + spec.agent.toUpperCase()) +
         '<div class="win" data-in="0.45,0.55,0,80">' +
         '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
         '<span class="dot" style="background:#FEBC2E"></span>' +
         '<span class="dot" style="background:#28C840"></span>' +
-        '<span class="tname">' + r.name + '</span></div>' +
+        '<span class="tname">' + r.name + '</span>' +
+        (short ? '<span class="tlink">' + short + '</span>' : '') + '</div>' +
         '<img class="og" src="' + r.shot + '"></div>' +
         '<div class="term" data-in="0.90,0.50,0,50">' +
         '<div class="thead"><span class="tdot" style="background:#FF5F57"></span>' +
@@ -103,8 +108,7 @@
     const nextEp = String(spec.episode + 1).padStart(2, '0');
     html += '<div class="scene">' + header('') +
       '<p class="q" data-in="0.30,0.50,0,60">Kamu paling pengin Cindy bantuin kerjaan apa dulu?</p>' +
-      '<p class="next" data-in="0.80,0.50,0,40">Link repo-nya ada di komentar.</p>' +
-      '<p class="next" data-in="1.10,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
+      '<p class="next" data-in="0.80,0.50,0,40">Save dulu, biar gampang dicari lagi.</p></div>';
     html += '<div class="scene">' + header('') +
       '<p class="q" data-in="0.30,0.50,0,60">Follow dan gabung.</p>' +
       '<p class="next" data-in="0.80,0.50,0,40">Follow @peka.ai.id di Instagram, Threads, dan TikTok.</p>' +
