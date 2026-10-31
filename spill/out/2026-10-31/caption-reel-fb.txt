@@ -1,0 +1,11 @@
+5 skill Hermes yang bikin agent kamu nggak gampang lupa.
+
+Yang paling kepakai: hermes-lcm. Langkah pertamanya: clone repo hermes-lcm ke ~/.hermes/plugins/hermes-lcm, lalu aktifkan pluginnya.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Aitech by Kevin MacLeod

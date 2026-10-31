@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 11,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "name": "stephenschoettler/hermes-lcm",
+      "stars": "1RB",
+      "install": "git clone https://github.com/stephenschoettler/hermes-lcm ~/.hermes/plugins/hermes-lcm",
+      "penjelasan": "Plugin konteks buat Hermes Agent yang menjaga percakapan tetap utuh dari awal sampai akhir. Mesin DAG-nya menyimpan pesan lama, jadi sesi panjang tidak perlu diulang dari nol.",
+      "cocok": "Pengguna Hermes Agent yang sesi kerjanya panjang dan tidak mau pesan penting hilang di tengah jalan.",
+      "shortlink": "https://s.peka.ai.id/r5sgi2",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/shots/stephenschoettler-hermes-lcm.png"
+    },
+    {
+      "name": "NousResearch/Hermes-Bot-Mode",
+      "stars": "1RB",
+      "install": "npx skills add NousResearch/Hermes-Bot-Mode -g",
+      "penjelasan": "Mode bot buat desktop Hermes: daftar agent bernama dengan chat, avatar, dan rutinitas masing-masing. Tugas bisa dibagi tanpa campur aduk, tanpa mengubah inti Hermes.",
+      "cocok": "Pengguna desktop Hermes yang mau beberapa agent bernama dengan peran dan rutinitas masing-masing.",
+      "shortlink": "https://s.peka.ai.id/2ytau9",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/shots/NousResearch-Hermes-Bot-Mode.png"
+    },
+    {
+      "name": "ZeroPointRepo/awesome-hermes-skills",
+      "stars": "1RB",
+      "install": "npx skills add ZeroPointRepo/awesome-hermes-skills -g",
+      "penjelasan": "Daftar kurasi skill dan plugin Hermes: lebih dari 350 tool, penyedia memori, dan panduan dalam satu tempat. Titik awal paling hemat waktu buat yang baru kenal Hermes.",
+      "cocok": "Pengguna Hermes yang mau mulai dari daftar kurasi skill, plugin, dan panduan yang sudah dipilihkan komunitas.",
+      "shortlink": "https://s.peka.ai.id/2optmy",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/shots/ZeroPointRepo-awesome-hermes-skills.png"
+    },
+    {
+      "name": "Romanescu11/hermes-skill-factory",
+      "stars": "1RB",
+      "install": "npx skills add Romanescu11/hermes-skill-factory -g",
+      "penjelasan": "Plugin meta skill yang mengubah workflow yang sudah kamu kerjakan jadi skill yang bisa dipakai ulang. Workflow tidak hilang begitu sesi berakhir, Hermes makin paham cara kerjamu.",
+      "cocok": "Pengguna Hermes yang workflow-nya sering terulang dan mau diubah otomatis jadi skill yang bisa dipakai ulang.",
+      "shortlink": "https://s.peka.ai.id/su1a0v",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/shots/Romanescu11-hermes-skill-factory.png"
+    },
+    {
+      "name": "NousResearch/hermes-official-plugins",
+      "stars": "1RB",
+      "install": "npx skills add NousResearch/hermes-official-plugins -g",
+      "penjelasan": "Kumpulan plugin resmi Hermes dari Nous Research, antara lain Home Assistant, Spotify, dan Claude Subscription DirectSDK. Pasang lewat katalog plugin Hermes, dari sumber resmi.",
+      "cocok": "Pengguna Hermes Agent yang mau pasang plugin dari sumber resmi Nous Research dan tidak mau coba coba plugin acak.",
+      "shortlink": "https://s.peka.ai.id/x2mb2w",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/shots/NousResearch-hermes-official-plugins.png"
+    }
+  ]
+}
