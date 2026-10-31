@@ -15,7 +15,11 @@ Spec: {"edition": 1, "agent": "CINDY", "name": "owner/repo",
   "how_body": "...", "how_start": "...",
   "devices": [{"name": "LAPTOP", "cap": "komputer kerja"}, ...],
   "steps": [{"title": "...", "desc": "..."}, x3],
-  "note": "...", "out_dir": "/abs/path/carousel"}
+  "note": "...", "out_dir": "/abs/path/carousel",
+  "repo": {"desc_en": "...", "desc_id": "...",
+    "stats": [["8,7RB", "STAR"], ...], "topics": ["ai-agent", ...]}}
+With a "repo" block the edition renders 5 slides: a repo-page slide
+is inserted after the cover (page 2). Without it, 4 slides.
 """
 import json
 import os
@@ -224,7 +228,7 @@ def headline_block(d, lines, y0, step, start_size, max_w):
     return rule_y
 
 
-def cover(spec, out_dir):
+def cover(spec, out_dir, page, total):
     img, d = base()
     header(img, d)
     ep = "%02d" % spec["edition"]
@@ -265,14 +269,94 @@ def cover(spec, out_dir):
         if i < 2:
             arrow(d, x + X(w) + X(12), by + X(28), x + X(w) + X(78), by + X(28), YEL, width=4)
         x += X(w) + X(90)
-    footer(d, 1)
-    img.save(out_dir + "/blueprint-01.png")
+    footer(d, page, total)
+    img.save(out_dir + "/blueprint-%02d.png" % page)
 
 
-def how(spec, out_dir):
+def repo_page(spec, out_dir, page, total):
+    """Repo-page slide: a GitHub repo rendered as a blueprint window.
+
+    Chrome bar carries the repo URL and the edition shortlink (no-link
+    rule: the link lives in the visual). Stats, topics and descriptions
+    come from spec["repo"]; all values must be verified repo facts.
+    """
     img, d = base()
     header(img, d)
-    section_label(d, 212, "02 / CARA KERJA")
+    section_label(d, 212, "%02d / REPO" % page)
+    repo = spec["repo"]
+    x0, x1 = X(72), X(1008)
+    y0, y1 = X(272), X(960)
+    d.rectangle([x0, y0, x1, y1], fill=PANEL, outline=HAIR, width=X(3))
+    d.rectangle([x0, y0, x1, y0 + X(64)], fill=NAVY)
+    d.line([(x0, y0 + X(64)), (x1, y0 + X(64))], fill=HAIR, width=X(2))
+    cx = x0 + X(28)
+    for col in ["#FF5F57", "#FEBC2E", "#28C840"]:
+        d.ellipse([cx, y0 + X(21), cx + X(22), y0 + X(43)], fill=col)
+        cx += X(34)
+    d.text((cx + X(10), y0 + X(17)), "github.com/" + spec["name"], font=mono(26), fill=MUTED)
+    if spec.get("shortlink"):
+        shown = spec["shortlink"].replace("https://", "").replace("http://", "")
+        d.text((x1 - X(28) - d.textlength(shown, font=mono(26, True)), y0 + X(17)),
+               shown, font=mono(26, True), fill=YEL)
+    ny = 352
+    d.text((x0 + X(28), X(ny)), spec["name"], font=bold(52), fill=WHITE)
+    badge = "PUBLIC"
+    bf = mono(26, True)
+    bw = d.textlength(badge, font=bf) + X(36)
+    bx1 = x1 - X(28)
+    bx0 = bx1 - bw
+    dashed_rect(d, (bx0, X(ny + 6), bx1, X(ny + 56)), MUTED, width=3)
+    d.text((bx0 + X(18), X(ny + 14)), badge, font=bf, fill=MUTED)
+    lines = wrap(d, repo["desc_en"], body(30), X(880))
+    yy = 424
+    for ln in lines[:2]:
+        d.text((x0 + X(28), X(yy)), ln, font=body(30), fill=MUTED)
+        yy += 38
+    lines = wrap(d, repo["desc_id"], semibold(38), X(880))
+    yy = 508
+    for ln in lines[:2]:
+        d.text((x0 + X(28), X(yy)), ln, font=semibold(38), fill=WHITE)
+        yy += 48
+    d.line([(x0 + X(28), X(608)), (x1 - X(28), X(608))], fill=HAIR, width=X(2))
+    stats = repo["stats"][:3]
+    cell_w = X(880) // 3
+    for i, (val, lab) in enumerate(stats):
+        sx = x0 + X(28) + i * cell_w
+        d.text((sx, X(624)), val, font=bold(44), fill=WHITE)
+        d.text((sx, X(684)), lab, font=mono(22), fill=MUTED)
+    lang = repo.get("language", spec["language"])
+    lic = repo.get("license", spec["license"])
+    ly = 732
+    d.text((x0 + X(28), X(ly)), "BAHASA", font=mono(26, True), fill=YEL)
+    d.text((x0 + X(28) + d.textlength("BAHASA", font=mono(26, True)) + X(20), X(ly - 4)),
+           lang, font=semibold(34), fill=WHITE)
+    lx = x0 + X(28) + cell_w * 2 - X(60)
+    d.text((lx, X(ly)), "LISENSI", font=mono(26, True), fill=YEL)
+    d.text((lx + d.textlength("LISENSI", font=mono(26, True)) + X(20), X(ly - 4)),
+           lic, font=semibold(34), fill=WHITE)
+    d.text((x0 + X(28), X(788)), "TOPIK", font=mono(26, True), fill=YEL)
+    chips = repo["topics"][:6]
+    chip_y = [812, 868]
+    row, cxx = 0, x0 + X(28)
+    for t in chips:
+        tf = mono(24)
+        tw = d.textlength(t, font=tf) + X(36)
+        if row == 0 and cxx + tw > x1 - X(28) and row < 1:
+            row = 1
+            cxx = x0 + X(28)
+        if cxx + tw > x1 - X(28):
+            break
+        dashed_rect(d, (cxx, X(chip_y[row]), cxx + tw, X(chip_y[row] + 44)), MUTED, width=3)
+        d.text((cxx + X(18), X(chip_y[row] + 9)), t, font=tf, fill=WHITE)
+        cxx += tw + X(16)
+    footer(d, page, total)
+    img.save(out_dir + "/blueprint-%02d.png" % page)
+
+
+def how(spec, out_dir, page, total):
+    img, d = base()
+    header(img, d)
+    section_label(d, 212, "%02d / CARA KERJA" % page)
     lines = spec["how_headline"]
     rule_y = headline_block(d, lines, 280, 114, 118, X(936))
     node = (X(440), X(rule_y + 56), X(640), X(rule_y + 144))
@@ -296,14 +380,14 @@ def how(spec, out_dir):
            spec["agent"], font=tf, fill=NAVYTXT)
     d.text((X(72), X(rule_y + 304)), spec["how_body"], font=body(40), fill=WHITE)
     d.text((X(72), X(rule_y + 352)), spec["how_start"], font=mono(30, True), fill=YEL)
-    footer(d, 2)
-    img.save(out_dir + "/blueprint-02.png")
+    footer(d, page, total)
+    img.save(out_dir + "/blueprint-%02d.png" % page)
 
 
-def steps(spec, out_dir):
+def steps(spec, out_dir, page, total):
     img, d = base()
     header(img, d)
-    section_label(d, 212, "03 / LANGKAH MULAI")
+    section_label(d, 212, "%02d / LANGKAH MULAI" % page)
     lines = ["MULAI DALAM", "3 LANGKAH."]
     rule_y = headline_block(d, lines, 272, 108, 118, X(936))
     y = X(rule_y + 22)
@@ -321,14 +405,14 @@ def steps(spec, out_dir):
             d.text((X(196), ty + X(4)), dline, font=body(28), fill=MUTED)
             ty += X(34)
         y += X(134)
-    footer(d, 3)
-    img.save(out_dir + "/blueprint-03.png")
+    footer(d, page, total)
+    img.save(out_dir + "/blueprint-%02d.png" % page)
 
 
-def follow(spec, out_dir):
+def follow(spec, out_dir, page, total):
     img, d = base()
     header(img, d)
-    section_label(d, 212, "04 / FOLLOW + GABUNG")
+    section_label(d, 212, "%02d / FOLLOW + GABUNG" % page)
     lines = ["FOLLOW DAN", "GABUNG."]
     rule_y = headline_block(d, lines, 272, 108, 118, X(936))
     rows = [
@@ -351,8 +435,8 @@ def follow(spec, out_dir):
         rx = X(100) + d.textlength(label, font=lf) + X(28)
         d.text((rx, y + X(22)), rest, font=semibold(38), fill=WHITE)
         y += X(106)
-    footer(d, 4)
-    img.save(out_dir + "/blueprint-04.png")
+    footer(d, page, total)
+    img.save(out_dir + "/blueprint-%02d.png" % page)
 
 
 def main():
@@ -362,10 +446,13 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     assert len(spec["steps"]) == 3, "BLUEPRINT needs exactly 3 steps"
     assert len(spec["devices"]) == 3, "BLUEPRINT needs exactly 3 devices"
-    cover(spec, out_dir)
-    how(spec, out_dir)
-    steps(spec, out_dir)
-    follow(spec, out_dir)
+    pages = [cover]
+    if spec.get("repo"):
+        pages.append(repo_page)
+    pages += [how, steps, follow]
+    total = len(pages)
+    for i, fn in enumerate(pages, start=1):
+        fn(spec, out_dir, i, total)
     print("blueprint slides OK ->", out_dir)
 
 

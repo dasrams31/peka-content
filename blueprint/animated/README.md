@@ -1,7 +1,11 @@
 # BLUEPRINT animated reel template
 
-Spec-driven animated reel, one tool per edition: cover (3 s) + repo
-scene (8 s) + question (2 s) + follow (2 s) = 15 s, 2160x3840, yuv420p.
+Spec-driven animated reel, one tool per edition: cover (3 s) +
+repo-page scene (3 s) + repo scene (5 s) + question (2 s) + follow
+(2 s) = 15 s, 2160x3840, yuv420p. The repo-page scene renders the
+repo as a blueprint browser window (name, descriptions, star/fork/
+contributor stats, language/license chips, topic chips, shortlink in
+the titlebar); the repo scene keeps the og screenshot + typing panel.
 
 ## Spec
 
@@ -23,7 +27,12 @@ scene (8 s) + question (2 s) + follow (2 s) = 15 s, 2160x3840, yuv420p.
     "install": "Download gratis di cindy.app",
     "penjelasan": "...max 260 chars, no em-dash...",
     "cocok": "...",
-    "shot": "shots/makecindy-cindy.png"
+    "shot": "shots/makecindy-cindy.png",
+    "desc_en": "Consider it done. The open-source AI agent that works out of the box.",
+    "desc_id": "AI agent open source yang jalan di semua perangkatmu.",
+    "forks": "1.037",
+    "contributors": "173",
+    "topics": ["ai-agent", "claude-code", "codex", "electron", "macos", "windows"]
   }]
 }
 ```
@@ -45,4 +54,6 @@ rm -rf <out>/frames
 
 Music: exactly one call to `~/workspace/peka-content/brand/music/pick_reel_track.sh`
 per new reel. Verify with ffprobe: h264, 2160x3840, yuv420p, 15.000 s.
-Check frames at t=2/7/13 s before posting. No slideshow fallback.
+Check frames at t=2/4.5/8.5/12/14 s before posting (t=4.5: repo-page
+scene with shortlink in the titlebar; t=8.5: repo scene with shortlink
+in the titlebar). No slideshow fallback.

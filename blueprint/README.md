@@ -35,16 +35,21 @@ verified 2026-10-31; posting scheduled via runonce cron the same day
 
 ## Files
 
-- `blueprint.py` — spec-driven 4-slide generator (4096x4096).
-  Headline rule position is computed from font metrics
-  (`headline_block`), never a fixed y, so the rule never strikes
-  through headline text. Step titles/descs are wrapped to the card
-  width; slide 3 carries no separate note line (it collided with the
-  footer) — the provider-cost note lives in the captions instead.
-- `animated/` — spec-driven animated reel template (cover 3 s + repo
-  8 s + question 2 s + follow 2 s = 15 s, 2160x3840, yuv420p).
-  Same fade/slide/typing/progress engine as the SPILL template.
-  `animated/README.md` has the render + encode commands.
+- `blueprint.py` — spec-driven 4-5 slide generator (4096x4096).
+  With a spec `"repo"` block (desc_en, desc_id, stats, topics) a
+  repo-page slide is inserted at position 2 (browser window with the
+  repo URL + shortlink in the chrome bar, verified stats, topic
+  chips); without it, 4 slides. Headline rule position is computed
+  from font metrics (`headline_block`), never a fixed y, so the rule
+  never strikes through headline text. Step titles/descs are wrapped
+  to the card width; slide 3 carries no separate note line (it
+  collided with the footer) — the provider-cost note lives in the
+  captions instead.
+- `animated/` — spec-driven animated reel template (cover 3 s +
+  repo-page 3 s + repo 5 s + question 2 s + follow 2 s = 15 s,
+  2160x3840, yuv420p). Same fade/slide/typing/progress engine as the
+  SPILL template. `animated/README.md` has the render + encode
+  commands.
 - `blueprint_preview.py` + `preview/` — the original 2-slide + 1-scene
   preview (kept for reference; the final slides differ: rule position,
   wrapped steps, row-style follow slide).
@@ -61,9 +66,12 @@ verified 2026-10-31; posting scheduled via runonce cron the same day
 
 ## Edition 01 output
 
-`out/2026-10-31-cindy/`: `carousel/blueprint-01..04.png`,
+`out/2026-10-31-cindy/`: `carousel/blueprint-01..05.png` (slide 2 =
+repo page, added 2026-10-31 on user order "desain navy + halaman
+repo"),
 `blueprint-reel.mp4` (Volatile Reaction by Kevin MacLeod, one
-`pick_reel_track.sh` call), `blueprint-reel-cover.jpg`,
+`pick_reel_track.sh` call; re-rendered 2026-10-31 with the repo-page
+scene, same track file, no new pick), `blueprint-reel-cover.jpg`,
 `reel-spec.json`, `spec.json`, `shortlinks.json`,
 `caption-{ig,fb,threads,tiktok}.txt`, `comment-{threads,fb}.txt`,
 `track.txt`, `shots/makecindy-cindy.png`.

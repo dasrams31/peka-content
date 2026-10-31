@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Render a BLUEPRINT animated reel frame by frame with Playwright.
 
-One tool per edition: cover + one repo scene (og screenshot + typing
-start panel + penjelasan) + question + follow. Deterministic: every
-frame is produced by window.renderAt(t) after window.buildScene(spec).
+One tool per edition: cover + repo-page scene + repo scene (og
+screenshot + typing start panel + penjelasan) + question + follow.
+Deterministic: every frame is produced by window.renderAt(t) after
+window.buildScene(spec).
 Usage: render.py <spec.json> [out_dir] [fps] [duration] [scale]
 Scale 1.0 = 1080x1920, 2.0 = true 4K 2160x3840 (rounded to even dims).
-Duration default = 3 + 8 + 4 = 15 seconds.
+Duration default = 3 + 3 + 5 + 4 = 15 seconds.
 Relative shot paths in the spec resolve against the spec file's dir.
 """
 import asyncio
@@ -31,6 +32,8 @@ async def main():
     for r in spec["repos"]:
         assert len(r["penjelasan"]) <= 260, f"penjelasan too long: {r['name']}"
         assert r.get("install"), f"missing install: {r['name']}"
+        for fld in ("desc_en", "desc_id", "forks", "contributors", "topics"):
+            assert r.get(fld), f"missing {fld} for repo-page scene: {r['name']}"
         shot = r.get("shot", "")
         if shot and not shot.startswith("/"):
             shot = os.path.join(spec_dir, shot)

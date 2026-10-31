@@ -53,6 +53,18 @@
   .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
   .win .tlink { font-family: DejaVuMonoB; font-size: 30px; color: #FFD60A; margin-left: auto; white-space: nowrap; }
   .win .og { display: block; width: 100%; }
+  .winbody { background: #10264A; padding: 34px 36px 40px 36px; }
+  .pname { font-family: PoppinsB; font-size: 56px; color: #F2F5F9; }
+  .pbadge { font-family: DejaVuMono; font-size: 26px; color: #8FA6C2; border: 3px dashed #8FA6C2; padding: 6px 14px; vertical-align: 10px; margin-left: 16px; }
+  .pdesc { font-family: DejaVu; font-size: 32px; line-height: 1.4; color: #8FA6C2; margin-top: 18px; }
+  .pdescid { font-family: PoppinsSB; font-size: 38px; line-height: 1.35; color: #F2F5F9; margin-top: 20px; }
+  .pstats { display: flex; gap: 20px; margin-top: 30px; }
+  .pstat { flex: 1; border: 2px solid #3D5A80; padding: 18px 8px 14px 8px; text-align: center; }
+  .pstat b { display: block; font-family: PoppinsB; font-size: 38px; color: #F2F5F9; }
+  .pstat span { font-family: DejaVuMono; font-size: 22px; color: #8FA6C2; }
+  .pchips { display: flex; gap: 20px; margin-top: 26px; }
+  .ptopics { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+  .ptopic { border: 2px dashed #8FA6C2; padding: 8px 16px; font-family: DejaVuMono; font-size: 26px; color: #F2F5F9; }
   .term { background: #061224; border: 2px solid #3D5A80; border-radius: 28px; padding: 30px 36px 36px 36px; margin-top: 36px; }
   .term .thead { display: flex; align-items: center; gap: 14px; }
   .term .tdot { width: 26px; height: 26px; border-radius: 50%; }
@@ -81,7 +93,7 @@
   <div id="progress"></div>
 </div>
 <script>
-  const COVER_DUR = 3, REPO_DUR = 8, END_DUR = 2;
+  const COVER_DUR = 3, PAGE_DUR = 3, REPO_DUR = 5, END_DUR = 2;
   let DURATIONS = [], TOTAL = 0;
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   function clamp01(x) { return Math.max(0, Math.min(1, x)); }
@@ -99,7 +111,7 @@
     // 31 Okt 2026): the link lives in the video, not in any caption.
     const short = (spec.shortlink || '').replace(/^https?:\/\//, '');
     const nameSize = Math.min(150, Math.floor(880 / Math.max(1, spec.agent.length)));
-    DURATIONS = [COVER_DUR, REPO_DUR, END_DUR, END_DUR];
+    DURATIONS = [COVER_DUR, PAGE_DUR, REPO_DUR, END_DUR, END_DUR];
     TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
     let html = '<div class="scene">' + header('') +
       '<div class="section" data-in="0.25,0.40,0,30">EDISI #' + ep + ' / GAMBAR KERJA</div>' +
@@ -118,6 +130,28 @@
       '<div class="box mid">' + spec.agent.toUpperCase() + '</div><span class="arr">&rarr;</span>' +
       '<div class="box">HP</div></div></div>' +
       '<div class="note" data-in="1.95,0.50,0,30"><b>CATATAN:</b> ' + spec.note + '</div></div>';
+    html += '<div class="scene">' + header('REPO // GITHUB') +
+      '<div class="win" data-in="0.20,0.45,0,60">' +
+      '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
+      '<span class="dot" style="background:#FEBC2E"></span>' +
+      '<span class="dot" style="background:#28C840"></span>' +
+      '<span class="tname">' + r.name + '</span>' +
+      (short ? '<span class="tlink">' + short + '</span>' : '') + '</div>' +
+      '<div class="winbody">' +
+      '<div class="pname" data-in="0.45,0.45,0,30">' + r.name +
+      '<span class="pbadge">PUBLIC</span></div>' +
+      '<p class="pdesc" data-in="0.65,0.45,0,30">' + r.desc_en + '</p>' +
+      '<p class="pdescid" data-in="0.85,0.45,0,30">' + r.desc_id + '</p>' +
+      '<div class="pstats" data-in="1.05,0.45,0,30">' +
+      '<div class="pstat"><b>' + r.stars + '</b><span>STAR</span></div>' +
+      '<div class="pstat"><b>' + r.forks + '</b><span>FORK</span></div>' +
+      '<div class="pstat"><b>' + r.contributors + '</b><span>KONTRIBUTOR</span></div></div>' +
+      '<div class="pchips" data-in="1.25,0.45,0,30">' +
+      '<div class="chip">' + r.language.toUpperCase() + '</div>' +
+      '<div class="chip">' + r.license.toUpperCase() + '</div></div>' +
+      '<div class="ptopics" data-in="1.45,0.45,0,30">' +
+      r.topics.map(t => '<span class="ptopic">' + t + '</span>').join('') +
+      '</div></div></div></div>';
     html += '<div class="scene">' + header('REPO 01 DARI 01 // ' + spec.agent.toUpperCase()) +
       '<div class="win" data-in="0.45,0.55,0,80">' +
       '<div class="titlebar"><span class="dot" style="background:#FF5F57"></span>' +
