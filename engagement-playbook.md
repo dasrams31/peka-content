@@ -25,9 +25,14 @@ it 2x with n>=10.
   trivial to answer, get the conversation started.
 - Fixed daily slots (09:36 news, 19:00 store, 21:30 spill) train both the
   audience and the algorithm. Never post two series in the same slot.
-- Links do NOT go in the Threads post body (reach drops); links live in
-  the first reply/comment, which is already the SPILL format. On IG,
-  caption links are not clickable: point to the blog and the comments.
+- NO links anywhere on Threads (31 Okt 2026, perintah user, TERKUNCI,
+  eksperimen lawan views anjlok): no link in the post body, no link
+  reply, no shortlink comment. The edition's link is printed ON the
+  slide as an s.peka.ai.id shortlink, and the Threads caption carries
+  one instruction sentence saying the link is in the slide (e.g.
+  "Linknya ada di slide terakhir."). IG/FB keep their shortlink
+  lines/comments as before; on IG, caption links are not clickable:
+  point to the blog and the comments.
 
 ## Caption anatomy (every pillar)
 
