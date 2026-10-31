@@ -1,0 +1,8 @@
+SPILL #11 HERMES - 2026-10-31 (shortlink akun admin)
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfKebwEk_gm (post_id 18025389005718154, 8 slide, caption terverifikasi live)
+IG reel (animasi, Aitech): media 18454850365121318 (shortcode tidak dikembalikan CLI)
+FB reel: https://facebook.com/reel/895154676925964/ (post_id 122115736443497807)
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-hermes-edisi-11
+Shortlink (admin, user_id 1): r5sgi2, 2ytau9, 2optmy, su1a0v, x2mb2w (semua 307 terverifikasi)
+Template: scene.html diperbaiki (tname ellipsis + tlink flex-shrink) karena shortlink scene 1 kepotong di render pertama; render ulang + encode ulang, shortlink terverifikasi utuh di scene 1 dan 5.
+Install hermes-lcm: spec memakai perintah clone README (generator sempat mengambil pip install pytest dari bagian development README).
