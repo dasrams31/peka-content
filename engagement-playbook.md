@@ -43,13 +43,16 @@ it 2x with n>=10.
    - a bold but TRUE claim ("Bukan modelnya yang bikin agent pinter")
    - a common mistake ("Kebanyakan orang install skill asal comot")
    - a curiosity gap ("Yang nomor 3 yang paling kepakai, ternyata")
-2. Body: short lines, one idea per line. No walls of text.
-3. Close with exactly ONE interaction trigger (rotate them):
-   - opinion question that is easy to answer ("Kalau kamu, tim mana?")
-   - experience ask ("Ada yang udah coba? Ceritain di komentar.")
+2. Body: short lines, one idea per line. No walls of text. CAPTION MANDIRI (31 Okt 2026, TERKUNCI): the caption must carry the core fact + first concrete step + concrete result IN THE TEXT, useful without opening the carousel. A draft that only says "cek slide/carousel" is a failed draft, rewrite it.
+3. Close with exactly ONE interaction trigger, and it MUST be a FORCED CHOICE (rotate them):
+   - binary choice with both options explicit ("Tim laptop atau tim HP?", "Mau coba yang mana dulu, A atau B?")
+   - count / self-score ("Kena berapa red flag? 0, 1, 2, atau 3?")
+   - pick-one-of-N ("Repo mana yang mau kamu coba duluan?" with the list in the post)
+   - experience ask with a concrete fork ("Ada yang udah klaim? Lancar atau mentok di langkah berapa?")
    - tag a friend who needs it (bansos / store posts)
    - save trigger ("Save dulu, ilmunya kepakai nanti")
    - follow trigger for series ("Edisi #NN besok jam 21:30, follow biar nggak ketinggalan")
+   FORBIDDEN as the closer: open opinion questions ("gimana menurutmu?", "setuju nggak?") with no options to pick.
 4. FORBIDDEN: fake clickbait, invented numbers/testimonials, cheap
    engagement bait ("like kalau setuju"), rage bait on SARA or party
    politics. Honest urgency only.
@@ -94,9 +97,14 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
 
 ## Per platform
 
-- Threads: replies are king. End with a question (before the single #AI
-  hashtag), and make our own first reply carry extra value (links, extra
-  fact). Exactly 1 hashtag #AI stays mandatory.
+- Threads: replies are king. End with a forced-choice question (before the single #AI
+  hashtag), and make our own first reply carry extra value (extra fact,
+  full prompt, next step; TANPA link, aturan tanpa-link 31 Okt).
+  Reply CHAIN cap: root + max 4 replies (5 posts total), each reply one
+  usable chunk, never more (daily write budget, 429 = stop). Exactly 1 hashtag #AI stays mandatory.
+  MANUAL (Dipa-kun, dari HP): reply to viewer comments fast, and repost
+  key editions from the personal account + share to the WA group. That
+  distribution lever stays manual; no cron pretends to do it.
 - Instagram: saves and shares weigh most. Every carousel ends with a CTA
   slide. 5-10 relevant hashtags, no spam. Sales posts stay OFF Instagram.
 - Facebook: native carousel + a question; when replying to comments, end
@@ -255,6 +263,32 @@ Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Ten
 5. **Keputusan berbasis snapshot laporan harian 22:30**, bukan angka menit awal (metrik Threads telat dan berbatch). Tidak ada keputusan hapus/revisi sebelum ada snapshot beberapa jam.
 6. **Jam posting bukan penentu.** Kekuatan tawaran dan caption mengalahkan jam tayang; jangan menggeser jadwal demi mengejar jam ramai.
 7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = reactions + shares. Satu angka dari satu platform tidak memvonis konten.
+
+## ATURAN DONGKRAK VIEW THREADS (2026-10-31, dikunci user, perintah "Boleh 1-4")
+
+Bukti: SPILL #10 cuma 21 views dan Prompt #07 24 views (28-30 Okt),
+sementara Oracle 13.994 views dan Gratisan AI perdana 514 views. Tiga
+aturan ini berlaku SEMUA cron konten (HM, Prompt, Gratisan, SPILL,
+BLUEPRINT, katalog, LOG PEKA), dan tiap cron body mengulanginya:
+
+1. **Caption mandiri.** Caption membawa fakta inti + langkah pertama
+   konkret + hasil konkret di teksnya. Berguna tanpa buka carousel.
+   Draf "cek slide/carousel" = gagal.
+2. **Pertanyaan pilihan paksa.** Satu pertanyaan penutup, selalu dengan
+   opsi eksplisit (biner / hitungan / pilih-satu-dari-N / garpu
+   pengalaman). Pertanyaan opini terbuka dilarang jadi penutup.
+3. **Rantai maks 5 + balas komentar.** Rantai Threads = root + maks 4
+   balasan, tiap balasan satu potongan pakai. Komentar penonton
+   dibalas cepat (manual, Dipa-kun) dan edisi kunci di-repost dari
+   akun pribadi + grup WA.
+
+Data 31 Okt kotor (caption HM kosong + 429), jadi eksperimen
+tanpa-link dinilai di review Minggu 1 Nov 20:00 dengan data bersih,
+bukan dari angka 31 Okt.
+
+Seri LOG PEKA (Sabtu 16:00, edisi perdana 7 Nov 2026): log eksperimen
+jujur bernomor hari. Angka WAJIB dari performance.log + bacaan live,
+jangan karang. Detail di ~/workspace/peka-content/log-peka/README.md.
 
 ## ATURAN SHORTLINK + TOOLS (2026-10-28, dikunci user, berlaku semua cron konten)
 - SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare, sebagai link milik ADMIN (user_id 1, admin@peka.ai.id) LANGSUNG di database s.peka.ai.id (~/workspace/peka-shortlink/data/shortlink.db, tabel links: user_id=1, ip_hash='12ca17b49af2289436f303e0166030a2', code acak 6 char unik, target_url = URL panjang, is_active=1, clicks=0). JANGAN pakai API tamu. Pakai URL publik `https://s.peka.ai.id/<code>` yang dibuat. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila shortlink gagal dibuat: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
