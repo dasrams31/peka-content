@@ -1,0 +1,4 @@
+Gemini API gratis, tanpa kartu kredit, save dulu biar nggak hilang. Token input + output gratis di model tertentu, klaim di aistudio.google.com. Yang sering bikin gagal: limit dihitung per project, bukan per key, bikin key baru di project yang sama tidak nambah jatah. Ada yang udah klaim?
+
+#fyp #gemini #api #coding #belajarai #gratisan
+Music: Vortex by Kevin MacLeod

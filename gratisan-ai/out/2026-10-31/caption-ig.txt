@@ -1,0 +1,9 @@
+Gemini API gratis, tanpa kartu kredit.
+Token input + output gratis di model tertentu, langsung dari Google AI Studio. Bisa dipakai dari Indonesia, cukup akun Google.
+Caranya: buka aistudio.google.com, login, buka Get API key, klik Create API key, pilih project, salin key-nya.
+Yang sering bikin gagal: limit dihitung per project, bukan per key. Bikin key baru di project yang sama tidak nambah jatah. Cek limit kamu di halaman rate limit AI Studio.
+Catatan jujur: model Argon dan gambar/video tidak masuk tier gratis. Di tier gratis, prompt kamu bisa dipakai Google buat ningkatin produknya, jadi jangan kirim data sensitif.
+Save dulu biar nggak hilang, kalau mau coba nanti.
+Ada yang udah klaim?
+Music: Vortex by Kevin MacLeod
+#fyp #gemini #api #coding #belajarai #gratisan

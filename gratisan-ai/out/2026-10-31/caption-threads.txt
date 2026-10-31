@@ -1,0 +1,5 @@
+Gemini API gratis, tanpa kartu kredit.
+Token input + output gratis di model tertentu, klaim lewat Google AI Studio, bisa dari Indonesia.
+Yang sering bikin gagal: limit dihitung per project, bukan per key. Bikin key baru di project yang sama tidak nambah jatah, cek limit di AI Studio.
+Ada yang udah klaim?
+#AI
