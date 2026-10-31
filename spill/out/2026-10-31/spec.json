@@ -1,0 +1,44 @@
+{
+  "agent": "HERMES",
+  "next": "OPENCODE",
+  "episode": 11,
+  "repos": [
+    {
+      "name": "stephenschoettler/hermes-lcm",
+      "stars": "1RB",
+      "desc": "Plugin manajemen konteks buat Hermes Agent yang menjaga percakapan tetap utuh dari awal sampai akhir. Mesin konteksnya memakai struktur DAG, jadi pesan lama tidak hilang walau sesi makin panjang. Dengan konteks yang utuh, agent bisa menjawab dengan ingatan penuh atas apa yang sudah dibahas. Hasilnya kerja panjang tidak perlu diulang dari nol karena agent lupa di tengah jalan. Cocok buat sesi Hermes yang panjang dan penuh konteks penting.",
+      "cocok": "Pengguna Hermes Agent yang sesi kerjanya panjang dan tidak mau pesan penting hilang di tengah jalan.",
+      "shortlink": "https://s.peka.ai.id/r5sgi2",
+      "install": "git clone https://github.com/stephenschoettler/hermes-lcm ~/.hermes/plugins/hermes-lcm"
+    },
+    {
+      "name": "NousResearch/Hermes-Bot-Mode",
+      "stars": "1RB",
+      "desc": "Mode bot buat desktop Hermes yang berisi daftar agent bernama, masing-masing dengan chat, avatar, rutinitas, dan pesan antar bot sendiri. Kamu bisa punya beberapa agent dengan peran berbeda dalam satu desktop Hermes. Tiap bot jalan dengan identitasnya sendiri, jadi tugas bisa dibagi tanpa campur aduk. Plugin desktop ini tidak mengubah inti Hermes, jadi pemasangannya tetap aman. Hasilnya Hermes terasa seperti tim kecil, bukan satu agent sendirian.",
+      "cocok": "Pengguna desktop Hermes yang mau beberapa agent bernama dengan peran dan rutinitas masing-masing.",
+      "shortlink": "https://s.peka.ai.id/2ytau9"
+    },
+    {
+      "name": "ZeroPointRepo/awesome-hermes-skills",
+      "stars": "1RB",
+      "desc": "Daftar kurasi berisi skill dan plugin Hermes Agent, dengan lebih dari 350 tool, penyedia memori, dan panduan. Semuanya dirangkum dalam satu daftar rapi, jadi kamu tinggal pilih sesuai kebutuhan tanpa berburu repo satu satu. Daftar ini mencakup skill agent, plugin, MCP, dan panduan, sehingga jadi titik awal yang lengkap. Karena dikurasi komunitas, isinya terus bertambah mengikuti ekosistem Hermes. Buat yang baru kenal Hermes, ini peta jalan yang paling hemat waktu.",
+      "cocok": "Pengguna Hermes yang mau mulai dari daftar kurasi skill, plugin, dan panduan yang sudah dipilihkan komunitas.",
+      "shortlink": "https://s.peka.ai.id/2optmy"
+    },
+    {
+      "name": "Romanescu11/hermes-skill-factory",
+      "stars": "1RB",
+      "desc": "Plugin meta skill buat Hermes Agent yang mengubah workflow yang sudah kamu kerjakan jadi skill yang bisa dipakai ulang. Plugin ini memperhatikan cara kamu bekerja bersama Hermes, lalu menyimpan pola kerja itu sebagai skill baru. Workflow yang biasanya hilang begitu sesi berakhir jadi tersimpan dan bisa dipakai lagi lain kali. Dengan begitu kamu tidak perlu menjelaskan langkah yang sama berulang ulang. Hasilnya Hermes makin lama makin paham cara kerja kamu.",
+      "cocok": "Pengguna Hermes yang workflow-nya sering terulang dan mau diubah otomatis jadi skill yang bisa dipakai ulang.",
+      "shortlink": "https://s.peka.ai.id/su1a0v"
+    },
+    {
+      "name": "NousResearch/hermes-official-plugins",
+      "stars": "1RB",
+      "desc": "Kumpulan plugin resmi Hermes Agent yang dibuat dan dirawat langsung oleh Nous Research. Isinya antara lain plugin Home Assistant, Spotify, dan Claude Subscription DirectSDK, plus plugin resmi lain yang terus ditambah. Plugin resmi ini bisa dipasang lewat katalog plugin Hermes, jadi kamu tidak perlu cari sumber acak. Karena dirawat pembuat Hermes sendiri, pluginnya lebih bisa diandalkan dibanding plugin tidak resmi. Kamu tinggal pilih pluginnya dan langsung pakai di Hermes Agent.",
+      "cocok": "Pengguna Hermes Agent yang mau pasang plugin dari sumber resmi Nous Research dan tidak mau coba coba plugin acak.",
+      "shortlink": "https://s.peka.ai.id/x2mb2w"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-10-31/carousel"
+}
