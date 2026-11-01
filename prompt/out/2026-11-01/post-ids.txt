@@ -1,0 +1,4 @@
+IG media_fbid: 18003659816796405, url: (unresolved, shortcode not returned by instagram-cli)
+Threads post_id: PENDING user approval card connector-17bfbac1-edd0-4490-aece-7614ae5a1fc7 (requested 2026-11-01T05:33:24Z); reply NOT posted yet (needs root post_id)
+FB post_id: PENDING user approval card connector-853e2381-9427-4791-a777-7cbe17d3f9fd (requested 2026-11-01T06:09:31Z)
+Music: Oppressive Gloom by Kevin MacLeod
