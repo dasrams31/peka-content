@@ -15,101 +15,9 @@ judges the experiments from real metrics.
 - Threads rewards reply chains: our own first reply carries the value
   (links, the full prompt), the main post carries the hook.
 
-## Experiments this week (refresh 2026-10-29)
+## Experiments this week
 
-State of the fleet this week, so experiments only use ACTIVE pillars:
-HM news is paused sampai 1 Nov (reactivation job 2 Nov 09:00,
-first HM back 2 Nov 09:36), Pancingan is OFF with no reactivation,
-jualan is FROZEN until the user says otherwise, giveaway announcement
-is ON HOLD with no new date. Active pillars: SPILL Repo daily 21:30,
-Prompt Harian daily 12:30, Gratisan AI Wed + Sat 14:00, bansos ad hoc.
-All three experiments below are judged Sun 2026-11-01 at the 20:00
-review, together with the three pending experiments from the 26 Okt
-refresh listed below them. Log the experiment variant in the run's
-posted.log line, or the review cannot judge it (lesson from the
-25 Okt review, repeated on 26 and 27 Okt).
-
-1. SPILL Repo #09 (Thu 2026-10-29, 21:30, roster: Antigravity).
-   First-step framing test. Pillar SPILL Repo. Variable: slide 1 +
-   hook = one concrete first step the reader can try in minutes
-   ("langkah pertama: X, hasilnya Y") vs the plain repo-spec
-   framing (name, stars, what it is). Hypothesis: a first step
-   earns more implementation questions than a spec list, because
-   Peka learnings show topics with a real step and a real
-   confusion point earn replies, while spec lists stay quiet.
-   Rules: the first step must be real for this repo, not invented;
-   standard close ("Repo mana yang mau kamu coba duluan?") stays;
-   links stay in the first reply, now as shortlinks via
-   s.peka.ai.id plus the tools.peka.ai.id line (rule 28 Okt);
-   series number + follow trigger stay; exactly one #AI hashtag;
-   the run MUST write "exp: first-step" in the posted.log line.
-
-2. Prompt Harian (Fri 2026-10-30, 12:30). Student-task prompt test.
-   Pillar Prompt Harian. Variable: prompt theme = a concrete
-   student task that is all over Indonesian social this week
-   ("bikin PPT sidang dari materimu sendiri, bukan upload skripsi
-   mentah-mentah") vs the normal day_of_year % 6 category
-   rotation. Hypothesis: a prompt tied to a task students are
-   actually doing this week earns more saves and show-your-result
-   replies than a rotation theme, because social evidence this
-   week is dominated by student AI use (see hot topic 3).
-   Why this slot matters: the hot-topic prompt variable has now
-   failed to run twice (24 Okt aired rotation theme "caption
-   jualan", 27 Okt aired rotation theme "kalender konten"), so
-   this run MUST write the theme in the posted.log line; if the
-   theme is not the student task, the run reports the experiment
-   as not run, not as a result. Rules: slide 1 keeps the yellow
-   giant-typography design, slide 2 the black prompt bubble;
-   one #AI hashtag only; the prompt must tell the reader to
-   decide the content themselves first (the viral PPT reel's own
-   warning: AI-made slides are spotted because they are generic,
-   not because they use AI), never promise a pass or a grade.
-
-3. Gratisan AI (Sat 2026-10-31, 14:00). Confusion-point framing
-   test. Pillar Gratisan AI. Variable: caption + slide framing =
-   offer plus the one failure point readers most often hit
-   ("yang sering bikin gagal klaim: X, cara lewatinnya Y") vs a
-   plain offer list (what is free, steps, deadline). Hypothesis:
-   naming the failure point earns more replies from people who
-   tried and got stuck, the exact reply pattern behind the
-   Oracle bansos win (67 replies, mostly people hitting claim
-   problems). Rules: the offer itself is NOT pre-locked here;
-   the run MUST verify on the official page during the run
-   (what is free, until when, card needed or not, Indonesia
-   eligibility); never invent a deadline or quota; if the
-   failure point cannot be verified, write it as unclear or
-   pick another offer; standard Gratisan ticket design and
-   kicker stay; one #AI hashtag only; Halloween tie-in only if
-   the offer genuinely fits, never forced.
-
-## Experiments awaiting verdict (from the 2026-10-26 refresh, NOT yet judged)
-
-These three go to the same Sun 2026-11-01 20:00 review. They are
-listed here so they are not lost and not mistaken for judged
-experiments. Early numbers below are snapshots from
-performance.log, not verdicts; the review decides.
-
-- SPILL #06 (Mon 26 Okt, Claude, use-case framing test):
-  posted.log does NOT record the experiment variant, so the
-  use-case variable is still unjudged. Early snapshot: Threads
-  5 likes, 1 comment, 90 views, 2 reposts; IG 1 like plus
-  reels 7 likes. Weaker than SPILL #05 (Threads 11 likes,
-  242 views) and #07 (Threads 7 likes, 2 comments, 7 reposts),
-  but topic differs per edition, so no conclusion yet.
-- Prompt #04 retry (Tue 27 Okt, hot-topic SynthID test):
-  NOT RUN as designed for the second time. The edition that
-  aired 27 Okt was #05 "kalender konten 7 hari" (Threads 8
-  likes, 1 comment, 86 views, 6 reposts), a rotation theme,
-  not the SynthID theme. Variable still untested.
-- Gratisan AI (Wed 28 Okt, student-segment test, Google AI
-  Plus gratis setahun buat mahasiswa): RAN as designed and
-  logged ("exp: student-segment"). Early snapshot: Threads
-  15 likes, 1035 views, 917 reach, 7 reposts, matching the
-  Copilot Free control on likes (15) and roughly doubling its
-  views (514). Note honestly: the 1 Threads comment on this
-  edition was spam from another account (tawaran aktivasi 20K),
-  not a real interaction, so the early signal is reach, not
-  replies. Review judges it 1 Nov.
+All experiments from the 2026-10-29 refresh and the pending 2026-10-26 refresh were judged at the Sun 2026-11-01 20:00 engagement review. Verdicts live in the Archive section below. No open experiments remain from these refreshes; the next trend-watch refresh (Mon 2026-11-02) owns the new experiment list.
 
 ## Hot topics (refresh 2026-10-29)
 
@@ -231,6 +139,17 @@ performance.log, not verdicts; the review decides.
 
 Judged Sun 2026-10-25 (first review). No experiment won, so nothing
 was promoted to the playbook this week.
+
+Judged Sun 2026-11-01 (weekly review, fresh CLI metrics 1 Nov 20:00 WIB; pillar medians this week: SPILL Threads 8.5 likes, Prompt Threads 6.5 likes).
+
+- SPILL Repo #09 first-step framing (29 Okt): TIDAK JALAN sesuai desain. posted.log has no "exp: first-step" marker and the #09 caption is plain spec framing with no first step, so the designed test produced no result. NOT promoted on #09 evidence. BUT the tactic itself was used unplanned in SPILL #11 (caption names the most-useful repo hermes-lcm + one concrete first step) and #11 broke out: Threads 121 likes, 4.149 views, 33 reposts, 19 follows, 2 viewer replies. Verdict: tactic MENANG on #11 evidence; promoted to the playbook SPILL rule 1 Nov. Do not cite #09 as the proof.
+- Prompt Harian #08 student-task test (30 Okt, PPT sidang): TIDAK JALAN sesuai desain, third failure to run this variable (24 Okt, 27 Okt retry, 30 Okt). The edition that aired was rotation theme "harga jualan" (Threads 6 likes, 58 views). Variable still untested; no verdict on the hypothesis. Stop re-proposing the same slot design; run it explicitly with the theme logged, or drop the variable.
+- Gratisan AI #31 confusion-point framing (31 Okt, Gemini API): JALAN sesuai desain (caption + spec carry the verified failure point "limit dihitung per project, bukan per key"). Threads result UNVERIFIED (429, post not found via search/profile), so the replies hypothesis is untested on Threads. IG (8 likes, 8 saves, 353 views) and FB (117 views) are the best Gratisan numbers on those platforms, but the IG reel format also changed (first animated 4K reel), so the win is confounded. Verdict: MENANG PARSIAL di IG/FB; confusion-point sentence pattern promoted to the playbook Gratisan rule with the Threads caveat; re-test on Threads next edition with the variant logged.
+- SPILL #06 use-case framing (26 Okt): TIDAK DINILAI. The variant was never recorded in posted.log, so the variable cannot be verified as applied. Fresh numbers are strong (Threads 11 likes/391 views; IG 19 likes/1.400 views; FB photo 1.345 views) but topic (Claude, 431 ribu star) and FB photo format confound them. Not promoted.
+- Prompt #04 retry SynthID hot-topic (27 Okt): TIDAK JALAN sesuai desain, second failure. The edition that aired was #05 "kalender konten 7 hari" (Threads 8 likes, 106 views), a rotation theme. Variable still untested; no verdict on the hypothesis.
+- Gratisan AI #28 student-segment (28 Okt, Google AI Plus): JALAN sesuai desain. Threads 18 likes, 1.654 views, 7 reposts vs Copilot Free control (15 likes, 514 views, 7 reposts): likes +20%, views 3,2x. The single Threads reply was spam, so viewer replies = 0; IG stayed weak (2 likes, 45 views, carousel only). Verdict: MENANG di reach Threads, KALAH di balasan; student-segment targeting promoted to the playbook Gratisan rule with the reply caveat.
+- Eksperimen tanpa-link (31 Okt, locked rule, judged at this review per playbook): LANJUT. Clean no-link editions topped Threads views (SPILL #11: 4.149; bansos ChatGPT Pro: 1.020); the one broken no-link edition (HM 31 Okt, empty root caption + 429 chain failure, 17 views snapshot) was the bottom. Fix execution (caption files must not live only in /tmp; retry 429 chains next day), keep the rule. Recorded in learnings.md 1 Nov.
+
 
 - (seed, paused, NOT JUDGED) Store: test the choice question
   ("tim bulanan atau tahunan?") against the tag-a-friend close.

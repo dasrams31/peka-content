@@ -122,8 +122,18 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   the audience to spill their own favorite repo in the comments (best ones
   can become a community edition). Series number in the caption + follow
   trigger, because numbered series build appointment viewing.
+  Caption mandiri WAJIB pola #11 (menang, review 2026-11-01): sebut repo
+  paling kepakai + langkah pertama konkret yang bisa dicoba dalam hitungan
+  menit + pertanyaan pilihan paksa di atas. Daftar spesifikasi tanpa langkah
+  pertama bukan caption utama.
 - Bansos: tag a friend + save trigger (deadlines) + "Ada yang udah
   berhasil daftar?" experience ask.
+- Gratisan AI (menang, review 2026-11-01): utamakan edisi segmen mahasiswa
+  (syarat verifikasi + jendela klaim jelas; Threads 1.654 views, 3x kontrol
+  Copilot Free) dan bingkai confusion-point di caption (satu titik gagal
+  yang paling sering terjadi + cara lewatinnya; IG/FB terbaik pilar
+  31 Okt). Balasan penonton di Threads untuk kedua pola ini masih belum
+  teruji, jadi uji ulang di edisi berikutnya dengan varian tercatat.
 
 ## After posting / weekly loop
 
@@ -206,7 +216,7 @@ versi carousel/feed post lagi:
 - IG: post-feed 1 file MP4 + cover = Reels saja, TANPA carousel.
 - FB: pages posts create dengan MP4 TERBIT SEBAGAI REEL (terverifikasi
   2026-10-25: URL facebook.com/reel/), jadi FB hanya dapat reel post,
-  TANPA carousel post.
+  TANPA carousel post (kecuali SPILL, lihat carve-out 4 di bawah).
 - Musik: CYBERPUNK, BEDA TIAP REELS (perintah user 2026-10-25).
   Semua reels ke depan pakai lane cyberpunk saja (9 track CC-BY
   Kevin MacLeod di brand/music/CYBERPUNK_TRACKS.txt: Aitech,
@@ -249,6 +259,16 @@ versi carousel/feed post lagi:
   posting REELS ANIMASI, Threads tetap carousel, blog tetap slide. Jangan
   lagi posting carousel ke IG/FB untuk kedua pilar ini, dan jangan pakai
   slideshow fallback.
+- (4) SPILL di FACEBOOK: SATU FORMAT PER EDISI (ACC user 2026-11-01,
+  review engagement 1 Nov). FB boleh tayang reel ATAU carousel slide,
+  JANGAN keduanya sekaligus untuk edisi yang sama. Default: carousel
+  slide (data review 1 Nov: foto/carousel SPILL #06 1.345 views vs
+  reel-nya 29 views, #07 626 vs 22). IG tetap reels saja, Threads
+  tetap carousel. Caption FB mengikuti format yang tayang: kalimat
+  instruksi link-di-visual versi reel ("Link tiap repo ada di videonya
+  masing-masing.") bila yang tayang reel, versi carousel ("Link tiap
+  repo ada di slide-nya masing-masing.") bila yang tayang carousel.
+  Berlaku mulai SPILL #12 (1 Nov 2026).
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi
   lama, kecuali user minta backfill eksplisit.
 
@@ -292,7 +312,7 @@ jangan karang. Detail di ~/workspace/peka-content/log-peka/README.md.
 
 ## ATURAN SHORTLINK + TOOLS (2026-10-28, dikunci user, berlaku semua cron konten)
 - SEMUA link eksternal apapun WAJIB dipendekkan lewat s.peka.ai.id SEBELUM dishare, sebagai link milik ADMIN (user_id 1, admin@peka.ai.id) LANGSUNG di database s.peka.ai.id (~/workspace/peka-shortlink/data/shortlink.db, tabel links: user_id=1, ip_hash='12ca17b49af2289436f303e0166030a2', code acak 6 char unik, target_url = URL panjang, is_active=1, clicks=0). JANGAN pakai API tamu. Pakai URL publik `https://s.peka.ai.id/<code>` yang dibuat. URL panjang TIDAK BOLEH tampil di caption, komentar, maupun blog. Simpan pasangan github ke shortlink di `shortlinks.json` di folder out edisi itu. Bila shortlink gagal dibuat: BERHENTI sebelum posting, laporkan, jangan posting URL panjang sebagai pengganti.
-- TANPA LINK DI TEKS POSTINGAN (31 Okt 2026, perintah user, TERKUNCI, eksperimen, DIPERLUAS 17:19 WIB ke SEMUA platform): di SEMUA pilar dan SEMUA platform (Threads, IG, FB, TikTok), teks postingan tidak boleh memuat link dalam bentuk apa pun: tidak di caption/body, tidak di balasan rantai, tidak di komentar. Link edisi itu dicetak DI DALAM VISUAL sebagai shortlink s.peka.ai.id (font mono, kontras terbaca): di slide untuk carousel, di scene reel untuk reels animasi (scene repo untuk SPILL, scene penutup untuk reel satu link). Caption memuat TEPAT SATU kalimat instruksi yang bilang linknya ada di visual (carousel: "Linknya ada di slide terakhir."; SPILL carousel: "Link tiap repo ada di slide-nya masing-masing."; reel: "Linknya ada di akhir video."; SPILL reel: "Link tiap repo ada di videonya masing-masing."). Kalimat instruksi diletakkan sesudah isi, sebelum pertanyaan penutup; bukan pemicu interaksi tambahan. Bila edisi tidak punya link (mis. Prompt Harian), tidak ada yang dicetak dan tidak ada kalimat instruksi. Blog tetap memakai shortlink di body (blog bukan postingan sosmed). Nilai eksperimen ini di laporan harian + review Minggu; bila views tidak pulih, aturan ditinjau ulang, bukan diperpanjang diam-diam.
+- TANPA LINK DI TEKS POSTINGAN (31 Okt 2026, perintah user, TERKUNCI, eksperimen, DIPERLUAS 17:19 WIB ke SEMUA platform): di SEMUA pilar dan SEMUA platform (Threads, IG, FB, TikTok), teks postingan tidak boleh memuat link dalam bentuk apa pun: tidak di caption/body, tidak di balasan rantai, tidak di komentar. Link edisi itu dicetak DI DALAM VISUAL sebagai shortlink s.peka.ai.id (font mono, kontras terbaca): di slide untuk carousel, di scene reel untuk reels animasi (scene repo untuk SPILL, scene penutup untuk reel satu link). Caption memuat TEPAT SATU kalimat instruksi yang bilang linknya ada di visual (carousel: "Linknya ada di slide terakhir."; SPILL carousel: "Link tiap repo ada di slide-nya masing-masing."; reel: "Linknya ada di akhir video."; SPILL reel: "Link tiap repo ada di videonya masing-masing."). Kalimat instruksi diletakkan sesudah isi, sebelum pertanyaan penutup; bukan pemicu interaksi tambahan. Bila edisi tidak punya link (mis. Prompt Harian), tidak ada yang dicetak dan tidak ada kalimat instruksi. Blog tetap memakai shortlink di body (blog bukan postingan sosmed). Nilai eksperimen ini di laporan harian + review Minggu; bila views tidak pulih, aturan ditinjau ulang, bukan diperpanjang diam-diam. VERDICT review 2026-11-01: LANJUT. Dua edisi bersih tanpa-link (SPILL #11: 4.149 views; bansos ChatGPT Pro: 1.020 views) memuncaki views Threads minggu ini; edisi tanpa-link yang rusak (HM 31 Okt, caption kosong + 429) yang terbawah, jadi yang diperbaiki adalah eksekusinya (file caption jangan hanya di /tmp), bukan aturannya.
 - SPILL: tiap repo edisi itu WAJIB ditambah dulu ke `~/workspace/peka-tools/tools.json` sebelum posting (cek duplikat by name; field ikut pola entry lama). TIDAK ADA komentar shortlink di platform mana pun (aturan tanpa-link 31 Okt): tiap slide repo DAN tiap scene repo di reel mencetak shortlink repo itu sendiri (s.peka.ai.id, font mono, terbaca), dan caption membawa kalimat instruksi link-di-visual. Link di body blog tetap pakai shortlink, bukan URL GitHub panjang. Tools web sudah punya kolom pencarian, tidak perlu dibangun.
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi lama, kecuali user minta backfill eksplisit.
 
