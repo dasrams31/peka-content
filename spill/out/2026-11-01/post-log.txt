@@ -1,0 +1,10 @@
+SPILL #12 OPENCODE - 2026-11-01 (shortlink akun admin)
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfNDenljvu- (post_id 18115669193329167, 8 slide, caption terverifikasi live)
+IG reel (animasi, Tech Live): https://www.instagram.com/reel/DfNEXujDlHG/ (media 18119596766470295, caption terverifikasi live)
+FB carousel (carve-out 1 Nov: satu format, default carousel): https://facebook.com/61594934228841/posts/pfbid02EoVtmghK7ew7nXvwLdHFtqxjb29EoccnMn7qV7iHPm6GnPfjHsU2fiVeGKooTmbUl/ (post_id 122116080579497807, 8 slide)
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-opencode-edisi-12 (200, 5 shortlink terverifikasi di body)
+Shortlink (admin, user_id 1): gynzb8, txo4i1, clj8ev, vyzw3a, kl2coe (semua 307 terverifikasi)
+Tools: kelima repo sudah ada di tools.json (kurasi 2026-10-26), tidak diduplikasi.
+Template: baris penutup spill_repo_carousel.py diperbaiki (kalimat lama "link di komentar" diganti "Link tiap repo ada di slide-nya masing-masing") sesuai aturan tanpa-link; desc dipendekkan 2x sampai tidak ada ellipsis; og cc-switch 429 di render ulang, fallback drawn card dipakai; og claude-mem drawn card.
+Install: perintah terminal dikoreksi dari README (install_cmd.py mengambil perintah Claude Code marketplace yang salah untuk claude-mem dan context-mode, dan brew yang terpotong untuk cc-switch).
+Reel: 2160x3840 yuv420p 27 detik terverifikasi ffprobe; shortlink scene repo 2 terverifikasi utuh di frame detik 9.
