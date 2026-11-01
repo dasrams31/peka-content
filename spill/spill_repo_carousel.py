@@ -469,7 +469,7 @@ def closing(spec):
     d.text((X(70), X(210)), "UDAH,", font=tf, fill=INK)
     highlight(d, X(70), X(302), "ITU DULU.", tf)
     lines = [
-        ("Link lengkap semua repo di atas aku spill di komentar postingan ini.", True),
+        ("Link tiap repo ada di slide-nya masing-masing.", True),
         (f"Besok giliran repo skill {nxt}.", True),
         ("Follow @peka.ai.id biar nggak ketinggalan spill berikutnya.", False),
         ("Save postingan ini buat stok.", False),

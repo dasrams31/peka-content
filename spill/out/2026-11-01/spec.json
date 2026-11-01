@@ -1,0 +1,48 @@
+{
+  "agent": "OPENCODE",
+  "episode": 12,
+  "next": "ANTIGRAVITY",
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/carousel",
+  "repos": [
+    {
+      "cocok": "Pengguna beberapa coding agent yang mau ganti penyedia API tanpa utak atik file konfigurasi.",
+      "desc": "CC Switch adalah aplikasi desktop all in one buat mengatur Claude Code, Codex, OpenCode, dan coding agent lain dari satu tempat. Kamu bisa ganti penyedia API dengan satu klik, tanpa utak atik file konfigurasi JSON, TOML, atau YAML. Di dalamnya ada pengelolaan MCP, skill, dan prompt, dan aplikasinya jalan di Windows, macOS, dan Linux. Hasilnya pindah penyedia jadi cepat, dan setelan agent tidak tercecer di banyak file.",
+      "install": "brew install --cask cc-switch",
+      "name": "farion1231/cc-switch",
+      "shortlink": "https://s.peka.ai.id/gynzb8",
+      "stars": "151RB"
+    },
+    {
+      "cocok": "Pengguna OpenCode yang mau agent-nya ingat keputusan dan progres sesi sebelumnya.",
+      "desc": "Claude Mem adalah sistem memori persisten buat coding agent yang merekam semua yang dikerjakan agent di tiap sesi. Rekaman itu dipadatkan dengan AI, lalu konteks yang relevan disuntikkan lagi ke sesi berikutnya. Buat OpenCode, pasangnya lewat perintah npx claude-mem install dengan opsi ide opencode, lalu restart OpenCode. Hasilnya agent tidak mulai dari nol tiap sesi, dan progres kemarin tetap kebawa ke kerja hari ini.",
+      "install": "npx claude-mem install --ide opencode",
+      "name": "thedotmack/claude-mem",
+      "shortlink": "https://s.peka.ai.id/txo4i1",
+      "stars": "109RB"
+    },
+    {
+      "cocok": "Pengguna OpenCode yang sesi kerjanya panjang dan context window-nya cepat penuh.",
+      "desc": "Context Mode adalah server MCP yang mengatasi borosnya context window di coding agent. Output tool mentah disandbox dulu, jadi data 315 KB bisa menyusut jadi 5,4 KB sebelum masuk konteks, sesuai contoh di repo. Buat OpenCode, pasangnya dengan menambahkan plugin context-mode di opencode.json, lalu restart OpenCode. Hasilnya sesi panjang tidak cepat kehabisan konteks, dan agent lanjut tepat dari titik terakhir.",
+      "install": "\"plugin\": [\"context-mode\"]",
+      "name": "mksglu/context-mode",
+      "shortlink": "https://s.peka.ai.id/clj8ev",
+      "stars": "33RB"
+    },
+    {
+      "cocok": "Developer yang menjalankan beberapa agent di satu repo dan mau perubahannya terlacak.",
+      "desc": "Atlas adalah source control buat coding agent: tiap sesi menghasilkan checkpoint yang menautkan commit ke prompt, tool call, dan perubahan file. Kamu bisa menjalankan beberapa agent di codebase yang sama, dengan memori bersama, jadi ganti agent tidak berarti mulai dari nol. Atlas tersedia buat macOS dan Windows, dan kode serta sesi tetap tersimpan lokal. Hasilnya alasan di balik tiap perubahan tetap bisa ditelusuri berbulan bulan kemudian.",
+      "install": "open https://www.tryatlas.cc",
+      "name": "pacifio/atlas",
+      "shortlink": "https://s.peka.ai.id/vyzw3a",
+      "stars": "10RB"
+    },
+    {
+      "cocok": "Pengguna Neovim yang mau memakai OpenCode dari dalam editor.",
+      "desc": "opencode.nvim adalah plugin Neovim yang menyambungkan OpenCode ke alur kerja editor yang sudah kamu kenal. Plugin ini memakai TUI dan API OpenCode yang sudah ada, lewat antarmuka standar Neovim, jadi kamu tetap di editor yang sama. Kamu bisa mengirim konteks editor, memilih prompt, menjalankan perintah OpenCode, serta menerima atau menolak editnya. Hasilnya coding ditemani agent tetap terasa seperti pair programming di dalam Neovim.",
+      "install": "vim.pack.add({ src = \"https://github.com/nickjvandyke/opencode.nvim\" })",
+      "name": "nickjvandyke/opencode.nvim",
+      "shortlink": "https://s.peka.ai.id/kl2coe",
+      "stars": "4RB"
+    }
+  ]
+}
