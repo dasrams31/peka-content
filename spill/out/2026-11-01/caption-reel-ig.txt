@@ -1,0 +1,13 @@
+5 skill OpenCode yang bikin agent kamu nggak mulai dari nol tiap sesi.
+
+Yang paling kepakai: cc-switch. Langkah pertamanya: di macOS jalankan brew install --cask cc-switch, lalu pilih penyedia API-nya di aplikasi.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Tech Live by Kevin MacLeod
+
+#AI #OpenCode #Skill #GitHub #Coding #Developer #AITools #BelajarAI

@@ -1,0 +1,52 @@
+{
+  "agent": "OPENCODE",
+  "episode": 12,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "cocok": "Pengguna beberapa coding agent yang mau ganti penyedia API tanpa utak atik file konfigurasi.",
+      "install": "brew install --cask cc-switch",
+      "name": "farion1231/cc-switch",
+      "penjelasan": "Aplikasi desktop all in one buat mengatur Claude Code, Codex, OpenCode, dan coding agent lain dari satu tempat. Ganti penyedia API tinggal satu klik, tanpa utak atik file konfigurasi.",
+      "shortlink": "https://s.peka.ai.id/gynzb8",
+      "stars": "151RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/shots/farion1231-cc-switch.png"
+    },
+    {
+      "cocok": "Pengguna OpenCode yang mau agent-nya ingat keputusan dan progres sesi sebelumnya.",
+      "install": "npx claude-mem install --ide opencode",
+      "name": "thedotmack/claude-mem",
+      "penjelasan": "Sistem memori persisten buat coding agent yang merekam semua yang dikerjakan agent di tiap sesi. Rekaman dipadatkan AI lalu konteks relevan disuntikkan lagi ke sesi berikutnya.",
+      "shortlink": "https://s.peka.ai.id/txo4i1",
+      "stars": "109RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/shots/thedotmack-claude-mem.png"
+    },
+    {
+      "cocok": "Pengguna OpenCode yang sesi kerjanya panjang dan context window-nya cepat penuh.",
+      "install": "\"plugin\": [\"context-mode\"]",
+      "name": "mksglu/context-mode",
+      "penjelasan": "Server MCP yang mengatasi borosnya context window di coding agent. Output tool disandbox dulu, jadi contoh data 315 KB menyusut jadi 5,4 KB sebelum masuk konteks.",
+      "shortlink": "https://s.peka.ai.id/clj8ev",
+      "stars": "33RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/shots/mksglu-context-mode.png"
+    },
+    {
+      "cocok": "Developer yang menjalankan beberapa agent di satu repo dan mau perubahannya terlacak.",
+      "install": "open https://www.tryatlas.cc",
+      "name": "pacifio/atlas",
+      "penjelasan": "Source control buat coding agent: tiap sesi menghasilkan checkpoint yang menautkan commit ke prompt dan perubahan file. Beberapa agent bisa jalan di codebase yang sama dengan memori bersama.",
+      "shortlink": "https://s.peka.ai.id/vyzw3a",
+      "stars": "10RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/shots/pacifio-atlas.png"
+    },
+    {
+      "cocok": "Pengguna Neovim yang mau memakai OpenCode dari dalam editor.",
+      "install": "vim.pack.add({ src = \"https://github.com/nickjvandyke/opencode.nvim\" })",
+      "name": "nickjvandyke/opencode.nvim",
+      "penjelasan": "Plugin Neovim yang menyambungkan OpenCode ke alur kerja editor yang sudah kamu kenal. Kirim konteks editor, pilih prompt, jalankan perintah, dan terima atau tolak editnya dari Neovim.",
+      "shortlink": "https://s.peka.ai.id/kl2coe",
+      "stars": "4RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-01/shots/nickjvandyke-opencode.nvim.png"
+    }
+  ]
+}
