@@ -1,0 +1,12 @@
+SPILL #13 ANTIGRAVITY - 2026-11-02 (shortlink akun admin)
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfPi7PUD7yp (post_id 18117624062105769, 8 slide, caption terverifikasi live)
+IG reel (animasi, Aitech): https://www.instagram.com/reel/DfPkdxFDxbX/ (media 17956327596322524, caption terverifikasi live)
+FB carousel (carve-out 1 Nov: satu format, default carousel; body cron menyebut reel FB, carve-out yang lebih baru + preseden #12 yang dipakai): https://facebook.com/61594934228841/posts/pfbid0widsTMGKhJDELofMku8fH786MeQTqwMDtDAW3FBpmVryPfcfhoLvigWsDNUoMo7rl/ (post_id 122116531803497807, 8 slide, teks terverifikasi di respons)
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-antigravity-edisi-13 (200, 5 shortlink terverifikasi di body, tanpa URL GitHub panjang)
+Shortlink (admin, user_id 1): 19sulz, pu8sqc, 59kmm4, yoetev, 493opn (semua 307 terverifikasi)
+Tools: 4 repo baru ditambahkan ke tools.json (total 153); opencode-antigravity-auth sudah ada sejak kurasi 2026-10-26, tidak diduplikasi.
+Template: spill_repo_carousel.py diperbaiki (font nama repo di title bar mengecil otomatis bila nama panjang, sebelumnya nama gemini-superpowers-antigravity menabrak shortlink); desc dipendekkan 3x sampai tidak ada ellipsis; og oh-my-antigravity drawn card.
+Install: perintah terminal dikoreksi dari README (install_cmd.py mengambil perintah generik npx skills add yang salah untuk keempat repo, dan npm gemini-cli yang menyesatkan untuk superpowers).
+Reel: render pertama mati di frame 559/648 tanpa error (proses hilang), render ulang penuh via nohup selesai 648 frame; 2160x3840 yuv420p 27 detik terverifikasi ffprobe; shortlink scene repo 2 terverifikasi utuh di frame detik 9.
+Riset: repo skill murni Antigravity sedikit, edisi ini 4 skill/workflow native + 1 konfigurasi Antigravity paling relevan (opencode-antigravity-auth, 10.992 star, repo paling kepakai) sesuai kelonggaran body untuk ANTIGRAVITY; tidak ada repo yang dikarang, semua terverifikasi GitHub API 2 Nov 2026.
+TikTok: paket di langkah 10 (reel + caption-tiktok.txt + link IG/Threads/FB/blog), posting manual user.
