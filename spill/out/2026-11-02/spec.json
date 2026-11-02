@@ -1,0 +1,48 @@
+{
+ "agent": "ANTIGRAVITY",
+ "next": "CLAUDE",
+ "episode": 13,
+ "repos": [
+  {
+   "name": "NoeFabris/opencode-antigravity-auth",
+   "stars": "11RB",
+   "desc": "Plugin OAuth buat OpenCode yang memungkinkan OpenCode login memakai akun Google Antigravity. Dengan plugin ini kamu bisa memakai kuota Antigravity dan model seperti gemini-3-pro dari dalam OpenCode, tanpa kunci API terpisah. Pasangnya dengan menambahkan plugin opencode-antigravity-auth di opencode.json, lalu jalankan opencode auth login google. Hasilnya satu akun Google bisa dipakai coding di dua tempat.",
+   "cocok": "Pengguna OpenCode yang punya akun Antigravity dan mau memakai kuotanya dari OpenCode.",
+   "shortlink": "https://s.peka.ai.id/19sulz",
+   "install": "opencode auth login google"
+  },
+  {
+   "name": "anthonylee991/gemini-superpowers-antigravity",
+   "stars": "1RB",
+   "desc": "Framework workflow sistematis buat Google Antigravity yang diadaptasi dari Claude Superpowers. Framework ini mencegah agent langsung menulis kode, dan mengarahkannya lewat alur brainstorming, perencanaan, eksekusi, lalu review. Isinya ada workflow slash command seperti superpowers-brainstorm dan superpowers-write-plan, plus skill TDD, debug, dan review. Caranya salin folder .agent dari repo ini ke proyekmu, lalu buka proyek itu di Antigravity.",
+   "cocok": "Pengguna Antigravity yang mau agent-nya kerja pakai rencana, bukan langsung coding.",
+   "shortlink": "https://s.peka.ai.id/pu8sqc",
+   "install": "git clone https://github.com/anthonylee991/gemini-superpowers-antigravity"
+  },
+  {
+   "name": "Joonghyun-Lee-Frieren/oh-my-antigravity",
+   "stars": "215",
+   "desc": "Plugin native buat Antigravity CLI yang membawa workflow tim multi-agent. Plugin ini memisahkan giliran desain dan giliran eksekusi, memakai agent dokumentasi read-only, dan mengunci scope file sebelum kode diubah. Pasangnya dengan agy plugin install memakai URL repo ini, lalu mulai dengan /oma-team-plan. Hasilnya perubahan besar dikerjakan dengan bukti verifikasi.",
+   "cocok": "Pengguna Antigravity CLI yang mengerjakan perubahan besar dan mau desain dicek dulu.",
+   "shortlink": "https://s.peka.ai.id/59kmm4",
+   "install": "agy plugin install https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity"
+  },
+  {
+   "name": "harikrishna8121999/antigravity-workflows",
+   "stars": "191",
+   "desc": "Kumpulan workflow buat Antigravity AI yang bekerja seperti Claude Skills, yaitu prompt dan otomasi siap pakai. Workflow-nya tidak mengasumsikan stack: workflow mendeteksi framework proyekmu, lalu bertanya sebelum bekerja. Tiap workflow hanya mengerjakan satu tugas, misalnya git-commit, dan bisa digabung buat tugas yang lebih kompleks. Pasangnya: npx antigravity-workflows install git-commit, lalu ketik /git-commit.",
+   "cocok": "Pengguna Antigravity yang mau workflow siap pakai yang menyesuaikan stack proyeknya.",
+   "shortlink": "https://s.peka.ai.id/yoetev",
+   "install": "npx antigravity-workflows install git-commit"
+  },
+  {
+   "name": "anhtester/antigravity-testing-kit",
+   "stars": "149",
+   "desc": "Kit skill, workflow, dan rule buat Antigravity yang dirancang khusus untuk komunitas tester, mencakup manual testing dan automation testing. Kit ini berisi 10 skill dan 16 workflow slash command, dari analisis requirement sampai penulisan script automation dan laporan hasil. Rule-nya mewajibkan pola Page Object Model, strategi locator yang jelas, dan perbaikan otomatis saat locator gagal. Kit ini mendukung Playwright, Selenium, dan Appium, dan AI-nya berkomunikasi dalam bahasa Vietnam.",
+   "cocok": "Tester manual maupun automation yang mau alur testing end to end dibantu AI.",
+   "shortlink": "https://s.peka.ai.id/493opn",
+   "install": "git clone https://github.com/anhtester/antigravity-testing-kit"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/carousel"
+}
