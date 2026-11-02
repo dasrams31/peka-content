@@ -1,0 +1,4 @@
+IG media_fbid: 18349031347270124, url: (unresolved, shortcode not returned by instagram-cli)
+Threads post_id: 17926246833438949 + reply 18155991196499907
+FB post_id: 122116337421497807, url: https://facebook.com/reel/1102684525727123/
+Music: Darkling by Kevin MacLeod
