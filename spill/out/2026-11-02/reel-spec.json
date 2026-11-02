@@ -1,0 +1,52 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 13,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "NoeFabris/opencode-antigravity-auth",
+      "stars": "11RB",
+      "install": "opencode auth login google",
+      "penjelasan": "Plugin OAuth yang bikin OpenCode login memakai akun Google Antigravity. Kamu bisa memakai kuota Antigravity dan model seperti gemini-3-pro dari dalam OpenCode.",
+      "cocok": "Pengguna OpenCode yang punya akun Antigravity dan mau memakai kuotanya dari OpenCode.",
+      "shortlink": "https://s.peka.ai.id/19sulz",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/shots/NoeFabris-opencode-antigravity-auth.png"
+    },
+    {
+      "name": "anthonylee991/gemini-superpowers-antigravity",
+      "stars": "1RB",
+      "install": "git clone https://github.com/anthonylee991/gemini-superpowers-antigravity",
+      "penjelasan": "Framework workflow sistematis buat Antigravity yang diadaptasi dari Claude Superpowers. Agent diarahkan lewat brainstorming, perencanaan, eksekusi, lalu review, bukan langsung coding.",
+      "cocok": "Pengguna Antigravity yang mau agent-nya kerja pakai rencana, bukan langsung coding.",
+      "shortlink": "https://s.peka.ai.id/pu8sqc",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/shots/anthonylee991-gemini-superpowers-antigravity.png"
+    },
+    {
+      "name": "Joonghyun-Lee-Frieren/oh-my-antigravity",
+      "stars": "215",
+      "install": "agy plugin install https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity",
+      "penjelasan": "Plugin native Antigravity CLI yang membawa workflow tim multi-agent. Giliran desain dan eksekusi dipisah, dan perubahan besar dikerjakan dengan bukti verifikasi.",
+      "cocok": "Pengguna Antigravity CLI yang mengerjakan perubahan besar dan mau desain dicek dulu.",
+      "shortlink": "https://s.peka.ai.id/59kmm4",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/shots/Joonghyun-Lee-Frieren-oh-my-antigravity.png"
+    },
+    {
+      "name": "harikrishna8121999/antigravity-workflows",
+      "stars": "191",
+      "install": "npx antigravity-workflows install git-commit",
+      "penjelasan": "Kumpulan workflow komunitas buat Antigravity yang bekerja seperti Claude Skills. Workflow mendeteksi framework proyekmu dan bertanya dulu sebelum bekerja.",
+      "cocok": "Pengguna Antigravity yang mau workflow siap pakai yang menyesuaikan stack proyeknya.",
+      "shortlink": "https://s.peka.ai.id/yoetev",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/shots/harikrishna8121999-antigravity-workflows.png"
+    },
+    {
+      "name": "anhtester/antigravity-testing-kit",
+      "stars": "149",
+      "install": "git clone https://github.com/anhtester/antigravity-testing-kit",
+      "penjelasan": "Kit skill, workflow, dan rule buat Antigravity khusus untuk tester. Isinya 10 skill dan 16 workflow, dari analisis requirement sampai laporan hasil testing.",
+      "cocok": "Tester manual maupun automation yang mau alur testing end to end dibantu AI.",
+      "shortlink": "https://s.peka.ai.id/493opn",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-02/shots/anhtester-antigravity-testing-kit.png"
+    }
+  ]
+}
