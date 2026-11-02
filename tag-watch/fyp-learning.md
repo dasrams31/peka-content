@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-02
+
+- TOP (n=15): day-counter 13%, question 13%, story 20%, hashtags avg 0.4, words avg 36.
+- REST (n=46): day-counter 13%, question 30%, story 33%, hashtags avg 1.2, words avg 39.
+- Top posts today:
+  - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
+  - #Kuliah @vernandajh_ (4986 likes): wargaa akhirnya aku lulus S2 di umur 25 tahun dengan biaya kuliah full uang sendiri sambil kerja full time 🥹  mau mengap
+  - #AI @ahnaf.faize (3595 likes): Material Design 3 Dari google Sekeren ini kalau diimplementasi
+  - #Kuliah @wahyuikbal_m (2176 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
+  - #Mahasiswa @wahyuikbal_m (2172 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
+
 ## 2026-11-01
 
 - TOP (n=12): day-counter 17%, question 8%, story 25%, hashtags avg 0.5, words avg 41.
