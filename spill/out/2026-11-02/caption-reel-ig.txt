@@ -1,0 +1,13 @@
+5 skill Antigravity yang bikin agent kamu nggak langsung coding tanpa rencana.
+
+Yang paling kepakai: opencode-antigravity-auth. Langkah pertamanya: tambahkan plugin opencode-antigravity-auth di opencode.json, lalu jalankan opencode auth login google.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Aitech by Kevin MacLeod
+
+#AI #Antigravity #Skill #GitHub #Coding #Developer #AITools #BelajarAI
