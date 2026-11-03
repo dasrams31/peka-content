@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Bantu aku menyiapkan jawaban interview. Pertanyaan: [PERTANYAAN INTERVIEW]. Pengalaman: [PENGALAMAN SINGKAT]. Buat jawaban 4 kalimat: kalimat pembuka yang jujur, 1 contoh nyata dari pengalaman, dan penutup yang nyambung ke pekerjaan ini. Bahasanya santai tapi sopan, tanpa kata kaku.

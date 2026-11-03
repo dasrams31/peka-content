@@ -1,0 +1,11 @@
+PROMPT HARIAN #12: salin prompt ini buat jawaban interview yang bikin HRD ingat kamu
+Isi pertanyaannya, tempel pengalaman singkatmu, hasilnya jawaban 4 kalimat yang jujur dan nyambung ke pekerjaan itu.
+
+Prompt-nya, tinggal salin:
+Bantu aku menyiapkan jawaban interview. Pertanyaan: [PERTANYAAN INTERVIEW]. Pengalaman: [PENGALAMAN SINGKAT]. Buat jawaban 4 kalimat: kalimat pembuka yang jujur, 1 contoh nyata dari pengalaman, dan penutup yang nyambung ke pekerjaan ini. Bahasanya santai tapi sopan, tanpa kata kaku.
+
+Latihan interview paling susah buat kamu: jawab soal kelemahan atau soal gaji?
+Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30. Follow, kalau kontennya kepakai.
+
+#PromptHarian #Karier #InterviewKerja #TipsKarier #CariKerja #HRD #BelajarAI #PromptAI #PekaAI
+Music: Oppressive Gloom by Kevin MacLeod

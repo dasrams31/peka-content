@@ -1,0 +1,12 @@
+{
+  "episode": 12,
+  "category": "KARIER",
+  "title": "Jawaban interview yang bikin HRD ingat kamu",
+  "prompt": "Bantu aku menyiapkan jawaban interview. Pertanyaan: [PERTANYAAN INTERVIEW]. Pengalaman: [PENGALAMAN SINGKAT]. Buat jawaban 4 kalimat: kalimat pembuka yang jujur, 1 contoh nyata dari pengalaman, dan penutup yang nyambung ke pekerjaan ini. Bahasanya santai tapi sopan, tanpa kata kaku.",
+  "tips": [
+    "Isi pertanyaannya apa adanya, misal soal kelemahan.",
+    "Pilih satu contoh nyata, jangan cerita panjang.",
+    "Latih jawabannya sambil ngomong sekali sebelum berangkat."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-03"
+}
