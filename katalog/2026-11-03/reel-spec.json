@@ -1,0 +1,36 @@
+{
+  "date": "Sabtu 31 Oktober 2026",
+  "products": [
+    {
+      "sec": "GEMINI PRO",
+      "name": "Gemini Pro",
+      "dur": "3 Bulan",
+      "price": "15K"
+    },
+    {
+      "sec": "CAPCUT",
+      "name": "CapCut Pro",
+      "dur": "1 Bulan · Privat",
+      "price": "27K"
+    },
+    {
+      "sec": "CANVA",
+      "name": "Canva Edu",
+      "dur": "6 Bulan",
+      "price": "11K"
+    },
+    {
+      "sec": "MUSE SPARK AI",
+      "name": "Muse Spark AI",
+      "dur": "Lifetime",
+      "price": "24K",
+      "note": "3-4 Milyar token"
+    },
+    {
+      "sec": "MICROSOFT",
+      "name": "Microsoft 365",
+      "dur": "1 Tahun",
+      "price": "26K"
+    }
+  ]
+}
