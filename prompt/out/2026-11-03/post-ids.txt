@@ -1,0 +1,4 @@
+IG media_fbid: 18092380433236955 (posted 2026-11-03, verified RC0)
+Threads: NOT POSTED (approval allowed 17:32 WIB but publishing process had died; verified absent live 17:33 WIB)
+FB: NOT POSTED (approval allowed 17:32 WIB but process killed by timeout 180 before approval; verified absent live 17:33 WIB)
+Threads reply: NOT POSTED (needs Threads root post id first)
