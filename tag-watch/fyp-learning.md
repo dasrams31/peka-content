@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-03
+
+- TOP (n=18): day-counter 11%, question 22%, story 22%, hashtags avg 0.6, words avg 37.
+- REST (n=55): day-counter 11%, question 31%, story 29%, hashtags avg 1.4, words avg 39.
+- Top posts today:
+  - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
+  - #Kuliah @vernandajh_ (4986 likes): wargaa akhirnya aku lulus S2 di umur 25 tahun dengan biaya kuliah full uang sendiri sambil kerja full time 🥹  mau mengap
+  - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
+  - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
+  - #Belajar @harrypatria_ (4313 likes): Apa jadinya kalau kita enggan beradaptasi di tengah situasi sekarang?   Yang rajin belajar aja ngerasa makin ketinggalan
+
 ## 2026-11-02
 
 - TOP (n=15): day-counter 13%, question 13%, story 20%, hashtags avg 0.4, words avg 36.
