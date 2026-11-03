@@ -1,0 +1,11 @@
+SPILL #14 CLAUDE - 2026-11-03 (shortlink akun admin)
+Threads carousel: https://www.threads.com/@peka.ai.id/post/DfSKX8Yk4ri (post_id 17944361787376237, 8 slide, caption terverifikasi live)
+IG reel (animasi, Black Vortex): https://www.instagram.com/reel/DfSLR0rE8z2/ (media 18468726823185473, caption terverifikasi live)
+FB carousel (carve-out 1 Nov: satu format, default carousel): https://facebook.com/61594934228841/posts/pfbid033hvYjr4aKXQkTtxxvHFs4CgbEwVwruU5vJYjVyuo1HCAJ76zkV3EdKzhFrCjvRGNl/ (post_id 122116992447497807, 8 slide, teks terverifikasi di respons)
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-claude-edisi-14 (file JSON + 8 gambar disalin; cek live 22:17 WIB: blog.peka.ai.id 502 di semua halaman, termasuk edisi #13 dan homepage, jadi outage situs, bukan file edisi ini)
+Shortlink (admin, user_id 1): 0yozoj, iqtv5q, bdfpa4, u13sau, ji9zoz (baris DB terverifikasi; cek HTTP 22:17 WIB: s.peka.ai.id 502 site-wide, termasuk shortlink lama 19sulz dan homepage peka.ai.id)
+Tools: 3 repo baru ditambahkan ke tools.json (total 156); VoltAgent/awesome-agent-skills dan mukul975/Anthropic-Cybersecurity-Skills sudah ada sejak kurasi 2026-10-26, tidak diduplikasi.
+Template: perintah terminal slide/reel repo pertama dikoreksi dari mblode/agent-skills (hasil ekstraksi README yang menyesatkan) ke npx skills add VoltAgent/awesome-agent-skills -g via install eksplisit di spec.json, lalu carousel di-render ulang dan diverifikasi visual.
+Reel: render 648 frame sekali jalan; 2160x3840 yuv420p 27 detik terverifikasi ffprobe; shortlink scene repo 2 terverifikasi utuh di frame detik 9.
+Riset: 5 repo skill Claude, semua terverifikasi GitHub API 3 Nov 2026, tidak ada yang pernah diposting di posted.log.
+TikTok: paket di langkah 10 (reel + caption-tiktok.txt + link IG/Threads/FB/blog), posting manual user.
