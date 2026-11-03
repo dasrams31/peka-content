@@ -1,0 +1,52 @@
+{
+  "agent": "CLAUDE",
+  "episode": 14,
+  "next": "HERMES",
+  "repos": [
+    {
+      "cocok": "Pengguna Claude Code yang mau cepat menambah skill agent dari satu koleksi kurasi besar.",
+      "install": "npx skills add VoltAgent/awesome-agent-skills -g",
+      "name": "VoltAgent/awesome-agent-skills",
+      "penjelasan": "Koleksi kurasi lebih dari 1000 skill agent dari tim resmi dan komunitas. Skillnya jalan di Claude Code, Codex, Gemini CLI, Cursor, dan banyak platform lain.",
+      "shortlink": "https://s.peka.ai.id/0yozoj",
+      "stars": "37RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/shots/VoltAgent-awesome-agent-skills.png"
+    },
+    {
+      "cocok": "Tim keamanan dan developer yang mau agent-nya bantu kerja keamanan siber dengan framework yang jelas.",
+      "install": "npx skills add mukul975/Anthropic-Cybersecurity-Skills",
+      "name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "penjelasan": "Paket 817 skill keamanan siber yang dipetakan ke 6 framework seperti MITRE ATT&CK dan NIST. Paket ini jalan di Claude Code, Copilot, Codex, Cursor, Gemini CLI, dan 20 platform lain.",
+      "shortlink": "https://s.peka.ai.id/iqtv5q",
+      "stars": "36RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/shots/mukul975-Anthropic-Cybersecurity-Skills.png"
+    },
+    {
+      "cocok": "Pengguna Claude Code yang mau bikin desain web, app, atau presentasi tanpa mulai dari kanvas kosong.",
+      "install": "npx skills add alchaincyf/huashu-design",
+      "name": "alchaincyf/huashu-design",
+      "penjelasan": "Skill desain yang mengubah satu kalimat jadi prototipe web, PPTX yang bisa diedit, animasi, atau infografis. Tiap permintaan dibuat 6 arah desain, lalu kamu pilih 3 yang paling cocok.",
+      "shortlink": "https://s.peka.ai.id/bdfpa4",
+      "stars": "29RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/shots/alchaincyf-huashu-design.png"
+    },
+    {
+      "cocok": "Pemilik web, SEO specialist, dan developer yang mau audit SEO dibantu agent sampai ke laporan.",
+      "install": "/plugin marketplace add AgriciDaniel/claude-seo",
+      "name": "AgriciDaniel/claude-seo",
+      "penjelasan": "Skill SEO buat Claude Code dengan 26 sub-skill dan 19 sub-agent, dari SEO teknis sampai GEO dan AEO. Hasil kerjanya bisa dilaporkan dalam PDF atau Excel, dengan ekstensi data SEO live.",
+      "shortlink": "https://s.peka.ai.id/u13sau",
+      "stars": "26RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/shots/AgriciDaniel-claude-seo.png"
+    },
+    {
+      "cocok": "Kreator dan tim produk yang mau bikin promo video sinematik dari Claude Code dan masih bisa mengeditnya.",
+      "install": "npx skills add Vincentwei1021/video-shotcraft",
+      "name": "Vincentwei1021/video-shotcraft",
+      "penjelasan": "Skill video AI buat promo produk sinematik yang masih bisa diedit, dengan 124 kartu resep shot dan 150 pratinjau gerakan. Hasilnya memakai Remotion dan bisa diekspor ke JianYing atau CapCut.",
+      "shortlink": "https://s.peka.ai.id/ji9zoz",
+      "stars": "16RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/shots/Vincentwei1021-video-shotcraft.png"
+    }
+  ]
+}
