@@ -1,0 +1,44 @@
+{
+ "agent": "CLAUDE",
+ "episode": 14,
+ "next": "HERMES",
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-03/carousel",
+ "repos": [
+  {
+   "cocok": "Pengguna Claude Code yang mau cepat menambah skill agent dari satu koleksi kurasi besar.",
+   "desc": "Koleksi kurasi lebih dari 1000 skill agent dari tim resmi dan komunitas. Skillnya bisa dipakai di Claude Code, Codex, Gemini CLI, Cursor, dan banyak platform lain. Kamu tinggal cari skill sesuai kebutuhan, lalu pasang ke agent yang kamu pakai. Koleksinya mencakup banyak kategori, jadi satu tempat ini cukup buat mulai. Hasilnya agent kamu langsung punya kemampuan baru tanpa nulis prompt panjang dari nol.",
+   "name": "VoltAgent/awesome-agent-skills",
+   "shortlink": "https://s.peka.ai.id/0yozoj",
+   "stars": "37RB",
+   "install": "npx skills add VoltAgent/awesome-agent-skills -g"
+  },
+  {
+   "cocok": "Tim keamanan dan developer yang mau agent-nya bantu kerja keamanan siber dengan framework yang jelas.",
+   "desc": "Paket 817 skill keamanan siber yang tersusun rapi buat agent AI. Skillnya dipetakan ke 6 framework keamanan seperti MITRE ATT&CK dan NIST, dan mencakup 29 domain keamanan. Standarnya mengikuti agentskills.io, jadi strukturnya konsisten dan gampang dipakai ulang. Paket ini jalan di Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI, dan lebih dari 20 platform lain. Hasilnya agent kamu bisa bantu kerja keamanan dengan alur yang jelas, bukan sekadar jawab umum.",
+   "name": "mukul975/Anthropic-Cybersecurity-Skills",
+   "shortlink": "https://s.peka.ai.id/iqtv5q",
+   "stars": "36RB"
+  },
+  {
+   "cocok": "Pengguna Claude Code yang mau bikin desain web, app, atau presentasi tanpa mulai dari kanvas kosong.",
+   "desc": "Skill desain yang mengubah satu kalimat jadi hasil desain yang bisa dipakai. Hasilnya bisa berupa prototipe web atau app, PPTX yang masih bisa diedit, animasi, sampai infografis. Tiap permintaan dibuat 6 arah desain, lalu kamu pilih 3 arah yang paling cocok. Ada 84 gaya desain lengkap dengan contohnya, dan skill ini belajar dari selera tampilamu lewat catatan desain. Hasilnya desain yang keluar terasa dirancang, bukan sekadar tempelan AI.",
+   "name": "alchaincyf/huashu-design",
+   "shortlink": "https://s.peka.ai.id/bdfpa4",
+   "stars": "29RB"
+  },
+  {
+   "cocok": "Pemilik web, SEO specialist, dan developer yang mau audit SEO dibantu agent sampai ke laporan.",
+   "desc": "Skill SEO universal buat Claude Code yang isinya 26 sub-skill dan 19 sub-agent. Cakupannya luas, dari SEO teknis, E-E-A-T, schema, sampai GEO dan AEO buat mesin pencari AI. Ada juga bahasan kesiapan agent, backlink, SEO lokal, e-commerce, SEO internasional, dan API Google. Hasil kerjanya bisa dilaporkan dalam PDF atau Excel, dan ada 9 ekstensi opsional buat data SEO live. Hasilnya audit dan perbaikan SEO dikerjakan agent dengan langkah yang runtut.",
+   "name": "AgriciDaniel/claude-seo",
+   "shortlink": "https://s.peka.ai.id/u13sau",
+   "stars": "26RB"
+  },
+  {
+   "cocok": "Kreator dan tim produk yang mau bikin promo video sinematik dari Claude Code dan masih bisa mengeditnya.",
+   "desc": "Skill video AI buat Claude Code dan Codex yang fokus ke promo produk sinematik yang masih bisa diedit. Isinya 124 kartu resep shot dan 150 pratinjau gerakan, jadi kamu bisa pilih gaya gambar sebelum render. Ada sinkronisasi beat musik, desain suara, dan Motion Workbench buat mengatur gerakan. Hasil akhirnya memakai Remotion dan bisa diekspor ke JianYing atau CapCut versi Tiongkok. Hasilnya promo produk yang gerakannya rapi dan gampang diubah, bukan video sekali jadi.",
+   "name": "Vincentwei1021/video-shotcraft",
+   "shortlink": "https://s.peka.ai.id/ji9zoz",
+   "stars": "16RB"
+  }
+ ]
+}
