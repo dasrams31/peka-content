@@ -1,8 +1,12 @@
-"""Bahas-bersama carousel: humanizer-lint discussion from the Prompt #13
+"""Bahas-bersama carousel: humanizer-lint SKILL discussion from the Prompt #13
 comment thread (@yanstd888 + @meta.ai). Peka black/yellow design language,
 same card/frame/footer helpers as the katalog template. 3 slides 4096x4096.
-Framing is the honest one: polishing is editing, not disguising. No link
-in any text; the community URL lives only in the footer line.
+
+The thread is about a SKILL (an agent skill repo file), not generic writing
+tips: the carousel explains what a skill is, how a lint skill works, and the
+honest-use boundary. No link in any text; the community URL lives only in
+the footer line. Nothing is claimed about the skill being public: the
+comment says it is still being tinkered with.
 """
 import os
 
@@ -100,10 +104,9 @@ mascot = mascot.resize((int(mh2 * mw / mh), mh2), Image.LANCZOS)
 img.paste(mascot, (W - M - mascot.width - 60, 600), mascot)
 
 f_h = ImageFont.truetype(FX, 300)
-d.text((M - 8, 760), "TULISAN AI", font=f_h, fill=CREAM)
-d.text((M - 8, 1080), "BIAR GAK", font=f_h, fill=CREAM)
-t2 = "KAKU."
-d.text((M - 8, 1440), "", font=f_h, fill=CREAM)
+d.text((M - 8, 760), "SKILL", font=f_h, fill=CREAM)
+d.text((M - 8, 1080), "HUMANIZER", font=f_h, fill=CREAM)
+t2 = "LINT."
 hl_w = d.textlength(t2, font=f_h)
 d.rounded_rectangle([M - 8 - 24, 1440 - 40,
                      M - 8 + hl_w + 24, 1440 + 372],
@@ -111,28 +114,28 @@ d.rounded_rectangle([M - 8 - 24, 1440 - 40,
 d.text((M - 8, 1440), t2, font=f_h, fill=BLACK)
 
 f_sub = ImageFont.truetype(FS, 84)
-d.text((M, 1960), "Habis generate, poles dulu", font=f_sub, fill=CREAM)
-d.text((M, 2075), "sebelum dikumpul.", font=f_sub, fill=CREAM)
-d.text((M, 2260), "3 lint cepat, 5 menit.", font=f_sub, fill=MUTED)
+d.text((M, 1960), "Skill yang nge-lint tulisan AI", font=f_sub, fill=CREAM)
+d.text((M, 2075), "biar gak kaku.", font=f_sub, fill=CREAM)
+d.text((M, 2260), "Lagi diulik @meta.ai.", font=f_sub, fill=MUTED)
 
 f_geser = ImageFont.truetype(FM, 62)
-tracked(d, "GESER BUAT LIHAT LINT-NYA  >>", f_geser, YELLOW, M, 3040, 4)
+tracked(d, "GESER BUAT LIHAT CARA KERJANYA  >>", f_geser, YELLOW, M, 3040, 4)
 
 footer(d, 1, 3)
 img.save(f"{OUT}/bahas-01.png")
 print("saved slide 1")
 
-# ---------------- slide 2: 3 lint ----------------
+# ---------------- slide 2: what a skill is + how lint works ----------------
 img, d = base()
-header_row(d, "3 LINT CEPAT")
+header_row(d, "SKILL ITU APA, LINT-NYA GIMANA")
 
 blocks = [
-    ("01  DIKSI",
-     "Ganti kata yang tidak pernah kamu ucapkan sehari-hari."),
-    ("02  KALIMAT",
-     "Pecah kalimat panjang. Variasikan pendek dan panjang."),
-    ("03  NADA",
-     "Baca keras-keras. Kalau terdengar robot, tulis ulang."),
+    ("01  FILE",
+     "Satu file SKILL.md: instruksi siap pakai buat AI agent."),
+    ("02  PANGGIL",
+     "Diinstall sekali, dipanggil pakai slash command."),
+    ("03  LINT",
+     "Cek pola tulisan AI, tandai, kamu yang benerin."),
 ]
 f_sec = ImageFont.truetype(FS, 88)
 f_item = ImageFont.truetype(FS, 104)
@@ -157,12 +160,12 @@ img, d = base()
 header_row(d, "BATAS JUJURNYA")
 
 f_big = ImageFont.truetype(FX, 210)
-d.text((M - 8, 800), "Poles itu edit,", font=f_big, fill=CREAM)
+d.text((M - 8, 800), "Lint itu nunjukin,", font=f_big, fill=CREAM)
 d.text((M - 8, 1040), "bukan nyamar.", font=f_big, fill=CREAM)
 
 f_body = ImageFont.truetype(FS, 92)
-body = ("Intinya tetap tulisanmu. AI bantu kerangka, "
-        "kamu yang mikir isinya.")
+body = ("Fakta tetap, yang berubah cuma bahasanya. "
+        "Bukan tombol lolos detektor.")
 y = 1520
 for line in wrap_lines(d, body, f_body, max_w):
     d.text((M, y), line, font=f_body, fill=CREAM)

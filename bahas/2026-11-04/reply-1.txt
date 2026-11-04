@@ -1,1 +1,1 @@
-Langkah pertama yang paling gampang: ambil satu paragraf hasil generate, baca keras-keras, tandai 3 kata yang tidak pernah kamu ucapkan sehari-hari, ganti dengan katamu sendiri. 5 menit saja.
+Langkah pertama: skill itu intinya file SKILL.md berisi pola tulisan AI yang harus dicek. Kamu bisa baca polanya dan cek tulisanmu sendiri, tanpa install apa-apa. Mulai dari satu paragraf.
