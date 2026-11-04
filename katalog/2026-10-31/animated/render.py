@@ -2,12 +2,14 @@
 """Render the Peka-design catalog reel frame by frame with Playwright.
 
 Deterministic: every frame is produced by window.renderAt(t) after
-window.buildScene(spec). 15 seconds: cover 3 + list1 5 + list2 4 +
-CTA 3. Scale 2.0 = true 4K 2160x3840.
+window.buildScene(spec). Duration follows the product count: 3s cover
++ 5s per 3-product chunk + 3s closing, unless overridden by argv[4].
+Scale 2.0 = true 4K 2160x3840.
 Usage: render.py <spec.json> [out_dir] [fps] [duration] [scale]
 """
 import asyncio
 import json
+import math
 import os
 import sys
 
@@ -23,11 +25,14 @@ async def main():
     fps = int(sys.argv[3]) if len(sys.argv) > 3 else 24
     with open(spec_path, encoding="utf-8") as fh:
         spec = json.load(fh)
-    assert len(spec["products"]) == 5, "catalog reel needs exactly 5 products"
+    assert len(spec["products"]) >= 1, "catalog reel needs at least 1 product"
     for p in spec["products"]:
         assert p.get("name") and p.get("dur") and p.get("price") and p.get("sec"), \
             f"incomplete product: {p}"
-    dur = float(sys.argv[4]) if len(sys.argv) > 4 else 15.0
+    if len(sys.argv) > 4:
+        dur = float(sys.argv[4])
+    else:
+        dur = 3 + 5 * math.ceil(len(spec["products"]) / 3) + 3
     scale = float(sys.argv[5]) if len(sys.argv) > 5 else 1.0
     vw = int(round(1080 * scale) / 2) * 2
     vh = int(round(1920 * scale) / 2) * 2

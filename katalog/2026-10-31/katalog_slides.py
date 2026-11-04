@@ -1,20 +1,24 @@
-"""Peka-design catalog slides for the 31 Oct 2026 product list.
+"""Peka-design catalog slides, generic template.
 
 Peka visual language: yellow #FFD60A, black #111111, cream text,
-mascot lockup, community footer + page number. Three 4096x4096
-slides: cover, products 1-3, products 4-5 + CTA.
-Prices are exactly the user's list. Do not "correct" them
-against the 21 Oct Aeternum catalog. All product data is read from
-../prices.json; that file's `updated` date is the freshness signal
-for the posting cron.
+mascot lockup, community footer + page number. Slides are 4096x4096:
+one cover plus as many product slides as the list needs. Products are
+grouped by section (one header per brand, one row per duration
+variant) and paginated greedily so no slide overflows: at most ~2640px
+of product rows per slide. The last product slide carries the CTA band.
+Prices are exactly the user's list in ../prices.json. Do not "correct"
+them. This file is the template source for the katalog cron: each
+edition copies it into its own folder and OUT follows the script's
+own directory, so the copy needs no edits.
 """
 import json
 import os
+from collections import OrderedDict
 
 from PIL import Image, ImageDraw, ImageFont
 
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       "..", "prices.json"), encoding="utf-8") as _fh:
+_HERE = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(_HERE, "..", "prices.json"), encoding="utf-8") as _fh:
     _PRICES = json.load(_fh)
 PRODUCTS = _PRICES["products"]
 DATE_LABEL = _PRICES["date_label"]
@@ -35,9 +39,12 @@ FS = f"{FONTS}/Poppins-SemiBold.ttf"
 FM = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
 
 MASCOT = "/home/hatch/workspace/peka-content/blueprint/animated/assets/mascot-keyed.png"
-OUT = "/home/hatch/workspace/peka-content/katalog/2026-10-31"
+OUT = _HERE
 
 M = 420  # content margin inside the card
+Y_TOP = 760
+Y_LIMIT = 3400
+SEC_GAP = 300
 
 
 def tracked(d, text, font, fill, x, y, ls):
@@ -74,13 +81,13 @@ def base():
     return img, d
 
 
-def footer(d, page):
+def footer(d, page, total):
     fy = 3560
     f_foot = ImageFont.truetype(FS, 44)
     tracked(d, "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", f_foot,
             MUTED, M, fy, 5)
     f_pg = ImageFont.truetype(FB, 44)
-    pg = f"0{page} / 03"
+    pg = f"{page:02d} / {total:02d}"
     pw = d.textlength(pg, font=f_pg)
     d.text((3936 - M + 80 - pw, fy), pg, font=f_pg, fill=YELLOW)
 
@@ -90,7 +97,7 @@ def header_row(d, kicker):
     tracked(d, kicker, f_kick, YELLOW, M, 470, 8)
 
 
-def product_rows(d, blocks, y, gap=420):
+def product_rows(d, blocks, y):
     f_sec = ImageFont.truetype(FS, 88)
     f_item = ImageFont.truetype(FS, 124)
     f_price = ImageFont.truetype(FB, 150)
@@ -113,7 +120,7 @@ def product_rows(d, blocks, y, gap=420):
             d.line([M, y, W - M, y], fill=CARD_LINE, width=3)
             y += 130
         if si < len(blocks) - 1:
-            y += gap
+            y += SEC_GAP
     return y
 
 
@@ -124,8 +131,50 @@ def label_of(p):
     return f"{label}  ·  {p['dur']}"
 
 
-def blocks_of(ps):
-    return [(p["sec"], [(label_of(p), p["price"])]) for p in ps]
+def sections_of(ps):
+    grouped = OrderedDict()
+    for p in ps:
+        grouped.setdefault(p["sec"], []).append((label_of(p), p["price"]))
+    return list(grouped.items())
+
+
+def section_height(n_rows):
+    return 180 + n_rows * 360
+
+
+def paginate(sections):
+    pages = []
+    cur, cur_h = [], 0
+    for sec in sections:
+        h = section_height(len(sec[1]))
+        add = h if not cur else h + SEC_GAP
+        if cur and cur_h + add > Y_LIMIT - Y_TOP:
+            pages.append(cur)
+            cur, cur_h = [sec], h
+        else:
+            cur.append(sec)
+            cur_h += add
+    if cur:
+        pages.append(cur)
+    return pages
+
+
+SECTIONS = sections_of(PRODUCTS)
+PAGES = paginate(SECTIONS)
+TOTAL = 1 + len(PAGES)
+
+# Row indices per page, for the "01 - 03" header ranges.
+_row_starts = []
+_n = 0
+for _page in PAGES:
+    _row_starts.append(_n + 1)
+    _n += sum(len(items) for _, items in _page)
+ROW_RANGES = [
+    (_row_starts[i], _row_starts[i] + sum(len(items) for _, items in _page) - 1)
+    for i, _page in enumerate(PAGES)
+]
+
+# ---------------- cover ----------------
 img, d = base()
 header_row(d, "KATALOG HARI INI")
 
@@ -155,38 +204,27 @@ d.text((M, 2075), f"{DATE_LABEL}.", font=f_sub, fill=MUTED)
 f_geser = ImageFont.truetype(FM, 62)
 tracked(d, "GESER BUAT LIHAT HARGANYA  >>", f_geser, YELLOW, M, 3040, 4)
 
-footer(d, 1)
+footer(d, 1, TOTAL)
 img.save(f"{OUT}/peka-katalog-01.png")
 print("saved slide 1")
 
-# ---------------- slide 2: products 1-3 ----------------
-img, d = base()
-header_row(d, "KATALOG HARI INI  //  01 - 03")
-
-product_rows(d, blocks_of(PRODUCTS[:3]), 760)
-
-footer(d, 2)
-img.save(f"{OUT}/peka-katalog-02.png")
-print("saved slide 2")
-
-# ---------------- slide 3: products 4-5 + CTA ----------------
-img, d = base()
-header_row(d, "KATALOG HARI INI  //  04 - 05")
-
-y = product_rows(d, blocks_of(PRODUCTS[3:]), 880, gap=440)
-
-band_y = y + 260
-d.rounded_rectangle([M, band_y, W - M, band_y + 250], radius=48, fill=YELLOW)
-f_cta = ImageFont.truetype(FB, 96)
-cta = "MAU?  CHAT:  MAU [NAMA PRODUK]"
-cw = d.textlength(cta, font=f_cta)
-d.text(((W - cw) / 2, band_y + 72), cta, font=f_cta, fill=BLACK)
-
-f_note = ImageFont.truetype(FS, 72)
-note = "Atau gabung grup WA: url.peka.ai.id"
-nw = d.textlength(note, font=f_note)
-d.text(((W - nw) / 2, band_y + 320), note, font=f_note, fill=CREAM)
-
-footer(d, 3)
-img.save(f"{OUT}/peka-katalog-03.png")
-print("saved slide 3")
+# ---------------- product slides ----------------
+for pi, page in enumerate(PAGES):
+    img, d = base()
+    r0, r1 = ROW_RANGES[pi]
+    header_row(d, f"KATALOG HARI INI  //  {r0:02d} - {r1:02d}")
+    y = product_rows(d, page, Y_TOP)
+    if pi == len(PAGES) - 1:
+        band_y = y + 200
+        d.rounded_rectangle([M, band_y, W - M, band_y + 250], radius=48, fill=YELLOW)
+        f_cta = ImageFont.truetype(FB, 96)
+        cta = "MAU?  CHAT:  MAU [NAMA PRODUK]"
+        cw = d.textlength(cta, font=f_cta)
+        d.text(((W - cw) / 2, band_y + 72), cta, font=f_cta, fill=BLACK)
+        f_note = ImageFont.truetype(FS, 72)
+        note = "Atau gabung grup WA: url.peka.ai.id"
+        nw = d.textlength(note, font=f_note)
+        d.text(((W - nw) / 2, band_y + 320), note, font=f_note, fill=CREAM)
+    footer(d, pi + 2, TOTAL)
+    img.save(f"{OUT}/peka-katalog-{pi + 2:02d}.png")
+    print(f"saved slide {pi + 2}")

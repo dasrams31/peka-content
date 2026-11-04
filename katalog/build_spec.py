@@ -18,7 +18,7 @@ def main():
     with open(os.path.join(HERE, "prices.json"), encoding="utf-8") as fh:
         prices = json.load(fh)
     products = prices["products"]
-    assert len(products) == 5, "catalog reel needs exactly 5 products"
+    assert len(products) >= 1, "catalog reel needs at least 1 product"
     spec = {
         "date": prices["date_label"],
         "products": [

@@ -31,7 +31,6 @@
   .geser { font-family: DejaVuMonoB; font-size: 34px; color: #FFD60A; margin-top: 56px; text-align: center; letter-spacing: 2px; }
   .sec { font-family: PoppinsSB; font-size: 38px; color: #FFD60A; letter-spacing: 6px; margin-top: 96px; }
   .sec.first { margin-top: 340px; }
-  .s3 .sec.first { margin-top: 420px; }
   .row { display: flex; align-items: baseline; margin-top: 30px; }
   .row .nm { font-family: PoppinsSB; font-size: 52px; color: #F6F1E6; white-space: nowrap; }
   .row .dots { flex: 1; border-bottom: 5px dotted rgba(246,241,230,0.4); margin: 0 20px; height: 20px; }
@@ -54,8 +53,8 @@
   <div id="progress"></div>
 </div>
 <script>
-  const DURATIONS = [3, 5, 4, 3];
-  const TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
+  let DURATIONS = [3, 5, 4, 3];
+  let TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   function clamp01(x) { return Math.max(0, Math.min(1, x)); }
   function header() {
@@ -74,19 +73,29 @@
   }
   window.buildScene = function(spec) {
     const ps = spec.products;
+    const minP = Math.min.apply(null, ps.map(p => parseInt(p.price, 10)));
+    const chunks = [];
+    for (let i = 0; i < ps.length; i += 3) chunks.push(ps.slice(i, i + 3));
+    DURATIONS = [3].concat(chunks.map(() => 5)).concat([3]);
+    TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
     let html = '<div class="scene">' + header() +
       '<div class="kick" data-in="0.30,0.45,0,40">KATALOG HARI INI</div>' +
       '<h1><span data-in="0.50,0.50,0,70" style="display:block">AKUN PREMIUM</span>' +
-      '<span data-in="0.70,0.50,0,70" style="display:block">MULAI <span class="hl">11K.</span></span></h1>' +
-      '<p class="sub" data-in="1.05,0.50,0,40">5 akun ready hari ini.</p>' +
+      '<span data-in="0.70,0.50,0,70" style="display:block">MULAI <span class="hl">' + minP + 'K.</span></span></h1>' +
+      '<p class="sub" data-in="1.05,0.50,0,40">' + ps.length + ' akun ready hari ini.</p>' +
       '<p class="sub-mut" data-in="1.25,0.50,0,40">' + spec.date + '. Harga dalam ribuan rupiah.</p>' +
       '<img class="mascot-big" data-in="1.45,0.50,0,50" src="assets/mascot-keyed.png">' +
       '<div class="geser" data-in="1.80,0.50,0,30">GESER BUAT LIHAT HARGANYA</div></div>';
-    html += '<div class="scene">' + header() +
-      row(ps[0], 0.3) + row(ps[1], 1.2) + row(ps[2], 2.1) + '</div>';
-    html += '<div class="scene s3">' + header() +
-      row(ps[3], 0.3) + row(ps[4], 1.2) +
-      '<div class="cta-band" data-in="2.10,0.45,0,30">MAU? CHAT: MAU [NAMA PRODUK]</div></div>';
+    chunks.forEach((chunk, ci) => {
+      let scene = '<div class="scene">' + header();
+      chunk.forEach((p, ri) => { scene += row(p, 0.3 + ri * 0.9); });
+      if (ci === chunks.length - 1) {
+        const ctaDelay = (0.3 + chunk.length * 0.9 + 0.3).toFixed(2);
+        scene += '<div class="cta-band" data-in="' + ctaDelay + ',0.45,0,30">MAU? CHAT: MAU [NAMA PRODUK]</div>';
+      }
+      scene += '</div>';
+      html += scene;
+    });
     html += '<div class="scene">' + header() +
       '<p class="q" data-in="0.30,0.50,0,60">Kamu mau yang mana dulu?</p>' +
       '<p class="next" data-in="0.80,0.50,0,40">Chat: <b>MAU [nama produk]</b>.</p>' +
