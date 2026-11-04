@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 15,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "cocok": "Pengguna yang mau mulai pakai Hermes Agent dari sumber resminya langsung.",
+      "install": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash",
+      "name": "NousResearch/hermes-agent",
+      "penjelasan": "Agent open source dari Nous Research yang tumbuh bareng cara kerjamu. Pasang cepat lewat satu script install, tersedia juga paket MSIX dan repo APT buat Termux.",
+      "shortlink": "https://s.peka.ai.id/dqrfRj",
+      "stars": "260RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-04/shots/NousResearch-hermes-agent.png"
+    },
+    {
+      "cocok": "Pengguna Hermes Agent yang mau cari skill, plugin, dan panduan dari satu direktori kurasi.",
+      "install": "npx skills add 0xNyk/awesome-hermes-agent",
+      "name": "0xNyk/awesome-hermes-agent",
+      "penjelasan": "Direktori independen berisi skill, plugin, memory provider, tools, dan panduan buat Hermes Agent. Cari kebutuhanmu di daftarnya, lalu pasang yang cocok.",
+      "shortlink": "https://s.peka.ai.id/vPbb5c",
+      "stars": "6RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-04/shots/0xNyk-awesome-hermes-agent.png"
+    },
+    {
+      "cocok": "Pengguna Hermes Agent yang mau skill dan promptnya dioptimasi otomatis lewat evaluasi, bukan ditebak.",
+      "install": "git clone https://github.com/NousResearch/hermes-agent-self-evolution.git",
+      "name": "NousResearch/hermes-agent-self-evolution",
+      "penjelasan": "Paket self-improvement evolusioner yang mengoptimalkan skill, prompt, dan kode Hermes Agent pakai DSPy dan GEPA. Clone repo, lalu pip install.",
+      "shortlink": "https://s.peka.ai.id/w8cf0N",
+      "stars": "6RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-04/shots/NousResearch-hermes-agent-self-evolution.png"
+    },
+    {
+      "cocok": "Operator agent Hermes yang mau skill dan konfigurasinya diawasi keamanannya secara otomatis.",
+      "install": "npx skills add prompt-security/clawsec",
+      "name": "prompt-security/clawsec",
+      "penjelasan": "Suite skill keamanan buat Hermes dan agent lain: deteksi drift, rekomendasi keamanan live, audit otomatis, dan verifikasi integritas skill. Pasang lewat npx skills add.",
+      "shortlink": "https://s.peka.ai.id/dglKRu",
+      "stars": "1RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-04/shots/prompt-security-clawsec.png"
+    },
+    {
+      "cocok": "Pengguna Hermes Agent yang mau instalasinya rapi, terukur, dan gampang dirawat.",
+      "install": "git clone https://github.com/OnlyTerp/hermes-optimization-guide.git",
+      "name": "OnlyTerp/hermes-optimization-guide",
+      "penjelasan": "Panduan optimasi Hermes Agent: setup, migrasi, LightRAG, Telegram, sampai cara bikin skill. Angkanya diukur dari install beneran, langkahnya runtut.",
+      "shortlink": "https://s.peka.ai.id/hK0PtY",
+      "stars": "713",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-04/shots/OnlyTerp-hermes-optimization-guide.png"
+    }
+  ]
+}
