@@ -1,0 +1,34 @@
+{
+ "band": "GEMINI NOTEBOOK - GRATIS",
+ "category": "AI BUAT BELAJAR",
+ "ctas": [
+  "Tag teman yang lagi nyusun materi",
+  "Save dulu, jatah AI refresh tiap 5 jam",
+  "Follow @peka.ai.id buat edisi berikutnya",
+  "Gabung ke komunitas kami: url.peka.ai.id"
+ ],
+ "fields": {
+  "deadline": "Tidak ada, tier gratis",
+  "nilai": "100 notebook, 50 sumber per notebook",
+  "sumber": "notebook.google.com",
+  "untuk": "Siapa pun, cukup akun Google"
+ },
+ "out_dir": "/home/hatch/workspace/peka-content/gratisan-ai/out/2026-11-04",
+ "program": "Gemini Notebook Gratis",
+ "shortlink": "https://s.peka.ai.id/pT9tS1",
+ "shortlink_label": "Link klaim: ",
+ "stamp": "100% GRATIS",
+ "steps": [
+  "Buka notebook.google.com, login akun Google",
+  "Klik Create new, buat notebook baru",
+  "Tambah sumber: PDF, web, YouTube, atau audio",
+  "Tanya di chat, cek kutipannya di sumber"
+ ],
+ "subtitle": "tanya materi dari sumbermu sendiri",
+ "syarat": [
+  "Akun Google saja, tanpa kartu kredit",
+  "Indonesia termasuk negara yang didukung",
+  "Maks 50 sumber per notebook, 100 notebook",
+  "Jatah AI dihitung dari pemakaian, bukan harian tetap"
+ ]
+}
