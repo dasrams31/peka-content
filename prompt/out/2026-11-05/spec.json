@@ -1,0 +1,12 @@
+{
+  "episode": 14,
+  "category": "KULIAH",
+  "title": "Tulisan AI jadi natural tanpa kehilangan akademiknya",
+  "prompt": "Poles tulisan ini biar natural tapi tetap akademik. Teks: [TEKS HASIL GENERATE]. Ganti diksi AI-ish dengan kata yang biasa aku pakai, pecah kalimat yang kepanjangan, dan jaga istilah akademiknya. Jangan ubah fakta atau datanya. Hasilnya 1 versi revisi saja.",
+  "tips": [
+    "Baca keras-keras hasil polesnya, kalau kaku ulangi sekali lagi.",
+    "Poles satu paragraf dulu, jangan satu bab sekaligus.",
+    "Fakta dan data jangan diubah, cuma bahasanya."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-05"
+}
