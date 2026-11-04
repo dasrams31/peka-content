@@ -1,0 +1,13 @@
+5 skill Hermes yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: hermes-agent, agent open source resmi dari Nous Research yang tumbuh bareng cara kerjamu. Langkah pertamanya: jalankan curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash, lalu ikuti proses installnya.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Oppressive Gloom by Kevin MacLeod
+
+#SpillRepo #HermesAgent #SkillAI #OpenSource #GitHub #AIAgent #NousResearch #BelajarAI #Mahasiswa #PekaAI
