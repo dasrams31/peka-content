@@ -1,0 +1,12 @@
+{
+  "episode": 13,
+  "category": "KULIAH",
+  "title": "Bab 1 skripsi kelar tanpa bingung mulai dari mana",
+  "prompt": "Bantu aku menyusun kerangka Bab 1 skripsi. Topik: [TOPIK SKRIPSI]. Masalah yang mau diangkat: [MASALAH SINGKAT]. Buat latar belakang 3 paragraf pendek, rumusan masalah 2 kalimat, dan tujuan penelitian 3 poin. Bahasanya rapi tapi gampang dipahami, tanpa kata kaku.",
+  "tips": [
+    "Isi topiknya satu kalimat, jangan nunggu topik sempurna.",
+    "Tulis masalahnya apa adanya, misal antrean loket lama.",
+    "Minta revisi per bagian, jangan langsung minta bab utuh."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-04"
+}

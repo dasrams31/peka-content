@@ -73,6 +73,18 @@
       "name": "Scribd",
       "dur": "1 Bulan",
       "price": "7K"
+    },
+    {
+      "sec": "CRUNCHYROLL",
+      "name": "Crunchyroll",
+      "dur": "30 Hari",
+      "price": "6K"
+    },
+    {
+      "sec": "APPLE MUSIC",
+      "name": "Apple Music Head",
+      "dur": "1 Bulan",
+      "price": "8K"
     }
   ]
 }

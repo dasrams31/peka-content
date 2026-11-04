@@ -1,0 +1,11 @@
+PROMPT HARIAN #13: salin prompt ini buat Bab 1 skripsi kelar tanpa bingung mulai dari mana
+Isi topik sama masalah singkatmu, hasilnya kerangka Bab 1: latar belakang 3 paragraf, rumusan masalah 2 kalimat, dan tujuan penelitian 3 poin.
+
+Prompt-nya, tinggal salin:
+Bantu aku menyusun kerangka Bab 1 skripsi. Topik: [TOPIK SKRIPSI]. Masalah yang mau diangkat: [MASALAH SINGKAT]. Buat latar belakang 3 paragraf pendek, rumusan masalah 2 kalimat, dan tujuan penelitian 3 poin. Bahasanya rapi tapi gampang dipahami, tanpa kata kaku.
+
+Kamu lagi mentok di bagian mana: latar belakang atau rumusan masalah?
+Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30. Follow, kalau kontennya kepakai.
+
+#PromptHarian #Kuliah #Skripsi #Mahasiswa #TipsKuliah #TugasAkhir #BelajarAI #PromptAI #PekaAI
+Music: Aitech by Kevin MacLeod
