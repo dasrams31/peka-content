@@ -46,3 +46,22 @@ never praise without a correction. Roast intensity is adjustable
 All masters are 1080x1080 RGBA (transparent background), rendered
 deterministically by `piko.py`. `piko-sheet.png` is the 2x2 character
 sheet for review only, not a runtime asset.
+
+## 3D
+
+`3d/piko-3d.js` renders Piko in real time with Three.js, from the same
+locked geometry (extruded stem + half-disc bowl with the notch bite,
+antenna, one eye). `3d/index.html` is the interactive viewer (CDN
+import map); `3d/shot.html` uses the local `vendor/` copy for
+deterministic screenshots (`shot.py`, Playwright + SwiftShader).
+
+Animation lives in the render loop, not in baked clips:
+
+- idle: gentle float + sway, blink every few seconds.
+- listening: antenna ball glows, rings pulse, slight lean-in, wider eye.
+- speaking: mouth opens following voice amplitude. The voice loop
+  feeds it through `window.__piko.setSpeakingLevel(0..1)` (AnalyserNode
+  on the TTS audio); without a feed it falls back to a sine pulse.
+- roast: cocky tilt + sway, angled brow, half-lidded eye, smirk.
+- The viewer supports orbit/zoom; states switch through
+  `window.__piko.setState(name)`. No state may change the body geometry.

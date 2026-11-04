@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piko 3D — peka.ai.id</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; background: #111; color: #f1f5f9;
+    font-family: ui-sans-system, system-ui, "Segoe UI", Roboto, sans-serif; }
+  body { background: radial-gradient(circle at 50% 42%, #1e1e1e 0%, #111 65%); }
+  #stage { position: fixed; inset: 0; }
+  #stage canvas { display: block; }
+  header { position: fixed; top: 22px; left: 26px; z-index: 2; pointer-events: none; }
+  header h1 { font-size: 34px; letter-spacing: 0.14em; color: #ffd60a; font-weight: 800; }
+  header p { font-size: 13px; color: #94a3b8; margin-top: 4px; letter-spacing: 0.04em; }
+  #state-label { position: fixed; top: 24px; right: 26px; z-index: 2; font-size: 13px;
+    color: #ffd60a; border: 1px solid rgba(255,214,10,.45); border-radius: 999px; padding: 7px 14px;
+    background: rgba(17,17,17,.65); letter-spacing: .05em; pointer-events: none; }
+  nav { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 2;
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 0 12px; }
+  nav button { appearance: none; border: 1px solid rgba(255,255,255,.16); background: rgba(20,23,33,.85);
+    color: #e2e8f0; font-size: 14px; font-weight: 600; padding: 11px 18px; border-radius: 999px; cursor: pointer; }
+  nav button:hover { border-color: #ffd60a; }
+  nav button.active { background: #ffd60a; color: #111; border-color: #ffd60a; }
+  #hint { position: fixed; left: 50%; bottom: 82px; transform: translateX(-50%); z-index: 2;
+    font-size: 12px; color: #64748b; letter-spacing: .04em; pointer-events: none; white-space: nowrap; }
+  @media (max-width: 640px) {
+    header h1 { font-size: 26px; } header { top: 16px; left: 18px; }
+    #state-label { top: 16px; right: 18px; }
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="stage"></div>
+<header><h1>PIKO</h1><p>Maskot Peka, versi 3D. Pelatih IELTS mode judes.</p></header>
+<div id="state-label">Diam</div>
+<div id="hint">Seret untuk memutar, scroll untuk zoom</div>
+<nav>
+  <button data-state="idle">Diam</button>
+  <button data-state="listening">Mendengarkan</button>
+  <button data-state="speaking">Berbicara</button>
+  <button data-state="roast">Mode Judes</button>
+</nav>
+<script type="module" src="./piko-3d.js"></script>
+</body>
+</html>
