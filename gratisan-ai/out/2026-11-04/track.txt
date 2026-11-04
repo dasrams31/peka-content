@@ -1,1 +1,2 @@
-TRACK_SAVED=/home/hatch/workspace/peka-content/brand/music/mechanolith-kevin-macleod.mp3
+TRACK=/home/hatch/workspace/peka-content/brand/music/mechanolith-kevin-macleod.mp3
+TITLE=Mechanolith
