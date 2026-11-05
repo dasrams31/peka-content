@@ -1,0 +1,13 @@
+5 skill OpenCode yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: AionUi, aplikasi cowork yang nyambungin OpenCode sama 20 lebih agent CLI lain dari satu tempat. Langkah pertamanya: buka AionUi, sambungkan OpenCode kamu, lalu bentuk tim asistenmu.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Darkling by Kevin MacLeod
+
+#SpillRepo #OpenCode #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #Mahasiswa #PekaAI

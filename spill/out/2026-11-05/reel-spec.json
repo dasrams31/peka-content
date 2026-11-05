@@ -1,0 +1,52 @@
+{
+  "agent": "OPENCODE",
+  "episode": 16,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "name": "iOfficeAI/AionUi",
+      "stars": "34RB",
+      "install": "npx skills add iOfficeAI/AionUi -g",
+      "penjelasan": "Aplikasi cowork open source yang jalan 24 jam buat nemenin agent CLI kamu kerja bareng. AionUi nyambung ke OpenCode dan lebih dari 20 agent CLI lain dari satu tempat.",
+      "cocok": "Pengguna OpenCode yang pakai banyak agent CLI sekaligus dan mau mengatur semuanya dari satu aplikasi.",
+      "shortlink": "https://s.peka.ai.id/MVXzHV",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-05/shots/iOfficeAI-AionUi.png"
+    },
+    {
+      "name": "zenstory-ai/oh-story-claudecode",
+      "stars": "8RB",
+      "install": "npx skills add zenstory-ai/oh-story-claudecode -y",
+      "penjelasan": "Kumpulan 14 skill agent buat nulis novel web berbahasa Mandarin, dari riset tren sampai cover. Skillnya ngajarin agent cara bedah novel populer dan nulis bab panjang.",
+      "cocok": "Penulis cerita dan novel yang mau agent OpenCode bantuin nulis panjang dengan alur yang rapi.",
+      "shortlink": "https://s.peka.ai.id/CBfgxL",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-05/shots/zenstory-ai-oh-story-claudecode.png"
+    },
+    {
+      "name": "backnotprop/plannotator",
+      "stars": "10RB",
+      "install": "/plugin marketplace add backnotprop/plannotator",
+      "penjelasan": "Workspace buat kamu tetap pegang kendali saat agent lagi kerja. Bentuk rencana, kasih arahan, review kode, lalu kirim feedback ke agent dengan satu klik.",
+      "cocok": "Developer yang agentnya sering jalanin tugas panjang dan mau review plus arahan yang gampang dikirim balik.",
+      "shortlink": "https://s.peka.ai.id/I7g32f",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-05/shots/backnotprop-plannotator.png"
+    },
+    {
+      "name": "Q00/ouroboros",
+      "stars": "6RB",
+      "install": "codex plugin add ouroboros@ouroboros",
+      "penjelasan": "Agent OS yang bikin agent kamu makin pintar sendiri seiring dipakai. Putaran evolusinya dibatasi budget, dengan wawancara di awal dan evaluasi bertahap.",
+      "cocok": "Pengguna agent yang mau agentnya belajar dan meningkat sendiri lewat evaluasi terukur.",
+      "shortlink": "https://s.peka.ai.id/IP2VGZ",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-05/shots/Q00-ouroboros.png"
+    },
+    {
+      "name": "samber/cc-skills-golang",
+      "stars": "4RB",
+      "install": "npx skills add https://github.com/samber/cc-skills-golang",
+      "penjelasan": "Kumpulan skill agent khusus bahasa Go yang jalan di banyak agent, termasuk OpenCode. Skillnya ngajarin agent cara nulis dan ngecek kode Go yang rapi.",
+      "cocok": "Developer Go yang mau agent OpenCode-nya ngerti cara kerja Go dengan benar.",
+      "shortlink": "https://s.peka.ai.id/PRpfPc",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-05/shots/samber-cc-skills-golang.png"
+    }
+  ]
+}
