@@ -1,0 +1,8 @@
+Salin prompt ini, tulisan AI kamu langsung terasa natural tapi tetap akademik. Dosen baca tetap kayak tulisan kamu sendiri, bukan hasil generate mentah.
+
+Poles tulisan ini biar natural tapi tetap akademik. Teks: [TEKS HASIL GENERATE]. Ganti diksi AI-ish dengan kata yang biasa aku pakai, pecah kalimat yang kepanjangan, dan jaga istilah akademiknya. Jangan ubah fakta atau datanya. Hasilnya 1 versi revisi saja.
+
+Poles tugas kuliah dulu atau skripsi dulu?
+Save dulu biar nggak hilang.
+Music: Tech Live by Kevin MacLeod
+#fyp #Mahasiswa #Kuliah #Skripsi #PromptAI #BelajarAI #TugasKuliah #ChatGPT
