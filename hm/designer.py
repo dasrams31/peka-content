@@ -406,7 +406,9 @@ BULAN_ID = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI",
             "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"]
 
 
-def today_id():
+def today_id(override=""):
+    if override:
+        return override
     t = datetime.date.today()
     return f"{HARI_ID[t.weekday()]}, {t.day} {BULAN_ID[t.month - 1]} {t.year}"
 
@@ -445,7 +447,7 @@ def cover_koran(args, n):
     img = Image.new("RGB", (W, H), CREAM)
     d = ImageDraw.Draw(img)
     d = koran_header(img, d, args.badge)
-    d.text((X(70), X(196)), f"EDISI {today_id()}", font=mono(26), fill=INK_SUB)
+    d.text((X(70), X(196)), f"EDISI {today_id(args.date)}", font=mono(26), fill=INK_SUB)
     src = f"SUMBER: {args.source.upper()}"
     d.text((X(1010) - d.textlength(src, font=mono(26)), X(196)), src,
            font=mono(26), fill=INK_SUB)
@@ -663,7 +665,7 @@ def cover_premium(args, n):
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
     d = premium_header(img, d)
-    d.text((X(120), X(162)), today_id(), font=mono(24), fill=MUTED2)
+    d.text((X(120), X(162)), today_id(args.date), font=mono(24), fill=MUTED2)
     src = f"SUMBER: {args.source.upper()}"
     d.text((X(960) - d.textlength(src, font=mono(24)), X(162)), src,
            font=mono(24), fill=MUTED2)
@@ -969,6 +971,9 @@ def main():
     ap.add_argument("--sub", default="")
     ap.add_argument("--points", default="")
     ap.add_argument("--source", default="")
+    ap.add_argument("--date", default="",
+                    help="override tanggal edisi, mis. 'JUMAT, 6 NOVEMBER 2026' "
+                         "(default: tanggal sistem hari ini)")
     ap.add_argument("--url", default="")
     ap.add_argument("--bloglink", default="",
                     help="shortlink blog edisi ini, dicetak di slide CTA "
