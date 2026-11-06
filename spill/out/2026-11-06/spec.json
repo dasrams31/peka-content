@@ -1,0 +1,48 @@
+{
+  "agent": "ANTIGRAVITY",
+  "next": "CLAUDE",
+  "episode": 17,
+  "repos": [
+    {
+      "name": "google/artemis",
+      "stars": "17RB",
+      "desc": "ARTEMIS dari Google ngubah instruksi bahasa sehari-hari jadi otomasi Android yang bisa diandalkan. Dia ngejalanin workflow end to end, nangkep log, dan nyambung mulus sama asisten coding AI kayak Antigravity, Codex, dan Claude Code. Kamu tinggal nulis mau ngapain dengan bahasa biasa, ARTEMIS yang nerjemahin jadi langkah otomasi di HP Android. Di benchmark AndroidWorld, tingkat suksesnya di atas 99 persen, jadi hasilnya konsisten buat tugas berulang. Cocok buat testing aplikasi, tugas berulang di HP, atau ngecek alur aplikasi tanpa nulis script manual.",
+      "cocok": "Pengguna Antigravity yang mau ngotomasi tugas Android cuma dengan instruksi bahasa sehari-hari.",
+      "shortlink": "https://s.peka.ai.id/sLncwm",
+      "install": "npx skills add google/artemis -g"
+    },
+    {
+      "name": "jlcodes99/vscode-antigravity-cockpit",
+      "stars": "5RB",
+      "desc": "Ekstensi VS Code buat mantau kuota AI Google Antigravity langsung dari editor, tanpa buka browser. Ada dashboard webview, mode QuickPick, dan pengelompokan kuota, jadi sisa pemakaian tiap model kelihatan sekilas. Kamu bisa cek kuota dulu sebelum mulai kerja berat, biar nggak mentok di tengah jalan. Pemakaiannya ringan dan nempel di alur kerja VS Code yang udah biasa kamu pakai. Hasilnya kamu selalu tahu kapan harus hemat dan kapan bisa gaspol.",
+      "cocok": "Pengguna Antigravity di VS Code yang mau sisa kuota AI-nya selalu kelihatan.",
+      "shortlink": "https://s.peka.ai.id/sm7hEF",
+      "install": "npx skills add jlcodes99/vscode-antigravity-cockpit -g"
+    },
+    {
+      "name": "Draculabo/AntigravityManager",
+      "stars": "2RB",
+      "desc": "Aplikasi desktop buat ngatur akun Google yang dipakai klien Antigravity, termasuk Classic, Antigravity IDE, dan agy CLI. Kamu bisa lihat kuota model secara real time, ganti akun klien dengan mulus, dan nyambungin tool coding AI kayak Claude Code, Codex, dan OpenCode lewat API gateway lokal yang cepat. Semua akun dan kuota ngumpul di satu tempat, jadi nggak perlu buka tutup aplikasi buat ganti akun. Cocok buat yang pegang banyak akun Antigravity dan sering ganti-ganti klien. Hasilnya pindah akun jadi satu klik, bukan ritual.",
+      "cocok": "Pengguna Antigravity yang pegang banyak akun dan mau ganti klien plus pantau kuota dari satu aplikasi.",
+      "shortlink": "https://s.peka.ai.id/34PysB",
+      "install": "npx skills add Draculabo/AntigravityManager -g"
+    },
+    {
+      "name": "FutureisinPast/antigravity-conversation-fix",
+      "stars": "1RB",
+      "desc": "Tool kecil yang ngebenarin riwayat percakapan Antigravity yang hilang atau urutannya berantakan. Masalah ini bikin agent lupa konteks, jadi jawabannya nggak nyambung sama obrolan sebelumnya. Tool ini ngebalikin urutan dan isi percakapan biar agent bisa lanjut kerja dengan konteks yang utuh. Cara pakainya simpel dan langsung ke inti masalahnya. Hasilnya obrolan panjang sama agent tetap nyambung dari awal sampai akhir.",
+      "cocok": "Pengguna Antigravity yang percakapannya sering kepotong atau urutannya berantakan.",
+      "shortlink": "https://s.peka.ai.id/hU6lJx",
+      "install": "npx skills add FutureisinPast/antigravity-conversation-fix -g"
+    },
+    {
+      "name": "skainguyen1412/antigravity-superpowers",
+      "stars": "334",
+      "desc": "Workflow Superpowers yang di-porting ke Antigravity, mulai dari brainstorming, planning, TDD, code review, sampai verifikasi, sedekat mungkin sama aslinya. Skillnya ngajarin agent cara mikir terstruktur sebelum nulis kode, jadi hasilnya lebih rapi dan gampang dicek. Kamu tinggal pasang skillnya, terus agent Antigravity kamu langsung punya alur kerja yang jelas di tiap tahap. Alurnya ngikutin pola Superpowers yang udah terbukti di agent lain, jadi nggak perlu bikin workflow sendiri dari nol. Hasilnya agent kamu kerja sistematis, bukan asal ngoding.",
+      "cocok": "Developer Antigravity yang mau agentnya kerja sistematis dari brainstorming sampai verifikasi.",
+      "shortlink": "https://s.peka.ai.id/6M3qLb",
+      "install": "npm install -g antigravity-superpowers"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/carousel"
+}
