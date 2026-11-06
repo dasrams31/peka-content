@@ -50,11 +50,11 @@
   .win { border: 2px solid #3D5A80; overflow: hidden; background: #10264A; margin-top: 44px; }
   .win .titlebar { background: #061224; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 32px; }
   .win .dot { width: 30px; height: 30px; border-radius: 50%; }
-  .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; }
+  .win .tname { font-family: DejaVuMono; font-size: 36px; color: #AAAAAA; margin-left: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1 1 auto; }
   .win .tlink { font-family: DejaVuMonoB; font-size: 30px; color: #FFD60A; margin-left: auto; white-space: nowrap; }
   .win .og { display: block; width: 100%; }
   .winbody { background: #10264A; padding: 34px 36px 40px 36px; }
-  .pname { font-family: PoppinsB; font-size: 56px; color: #F2F5F9; }
+  .pname { font-family: PoppinsB; font-size: 56px; color: #F2F5F9; white-space: nowrap; }
   .pbadge { font-family: DejaVuMono; font-size: 26px; color: #8FA6C2; border: 3px dashed #8FA6C2; padding: 6px 14px; vertical-align: 10px; margin-left: 16px; }
   .pdesc { font-family: DejaVu; font-size: 32px; line-height: 1.4; color: #8FA6C2; margin-top: 18px; }
   .pdescid { font-family: PoppinsSB; font-size: 38px; line-height: 1.35; color: #F2F5F9; margin-top: 20px; }
@@ -111,6 +111,8 @@
     // 31 Okt 2026): the link lives in the video, not in any caption.
     const short = (spec.shortlink || '').replace(/^https?:\/\//, '');
     const nameSize = Math.min(150, Math.floor(880 / Math.max(1, spec.agent.length)));
+    // Repo-page name + PUBLIC badge must fit one line: shrink for long names.
+    const psize = Math.min(56, Math.floor(700 / (r.name.length * 0.62)));
     DURATIONS = [COVER_DUR, PAGE_DUR, REPO_DUR, END_DUR, END_DUR];
     TOTAL = DURATIONS.reduce((a, b) => a + b, 0);
     let html = '<div class="scene">' + header('') +
@@ -138,7 +140,7 @@
       '<span class="tname">' + r.name + '</span>' +
       (short ? '<span class="tlink">' + short + '</span>' : '') + '</div>' +
       '<div class="winbody">' +
-      '<div class="pname" data-in="0.45,0.45,0,30">' + r.name +
+      '<div class="pname" data-in="0.45,0.45,0,30" style="font-size:' + psize + 'px">' + r.name +
       '<span class="pbadge">PUBLIC</span></div>' +
       '<p class="pdesc" data-in="0.65,0.45,0,30">' + r.desc_en + '</p>' +
       '<p class="pdescid" data-in="0.85,0.45,0,30">' + r.desc_id + '</p>' +
