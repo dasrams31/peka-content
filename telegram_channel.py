@@ -17,10 +17,12 @@ token dibaca dari ~/workspace/mc-portal/config/telegram_premibot_token.
 
 Penggunaan:
   python3 telegram_channel.py --type hm --title "Judul" --cover slide1.png \
+      --info "Satu kalimat singkat tentang isi konten edisi ini." \
       --threads https://www.threads.com/... --instagram https://... \
       --facebook https://... --blog https://blog.peka.ai.id/p/...
   Semua --threads/--instagram/--facebook/--blog opsional (yang tidak ada
-  tidak dicetak). --dry-run hanya mencetak payload tanpa mengirim.
+  tidak dicetak). --info opsional (bila diisi, dicetak 1 baris setelah judul).
+  --dry-run hanya mencetak payload tanpa mengirim.
 """
 
 import argparse
@@ -57,6 +59,9 @@ def read_token() -> str:
 def build_caption(args) -> str:
     label = TYPE_LABELS.get(args.type, "✨ Peka AI")
     lines = [f"{label}", "", f"<b>{args.title}</b>", ""]
+    if args.info:
+        lines.append(args.info)
+        lines.append("")
     links = []
     if args.threads:
         links.append(f"🧵 Threads: {args.threads}")
@@ -71,6 +76,8 @@ def build_caption(args) -> str:
         lines.extend(links)
         lines.append("")
     lines.append("💬 Gabung komunitas Peka: t.me/peka_aigroup")
+    lines.append("📣 Channel Peka: t.me/peka_aichannel")
+    lines.append("🤖 Order akun premium: t.me/aeternum_premibot")
     lines.append("🛍️ Belanja produk digital: store.peka.ai.id")
     return "\n".join(lines)
 
@@ -79,6 +86,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Broadcast konten Peka ke channel Telegram.")
     ap.add_argument("--type", required=True, choices=list(TYPE_LABELS))
     ap.add_argument("--title", required=True, help="Judul/hook singkat (1-2 baris).")
+    ap.add_argument("--info", default="", help="Satu kalimat singkat tentang isi konten edisi ini.")
     ap.add_argument("--cover", required=True, help="Path gambar slide pertama.")
     ap.add_argument("--threads", default="")
     ap.add_argument("--instagram", default="")
