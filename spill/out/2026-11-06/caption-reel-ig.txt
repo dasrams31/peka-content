@@ -1,0 +1,13 @@
+5 skill Antigravity yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: google/artemis, ketik perintah biasa, dia yang ngotomasi HP Android kamu, suksesnya di atas 99 persen. Langkah pertamanya: buka halaman repo-nya, ikutin cara pasangnya, terus suruh dia jalanin satu tugas di HP kamu.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Tech Live by Kevin MacLeod
+
+#SpillRepo #Antigravity #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #Mahasiswa #PekaAI

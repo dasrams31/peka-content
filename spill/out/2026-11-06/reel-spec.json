@@ -1,0 +1,52 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 17,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "google/artemis",
+      "stars": "17RB",
+      "install": "npx skills add google/artemis -g",
+      "penjelasan": "ARTEMIS ngubah perintah bahasa sehari-hari jadi otomasi Android yang bisa diandalkan. Dia ngejalanin workflow end to end dan nyambung sama Antigravity, Codex, dan Claude Code.",
+      "cocok": "Pengguna Antigravity yang mau ngotomasi tugas Android cuma dengan instruksi bahasa sehari-hari.",
+      "shortlink": "https://s.peka.ai.id/sLncwm",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/shots/google-artemis.png"
+    },
+    {
+      "name": "jlcodes99/vscode-antigravity-cockpit",
+      "stars": "5RB",
+      "install": "npx skills add jlcodes99/vscode-antigravity-cockpit -g",
+      "penjelasan": "Ekstensi VS Code buat mantau kuota AI Antigravity langsung dari editor. Dashboard, QuickPick, dan pengelompokan kuota bikin sisa pemakaian tiap model kelihatan sekilas.",
+      "cocok": "Pengguna Antigravity di VS Code yang mau sisa kuota AI-nya selalu kelihatan.",
+      "shortlink": "https://s.peka.ai.id/sm7hEF",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/shots/jlcodes99-vscode-antigravity-cockpit.png"
+    },
+    {
+      "name": "Draculabo/AntigravityManager",
+      "stars": "2RB",
+      "install": "npx skills add Draculabo/AntigravityManager -g",
+      "penjelasan": "Aplikasi desktop buat ngatur akun Google di semua klien Antigravity. Kuota model kelihatan real time dan ganti akun tinggal satu klik.",
+      "cocok": "Pengguna Antigravity yang pegang banyak akun dan mau ganti klien plus pantau kuota dari satu aplikasi.",
+      "shortlink": "https://s.peka.ai.id/34PysB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/shots/Draculabo-AntigravityManager.png"
+    },
+    {
+      "name": "FutureisinPast/antigravity-conversation-fix",
+      "stars": "1RB",
+      "install": "npx skills add FutureisinPast/antigravity-conversation-fix -g",
+      "penjelasan": "Tool kecil yang ngebenarin riwayat percakapan Antigravity yang hilang atau urutannya berantakan. Agent jadi bisa lanjut kerja dengan konteks yang utuh.",
+      "cocok": "Pengguna Antigravity yang percakapannya sering kepotong atau urutannya berantakan.",
+      "shortlink": "https://s.peka.ai.id/hU6lJx",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/shots/FutureisinPast-antigravity-conversation-fix.png"
+    },
+    {
+      "name": "skainguyen1412/antigravity-superpowers",
+      "stars": "334",
+      "install": "npm install -g antigravity-superpowers",
+      "penjelasan": "Workflow Superpowers di-porting ke Antigravity, dari brainstorming sampai verifikasi. Agent kamu jadi kerja sistematis, bukan asal ngoding.",
+      "cocok": "Developer Antigravity yang mau agentnya kerja sistematis dari brainstorming sampai verifikasi.",
+      "shortlink": "https://s.peka.ai.id/6M3qLb",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-06/shots/skainguyen1412-antigravity-superpowers.png"
+    }
+  ]
+}

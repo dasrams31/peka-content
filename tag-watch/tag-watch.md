@@ -2,7 +2,7 @@
 
 Updated: 2026-11-06 WIB. Sample: 89 posts in 7 days, 12 new today. Search returns only a few posts per tag per day, so one day never ranks a tag alone.
 
-CURRENT CLOSING TAG: #Mahasiswa (7-day avg likes 4940.7 (n=10) >= 2x #AI 992.4 (n=10)).
+CURRENT CLOSING TAG: #AI (manual lock by user order 2026-11-06: views dropped with #Mahasiswa; auto-switch disabled until manual_tag_lock.txt is removed).
 Content crons apply this tag automatically (user granted full autonomy 2026-10-30). Changes are logged in tag-changes.log.
 
 | Tag | n | avg likes | median | avg reposts | avg replies | max |
@@ -26,4 +26,4 @@ Content crons apply this tag automatically (user granted full autonomy 2026-10-3
 
 0 trending topics returned.
 
-Closing tag is now #Mahasiswa: 7-day avg likes 4940.7 (n=10) >= 2x #AI 992.4 (n=10).
+Closing tag is now #AI: manual revert by user order 2026-11-06 (views dropped with #Mahasiswa). Auto-switch locked off via manual_tag_lock.txt.

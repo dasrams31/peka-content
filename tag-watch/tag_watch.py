@@ -161,6 +161,18 @@ def main():
                               f"{best[2]:.1f} vs #AI {ai_stat[2]:.1f})")
         else:
             current_reason = "no other tag has n>=10 yet"
+    # MANUAL LOCK (user order 2026-11-06): if manual_tag_lock.txt exists,
+    # its first line wins and the auto-switch above is ignored, so a later
+    # run can never flip the tag back on its own. Delete the lock file to
+    # re-enable the autonomous 2x rule.
+    lock_file = os.path.join(BASE, "manual_tag_lock.txt")
+    lock_tag = ""
+    if os.path.exists(lock_file):
+        lock_tag = open(lock_file, encoding="utf-8").read().strip().splitlines()[0].strip().lstrip("#")
+    if lock_tag:
+        current_tag = lock_tag
+        current_reason = ("manual lock by user order 2026-11-06: views dropped "
+                          "with #Mahasiswa; auto-switch disabled until lock removed")
     tag_state_file = os.path.join(BASE, "current_tag.txt")
     prev_tag = ""
     if os.path.exists(tag_state_file):
