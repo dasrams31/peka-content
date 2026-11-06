@@ -17,11 +17,11 @@ token dibaca dari ~/workspace/mc-portal/config/telegram_premibot_token.
 
 Penggunaan:
   python3 telegram_channel.py --type hm --title "Judul" --cover slide1.png \
-      --info "Satu kalimat singkat tentang isi konten edisi ini." \
+      --para "Paragraf ringkasan isi edisi ini, 2-4 kalimat." \
       --threads https://www.threads.com/... --instagram https://... \
       --facebook https://... --blog https://blog.peka.ai.id/p/...
   Semua --threads/--instagram/--facebook/--blog opsional (yang tidak ada
-  tidak dicetak). --info opsional (bila diisi, dicetak 1 baris setelah judul).
+  tidak dicetak). --para opsional (bila diisi, dicetak sebagai paragraf setelah judul).
   --dry-run hanya mencetak payload tanpa mengirim.
 """
 
@@ -36,7 +36,7 @@ CHANNEL_ID = "-1001475296402"  # @peka_aichannel
 API_BASE = "https://api.telegram.org/bot"
 
 TYPE_LABELS = {
-    "hm": "📰 Homeless Media",
+    "hm": "📰 Kabar Harian Peka AI",
     "prompt": "💡 Prompt Harian",
     "gratisan": "🎁 Gratisan AI",
     "spill": "📦 SPILL Repo",
@@ -59,8 +59,8 @@ def read_token() -> str:
 def build_caption(args) -> str:
     label = TYPE_LABELS.get(args.type, "✨ Peka AI")
     lines = [f"{label}", "", f"<b>{args.title}</b>", ""]
-    if args.info:
-        lines.append(args.info)
+    if args.para:
+        lines.append(args.para)
         lines.append("")
     links = []
     if args.threads:
@@ -86,7 +86,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Broadcast konten Peka ke channel Telegram.")
     ap.add_argument("--type", required=True, choices=list(TYPE_LABELS))
     ap.add_argument("--title", required=True, help="Judul/hook singkat (1-2 baris).")
-    ap.add_argument("--info", default="", help="Satu kalimat singkat tentang isi konten edisi ini.")
+    ap.add_argument("--para", default="", help="Paragraf ringkasan isi edisi ini, 2-4 kalimat.")
     ap.add_argument("--cover", required=True, help="Path gambar slide pertama.")
     ap.add_argument("--threads", default="")
     ap.add_argument("--instagram", default="")
