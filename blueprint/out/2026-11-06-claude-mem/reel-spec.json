@@ -1,0 +1,32 @@
+{
+  "agent": "CLAUDE-MEM",
+  "episode": 2,
+  "note": "Daftar pakai email buat kunci memori, trial 30 hari, abis itu balik ke paketmu.",
+  "question": "Agent kamu paling sering lupa yang mana, aturan main atau keputusan kemarin?",
+  "repos": [
+    {
+      "cocok": "Kamu yang agent-nya sering lupa keputusan kemarin dan tiap sesi baru harus dijelasin ulang dari awal.",
+      "install": "npx claude-mem install",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "name": "thedotmack/claude-mem",
+      "penjelasan": "Claude-mem itu memori buat AI agent. Semua yang dikerjain agent di satu sesi direkam dan diringkas AI, terus disuntik lagi ke sesi berikutnya. Langkah pertama: pisahin aturan dan riwayat keputusan ke file terpisah, biar sesi baru nggak mulai dari nol.",
+      "shot": "shots/thedotmack-claude-mem.png",
+      "stars": "113,8RB",
+      "desc_en": "Persistent Context Across Sessions for Every Agent. Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions.",
+      "desc_id": "Memori buat AI agent biar nggak lupa tiap sesi baru.",
+      "forks": "9.871",
+      "contributors": "350",
+      "topics": [
+        "ai-memory",
+        "claude-code",
+        "long-term-memory",
+        "ai-agents",
+        "rag",
+        "sqlite"
+      ]
+    }
+  ],
+  "sub": "Memori buat AI agent biar nggak lupa tiap sesi baru.",
+  "shortlink": "https://s.peka.ai.id/scYDLg"
+}

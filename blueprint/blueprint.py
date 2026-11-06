@@ -206,6 +206,16 @@ def chip(d, x, y, text):
     return x1
 
 
+def fit_text(d, text, font_fn, start, max_w, floor=18):
+    """Shrink a font until text fits max_w (1080-space units)."""
+    size = start
+    f = font_fn(size)
+    while d.textlength(text, font=f) > max_w and size > floor:
+        size -= 2
+        f = font_fn(size)
+    return f
+
+
 def fit_font(d, lines, start, font_fn, max_w):
     size = start
     while size > 60:
@@ -293,11 +303,23 @@ def repo_page(spec, out_dir, page, total):
     for col in ["#FF5F57", "#FEBC2E", "#28C840"]:
         d.ellipse([cx, y0 + X(21), cx + X(22), y0 + X(43)], fill=col)
         cx += X(34)
-    d.text((cx + X(10), y0 + X(17)), "github.com/" + spec["name"], font=mono(26), fill=MUTED)
+    url_text = "github.com/" + spec["name"]
+    url_font = mono(26)
+    url_x = cx + X(10)
     if spec.get("shortlink"):
         shown = spec["shortlink"].replace("https://", "").replace("http://", "")
-        d.text((x1 - X(28) - d.textlength(shown, font=mono(26, True)), y0 + X(17)),
-               shown, font=mono(26, True), fill=YEL)
+        short_x = x1 - X(28) - d.textlength(shown, font=mono(26, True))
+        d.text((short_x, y0 + X(17)), shown, font=mono(26, True), fill=YEL)
+        max_url_w = short_x - X(16) - url_x
+    else:
+        max_url_w = x1 - X(28) - url_x
+    truncated = False
+    while len(url_text) > 4 and d.textlength(url_text + "…", font=url_font) > max_url_w:
+        url_text = url_text[:-1]
+        truncated = True
+    if truncated:
+        url_text += "…"
+    d.text((url_x, y0 + X(17)), url_text, font=url_font, fill=MUTED)
     ny = 352
     d.text((x0 + X(28), X(ny)), spec["name"], font=bold(52), fill=WHITE)
     badge = "PUBLIC"
@@ -372,14 +394,20 @@ def how(spec, out_dir, page, total):
         d.rectangle(box, fill=PANEL, outline=WHITE, width=X(3))
         tf = bold(34)
         d.text(((box[0] + box[2] - d.textlength(name, font=tf)) / 2, box[1] + X(10)), name, font=tf, fill=WHITE)
-        cf = mono(22)
+        cf = fit_text(d, cap, mono, 22, (box[2] - box[0]) - X(16))
         d.text(((box[0] + box[2] - d.textlength(cap, font=cf)) / 2, box[1] + X(54)), cap, font=cf, fill=MUTED)
     d.rectangle(node, fill=YEL)
-    tf = xb(44)
-    d.text(((node[0] + node[2] - d.textlength(spec["agent"], font=tf)) / 2, node[1] + X(16)),
+    tf = fit_text(d, spec["agent"], xb, 44, X(192))
+    ascent, descent = tf.getmetrics()
+    ty = node[1] + (node[3] - node[1] - (ascent + descent)) // 2
+    d.text(((node[0] + node[2] - d.textlength(spec["agent"], font=tf)) / 2, ty),
            spec["agent"], font=tf, fill=NAVYTXT)
-    d.text((X(72), X(rule_y + 304)), spec["how_body"], font=body(40), fill=WHITE)
-    d.text((X(72), X(rule_y + 352)), spec["how_start"], font=mono(30, True), fill=YEL)
+    body_lines = wrap(d, spec["how_body"], body(36), X(936))[:2]
+    by = rule_y + 300
+    for ln in body_lines:
+        d.text((X(72), X(by)), ln, font=body(36), fill=WHITE)
+        by += 46
+    d.text((X(72), X(by + 8)), spec["how_start"], font=mono(30, True), fill=YEL)
     footer(d, page, total)
     img.save(out_dir + "/blueprint-%02d.png" % page)
 

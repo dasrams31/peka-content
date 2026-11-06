@@ -1,0 +1,77 @@
+{
+ "agent": "CLAUDE-MEM",
+ "devices": [
+  {
+   "cap": "tempat agent kerja",
+   "name": "LAPTOP"
+  },
+  {
+   "cap": "komputer rumah",
+   "name": "DESKTOP"
+  },
+  {
+   "cap": "cek progres di jalan",
+   "name": "HP"
+  }
+ ],
+ "edition": 2,
+ "how_body": "Direkam, diringkas AI, disuntik ke sesi berikut.",
+ "how_headline": [
+  "SESI BARU,",
+  "TETAP INGAT."
+ ],
+ "how_start": "MULAI: npx claude-mem install",
+ "language": "TypeScript",
+ "license": "Apache-2.0",
+ "name": "thedotmack/claude-mem",
+ "note": "Daftar pakai email buat kunci memori, trial 30 hari, abis itu balik ke paketmu.",
+ "out_dir": "/home/hatch/workspace/peka-content/blueprint/out/2026-11-06-claude-mem/carousel",
+ "stars": "113,8RB",
+ "steps": [
+  {
+   "desc": "Aturan di satu file, riwayat keputusan di file lain, biar sesi baru nggak mulai dari nol.",
+   "title": "Pisahin aturan dan keputusan"
+  },
+  {
+   "desc": "Satu perintah, terus pilih agent yang kamu pakai: Claude Code, Codex, Gemini, atau OpenCode.",
+   "title": "Install claude-mem sekali"
+  },
+  {
+   "desc": "Sesi berikutnya agent langsung nyambung, tanpa dijelasin ulang dari awal.",
+   "title": "Kerja seperti biasa, dia yang ingat"
+  }
+ ],
+ "tagline": [
+  "Memori buat AI agent.",
+  "Sesi baru, konteks tetap nyambung."
+ ],
+ "shortlink": "https://s.peka.ai.id/scYDLg",
+ "repo": {
+  "desc_en": "Persistent Context Across Sessions for Every Agent. Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions.",
+  "desc_id": "Memori buat AI agent biar nggak lupa tiap sesi baru.",
+  "language": "TypeScript",
+  "license": "Apache-2.0",
+  "stats": [
+   [
+    "113,8RB",
+    "STAR"
+   ],
+   [
+    "9.871",
+    "FORK"
+   ],
+   [
+    "350",
+    "KONTRIBUTOR"
+   ]
+  ],
+  "topics": [
+   "ai-memory",
+   "claude-code",
+   "long-term-memory",
+   "ai-agents",
+   "rag",
+   "sqlite"
+  ]
+ }
+}
