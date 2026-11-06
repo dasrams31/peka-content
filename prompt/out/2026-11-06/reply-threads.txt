@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Ubah catatan rapat ini jadi daftar tugas yang jelas. Catatan: [TEMPEL CATATAN RAPAT]. Buat tabel berisi tugas, penanggung jawab, dan deadline. Tugas yang belum jelas pemiliknya tandai [BUTUH KONFIRMASI]. Akhiri dengan 3 hal yang harus selesai minggu ini.

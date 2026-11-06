@@ -1,0 +1,12 @@
+{
+  "episode": 16,
+  "category": "PRODUKTIVITAS",
+  "title": "Rapat 1 jam jadi daftar tugas yang jelas",
+  "prompt": "Ubah catatan rapat ini jadi daftar tugas yang jelas. Catatan: [TEMPEL CATATAN RAPAT]. Buat tabel berisi tugas, penanggung jawab, dan deadline. Tugas yang belum jelas pemiliknya tandai [BUTUH KONFIRMASI]. Akhiri dengan 3 hal yang harus selesai minggu ini.",
+  "tips": [
+    "Tempel catatan mentah apa adanya, nggak perlu dirapiin dulu.",
+    "Cek tugas bertanda konfirmasi, tanya pemiliknya hari itu juga.",
+    "Simpan daftarnya di tempat yang gampang dicek tiap pagi."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-06"
+}

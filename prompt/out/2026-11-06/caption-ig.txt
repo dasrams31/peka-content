@@ -1,0 +1,10 @@
+PROMPT HARIAN #16: salin prompt ini buat rapat 1 jam jadi daftar tugas yang jelas
+Catatan rapat mentah langsung jadi tabel tugas, penanggung jawab, sama deadline. Yang belum jelas pemiliknya langsung ketahuan.
+
+Prompt-nya, tinggal salin:
+Ubah catatan rapat ini jadi daftar tugas yang jelas. Catatan: [TEMPEL CATATAN RAPAT]. Buat tabel berisi tugas, penanggung jawab, dan deadline. Tugas yang belum jelas pemiliknya tandai [BUTUH KONFIRMASI]. Akhiri dengan 3 hal yang harus selesai minggu ini.
+
+Abis rapat kamu langsung catat tugas atau nunggu ditagih dulu?
+Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30.
+#PromptAI #Produktivitas #TipsKerja #ChatGPT #KerjaPintar #AIUntukKerja #PromptHarian #PekaAI
+Music: Oppressive Gloom by Kevin MacLeod
