@@ -3,15 +3,21 @@
   "slots": {
     "prompt-harian": {
       "alerted": true,
-      "alerted_at": "13:45"
+      "alerted_at": "13:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     },
     "gratisan-ai": {
       "alerted": true,
-      "alerted_at": "15:45"
+      "alerted_at": "15:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     },
     "log-peka": {
       "alerted": true,
-      "alerted_at": "17:45"
+      "alerted_at": "17:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     }
   }
 }
