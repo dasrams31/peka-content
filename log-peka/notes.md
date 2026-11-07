@@ -24,3 +24,5 @@ the numbers showed, where the number came from. Never invent metrics.
   komentar. Berlaku semua cron konten mulai edisi berikutnya.
 - Seri LOG PEKA dibuat 31 Okt malam. Edisi perdana: Sabtu 7 Nov 2026
   16:00 WIB = Hari ke-7 eksperimen ini (hari penuh pertama 1 Nov).
+
+- Edisi #01 tayang TELAT 18:03-18:19 WIB (re-run dari chat atas perintah user "boleh"). Threads carousel 4 slide + rantai 3 balasan, IG/FB reel 15 dtk. Penyebab telat: kartu approval run cron 16:10 habis waktu (timed out 16:36), bukan konten. Series 1->2.
