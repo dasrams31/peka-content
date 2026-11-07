@@ -8,6 +8,10 @@
     "gratisan-ai": {
       "alerted": true,
       "alerted_at": "15:45"
+    },
+    "log-peka": {
+      "alerted": true,
+      "alerted_at": "17:45"
     }
   }
 }
