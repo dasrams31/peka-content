@@ -1,0 +1,52 @@
+{
+  "agent": "CLAUDE",
+  "episode": 18,
+  "next": "HERMES",
+  "repos": [
+    {
+      "name": "DietrichGebert/ponytail",
+      "stars": "186RB",
+      "install": "/plugin marketplace add DietrichGebert/ponytail",
+      "penjelasan": "Ponytail ngajarin agent AI kamu mikir kayak senior dev paling malas. Prinsipnya: kode terbaik adalah kode yang nggak pernah ditulis, jadi agent milih solusi paling sederhana dulu.",
+      "cocok": "Developer Claude Code yang capek agentnya nulis kode kepanjangan buat hal sepele.",
+      "shortlink": "https://s.peka.ai.id/rNLZxC",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/shots/DietrichGebert-ponytail.png"
+    },
+    {
+      "name": "Panniantong/Agent-Reach",
+      "stars": "109RB",
+      "install": "npx skills add Panniantong/Agent-Reach -g",
+      "penjelasan": "Agent-Reach ngasih mata ke agent AI kamu buat ngeliat seluruh internet. Satu CLI buat baca dan nyari Twitter, Reddit, YouTube, sampai GitHub, tanpa biaya API sama sekali.",
+      "cocok": "Kamu yang mau agent Claude Code kamu bisa riset internet sendiri tanpa langganan API.",
+      "shortlink": "https://s.peka.ai.id/YcGeux",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/shots/Panniantong-Agent-Reach.png"
+    },
+    {
+      "name": "calesthio/OpenMontage",
+      "stars": "78RB",
+      "install": "git clone https://github.com/calesthio/OpenMontage.git",
+      "penjelasan": "OpenMontage adalah sistem produksi video agentic open source pertama di dunia. Kamu tinggal bilang mau video apa ke asisten coding AI kamu, dia yang ngurusin semuanya sampai jadi.",
+      "cocok": "Kreator yang mau bikin video penjelasan atau trailer cuma dengan ngetik perintah ke agent AI.",
+      "shortlink": "https://s.peka.ai.id/PzZ1VB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/shots/calesthio-OpenMontage.png"
+    },
+    {
+      "name": "jarrodwatts/claude-hud",
+      "stars": "29RB",
+      "install": "/plugin marketplace add jarrodwatts/claude-hud",
+      "penjelasan": "Claude HUD adalah plugin Claude Code yang nunjukin apa yang lagi terjadi di sesi kamu. Pemakaian context, tool aktif, agent yang jalan, dan progres todo kelihatan semua di satu tempat.",
+      "cocok": "Pengguna Claude Code yang mau mantau pemakaian context dan progres agent secara langsung.",
+      "shortlink": "https://s.peka.ai.id/ffOk9g",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/shots/jarrodwatts-claude-hud.png"
+    },
+    {
+      "name": "EveryInc/compound-engineering-plugin",
+      "stars": "25RB",
+      "install": "/plugin marketplace add EveryInc/compound-engineering-plugin",
+      "penjelasan": "Compound Engineering Plugin ngebawa pola kerja engineering terstruktur ke agent kamu. Pasang sekali, terus Claude Code, Codex, dan Cursor kamu kerja dengan standar yang sama.",
+      "cocok": "Developer dan tim yang mau standar kerja agent AI-nya konsisten di Claude Code, Codex, dan Cursor.",
+      "shortlink": "https://s.peka.ai.id/wO4KFC",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/shots/EveryInc-compound-engineering-plugin.png"
+    }
+  ]
+}
