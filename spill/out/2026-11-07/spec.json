@@ -1,0 +1,48 @@
+{
+  "agent": "CLAUDE",
+  "next": "HERMES",
+  "episode": 18,
+  "repos": [
+    {
+      "name": "DietrichGebert/ponytail",
+      "stars": "186RB",
+      "desc": "Ponytail ngajarin agent AI kamu mikir kayak senior dev paling malas di ruangan. Prinsipnya simpel: kode terbaik adalah kode yang nggak pernah ditulis. Skill ini bikin agent milih solusi paling sederhana dulu, nolak nambah fitur yang nggak diminta, dan motong kode yang mubazir sebelum jadi beban. Hasilnya codebase kamu tetap ramping, gampang dibaca, dan nggak numpuk utang teknis. Cara pakainya tinggal pasang skillnya, terus agent kamu langsung kerja dengan gaya hemat kode itu.",
+      "cocok": "Developer Claude Code yang capek agentnya nulis kode kepanjangan buat hal sepele.",
+      "shortlink": "https://s.peka.ai.id/rNLZxC",
+      "install": "/plugin marketplace add DietrichGebert/ponytail"
+    },
+    {
+      "name": "Panniantong/Agent-Reach",
+      "stars": "109RB",
+      "desc": "Agent-Reach ngasih mata ke agent AI kamu buat ngeliat seluruh internet. Satu CLI ini bisa baca dan nyari Twitter, Reddit, YouTube, GitHub, Bilibili, sampai XiaoHongShu, tanpa biaya API sama sekali. Agent kamu jadi bisa riset tren, baca diskusi, dan ngumpulin referensi langsung dari sumbernya, bukan cuma ngandelin data latihan. Cocok banget buat riset topik, mantau tren, atau nyari inspirasi konten. Sekali pasang, agent kamu langsung bisa browsing internet kayak manusia.",
+      "cocok": "Kamu yang mau agent Claude Code kamu bisa riset internet sendiri tanpa langganan API.",
+      "shortlink": "https://s.peka.ai.id/YcGeux",
+      "install": "npx skills add Panniantong/Agent-Reach -g"
+    },
+    {
+      "name": "calesthio/OpenMontage",
+      "stars": "78RB",
+      "desc": "OpenMontage adalah sistem produksi video agentic open source pertama di dunia. Isinya 12 pipeline produksi, lebih dari 100 tool, dan 700 lebih file skill plus pengetahuan produksi. Kamu tinggal buka proyek di asisten coding AI kamu, terus bilang mau video apa, dan dia yang ngurusin semuanya sampai jadi. Narasi, gambar, sampai editing dijalanin otomatis oleh agent. Hasilnya asisten coding kamu berubah jadi studio produksi video lengkap.",
+      "cocok": "Kreator yang mau bikin video penjelasan atau trailer cuma dengan ngetik perintah ke agent AI.",
+      "shortlink": "https://s.peka.ai.id/PzZ1VB",
+      "install": "git clone https://github.com/calesthio/OpenMontage.git"
+    },
+    {
+      "name": "jarrodwatts/claude-hud",
+      "stars": "29RB",
+      "desc": "Claude HUD adalah plugin Claude Code yang nunjukin apa yang lagi terjadi di sesi kamu. Pemakaian context, tool yang aktif, agent yang lagi jalan, dan progres todo kelihatan semua di satu tempat. Kamu jadi tahu kapan context udah mau penuh dan kapan agent lagi kerja di bagian mana. Nggak perlu nebak-nebak lagi atau nunggu buta. Pasang pluginnya, terus semua status kerja agent kamu kelihatan jelas.",
+      "cocok": "Pengguna Claude Code yang mau mantau pemakaian context dan progres agent secara langsung.",
+      "shortlink": "https://s.peka.ai.id/ffOk9g",
+      "install": "/plugin marketplace add jarrodwatts/claude-hud"
+    },
+    {
+      "name": "EveryInc/compound-engineering-plugin",
+      "stars": "25RB",
+      "desc": "Compound Engineering Plugin adalah plugin resmi Compound Engineering buat Claude Code, Codex, Cursor, dan banyak lagi. Plugin ini ngebawa pola kerja engineering yang terstruktur ke dalam agent kamu, jadi setiap tugas dikerjain dengan alur yang jelas dan konsisten. Kamu pasang sekali, terus semua agent yang kamu pakai bisa ngikutin standar yang sama. Cocok buat tim yang mau kualitas kerja agentnya seragam di semua tool. Hasilnya kerja agent lebih rapi dan gampang diaudit.",
+      "cocok": "Developer dan tim yang mau standar kerja agent AI-nya konsisten di Claude Code, Codex, dan Cursor.",
+      "shortlink": "https://s.peka.ai.id/wO4KFC",
+      "install": "/plugin marketplace add EveryInc/compound-engineering-plugin"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-07/carousel"
+}
