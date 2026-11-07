@@ -1,0 +1,11 @@
+5 skill Claude Code yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: DietrichGebert/ponytail, ngajarin agent kamu nulis kode sehemat mungkin. Langkah pertamanya: pasang skillnya, terus minta agent kamu rapihin satu file yang kepanjangan.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Volatile Reaction by Kevin MacLeod
