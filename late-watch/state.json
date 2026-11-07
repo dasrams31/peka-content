@@ -1,1 +1,9 @@
-{"date": "2026-11-07", "slots": {}}
+{
+  "date": "2026-11-07",
+  "slots": {
+    "prompt-harian": {
+      "alerted": true,
+      "alerted_at": "13:45"
+    }
+  }
+}
