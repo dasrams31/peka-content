@@ -129,6 +129,27 @@
       "price": "16K",
       "price_num": 16,
       "sec": "MUSE SPARK AI"
+    },
+    {
+      "dur": "12 Bulan",
+      "name": "Gemini Plus AI",
+      "price": "11K",
+      "price_num": 11,
+      "sec": "GEMINI PLUS"
+    },
+    {
+      "dur": "Lifetime",
+      "name": "Canva Edu",
+      "price": "19K",
+      "price_num": 19,
+      "sec": "CANVA"
+    },
+    {
+      "dur": "Selamanya",
+      "name": "Prompt Automation",
+      "price": "75K",
+      "price_num": 75,
+      "sec": "PROMPT"
     }
   ],
   "updated": "2026-11-08"
