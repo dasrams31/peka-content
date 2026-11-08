@@ -112,7 +112,7 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
 
 ## Per pillar
 
-- HM news: close the caption with a light two-sided debate question about
+- HM news: slide 1 (cover) WAJIB mencetak 1 langkah konkret "COBA SEKARANG" yang bisa dilakukan pembaca dalam hitungan menit dari isi berita (ROMBAK, review 8 Nov 2026: median likes 3, hanya edisi dengan langkah coba konkret yang menembus). Close the caption with a light two-sided debate question about
   the story ("Menurutmu ini kemajuan atau ancaman buat kerjaan kita?").
   Never on SARA or party-political fights.
 - Store (jualan): comment trigger is the DM keyword ("DM MAU [produk]")
