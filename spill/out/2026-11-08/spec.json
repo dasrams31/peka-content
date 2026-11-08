@@ -1,0 +1,43 @@
+{
+  "agent": "HERMES",
+  "next": "OPENCODE",
+  "episode": 19,
+  "repos": [
+    {
+      "name": "MemTensor/MemOS",
+      "stars": "12RB",
+      "desc": "MemOS itu sistem memori buat agent AI kamu, biar dia nggak gampang lupa. Agent biasa cuma ingat percakapan yang lagi jalan, MemOS bikin memorinya nempel terus lintas tugas, plus skill yang udah dipelajari bisa dipakai ulang. Ada hybrid-retrieval yang nyari ingatan relevan dengan cepat, dan klaimnya bisa hemat token sampai 35 persen. Cocok buat agent Hermes yang kerja panjang, misal riset berhari-hari atau proyek besar. Sekali pasang, agent kamu makin pinter dari pengalaman, bukan cuma dari prompt.",
+      "cocok": "Kamu yang agentnya sering lupa konteks pas kerja proyek panjang.",
+      "shortlink": "https://s.peka.ai.id/9fvv8c"
+    },
+    {
+      "name": "jnMetaCode/superpowers-zh",
+      "stars": "8RB",
+      "desc": "Superpowers versi Cina ini ngebawa paket skill superpowers yang terkenal itu ke bahasa Mandarin, lengkap plus 4 skill orisinal buatan Cina. Isinya pola kerja agent yang udah teruji, dari nulis kode sampai debugging, dan bisa dipakai di 26 tool AI coding sekaligus, termasuk Hermes Agent. Jadi satu paket skill bisa nempel di banyak agent tanpa perlu setting ulang. Buat kamu yang kerja sama tim Cina atau baca dokumentasi Mandarin, ini jembatan yang praktis banget.",
+      "cocok": "Kamu yang pakai Hermes Agent dan mau paket skill superpowers yang lengkap plus dukungan bahasa Mandarin.",
+      "shortlink": "https://s.peka.ai.id/xJEbxH"
+    },
+    {
+      "name": "anysearch-ai/anysearch-skill",
+      "stars": "7RB",
+      "desc": "AnySearch ngasih kemampuan nyari ke agent AI kamu lewat satu mesin pencarian terpadu yang real-time. Bisa nyari web umum, nyari per bidang tertentu, sampai jalanin banyak pencarian sekaligus secara paralel. Hasilnya bukan cuma cuplikan, tapi isi halaman penuh yang bisa langsung dibaca agent. Buat Hermes Agent, ini bikin risetnya jauh lebih segar karena datanya dari internet saat ini, bukan cuma dari latihan model. Pasang sekali, agent kamu langsung bisa riset kayak manusia yang rajin nyari di internet.",
+      "cocok": "Kamu yang mau agent Hermes kamu riset internet real-time tanpa langganan API mahal.",
+      "shortlink": "https://s.peka.ai.id/c1Zdnh"
+    },
+    {
+      "name": "aaron-he-zhu/aaron-marketing-skills",
+      "stars": "3RB",
+      "desc": "Paket ini isinya 120 skill marketing yang dijadiin satu tim AI: ada tim narasi, SEO, sosmed, email, iklan berbayar, influencer, sampai launching. Bisa dipakai sebagai plugin, skill portabel, atau tim 8 bot yang kerja bareng dalam satu kontrak. Setiap hasil kerja dicek lewat 8 gerbang audit, jadi kualitasnya dijaga sebelum dikirim. Buat Hermes Agent, ini ngubah dia dari asisten coding jadi staf marketing lengkap. Cocok banget buat kamu yang ngurus brand sendirian tapi butuh tim marketing.",
+      "cocok": "Solo founder atau kreator yang mau tim marketing AI lengkap tanpa rekrut orang.",
+      "shortlink": "https://s.peka.ai.id/eMTIY0"
+    },
+    {
+      "name": "AMAP-ML/SkillClaw",
+      "stars": "3RB",
+      "desc": "SkillClaw bikin skill agent kamu berevolusi bareng-bareng, bukan cuma dipakai mentah-mentah. Ada Agentic Evolver yang ngumpulin skill dari banyak agent, nguji mana yang paling bagus, lalu nyebarin versi terbaiknya ke semua agent. Jadi skill kamu makin tajam seiring dipakai, kayak open source yang makin matang karena banyak kontributor. Buat Hermes Agent, ini cara biar koleksi skill kamu nggak mandek di versi pertama. Makin sering dipakai, makin pinter.",
+      "cocok": "Kamu yang koleksi skill agentnya udah banyak dan mau semuanya makin bagus otomatis.",
+      "shortlink": "https://s.peka.ai.id/glcLwA"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/carousel"
+}
