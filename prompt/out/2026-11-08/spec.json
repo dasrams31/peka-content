@@ -1,0 +1,12 @@
+{
+  "episode": 18,
+  "category": "KONTEN",
+  "title": "Skrip Reels 30 detik yang ditonton sampai habis",
+  "prompt": "Buatkan skrip video pendek 30 detik tentang [TOPIK] untuk [PLATFORM]. Skripnya pakai hook 3 detik pertama yang bikin orang berhenti scroll, isi 3 poin singkat, dan penutup yang bikin orang save videonya. Format: hook, isi, penutup, plus saran teks di layar.",
+  "tips": [
+    "Isi [TOPIK] dengan satu topik spesifik, jangan topik umum.",
+    "Baca skripnya keras-keras, potong bagian yang terasa bertele-tele.",
+    "Ganti [PLATFORM] dengan Reels, TikTok, atau Shorts."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-08"
+}
