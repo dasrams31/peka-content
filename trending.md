@@ -17,6 +17,10 @@ judges the experiments from real metrics.
 
 ## Experiments this week (refresh 2026-11-05)
 
+DINILAI review Minggu 2026-11-08 20:00 — lihat Archive di bawah
+untuk verdict tiap eksperimen. Jangan jalankan ulang ketiganya
+tanpa desain baru.
+
 Three experiments, one variable each. The run that airs an experiment
 MUST write its exp marker into its posted.log line the same day, with
 the exact theme that aired. If the aired theme differs from the design,
@@ -273,6 +277,45 @@ source.
   carousel.
 
 ## Archive (experiments judged by Sunday review)
+
+Judged Sun 2026-11-08 (weekly review, fresh CLI metrics 8 Nov 20:00 WIB;
+pillar medians this week: SPILL Threads 14 likes, IG 31 likes; Prompt
+Threads 3 likes; HM Threads 3 likes):
+
+- HM gemini-try-it-step (slot Fri 6 Nov 09:36): VOID. HM 6 Nov yang
+  tayang bertopik Perplexity Teammates (Threads 3 likes, 42 views,
+  rantai 5/5 lengkap), bukan Gemini file editing; marker di posted.log
+  mencatat VOID. Variabel tidak teruji dan tidak dipromosikan. Jangan
+  ajukan ulang desain slot yang sama tanpa memastikan topik tayang
+  sesuai desain.
+- BLUEPRINT first-step framing on agent memory (slot Fri 6 Nov 20:00):
+  TIDAK TERUJI di Threads. Edisi #02 claude-mem tayang di IG + FB
+  dengan framing first-step SESUAI desain di caption ("Langkah
+  pertama: pisahin aturan dan riwayat keputusan ke file terpisah"),
+  tapi Threads gagal 429 dan belum tayang (retry diusulkan sebelum
+  21:00 WIB 8 Nov). Sinyal parsial IG/FB: IG 7 likes / 353 views /
+  7 saves vs kontrol #01 (2 likes / 558 views, usia seminggu), FB
+  231 views vs #01 117 views. Hipotesis Threads tidak bisa dinilai;
+  TIDAK dipromosikan ke playbook. Uji ulang lewat retry Threads,
+  atau ajukan varian baru dengan pencatatan yang sama.
+- Gratisan AI deadline plus verification catch, Threads re-test (slot
+  Sat 7 Nov 14:00): MENANG PARSIAL. Jalan sesuai desain (deadline
+  31 Des 2026 + sisa 54 hari + catch SheerID + garpu "mentok di
+  langkah berapa?"). Threads 14 likes / 308 views / 8 reposts /
+  2 balasan, dan 1 balasan penonton ASLI menanyakan titik gagal yang
+  dirancang ("Yang bikin ribet SheerID-nya, email kampus aktif doang
+  yang lolos?") — hipotesis balasan TERBUKTI. Tapi reach jauh di
+  bawah kontrol #28 (1.654 views / 18 likes) dan IG/FB di bawah #31
+  (IG 3 likes / 1 save / 171 views vs 8 / 8 / 353; FB 52 vs 117).
+  Verdict: mekanisme garpu confusion-point dipromosikan ke playbook
+  Gratisan (balasan terverifikasi); hitung mundur deadline saja
+  tidak dipromosikan sebagai pendongkrak reach.
+- Prompt Harian pembuka cerita relatable (izin user 4 Nov, edisi #14
+  mulai 5 Nov, dinilai review ini): MENANG. Caption Threads dibuka
+  1-2 kalimat cerita pengalaman mencoba di #14, #16, #17, #18:
+  Threads views 111-260 (median ~215) dan likes median 4,5, vs
+  #11-#13 tanpa cerita views median 58 dan likes median 2.
+  Dipromosikan ke playbook sebagai aturan Prompt Harian.
 
 Experiments from the 2026-11-02 refresh, NOT run as designed
 (checked 5 Nov from posted.log and performance.log, before the

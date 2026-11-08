@@ -132,8 +132,18 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   (syarat verifikasi + jendela klaim jelas; Threads 1.654 views, 3x kontrol
   Copilot Free) dan bingkai confusion-point di caption (satu titik gagal
   yang paling sering terjadi + cara lewatinnya; IG/FB terbaik pilar
-  31 Okt). Balasan penonton di Threads untuk kedua pola ini masih belum
-  teruji, jadi uji ulang di edisi berikutnya dengan varian tercatat.
+  31 Okt). Balasan penonton di Threads untuk kedua pola ini TERBUKTI
+  7 Nov 2026 (review 8 Nov): garpu pengalaman soal SheerID ("Udah
+  verifikasi atau mentok di langkah berapa?") menarik 1 balasan penonton
+  asli yang menanyakan titik gagal itu persis. Tapi hitung mundur
+  deadline saja TIDAK mengangkat reach (308 views vs kontrol 1.654),
+  jadi jangan andalkan deadline sebagai pendongkrak views.
+- Prompt Harian (menang, review 2026-11-08): buka caption Threads dengan
+  1-2 kalimat cerita relatable pengalaman mencoba (edisi #14, #16, #17,
+  #18: Threads views 111-260, median ~215, vs #11-#13 tanpa cerita
+  median 58; likes median 4,5 vs 2), baru judul "salin prompt ini buat
+  X". Cerita harus pengalaman nyata mencoba, bukan cerita personal yang
+  tidak terjadi. Balasan pertama tetap membawa prompt lengkapnya.
 
 ## After posting / weekly loop
 
