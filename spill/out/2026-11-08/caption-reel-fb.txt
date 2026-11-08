@@ -1,0 +1,11 @@
+5 skill Hermes Agent yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: MemTensor/MemOS, sistem memori biar agent kamu nggak gampang lupa, hemat token sampai 35 persen. Langkah pertamanya: pasang skillnya di Hermes Agent, terus suruh dia ingat proyek kamu dari sesi ke sesi.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Vortex by Kevin MacLeod

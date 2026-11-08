@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 19,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "name": "MemTensor/MemOS",
+      "stars": "12RB",
+      "install": "npx skills add MemTensor/MemOS -g",
+      "penjelasan": "MemOS itu sistem memori buat agent AI kamu, biar dia nggak gampang lupa. Memorinya nempel lintas tugas dan hemat token sampai 35 persen.",
+      "cocok": "Kamu yang agentnya sering lupa konteks pas kerja proyek panjang.",
+      "shortlink": "https://s.peka.ai.id/9fvv8c",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/shots/MemTensor-MemOS.png"
+    },
+    {
+      "name": "jnMetaCode/superpowers-zh",
+      "stars": "8RB",
+      "install": "npx skills add jnMetaCode/superpowers-zh -g",
+      "penjelasan": "Superpowers versi Cina ngebawa paket skill terkenal itu ke bahasa Mandarin, plus 4 skill orisinal. Satu paket ini bisa dipakai di 26 tool AI coding, termasuk Hermes Agent.",
+      "cocok": "Kamu yang pakai Hermes Agent dan mau paket skill superpowers yang lengkap plus dukungan bahasa Mandarin.",
+      "shortlink": "https://s.peka.ai.id/xJEbxH",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/shots/jnMetaCode-superpowers-zh.png"
+    },
+    {
+      "name": "anysearch-ai/anysearch-skill",
+      "stars": "7RB",
+      "install": "npx skills add anysearch-ai/anysearch-skill -g",
+      "penjelasan": "AnySearch ngasih kemampuan nyari real-time ke agent AI kamu lewat satu mesin pencarian terpadu. Bisa nyari paralel dan baca isi halaman penuh, bukan cuma cuplikan.",
+      "cocok": "Kamu yang mau agent Hermes kamu riset internet real-time tanpa langganan API mahal.",
+      "shortlink": "https://s.peka.ai.id/c1Zdnh",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/shots/anysearch-ai-anysearch-skill.png"
+    },
+    {
+      "name": "aaron-he-zhu/aaron-marketing-skills",
+      "stars": "3RB",
+      "install": "npx skills add aaron-he-zhu/aaron-marketing-skills",
+      "penjelasan": "Paket ini isinya 120 skill marketing yang dijadiin satu tim AI, dari narasi sampai launching. Setiap hasil dicek lewat 8 gerbang audit sebelum dikirim.",
+      "cocok": "Solo founder atau kreator yang mau tim marketing AI lengkap tanpa rekrut orang.",
+      "shortlink": "https://s.peka.ai.id/eMTIY0",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/shots/aaron-he-zhu-aaron-marketing-skills.png"
+    },
+    {
+      "name": "AMAP-ML/SkillClaw",
+      "stars": "3RB",
+      "install": "npm install -g openclaw",
+      "penjelasan": "SkillClaw bikin skill agent kamu berevolusi bareng-bareng lewat Agentic Evolver. Skill terbaik dari banyak agent disebarin ke semuanya, makin dipakai makin pinter.",
+      "cocok": "Kamu yang koleksi skill agentnya udah banyak dan mau semuanya makin bagus otomatis.",
+      "shortlink": "https://s.peka.ai.id/glcLwA",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-08/shots/AMAP-ML-SkillClaw.png"
+    }
+  ]
+}
