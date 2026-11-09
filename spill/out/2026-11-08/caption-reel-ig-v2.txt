@@ -1,0 +1,13 @@
+Capek ngulang penjelasan yang sama ke agent AI kamu tiap buka sesi baru?
+
+5 skill Hermes ini bikin agent kamu ingat terus, jadi nggak mulai dari nol tiap kali. Yang paling kepakai: MemTensor/MemOS, sistem memori buat agent, katanya bisa hemat token sampai 35 persen. Langkah pertamanya: pasang skillnya di Hermes Agent, terus suruh dia ingat proyek kamu dari sesi ke sesi.
+
+Repo mana yang mau kamu coba duluan?
+
+Share ke temen yang agentnya juga pelupa.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Vortex by Kevin MacLeod
+
+#SpillRepo #HermesAgent #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #PekaAI
