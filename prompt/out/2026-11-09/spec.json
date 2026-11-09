@@ -1,0 +1,12 @@
+{
+  "episode": 19,
+  "category": "KARIER",
+  "title": "Gaji yang pantas tanpa grogi saat negosiasi",
+  "prompt": "Tulis skrip negosiasi gaji untuk posisi [posisi] di [perusahaan] dengan tawaran awal Rp[angka tawaran]. Beri 3 kalimat pembuka yang sopan tapi tegas, alasan kenapa aku pantas dapat Rp[angka target], dan 2 jawaban kalau HRD bilang budgetnya mentok. Format poin-poin singkat, nada percaya diri, tanpa terkesan memaksa.",
+  "tips": [
+    "Isi angka tawaran dan targetmu dulu sebelum salin.",
+    "Latih skripnya keras-keras sekali sebelum hari H, biar nadamu tenang.",
+    "Kalau HRD mentok, minta review gaji 3 bulan lagi."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-09"
+}
