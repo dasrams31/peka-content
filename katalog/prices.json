@@ -1,5 +1,5 @@
 {
-  "date_label": "Minggu 8 November 2026",
+  "date_label": "Selasa 10 November 2026",
   "last_posted": "2026-11-06",
   "products": [
     {
@@ -138,6 +138,13 @@
       "sec": "GEMINI PLUS"
     },
     {
+      "sec": "GEMINI PLUS",
+      "dur": "6 Bulan",
+      "name": "Gemini Plus AI",
+      "price": "35K",
+      "price_num": 35
+    },
+    {
       "dur": "Lifetime",
       "name": "Canva Edu",
       "price": "19K",
@@ -152,5 +159,5 @@
       "sec": "PROMPT"
     }
   ],
-  "updated": "2026-11-08"
+  "updated": "2026-11-10"
 }
