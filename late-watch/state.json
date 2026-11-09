@@ -1,1 +1,14 @@
-{"date":"2026-11-09","slots":{"prompt-harian":{"alerted":true,"alerted_at":"13:45"}}}
+{
+  "date": "2026-11-09",
+  "slots": {
+    "prompt-harian": {
+      "alerted": true,
+      "alerted_at": "13:45",
+      "aired_late_noticed": true,
+      "aired_at": "18:41",
+      "late_minutes": 371,
+      "broadcast_checked": true,
+      "broadcast_message_id": 173
+    }
+  }
+}
