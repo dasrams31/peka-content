@@ -1,0 +1,52 @@
+{
+  "agent": "OPENCODE",
+  "episode": 20,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "cocok": "Kamu yang kerja di codebase besar dan agent kamu sering salah paham soal struktur kode.",
+      "install": "npm install -g codebase-memory-mcp@latest",
+      "name": "DeusData/codebase-memory-mcp",
+      "penjelasan": "Codebase Memory MCP ngasih otak soal kode ke agent AI kamu, biar dia nggak nebak-nebak tiap kali baca repo. Kode, dokumen, dan infrastruktur dihubungkan jadi satu graf yang nempel terus.",
+      "shortlink": "https://s.peka.ai.id/NYQvjd",
+      "stars": "48RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/shots/DeusData-codebase-memory-mcp.png"
+    },
+    {
+      "cocok": "Kamu yang pengin agent kamu meniru cara berpikir seorang ahli, bukan cuma gaya bahasanya.",
+      "install": "npx skills add alchaincyf/nuwa-skill",
+      "name": "alchaincyf/nuwa-skill",
+      "penjelasan": "Nuwa Skill nyuling cara berpikir seseorang jadi skill yang bisa dipakai agent, dari model berpikir sampai DNA ekspresi. Agent kamu bisa kerja dengan pola pikir seorang ahli, bukan cuma template umum.",
+      "shortlink": "https://s.peka.ai.id/t0gRIR",
+      "stars": "38RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/shots/alchaincyf-nuwa-skill.png"
+    },
+    {
+      "cocok": "Kamu yang agentnya sering lupa keputusan proyek dari sesi sebelumnya.",
+      "install": "npx skills add rohitg00/agentmemory -y",
+      "name": "rohitg00/agentmemory",
+      "penjelasan": "AgentMemory ngasih ingatan permanen ke agent coding kamu, biar dia nggak mulai dari nol tiap sesi. Konteks proyek dan keputusan lama dipanggil lagi pas dibutuhkan.",
+      "shortlink": "https://s.peka.ai.id/ak6VDy",
+      "stars": "30RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/shots/rohitg00-agentmemory.png"
+    },
+    {
+      "cocok": "Kamu yang jalanin beberapa agent coding sekaligus dan mau semua perubahannya ketrek rapi.",
+      "install": "brew install atlas",
+      "name": "tryatlas/atlas",
+      "penjelasan": "Atlas itu kayak Git buat agent AI, khusus buat kerja bareng banyak agent coding sekaligus. Semua perubahan ketrek di satu tempat dan bisa ditanya riwayatnya.",
+      "shortlink": "https://s.peka.ai.id/bny0Vp",
+      "stars": "9RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/shots/tryatlas-atlas.png"
+    },
+    {
+      "cocok": "Kamu yang langganan ChatGPT Plus atau Pro dan mau memakainya di OpenCode.",
+      "install": "npx skills add numman-ali/opencode-openai-codex-auth -g",
+      "name": "numman-ali/opencode-openai-codex-auth",
+      "penjelasan": "Plugin ini nyambungin OpenCode ke langganan ChatGPT Plus atau Pro lewat login OAuth resmi OpenAI. Pakai model Codex buat coding tanpa beli API key terpisah.",
+      "shortlink": "https://s.peka.ai.id/mbpB4S",
+      "stars": "2RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/shots/numman-ali-opencode-openai-codex-auth.png"
+    }
+  ]
+}
