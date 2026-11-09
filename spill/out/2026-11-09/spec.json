@@ -1,0 +1,43 @@
+{
+  "agent": "OPENCODE",
+  "episode": 20,
+  "next": "ANTIGRAVITY",
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-09/carousel",
+  "repos": [
+    {
+      "cocok": "Kamu yang kerja di codebase besar dan agent kamu sering salah paham soal struktur kode.",
+      "desc": "Codebase Memory MCP ini ngasih otak soal kode ke agent AI kamu, jadi dia nggak nebak-nebak tiap kali baca repo. Semua kode, dokumen, dan infrastruktur dihubungkan jadi satu graf yang nempel terus, lengkap dengan MCP tools dan integrasi agent. Ada CBM Lens buat ngintip struktur kode, plus fitur change-aware test selection yang milihin test relevan tiap ada perubahan. Buat OpenCode, ini bikin agent kamu paham codebase besar kayak udah lama kerja di sana. Sekali pasang, dia jawab soal kode pakai konteks beneran, bukan cuma dari potongan file.",
+      "name": "DeusData/codebase-memory-mcp",
+      "shortlink": "https://s.peka.ai.id/NYQvjd",
+      "stars": "48RB"
+    },
+    {
+      "cocok": "Kamu yang pengin agent kamu meniru cara berpikir seorang ahli, bukan cuma gaya bahasanya.",
+      "desc": "Nuwa Skill ini idenya unik: dia nyuling cara berpikir seseorang jadi skill yang bisa dipakai agent. Bukan cuma nyontek gaya nulis, tapi juga model berpikir, cara ambil keputusan, sampai DNA ekspresi orang itu. Hasilnya agent kamu bisa kerja dengan pola pikir seorang ahli, bukan cuma template umum. Skill ini jalan di banyak agent coding, termasuk OpenCode, dan dibuat dari proyek Nuwa yang lagi ramai. Buat kamu yang pengin agent kamu mikir kayak mentor favoritmu, ini jalannya.",
+      "name": "alchaincyf/nuwa-skill",
+      "shortlink": "https://s.peka.ai.id/t0gRIR",
+      "stars": "38RB"
+    },
+    {
+      "cocok": "Kamu yang agentnya sering lupa keputusan proyek dari sesi sebelumnya.",
+      "desc": "AgentMemory ngasih ingatan permanen ke agent coding kamu, biar dia nggak mulai dari nol tiap sesi. Dia nyimpen konteks proyek, keputusan, dan pola kerja kamu, lalu manggil lagi pas dibutuhkan. Klaimnya nomor satu di benchmark dunia nyata buat memori agent coding, jadi bukan sekadar janji. Buat OpenCode, ini bikin agent kamu makin nyambung dari hari ke hari, kayak rekan kerja yang ingat semua proyek lama. Sekali pasang, makin sering dipakai makin paham dia sama caramu kerja.",
+      "name": "rohitg00/agentmemory",
+      "shortlink": "https://s.peka.ai.id/ak6VDy",
+      "stars": "30RB"
+    },
+    {
+      "name": "tryatlas/atlas",
+      "stars": "9RB",
+      "desc": "Atlas ini kayak Git buat agent AI kamu, tapi khusus buat kerja bareng banyak agent coding sekaligus. Semua perubahan dari tiap agent ketrek di satu tempat, jadi kamu bisa lihat siapa ngubah apa tanpa buka satu-satu. Kamu juga bisa nanya ke Atlas soal riwayat perubahan itu, misal kenapa satu file berubah kemarin. Buat OpenCode, ini bikin kerja paralel beberapa agent tetap rapi dan gampang diaudit. Sekali pasang, kamu nggak perlu lagi nebak-nebak agent mana yang ngerusak kode.",
+      "cocok": "Kamu yang jalanin beberapa agent coding sekaligus dan mau semua perubahannya ketrek rapi.",
+      "shortlink": "https://s.peka.ai.id/bny0Vp"
+    },
+    {
+      "cocok": "Kamu yang langganan ChatGPT Plus atau Pro dan mau memakainya di OpenCode.",
+      "desc": "Plugin ini nyambungin OpenCode kamu ke langganan ChatGPT Plus atau Pro lewat login OAuth resmi OpenAI. Jadi kamu bisa pakai model Codex buat coding tanpa beli API key terpisah, cukup pakai langganan yang udah ada. Cara resminya bikin koneksinya aman dan tetap sesuai aturan OpenAI. Buat kamu yang udah langganan ChatGPT, ini cara paling hemat buat ngasih otak tambahan ke OpenCode. Pasang pluginnya, login sekali, langsung bisa dipakai.",
+      "name": "numman-ali/opencode-openai-codex-auth",
+      "shortlink": "https://s.peka.ai.id/mbpB4S",
+      "stars": "2RB"
+    }
+  ]
+}

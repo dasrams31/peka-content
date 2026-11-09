@@ -1,0 +1,13 @@
+5 skill OpenCode yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: DeusData/codebase-memory-mcp, otak soal kode biar agent kamu paham codebase besar, bukan cuma nebak dari potongan file. Langkah pertamanya: pasang MCP-nya di OpenCode, terus suruh dia petain codebase kamu sebelum mulai ngoding.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Volatile Reaction by Kevin MacLeod
+
+#SpillRepo #OpenCode #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #PekaAI

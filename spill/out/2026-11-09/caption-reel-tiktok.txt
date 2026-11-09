@@ -1,0 +1,1 @@
+5 skill OpenCode yang bikin agent kamu langsung punya kemampuan baru. Yang paling kepakai: DeusData/codebase-memory-mcp, otak soal kode biar agent kamu paham codebase besar. Repo mana yang mau kamu coba duluan? Link tiap repo ada di videonya masing-masing. Save dulu biar nggak hilang. Music: Volatile Reaction by Kevin MacLeod #fyp #OpenCode #SkillAI #GitHub #OpenSource
