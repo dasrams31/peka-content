@@ -1,0 +1,43 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 21,
+  "next": "CLAUDE",
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/carousel",
+  "repos": [
+    {
+      "name": "google/elephant-goldfish-model",
+      "stars": "17RB",
+      "desc": "Plugin open source dari Google buat asisten AI. Elephant nyimpen konteks proyek kamu dan nyusun draf spesifikasi, Goldfish jadi reviewer yang baca draf itu tanpa tahu percakapan sebelumnya, jadi asumsi yang kelewat dan blind spot langsung ketahuan. Kamu yang putusin trade-off arsitektur dan setujuin spesifikasi sebelum mulai ngoding. Ada workflow draft dan design-review bawaan buat spesifikasi software, plus laporan bootstrap dan drift buat codebase. Buat Antigravity, ini bikin agent kamu mikir dulu sebelum nulis kode, bukan langsung tancap gas.",
+      "cocok": "Kamu yang sering nyesel karena spesifikasi nggak dipikir mateng sebelum agent mulai ngoding.",
+      "shortlink": "https://s.peka.ai.id/KxmzaV"
+    },
+    {
+      "name": "gamedev-skills/awesome-gamedev-agent-skills",
+      "stars": "8RB",
+      "desc": "Kumpulan 77 skill game-dev buat AI coding agent, dari Godot, Unity, Unreal, sampai Roblox dan three.js. Semua skill ditulis dalam format SKILL.md yang portabel, jadi bisa dipakai di banyak agent coding. Ada router yang otomatis milihin skill yang pas sesuai engine dan tugas kamu. Sekali pasang, agent kamu langsung tahu cara kerja engine yang kamu pakai tanpa kamu jelasin panjang lebar. Buat Antigravity, ini bikin agent kamu nggak asal tebak pas disuruh bikin game.",
+      "cocok": "Kamu yang bikin game dan mau agent kamu paham engine yang kamu pakai.",
+      "shortlink": "https://s.peka.ai.id/R7aDGz"
+    },
+    {
+      "name": "evanca/flutter-ai-rules",
+      "stars": "669",
+      "desc": "Kumpulan 36 skill Flutter dan Dart yang agent kamu muat sendiri pas dibutuhkan, semuanya bersumber dari dokumentasi resmi. Skill ini bentuknya folder berisi SKILL.md, jadi agent baca deskripsinya, lalu narik panduannya pas tugas kamu cocok, misal panduan Firebase Auth pas kamu nyentuh login. Kamu nggak perlu tempel apa-apa ke file rules atau ingat-ingat tag dokumen. Sekali pasang, panduan Riverpod muncul pas kamu pegang provider, dan panduan auth muncul pas kamu pegang login. Buat Antigravity, ini bikin agent kamu ngoding Flutter pakai cara resmi, bukan karangan.",
+      "cocok": "Kamu yang ngoding Flutter atau Dart di Antigravity dan mau agent kamu ikut panduan resmi.",
+      "shortlink": "https://s.peka.ai.id/QdDvzv"
+    },
+    {
+      "name": "kinopeee/windsurf-antigravity-rules",
+      "stars": "358",
+      "desc": "Kumpulan aturan kustom buat Windsurf dan Antigravity, sekarang udah versi 5. Aturannya adaptasi dari cursorrules yang udah teruji, dipindah ke format Cascade dan Antigravity. Cara pakainya gampang, taruh file .windsurfrules di root proyek, atau tempel isinya lewat pengaturan workspace AI Rules. Aturannya ngatur gaya dan standar kerja agent biar konsisten di tiap proyek. Buat Antigravity, ini cara paling simpel buat ngasih kepribadian kerja ke agent kamu.",
+      "cocok": "Kamu yang mau agent Antigravity kamu kerja dengan aturan yang konsisten di semua proyek.",
+      "shortlink": "https://s.peka.ai.id/Ykx7dU"
+    },
+    {
+      "name": "krishnakanthb13/everything-antigravity",
+      "stars": "97",
+      "desc": "Repo pusat buat ekosistem Antigravity, isinya kumpulan AI Agents, Task Skills, dan Coding Rules yang dirancang buat workflow coding otonom. Semua koleksinya fokus ke satu hal, bikin Antigravity makin jago kerja sendiri tanpa kamu awasin terus. Repo ini cocok jadi titik mulai kalau kamu baru kenal Antigravity dan mau lihat apa aja yang bisa ditambahin. Isinya terus berkembang bareng komunitas, jadi makin lama makin lengkap.",
+      "cocok": "Kamu yang baru mulai pakai Antigravity dan mau satu tempat buat cari agent, skill, dan rules.",
+      "shortlink": "https://s.peka.ai.id/ATutRv"
+    }
+  ]
+}

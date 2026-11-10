@@ -1,0 +1,11 @@
+5 skill Antigravity yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: evanca/flutter-ai-rules, 36 skill Flutter dari dokumentasi resmi biar agent kamu ngoding pakai cara beneran. Langkah pertamanya: pasang skill-nya sekali di Antigravity, abis itu dia otomatis narik panduan yang pas tiap kali kamu ngoding.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Darkling by Kevin MacLeod
