@@ -1,23 +1,4 @@
 {
-  "date": "2026-11-10",
-  "slots": {
-    "hm": {
-      "alerted": true,
-      "alerted_at": "10:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    },
-    "prompt-harian": {
-      "alerted": true,
-      "alerted_at": "13:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    },
-    "katalog": {
-      "alerted": true,
-      "alerted_at": "14:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    }
-  }
+  "date": "2026-11-11",
+  "slots": {}
 }
