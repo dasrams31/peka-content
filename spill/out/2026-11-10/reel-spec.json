@@ -1,0 +1,52 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 21,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "google/elephant-goldfish-model",
+      "stars": "17RB",
+      "install": "codex plugin add egm@egm",
+      "penjelasan": "Elephant nyusun draf spesifikasi dari konteks proyek kamu, Goldfish nge-review draf itu dengan mata segar buat nemuin blind spot. Kamu yang putusin trade-off-nya sebelum agent mulai ngoding.",
+      "cocok": "Kamu yang sering nyesel karena spesifikasi nggak dipikir mateng sebelum agent mulai ngoding.",
+      "shortlink": "https://s.peka.ai.id/KxmzaV",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/shots/google-elephant-goldfish-model.png"
+    },
+    {
+      "name": "gamedev-skills/awesome-gamedev-agent-skills",
+      "stars": "8RB",
+      "install": "npx skills add gamedev-skills/awesome-gamedev-agent-skills",
+      "penjelasan": "77 skill game-dev dari Godot sampai Roblox, ditulis format SKILL.md yang portabel. Router-nya otomatis milihin skill yang pas sesuai engine dan tugas kamu.",
+      "cocok": "Kamu yang bikin game dan mau agent kamu paham engine yang kamu pakai.",
+      "shortlink": "https://s.peka.ai.id/R7aDGz",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/shots/gamedev-skills-awesome-gamedev-agent-skills.png"
+    },
+    {
+      "name": "evanca/flutter-ai-rules",
+      "stars": "669",
+      "install": "npx skills add evanca/flutter-ai-rules",
+      "penjelasan": "36 skill Flutter dan Dart dari dokumentasi resmi, agent kamu muat sendiri pas dibutuhkan. Sekali pasang, panduan yang pas muncul otomatis tiap kali kamu ngoding.",
+      "cocok": "Kamu yang ngoding Flutter atau Dart di Antigravity dan mau agent kamu ikut panduan resmi.",
+      "shortlink": "https://s.peka.ai.id/QdDvzv",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/shots/evanca-flutter-ai-rules.png"
+    },
+    {
+      "name": "kinopeee/windsurf-antigravity-rules",
+      "stars": "358",
+      "install": "npx skills add kinopeee/windsurf-antigravity-rules -g",
+      "penjelasan": "Aturan kustom versi 5 buat Windsurf dan Antigravity, adaptasi dari cursorrules yang udah teruji. Taruh file .windsurfrules di root proyek, agent kamu langsung kerja konsisten.",
+      "cocok": "Kamu yang mau agent Antigravity kamu kerja dengan aturan yang konsisten di semua proyek.",
+      "shortlink": "https://s.peka.ai.id/Ykx7dU",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/shots/kinopeee-windsurf-antigravity-rules.png"
+    },
+    {
+      "name": "krishnakanthb13/everything-antigravity",
+      "stars": "97",
+      "install": "npx skills add krishnakanthb13/everything-antigravity -g",
+      "penjelasan": "Repo pusat ekosistem Antigravity, isinya AI Agents, Task Skills, dan Coding Rules. Titik mulai paling gampang kalau kamu baru kenal Antigravity.",
+      "cocok": "Kamu yang baru mulai pakai Antigravity dan mau satu tempat buat cari agent, skill, dan rules.",
+      "shortlink": "https://s.peka.ai.id/ATutRv",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-10/shots/krishnakanthb13-everything-antigravity.png"
+    }
+  ]
+}
