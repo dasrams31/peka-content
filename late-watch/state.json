@@ -3,7 +3,9 @@
   "slots": {
     "hm": {
       "alerted": true,
-      "alerted_at": "10:45"
+      "alerted_at": "10:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     }
   }
 }
