@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-10
+
+- TOP (n=20): day-counter 0%, question 5%, story 30%, hashtags avg 0.7, words avg 39.
+- REST (n=63): day-counter 8%, question 32%, story 27%, hashtags avg 1.7, words avg 45.
+- Top posts today:
+  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
+  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
+  - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
+  - #Mahasiswa @angga1203_hidayat (2667 likes): 4 Strategi untuk Mahasiswa Baru S3 Sejak Tahun Pertama (Biar Gak Buang-Buang Waktu)  Editing: Claude code, Opus 5.5, ext
+  - #ChatGPT @iniprompt (1864 likes): [PROMPT Food Photography] Tema : BOLD COLOR SURFACE FEATURE --- Coba prompt ini untuk produk makananmu, caranya: 1. Buka
+
 ## 2026-11-09
 
 - TOP (n=20): day-counter 0%, question 15%, story 30%, hashtags avg 0.9, words avg 37.
