@@ -7,3 +7,6 @@ hm/out/
 hm/visuals/
 hm/__pycache__/
 hm/review/
+
+# render venvs created inside edition folders (katalog render) — never commit
+render-venv/
