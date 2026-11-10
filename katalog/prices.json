@@ -157,6 +157,13 @@
       "price": "75K",
       "price_num": 75,
       "sec": "PROMPT"
+    },
+    {
+      "sec": "DUOLINGO",
+      "dur": "1 Bulan",
+      "name": "Duolingo",
+      "price": "6,5K",
+      "price_num": 6.5
     }
   ],
   "updated": "2026-11-10"
