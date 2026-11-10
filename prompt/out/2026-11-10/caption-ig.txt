@@ -1,0 +1,15 @@
+PROMPT HARIAN #20: salin prompt ini buat presentasi kuliah siap tampil tanpa begadang
+
+5 slide langsung jadi: pembuka, 3 poin utama, penutup, plus 3 pertanyaan yang mungkin ditanya dosen beserta jawabannya.
+
+Prompt-nya, tinggal salin:
+Buatkan outline presentasi kuliah untuk topik [TOPIK] dengan durasi [DURASI] menit. Susun jadi 5 slide: pembuka, 3 poin utama, dan penutup. Tiap slide berisi 1 kalimat inti plus 1 contoh nyata. Akhiri dengan 3 pertanyaan yang mungkin ditanya dosen beserta jawabannya.
+
+Ganti [TOPIK] dan [DURASI] sesuai mata kuliahmu, terus latihan sekali sambil baca keras sebelum tampil.
+
+Buat presentasi kelompok dulu atau buat tugas individu dulu?
+Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30.
+
+#PromptAI #Kuliah #Mahasiswa #Presentasi #AI #ChatGPT #Belajar #TipsKuliah #Produktivitas #PekaAI
+
+Music: Tech Live by Kevin MacLeod

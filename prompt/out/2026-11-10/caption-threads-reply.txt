@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Buatkan outline presentasi kuliah untuk topik [TOPIK] dengan durasi [DURASI] menit. Susun jadi 5 slide: pembuka, 3 poin utama, dan penutup. Tiap slide berisi 1 kalimat inti plus 1 contoh nyata. Akhiri dengan 3 pertanyaan yang mungkin ditanya dosen beserta jawabannya.
