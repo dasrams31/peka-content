@@ -9,11 +9,15 @@
     },
     "prompt-harian": {
       "alerted": true,
-      "alerted_at": "13:45"
+      "alerted_at": "13:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     },
     "katalog": {
       "alerted": true,
-      "alerted_at": "14:45"
+      "alerted_at": "14:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
     }
   }
 }
