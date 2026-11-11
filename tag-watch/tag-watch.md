@@ -1,26 +1,26 @@
 # Tag watch (Threads, rolling 7 days)
 
-Updated: 2026-11-10 WIB. Sample: 83 posts in 7 days, 12 new today. Search returns only a few posts per tag per day, so one day never ranks a tag alone.
+Updated: 2026-11-11 WIB. Sample: 79 posts in 7 days, 11 new today. Search returns only a few posts per tag per day, so one day never ranks a tag alone.
 
 CURRENT CLOSING TAG: #AI (manual lock by user order 2026-11-06: views dropped with #Mahasiswa; auto-switch disabled until lock removed).
 Content crons apply this tag automatically (user granted full autonomy 2026-10-30). Changes are logged in tag-changes.log.
 
 | Tag | n | avg likes | median | avg reposts | avg replies | max |
 |---|---|---|---|---|---|---|
-| #Kuliah | 5 | 1420.4 | 960 | 158.4 | 37.4 | 4512 |
-| #AI | 12 | 997.3 | 408.5 | 84.6 | 52.9 | 4917 |
-| #Mahasiswa | 10 | 526.2 | 79.0 | 119.4 | 50.9 | 2667 |
-| #Belajar | 7 | 465.9 | 110 | 90.1 | 21.7 | 1232 |
-| #Coding | 10 | 435.9 | 365.0 | 52.8 | 19.7 | 1028 |
-| #ChatGPT | 10 | 306.6 | 81.0 | 50.9 | 33.2 | 1864 |
-| #Gemini | 10 | 165.0 | 38.5 | 17.2 | 54.2 | 673 |
-| #BelajarAI | 10 | 140.1 | 7.0 | 33.2 | 2.7 | 1306 |
-| #Python | 5 | 83.0 | 29 | 11.0 | 9.0 | 307 |
-| #Teknologi | 4 | 63.0 | 2.5 | 0.2 | 17.2 | 247 |
+| #Kuliah | 5 | 2135.6 | 1306 | 154.2 | 71.6 | 4512 |
+| #AI | 11 | 1225.3 | 537 | 126.2 | 61.6 | 4917 |
+| #Belajar | 7 | 750.3 | 110 | 156.9 | 19.9 | 3180 |
+| #Coding | 10 | 488.8 | 566.0 | 56.8 | 40.3 | 1028 |
+| #ChatGPT | 10 | 319.9 | 109.5 | 52.7 | 34.2 | 1864 |
+| #BelajarAI | 11 | 298.4 | 9 | 44.2 | 18.5 | 1876 |
+| #Mahasiswa | 9 | 284.9 | 56 | 74.3 | 46.6 | 1305 |
+| #Gemini | 9 | 183.0 | 57 | 19.1 | 58.3 | 673 |
+| #Python | 4 | 96.5 | 39.5 | 13.2 | 11.2 | 307 |
+| #Teknologi | 3 | 83.3 | 3 | 0.3 | 23.0 | 247 |
 
 ## Today
 
-#AI: 2 posts, #Teknologi: 2 posts, #BelajarAI: 2 posts, #Mahasiswa: 2 posts, #Coding: 2 posts, #ChatGPT: 2 posts, #Belajar: 1 posts, #Kuliah: 2 posts, #Gemini: 2 posts, #Python: 2 posts.
+#AI: 2 posts, #Teknologi: 1 posts, #BelajarAI: 2 posts, #Mahasiswa: 2 posts, #Coding: 2 posts, #ChatGPT: 2 posts, #Belajar: 2 posts, #Kuliah: 2 posts, #Gemini: 2 posts, #Python: 2 posts.
 
 ## Trends endpoint
 

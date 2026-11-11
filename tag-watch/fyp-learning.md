@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-11
+
+- TOP (n=19): day-counter 5%, question 5%, story 26%, hashtags avg 0.7, words avg 38.
+- REST (n=60): day-counter 8%, question 32%, story 30%, hashtags avg 1.5, words avg 43.
+- Top posts today:
+  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
+  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
+  - #Kuliah @not_hdin (3891 likes): akhirnya aku bisa kuliah dengan uangku sendiriiii✌️💙😊  setelah beli motor dengan uang sendiri, beli HP dengan uang sendi
+  - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
+  - #Belajar @triwahyunilaihi (3180 likes): In this economy yaa, ada learning app yang bantu anak2 belajar english dengan fitur sebanyak ini, UDAHLAH GRATIS DAN KOK
+
 ## 2026-11-10
 
 - TOP (n=20): day-counter 0%, question 5%, story 30%, hashtags avg 0.7, words avg 39.
