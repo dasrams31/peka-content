@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Buatkan 3 versi chat follow-up untuk pembeli [NAMA PRODUK] yang sudah pesan tapi belum bayar selama [JUMLAH HARI] hari. Nada ramah dan sopan, tanpa terkesan maksa. Tiap versi maksimal 3 kalimat, sertakan pengingat stok terbatas dan ajakan bayar lewat [METODE BAYAR]. Akhiri dengan penutup yang bikin pembeli merasa dibantu.

@@ -1,0 +1,12 @@
+{
+  "episode": 21,
+  "category": "BISNIS",
+  "title": "Follow-up pembeli yang belum bayar, tetap sopan",
+  "prompt": "Buatkan 3 versi chat follow-up untuk pembeli [NAMA PRODUK] yang sudah pesan tapi belum bayar selama [JUMLAH HARI] hari. Nada ramah dan sopan, tanpa terkesan maksa. Tiap versi maksimal 3 kalimat, sertakan pengingat stok terbatas dan ajakan bayar lewat [METODE BAYAR]. Akhiri dengan penutup yang bikin pembeli merasa dibantu.",
+  "tips": [
+    "Ganti [NAMA PRODUK], [JUMLAH HARI], dan [METODE BAYAR] dulu.",
+    "Kirim di jam pembeli biasanya online, bukan tengah malam.",
+    "Kalau tetap diam, kirim sekali lagi besok lalu simpan dulu."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-11"
+}
