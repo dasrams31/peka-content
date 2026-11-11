@@ -1,0 +1,30 @@
+{
+  "band": "DOMAIN .PL - GRATIS TAHUN PERTAMA",
+  "category": "DOMAIN",
+  "fields": {
+    "deadline": "Tanpa tanggal berakhir diumumkan",
+    "nilai": "Domain .pl, 0 zł tahun pertama",
+    "sumber": "nazwa.pl (NetArt Group)",
+    "untuk": "Siapa saja, tanpa syarat domisili"
+  },
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-11-12-domain-pl-nazwa",
+  "program": "Domain .pl Gratis Tahun Pertama",
+  "shortlink": "https://s.peka.ai.id/5GVOfF",
+  "shortlink_label": "Link klaim: ",
+  "stamp": "100% GRATIS",
+  "steps": [
+    "Buka nazwa.pl, cari nama .pl yang kosong",
+    "Buat akun dan isi data pendaftar",
+    "Verifikasi Visa/Mastercard, 1 PLN",
+    "Domain aktif, tahun pertama 0 zł"
+  ],
+  "syarat": [
+    "Akun nazwa.pl, daftar gratis",
+    "Maksimal 3 domain .pl gratis per akun",
+    "Verifikasi Visa/Mastercard, 1 PLN, duit balik",
+    "Bebas buat siapa saja, tanpa domisili Polandia",
+    "Perpanjang tahun ke-2: 240 zł/tahun"
+  ],
+  "theme": "tiket",
+  "catch": "Gratis tahun pertama saja. Perpanjang tahun ke-2: 240 zł/tahun (sekitar Rp1 jutaan)."
+}

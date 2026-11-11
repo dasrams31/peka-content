@@ -1,0 +1,1 @@
+Yang ikut di paketnya: DNSSEC, DNS Anycast, SPF/DKIM/DMARC yang sudah disiapkan otomatis, DNS over TLS, proteksi CAA, panel pengaturan, plus support 24/7. Kalau nanti tidak mau perpanjang, biarkan expired atau transfer keluar sebelum tahun pertama habis, transfer antar registrar itu gratis.
