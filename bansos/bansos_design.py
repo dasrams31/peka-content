@@ -320,7 +320,7 @@ def slide1(spec):
         raise SystemExit("OVERFLOW: program title wraps to >3 lines")
     ty = oy + 380
     for ln in title_lines:
-        ld.text((mx, ty), ln, font=f(108), fill=PAL["ink"])
+        ld.text((mx, ty), ln, font=f(216), fill=PAL["ink"])
         ty += 264
 
     dashed_h(ld, oy + 1280, mx, perf_x - 140, PAL["muted"])
