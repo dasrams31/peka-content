@@ -1,0 +1,13 @@
+5 skill Claude yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: obsidian-skills resmi dari tim Obsidian, 52 ribu star, ngajarin agent kamu pakai Obsidian CLI. Langkah pertamanya: buka plugin marketplace di Claude Code kamu, cari obsidian-skills, lalu pasang.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Tech Live by Kevin MacLeod
+
+#SpillRepo #Claude #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #PekaAI
