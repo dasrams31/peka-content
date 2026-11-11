@@ -1,0 +1,2 @@
+Buat kerja teknis paling ambisius, Fable 5.2 paling kuat. Buat kerja harian, Opus 5.5 tetap andalan, kata Anthropic sendiri.
+Coba di Claude Code atau Claude Platform, model id claude-fable-5-2.

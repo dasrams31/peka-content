@@ -1,0 +1,13 @@
+Claude Fable 5.2 baru rilis, dan benchmark coding-nya gila.
+
+49.1% di FrontierCode 2.0, tertinggi di atas Opus 5.5, GPT-6 Astra, dan Gemini 4 Carbon. 69.9% di FrontierSWE v2, juga pertama.
+
+Tapi jujur saja, di AutomationBench justru Gemini 4 Carbon yang menang. Dan di max effort, biayanya rata-rata $26.54 per tugas, sekitar 2.6x Opus 5.5.
+
+Kerja teknis paling ambisius, Fable 5.2 paling kuat. Kerja harian, Opus 5.5 tetap andalan.
+
+Linknya ada di slide terakhir.
+
+Kamu tim Fable 5.2 atau tim Opus 5.5?
+
+#AI #Claude #Fable #CodingAI #PekaAI

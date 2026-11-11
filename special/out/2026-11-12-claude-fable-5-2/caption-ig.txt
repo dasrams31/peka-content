@@ -1,0 +1,17 @@
+Claude Fable 5.2 rilis, ini benchmark coding-nya.
+
+Anthropic baru saja merilis Claude Fable 5.2, model coding terbaru mereka, 9 Nov 2026. Outputnya sampai 30% lebih cepat dari Fable 5.1, harganya turun 20% jadi $8 masuk dan $40 keluar per 1 jt token. Ada juga mode cepat opsional sampai 2.5x lebih cepat, $16 dan $80 per 1 jt token.
+
+Di FrontierCode 2.0, Fable 5.2 mencetak 49.1%, di atas Opus 5.5 (45.5%), GPT-6 Astra (42.8%), Gemini 4 Carbon (41.1%), dan Fable 5.1 (32.4%). Di FrontierSWE v2, dia juga pertama dengan 69.9%.
+
+Tapi jujur saja, tidak semua dia menangkan. Di AutomationBench, Gemini 4 Carbon yang menang dengan 53.9%, Fable 5.2 di 51.4%. Di penilaian independen Artificial Analysis, Fable 5.2 nomor 1 dengan skor 65, tapi biaya max effort rata-rata $26.54 per tugas, sekitar 2.6x Opus 5.5.
+
+Buat kerja teknis paling ambisius, Fable 5.2 paling kuat. Buat kerja harian, Opus 5.5 tetap andalan, kata Anthropic sendiri. Skor di atas dari Anthropic, belum diverifikasi independen, kecuali penilaian Artificial Analysis.
+
+Linknya ada di slide terakhir.
+
+Buat coding berat, kamu pilih Fable 5.2 atau tetap Opus 5.5?
+
+Follow @peka.ai.id dan save postingan ini kalau bermanfaat.
+
+#Claude #Fable #AIBenchmark #CodingAI #PekaAI

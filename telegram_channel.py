@@ -68,6 +68,7 @@ TYPE_LABELS = {
     "log": "📓 LOG PEKA",
     "bansos": "🎟️ Bansos AI",
     "jualan": "💎 Jualan Prompt",
+    "special": "✨ Edisi Khusus Peka AI",
 }
 
 

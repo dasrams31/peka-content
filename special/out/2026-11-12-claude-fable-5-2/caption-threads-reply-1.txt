@@ -1,0 +1,3 @@
+FrontierCode 2.0, agentic coding:
+Fable 5.2 49.1% (Xhigh), Opus 5.5 45.5%, GPT-6 Astra 42.8%, Gemini 4 Carbon 41.1% (Medium), Fable 5.1 32.4% (Xhigh).
+Fable 5.2 unggul 3.6 poin dari Opus 5.5 dan 16.7 poin dari Fable 5.1.

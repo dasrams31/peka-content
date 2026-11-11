@@ -1,0 +1,2 @@
+Jujur saja, tidak semua dimenangkan Fable. Di AutomationBench, Gemini 4 Carbon yang menang dengan 53.9%, Fable 5.2 di 51.4%.
+Di penilaian independen Artificial Analysis, Fable 5.2 nomor 1 dengan skor 65, tapi biaya max effort rata-rata $26.54 per tugas, sekitar 2.6x Opus 5.5.

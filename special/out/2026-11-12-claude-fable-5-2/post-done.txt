@@ -1,0 +1,14 @@
+THREADS_ROOT_OK https://www.threads.com/@peka.ai.id/post/Dfnh0r5j3Cl
+THREADS_ROOT_ID 18008136896793883
+THREADS_REPLY_1_OK https://www.threads.com/@peka.ai.id/post/Dfnh5OHD2mf
+THREADS_REPLY_1_ID 17966744127228812
+THREADS_REPLY_2_OK https://www.threads.com/@peka.ai.id/post/Dfnh7Hsj4SV
+THREADS_REPLY_2_ID 17902880169386774
+THREADS_REPLY_3_OK https://www.threads.com/@peka.ai.id/post/Dfnh9dTDyR3
+THREADS_REPLY_3_ID 17996097204058548
+THREADS_REPLY_4_OK https://www.threads.com/@peka.ai.id/post/Dfnh_STjweD
+THREADS_REPLY_4_ID 18126930910900003
+IG_OK https://www.instagram.com/p/DfniGqAD0yo/
+IG_MEDIA 18128734070296524
+FB_OK https://facebook.com/61594934228841/posts/pfbid02oxavfkn8XenKkeCnts8j2xZcJjLQjuCELhZwN2DkBZECzwvZuJT4vnJioVt9KRiDl/
+FB_POST_ID 122120022387497807

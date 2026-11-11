@@ -1,0 +1,9 @@
+Claude Fable 5.2 rilis, ini benchmark coding-nya.
+
+Anthropic merilis Claude Fable 5.2, 9 Nov 2026. Output sampai 30% lebih cepat dari Fable 5.1, harga turun 20% jadi $8 masuk dan $40 keluar per 1 jt token.
+
+Di FrontierCode 2.0 dia mencetak 49.1%, tertinggi di atas Opus 5.5, GPT-6 Astra, dan Gemini 4 Carbon. Linknya ada di slide terakhir.
+
+Buat coding berat, kamu pilih Fable 5.2 atau tetap Opus 5.5?
+
+#AI
