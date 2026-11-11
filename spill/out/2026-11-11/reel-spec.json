@@ -1,0 +1,52 @@
+{
+  "agent": "CLAUDE",
+  "episode": 22,
+  "next": "HERMES",
+  "repos": [
+    {
+      "cocok": "Kamu yang nyimpen semua catatan di Obsidian dan mau agent AI kamu bisa kerja langsung di vault kamu.",
+      "install": "npx skills add git@github.com:kepano/obsidian-skills.git",
+      "name": "obsidianmd/obsidian-skills",
+      "penjelasan": "Skill resmi dari tim Obsidian buat ngajarin agent AI kamu cara pakai Obsidian. Agent kamu diajarin pakai Obsidian CLI dan format terbuka kayak Markdown, Bases, dan JSON Canvas.",
+      "shortlink": "https://s.peka.ai.id/XD5ena",
+      "stars": "52RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-11/shots/obsidianmd-obsidian-skills.png"
+    },
+    {
+      "cocok": "Kamu yang mau satu asisten AI yang bisa ngerjain banyak hal sekaligus dan makin pinter seiring dipakai.",
+      "install": "npx skills add zhayujie/CowAgent -g",
+      "name": "zhayujie/CowAgent",
+      "penjelasan": "Asisten AI pribadi open source yang bisa merencanain tugas, jalanin tools dan skill, sampai bikin tim multi-agent sendiri. CowAgent punya memori tiga lapis yang nyimpen konteks, catatan harian, dan ingatan inti.",
+      "shortlink": "https://s.peka.ai.id/B6c4Wq",
+      "stars": "48RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-11/shots/zhayujie-CowAgent.png"
+    },
+    {
+      "cocok": "Kamu yang mau nambahin skill dan komponen ke Claude Code tanpa ribet nyari satu-satu.",
+      "install": "npx skills add davila7/claude-code-templates -g",
+      "name": "davila7/claude-code-templates",
+      "penjelasan": "Katalog open source berisi lebih dari 1.980 komponen buat Claude Code, dari skill, subagent, slash command, hook, MCP server, sampai settings. Semua komponen bisa dicari dan di-preview dulu di aitmpl.com.",
+      "shortlink": "https://s.peka.ai.id/m5cQu2",
+      "stars": "33RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-11/shots/davila7-claude-code-templates.png"
+    },
+    {
+      "cocok": "Kamu yang sering bikin slide dan mau hasilnya keliatan kayak dikerjain desainer, padahal cuma modal satu perintah.",
+      "install": "/plugin marketplace add https://github.com/zarazhangrui/fron",
+      "name": "zarazhangrui/frontend-slides",
+      "penjelasan": "Skill buat coding agent yang bisa bikin presentasi HTML yang cakep, dari nol atau dari file PowerPoint yang kamu ubah. Skill ini dibungkus sebagai plugin Claude Code, dan file SKILL.md intinya juga bisa dibaca agent coding lain.",
+      "shortlink": "https://s.peka.ai.id/DsJajs",
+      "stars": "32RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-11/shots/zarazhangrui-frontend-slides.png"
+    },
+    {
+      "cocok": "Kamu yang butuh deck presentasi cepat dan rapi buat kerjaan atau konten, tanpa buka aplikasi slide.",
+      "install": "npx skills add https://github.com/op7418/guizang-ppt-skill",
+      "name": "op7418/guizang-ppt-skill",
+      "penjelasan": "Skill agent AI buat bikin deck slide HTML yang rapi, dengan layout ala majalah editorial dan gaya Swiss yang bersih. Selain slide, skill ini juga bisa bikin gambar pendukung, cover sosial, dan runtime presentasi WebGL yang tetap enteng.",
+      "shortlink": "https://s.peka.ai.id/9GkGNz",
+      "stars": "30RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-11/shots/op7418-guizang-ppt-skill.png"
+    }
+  ]
+}
