@@ -1,0 +1,1 @@
+Cara klaimnya, 4 langkah: 1. Buka freestyle.sh, daftar akun. 2. Buat API key di dashboard. 3. Jalankan VM Linux buat AI agent kamu. 4. Pakai jatah Free tiap bulan. Daftarnya gratis, tanpa kartu kredit buat jatah Free. Kalau tambah kartu, ada verifikasi $1, duitnya balik lagi.

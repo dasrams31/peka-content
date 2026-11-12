@@ -1,0 +1,1 @@
+Jujur aja: jatah Free itu hard limit. Kalau 200 vCPU-hours, 400 GiB RAM, atau jatah lainnya habis, VM berhenti sampai bulan depan pas jatahnya reset lagi. Jadi pakai secukupnya buat yang penting dulu. Kalau mau tanya-tanya atau cerita pas sudah coba, gabung ke komunitas Peka, link komunitasnya ada di halaman link resmi kami.
