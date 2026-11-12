@@ -2,3 +2,10 @@ THREADS_ROOT_OK https://www.threads.com/@peka.ai.id/post/Dfo4_o-jwlj
 THREADS_ROOT_ID 18116588102032003
 THREADS_REPLY_1_OK https://www.threads.com/@peka.ai.id/post/Dfo5IqXj5Me
 THREADS_REPLY_1_ID 18117046718277946
+THREADS_REPLY_2_OK https://www.threads.com/@peka.ai.id/post/Dfo6x31j_mO
+THREADS_REPLY_2_ID 18352760320283381
+IG_OK https://www.instagram.com/reel/Dfo60EjDwjx/
+IG_MEDIA 18122902592074983
+FB_OK https://facebook.com/reel/1919785962324649/
+FB_POST_ID 122120181999497807
+LOGS_OK
