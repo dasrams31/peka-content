@@ -444,13 +444,16 @@ def slide3(spec):
             "Gabung ke komunitas kami: s.peka.ai.id/gabung"]
     if spec.get("store_cta"):
         ctas.append(spec["store_cta"])
-    # Edisi dengan CTA tambahan pakai spasi lebih rapat supaya muat.
-    tight = len(ctas) > 4
+    # Hitung baris hasil wrap dulu: CTA panjang (mis. shortlink komunitas
+    # s.peka.ai.id/gabung) bisa membungkus ke 2 baris, dan spasi normal
+    # membuat baris shortlink menabrak footer. Pakai spasi rapat bila
+    # total baris CTA > 4 (kasus Freestyle 13 Nov 2026: 6 baris).
+    wrapped_ctas = [wrap(d, c, f(128), 3120) for c in ctas]
+    tight = sum(len(cl) for cl in wrapped_ctas) > 4
     line_h = 156 if tight else 168
     gap = 72 if tight else 88
     yy = 2320 if tight else 2360
-    for c in ctas:
-        cl = wrap(d, c, f(128), 3120)
+    for cl in wrapped_ctas:
         d.rectangle([300, yy + 40, 380, yy + 120], fill=PAL["ink"])
         for ln in cl:
             d.text((490, yy), ln, font=f(128), fill=PAL["ink"])

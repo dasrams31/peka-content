@@ -136,21 +136,27 @@ def slide3_gratisan(spec):
             "Save postingan ini, jatahnya reset tiap bulan",
             "Follow @peka.ai.id, gratisan AI baru tiap Rabu + Sabtu",
             "Gabung ke komunitas kami: s.peka.ai.id/gabung"])
-    yy = 2360
-    for c in ctas:
-        cl = bd.wrap(d, c, bd.f(128), 3120)
+    # Sama seperti bansos slide3: hitung baris hasil wrap dulu, pakai spasi
+    # rapat bila total baris CTA > 4, supaya baris shortlink tidak menabrak
+    # footer saat CTA panjang membungkus ke 2 baris.
+    wrapped_ctas = [bd.wrap(d, c, bd.f(128), 3120) for c in ctas]
+    tight = sum(len(cl) for cl in wrapped_ctas) > 4
+    line_h = 156 if tight else 168
+    gap = 72 if tight else 88
+    yy = 2320 if tight else 2360
+    for cl in wrapped_ctas:
         d.rectangle([300, yy + 40, 380, yy + 120], fill=bd.INK)
         for ln in cl:
             d.text((490, yy), ln, font=bd.f(128), fill=bd.INK)
-            yy += 168
-        yy += 88
+            yy += line_h
+        yy += gap
     # Shortlink printed on the slide (Threads no-link rule, 31 Okt 2026):
     # the edition's link lives here, not in a Threads reply/comment.
     if spec.get("shortlink"):
         label = spec.get("shortlink_label", "Link: ")
         shown = spec["shortlink"].replace("https://", "").replace("http://", "")
         d.text((300, yy + 16), label + shown, font=bd.mono(108, bold=True), fill=bd.INK)
-    d.text((300, S - 380), "Info diverifikasi dari sumber resmi sebelum tayang.",
+    d.text((300, S - 320 if tight else S - 380), "Info diverifikasi dari sumber resmi sebelum tayang.",
            font=bd.fr(92), fill=bd.INK)
     return img
 
