@@ -1,0 +1,12 @@
+PROMPT HARIAN #22: salin prompt ini buat inbox email menumpuk kelar dalam 30 menit
+
+30 menit, inbox beres. Yang penting kebalas, yang receh kelar duluan.
+
+Promptnya:
+Buatkan rencana membalas [JUMLAH] email tertunda dalam 30 menit. Kelompokkan jadi: balas cepat, butuh jawaban detail, dan bisa ditunda. Untuk tiap email, tulis balasan singkat maksimal 3 kalimat dengan nada [SANTAI/FORMAL]. Akhiri dengan daftar 3 email paling penting yang harus dibalas hari ini.
+
+Balas yang cepat dulu atau yang penting dulu? Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30.
+
+#PromptHarian #AI #Produktivitas #Email #KerjaCerdas #AITools #ChatGPT #TipsKerja #PekaAI
+
+Music: Aitech by Kevin MacLeod

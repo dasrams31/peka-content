@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Buatkan rencana membalas [JUMLAH] email tertunda dalam 30 menit. Kelompokkan jadi: balas cepat, butuh jawaban detail, dan bisa ditunda. Untuk tiap email, tulis balasan singkat maksimal 3 kalimat dengan nada [SANTAI/FORMAL]. Akhiri dengan daftar 3 email paling penting yang harus dibalas hari ini.

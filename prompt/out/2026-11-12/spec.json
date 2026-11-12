@@ -1,0 +1,12 @@
+{
+  "episode": 22,
+  "category": "PRODUKTIVITAS",
+  "title": "Inbox email menumpuk kelar dalam 30 menit",
+  "prompt": "Buatkan rencana membalas [JUMLAH] email tertunda dalam 30 menit. Kelompokkan jadi: balas cepat, butuh jawaban detail, dan bisa ditunda. Untuk tiap email, tulis balasan singkat maksimal 3 kalimat dengan nada [SANTAI/FORMAL]. Akhiri dengan daftar 3 email paling penting yang harus dibalas hari ini.",
+  "tips": [
+    "Tempel daftar emailmu, biar AI tahu mana yang penting.",
+    "Ganti [SANTAI/FORMAL] sesuai lawan bicaramu.",
+    "Balas yang cepat dulu, biar inbox langsung terasa ringan."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-12"
+}
