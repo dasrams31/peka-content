@@ -178,11 +178,12 @@ follows. Standing rules:
   engine: trend watch feeds ideas, daily runs test them, Sunday data
   decides what stays.
 
-## ATURAN JOIN KOMUNITAS DI DESAIN (2026-10-21, perintah user)
-- SEMUA desain konten Peka WAJIB memuat elemen join komunitas ke **url.peka.ai.id** (halaman hub semua link + komunitas).
-- Sudah tertanam di generator: hm/designer.py footer (pola seragam semua desain: tulisan web peka.ai.id DIHAPUS dari footer, diganti kalimat "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID" abu-abu regular di kiri, nomor halaman di kanan; semua slide berita + edisi khusus), buzzer_design social_row (teks web = url.peka.ai.id), spill/spill.py footer (pola sama), prompt/prompt_harian.py (strip slide 1: CTA dipendekkan "GESER BUAT PROMPTNYA" + kalimat gabung kanan; footer slide 2 ringkas), bansos/bansos_design.py (stub tiket tanpa peka.ai.id: "gabung ke / komunitas kami: / url.peka.ai.id" + CTA slide 3 "Gabung ke komunitas kami: url.peka.ai.id"), store/make_slides.py footer (pola sama).
+## ATURAN JOIN KOMUNITAS DI DESAIN (2026-10-21, perintah user; shortlink 2026-11-12)
+- SEMUA desain konten Peka WAJIB memuat elemen join komunitas ke **s.peka.ai.id/gabung** (shortlink admin user_id 1, redirect 307 terverifikasi ke https://url.peka.ai.id, halaman hub semua link + komunitas; klik terlacak di DB shortlink). Teks polos url.peka.ai.id TIDAK lagi dipakai di visual, diganti shortlink ini.
+- Sudah tertanam di generator: hm/designer.py footer (pola seragam semua desain: tulisan web peka.ai.id DIHAPUS dari footer, diganti kalimat "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG" abu-abu regular di kiri, nomor halaman di kanan; semua slide berita + edisi khusus), buzzer_design social_row (teks web = s.peka.ai.id/gabung), spill/spill.py footer (pola sama), spill_repo_carousel.py ("Gabung grup WhatsApp Peka AI lewat s.peka.ai.id/gabung."), prompt/prompt_harian.py (strip slide 1: CTA dipendekkan "GESER BUAT PROMPTNYA" + kalimat gabung kanan; footer slide 2 ringkas), bansos/bansos_design.py (stub tiket tanpa peka.ai.id: "gabung ke / komunitas kami: / s.peka.ai.id/gabung" + CTA slide 3 "Gabung ke komunitas kami: s.peka.ai.id/gabung"), gratisan-ai/ga_design.py (pola tiket sama), blueprint/blueprint.py + blueprint_preview.py footer, store/make_slides.py footer (pola sama), katalog edisi 2026-11-10 (template ke depan).
+- Shortlink HANYA tercetak di dalam visual (footer slide + scene penutup reel). TIDAK BOLEH masuk teks caption/postingan (aturan tanpa-link 31 Okt 2026 tetap berlaku); caption tetap tanpa link apa pun.
 - Desain baru di luar generator ini: tambahkan elemen setara (kecil, rapi, tidak mendominasi desain) sebelum tayang.
-- BARIS SOSMED SLIDE PENUTUP/BUKTI (2026-10-22, perintah user): baris bawah di slide penutup dan bukti edisi khusus (buzzer_design.social_row) = ikon platform (IG/FB/Threads) TETAP ADA, teksnya cukup "peka.ai.id" TANPA awalan "url." — berlaku untuk semua edisi khusus (buzzer, metaai, warganet, dan berikutnya).
+- BARIS SOSMED SLIDE PENUTUP/BUKTI (2026-10-22, perintah user; shortlink 2026-11-12): baris bawah di slide penutup dan bukti edisi khusus (buzzer_design.social_row) = ikon platform (IG/FB/Threads) TETAP ADA, teksnya shortlink komunitas "s.peka.ai.id/gabung" (redirect ke url.peka.ai.id) — berlaku untuk semua edisi khusus (buzzer, metaai, warganet, dan berikutnya).
 - AUDIT BENTROK FOOTER (2026-10-22, perintah user): footer teks mulai di y=1015 (skala 1080); tombol GESER (tinggi 78) AMAN maks di y=918 (bawahnya 996). Warganet cover awalnya 942 = bentrok, sudah diperbaiki ke 912 + jendela SS dipendekkan. Store footer: label edisi panjang menabrak "HAL i/n", sudah diperbaiki dengan auto-shrink font (36 turun bertahap sampai muat). Cover HM tema MAJALAH dan TERMINAL memang TANPA kalimat gabung (di majalah tombol GESER-nya di 950 dan ruang bawahnya penuh; di terminal ada ticker) — kalimat gabung tetap ada di slide detail + penutup kedua tema itu. Tema frame, koran, layar, bansos, spill, prompt, buzzer/metaai terverifikasi bersih lewat render contoh.
 
 ## ATURAN REELS SAJA DI IG + FB (2026-10-27, perintah user, MENGGANTIKAN dual-versi 2026-10-25)
@@ -219,7 +220,7 @@ versi carousel/feed post lagi:
 - SLIDE/Scene PENUTUP FOLLOW + KOMUNITAS (perintah user 2026-10-25,
   berlaku ke depan): setiap carousel ditutup satu slide "Follow dan
   gabung" (Follow @peka.ai.id di IG/Threads/TikTok + gabung grup WA
-  lewat url.peka.ai.id + save/share), dan setiap reels ditutup satu
+  lewat s.peka.ai.id/gabung + save/share), dan setiap reels ditutup satu
   scene yang sama. Sudah diterapkan di template SPILL dan spotlight
   naskah-id; generator pilar lain (HM, Prompt, Store, Bansos,
   Gratisan) menyusul retrofit yang sama.

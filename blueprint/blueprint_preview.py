@@ -157,7 +157,7 @@ def header(img, d):
 
 def footer(d, page, total=2):
     d.line([(X(72), X(984)), (X(1008), X(984))], fill=HAIR, width=X(2))
-    d.text((X(72), X(1000)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=mono(27), fill=MUTED)
+    d.text((X(72), X(1000)), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=mono(27), fill=MUTED)
     label = "%02d / %02d" % (page, total)
     d.text((X(1008) - d.textlength(label, font=mono(27)), X(1000)), label, font=mono(27), fill=MUTED)
 

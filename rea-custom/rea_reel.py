@@ -124,7 +124,7 @@ def scene(t):
         d = ImageDraw.Draw(img)
         d.text((80, 990), "Follow @peka.ai.id, kalau kontennya kepakai.",
                font=F("Poppins-SemiBold.ttf", 34), fill=CREAM + (255,))
-        d.text((80, 1050), "Grup WA: url.peka.ai.id, kalau mau ngobrol.",
+        d.text((80, 1050), "Grup WA: s.peka.ai.id/gabung, kalau mau ngobrol.",
                font=F("Poppins-SemiBold.ttf", 34), fill=CREAM + (255,))
         d.text((80, 1110), "Save dulu, biar gampang dicari lagi.",
                font=F("Poppins-SemiBold.ttf", 34), fill=CREAM + (255,))
@@ -133,7 +133,7 @@ def scene(t):
     sy = int((t * 220) % (H + 100) - 50)
     d.line([(0, sy), (W, sy)], fill=GREEN + (60,), width=3)
     d.rectangle([0, H - 60, W, H], fill=BG + (255,))
-    d.text((80, H - 48), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((80, H - 48), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=F("Poppins-Bold.ttf", 22), fill=MUTED + (255,))
     return img.convert("RGB")
 

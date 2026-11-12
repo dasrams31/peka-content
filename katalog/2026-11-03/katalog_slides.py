@@ -77,7 +77,7 @@ def base():
 def footer(d, page):
     fy = 3560
     f_foot = ImageFont.truetype(FS, 44)
-    tracked(d, "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", f_foot,
+    tracked(d, "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", f_foot,
             MUTED, M, fy, 5)
     f_pg = ImageFont.truetype(FB, 44)
     pg = f"0{page} / 03"
@@ -183,7 +183,7 @@ cw = d.textlength(cta, font=f_cta)
 d.text(((W - cw) / 2, band_y + 72), cta, font=f_cta, fill=BLACK)
 
 f_note = ImageFont.truetype(FS, 72)
-note = "Atau gabung grup WA: url.peka.ai.id"
+note = "Atau gabung grup WA: s.peka.ai.id/gabung"
 nw = d.textlength(note, font=f_note)
 d.text(((W - nw) / 2, band_y + 320), note, font=f_note, fill=CREAM)
 

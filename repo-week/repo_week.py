@@ -158,7 +158,7 @@ class Renderer:
             y = self.body(d, 1800, f"Repo minggu ini: {s['url']}", size=104, lh=160)
             y = self.body(d, y + 80,
                           "Follow @peka.ai.id dan gabung ke komunitas kami "
-                          "di url.peka.ai.id.", size=104, lh=160)
+                          "di s.peka.ai.id/gabung.", size=104, lh=160)
         else:
             raise ValueError(kind)
         return img

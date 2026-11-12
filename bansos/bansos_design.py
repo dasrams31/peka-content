@@ -275,7 +275,7 @@ def slide1_photo(spec):
     ld.text((perf_x + 136, oy + 1648), "verified", font=fr(88), fill=PAL["muted"])
     ld.text((perf_x + 68, oy + 1796), "gabung ke", font=mono(68), fill=PAL["muted"])
     ld.text((perf_x + 68, oy + 1900), "komunitas kami:", font=mono(68), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 2012), "url.peka.ai.id", font=mono(72, bold=True), fill=PAL["ink"])
+    ld.text((perf_x + 68, oy + 2012), "s.peka.ai.id/gabung", font=mono(72, bold=True), fill=PAL["ink"])
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
     img.paste(layer, ((S - layer.width) // 2, 660), layer)
@@ -357,7 +357,7 @@ def slide1(spec):
     ld.text((perf_x + 136, oy + 1648), "verified", font=fr(88), fill=PAL["muted"])
     ld.text((perf_x + 68, oy + 1796), "gabung ke", font=mono(68), fill=PAL["muted"])
     ld.text((perf_x + 68, oy + 1900), "komunitas kami:", font=mono(68), fill=PAL["muted"])
-    ld.text((perf_x + 68, oy + 2012), "url.peka.ai.id", font=mono(72, bold=True), fill=PAL["ink"])
+    ld.text((perf_x + 68, oy + 2012), "s.peka.ai.id/gabung", font=mono(72, bold=True), fill=PAL["ink"])
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
     img.paste(layer, ((S - layer.width) // 2, 660), layer)
@@ -441,7 +441,7 @@ def slide3(spec):
     ctas = ["Tag teman yang lagi butuh ini",
             "Save postingan ini buat pas daftar nanti",
             "Follow @peka.ai.id, bansos baru tiap ada yang verified",
-            "Gabung ke komunitas kami: url.peka.ai.id"]
+            "Gabung ke komunitas kami: s.peka.ai.id/gabung"]
     if spec.get("store_cta"):
         ctas.append(spec["store_cta"])
     # Edisi dengan CTA tambahan pakai spasi lebih rapat supaya muat.

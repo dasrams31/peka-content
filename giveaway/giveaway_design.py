@@ -94,7 +94,7 @@ def lockup(img, cy, mh, color, chip=None):
 
 
 def footer(d, page, total, color):
-    d.text((MARGIN, 1932), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((MARGIN, 1932), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=F(FM, 40), fill=color)
     t = f"{page}/{total}"
     d.text((1938 - d.textlength(t, font=F(FMB, 44)), 1926), t, font=F(FMB, 44), fill=color)
@@ -198,8 +198,8 @@ def slide3(spec):
     d.rounded_rectangle([MARGIN, cy0, W - MARGIN, cy0 + 430], radius=48, fill=YELLOW)
     cf = fit_font(d, "GABUNG GRUP WHATSAPP", PX, INNER - 160, 118)
     d.text((MARGIN + 80, cy0 + 64), "GABUNG GRUP WHATSAPP", font=cf, fill=BLACK)
-    uf = fit_font(d, "url.peka.ai.id", PX, INNER - 160, 118)
-    d.text((MARGIN + 80, cy0 + 224), "url.peka.ai.id", font=uf, fill=BLACK)
+    uf = fit_font(d, "s.peka.ai.id/gabung", PX, INNER - 160, 118)
+    d.text((MARGIN + 80, cy0 + 224), "s.peka.ai.id/gabung", font=uf, fill=BLACK)
     d.text((MARGIN, cy0 + 500), spec["closing"], font=F(PS, 58), fill=GRAY)
     footer(d, 3, 3, GRAY)
     return img

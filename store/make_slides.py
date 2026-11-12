@@ -133,7 +133,7 @@ def footer(d, th, i, n, edisi):
     pg = f"HAL {i}/{n}"
     pg_x = 1938 - d.textlength(pg, font=mono(36))
     left = (f"PEKA STORE - {edisi} · "
-            "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID")
+            "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG")
     for sz in (36, 33, 30, 27, 24):
         if 110 + d.textlength(left, font=fr(sz)) <= pg_x - 30:
             break

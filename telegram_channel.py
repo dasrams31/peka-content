@@ -99,7 +99,7 @@ def build_caption(args) -> str:
         lines.append("Lengkapnya di sini:")
         lines.extend(links)
         lines.append("")
-    lines.append("💬 Gabung komunitas Peka: t.me/peka_aigroup")
+    lines.append("💬 Gabung komunitas Peka: s.peka.ai.id/gabung")
     lines.append("📣 Channel Peka: t.me/peka_aichannel")
     lines.append("🤖 Order akun premium: t.me/aeternum_premibot")
     lines.append("🛍️ Belanja produk digital: store.peka.ai.id")

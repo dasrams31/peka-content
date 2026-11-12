@@ -162,7 +162,7 @@ def slide1():
     # bottom strip
     d.rectangle([0, S - 336, S, S], fill=BLACK)
     d.text((220, S - 244), "GESER BUAT CARA KERJANYA →", font=f(116), fill=YELLOW)
-    tail = "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID"
+    tail = "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG"
     d.text((3876 - d.textlength(tail, font=fr(68)), S - 220), tail, font=fr(68), fill=YELLOW)
     return img
 
@@ -219,7 +219,7 @@ def slide2():
            font=f(124), fill=WHITE)
     foot = "Bahas bareng - komentar edisi #13"
     d.text((220, S - 280), foot, font=fr(92), fill=GRAY)
-    join = "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID"
+    join = "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG"
     d.text((3876 - d.textlength(join, font=fr(72)), S - 270), join, font=fr(72), fill=GRAY)
     return img
 

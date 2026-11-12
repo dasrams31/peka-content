@@ -27,7 +27,7 @@ Spec schema:
      "footnote": "Plus 6 pidato lainnya di arsip."},
     {"type": "cta", "title": ["Coba", "sendiri."],
      "body": "Buka wowo.peka.ai.id, tempel link ...",
-     "follow": "Follow @peka.ai.id dan gabung ke komunitas kami di url.peka.ai.id."}
+     "follow": "Follow @peka.ai.id dan gabung ke komunitas kami di s.peka.ai.id/gabung."}
   ]
 }
 
@@ -86,7 +86,7 @@ class Renderer:
         img.paste(mas, (W - 110 - 72 - 300, 70), mas)
         d.text((W - 110 - 290, 84), "peka.ai.id", font=F("Poppins-Bold.ttf", 44), fill=INK)
         d.line([(110, H - 170), (W - 110, H - 170)], fill=(180, 174, 160), width=3)
-        d.text((110, H - 130), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=mono, fill=GREY)
+        d.text((110, H - 130), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=mono, fill=GREY)
         d.text((W - 110 - 200, H - 130), f"{page:02d} / {self.total:02d}", font=mono, fill=GREY)
         return img, d
 

@@ -55,7 +55,7 @@ def base(page):
     _lock = _lock.resize((_lw, _lh), Image.LANCZOS)
     img.paste(_lock, (W - MX - _lw, 82), _lock)
     d.line([(MX, H - 180), (W - MX, H - 180)], fill=HAIR, width=2)
-    d.text((MX, H - 140), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((MX, H - 140), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=mono(30), fill=MUTED)
     d.text((W - MX - d.textlength(f"{page:02d} / 04", font=mono(30)), H - 140),
            f"{page:02d} / 04", font=mono(30), fill=MUTED)
@@ -140,7 +140,7 @@ def follow():
     d.text((MX, 450), "kalau kamu suka.", font=F("Poppins-ExtraBold.ttf", 110), fill=GREEN)
     y = 680
     for line in ["Follow @peka.ai.id, kalau kontennya kepakai.",
-                 "Grup WA: url.peka.ai.id, kalau mau ngobrol.",
+                 "Grup WA: s.peka.ai.id/gabung, kalau mau ngobrol.",
                  "Save dulu, biar gampang dicari lagi.",
                  "Link-nya ada di komentar."]:
         d.text((MX, y), line, font=F("Poppins-SemiBold.ttf", 44), fill=CREAM)

@@ -184,7 +184,7 @@ def header(img, d):
 
 def footer(d, page, total=4):
     d.line([(X(72), X(984)), (X(1008), X(984))], fill=HAIR, width=X(2))
-    d.text((X(72), X(1000)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=mono(27), fill=MUTED)
+    d.text((X(72), X(1000)), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=mono(27), fill=MUTED)
     label = "%02d / %02d" % (page, total)
     d.text((X(1008) - d.textlength(label, font=mono(27)), X(1000)), label, font=mono(27), fill=MUTED)
 
@@ -445,7 +445,7 @@ def follow(spec, out_dir, page, total):
     rule_y = headline_block(d, lines, 272, 108, 118, X(936))
     rows = [
         ("FOLLOW", "@peka.ai.id di IG, Threads, TikTok."),
-        ("GABUNG", "grup WhatsApp via url.peka.ai.id."),
+        ("GABUNG", "grup WhatsApp via s.peka.ai.id/gabung."),
         ("SAVE + SHARE", "biar makin banyak yang kebantu."),
     ]
     # Shortlink printed on the last slide (Threads no-link rule, 31 Okt

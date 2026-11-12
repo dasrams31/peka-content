@@ -150,7 +150,7 @@ def texture(d):
 
 def footer(d, i, n):
     y = X(1015)
-    d.text((X(70), y), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=f(24, False), fill=GRY)
+    d.text((X(70), y), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=f(24, False), fill=GRY)
     pg = f"{i}/{n}"
     d.text((X(1010) - d.textlength(pg, font=f(24, False)), y), pg, font=f(24, False), fill=GRY)
 
@@ -426,7 +426,7 @@ def koran_header(img, d, badge_label):
 
 
 def koran_footer(d, i, n):
-    d.text((X(70), X(1015)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=f(24, False), fill=INK_SUB)
+    d.text((X(70), X(1015)), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=f(24, False), fill=INK_SUB)
     pg = f"{i}/{n}"
     d.text((X(1010) - d.textlength(pg, font=f(24, False)), X(1015)), pg,
            font=f(24, False), fill=INK_SUB)
@@ -654,7 +654,7 @@ def premium_header(img, d):
 
 
 def premium_footer(d, i, n):
-    d.text((X(120), X(1015)), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((X(120), X(1015)), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=f(24, False), fill=MUTED2)
     pg = f"{i}/{n}"
     d.text((X(960) - d.textlength(pg, font=f(24, False)), X(1015)), pg,

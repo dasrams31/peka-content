@@ -116,7 +116,7 @@ def header(img, d, page, total=5):
 
 def footer(d, page, total=5):
     y = X(1022)
-    d.text((X(70), y), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=mono(22), fill=GRY)
+    d.text((X(70), y), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=mono(22), fill=GRY)
     pg = f"{page:02d} / {total:02d}"
     d.text((X(1010) - d.textlength(pg, font=mono(22)), y), pg, font=mono(22), fill=GRY)
 

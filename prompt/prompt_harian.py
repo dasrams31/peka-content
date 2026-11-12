@@ -145,7 +145,7 @@ def slide1(spec):
     # bottom strip
     d.rectangle([0, S - 336, S, S], fill=BLACK)
     d.text((220, S - 244), "GESER BUAT PROMPTNYA →", font=f(116), fill=YELLOW)
-    tail = "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID"
+    tail = "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG"
     d.text((3876 - d.textlength(tail, font=fr(68)), S - 220), tail, font=fr(68), fill=YELLOW)
     return img
 
@@ -200,7 +200,7 @@ def slide2(spec):
     d.text((220, S - 490), "Udah nyoba? Spill hasilnya di komentar.", font=f(124), fill=WHITE)
     foot = f"Prompt Harian #{spec['episode']:02d} - besok 12:30"
     d.text((220, S - 280), foot, font=fr(92), fill=GRAY)
-    join = "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID"
+    join = "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG"
     d.text((3876 - d.textlength(join, font=fr(72)), S - 270), join, font=fr(72), fill=GRAY)
     return img
 

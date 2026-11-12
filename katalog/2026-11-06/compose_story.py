@@ -57,7 +57,7 @@ img.paste(cover, (0, 420))
 centered(d, "MULAI 4K.", ImageFont.truetype(FX, 96), YELLOW, 1540)
 centered(d, "14 akun premium ready hari ini.",
          ImageFont.truetype(FS, 48), CREAM, 1670)
-centered(d, "DM: MAU [nama produk]  ·  url.peka.ai.id",
+centered(d, "DM: MAU [nama produk]  ·  s.peka.ai.id/gabung",
          ImageFont.truetype(FS, 40), MUTED, 1760)
 
 out = os.path.join(HERE, "story-9x16.png")

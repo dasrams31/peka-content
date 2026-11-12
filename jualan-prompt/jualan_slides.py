@@ -164,7 +164,7 @@ def slide4(out, shortlink):
     d.text((bx + 80, by + 72), label, font=f_mono, fill=YELLOW)
     f_band = font("Poppins-Bold.ttf", 104)
     w1, _ = chip(d, MARGIN, 2480, "FOLLOW @PEKA.AI.ID", f_band, BLACK, YELLOW)
-    d.text((MARGIN, H - 520), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((MARGIN, H - 520), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=font("Poppins-Bold.ttf", 80), fill=GREY)
     d.text((MARGIN, H - 380), "Save dan share kalau berguna.",
            font=font("Poppins-SemiBold.ttf", 88), fill=GREY)

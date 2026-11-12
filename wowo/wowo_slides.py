@@ -42,7 +42,7 @@ def base(page, total):
     d.text((W - 110 - 290, 84), "peka.ai.id", font=F("Poppins-Bold.ttf", 44), fill=INK)
     # footer hairline + text
     d.line([(110, H - 170), (W - 110, H - 170)], fill=(180, 174, 160), width=3)
-    d.text((110, H - 130), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=mono, fill=GREY)
+    d.text((110, H - 130), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=mono, fill=GREY)
     d.text((W - 110 - 200, H - 130), f"{page:02d} / {total:02d}", font=mono, fill=GREY)
     return img, d
 
@@ -135,7 +135,7 @@ def slide6():
     y = title_block(d, 330, ["Coba", "sendiri."])
     y = body(d, y + 40, "Buka wowo.peka.ai.id, tempel link YouTube pidato, dan lihat sendiri kalimat mana yang janji.", size=56, lh=82)
     y = highlight(d, y + 60, "wowo.peka.ai.id", size=72)
-    body(d, y + 60, "Follow @peka.ai.id dan gabung ke komunitas kami di url.peka.ai.id.", size=48, lh=72)
+    body(d, y + 60, "Follow @peka.ai.id dan gabung ke komunitas kami di s.peka.ai.id/gabung.", size=48, lh=72)
     img.save(f"{OUT}/wowo-06.png")
 
 if __name__ == "__main__":

@@ -92,7 +92,7 @@ def slide1_gratisan(spec):
     ld.text((perf_x + 136, oy + 1648), "verified", font=bd.fr(88), fill=bd.DGRAY)
     ld.text((perf_x + 68, oy + 1796), "gabung ke", font=bd.mono(68), fill=bd.DGRAY)
     ld.text((perf_x + 68, oy + 1900), "komunitas kami:", font=bd.mono(68), fill=bd.DGRAY)
-    ld.text((perf_x + 68, oy + 2012), "url.peka.ai.id", font=bd.mono(72, bold=True), fill=bd.INK)
+    ld.text((perf_x + 68, oy + 2012), "s.peka.ai.id/gabung", font=bd.mono(72, bold=True), fill=bd.INK)
 
     layer = layer.rotate(1.5, resample=Image.BICUBIC, expand=True)
     img.paste(layer, ((S - layer.width) // 2, 660), layer)
@@ -135,7 +135,7 @@ def slide3_gratisan(spec):
     ctas = spec.get("ctas", ["Tag teman yang lagi belajar ngoding",
             "Save postingan ini, jatahnya reset tiap bulan",
             "Follow @peka.ai.id, gratisan AI baru tiap Rabu + Sabtu",
-            "Gabung ke komunitas kami: url.peka.ai.id"])
+            "Gabung ke komunitas kami: s.peka.ai.id/gabung"])
     yy = 2360
     for c in ctas:
         cl = bd.wrap(d, c, bd.f(128), 3120)

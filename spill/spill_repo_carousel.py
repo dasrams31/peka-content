@@ -503,7 +503,7 @@ def follow(spec):
     highlight(d, X(70), X(302), "DAN GABUNG.", tf)
     lines = [
         "Follow @peka.ai.id di Instagram, Threads, dan TikTok.",
-        "Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.",
+        "Gabung grup WhatsApp Peka AI lewat s.peka.ai.id/gabung.",
         "Save dan share postingan ini buat stok.",
     ]
     ly = 452

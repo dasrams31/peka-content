@@ -62,7 +62,7 @@ def base(page, total, kicker):
         d.text((1605, 195), "P", font=font("xb", 80), fill=(255, 214, 10))
     d.text((1710, 205), "peka.ai.id", font=font("b", 56), fill=INK)
     d.line([(120, 1900), (1928, 1900)], fill=HAIRLINE, width=3)
-    d.text((120, 1930), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID",
+    d.text((120, 1930), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG",
            font=font("sans", 40), fill=GRAY)
     d.text((1928, 1930), f"HAL {page}/{total}", font=font("sans", 40),
            fill=GRAY, anchor="ra")
@@ -204,7 +204,7 @@ def follow(out):
     d.rectangle([120, 640, 260, 656], fill=AMBER)
     items = [
         "Follow @peka.ai.id di Instagram, Threads, dan TikTok.",
-        "Gabung grup WhatsApp Peka AI lewat url.peka.ai.id.",
+        "Gabung grup WhatsApp Peka AI lewat s.peka.ai.id/gabung.",
         "Save dan share postingan ini biar makin banyak yang kebantu.",
     ]
     y = 760

@@ -90,7 +90,7 @@ def base(page):
     d.text((lx + mascot.width + 14, 68), lt, font=lf, fill=INK)
     # footer
     ff = F(MONO, 24)
-    d.text((72, S - 108), "GABUNG KE KOMUNITAS KAMI: URL.PEKA.AI.ID", font=ff, fill=GREY)
+    d.text((72, S - 108), "GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG", font=ff, fill=GREY)
     pg = f"{page:02d} / 04"
     pw = d.textlength(pg, font=ff)
     d.text((S - 72 - pw, S - 108), pg, font=ff, fill=GREY)
