@@ -1,4 +1,9 @@
 {
   "date": "2026-11-12",
-  "slots": {}
+  "slots": {
+    "hm": {
+      "alerted": true,
+      "alerted_at": "10:45"
+    }
+  }
 }
