@@ -1,9 +1,1 @@
-{
-  "date": "2026-11-12",
-  "slots": {
-    "hm": {
-      "alerted": true,
-      "alerted_at": "10:45"
-    }
-  }
-}
+{"date":"2026-11-12","slots":{"hm":{"aired_late_noticed":true,"alerted":true,"alerted_at":"10:45","broadcast_checked":true}}}
