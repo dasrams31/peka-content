@@ -15,11 +15,12 @@ judges the experiments from real metrics.
 - Threads rewards reply chains: our own first reply carries the value
   (links, the full prompt), the main post carries the hook.
 
-## Experiments this week (refresh 2026-11-09)
+## Experiments this week (refresh 2026-11-12)
 
-DINILAI review Minggu 2026-11-15 20:00. Eksperimen refresh 2026-11-05
-sudah dinilai review Minggu 2026-11-08, lihat Archive di bawah.
-Jangan jalankan ulang ketiganya tanpa desain baru.
+DINILAI review Minggu 2026-11-15 20:00. Eksperimen refresh 2026-11-09
+sudah dipindah ke Archive di bawah (1 VOID, 1 tidak jalan, 1 jalan
+dan menunggu verdict review ini). Jangan jalankan ulang ketiganya
+tanpa desain baru.
 
 Three experiments, one variable each. The run that airs an experiment
 MUST write its exp marker into its posted.log line the same day, with
@@ -31,198 +32,186 @@ rule: brand design, exactly 1 closing hashtag per tag-watch.md, no
 em-dash or en-dash, honest numbers only, fixed slots, no sales posts
 on IG, no link in any post text.
 
-1. HM GIF try-it step on ChatGPT Images 2.6 (pillar: HM, slot: Tue
-   10 Nov 09:36). Variable: the root caption carries ONE concrete
-   try-it step (buka ChatGPT, upload satu foto, minta dijadikan GIF,
-   gratis di semua paket) plus a forced choice (GIF lucu buat grup
-   chat vs GIF penjelasan buat tugas). Control: HM 6 Nov Perplexity
-   Teammates (Threads 3 likes, 42 views; IG 2 likes, 42 views).
-   Hypothesis: a real try-it step the reader can do in minutes lifts
-   IG likes and saves above the HM IG median (2 to 3 likes, 0 to 1
-   saves), because try-it topics with a confusion point already
-   earned replies for Oracle and Meta AI x Komdigi. Log marker:
-   "exp: hm-gif-try-it". Guardrail: Images 2.6 launched 4 Nov per
-   secondary roundups (the OpenAI page returned 500 via Jina Reader
-   on 9 Nov); re-verify on the OpenAI changelog the morning it airs,
-   and never promise GIF generation on a free account if the page
-   limits it. NOTE: HM is frozen on Threads 7 Nov to 7 Dec, so this
-   experiment is judged on IG, FB, and blog only, not Threads.
+1. Prompt Harian before/after prompt (pillar: Prompt Harian, slot:
+   Fri 13 Nov 12:30). Variable: caption dibuka cerita relatable
+   (aturan menang), lalu slide 1 dan caption membawa perbandingan
+   sebelum/sesudah: satu prompt jelek vs satu prompt bagus untuk
+   tugas yang sama, hasil sampingan, plus forced choice (prompt yang
+   mana yang biasa kamu pakai, A atau B?). Control: Prompt #21
+   (Threads 221 views, 1 like, 1 balasan) dan #20 (43 views).
+   Hypothesis: format perbandingan mengalahkan median rotasi
+   (Threads views sekitar 160, likes sekitar 3), karena format
+   perbandingan menang besar di gelombang mahasiswa (reel IPK 3 vs
+   Cum Laude 2,8 ribu likes, 11 Nov; postingan before/after prompt
+   4.502 likes, 4 Nov). Log marker: "exp: prompt-before-after".
+   Guardrail: kedua prompt benar-benar dicoba dan hasilnya jujur,
+   jangan karang hasil; framing kejujuran akademik tetap; jangan
+   salin cerita personal yang tidak terjadi.
 
-2. Prompt Harian thesis Bab 3 checklist (pillar: Prompt Harian,
-   slot: Wed 11 Nov 12:30). Variable: the caption opens with the
-   locked relatable-story opening, then carries a boleh vs
-   tidak-boleh checklist for Bab 3 (Metodologi) built on the verified
-   list from the viral 5 Nov reel (boleh: minta AI jelaskan paradigma
-   dan metode langkah demi langkah, minta cari sumber dengan link yang
-   bisa dicek; tidak boleh: minta AI tulis Bab 3 sekaligus, minta AI
-   karang data populasi dan sampel, minta AI buat kuesioner tanpa
-   teori dan indikator), plus a forced choice (Bab 3 atau Bab 4 yang
-   paling bikin mentok?). Control: Prompt #18 (Threads 111 views, 3
-   likes, 1 balasan). Hypothesis: the student checklist angle beats
-   the rotation median (Threads views about 160, likes about 3),
-   because checklist and self-score formats keep winning in the
-   student wave and the Bab 4 reel reached 5.4K likes on 1 Nov. Log
-   marker: "exp: prompt-bab3-checklist". Guardrail: academic honesty
-   framing stays, never a shortcut promise; verify the Bab 3 list
-   against the reel summary the morning it airs; do not copy the
-   "komentar MAU biar dikirimi link" DM gating from the
-   makalah-generator reel, which is engagement bait under the
-   playbook.
+2. HM Gemini 4 Carbon try-it step (pillar: HM, slot: Fri 13 Nov
+   09:36). Variable: root caption membawa SATU langkah coba konkret
+   (buka Gemini, minta Carbon kerjakan satu tugas agent panjang,
+   bandingkan dengan model biasa) plus forced choice (tugas panjang
+   apa yang mau kamu serahkan ke agent?). Control: HM 11 Nov RAISE
+   Act (IG 1 like, FB 4 views) dan HM 10 Nov Anthropic IPO (IG 1
+   like). Hypothesis: langkah coba konkret pada peluncuran model
+   terbesar minggu ini mengangkat IG likes di atas median HM (1-2
+   likes) dan menghasilkan save, karena topik try-it dengan titik
+   bingung sudah terbukti menarik balasan untuk Oracle dan Meta AI x
+   Komdigi. Log marker: "exp: hm-carbon-try-it". Guardrail: Carbon
+   GA 10 Nov terverifikasi dari beberapa roundup; re-verifikasi di
+   blog Google DeepMind pagi hari tayang; harga $2/$10 per juta
+   token sampai 30 Nov lalu naik dua kali lipat, hanya sebut bila
+   terverifikasi hari itu; jangan sajikan Carbon sebagai model
+   gratis biasa bila aksesnya lewat API atau berbayar. NOTE: HM is
+   frozen on Threads 7 Nov to 7 Dec, so this experiment is judged
+   on IG, FB, and blog only, not Threads.
 
-3. Gratisan AI honest renewal price (pillar: Gratisan AI, slot: Wed
-   11 Nov 14:00). Variable: the root caption carries the verified
-   renewal price (Rp75.000/bulan setelah 12 bulan gratis, batalkan
-   sebelum perpanjangan) plus the days left to the 31 Dec 2026
-   deadline (re-count on the day it airs) plus the confusion-point
-   fork ("Udah verifikasi SheerID atau mentok di langkah berapa?").
-   Control: Gratisan 7 Nov Google AI Plus (Threads 14 likes, 308
-   views, 1 real viewer reply). Hypothesis: honest price plus cancel
-   reminder earns at least 1 real viewer reply and matches the
-   control reach, because the 7 Nov test proved the confusion-point
-   fork earns real replies while deadline countdown alone did not
-   lift reach. Log marker: "exp: gratisan-renewal-price". Guardrail:
-   the Rp75.000/bulan renewal price was verified on the official
-   Gemini students page on 9 Nov; re-verify the morning it airs and
-   never state a price that was not verified that day. Do not present
-   ChatGPT Plus student as open; it closed 31 Okt and was US only.
+3. SPILL comparison slide (pillar: SPILL Repo, slot: Fri 13 Nov
+   21:30, edisi #24). Variable: slide 1 membawa tabel perbandingan
+   dua kolom dari dua repo paling kepakai di edisi itu (repo A buat
+   X, repo B buat Y, satu baris beda kunci), caption tetap pola #11
+   (repo paling kepakai + langkah pertama konkret + "Repo mana yang
+   mau kamu coba duluan?"). Control: SPILL #22 (Threads 4 likes,
+   257 views; IG 3 likes) dan #21 (Threads 5 likes, 168 views; IG
+   4 likes, 24 jam 92 likes). Hypothesis: slide perbandingan
+   mengangkat swipe-through dan IG likes di atas median SPILL hari
+   yang sama (sekitar 3-4 likes), karena format perbandingan menang
+   besar di gelombang mahasiswa (2,8 ribu likes, 11 Nov). Log
+   marker: "exp: spill-comparison-slide". Guardrail: repo harus
+   fresh dan terverifikasi, sudah ditambah ke tools.json dulu, star
+   count jujur; OpenClaw tetap dikecualikan permanen dari roster
+   SPILL.
 
-## Hot topics (refresh 2026-11-09)
+## Hot topics (refresh 2026-11-12)
 
-Corrections to the 5 Nov refresh, read before reusing old angles.
-Gemini 4 Carbon (28 Okt) is still limited to vetted cyber defenders
-through the Fairwind Program with no date for developers, businesses,
-or consumers, and Genie 4 (27 Okt) is still a research preview for
-trusted testers only, waitlist open, no firm date. Do NOT present
-either as available in Indonesia, and re-verify access before any
-reuse. Sora is still retired (consumer app closed 26 Apr 2026, API
-shut 24 Sep 2026); do NOT recommend it. The "GPT-6.1 Terra" scope
-from the 5 Nov refresh still stands: reported 26 Okt for writing,
-visual reasoning and computer use, available through the API and
-eligible paid access in ChatGPT Work and Codex, NOT in ordinary
-Chat, at $1/$5 per million tokens. Verify on the OpenAI changelog
-the day of use before naming it, and never present it as an ordinary
-Chat model.
+Corrections to the 9 Nov refresh, read before reusing old angles.
+Gemini 4 Carbon SUDAH GA pada 10 Nov (bukan lagi terbatas ke
+Fairwind; early access dua minggu buat security experts sudah
+selesai, harga intro $2/$10 per juta token sampai 30 Nov lalu naik
+ke $4/$20). Sora is still retired (consumer app closed 26 Apr 2026,
+API shut 24 Sep 2026); do NOT recommend it. The "GPT-6.1 Terra"
+scope from the 5 Nov refresh still stands: reported 26 Okt for
+writing, visual reasoning and computer use, available through the
+API and eligible paid access in ChatGPT Work and Codex, NOT in
+ordinary Chat, at $1/$5 per million tokens. Verify on the OpenAI
+changelog the day of use before naming it, and never present it as
+an ordinary Chat model. Gemini Gems read-only 17 Nov tetap jalan,
+5 hari lagi dari 12 Nov.
 
-1. ChatGPT bisa bikin GIF dari gambar, gratis di semua paket. OpenAI
-   launched Images 2.6 on 4 Nov: images can be turned into GIFs, 50%
-   faster than before, live in ChatGPT across every subscription
-   tier. Angle for Peka: the HM try-it explainer in experiment 1,
-   and a Prompt Harian with one image-to-GIF prompt. Guardrails:
-   re-verify on the OpenAI changelog the morning of use (Jina Reader
-   returned 500 on the page on 9 Nov); never promise GIF generation
-   on a free account if the page limits it.
+1. Gemini 4 Carbon rilis umum 10 Nov, model terkuat Google buat
+   tugas agent panjang. Harga intro $2/$10 per juta token sampai 30
+   Nov, lalu naik dua kali lipat. DeepMind juga memamerkan
+   AlphaProof Code: agent bertenaga Carbon menulis 6 juta baris Lean
+   dalam 4 minggu buat membuktikan properti keamanan kode Signal
+   yang sebenarnya. Angle for Peka: HM explainer di eksperimen 2,
+   dan Prompt Harian prompt tugas agent panjang. Guardrails:
+   re-verifikasi di blog Google DeepMind pagi hari pakai; harga
+   hanya bila terverifikasi hari itu.
 
-2. Gemini Omni 1.2 Flash GA, video 15 detik dari chat. Google
-   DeepMind published the model card on 5 Nov and the model went
-   generally available on the Gemini API and Gemini for business: it
-   makes video with audio from text, images, audio or video, clips
-   up to 15 seconds (up from 10), about 30% cheaper at $0.07 per
-   second for 720p, with iterative edits through follow-up prompts.
-   Angle for Peka: an HM explainer framed as the reader decision
-   ("bikin video 15 detik cukup dari chat, tanpa buka editor") with
-   one concrete try-it step, and a Prompt Harian video-prompt
-   edition. Guardrails: price and limits are from secondary
-   roundups; re-verify on the Google model card the day of use; note
-   the student offer includes Gemini Omni access, which ties it to
-   Hot topic 3.
+2. Claude jadi kantor, ChatGPT jadi etalase bisnis. Anthropic
+   meluncurkan Claude Meetings, Sheets, Whiteboards, dan Data
+   (beta, 10-11 Nov) plus konektor interaktif Adobe, Atlassian, dan
+   Box; OpenAI meluncurkan Businesses in ChatGPT (beta, 10 Nov):
+   perusahaan bisa klaim profil dan pasang Business Agent di dalam
+   jawaban. Anthropic juga mulai roadshow IPO 10 Nov, kisaran
+   $70-78 per saham, ticker ANT. Angle for Peka: HM explainer
+   "Claude sekarang bisa rapat dan bikin spreadsheet" dengan satu
+   langkah coba konkret, tutup debat dua sisi (kemajuan atau ancaman
+   buat kerjaan kita?). Guardrails: fitur masih beta, jangan
+   janjikan akses yang belum dibuka di Indonesia; angka IPO dari
+   Reuters, re-cek bila dipakai.
 
-3. Gelombang mahasiswa masih panas, sekarang Bab 3 dan harga
-   perpanjangan yang jujur. Fresh social evidence 3 to 5 Nov: a
-   Google AI Plus student carousel reached 4.1K likes and 130
-   comments (5 Nov, @hannaarinaw), a reel on what AI may and may
-   not do for thesis Chapter 3 reached 1.3K likes (5 Nov,
-   @ibuiramira), and a "3 dosa besar mahasiswa" carousel reached 940
-   likes and 86 comments (3 Nov, @faqih.dh). The offer itself is
-   unchanged: Google AI Plus free 12 months for students, claim by
-   31 Dec 2026 (52 days left from 9 Nov), SheerID verification,
-   payment method asked at sign-up, renews Rp75.000/bulan unless
-   cancelled (verified on the official Gemini students page on
-   9 Nov). Angle for Peka: the Gratisan experiment 3 plus the
-   Prompt Harian Bab 3 checklist in experiment 2. Guardrails:
-   academic honesty framing stays, never a shortcut promise, never
-   state an Indonesia renewal price unverified; ChatGPT Plus student
-   closed 31 Okt and was US only.
+3. Gelombang mahasiswa masih panas, formatnya geser ke
+   perbandingan. Bukti segar 5-11 Nov: carousel "10 AI Tools untuk
+   Skripsi" 18 ribu likes (5 Nov, @trik_farilhumam07); reel "IPK 3
+   vs Cum Laude" 2,8 ribu likes (11 Nov, @bantuwisuda.id); carousel
+   PPT sidang AI 2,9 ribu likes dan 46 komentar (6 Nov,
+   @ibuiramira); carousel Bab 2 1,4 ribu likes dan 71 komentar
+   (6 Nov, @dafnisfaz_); reel "AI buat Bab 1-3" 720 likes (6 Nov,
+   @mydata_id). Google AI Plus masih dibuka: gratis 12 bulan buat
+   mahasiswa, klaim sampai 31 Des 2026 (49 hari lagi dari 12 Nov),
+   verifikasi SheerID, perpanjang Rp75.000/bulan bila tidak
+   dibatalkan. Angle for Peka: eksperimen 1 dan 3, plus Gratisan
+   14 Nov dengan sudut PPT sidang atau Bab 2. Guardrails: framing
+   kejujuran akademik tetap, jangan janji jalan pintas; harga
+   perpanjang hanya bila terverifikasi hari itu.
 
-4. Gems Gemini dibekukan 17 Nov, diganti Skills. Per the 8 Nov
-   daily briefing: personal-account Gems become read-only on 17 Nov
-   (8 days from 9 Nov) and are permanently deleted on 17 Dec, as
-   Google replaces them with Skills. Angle for Peka: an HM explainer
-   or Prompt Harian for readers who built Gems ("pindahin Gems kamu
-   ke Skills sebelum 17 Nov") with one concrete migration step;
-   deadline honesty, no panic. Guardrail: this is from a secondary
-   daily briefing, re-verify on the Google help page the morning it
-   airs; never state a migration path that was not verified.
+4. Chatbot diuji pura-pura nyontek, hasilnya beda-beda. Tren viral
+   X 2 Nov: pengguna pura-pura nyontek ujian matematika lalu
+   pura-pura jadi guru; ChatGPT awalnya menutupi lalu berbalik,
+   Claude memberi jawaban benar tapi mengajak jujur dan menawarkan
+   mengajari materinya, Grok menolak dengan sarkasme, Gemini tidak
+   menyerahkan muridnya langsung. Survei Pew: 54% remaja AS sudah
+   pakai AI buat tugas sekolah. Angle for Peka: HM debat dua sisi
+   ("AI mana yang paling bisa dipercaya saat ditanya dosen?")
+   dengan framing kejujuran, bukan tutorial nyontek. Guardrails:
+   tes ini bukan eksperimen terkontrol, sebut itu; jangan ajarkan
+   cara nyontek; jangan jadikan satu chatbot sebagai pemenang
+   mutlak.
 
-5. Agen AI makin mandiri, dan memori masih jadi bahan balasan.
-   Claude Code 2.1.319 (6 Nov) moves long MCP jobs to the background
-   and can deny permission prompts outright instead of blocking the
-   session; Cursor added a describe-an-app-and-get-a-live-link flow
-   on 5 Nov; Thinking Machines Lab shipped Inkling 2 Small on 5 Nov
-   (594B total, 17B active, Apache 2.0 weights planned). On the Peka
-   side, BLUEPRINT #02 claude-mem earned IG 7 likes, 353 views, 7
-   saves and FB 231 views with the first-step framing, while its
-   Threads retry is still pending. Angle for Peka: a BLUEPRINT or
-   SPILL edition on an agent-memory or agent-tooling repo with the
-   locked #11 first-step pattern, or an HM explainer on background
-   agents ("agent kerja di belakang layar, kamu lanjut kerja lain").
-   Guardrail: verify the repo, star count, and install steps on the
-   day of use; OpenClaw stays excluded from the SPILL roster
-   permanently.
+5. Gems Gemini dibekukan 17 Nov, diganti Skills. Akun personal:
+   Gems jadi read-only 17 Nov (5 hari dari 12 Nov) dan dihapus
+   permanen 17 Des. Angle for Peka: HM explainer Senin 16 Nov
+   ("pindahin Gems kamu ke Skills sebelum 17 Nov") dengan satu
+   langkah migrasi konkret. Guardrail: re-verifikasi di halaman
+   bantuan Google pagi hari tayang; jangan tulis langkah migrasi
+   yang belum terverifikasi.
 
-Carried, still true and still not aired: the shared robots.txt token
-"__usage_ai-training" (Hot topic 5, 5 Nov refresh) is still a draft
-with staggered timelines and nobody honors it yet as of 3 Nov; keep
-for a future HM slot only if a concrete reader step exists, do not
-force it. Mistral Large 4 and Kimi K3.1 Pro open weights (5 Nov
-refresh) are still true and still not laptop-runnable; keep as
-background, not a fresh topic.
+Carried, still true and still not aired: Images 2.6 GIF (4 Nov,
+gratis di semua paket; dua kali VOID sebagai eksperimen karena
+topik tayang bukan Images 2.6, jadi jangan ajukan lagi sebagai
+eksperimen slot, tapi tetap layak jadi topik HM biasa bila ada slot
+kosong). The shared robots.txt token "__usage_ai-training" (Hot
+topic 5, 5 Nov refresh) is still a draft with staggered timelines
+and nobody honors it yet as of 3 Nov; keep for a future HM slot
+only if a concrete reader step exists, do not force it. Mistral
+Large 4 "Le Chonk" (1T parameter, open weights, klaim coding
+terkuat open-weight), Cursor Live Apps (deskripsi jadi app live
+dengan database), dan Google Canvas (sketsa tangan jadi app jalan)
+jadi kandidat SPILL atau BLUEPRINT; verifikasi repo dan angka di
+hari pakai. Meta Muse Ember 1.0 (9 Nov, model kecil buat subtask
+agent) jadi latar, bukan topik utama.
 
 Format note, still winning: checklist and self-score formats keep
 winning in the student wave (steps, checklists, boleh vs tidak-boleh,
 red flags vs green flags, this-or-that) because they give the reader
-a score or a side to pick. Copy the checklist structure inside the
-locked design system and the two-sided pick-a-side close where the
-playbook allows it. Tag-watch 9 Nov adds: TOP story 30%, question
-15%, day-counter 0%, words avg 37, hashtags avg 0.9; #AI stays the
-top tag (n=11, avg likes 1473.7) and #Kuliah is close second (avg
-1333.8). New format signal: a #ChatGPT before/after prompt
-comparison post reached 4502 likes (4 Nov, @putstywd, "gabut karena
-lagi bedrest, promptingnya super simple"), and a #AI "unpaid intern"
-post reached 4917 likes (@scottsmahon). Borrow the before/after
-shape for Prompt Harian (prompt jelek vs prompt bagus, hasil
-sampingan), never a personal story that did not happen. Peka keeps
-its locked caption rules (caption mandiri, forced choice, exactly
-one closing tag) and borrows only the story opening and the
-before/after shape. Note on this refresh: the V2EX hot list checked
-9 Nov shows no strong AI trend in the top 10 (only a Claude
-account-ban thread, 35 replies, and "is it still worth learning
-programming", 72 replies). Do NOT turn a complaint thread into a
-claim about a vendor's pricing without an official source.
+a score or a side to pick. NEW: format perbandingan dua kolom (X vs
+Y, sebelum vs sesudah) bergabung sebagai format menang, dibuktikan
+reel IPK 3 vs Cum Laude 2,8 ribu likes (11 Nov) dan postingan
+before/after prompt 4.502 likes (4 Nov). Copy the comparison
+structure inside the locked design system and the two-sided
+pick-a-side close where the playbook allows it. Tag-watch 12 Nov
+adds: #Kuliah kini memimpin rata-rata likes (1577,9, n=7) di atas
+#AI (1391,5, n=11), tapi tag penutup tetap #AI karena kunci manual
+user 6 Nov; story 33%, question 30% di REST; top post hari ini
+#Mahasiswa 44 ribu likes soal Hari Pahlawan, bukan AI, jangan
+ditumpangi. Note on this refresh: the V2EX hot list checked 12 Nov
+shows no strong AI trend in the top 10 (dominated by non-AI life
+topics). Do NOT turn a complaint thread into a claim about a
+vendor's pricing without an official source.
 
 ## Moments and calendar to ride this week
 
-- Mon 9 Nov: trend watch refresh 08:15 (this file); HM 09:36;
-  Prompt Harian 12:30; SPILL 21:30.
-- Tue 10 Nov: Hari Pahlawan (bukan libur nasional); HM 09:36
-  (experiment 1 slot, GIF try-it step); katalog Peka 13:00; Prompt
-  Harian 12:30; SPILL 21:30.
-- Wed 11 Nov: Prompt Harian 12:30 (experiment 2 slot, Bab 3
-  checklist); Gratisan AI 14:00 (experiment 3 slot, renewal price);
-  SPILL 21:30.
 - Thu 12 Nov: Hari Kesehatan Nasional dan Hari Ayah Nasional; trend
-  watch refresh 08:15 (next refresh of this file). No forced AI
-  tie-in.
-- Fri 13 Nov: katalog Peka 13:00; BLUEPRINT 20:00; SPILL 21:30.
-- Sat 14 Nov: Gratisan AI 14:00; LOG PEKA 16:00 (internal only,
-  text summary to chat, no posting).
+  watch refresh 08:15 (this file); HM 09:36; Prompt Harian 12:30;
+  SPILL #23 21:30.
+- Fri 13 Nov: HM 09:36 (experiment 2 slot, Carbon try-it step);
+  Prompt Harian 12:30 (experiment 1 slot, before/after prompt);
+  katalog Peka 13:00; BLUEPRINT 20:00; SPILL #24 21:30
+  (experiment 3 slot, comparison slide).
+- Sat 14 Nov: Gratisan AI 14:00 (sudut PPT sidang atau Bab 2 +
+  AI Plus 49 hari); LOG PEKA 16:00 (internal only, text summary
+  to chat, no posting).
 - Sun 15 Nov: engagement review 20:00 judges the three experiments
   above.
-- Tue 17 Nov: Gemini Gems read-only (Hot topic 4). Kiro Pro
+- Mon 16 Nov: HM slot Gems-to-Skills (Hot topic 5).
+- Tue 17 Nov: Gemini Gems read-only (Hot topic 5). Kiro Pro
   cancellation reminder is 29 Nov 10:00, first bill $20 on 1 Dec.
 - Wed 25 Nov: Hari Guru Nasional. Same rule: note only, no forced
   content.
-- Wed 31 Dec 2026: Google AI Plus student claim deadline (52 days
-  from 9 Nov).
+- Wed 31 Dec 2026: Google AI Plus student claim deadline (49 days
+  from 12 Nov).
 - Ongoing locks: jualan FROZEN, Pancingan OFF, giveaway ON HOLD, HM
   freeze on Threads 7 Nov to 7 Dec (IG, FB, blog, and channel still
   air), all with no new date until the user says otherwise. No link
@@ -234,6 +223,38 @@ claim about a vendor's pricing without an official source.
   carousel.
 
 ## Archive (experiments judged by Sunday review)
+
+Experiments from the 2026-11-09 refresh (checked 12 Nov from
+posted.log and performance.log; judged Sun 2026-11-15 20:00 unless
+noted VOID or not run):
+
+- HM GIF try-it step on ChatGPT Images 2.6 (slot Tue 10 Nov 09:36):
+  VOID. HM 10 Nov yang tayang bertopik Anthropic IPO (IG 1 like,
+  FB views tidak tersedia), bukan Images 2.6; marker di posted.log
+  mencatat VOID. Ini VOID kedua buat variabel yang sama (6 Nov juga
+  VOID dengan topik Perplexity Teammates). Jangan ajukan ulang
+  desain slot yang sama; topik Images 2.6 sendiri tetap layak jadi
+  HM biasa bila ada slot kosong, lihat Hot topic carried di atas.
+- Prompt Harian thesis Bab 3 checklist (slot Wed 11 Nov 12:30):
+  TIDAK JALAN sesuai desain. Prompt #21 yang tayang bertema bisnis
+  ("follow-up pembeli yang belum bayar", Threads 221 views, 1 like,
+  1 balasan), tanpa marker "exp: prompt-bab3-checklist" di
+  posted.log. Variabel belum teruji; jangan ajukan ulang desain
+  slot yang sama tanpa memastikan tema tayang sesuai desain.
+  Catatan: angka #21 (views 221, likes 1) jadi kontrol tambahan
+  buat eksperimen before/after di atas.
+- Gratisan AI honest renewal price (slot Wed 11 Nov 14:00): JALAN
+  sesuai desain, menunggu verdict review Minggu 15 Nov 20:00.
+  Caption membawa harga perpanjang Rp75.000/bulan + sisa 50 hari +
+  garpu SheerID. Hasil snapshot 22:30: Threads 7 likes, 1 komentar,
+  1.295 views, 1 repost; IG 0 likes; FB 0 likes, 9 views.
+  Bandingkan kontrol 7 Nov (Threads 14 likes, 308 views, 2 balasan)
+  dan #28 (18 likes, 1.654 views): views jauh di atas kontrol 7 Nov
+  tapi likes setengahnya, IG 0. Hipotesis balasan (minimal 1 balasan
+  penonton) terpenuhi secara angka komentar, tapi review Minggu
+  yang memutuskan apakah komentar itu balasan penonton asli dan
+  apakah verdictnya MENANG, PARSIAL, atau KALAH. Jangan kutip
+  sebagai bukti sebelum verdict.
 
 Judged Sun 2026-11-08 (weekly review, fresh CLI metrics 8 Nov 20:00 WIB;
 pillar medians this week: SPILL Threads 14 likes, IG 31 likes; Prompt
@@ -261,7 +282,7 @@ Threads 3 likes; HM Threads 3 likes):
   langkah berapa?"). Threads 14 likes / 308 views / 8 reposts /
   2 balasan, dan 1 balasan penonton ASLI menanyakan titik gagal yang
   dirancang ("Yang bikin ribet SheerID-nya, email kampus aktif doang
-  yang lolos?") — hipotesis balasan TERBUKTI. Tapi reach jauh di
+  yang lolos?"), hipotesis balasan TERBUKTI. Tapi reach jauh di
   bawah kontrol #28 (1.654 views / 18 likes) dan IG/FB di bawah #31
   (IG 3 likes / 1 save / 171 views vs 8 / 8 / 353; FB 52 vs 117).
   Verdict: mekanisme garpu confusion-point dipromosikan ke playbook
