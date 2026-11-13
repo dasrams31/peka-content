@@ -19,6 +19,7 @@ Reads spec.json scenes[].narration. Writes:
 import asyncio
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -30,15 +31,59 @@ TAIL = 0.80  # seconds of silence after the last word
 RATE = "+0%"  # overridden per spec ("rate" field)
 
 
+def _norm(s):
+    return re.sub(r"[^0-9a-zA-Z]", "", s).lower()
+
+
+def attach_punctuation(words, narration):
+    """Edge TTS WordBoundary tokens strip punctuation ("sekarang" has no
+    period, "kemarin," has no comma), so the karaoke never showed it
+    (v2 user feedback). Re-attach the narration's punctuation to the
+    tokens it belongs to by aligning TTS tokens back onto the narration
+    words (whitespace split, punctuation kept). Handles the known
+    merges: "12 November" arrives as one token covering two narration
+    words. A token that matches nothing keeps its own text, so the
+    pipeline never crashes and the display falls back to v2 behaviour
+    for that word."""
+    display = narration.split()
+    di = 0
+    for w in words:
+        target = _norm(w["text"])
+        if not target:
+            continue
+        acc = ""
+        used = []
+        while di < len(display) and len(acc) < len(target) + 2:
+            used.append(display[di])
+            acc += _norm(display[di])
+            di += 1
+            if acc == target:
+                break
+        if acc == target and used:
+            w["text"] = " ".join(used)
+        elif used:
+            # No match (e.g. TTS split a narration word): rewind so the
+            # display words stay available for the following tokens.
+            di -= len(used)
+    return words
+
+
 def words_per_line(words, max_words=7):
-    """Greedy line grouping for the karaoke bar. Breaks early at a
-    sentence-ending token so a line never straddles two sentences."""
+    """Greedy line grouping for the karaoke bar.
+
+    Rules (v3, user feedback): punctuation is visible (see
+    attach_punctuation), a line NEVER straddles two sentences, and a
+    long sentence breaks preferably after a comma. So: break at a
+    sentence-ending token, break after a comma once the line has
+    >= 5 words, and break at max_words."""
     lines = []
     cur = []
     for w in words:
         cur.append(w)
-        end_sentence = w["text"].rstrip().endswith((".", "?", "!"))
-        if len(cur) >= max_words or end_sentence:
+        text = w["text"].rstrip()
+        end_sentence = text.endswith((".", "?", "!"))
+        end_clause = text.endswith(",")
+        if end_sentence or (end_clause and len(cur) >= 5) or len(cur) >= max_words:
             lines.append(cur)
             cur = []
     if cur:
@@ -102,6 +147,9 @@ async def main():
     for si, scene in enumerate(scenes):
         seg_mp3 = os.path.join(tmp, f"seg{si}.mp3")
         audio, words = await synth_segment(scene["narration"], rate)
+        # TTS tokens carry no punctuation; re-attach it from the script
+        # so the karaoke shows commas and periods (v3).
+        words = attach_punctuation(words, scene["narration"])
         with open(seg_mp3, "wb") as fh:
             fh.write(audio)
         seg_dur = probe_duration(seg_mp3)

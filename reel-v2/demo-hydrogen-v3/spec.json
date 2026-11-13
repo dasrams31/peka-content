@@ -1,0 +1,149 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      }
+    }
+  },
+  "kicker": "GEMINI 4 HYDROGEN",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "BARU RILIS 12 NOV 2026",
+      "headline": [
+        "GEMINI 4",
+        "HYDROGEN"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Google baru aja rilis Gemini 4 Hydrogen tanggal 12 November kemarin, dan ini model AI paling kencang sekarang. Lo harus tahu nih.",
+      "sub": "Model AI paling kencang dari Google.",
+      "pose": "wave"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Harga flat: <b>$1.50</b> masuk / <b>$7.50</b> keluar",
+        "per 1 juta token"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Lo bayangin, dia 2,5 kali lebih cepat dari Gemini 3.8 Flash di level high. Harganya flat, 1,5 dolar masuk, 7,5 dolar keluar per sejuta token.",
+      "stat": "2,5x",
+      "stat_label": "lebih cepat dari Gemini 3.8 Flash di level high",
+      "pose": "present"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "label": "Gemini 4 Hydrogen",
+          "tag": "TERTINGGI",
+          "value": 58.8
+        },
+        {
+          "label": "Claude Sonnet 5.5",
+          "value": 53.3
+        },
+        {
+          "label": "GPT-6.1 Terra",
+          "value": 47.3
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Di tes HLE-Diamond, Hydrogen cetak 58,8 persen, tertinggi di kelasnya. Sonnet 5.5 cuma 53,3 persen, GPT 6.1 Terra 47,3 persen.",
+      "stat": "58,8%",
+      "stat_label": "HLE-Diamond, tertinggi di kelasnya",
+      "pose": "base"
+    },
+    {
+      "badge": "JUJUR AJA",
+      "compare": [
+        {
+          "a_label": "Sonnet 5.5",
+          "a_value": "63,9%",
+          "b_label": "Hydrogen",
+          "b_value": "57,0%",
+          "label": "TERMINAL-BENCH 4.1"
+        },
+        {
+          "a_label": "Sonnet 5.5",
+          "a_value": "83,9%",
+          "b_label": "Hydrogen",
+          "b_value": "77,6%",
+          "label": "OSWORLD 2.1"
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Tapi jujur aja, nggak semua dia menangin. Di Terminal-Bench 4.1, Sonnet 5.5 masih di depan 63,9 lawan 57 persen. Di OSWorld 2.1 sama, 77,6 lawan 83,9 persen.",
+      "pose": "base"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Makin tinggi makin pintar,",
+        "tapi makin mahal juga.",
+        "Udah masuk <span class=\"mono\">Search</span>, lo semua bisa coba."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Ada level berpikir baru, xhigh. Makin tinggi makin pintar, tapi makin mahal juga. Dia udah masuk Search, jadi lo semua bisa langsung coba.",
+      "stat": "XHIGH",
+      "stat_label": "Level berpikir baru",
+      "pose": "present"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Lo tim Hydrogen",
+        "atau tetap",
+        "Sonnet 5.5?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Buat kerja agentic, lo tim Hydrogen atau tetap Sonnet 5.5? Follow Peka AI kalau kontennya kepakai.",
+      "shortlink": "s.peka.ai.id/N4DgPp",
+      "pose": "wave"
+    }
+  ],
+  "theme": "peka-yellow",
+  "title": "Gemini 4 Hydrogen (reel-v2 demo v3, talking character, yellow theme)"
+}
