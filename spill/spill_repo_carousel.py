@@ -124,28 +124,45 @@ LANG_COLORS = {
 }
 
 INSTALL_PATTERNS = [
-    r"npx\s+skills\s+add\s+[^\s`'\"]+(?:\s+-[a-zA-Z]+)?",
-    r"/plugin\s+marketplace\s+add\s+[^\s`'\"]+",
-    r"\S+\s+plugin\s+add\s+[^\s`'\"]+",
-    r"npm\s+(?:install|i)\s+-g\s+[^\s`'\"]+",
-    r"pip\s+install\s+[^\s`'\"]+",
-    r"go\s+install\s+[^\s`'\"]+",
-    r"cargo\s+install\s+[^\s`'\"]+",
-    r"brew\s+install\s+[^\s`'\"]+",
+    r"npx\s+skills\s+add\b",
+    r"(?:claude|codex|copilot|gemini)\s+plugin\s+(?:marketplace\s+add|install|add)\b",
+    r"npm\s+(?:install|i)\s+-g\b",
+    r"pip\s+install\b",
+    r"go\s+install\b",
+    r"cargo\s+install\b",
+    r"brew\s+install\b",
+    r"(?:bunx|npx)\s+\S+@latest\s+install\b",
+    r"uv\s+tool\s+install\b",
 ]
 
 
 def readme_install(full):
+    """Full install command from the repo README, never cut mid-command.
+
+    Fix 2026-11-14 (SPILL #24 defect): the old code captured only the
+    first token after the install verb, so flags between verb and
+    package produced nonsense on the slide, e.g. `brew install --cask`
+    (real: `brew install --cask stablyai/orca/orca`) and
+    `npm install -g --allow-scripts=bun` (real: `... @bitkyc08/opencodex`),
+    and a hard [:60] cut could chop a long command. Now the whole
+    command line is captured (trailing shell comment stripped), and
+    bunx/npx `<pkg>@latest install` is recognised, so repos whose
+    README has no npx-skills/npm/pip/go/cargo/brew line no longer fall
+    back to a wrong generic `npx skills add` command.
+    """
     for branch in ("main", "master"):
         try:
             text = _get_text(f"https://raw.githubusercontent.com/{full}/{branch}/README.md")
         except Exception:
             continue
         for pat in INSTALL_PATTERNS:
-            m = re.search(pat, text)
-            if m:
-                cmd = m.group(0).strip().strip("`$").strip()
-                return re.sub(r"\s+", " ", cmd)[:60]
+            for m in re.finditer(pat, text):
+                line = text[m.start():].split("\n", 1)[0]
+                cmd = line.strip().strip("`$").strip()
+                cmd = re.sub(r"\s+#.*$", "", cmd)
+                cmd = re.sub(r"\s+", " ", cmd).rstrip("`").strip()
+                if cmd:
+                    return cmd
     return None
 
 
@@ -420,16 +437,33 @@ def repo_slide(spec, idx, repo):
         pd.ellipse([80 + i * 88, 52, 80 + i * 88 + 48, 100], fill=c)
     pd.text((392, 44), "terminal", font=_mono(64), fill=(130, 130, 130))
     cmd = en["install"]
+    # Shrink to fit; if even the smallest readable size overflows,
+    # wrap onto a second line instead of clipping the command
+    # (the old floor of 60 with no wrap cut long commands off-panel).
     tsize = 88
-    while tsize > 60 and pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 240:
+    while tsize > 44 and pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 240:
         tsize -= 4
-    tf = _mono(tsize, True)
-    px, py = 88, 168
-    pd.text((px, py), "$ ", font=tf, fill="#ffd60a")
-    px += pd.textlength("$ ", font=tf)
-    pd.text((px, py), cmd, font=tf, fill=(255, 255, 255))
-    cx = px + pd.textlength(cmd, font=tf) + 32
-    pd.rectangle([cx, py + 4, cx + 48, py + 100], fill="#ffd60a")
+    if pd.textlength("$ " + cmd, font=_mono(tsize, True)) > WW - 240:
+        words = cmd.split(" ")
+        half = len(cmd) // 2
+        cut = min(range(len(words) - 1),
+                  key=lambda i: abs(len(" ".join(words[:i + 1])) - half)) + 1
+        lines = [" ".join(words[:cut]), " ".join(words[cut:])]
+        tf = _mono(56, True)
+        pd.text((88, 140), "$ ", font=tf, fill="#ffd60a")
+        pd.text((88 + pd.textlength("$ ", font=tf), 140), lines[0], font=tf,
+                fill=(255, 255, 255))
+        pd.text((88, 216), "  " + lines[1], font=tf, fill=(255, 255, 255))
+        cx = 88 + pd.textlength("  " + lines[1], font=tf) + 32
+        pd.rectangle([cx, 220, cx + 40, 276], fill="#ffd60a")
+    else:
+        tf = _mono(tsize, True)
+        px, py = 88, 168
+        pd.text((px, py), "$ ", font=tf, fill="#ffd60a")
+        px += pd.textlength("$ ", font=tf)
+        pd.text((px, py), cmd, font=tf, fill=(255, 255, 255))
+        cx = px + pd.textlength(cmd, font=tf) + 32
+        pd.rectangle([cx, py + 4, cx + 48, py + 100], fill="#ffd60a")
     img.paste(panel, (WX, ty), _rounded_mask((WW, PANEL_H), 56))
     d.rounded_rectangle([WX, ty, WX + WW - 1, ty + PANEL_H - 1], radius=56,
                         outline=(70, 70, 80), width=4)
