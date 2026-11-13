@@ -1,4 +1,4 @@
-# reel-v2 — Voiceover-led reels for Peka AI
+# reel-v2 - Voiceover-led reels for Peka AI
 
 A second reel system next to the v1 template reels (15-16s, music-led).
 Reel-v2 is built for the longer voiceover-led explainer format: 45-60s,
@@ -11,29 +11,29 @@ keep the v1 format.
 
 ## What is in here
 
-- `themes.json` — the 3 themes. Each theme is a full color config:
+- `themes.json` - the 3 themes. Each theme is a full color config:
   `dark-grid` (black + grid + red, closest to the reference reels),
   `peka-yellow` (Peka yellow #FFD60A on black #111111, current brand),
   `navy-tech` (dark navy + cyan, BLUEPRINT mood).
-- `scene.html` — the single 1080x1920 stage template. Theme comes in as
+- `scene.html` - the single 1080x1920 stage template. Theme comes in as
   CSS variables. `buildScene(spec)` builds the scenes, `renderAt(t)`
   draws one deterministic frame: scene stagger, bar growth, mascot bob,
   karaoke line + active-word highlight, progress bar.
-- `tts.py` — Edge TTS voice `id-ID-ArdiNeural` (the voice Piko uses),
+- `tts.py` - Edge TTS voice `id-ID-ArdiNeural` (the voice Piko uses),
   `boundary='WordBoundary'` so every word gets a real measured
   start/end. One synthesis per scene, joined with 0.3s silence gaps.
   Writes `narration.mp3`, `words.json`, `narration.txt`.
   Run with the Piko venv python (edge-tts lives there).
-- `render.py` — Playwright frame renderer (megumi venv python,
+- `render.py` - Playwright frame renderer (megumi venv python,
   chromium_headless_shell-1243). Same deterministic pattern as the
   HM reel builder: `renderAt(t)` per frame, scale 2.0 = 2160x3840.
   Also has a `--still <t> <out.jpg>` mode for theme comparison.
-- `encode.py` — ffmpeg: frames + narration to h264 2160x3840 yuv420p
+- `encode.py` - ffmpeg: frames + narration to h264 2160x3840 yuv420p
   + aac, faststart; cover jpg from t=1s.
-- `build_reel.py` — orchestrator: spec -> TTS -> render -> encode ->
+- `build_reel.py` - orchestrator: spec -> TTS -> render -> encode ->
   ffprobe verify (h264, 2160x3840, yuv420p, aac, 45-60s) -> delete frames.
-- `demo-hydrogen/` — the demo edition (Gemini 4 Hydrogen, dark-grid).
-- `stills/` — hook-scene stills for the other two themes.
+- `demo-hydrogen/` - the demo edition (Gemini 4 Hydrogen, dark-grid).
+- `stills/` - hook-scene stills for the other two themes.
 
 ## How to render the next edition
 
@@ -95,6 +95,18 @@ keep the v1 format.
 - Render time is the bottleneck: 24fps x ~58s = ~1,400 Playwright
   screenshots at 2160x3840, roughly 10 minutes on this VM. Do not
   lower the fps to save time; the stagger/bar animations need it.
+  If a render run is killed mid-way (happened once, SIGTERM at frame
+  906/1384), just re-run it: `render.py` skips frames that already
+  exist, so it resumes instead of starting over.
+- x264 at 4K OOM-killed this VM (6 GB cgroup) with default threading.
+  `encode.py` is capped to `-threads 2` + preset veryfast for that
+  reason. Do not remove the caps without re-testing.
+- In the demo, the compare-row name labels under the two values sit
+  close together (`Sonnet 5.5 Hydrogen` at a glance). Fixed in
+  `scene.html` after the demo render (a `lawan` separator is now
+  inserted between the names); the demo mp4 still has the old
+  spacing, the values themselves were always correctly attributed
+  by position.
 - The hook scene has a lot of empty middle space by design (headline +
   mascot + karaoke). That matches the reference look; do not fill it
   with extra text.
