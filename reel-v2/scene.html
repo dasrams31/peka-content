@@ -65,7 +65,10 @@
     letter-spacing: 1px; color: var(--text); background: var(--card);
     border: 2px solid var(--card_border); padding: 26px 34px; border-radius: 18px; }
   .shortlink b { color: var(--mono); font-weight: normal; }
-  #mascot { position: absolute; right: 56px; bottom: 470px; width: 210px; z-index: 4; }
+  #mascot { position: absolute; z-index: 4; aspect-ratio: 804 / 1365;
+    filter: drop-shadow(0 10px 26px rgba(0,0,0,0.55)); }
+  #mascot img { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
+  #mascot img.on { display: block; }
   #karaoke { position: absolute; left: 84px; right: 84px; bottom: 168px; z-index: 6;
     min-height: 250px; display: flex; align-items: flex-start; justify-content: center; }
   .klines { text-align: center; }
@@ -88,7 +91,7 @@
     <div class="lockup"><img src="assets/mascot-crop.png"><span>peka.ai.id</span></div>
   </div>
   <div id="scenes"></div>
-  <img id="mascot" src="assets/mascot-crop.png">
+  <div id="mascot"><img id="mascot-closed" alt=""><img id="mascot-open" alt=""></div>
   <div id="karaoke"><div class="klines" id="klines"></div></div>
   <div class="foot">GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG</div>
   <div id="progress"></div>
@@ -97,6 +100,18 @@
   const easeOut = p => 1 - Math.pow(1 - p, 3);
   const clamp01 = x => Math.max(0, Math.min(1, x));
   let SPEC = null, WORDS = [], SCENE_SPANS = [], TOTAL = 0;
+  let CHAR_ASPECT = 1365 / 804; // height / width of the character art
+  const MASCOT_DEFAULT = { side: 'right', bottom: 470, width: 210 };
+
+  function isSpeaking(t) {
+    // Mouth open while a word is being spoken (small lead/lag so the
+    // mouth does not flicker on the tiny gaps between words).
+    if (!WORDS.length) return false;
+    const wi = currentWord(t);
+    if (wi < 0) return false;
+    const w = WORDS[wi];
+    return t >= w.start - 0.02 && t < w.end + 0.06;
+  }
 
   function el(tag, cls, html) {
     const e = document.createElement(tag);
@@ -116,6 +131,16 @@
     const th = spec.theme, root = document.getElementById('stage');
     for (const k of Object.keys(th)) root.style.setProperty('--' + k, th[k]);
     document.getElementById('top-kicker').textContent = spec.kicker || 'PEKA AI';
+    // Talking character: two stacked states (mouth closed / open).
+    // Swappable via spec.character {closed, open, aspect_ratio}; the
+    // default is the anime Piko in assets/character/. Both images are
+    // preloaded here so the per-frame toggle never waits on a load.
+    const ch = spec.character || {};
+    document.getElementById('mascot-closed').src =
+      ch.closed || 'assets/character/piko-anime-closed.png';
+    document.getElementById('mascot-open').src =
+      ch.open || 'assets/character/piko-anime-open.png';
+    if (ch.aspect_ratio) CHAR_ASPECT = ch.aspect_ratio;
     const holder = document.getElementById('scenes');
     holder.innerHTML = '';
     spec.scenes.forEach((s, si) => {
@@ -244,9 +269,30 @@
       const p = easeOut(clamp01((lt - 0.7) / 0.8));
       fl.style.width = (parseFloat(fl.dataset.w) * p).toFixed(1) + '%';
     });
-    // Mascot gentle bob while speaking.
+    // Mascot: per-scene position/size/flip + talking state.
+    // spec.scenes[i].mascot = {side: 'right'|'left', bottom: px,
+    // width: px, left/right: px, flip: bool}. Falls back to the v1
+    // fixed spot (right, bottom 470, width 210) when absent.
+    const mc = Object.assign({}, MASCOT_DEFAULT, SPEC.scenes[si].mascot || {});
     const m = document.getElementById('mascot');
-    m.style.transform = 'translateY(' + (Math.sin(t * 2.2) * 7).toFixed(1) + 'px)';
+    const mw = mc.width || 210;
+    m.style.width = mw + 'px';
+    m.style.height = (mw * CHAR_ASPECT).toFixed(1) + 'px';
+    m.style.bottom = (mc.bottom !== undefined ? mc.bottom : 470) + 'px';
+    if ((mc.side || 'right') === 'left') {
+      m.style.left = (mc.left !== undefined ? mc.left : 56) + 'px';
+      m.style.right = 'auto';
+    } else {
+      m.style.right = (mc.right !== undefined ? mc.right : 56) + 'px';
+      m.style.left = 'auto';
+    }
+    const talking = isSpeaking(t);
+    const pulse = talking ? 1.035 : 1.0; // subtle swell while speaking
+    const flip = mc.flip ? -1 : 1; // face the content when on the left
+    m.style.transform = 'translateY(' + (Math.sin(t * 2.2) * 7).toFixed(1) +
+      'px) scale(' + (flip * pulse).toFixed(3) + ', ' + pulse.toFixed(3) + ')';
+    document.getElementById('mascot-open').classList.toggle('on', talking);
+    document.getElementById('mascot-closed').classList.toggle('on', !talking);
     // Karaoke: show the line of the current word, highlight it.
     const wi = WORDS.length ? currentWord(t) : -1;
     if (wi >= 0) {
