@@ -69,6 +69,7 @@ TYPE_LABELS = {
     "bansos": "🎟️ Bansos AI",
     "jualan": "💎 Jualan Prompt",
     "special": "✨ Edisi Khusus Peka AI",
+    "weekly": "🎬 AI Pekan Ini",
 }
 
 

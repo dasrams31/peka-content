@@ -5,9 +5,14 @@ Reel-v2 is built for the longer voiceover-led explainer format: 45-60s,
 one Indonesian voiceover driving the reel, word-by-word karaoke captions
 synced to real TTS word boundaries, dark textured visuals, no music.
 
-BUILD ONLY. Nothing in this folder posts anything. Do not wire it into
-any cron until the user says so. SPILL #24 and the other running pillars
-keep the v1 format.
+ADOPTED 13 Nov 2026 (user order, after demo v3): the voiceover reel
+is now part of the template for NEW AI MODEL NEWS editions
+(`peka-model-watch` builds one per verified flagship release, theme
+`peka-yellow`, v3 spec) AND the weekly series `AI Pekan Ini`
+(`peka-weekly-ai`, Sundays 16:00, latest-AI news alternating with
+AI tutorials). The 15s music-led reel is retired for model editions;
+the voiceover reel is the IG/FB/TikTok reel there. SPILL and the
+other running pillars keep the v1 format.
 
 ## What is in here
 

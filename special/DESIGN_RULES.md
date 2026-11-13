@@ -56,3 +56,17 @@ tidak boleh diserahkan.
   bersinggungan, tidak ada teks menabrak nomor halaman/footer.
 - Angka benchmark dicek ulang lawan fakta terverifikasi.
 - Ada satu temuan saja: perbaiki rendernya, jangan serahkan.
+
+## 7. Reel voiceover (edisi model, adopsi 13 Nov 2026)
+- Setiap edisi khusus model AI baru juga membawa satu reel voiceover
+  reel-v2 (tema `peka-yellow`, 45-60 dtk, 2160x3840 yuv420p, narasi
+  "lo" +25% sekitar 132 kata, subtitle karaoke sentence-first dengan
+  tanda baca, karakter Piko animasi 3 pose wave/present/base).
+  Reel ini yang diposting ke IG/FB/TikTok; reel 15 dtk bermusik tidak
+  lagi dibuat untuk edisi model.
+- Naskah + angka di reel voiceover WAJIB sama dengan fakta
+  terverifikasi di carousel/blog (satu sumber fakta, tanpa angka
+  tambahan). QA stills dulu per scene (maskot tidak menutup teks,
+  bar, atau chip shortlink) sebelum render penuh.
+- Aturan terkunci tetap berlaku: tanpa link di teks caption, tanpa
+  perintah install di caption, tanpa em-dash, tanpa CTA komen-untuk-link-via-DM.
