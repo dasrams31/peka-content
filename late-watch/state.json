@@ -1,11 +1,1 @@
-{
-  "date": "2026-11-13",
-  "slots": {
-    "blueprint": {
-      "alerted": true,
-      "alerted_at": "21:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    }
-  }
-}
+{"date": "2026-11-14", "slots": {}}
