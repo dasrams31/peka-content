@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 23,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "name": "fathah/hermes-desktop",
+      "stars": "15RB",
+      "install": "npx skills add fathah/hermes-desktop -g",
+      "penjelasan": "Aplikasi desktop pendamping buat Hermes Agent, jadi kamu bisa ngobrol dan ngatur agent dari satu jendela yang rapi, tanpa bolak-balik terminal. Semua percakapan, tugas, dan pengaturan agent kebuka di tampilan yang gampang dipahami.",
+      "cocok": "Kamu yang mau pakai Hermes Agent lewat tampilan desktop yang simpel, tanpa ribet terminal.",
+      "shortlink": "https://s.peka.ai.id/fu8yxp",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-12/shots/fathah-hermes-desktop.png"
+    },
+    {
+      "name": "Waishnav/devspace",
+      "stars": "5RB",
+      "install": "npm install -g @waishnav/devspace",
+      "penjelasan": "Harness coding agent yang ringan dan jalan di atas MCP, satu alat buat ngatur banyak agent coding sekaligus, termasuk Hermes, Claude, dan ChatGPT. Devspace bikin agent-agent itu bisa kerja bareng di satu workspace yang sama.",
+      "cocok": "Kamu yang pakai beberapa agent coding sekaligus dan pengin satu tempat buat ngatur semuanya.",
+      "shortlink": "https://s.peka.ai.id/9t2vi6",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-12/shots/Waishnav-devspace.png"
+    },
+    {
+      "name": "codejunkie99/agentic-stack",
+      "stars": "2RB",
+      "install": "brew install agentic-stack",
+      "penjelasan": "Satu folder .agent/ yang isinya memori, skill, dan protokol kerja agent kamu, dan folder ini bisa dipindah-pindah antar alat, dari Claude Code sampai Hermes. Jadi pengetahuan dan kebiasaan agent kamu nggak hilang tiap ganti alat, semua ikut kebawa.",
+      "cocok": "Kamu yang gonta-ganti alat AI tapi pengin memori dan skill agent kamu tetap ikut ke mana-mana.",
+      "shortlink": "https://s.peka.ai.id/BFHN6q",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-12/shots/codejunkie99-agentic-stack.png"
+    },
+    {
+      "name": "dodo-reach/hermes-desktop",
+      "stars": "2RB",
+      "install": "npx skills add dodo-reach/hermes-desktop -g",
+      "penjelasan": "Cara paling aman dan simpel buat ngatur Hermes dari Mac, semuanya lewat SSH murni, tanpa gateway dan tanpa port yang kebuka. Aplikasi ini nyambung langsung ke server Hermes kamu dan kasih kontrol penuh dari menu bar Mac.",
+      "cocok": "Kamu pengguna Mac yang jalanin Hermes di server dan pengin ngatur semuanya dengan aman dari laptop.",
+      "shortlink": "https://s.peka.ai.id/lkqUbA",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-12/shots/dodo-reach-hermes-desktop.png"
+    },
+    {
+      "name": "Salomondiei08/oh-my-hermes",
+      "stars": "883",
+      "install": "git clone https://github.com/Salomondiei08/oh-my-hermes /tmp/oh-my-hermes",
+      "penjelasan": "Lapisan workflow buat Hermes Agent yang ngatur alur kerja dari ngebangun, ngirim, sampai ngoperasikan aplikasi, semuanya dalam satu pola yang udah ditentuin. Kamu tinggal ikutin langkahnya, agent yang ngerjain sisanya sesuai urutan yang bener.",
+      "cocok": "Kamu yang mau alur kerja Hermes yang rapi dan konsisten buat tiap proyek aplikasi.",
+      "shortlink": "https://s.peka.ai.id/gwiV01",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-12/shots/Salomondiei08-oh-my-hermes.png"
+    }
+  ]
+}
