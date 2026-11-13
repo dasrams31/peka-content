@@ -33,7 +33,66 @@ keep the v1 format.
 - `build_reel.py` - orchestrator: spec -> TTS -> render -> encode ->
   ffprobe verify (h264, 2160x3840, yuv420p, aac, 45-60s) -> delete frames.
 - `demo-hydrogen/` - the demo edition (Gemini 4 Hydrogen, dark-grid).
-- `stills/` - hook-scene stills for the other two themes.
+  v1: flat Piko mascot, fixed bottom-right, voiceover aku/kamu +15%.
+- `demo-hydrogen-v2/` - the same topic, second demo: anime Piko
+  character that talks (two mouth states synced to the voiceover),
+  per-scene mascot positions, voiceover register "lo" at +25%.
+- `assets/character/` - the talking character (see below).
+- `stills/` - hook-scene stills for the other two themes (v1).
+
+## Talking character (v2)
+
+`assets/character/` holds the anime version of the Piko mascot
+(yellow letter-P body, one big eye, antenna, Piko yellow #FFD60A):
+
+- `piko-anime-closed.png` - mouth closed (small smile), 804x1365,
+  transparent background.
+- `piko-anime-open.png` - mouth open (talking), same size, same
+  crop box as the closed state, so swapping frames never jitters.
+- `process_character.py` - how the two PNGs were made from the
+  generated art: flood-fill the connected near-black background to
+  transparent, crop both states with one union bounding box.
+  (Raw generations are the `media-generation-*.png` files in the
+  same folder.)
+
+How it works in `scene.html`: the mascot is a container with the two
+images stacked; `renderAt(t)` shows the open state while a word is
+being spoken (word boundaries from `words.json`, with a 0.02s lead
+and 0.06s tail so the mouth does not flicker on tiny gaps) and the
+closed state in pauses, plus a gentle bob and a 1.035x swell while
+speaking. Both images are preloaded in `buildScene`, so the toggle
+never waits on a load mid-render.
+
+Per-scene position: each scene in `spec.json` can carry
+`mascot: {side: "right"|"left", bottom: <px>, width: <px>,
+left|right: <px>, flip: <bool>}`. `flip` mirrors the character so
+it faces the content when it sits on the left. Without a `mascot`
+field the scene falls back to the v1 spot (right, bottom 470,
+width 210). Demo v2 positions: hook right-bottom large (260),
+stat/bars/xhigh left-bottom small (160-170, flipped), compare
+right-bottom small (170), close right-center (bottom 620, 180).
+Check a still per scene before a full render; the mascot must never
+cover text, bars, or the shortlink chip.
+
+### Swapping the character
+
+To use a different presenter later (e.g. an anime girl/boy), drop
+two same-size, same-crop PNGs (mouth closed + mouth open,
+transparent background) into `assets/character/` and point the spec
+at them:
+
+```json
+"character": {
+  "closed": "assets/character/my-girl-closed.png",
+  "open": "assets/character/my-girl-open.png",
+  "aspect_ratio": 1.5
+}
+```
+
+`aspect_ratio` is height / width of the art (the anime Piko is
+1.6978). If both states use the SAME file (closed == open), the
+mouth never changes but the bob + pulse still animate, which is the
+fallback when two consistent states cannot be produced.
 
 ## How to render the next edition
 
@@ -42,7 +101,13 @@ keep the v1 format.
    - `kicker`: top-left label (usually the topic, e.g. `GEMINI 4 HYDROGEN`).
    - `rate`: TTS speed. `+15%` matches the fast reference style and
      keeps ~130 words inside 60s. `+0%` is calmer but slower; then
-     keep the narration under ~110 words.
+     keep the narration under ~110 words. **v2 uses `+25%` with the
+     informal "lo" register (like the aishift.id reference) and
+     ~132 words for ~58s.** At +25% ArdiNeural still speaks
+     ~0.42s/word, so do not assume a higher rate buys much time:
+     the first v2 draft (146 words) ran 61.9s and had to be trimmed
+     to 132 words. Keep the narration at or under ~135 words at
+     +25%.
    - `scenes`: 5-6 scenes. Kinds:
      - `hook`: `badge` (chip), `headline` (2 lines), `sub`.
      - `beat`: `stat` (huge number), `stat_label`, `lines` (2-3 lines,
@@ -55,11 +120,21 @@ keep the v1 format.
    - `narration`: one Indonesian paragraph per scene, casual Peka
      voice (aku/kamu, udah, sampe, kalo, nggak). Never "lo".
      Target ~130 words total for 45-60s at `+15%`.
+     **v2 register is "lo" instead of aku/kamu** (informal, like the
+     reference reels); keep the visual text consistent with the
+     spoken words (e.g. the closing headline says "Lo tim Hydrogen"
+     because the voiceover says "lo").
 2. Run: `python3 build_reel.py <spec.json> <out_dir> [--theme <name>]`
    (about 10-15 minutes: ~30s TTS, ~10 min frame render, ~1 min encode).
 3. Check `build.log` + ffprobe output, then eyeball frames: extract
    with `ffmpeg -ss <t> -i <out>/reel.mp4 -frames:v 1 check.jpg`
-   at the hook, mid-beat, and closing scene.
+   at the hook, mid-beat, and closing scene. **For a talking-
+   character edition, render stills FIRST** (`render.py
+   <render-spec.json> --still <t> <out.jpg>`) at one time per
+   scene, including one mid-word time (mouth must be open) and one
+   sentence-gap time (mouth must be closed), and check the mascot
+   never covers text, bars, or the shortlink chip. Only then run
+   the full render.
 4. Write `caption-tiktok.txt` in the out dir (FYP pattern: hook fact
    first, ~35 words, 3 hashtags, exactly one forced-choice question,
    no link in the text; the link lives in the closing scene only).
@@ -112,3 +187,14 @@ keep the v1 format.
   with extra text.
 - The karaoke line wraps to two lines when a line has 7 long words.
   That is normal; the active word still highlights correctly.
+- Talking-character notes (v2): the two mouth states must share one
+  crop box or the character visibly jumps when the mouth toggles;
+  `process_character.py` enforces this with a union bbox (the two
+  v2 states differ by only 1-4 px before the union crop). The
+  generated art carries two tiny dark specks (one on the head, one
+  on the P bowl) that are barely visible at reel scale; they come
+  from the generation, not the pipeline. The mouth is binary
+  (open/closed per word), not syllable-shaped: at 24fps it reads as
+  talking, but it is not lip-sync. The karaoke line grouping can
+  split a sentence across lines (e.g. a 3-word line when the
+  previous line hit the 7-word cap), which is cosmetic only.
