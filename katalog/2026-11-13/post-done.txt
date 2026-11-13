@@ -1,4 +1,8 @@
 THREADS_OK https://www.threads.com/@peka.ai.id/post/Dfq_QmtD75y
 THREADS_POST_ID 18130949953848787
-IG_OK 18127336642908025
+IG_OK https://www.instagram.com/p/Dfq_wCxjzgV/
 IG_MEDIA 18127336642908025
+FB_OK https://facebook.com/61594934228841/posts/pfbid0SS6bMKBrgMw1FxaWGqNJ1mLRuG3xe8Q7T5heeLhkMWYWEx75hhBahCdVTCb7zUxdl/
+FB_POST_ID 122120425683497807
+STORY_OK https://instagram.com/stories/peka.ai.id/17873157615660285
+STORY_MEDIA 17873157615660285
