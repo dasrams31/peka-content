@@ -48,8 +48,11 @@ async def render_frames(spec_path, out_dir, fps, scale):
     p, browser, page = await open_page(spec, scale)
     n = int(fps * dur)
     for i in range(n):
+        path = os.path.join(out_dir, f"f{i:04d}.png")
+        if os.path.exists(path):
+            continue  # resume: frame already rendered, skip it
         await page.evaluate(f"window.renderAt({i / fps})")
-        await page.screenshot(path=os.path.join(out_dir, f"f{i:04d}.png"))
+        await page.screenshot(path=path)
         if i % 120 == 0:
             print(f"frame {i}/{n}", flush=True)
     await browser.close()
