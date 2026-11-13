@@ -1,1 +1,20 @@
-{"seen":[{"handled":"2026-11-12","model":"Claude Fable 5.2","out_dir":"special/out/2026-11-12-claude-fable-5-2","released":"2026-11-09","shortlink":"https://s.peka.ai.id/y3ZY2I","vendor":"Anthropic"}]}
+{
+  "seen": [
+    {
+      "handled": "2026-11-12",
+      "model": "Claude Fable 5.2",
+      "out_dir": "special/out/2026-11-12-claude-fable-5-2",
+      "released": "2026-11-09",
+      "shortlink": "https://s.peka.ai.id/y3ZY2I",
+      "vendor": "Anthropic"
+    },
+    {
+      "model": "Gemini 4 Hydrogen",
+      "vendor": "Google",
+      "released": "2026-11-12",
+      "handled": "2026-11-13",
+      "out_dir": "special/out/2026-11-13-gemini-4-hydrogen",
+      "shortlink": "https://s.peka.ai.id/N4DgPp"
+    }
+  ]
+}

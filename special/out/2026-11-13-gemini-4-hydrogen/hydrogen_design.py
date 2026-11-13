@@ -339,7 +339,7 @@ def slide2():
     cards = [
         ("4 THINKING LEVEL", "Low, Medium, High (default), Xhigh. Makin tinggi makin pintar, makin mahal."),
         ("HARGA FLAT", "$1.50 masuk / $7.50 keluar per 1 jt token. Cache $0.075."),
-        ("MASUK SEARCH GLOBAL", "Gemini API, AI Studio semua tier termasuk gratis, aplikasi Gemini, Google Search."),
+        ("SEARCH GLOBAL", "Gemini API, AI Studio semua tier termasuk gratis, aplikasi Gemini, Google Search."),
         ("ORCHESTRATOR", "Di Antigravity, mendekati Carbon di Terminal-Bench 4.0, 24% lebih hemat kuota."),
     ]
     x0, y0 = X(72), X(312)
