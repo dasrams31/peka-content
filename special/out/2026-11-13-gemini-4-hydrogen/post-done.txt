@@ -8,5 +8,7 @@ THREADS_REPLY_3_OK https://www.threads.com/@peka.ai.id/post/DfrgS5pD48h
 THREADS_REPLY_3_ID 18102082868558217
 THREADS_REPLY_4_OK https://www.threads.com/@peka.ai.id/post/DfrgT6pD_2N
 THREADS_REPLY_4_ID 17913082632579375
-IG_OK 18138107161679485
+IG_OK https://www.instagram.com/reel/DfrhS0ijz1R/
 IG_MEDIA 18138107161679485
+FB_OK https://facebook.com/reel/2618170858698156/
+FB_POST_ID 122120523297497807
