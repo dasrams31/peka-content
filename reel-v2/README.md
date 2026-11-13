@@ -37,6 +37,11 @@ keep the v1 format.
 - `demo-hydrogen-v2/` - the same topic, second demo: anime Piko
   character that talks (two mouth states synced to the voiceover),
   per-scene mascot positions, voiceover register "lo" at +25%.
+- `demo-hydrogen-v3/` - the same topic, third demo (user feedback on
+  v2): karaoke shows punctuation and never merges two sentences in
+  one line, theme `peka-yellow`, the character changes pose per scene
+  (wave / present / base) plus CSS body motion (lean, squash-stretch,
+  pose-change pop) so the hands and body move too.
 - `assets/character/` - the talking character (see below).
 - `stills/` - hook-scene stills for the other two themes (v1).
 
@@ -90,9 +95,79 @@ at them:
 ```
 
 `aspect_ratio` is height / width of the art (the anime Piko is
-1.6978). If both states use the SAME file (closed == open), the
-mouth never changes but the bob + pulse still animate, which is the
-fallback when two consistent states cannot be produced.
+1.6978 in v2, 1.6729 in v3). If both states use the SAME file
+(closed == open), the mouth never changes but the bob + pulse still
+animate, which is the fallback when two consistent states cannot be
+produced.
+
+## Poses + body motion (v3)
+
+The v2 character only moved its mouth. v3 adds poses and body
+motion so the hands and body move too:
+
+- `assets/character/piko-anime-{base,wave,present}-{closed,open}.png` -
+  three poses x two mouth states, all sharing ONE union crop box
+  (957x1601, aspect 1.6729), built by `process_character_v3.py`
+  from the v2 art plus two generated pose edits (wave = one arm
+  raised, present = both arms open). The script normalizes size and
+  position first: the v2 square raw frames the character smaller
+  (~1333 px bbox height) and right-shifted versus the portrait pose
+  edits (~1564 px), so every state is scaled to the tallest bbox
+  height and translated so all bbox centres land on one point
+  before the union crop. Without this step a pose swap visibly jumps
+  in size and position. After normalization the six bboxes agree to
+  within ~13 px. The raw generations are the `media-generation-*.png`
+  files in the same folder.
+- `spec.json` carries `character.poses` and each scene carries
+  `pose: "base"|"wave"|"present"` (v3 demo: hook wave, stat present,
+  bars base, compare base, xhigh present, close wave). `scene.html`
+  builds all six images in `buildScene` (preloaded) and toggles
+  `(pose, talking)` only when it changes, same cached-write rule as
+  the mouth state.
+- CSS body motion, also in `scene.html` `renderAt`: a gentle lean
+  while talking (rotate +-2deg, 1.4 rad/s), a squash-stretch pulse
+  on the speech rhythm (scaleY 1 +- 0.012 at 7 rad/s), and a
+  pose-change pop (scale 0.94 -> 1.0 over the first 0.35s of a
+  scene) so the pose swap reads as movement. `transform-origin` is
+  the feet (50% 100%), so the character stays planted. All of it is
+  transform-only, so it costs nothing extra per frame.
+- Fallback, if pose edits ever come back inconsistent: keep the
+  single-pose v2 character and rely on the CSS body motion above
+  (lean + squash + pop + mouth). The v3 demo did NOT need the
+  fallback: the pose edits stayed consistent with the v2 art
+  (same body, eye, antenna, colors, glossy style).
+
+## Subtitles (v3): punctuation + one sentence per line
+
+User feedback on v2: the karaoke merged sentences and dropped
+punctuation. v3 fixes both in `tts.py`:
+
+- `attach_punctuation(words, narration)`: Edge TTS WordBoundary
+  tokens strip punctuation (`sekarang` has no period, `kemarin,`
+  has no comma), so the karaoke never showed it. The function
+  re-attaches the narration's punctuation to the tokens it belongs
+  to by aligning TTS tokens back onto the narration words
+  (whitespace split, punctuation kept, normalized comparison).
+  It handles the known merge (`12 November` arrives as one token
+  covering two narration words, by concatenating display words).
+  A token that matches nothing keeps its own text, so the pipeline
+  never crashes and that word falls back to v2 behaviour.
+- `words_per_line(words)`: sentence-first grouping. Words are
+  grouped into sentences first (a sentence ends at a token ending
+  `.` `?` `!`), then each sentence is split into lines: break after
+  a comma once the line has >= 4 words (and >= 3 words remain in
+  the sentence), break at 7 words max, and never leave a tail
+  shorter than 3 words (extend the line instead). Result on the
+  demo script: 25 lines, 0 straddles, 0 one-word tails, commas
+  break lines at "Harganya flat, 1,5 dolar masuk," /
+  "Di OSWorld 2.1 sama," / "Makin tinggi makin pintar," /
+  "Dia udah masuk Search,".
+- Verify in `words.json`: tokens must carry punctuation
+  (`kemarin,`, `sekarang.`, `nih.`, `5.5?`, `kepakai.`) and no
+  line may contain a sentence-ending token that is not its last
+  token. Then verify on encoded frames: commas and periods must
+  be visible in the karaoke, and a sentence change must start a
+  new line.
 
 ## How to render the next edition
 
@@ -125,7 +200,7 @@ fallback when two consistent states cannot be produced.
      spoken words (e.g. the closing headline says "Lo tim Hydrogen"
      because the voiceover says "lo").
 2. Run: `python3 build_reel.py <spec.json> <out_dir> [--theme <name>]`
-   (about 10-15 minutes: ~30s TTS, ~10 min frame render, ~1 min encode).
+   (about 40 minutes: ~30s TTS, ~37 min frame render, ~1 min encode).
 3. Check `build.log` + ffprobe output, then eyeball frames: extract
    with `ffmpeg -ss <t> -i <out>/reel.mp4 -frames:v 1 check.jpg`
    at the hook, mid-beat, and closing scene. **For a talking-
@@ -168,8 +243,10 @@ fallback when two consistent states cannot be produced.
   60s. At `+15%` the same script lands at ~57s. If a script runs long,
   speed up the rate before cutting facts.
 - Render time is the bottleneck: 24fps x ~58s = ~1,400 Playwright
-  screenshots at 2160x3840, roughly 10 minutes on this VM. Do not
-  lower the fps to save time; the stagger/bar animations need it.
+  screenshots at 2160x3840, roughly 37 minutes on this VM after
+  the v2 optimizations (no drop-shadow on the mascot, position/mouth
+  styles written only on change). Do not lower the fps to save time;
+  the stagger/bar animations need it.
   If a render run is killed mid-way (happened once, SIGTERM at frame
   906/1384), just re-run it: `render.py` skips frames that already
   exist, so it resumes instead of starting over.
@@ -187,14 +264,25 @@ fallback when two consistent states cannot be produced.
   with extra text.
 - The karaoke line wraps to two lines when a line has 7 long words.
   That is normal; the active word still highlights correctly.
-- Talking-character notes (v2): the two mouth states must share one
-  crop box or the character visibly jumps when the mouth toggles;
+- Talking-character notes (v2/v3): the two mouth states must share
+  one crop box or the character visibly jumps when the mouth toggles;
   `process_character.py` enforces this with a union bbox (the two
-  v2 states differ by only 1-4 px before the union crop). The
-  generated art carries two tiny dark specks (one on the head, one
-  on the P bowl) that are barely visible at reel scale; they come
-  from the generation, not the pipeline. The mouth is binary
-  (open/closed per word), not syllable-shaped: at 24fps it reads as
-  talking, but it is not lip-sync. The karaoke line grouping can
-  split a sentence across lines (e.g. a 3-word line when the
-  previous line hit the 7-word cap), which is cosmetic only.
+  v2 states differ by only 1-4 px before the union crop). The same
+  rule extends to poses in v3: all six states share one union crop
+  box, and `process_character_v3.py` additionally normalizes size
+  and bbox-centre position across poses, because the v2 square raw
+  and the v3 portrait pose edits frame the character at different
+  sizes. The generated art carries two tiny dark specks (one on the
+  head, one on the P bowl) that are barely visible at reel scale;
+  they come from the generation, not the pipeline. A v3 close
+  inspection (strict + loose threshold component analysis and
+  full-res crop zooms of both v2 states) found NO isolable dark
+  speck: only sub-threshold faint shading variation and legitimate
+  glossy shading, so no retouch was applied; an aggressive
+  blur-smoothing attempt flagged ~25k px of legitimate shading and
+  was discarded. The mouth is binary (open/closed per word), not
+  syllable-shaped: at 24fps it reads as talking, but it is not
+  lip-sync. The karaoke line grouping can split a sentence across
+  lines in v2 (e.g. a 3-word line when the previous line hit the
+  7-word cap); v3 fixes this with sentence-first grouping (see
+  "Subtitles (v3)" above), so a line never straddles two sentences.

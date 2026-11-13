@@ -1,0 +1,1124 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      }
+    }
+  },
+  "kicker": "GEMINI 4 HYDROGEN",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "BARU RILIS 12 NOV 2026",
+      "headline": [
+        "GEMINI 4",
+        "HYDROGEN"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Google baru aja rilis Gemini 4 Hydrogen tanggal 12 November kemarin, dan ini model AI paling kencang sekarang. Lo harus tahu nih.",
+      "sub": "Model AI paling kencang dari Google.",
+      "pose": "wave"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Harga flat: <b>$1.50</b> masuk / <b>$7.50</b> keluar",
+        "per 1 juta token"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Lo bayangin, dia 2,5 kali lebih cepat dari Gemini 3.8 Flash di level high. Harganya flat, 1,5 dolar masuk, 7,5 dolar keluar per sejuta token.",
+      "stat": "2,5x",
+      "stat_label": "lebih cepat dari Gemini 3.8 Flash di level high",
+      "pose": "present"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "label": "Gemini 4 Hydrogen",
+          "tag": "TERTINGGI",
+          "value": 58.8
+        },
+        {
+          "label": "Claude Sonnet 5.5",
+          "value": 53.3
+        },
+        {
+          "label": "GPT-6.1 Terra",
+          "value": 47.3
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Di tes HLE-Diamond, Hydrogen cetak 58,8 persen, tertinggi di kelasnya. Sonnet 5.5 cuma 53,3 persen, GPT 6.1 Terra 47,3 persen.",
+      "stat": "58,8%",
+      "stat_label": "HLE-Diamond, tertinggi di kelasnya",
+      "pose": "base"
+    },
+    {
+      "badge": "JUJUR AJA",
+      "compare": [
+        {
+          "a_label": "Sonnet 5.5",
+          "a_value": "63,9%",
+          "b_label": "Hydrogen",
+          "b_value": "57,0%",
+          "label": "TERMINAL-BENCH 4.1"
+        },
+        {
+          "a_label": "Sonnet 5.5",
+          "a_value": "83,9%",
+          "b_label": "Hydrogen",
+          "b_value": "77,6%",
+          "label": "OSWORLD 2.1"
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Tapi jujur aja, nggak semua dia menangin. Di Terminal-Bench 4.1, Sonnet 5.5 masih di depan 63,9 lawan 57 persen. Di OSWorld 2.1 sama, 77,6 lawan 83,9 persen.",
+      "pose": "base"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Makin tinggi makin pintar,",
+        "tapi makin mahal juga.",
+        "Udah masuk <span class=\"mono\">Search</span>, lo semua bisa coba."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Ada level berpikir baru, xhigh. Makin tinggi makin pintar, tapi makin mahal juga. Dia udah masuk Search, jadi lo semua bisa langsung coba.",
+      "stat": "XHIGH",
+      "stat_label": "Level berpikir baru",
+      "pose": "present"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Lo tim Hydrogen",
+        "atau tetap",
+        "Sonnet 5.5?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Buat kerja agentic, lo tim Hydrogen atau tetap Sonnet 5.5? Follow Peka AI kalau kontennya kepakai.",
+      "shortlink": "s.peka.ai.id/N4DgPp",
+      "pose": "wave"
+    }
+  ],
+  "theme": {
+    "accent": "#FFD60A",
+    "accent2": "#FFFFFF",
+    "bar_other": "#6E6E68",
+    "bar_track": "#262626",
+    "bg": "#111111",
+    "bg2": "#181818",
+    "card": "#1C1C1C",
+    "card_border": "#36362E",
+    "chip_bg": "#FFD60A",
+    "chip_text": "#111111",
+    "description": "Current Peka brand identity: Peka yellow on black.",
+    "dim": "#A8A8A0",
+    "glow": "rgba(255,214,10,0.22)",
+    "glow2": "rgba(255,214,10,0.08)",
+    "grid": "rgba(255,214,10,0.07)",
+    "label": "Peka Yellow",
+    "mascot": "bottom-right",
+    "mono": "#FFD60A",
+    "progress": "#FFD60A",
+    "text": "#F5F5F0"
+  },
+  "title": "Gemini 4 Hydrogen (reel-v2 demo v3, talking character, yellow theme)",
+  "theme_name": "peka-yellow",
+  "words": [
+    {
+      "text": "Google",
+      "start": 0.1,
+      "end": 0.34,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "baru",
+      "start": 0.34,
+      "end": 0.48,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "aja",
+      "start": 0.48,
+      "end": 0.66,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "rilis",
+      "start": 0.66,
+      "end": 0.88,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Gemini",
+      "start": 0.88,
+      "end": 1.15,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "4",
+      "start": 1.15,
+      "end": 1.33,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Hydrogen",
+      "start": 1.33,
+      "end": 1.77,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "tanggal",
+      "start": 1.77,
+      "end": 2.02,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "12 November",
+      "start": 2.02,
+      "end": 2.56,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kemarin,",
+      "start": 2.56,
+      "end": 3.02,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "dan",
+      "start": 3.26,
+      "end": 3.42,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "ini",
+      "start": 3.42,
+      "end": 3.59,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "model",
+      "start": 3.59,
+      "end": 3.81,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "AI",
+      "start": 3.81,
+      "end": 4.01,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "paling",
+      "start": 4.01,
+      "end": 4.19,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "kencang",
+      "start": 4.19,
+      "end": 4.39,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "sekarang.",
+      "start": 4.39,
+      "end": 4.86,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Lo",
+      "start": 5.53,
+      "end": 5.72,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "harus",
+      "start": 5.72,
+      "end": 5.93,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "tahu",
+      "start": 5.93,
+      "end": 6.12,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "nih.",
+      "start": 6.12,
+      "end": 6.44,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Lo",
+      "start": 7.528,
+      "end": 7.648,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "bayangin,",
+      "start": 7.648,
+      "end": 8.158,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "dia",
+      "start": 8.378,
+      "end": 8.568,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "2,5",
+      "start": 8.568,
+      "end": 8.998,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "kali",
+      "start": 8.998,
+      "end": 9.168,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "lebih",
+      "start": 9.168,
+      "end": 9.318,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "cepat",
+      "start": 9.318,
+      "end": 9.578,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "dari",
+      "start": 9.578,
+      "end": 9.708,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Gemini",
+      "start": 9.708,
+      "end": 9.968,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "3.8",
+      "start": 9.968,
+      "end": 10.638,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Flash",
+      "start": 10.638,
+      "end": 10.928,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "di",
+      "start": 10.928,
+      "end": 11.048,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "level",
+      "start": 11.048,
+      "end": 11.298,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "high.",
+      "start": 11.298,
+      "end": 11.638,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Harganya",
+      "start": 12.303,
+      "end": 12.703,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "flat,",
+      "start": 12.703,
+      "end": 13.043,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "1,5",
+      "start": 13.233,
+      "end": 13.793,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "dolar",
+      "start": 13.793,
+      "end": 13.963000000000001,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "masuk,",
+      "start": 13.963000000000001,
+      "end": 14.343,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "7,5",
+      "start": 14.573,
+      "end": 15.103,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "dolar",
+      "start": 15.103,
+      "end": 15.273,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "keluar",
+      "start": 15.273,
+      "end": 15.533000000000001,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "per",
+      "start": 15.533000000000001,
+      "end": 15.633,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "sejuta",
+      "start": 15.633,
+      "end": 15.922999999999998,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "token.",
+      "start": 15.922999999999998,
+      "end": 16.313,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Di",
+      "start": 17.404000000000003,
+      "end": 17.534000000000002,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "tes",
+      "start": 17.534000000000002,
+      "end": 17.724000000000004,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "HLE-Diamond,",
+      "start": 17.724000000000004,
+      "end": 18.414,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Hydrogen",
+      "start": 18.624000000000002,
+      "end": 19.044,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "cetak",
+      "start": 19.044,
+      "end": 19.294,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "58,8",
+      "start": 19.294,
+      "end": 20.244000000000003,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "persen,",
+      "start": 20.244000000000003,
+      "end": 20.664,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "tertinggi",
+      "start": 20.864,
+      "end": 21.214000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 21.214000000000002,
+      "end": 21.284000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "kelasnya.",
+      "start": 21.284000000000002,
+      "end": 21.774,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Sonnet",
+      "start": 22.444000000000003,
+      "end": 22.714000000000002,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "5.5",
+      "start": 22.714000000000002,
+      "end": 23.234,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "cuma",
+      "start": 23.234,
+      "end": 23.434,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "53,3",
+      "start": 23.434,
+      "end": 24.264000000000003,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "persen,",
+      "start": 24.264000000000003,
+      "end": 24.674000000000003,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "GPT",
+      "start": 24.924000000000003,
+      "end": 25.284000000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "6.1",
+      "start": 25.284000000000002,
+      "end": 25.834000000000003,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Terra",
+      "start": 25.834000000000003,
+      "end": 26.064,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "47,3",
+      "start": 26.064,
+      "end": 27.004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "persen.",
+      "start": 27.004,
+      "end": 27.444000000000003,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Tapi",
+      "start": 28.523,
+      "end": 28.733,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "jujur",
+      "start": 28.733,
+      "end": 28.973000000000003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "aja,",
+      "start": 28.973000000000003,
+      "end": 29.403000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "nggak",
+      "start": 29.613,
+      "end": 29.773,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "semua",
+      "start": 29.773,
+      "end": 30.003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "dia",
+      "start": 30.003,
+      "end": 30.133000000000003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "menangin.",
+      "start": 30.133000000000003,
+      "end": 30.603,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Di",
+      "start": 31.268,
+      "end": 31.398,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Terminal-Bench",
+      "start": 31.398,
+      "end": 31.908,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "4.1,",
+      "start": 31.908,
+      "end": 32.698,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Sonnet",
+      "start": 32.978,
+      "end": 33.248000000000005,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "5.5",
+      "start": 33.248000000000005,
+      "end": 33.758,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "masih",
+      "start": 33.758,
+      "end": 34.018,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "di",
+      "start": 34.018,
+      "end": 34.088,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "depan",
+      "start": 34.088,
+      "end": 34.288000000000004,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "63,9",
+      "start": 34.288000000000004,
+      "end": 35.258,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "lawan",
+      "start": 35.258,
+      "end": 35.478,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "57",
+      "start": 35.478,
+      "end": 35.998000000000005,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "persen.",
+      "start": 35.998000000000005,
+      "end": 36.438,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Di",
+      "start": 37.118,
+      "end": 37.278,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "OSWorld",
+      "start": 37.278,
+      "end": 37.698,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "2.1",
+      "start": 37.698,
+      "end": 38.168,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "sama,",
+      "start": 38.168,
+      "end": 38.598,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "77,6",
+      "start": 38.858000000000004,
+      "end": 39.818,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "lawan",
+      "start": 39.818,
+      "end": 40.048,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "83,9",
+      "start": 40.048,
+      "end": 41.118,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "persen.",
+      "start": 41.118,
+      "end": 41.568,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Ada",
+      "start": 42.647,
+      "end": 42.857,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "level",
+      "start": 42.857,
+      "end": 43.077,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "berpikir",
+      "start": 43.077,
+      "end": 43.397,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "baru,",
+      "start": 43.397,
+      "end": 43.817,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "xhigh.",
+      "start": 43.997,
+      "end": 44.447,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Makin",
+      "start": 45.107,
+      "end": 45.407,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "tinggi",
+      "start": 45.407,
+      "end": 45.607,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "makin",
+      "start": 45.607,
+      "end": 45.807,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "pintar,",
+      "start": 45.807,
+      "end": 46.247,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "tapi",
+      "start": 46.447,
+      "end": 46.647,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "makin",
+      "start": 46.647,
+      "end": 46.847,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "mahal",
+      "start": 46.847,
+      "end": 47.037,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "juga.",
+      "start": 47.037,
+      "end": 47.447,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "Dia",
+      "start": 48.117,
+      "end": 48.297,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "udah",
+      "start": 48.297,
+      "end": 48.447,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "masuk",
+      "start": 48.447,
+      "end": 48.657,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Search,",
+      "start": 48.657,
+      "end": 49.016999999999996,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "jadi",
+      "start": 49.207,
+      "end": 49.437,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "lo",
+      "start": 49.437,
+      "end": 49.527,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "semua",
+      "start": 49.527,
+      "end": 49.757,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "bisa",
+      "start": 49.757,
+      "end": 49.927,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "langsung",
+      "start": 49.927,
+      "end": 50.167,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "coba.",
+      "start": 50.167,
+      "end": 50.557,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "Buat",
+      "start": 51.635,
+      "end": 51.845,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "kerja",
+      "start": 51.845,
+      "end": 52.045,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "agentic,",
+      "start": 52.045,
+      "end": 52.545,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "lo",
+      "start": 52.775,
+      "end": 52.905,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "tim",
+      "start": 52.905,
+      "end": 53.035,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "Hydrogen",
+      "start": 53.035,
+      "end": 53.435,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "atau",
+      "start": 53.435,
+      "end": 53.585,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "tetap",
+      "start": 53.585,
+      "end": 53.775,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "Sonnet",
+      "start": 53.775,
+      "end": 54.015,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "5.5?",
+      "start": 54.015,
+      "end": 54.725,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "Follow",
+      "start": 55.3875,
+      "end": 55.6875,
+      "scene": 5,
+      "line": 24
+    },
+    {
+      "text": "Peka",
+      "start": 55.6875,
+      "end": 55.9075,
+      "scene": 5,
+      "line": 24
+    },
+    {
+      "text": "AI",
+      "start": 55.9075,
+      "end": 56.1175,
+      "scene": 5,
+      "line": 24
+    },
+    {
+      "text": "kalau",
+      "start": 56.1175,
+      "end": 56.2875,
+      "scene": 5,
+      "line": 24
+    },
+    {
+      "text": "kontennya",
+      "start": 56.2875,
+      "end": 56.6075,
+      "scene": 5,
+      "line": 24
+    },
+    {
+      "text": "kepakai.",
+      "start": 56.6075,
+      "end": 57.0975,
+      "scene": 5,
+      "line": 24
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 7.128
+    },
+    {
+      "start": 7.128,
+      "end": 17.004
+    },
+    {
+      "start": 17.004,
+      "end": 28.128
+    },
+    {
+      "start": 28.123,
+      "end": 42.252
+    },
+    {
+      "start": 42.247,
+      "end": 51.24
+    },
+    {
+      "start": 51.235,
+      "end": 57.78
+    }
+  ],
+  "total": 58.58
+}

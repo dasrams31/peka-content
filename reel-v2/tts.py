@@ -69,25 +69,46 @@ def attach_punctuation(words, narration):
 
 
 def words_per_line(words, max_words=7):
-    """Greedy line grouping for the karaoke bar.
+    """Greedy line grouping for the karaoke bar (v3).
 
-    Rules (v3, user feedback): punctuation is visible (see
+    Rules (user feedback): punctuation is visible (see
     attach_punctuation), a line NEVER straddles two sentences, and a
-    long sentence breaks preferably after a comma. So: break at a
-    sentence-ending token, break after a comma once the line has
-    >= 5 words, and break at max_words."""
-    lines = []
+    long sentence breaks preferably after a comma. Group into
+    sentences first, then split each sentence: break after a comma
+    once the line has >= 4 words (and >= 3 words remain in the
+    sentence), break at max_words, and never leave a tail shorter
+    than 3 words (extend the line instead)."""
+    # 1. Split into sentences (a sentence ends at a token ending . ? !).
+    sentences = []
     cur = []
     for w in words:
         cur.append(w)
-        text = w["text"].rstrip()
-        end_sentence = text.endswith((".", "?", "!"))
-        end_clause = text.endswith(",")
-        if end_sentence or (end_clause and len(cur) >= 5) or len(cur) >= max_words:
-            lines.append(cur)
+        if w["text"].rstrip().endswith((".", "?", "!")):
+            sentences.append(cur)
             cur = []
     if cur:
-        lines.append(cur)
+        sentences.append(cur)
+    # 2. Split each sentence into lines.
+    lines = []
+    for sent in sentences:
+        i = 0
+        n = len(sent)
+        while i < n:
+            if n - i <= max_words:
+                lines.append(sent[i:])
+                break
+            # Take up to max_words, preferring a comma break at >= 4
+            # words when >= 3 words would remain after it.
+            take = max_words
+            for j in range(i + 3, min(i + max_words, n)):
+                if sent[j]["text"].rstrip().endswith(",") and n - (j + 1) >= 3:
+                    take = j + 1 - i
+                    break
+            # Never leave a tail shorter than 3 words.
+            if n - (i + take) < 3:
+                take = n - i
+            lines.append(sent[i:i + take])
+            i += take
     for li, line in enumerate(lines):
         for w in line:
             w["line"] = li
