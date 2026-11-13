@@ -1,0 +1,11 @@
+5 skill OpenCode yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: skills dari mattpocock, 324 ribu star, kumpulan skill langsung dari folder .agents. Langkah pertamanya: buka reponya, pilih satu skill yang kamu butuhin, terus pasang ke agent kamu.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Darkling by Kevin MacLeod

@@ -1,0 +1,43 @@
+{
+  "agent": "OPENCODE",
+  "next": "ANTIGRAVITY",
+  "episode": 24,
+  "repos": [
+    {
+      "name": "mattpocock/skills",
+      "stars": "324RB",
+      "desc": "Kumpulan skill langsung dari folder .agents milik Matt Pocock, dibuat buat engineer beneran, bukan sekadar contoh. Isinya skill-skill praktis yang udah kepakai di kerjaan nyata, tinggal pasang ke agent kamu dan langsung bisa dipakai. Koleksinya luas, dari cara kerja sampai pola yang udah terbukti di lapangan, dan semuanya ditulis dengan gaya yang gampang diikuti. Dengan ratusan ribu star, ini salah satu koleksi skill paling disukai di GitHub. Cocok buat yang pengin agent-nya langsung pinter tanpa harus nulis skill dari nol.",
+      "cocok": "Kamu yang pengin agent kamu langsung punya skill kerja nyata tanpa bikin dari nol.",
+      "shortlink": "https://s.peka.ai.id/F4UH35"
+    },
+    {
+      "name": "stablyai/orca",
+      "stars": "124RB",
+      "desc": "Orca bikin kamu bisa jalanin banyak coding agent sekaligus kayak armada, pakai langgananmu sendiri, dari Claude Code sampai Codex. Kamu bisa ngatur semuanya dari desktop, HP, atau server remote, jadi kerjaan coding jalan terus walau kamu lagi nggak di depan laptop. Tiap agent bisa pegang tugas yang beda, dan kamu tinggal mantau semuanya dari satu tempat. Cocok buat yang punya banyak tugas coding paralel dan pengin semua agent kerja bareng tanpa ribet.",
+      "cocok": "Kamu yang punya banyak tugas coding sekaligus dan pengin jalanin banyak agent dari satu tempat.",
+      "shortlink": "https://s.peka.ai.id/nOPJwh"
+    },
+    {
+      "name": "lidge-jun/opencodex",
+      "stars": "18RB",
+      "desc": "Proxy universal yang bikin kamu bisa pakai model AI apa aja di Codex dan Claude Code, dari Claude, Gemini, Grok, DeepSeek, sampai Ollama yang jalan lokal. Jadi satu pintu buat semua model, nggak perlu gonta-ganti langganan atau settingan tiap mau coba model lain. Kamu tinggal arahkan tool kamu ke proxy ini, sisanya diurusin sama dia. Hemat langganan, tetap bisa coba banyak model, dan tetap jalan di tool yang udah kamu pakai.",
+      "cocok": "Kamu yang mau pakai banyak model AI di Codex atau Claude Code tanpa langganan satu-satu.",
+      "shortlink": "https://s.peka.ai.id/sYN9K2"
+    },
+    {
+      "name": "opencode-ai/opencode",
+      "stars": "14RB",
+      "desc": "OpenCode itu agent coding AI yang jalan langsung di terminal, jadi kamu bisa nulis kode bareng AI tanpa buka editor. Kamu tinggal ketik perintah, dia yang baca kode, ngedit file, dan jalanin perintah buat kamu. Agent ini open source dan bisa pakai banyak model AI, dari Claude sampai model yang jalan lokal di komputermu. Semua kerjaannya kelihatan di terminal, jadi kamu tetap pegang kendali penuh atas apa yang diubah. Ringan, cepat, dan gratis, cocok buat kerja harian di proyek apa aja.",
+      "cocok": "Kamu yang kerja dari terminal dan pengin agent coding open source yang bisa pakai banyak model.",
+      "shortlink": "https://s.peka.ai.id/60Ju6R"
+    },
+    {
+      "name": "alvinunreal/oh-my-opencode-slim",
+      "stars": "10RB",
+      "desc": "Paket multi-agent yang ramping buat OpenCode, isinya kumpulan agent yang udah disetel rapi biar bisa kerja bareng dalam satu proyek. Kamu bisa campur banyak model AI sekaligus, tiap agent pegang tugasnya sendiri, dan tugas dibagi otomatis ke agent yang paling pas. Setup-nya dibuat ringan, jadi nggak berat di mesin dan gampang dipakai sehari-hari. Semua agent jalan dalam satu alur yang sama, jadi hasil kerjanya tetap nyambung. Cocok buat proyek yang butuh banyak agent jalan bareng tanpa setup yang ribet.",
+      "cocok": "Kamu yang pakai OpenCode dan pengin banyak agent kerja bareng dengan model yang beda-beda.",
+      "shortlink": "https://s.peka.ai.id/iZn6yp"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-13/carousel"
+}
