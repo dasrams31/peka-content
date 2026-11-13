@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: var(--bg); }
+  .bg-grid { position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 60px 60px; }
+  .glow { position: absolute; width: 900px; height: 900px; right: -260px; top: -220px;
+    border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, transparent 65%); }
+  .glow2 { position: absolute; width: 800px; height: 800px; left: -300px; bottom: 320px;
+    border-radius: 50%; background: radial-gradient(circle, var(--glow2) 0%, transparent 65%); }
+  .topbar { position: absolute; left: 84px; right: 84px; top: 74px; z-index: 5;
+    display: flex; justify-content: space-between; align-items: center; }
+  .kicker { font-family: DejaVuMonoB; font-size: 32px; letter-spacing: 5px; color: var(--accent); }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup img { width: 58px; height: 58px; }
+  .lockup span { font-family: PoppinsB; font-size: 34px; color: var(--text); }
+  .scene { position: absolute; inset: 0; padding: 190px 84px 0 84px; display: none; }
+  .chip { display: inline-block; font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 3px;
+    background: var(--chip_bg); color: var(--chip_text); padding: 16px 26px; border-radius: 999px; }
+  h1 { font-family: PoppinsB; font-size: 118px; line-height: 1.04; color: var(--text); margin-top: 44px; }
+  h1 .hl { color: var(--accent); }
+  .sub { font-family: PoppinsSB; font-size: 48px; line-height: 1.35; color: var(--dim); margin-top: 40px; }
+  .stat { font-family: PoppinsB; font-size: 230px; line-height: 1; color: var(--accent); margin-top: 30px; }
+  .stat-label { font-family: PoppinsB; font-size: 54px; line-height: 1.25; color: var(--text); margin-top: 26px; }
+  .lines { margin-top: 44px; }
+  .lines p { font-family: DejaVu; font-size: 44px; line-height: 1.5; color: var(--text); margin-top: 22px; }
+  .lines p b { color: var(--accent); font-family: PoppinsSB; font-weight: normal; }
+  .lines p .mono { font-family: DejaVuMonoB; color: var(--mono); }
+  .bars { margin-top: 56px; }
+  .bar-row { margin-top: 34px; }
+  .bar-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .bar-label { font-family: DejaVuMonoB; font-size: 30px; color: var(--text); letter-spacing: 1px; }
+  .bar-val { font-family: PoppinsB; font-size: 44px; color: var(--text); }
+  .bar-val.hot { color: var(--accent); }
+  .bar-track { height: 26px; background: var(--bar_track); border-radius: 999px; margin-top: 12px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; background: var(--bar_other); width: 0; }
+  .bar-fill.hot { background: var(--accent); }
+  .bar-tag { font-family: DejaVuMonoB; font-size: 24px; color: var(--accent); letter-spacing: 2px; margin-left: 12px; }
+  .cmp { margin-top: 48px; }
+  .cmp-row { margin-top: 40px; }
+  .cmp-label { font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 2px; color: var(--dim); }
+  .cmp-vals { display: flex; gap: 28px; margin-top: 16px; align-items: baseline; }
+  .cmp-vals .a { font-family: PoppinsB; font-size: 64px; color: var(--accent); }
+  .cmp-vals .vs { font-family: DejaVu; font-size: 34px; color: var(--dim); }
+  .cmp-vals .b { font-family: PoppinsB; font-size: 64px; color: var(--text); }
+  .cmp-names { display: flex; gap: 28px; margin-top: 8px; }
+  .cmp-names span { font-family: DejaVuMonoB; font-size: 26px; color: var(--dim); }
+  .q { font-family: PoppinsB; font-size: 96px; line-height: 1.14; color: var(--text); margin-top: 48px; }
+  .q .hl { color: var(--accent); }
+  .follow { font-family: PoppinsSB; font-size: 46px; line-height: 1.4; color: var(--dim); margin-top: 52px; }
+  .follow b { color: var(--text); font-weight: normal; }
+  .shortlink { display: inline-block; margin-top: 56px; font-family: DejaVuMonoB; font-size: 42px;
+    letter-spacing: 1px; color: var(--text); background: var(--card);
+    border: 2px solid var(--card_border); padding: 26px 34px; border-radius: 18px; }
+  .shortlink b { color: var(--mono); font-weight: normal; }
+  #mascot { position: absolute; right: 56px; bottom: 470px; width: 210px; z-index: 4; }
+  #karaoke { position: absolute; left: 84px; right: 84px; bottom: 168px; z-index: 6;
+    min-height: 250px; display: flex; align-items: flex-start; justify-content: center; }
+  .klines { text-align: center; }
+  .kline { display: none; font-family: PoppinsSB; font-size: 56px; line-height: 1.42; }
+  .kline .w { color: var(--dim); opacity: 0.55; transition: none; }
+  .kline .w.past { color: var(--text); opacity: 1; }
+  .kline .w.now { color: var(--accent); opacity: 1; }
+  .foot { position: absolute; left: 84px; right: 84px; bottom: 58px; z-index: 5; text-align: center;
+    font-family: DejaVuMonoB; font-size: 26px; letter-spacing: 2px; color: var(--dim); }
+  #progress { position: absolute; left: 0; bottom: 0; height: 10px; background: var(--progress); width: 0; z-index: 7; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="bg-grid"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="topbar">
+    <div class="kicker" id="top-kicker">PEKA AI</div>
+    <div class="lockup"><img src="assets/mascot-crop.png"><span>peka.ai.id</span></div>
+  </div>
+  <div id="scenes"></div>
+  <img id="mascot" src="assets/mascot-crop.png">
+  <div id="karaoke"><div class="klines" id="klines"></div></div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  const clamp01 = x => Math.max(0, Math.min(1, x));
+  let SPEC = null, WORDS = [], SCENE_SPANS = [], TOTAL = 0;
+
+  function el(tag, cls, html) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+  function markIn(node, delay, dur, dx, dy) {
+    node.setAttribute('data-in', delay.toFixed(2) + ',' + dur.toFixed(2) + ',' + dx + ',' + dy);
+  }
+
+  window.buildScene = function(spec) {
+    SPEC = spec;
+    WORDS = spec.words || [];
+    SCENE_SPANS = spec.scene_spans || [];
+    TOTAL = spec.total || 0;
+    const th = spec.theme, root = document.getElementById('stage');
+    for (const k of Object.keys(th)) root.style.setProperty('--' + k, th[k]);
+    document.getElementById('top-kicker').textContent = spec.kicker || 'PEKA AI';
+    const holder = document.getElementById('scenes');
+    holder.innerHTML = '';
+    spec.scenes.forEach((s, si) => {
+      const sc = el('div', 'scene');
+      sc.id = 'scene-' + si;
+      if (s.badge) { const c = el('span', 'chip', s.badge); markIn(c, 0.10, 0.4, 0, 30); sc.appendChild(c); }
+      if (s.kind === 'hook' || s.kind === 'close') {
+        const h = el('h1');
+        if (s.kind === 'close') h.className = 'q';
+        (s.headline || []).forEach((ln, i) => {
+          const sp = el('span', null, ln);
+          sp.style.display = 'block';
+          markIn(sp, 0.25 + i * 0.3, 0.5, 0, 60);
+          h.appendChild(sp);
+        });
+        sc.appendChild(h);
+        if (s.sub) { const p = el('p', 'sub', s.sub); markIn(p, 0.9, 0.5, 0, 40); sc.appendChild(p); }
+      }
+      if (s.kind === 'beat') {
+        if (s.stat) { const st = el('div', 'stat', s.stat); markIn(st, 0.15, 0.5, 0, 60); sc.appendChild(st); }
+        if (s.stat_label) { const sl = el('div', 'stat-label', s.stat_label); markIn(sl, 0.45, 0.5, 0, 40); sc.appendChild(sl); }
+        if (s.lines) {
+          const box = el('div', 'lines');
+          s.lines.forEach((ln, i) => { const p = el('p', null, ln); markIn(p, 0.7 + i * 0.35, 0.5, 40, 0); box.appendChild(p); });
+          sc.appendChild(box);
+        }
+        if (s.bars) {
+          const box = el('div', 'bars');
+          s.bars.forEach((b, i) => {
+            const row = el('div', 'bar-row');
+            const head = el('div', 'bar-head');
+            head.appendChild(el('span', 'bar-label', b.label + (b.tag ? '<span class="bar-tag">' + b.tag + '</span>' : '')));
+            const v = el('span', 'bar-val' + (b.accent ? ' hot' : ''), b.value.toFixed(1).replace('.', ',') + '%');
+            head.appendChild(v);
+            row.appendChild(head);
+            const tr = el('div', 'bar-track');
+            const fl = el('div', 'bar-fill' + (b.accent ? ' hot' : ''));
+            fl.dataset.w = (b.value / 65 * 100).toFixed(1);
+            tr.appendChild(fl);
+            row.appendChild(tr);
+            markIn(row, 0.7 + i * 0.3, 0.5, 40, 0);
+            box.appendChild(row);
+          });
+          sc.appendChild(box);
+        }
+        if (s.compare) {
+          const box = el('div', 'cmp');
+          s.compare.forEach((c, i) => {
+            const row = el('div', 'cmp-row');
+            row.appendChild(el('div', 'cmp-label', c.label));
+            const vals = el('div', 'cmp-vals');
+            vals.appendChild(el('span', 'a', c.a_value));
+            vals.appendChild(el('span', 'vs', 'lawan'));
+            vals.appendChild(el('span', 'b', c.b_value));
+            row.appendChild(vals);
+            const nm = el('div', 'cmp-names');
+            nm.appendChild(el('span', null, c.a_label));
+            nm.appendChild(el('span', null, c.b_label));
+            row.appendChild(nm);
+            markIn(row, 0.7 + i * 0.4, 0.5, 40, 0);
+            box.appendChild(row);
+          });
+          sc.appendChild(box);
+        }
+      }
+      if (s.kind === 'close') {
+        if (s.follow) { const p = el('p', 'follow', s.follow); markIn(p, 1.0, 0.5, 0, 40); sc.appendChild(p); }
+        if (s.shortlink) {
+          const sl = el('div', 'shortlink', 'LINK BLOG: <b>' + s.shortlink + '</b>');
+          markIn(sl, 1.3, 0.5, 0, 40);
+          sc.appendChild(sl);
+        }
+      }
+      holder.appendChild(sc);
+    });
+    // Karaoke lines: one div per line, words as spans.
+    const kl = document.getElementById('klines');
+    kl.innerHTML = '';
+    const byLine = {};
+    WORDS.forEach(w => { (byLine[w.line] = byLine[w.line] || []).push(w); });
+    Object.keys(byLine).sort((a, b) => a - b).forEach(li => {
+      const d = el('div', 'kline');
+      d.id = 'kline-' + li;
+      byLine[li].forEach(w => {
+        const s = el('span', 'w', w.text + ' ');
+        s.dataset.start = w.start;
+        s.dataset.end = w.end;
+        d.appendChild(s);
+      });
+      kl.appendChild(d);
+    });
+    renderAt(0);
+  };
+
+  function activeScene(t) {
+    let si = 0;
+    SCENE_SPANS.forEach((sp, i) => { if (t >= sp.start) si = i; });
+    return si;
+  }
+  function currentWord(t) {
+    for (let i = 0; i < WORDS.length; i++) {
+      if (t >= WORDS[i].start && t < WORDS[i].end) return i;
+      if (t < WORDS[i].start) return i > 0 ? i - 1 : 0;
+    }
+    return WORDS.length - 1;
+  }
+
+  window.renderAt = function(t) {
+    if (!SPEC) return;
+    const si = activeScene(t);
+    const sp = SCENE_SPANS[si] || { start: 0, end: TOTAL };
+    const lt = t - sp.start;
+    SPEC.scenes.forEach((s, i) => {
+      const node = document.getElementById('scene-' + i);
+      node.style.display = (i === si) ? 'block' : 'none';
+    });
+    const scene = document.getElementById('scene-' + si);
+    scene.querySelectorAll('[data-in]').forEach(node => {
+      const parts = node.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - parts[0]) / parts[1]));
+      node.style.opacity = p;
+      node.style.transform = 'translate(' + (parts[2] * (1 - p)) + 'px,' + (parts[3] * (1 - p)) + 'px)';
+    });
+    scene.querySelectorAll('.bar-fill').forEach(fl => {
+      const p = easeOut(clamp01((lt - 0.7) / 0.8));
+      fl.style.width = (parseFloat(fl.dataset.w) * p).toFixed(1) + '%';
+    });
+    // Mascot gentle bob while speaking.
+    const m = document.getElementById('mascot');
+    m.style.transform = 'translateY(' + (Math.sin(t * 2.2) * 7).toFixed(1) + 'px)';
+    // Karaoke: show the line of the current word, highlight it.
+    const wi = WORDS.length ? currentWord(t) : -1;
+    if (wi >= 0) {
+      const w = WORDS[wi];
+      document.querySelectorAll('.kline').forEach(d => { d.style.display = 'none'; });
+      const line = document.getElementById('kline-' + w.line);
+      if (line) {
+        line.style.display = 'block';
+        line.querySelectorAll('.w').forEach(s => {
+          const s0 = parseFloat(s.dataset.start), s1 = parseFloat(s.dataset.end);
+          s.classList.remove('past', 'now');
+          if (t >= s1) s.classList.add('past');
+          else if (t >= s0) s.classList.add('now');
+        });
+      }
+    }
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

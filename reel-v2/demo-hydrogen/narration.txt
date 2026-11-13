@@ -1,0 +1,18 @@
+[scene 0 - hook]
+Google baru aja rilis Gemini 4 Hydrogen tanggal 12 November kemarin, dan ini model AI paling kencang yang mereka punya sekarang.
+
+[scene 1 - beat]
+Dia 2,5 kali lebih cepat dari Gemini 3.8 Flash di level high, dan harganya flat, 1,5 dolar masuk dan 7,5 dolar keluar per satu juta token.
+
+[scene 2 - beat]
+Di tes HLE-Diamond, Hydrogen cetak 58,8 persen, tertinggi di kelasnya, di atas Sonnet 5.5 dan GPT 6.1 Terra.
+
+[scene 3 - beat]
+Tapi jujur aja, nggak semua dia menangin. Di Terminal-Bench 4.1, Sonnet 5.5 masih di depan, 63,9 persen lawan 57 persen. Di OSWorld 2.1 juga sama, 77,6 persen lawan 83,9 persen.
+
+[scene 4 - beat]
+Ada level berpikir baru, xhigh, makin tinggi makin pintar, tapi makin mahal juga. Dan dia udah masuk Search, jadi semua orang bisa langsung coba.
+
+[scene 5 - close]
+Buat kerja agentic, kamu tim Hydrogen atau tetap Sonnet 5.5? Follow Peka AI kalau kontennya kepakai.
+

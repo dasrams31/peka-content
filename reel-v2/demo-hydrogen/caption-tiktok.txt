@@ -1,0 +1,11 @@
+Gemini 4 Hydrogen baru rilis, dan benchmark-nya menarik.
+
+58,8% di HLE-Diamond, tertinggi di atas Sonnet 5.5 dan GPT 6.1 Terra. Tapi di Terminal-Bench 4.1 dia kalah, Sonnet 5.5 menang 63,9% lawan 57,0%.
+
+Jujur saja, harganya juga 2x lipat Flash lama. Tapi dia 2,5x lebih cepat dari 3.8 Flash dan sudah masuk Search buat semua orang.
+
+Linknya ada di akhir video.
+
+Kamu tim Hydrogen atau tim Sonnet 5.5?
+
+#AI #Gemini #AgenticAI
