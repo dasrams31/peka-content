@@ -1,9 +1,9 @@
 Agent AI kamu lupa lagi tiap sesi baru.
 
-Claude-mem itu memori buat AI agent. Semua yang dikerjain di satu sesi direkam dan diringkas AI, terus disuntik lagi ke sesi berikut. Disukai 113,8 ribu orang.
+Claude-mem itu memori buat AI agent. Semua yang dikerjain di satu sesi direkam dan diringkas AI, terus disuntik lagi ke sesi berikutnya. Disukai 113,8 ribu orang.
 
 Langkah pertama: pisahin aturan dan riwayat keputusan ke file terpisah, biar sesi baru nggak mulai dari nol. Daftar pakai email, trial 30 hari, abis itu balik ke paketmu. Link repo-nya ada di slide terakhir.
 
 Agent kamu paling sering lupa yang mana, aturan main atau keputusan kemarin?
 
-#Mahasiswa
+#AI
