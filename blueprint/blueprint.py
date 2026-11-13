@@ -417,22 +417,30 @@ def steps(spec, out_dir, page, total):
     header(img, d)
     section_label(d, 212, "%02d / LANGKAH MULAI" % page)
     lines = ["MULAI DALAM", "3 LANGKAH."]
-    rule_y = headline_block(d, lines, 272, 108, 118, X(936))
-    y = X(rule_y + 22)
-    for i, st in enumerate(spec["steps"]):
-        dashed_rect(d, (X(72), y, X(1008), y + X(120)), HAIR, width=3)
-        d.text((X(100), y + X(34)), "%02d" % (i + 1), font=mono(40, True), fill=YEL)
-        title_lines = wrap(d, st["title"], bold(34), X(788))[:2]
+    rule_y = headline_block(d, lines, 272, 100, 118, X(936))
+    # Measure every step first: box height must fit the tallest content
+    # (1-line title + 2-line desc, or 2-line title + 1-line desc). Fixed
+    # 120u boxes let 2-line descs strike through the bottom border.
+    measured = []
+    for st in spec["steps"]:
+        title_lines = wrap(d, st["title"], bold(32), X(788))[:2]
         desc_lines = wrap(d, st["desc"], body(28), X(788))
         desc_lines = desc_lines[: max(1, 3 - len(title_lines))]
+        measured.append((title_lines, desc_lines))
+    box_h = max(14 + len(t) * 38 + 2 + len(dl) * 32 + 8 for t, dl in measured)
+    pitch = box_h + 14
+    y = X(rule_y + 14)
+    for i, (st, (title_lines, desc_lines)) in enumerate(zip(spec["steps"], measured)):
+        dashed_rect(d, (X(72), y, X(1008), y + X(box_h)), HAIR, width=3)
+        d.text((X(100), y + X(34)), "%02d" % (i + 1), font=mono(40, True), fill=YEL)
         ty = y + X(14)
         for tline in title_lines:
-            d.text((X(196), ty), tline, font=bold(34), fill=WHITE)
-            ty += X(42)
+            d.text((X(196), ty), tline, font=bold(32), fill=WHITE)
+            ty += X(38)
         for dline in desc_lines:
-            d.text((X(196), ty + X(4)), dline, font=body(28), fill=MUTED)
-            ty += X(34)
-        y += X(134)
+            d.text((X(196), ty + X(2)), dline, font=body(28), fill=MUTED)
+            ty += X(32)
+        y += X(pitch)
     footer(d, page, total)
     img.save(out_dir + "/blueprint-%02d.png" % page)
 
