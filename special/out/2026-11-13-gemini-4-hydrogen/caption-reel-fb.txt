@@ -1,0 +1,15 @@
+Gemini 4 Hydrogen rilis, ini benchmark-nya.
+
+Di HLE-Diamond, Hydrogen mencetak 58.8%, tertinggi di atas Sonnet 5.5 (53.3%) dan GPT-6.1 Terra (47.3%). Di Terminal-Bench 4.1 dia mencetak 57.0%, tapi kalah dari Sonnet 5.5 yang 63.9%.
+
+Jujur saja, tidak semua dia menangkan. Di OSWorld 2.1, Sonnet 5.5 menang 83.9% vs 77.6%. Dan harganya 2x lipat Flash lama, $1.50 vs $0.75 per 1 jt token masuk.
+
+Jadi kapan pakai Hydrogen? Buat semua orang, cepat dan sudah ada di Search. Buat coding agentic paling berat, Sonnet 5.5 masih di depan.
+
+Linknya ada di akhir video.
+
+Buat kerja agentic, kamu pilih Hydrogen atau tetap Sonnet 5.5?
+
+Follow @peka.ai.id dan save video ini kalau bermanfaat.
+
+Music: Crypto by Kevin MacLeod

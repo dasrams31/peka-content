@@ -1,0 +1,9 @@
+Gemini 4 Hydrogen rilis, ini benchmark-nya.
+
+Google merilis Gemini 4 Hydrogen, 12 Nov 2026. 2.5x lebih cepat dari 3.8 Flash di high, harga flat $1.50 masuk dan $7.50 keluar per 1 jt token.
+
+Di HLE-Diamond dia mencetak 58.8%, tertinggi di atas Sonnet 5.5 dan GPT-6.1 Terra. Tapi di Terminal-Bench 4.1 dia kalah dari Sonnet 5.5. Linknya ada di slide terakhir.
+
+Buat kerja agentic, kamu pilih Hydrogen atau tetap Sonnet 5.5?
+
+#AI

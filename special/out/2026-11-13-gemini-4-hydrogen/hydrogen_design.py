@@ -156,6 +156,19 @@ def para(d, x, y, text, font, fill, max_w, lh=1.28):
     return y
 
 
+def fit_size(d, text, start, minimum, max_w, bold=True):
+    """Largest font size (1080-space) at which text fits max_w on one line."""
+    size = start
+    while size > minimum:
+        ft = f(size, bold=bold)
+        if d.textlength(text, font=ft) <= max_w:
+            return ft
+        size -= 2
+    ft = f(minimum, bold=bold)
+    assert d.textlength(text, font=ft) <= max_w, ("TEXT TOO WIDE", text)
+    return ft
+
+
 def para_fit(d, x, y, text, font, fill, max_w, max_h, lh=1.28):
     """Paragraph that must fit inside max_h: assert it does, then draw."""
     lines = wrap(d, text, font, max_w)
@@ -276,6 +289,7 @@ def mini_group(d, x, y, w, title, rows, note_line=None):
     d.text((x, y), title, font=f(28), fill=YEL)
     y += X(30)
     if note_line:
+        assert d.textlength(note_line, font=f(22, bold=False)) <= w, ("NOTE TOO WIDE", note_line)
         d.text((x, y), note_line, font=f(22, bold=False), fill=DIM)
         y += X(24)
     for label, val in rows:
@@ -293,10 +307,10 @@ def slide1():
     d.rectangle([X(72), X(148), X(1008), X(150)], fill=PANEL_LINE)
     chip(d, X(72), X(56), "EDISI KHUSUS")
     lockup(img, d)
-    d.text((X(72), X(196)), "GEMINI", font=f(150), fill=WHT)
-    d.text((X(72), X(348)), "4 HYDROGEN", font=f(150), fill=YEL)
+    d.text((X(72), X(196)), "GEMINI", font=fit_size(d, "GEMINI", 150, 100, X(936)), fill=WHT)
+    d.text((X(72), X(348)), "4 HYDROGEN", font=fit_size(d, "4 HYDROGEN", 150, 100, X(936)), fill=YEL)
     d.text((X(72), X(520)), "Model Gemini 4 buat semua orang, rilis 12 Nov 2026.",
-           font=f(40, bold=False), fill=MUT)
+           font=fit_size(d, "Model Gemini 4 buat semua orang, rilis 12 Nov 2026.", 40, 30, X(936), bold=False), fill=MUT)
     y = para(d, X(72), X(610), "2.5x lebih cepat dari 3.8 Flash, dan sudah masuk Search.",
              f(46), WHT, X(936))
     y0 = X(760)
@@ -346,7 +360,7 @@ def slide2():
     para(d, X(100), y + X(2),
          "Harga Flash lama $0.75 / $3.75 bertahan sampai 31 Des 2026, lalu naik ke tarif Hydrogen mulai 1 Jan 2027.",
          f(26, bold=False), MUT, X(880))
-    footer(d, 2, note="Knowledge cutoff Maret 2026. Juga di Gemini for business dan Sheets (Pro/Ultra).")
+    footer(d, 2, note="Knowledge cutoff Maret 2026.")
     check_boxes(2)
     return img
 
@@ -367,7 +381,7 @@ def slide3():
     y = full_bar(d, X(72), y, X(936), "Gemini 3.8 Flash", 18.2,
                  MODEL_COLORS["Gemini 3.8 Flash"])
     y = full_na_row(d, X(72), y, "GPT-6.1 Terra")
-    para(d, X(72), X(872),
+    para(d, X(72), y + X(44),
          "Sonnet 5.5 unggul 6.9 poin dari Hydrogen. 3.8 Flash jauh di belakang dengan 18.2%. Terra tidak diuji di benchmark ini.",
          f(28), YEL, X(936))
     footer(d, 3)
@@ -390,7 +404,7 @@ def slide4():
                  MODEL_COLORS["Claude Sonnet 5.5"])
     y = full_bar(d, X(72), y, X(936), "GPT-6.1 Terra", 47.3,
                  MODEL_COLORS["GPT-6.1 Terra"])
-    para(d, X(72), X(872),
+    para(d, X(72), y + X(44),
          "Hydrogen unggul 5.5 poin dari Sonnet 5.5 dan 11.5 poin dari Terra. Skor tertinggi di kelasnya.",
          f(28), YEL, X(936))
     footer(d, 4)
@@ -416,23 +430,23 @@ def slide5():
         ("Terra", 5.8),
         ("Argon", 4.3),
         ("Sonnet 5.5", 3.1),
-    ], note_line="Hydrogen menang, tapi angkanya kecil semua")
+    ], note_line="Hydrogen menang")
     yL = mini_group(d, X(72), yL + X(10), lw, "AGENTS LAST EXAM", [
         ("Carbon", 77.4),
         ("Hydrogen", 71.6),
         ("Argon", 69.0),
-    ], note_line="Carbon menang di benchmark ini")
+    ], note_line="Carbon menang")
     yR = mini_group(d, X(552), yR, rw, "OSWORLD 2.1", [
         ("Sonnet 5.5", 83.9),
         ("Carbon", 81.5),
         ("Hydrogen", 77.6),
         ("Argon", 74.7),
-    ], note_line="Offline, Sonnet 5.5 menang di sini")
+    ], note_line="Sonnet 5.5 menang")
     yR = mini_group(d, X(552), yR + X(10), rw, "CHARTOGRAPHY", [
         ("Carbon", 72.5),
         ("Argon", 71.6),
         ("Hydrogen", 66.6),
-    ], note_line="Carbon menang di benchmark ini")
+    ], note_line="Carbon menang")
     y = max(yL, yR) + X(16)
     d.text((X(72), y), "PENILAIAN INDEPENDEN", font=f(24), fill=YEL)
     y += X(30)
