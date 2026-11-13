@@ -1,0 +1,12 @@
+{
+  "episode": 23,
+  "category": "NULIS",
+  "title": "Caption IG yang bikin orang berhenti scroll",
+  "prompt": "Buatkan 3 pilihan caption Instagram untuk [POSTINGAN TENTANG APA], gaya [SANTAI/LUCU/INSPIRATIF], maksimal [JUMLAH] kata per caption. Tiap caption diawali hook yang bikin orang berhenti scroll dan diakhiri pertanyaan yang memancing komentar.",
+  "tips": [
+    "Isi [POSTINGAN] dengan detail fotonya, jangan cuma 'foto liburan'.",
+    "Minta 3 gaya berbeda, lalu campur kalimat terbaik dari tiap versi.",
+    "Edit dikit pakai bahasamu sendiri biar nggak terasa hasil AI."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-13"
+}

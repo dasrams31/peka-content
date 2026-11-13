@@ -1,0 +1,10 @@
+PROMPT HARIAN #23: salin prompt ini buat caption IG yang bikin orang berhenti scroll
+
+3 pilihan caption sekali tempel. Hook-nya bikin orang berhenti scroll, penutupnya memancing komentar.
+
+Promptnya:
+Buatkan 3 pilihan caption Instagram untuk [POSTINGAN TENTANG APA], gaya [SANTAI/LUCU/INSPIRATIF], maksimal [JUMLAH] kata per caption. Tiap caption diawali hook yang bikin orang berhenti scroll dan diakhiri pertanyaan yang memancing komentar.
+
+Gaya santai dulu atau gaya lucu dulu? Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30.
+
+Music: Black Vortex by Kevin MacLeod

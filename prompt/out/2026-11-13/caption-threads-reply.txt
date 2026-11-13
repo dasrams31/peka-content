@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Buatkan 3 pilihan caption Instagram untuk [POSTINGAN TENTANG APA], gaya [SANTAI/LUCU/INSPIRATIF], maksimal [JUMLAH] kata per caption. Tiap caption diawali hook yang bikin orang berhenti scroll dan diakhiri pertanyaan yang memancing komentar.
