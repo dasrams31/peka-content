@@ -1,0 +1,13 @@
+5 skill Hermes yang bikin agent kamu langsung punya kemampuan baru.
+
+Yang paling kepakai: hermes-desktop dari fathah, 15 ribu star, aplikasi desktop buat ngatur Hermes Agent dari satu jendela rapi. Langkah pertamanya: buka slide repo-nya, unduh aplikasi desktopnya, lalu hubungkan ke Hermes Agent yang udah jalan di komputermu.
+
+Repo mana yang mau kamu coba duluan?
+
+Save dulu biar nggak hilang.
+
+Link tiap repo ada di videonya masing-masing.
+
+Music: Volatile Reaction by Kevin MacLeod
+
+#SpillRepo #Hermes #SkillAI #OpenSource #GitHub #AIAgent #BelajarAI #PekaAI
