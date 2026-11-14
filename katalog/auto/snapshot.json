@@ -1,5 +1,5 @@
 {
- "date_label": "Selasa 10 November 2026",
+ "date_label": "15 November 2026",
  "last_posted": "2026-11-13",
  "products": [
   {
@@ -62,8 +62,8 @@
   {
    "dur": "1 Tahun",
    "name": "Alight Motion",
-   "price": "4K",
-   "price_num": 4,
+   "price": "3K",
+   "price_num": 3,
    "sec": "ALIGHT MOTION"
   },
   {
@@ -166,5 +166,5 @@
    "price_num": 6.5
   }
  ],
- "updated": "2026-11-10"
+ "updated": "2026-11-15"
 }
