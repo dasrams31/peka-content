@@ -1,0 +1,145 @@
+{
+  "date": "Selasa 10 November 2026",
+  "products": [
+    {
+      "sec": "GEMINI PRO",
+      "name": "Gemini Pro",
+      "dur": "3 Bulan",
+      "price": "15K"
+    },
+    {
+      "sec": "CAPCUT",
+      "name": "CapCut Pro",
+      "dur": "1 Bulan · Privat",
+      "price": "27K"
+    },
+    {
+      "sec": "CANVA",
+      "name": "Canva Edu",
+      "dur": "6 Bulan",
+      "price": "11K"
+    },
+    {
+      "sec": "MUSE SPARK AI",
+      "name": "Muse Spark AI",
+      "dur": "Lifetime",
+      "price": "24K",
+      "note": "3-4 Milyar token"
+    },
+    {
+      "sec": "MICROSOFT",
+      "name": "Microsoft 365",
+      "dur": "1 Tahun",
+      "price": "26K"
+    },
+    {
+      "sec": "WINK",
+      "name": "Wink",
+      "dur": "7 Hari",
+      "price": "6K"
+    },
+    {
+      "sec": "WINK",
+      "name": "Wink",
+      "dur": "14 Hari",
+      "price": "9K"
+    },
+    {
+      "sec": "MEITU",
+      "name": "Meitu",
+      "dur": "7 Hari",
+      "price": "6K"
+    },
+    {
+      "sec": "ALIGHT MOTION",
+      "name": "Alight Motion",
+      "dur": "1 Tahun",
+      "price": "4K"
+    },
+    {
+      "sec": "VIU",
+      "name": "Viu",
+      "dur": "1 Tahun",
+      "price": "5K"
+    },
+    {
+      "sec": "VIU",
+      "name": "Viu",
+      "dur": "Lifetime",
+      "price": "8K"
+    },
+    {
+      "sec": "SCRIBD",
+      "name": "Scribd",
+      "dur": "1 Bulan",
+      "price": "7K"
+    },
+    {
+      "sec": "CRUNCHYROLL",
+      "name": "Crunchyroll",
+      "dur": "30 Hari",
+      "price": "6K"
+    },
+    {
+      "sec": "APPLE MUSIC",
+      "name": "Apple Music Head",
+      "dur": "1 Bulan",
+      "price": "8K"
+    },
+    {
+      "sec": "GEMINI PRO",
+      "name": "Gemini Pro",
+      "dur": "18 Bulan (Invite)",
+      "price": "14K"
+    },
+    {
+      "sec": "CAPCUT",
+      "name": "CapCut Pro",
+      "dur": "7 Hari",
+      "price": "7K"
+    },
+    {
+      "sec": "CANVA",
+      "name": "Canva Pro",
+      "dur": "1 Bulan",
+      "price": "5K"
+    },
+    {
+      "sec": "MUSE SPARK AI",
+      "name": "Muse Spark AI",
+      "dur": "Lifetime",
+      "price": "16K",
+      "note": "1M Token"
+    },
+    {
+      "sec": "GEMINI PLUS",
+      "name": "Gemini Plus AI",
+      "dur": "12 Bulan",
+      "price": "17K"
+    },
+    {
+      "sec": "GEMINI PLUS",
+      "name": "Gemini Plus AI",
+      "dur": "6 Bulan",
+      "price": "35K"
+    },
+    {
+      "sec": "CANVA",
+      "name": "Canva Edu",
+      "dur": "Lifetime",
+      "price": "19K"
+    },
+    {
+      "sec": "PROMPT",
+      "name": "Prompt Automation",
+      "dur": "Selamanya",
+      "price": "75K"
+    },
+    {
+      "sec": "DUOLINGO",
+      "name": "Duolingo",
+      "dur": "1 Bulan",
+      "price": "6,5K"
+    }
+  ]
+}
