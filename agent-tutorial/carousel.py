@@ -25,6 +25,14 @@ area (above the reserved footer strip) and must not overlap each other.
 One violation aborts the render. Max 3 text sizes per slide. Leftover
 vertical space is shared out (cover/closing blocks are spaced to end
 near the footer strip; step slides are vertically centred).
+
+Brand mark: the header lockup (top-right, every slide) is the Peka
+mascot from peka.ai.id (piko-idle.png, transparent, trimmed to its
+alpha bbox) + "peka.ai.id" — the same mark + wordmark as the site nav
+(Nav.jsx: LogoMark 26px + "peka"). No mascot anywhere else: a
+bottom-right mascot on cover/closing + reel scenes 1/4 was tried
+14 Nov 2026 and removed the same day on the user's word ("logo yang
+di peka.ai.id diatas, bukan nambah logo baru").
 """
 import json
 import os
@@ -51,6 +59,20 @@ COVER_TITLE = 200
 BODY = 92
 META = 56
 CODE_FLOOR = 52
+
+
+MASCOT_PATH = os.path.join(BASE, "..", "piko", "piko-idle.png")
+MASCOT_H = 110
+_MASCOT = None
+
+
+def mascot_image():
+    """Piko mascot, trimmed to its non-transparent content bbox."""
+    global _MASCOT
+    if _MASCOT is None:
+        im = Image.open(MASCOT_PATH).convert("RGBA")
+        _MASCOT = im.crop(im.getchannel("A").getbbox())
+    return _MASCOT
 
 
 def _font(name, size):
@@ -151,7 +173,12 @@ def base(page, total):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
     d.text((MARGIN, 150), "TUTORIAL AGENT PEKA", font=mono(64, True), fill=EMERALD)
-    d.rectangle([(W - MARGIN - 460, 158), (W - MARGIN - 420, 198)], fill=EMERALD)
+    # header lockup: the Peka mascot from peka.ai.id + peka.ai.id,
+    # same mark + wordmark as the site nav (Nav.jsx LogoMark + "peka")
+    m = mascot_image()
+    mw = max(1, round(MASCOT_H * m.width / m.height))
+    m = m.resize((mw, MASCOT_H), Image.LANCZOS)
+    img.paste(m, (W - MARGIN - 420 - mw, 140), m)
     d.text((W - MARGIN - 400, 150), "peka.ai.id", font=f(72), fill=INK)
     d.line([(MARGIN, 380), (W - MARGIN, 380)], fill=BORDER, width=4)
     d.rectangle([(MARGIN, 380), (MARGIN + 320, 380)], fill=EMERALD, width=4)

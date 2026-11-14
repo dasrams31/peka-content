@@ -49,6 +49,15 @@ Distinct from Peka yellow/black and from HM premium warm paper.
 - Layout QA per `special/DESIGN_RULES.md`: `carousel.py` records
   every text/panel box and aborts on overflow or overlap before
   saving any PNG.
+- Brand mark: the Piko mascot (`piko/piko-idle.png`, trimmed to its
+  alpha bbox) sits bottom-right on the cover and closing slides,
+  400px tall, in the free strip above the footer (registered in the
+  Layout, so QA still catches a collision; shrinks to the free strip
+  when content runs long, skips below 240px). The reel carries the
+  same mascot bottom-right in scenes 1 + 4
+  (`animated/assets/piko-mascot.png`, 117px wide). Added 14 Nov 2026
+  on the user's "logo pekanya mana?" — the template previously had
+  only the text lockup `peka.ai.id`.
 
 ## Pipeline (one edition)
 
