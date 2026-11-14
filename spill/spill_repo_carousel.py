@@ -97,14 +97,36 @@ def fmt_count(n):
     return str(n)
 
 
+def _poppins_cmap():
+    """Codepoints Poppins-SemiBold can actually render (og-card font).
+
+    Fix 2026-11-14 (SPILL #25 defect): clean_desc kept CJK letters
+    (category Lo), which Poppins cannot render, so the drawn og card
+    showed tofu boxes for repos with a Chinese description.
+    """
+    try:
+        from fontTools.ttLib import TTFont
+        return TTFont(os.path.join(POPPINS, "Poppins-SemiBold.ttf")).getBestCmap()
+    except Exception:
+        return None
+
+
+_POPPINS_CMAP = _poppins_cmap()
+
+
 def clean_desc(text):
     """Drop emoji/symbols the slide fonts cannot render (tofu boxes),
-    keep letters, numbers, punctuation, marks, spaces, math/currency."""
+    keep letters, numbers, punctuation, marks, spaces, math/currency.
+    Also drops any char missing from the Poppins-SemiBold cmap (the
+    og-card font), e.g. CJK ideographs, so the drawn card never shows
+    tofu boxes for a non-Latin repo description."""
     import unicodedata
     out = []
     for c in text:
         cat = unicodedata.category(c)
         if cat[0] in "LNPM" or cat in ("Zs", "Sm", "Sc"):
+            if _POPPINS_CMAP is not None and ord(c) > 32 and ord(c) not in _POPPINS_CMAP:
+                continue
             out.append(c)
     return re.sub(r"\s+", " ", "".join(out)).strip()
 

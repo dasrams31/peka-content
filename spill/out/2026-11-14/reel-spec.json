@@ -1,0 +1,47 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 25,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "wusimpl/AntigravityQuotaWatcher",
+      "stars": "2RB",
+      "install": "npx skills add wusimpl/AntigravityQuotaWatcher -g",
+      "penjelasan": "Plugin yang nampilin sisa kuota model AI Antigravity langsung di status bar. Ada halaman detail plus pengaturan, dan tersedia juga versi desktop.",
+      "cocok": "Kamu yang pakai Antigravity tiap hari dan pengin sisa kuota model selalu kelihatan di status bar.",
+      "shortlink": "https://s.peka.ai.id/MtRbzS"
+    },
+    {
+      "name": "confeden/Antigravity",
+      "stars": "1RB",
+      "install": "npx skills add confeden/Antigravity -g",
+      "penjelasan": "Program yang bikin akun Google dari negara mana pun bisa pakai Antigravity tanpa VPN dan tanpa ganti region. Sekali setting, semua akun bisa masuk dan unlockernya nge-patch ulang sendiri.",
+      "cocok": "Kamu yang akun Googlenya nggak bisa masuk Antigravity gara-gara region dan pengin tetap pakai tanpa VPN.",
+      "shortlink": "https://s.peka.ai.id/KAe8pE"
+    },
+    {
+      "name": "016/Antigravity-Better",
+      "stars": "256",
+      "install": "npx skills add 016/Antigravity-Better -g",
+      "penjelasan": "Satu file HTML buat ngubah tampilan panel chat AI di Antigravity sesuai seleramu. Tanpa dependensi, pasangnya ringan dan gampang dicoba.",
+      "cocok": "Kamu yang tiap hari ngobrol sama AI di Antigravity dan pengin panel chatnya tampil sesuai seleramu.",
+      "shortlink": "https://s.peka.ai.id/AtFqPm"
+    },
+    {
+      "name": "Louis-CFM/coucou",
+      "stars": "7RB",
+      "install": "brew install --cask coucou",
+      "penjelasan": "Teman kecil di notch Mac dan iPhone yang mantau semua AI coding agent kamu. Approve izin, lihat kerja agent, dan kirim file tanpa pindah jendela.",
+      "cocok": "Kamu yang jalanin banyak AI coding agent sekaligus dan pengin mantau plus approve semuanya dari notch Mac atau HP.",
+      "shortlink": "https://s.peka.ai.id/ATxIPe"
+    },
+    {
+      "name": "amElnagdy/delegate-skills",
+      "stars": "3RB",
+      "install": "npx skills add amElnagdy/delegate-skills",
+      "penjelasan": "Skill buat delegasiin tugas coding ke CLI agent lain, lalu review diff-nya dan commit sendiri. Bikin armada lane feature, tests, dan UI, tiap lane dipegang implementer yang pas.",
+      "cocok": "Kamu yang kerja bareng banyak coding agent dan pengin delegasi tugas tapi tetap yang review dan commit.",
+      "shortlink": "https://s.peka.ai.id/6UwfWo"
+    }
+  ]
+}

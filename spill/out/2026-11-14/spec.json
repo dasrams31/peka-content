@@ -1,0 +1,43 @@
+{
+  "agent": "ANTIGRAVITY",
+  "next": "CLAUDE",
+  "episode": 25,
+  "repos": [
+    {
+      "name": "wusimpl/AntigravityQuotaWatcher",
+      "stars": "2RB",
+      "desc": "Plugin buat Antigravity yang nampilin sisa kuota model AI kamu langsung di status bar. Kamu bisa lihat persentase kuota tiap model tanpa buka dashboard, plus ada halaman detail dan pengaturan buat ngatur tampilannya. Ada juga versi desktopnya kalau kamu lebih suka aplikasi terpisah dari editor. Sisa kuotanya diperbarui mengikuti pemakaian kamu, jadi kamu bisa atur kapan waktunya hemat. Cocok buat pengguna Antigravity yang pengin tahu sisa kuota sebelum kehabisan di tengah kerja.",
+      "cocok": "Kamu yang pakai Antigravity tiap hari dan pengin sisa kuota model selalu kelihatan di status bar.",
+      "shortlink": "https://s.peka.ai.id/MtRbzS"
+    },
+    {
+      "name": "confeden/Antigravity",
+      "stars": "1RB",
+      "desc": "Program buat Windows, Linux, dan macOS yang bikin akun Google dari negara mana pun bisa pakai Antigravity 2.0, Antigravity IDE, Antigravity CLI, dan ekstensi VS Code, tanpa VPN dan tanpa ganti region akun. Sekali setting di komputer, semua akun bisa masuk, dan setelah Antigravity update, unlockernya nge-patch ulang sendiri. Instalasi tinggal unduh dari halaman Releases lalu jalankan sebagai administrator dan ikuti langkahnya. Program ini juga menangani error 400 soal lokasi yang tidak didukung. Cocok buat pengguna yang akunnya kena blokir region dan pengin tetap pakai Antigravity apa adanya.",
+      "cocok": "Kamu yang akun Googlenya nggak bisa masuk Antigravity gara-gara region dan pengin tetap pakai tanpa VPN.",
+      "shortlink": "https://s.peka.ai.id/KAe8pE"
+    },
+    {
+      "name": "016/Antigravity-Better",
+      "stars": "256",
+      "desc": "Satu file HTML buat ngubah tampilan panel chat AI di Antigravity sesuai seleramu, tanpa dependensi tambahan. Kamu bisa atur tampilan dan fitur panel chatnya lewat halaman pengaturan yang disediain, lengkap dengan screenshot contoh di repo. Karena cuma satu file, pasangnya ringan dan gampang dicoba tanpa ubah banyak hal di editormu. Cocok buat pengguna Antigravity yang pengin panel chatnya lebih nyaman dipakai tiap hari.",
+      "cocok": "Kamu yang tiap hari ngobrol sama AI di Antigravity dan pengin panel chatnya tampil sesuai seleramu.",
+      "shortlink": "https://s.peka.ai.id/AtFqPm"
+    },
+    {
+      "name": "Louis-CFM/coucou",
+      "stars": "7RB",
+      "desc": "Aplikasi kecil yang tinggal di notch Mac atau di atas layar, plus di iPhone, buat mantau sesi AI coding agent kamu: Claude Code, Codex, Cursor, Gemini CLI, Antigravity, dan lainnya. Kamu bisa approve izin, lihat agent lagi kerja apa, kirim file, atau ngobrol sama Claude tanpa pindah jendela. Versi terbarunya juga bisa ubah omongan jadi teks di mana aja, plus rekam meeting tanpa bot dan dapat transkrip serta ringkasannya. Semuanya jalan dari satu tempat kecil yang selalu kelihatan. Cocok buat yang jalanin banyak agent sekaligus dan pengin mantau semuanya tanpa ribet.",
+      "cocok": "Kamu yang jalanin banyak AI coding agent sekaligus dan pengin mantau plus approve semuanya dari notch Mac atau HP.",
+      "shortlink": "https://s.peka.ai.id/ATxIPe"
+    },
+    {
+      "name": "amElnagdy/delegate-skills",
+      "stars": "3RB",
+      "desc": "Skill yang bikin kamu bisa delegasiin tugas coding ke CLI coding agent lain, lalu review diff-nya dan commit sendiri. Kamu bisa bikin armada lane kayak feature, tests, dan UI, tiap lane dipegang implementer yang paling pas buat tugasnya. Setup-nya tinggal satu perintah, terus agent orkestrator kamu yang ngatur pembagian tugasnya. Kamu tetap pegang kendali penuh, karena review dan commit tetap di tanganmu. Cocok buat developer yang kerja bareng banyak coding agent dan pengin delegasi tanpa kehilangan kendali.",
+      "cocok": "Kamu yang kerja bareng banyak coding agent dan pengin delegasi tugas tapi tetap yang review dan commit.",
+      "shortlink": "https://s.peka.ai.id/6UwfWo"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-14/carousel"
+}
