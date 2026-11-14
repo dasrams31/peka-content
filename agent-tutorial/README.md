@@ -19,7 +19,70 @@ in the bank: it aired as AI Pekan Ini #01 on 15 Nov 2026 and must not
 be built again in this series (the spec-template.json example topic
 is illustrative only).
 
-## Visual identity - agent-console
+**Style change 15 Nov 2026 (user order: "oke pake ini tapi sesuaikan
+dengan warna dari peka"):** the template was restyled to the
+Herlambang variant (see below) and episode #01 was re-rendered in it
+(voiceover reel + 6 slides; old-style assets backed up under
+`out/2026-11-16-ai-agent-pertama/backup-old-style/`). The agent-console
+v1 files are kept but no longer used for new episodes.
+
+## Visual identity - Herlambang (current, since 15 Nov 2026)
+
+Adapted from a 60s Herlambang Awn Facebook reel (reference video +
+frames in `ref-herlambang/`; full breakdown in
+`ref-herlambang/herlambang-style.md`). Same structure, Peka colors.
+
+| Token | Value | Use |
+|---|---|---|
+| Cream grid paper | `#F5F1E8` | KENAPA + closing scenes/slides |
+| Dark slate grid | `#0D1117` | ALAT + JALANKAN scenes/slides |
+| Peka yellow grid | `#FFD60A` | LANGKAH scenes/slides |
+| Active tab fill | `#FFD60A` | active tab (black text) |
+| Accent (cream/dark) | `#10B981` | italic-serif accent word |
+| Accent (yellow) | `#065F46` | italic-serif accent word |
+| Terminal panel | `#161B22` / `#0B0D10` | code/terminal panels |
+| Emerald mono | `#10B981` | terminal code text |
+| Hard shadow | `#0D1117` (or `#000000` on dark) | chunky panel offset shadow |
+
+- Persistent top tab bar on every reel scene and on carousel slide 1:
+  `KENAPA -> ALAT -> LANGKAH -> JALANKAN` (mono `// <section>` label
+  above it). Active tab yellow-filled; visited tabs dark slate;
+  upcoming tabs white (pale yellow on yellow backgrounds). A thin
+  accent underline marks the active tab.
+- Alternating grid-paper backgrounds per section (cream / dark /
+  yellow / dark / cream), 64px grid (256px on 4096 slides).
+- Huge condensed bold type: Anton for headlines (132px at 1080 reel
+  stage, 360px cover / 280px step titles on 4096 slides), with ONE
+  Playfair Display Italic accent word per headline. Headline words
+  are inline-block spans with a 0.22em right margin (a trailing space
+  inside the span collapses, so the margin is what separates words).
+- Neo-brutalist chunky panels: thick black borders (3px reel, 8px
+  slides), hard offset shadows, square corners. Highlight card =
+  yellow fill. Terminal windows: dark panel, traffic-light dots,
+  white step-label pill, emerald mono code.
+- Presenter: Piko (the yellow mascot; reel-v2 anime poses
+  base/present/wave x closed/open mouth), bottom-right, talking
+  mouth + lean/pulse while the narration speaks. No other mascot:
+  the reference video's illustrated man is NOT used.
+- Reel format: 45-60s voiceover-led (Edge TTS `id-ID-ArdiNeural`,
+  rate +25%, ~120-135 words), sentence-first karaoke with the
+  current word highlighted, progress bar at the bottom. No music.
+  Voice decision 15 Nov 2026: ArdiNeural kept on the user's word
+  (GadisNeural is the only other id-ID Edge voice, equally
+  mainstream; local Meta MMS TTS was sampled but not chosen).
+- Carousel: 6 slides, one card type per slide (cover: chip + big
+  title + sub + yellow try-now panel + info line + result panel;
+  steps: number rail + title + detail + note + code panel and/or
+  mini-card grid / run terminal; closing: title + shortlink +
+  recap lines + tip panel + follow panel).
+- Brand mark: the header lockup (top-right, every slide + every reel
+  scene) is the Peka mascot from peka.ai.id (`piko/piko-idle.png`,
+  transparent, trimmed to its alpha bbox) + "peka.ai.id" — the same
+  mark + wordmark as the site nav. On yellow backgrounds the lockup
+  sits in a white pill (black border + hard shadow) because the
+  yellow mascot is invisible on yellow.
+
+## Visual identity - agent-console (v1, superseded 15 Nov 2026)
 
 Distinct from Peka yellow/black and from HM premium warm paper.
 
@@ -78,21 +141,37 @@ Edition out dir: `~/workspace/peka-content/agent-tutorial/out/<date>-<short>/`.
    the carousel need the code printed inside the visual). Nothing is
    posted before the blog page is live.
 3. **Threads carousel.** `python3 carousel.py <spec.json> <out_dir>`
-   (6 slides, 4096x4096). Slide 1 cover (title + goal + step count
-   + prerequisites + a "COBA SEKARANG" panel with one concrete first
-   action + a step preview + a "HASIL AKHIR" result panel), slides 2-5
-   one step per slide (number rail, title, detail, optional terminal
-   code panel), slide 6 closing (recap + tip panel + follow panel +
-   shortlink printed + Follow + community). The closing shortlink is
-   read from `shortlinks.json`; without it a placeholder
-   `s.peka.ai.id/contoh` is printed and a warning is shown.
-4. **Reel.** `python3 build_reel.py <spec.json> <out_dir>` (4 scenes,
-   16 s, 2160x3840 yuv420p). Picks music EXACTLY ONCE via
-   `brand/music/pick_reel_track.sh` (recorded in `track.txt`; a
-   re-render reuses `track.txt` instead of picking a second track),
-   renders frames with the megumi venv python, encodes with ffmpeg
-   `-threads 2`, extracts the cover frame at 3.2 s as
-   `<slug>-cover.jpg`. Scene 4 prints the blog shortlink.
+   (6 slides, 4096x4096, Herlambang style). Slide 1 cover (tab bar +
+   chip + big Anton title with one Playfair-italic accent word + sub
+   + yellow "COBA SEKARANG" panel with one concrete first action +
+   info line + "HASIL AKHIR" result panel), slides 2-5 one step per
+   slide (number rail, title, detail, note, optional terminal code
+   panel; step["cards"] renders a 2x2 mini-card grid and
+   step["terminal"] a run-output card), slide 6 closing (title +
+   shortlink printed + recap lines + tip panel + follow panel).
+   Per-slide backgrounds: cover cream, step 1 dark, steps 2-3 yellow,
+   step 4 dark, closing cream. The closing shortlink is read from
+   `shortlinks.json`; without it a placeholder `s.peka.ai.id/contoh`
+   is printed and a warning is shown.
+4. **Reel.** `python3 build_reel_v2.py <reel-v2-spec.json> <out_dir>`
+   (5 scenes, 45-60 s, 2160x3840 yuv420p, voiceover-led, no music).
+   The edition reel spec (`reel-v2-spec.json`, in the out dir) holds
+   the 5 scenes (narration text, headline, sub, cards/steps/terminal,
+   Piko pose per scene, shortlink, slug). TTS runs via the reel-v2
+   pipeline (`reel-v2/tts.py`, Edge TTS id-ID-ArdiNeural, rate +25%);
+   `--skip-tts` reuses an existing `narration.mp3` + `words.json`
+   in the out dir (e.g. when the voice was decided separately).
+   The orchestrator computes scene spans + headline stagger delays
+   from the measured word timings, renders frames with the megumi
+   venv python (`animated/render-herlambang.py`, Playwright,
+   `--still <t>` renders one QA still), encodes with ffmpeg
+   `-threads 2` via `reel-v2/encode.py`, re-extracts the cover at
+   3.0 s as `<slug>-cover.jpg`, verifies with ffprobe (h264
+   2160x3840 yuv420p + aac, 45-60 s), then deletes the frames.
+   Always render stills first (`render-herlambang.py <render-spec.json>
+   --still <t> <out.jpg> 1.0`) and read them before the full render:
+   check headline word spacing, terminal readability, Piko/lockup
+   visibility on every theme, and no Piko/sub collisions.
 5. **Blog.** `python3 make_blog.py <out_dir>` writes
    `peka-content/blog/<slug>.json`, copies the reel cover + slides
    into `peka-content/images/`, and backs the edition up to
@@ -128,14 +207,25 @@ Edition out dir: `~/workspace/peka-content/agent-tutorial/out/<date>-<short>/`.
 - `README.md` (this file)
 - `spec-template.json` - edition spec schema with example values
   (episode 1, bikin skill Claude sendiri)
-- `carousel.py` - Threads carousel designer (PIL, 4096x4096, QA gate)
+- `carousel.py` - Threads carousel designer (PIL, 4096x4096, QA gate,
+  Herlambang style)
 - `make_shortlink.py` - admin shortlink creator (direct DB insert)
 - `make_blog.py` - blog JSON builder + per-edition backup (+ --local)
 - `post_agent.py` - poster (Threads + IG reel + FB reel), idempotent
-- `build_reel.py` - reel orchestrator (music once, render, encode, cover)
-- `animated/scene.html` - 4-scene reel template (agent-console)
-- `animated/render.py` - Playwright frame renderer (4K, scale 2.0)
-- `animated/assets/` - Poppins + DejaVu fonts
+- `build_reel_v2.py` - voiceover-reel orchestrator (TTS, render,
+  encode, ffprobe verify; `--skip-tts` / `--no-render` flags)
+- `build_reel.py` - v1 music-reel orchestrator (superseded; kept)
+- `animated/scene-herlambang.html` - 5-scene Herlambang reel template
+- `animated/render-herlambang.py` - Playwright frame renderer for it
+  (4K scale 2.0, `--still` QA mode)
+- `animated/scene.html` - v1 4-scene reel template (agent-console,
+  superseded; kept)
+- `animated/render.py` - v1 Playwright frame renderer (kept)
+- `animated/assets/` - Anton + Playfair Display Italic + Poppins +
+  DejaVu fonts; `character/` - Piko anime poses (base/present/wave
+  x closed/open)
+- `ref-herlambang/` - style reference video + 8 frames + style
+  breakdown (`herlambang-style.md`, incl. the approved Peka mapping)
 - `templates/` - caption templates with placeholders
 - `topics.md` - bank of 8 starter topics (hands-on / concept)
 - `series.txt` - next episode number (starts at 1)
@@ -154,8 +244,9 @@ cd ~/workspace/peka-content/agent-tutorial
 python3 make_shortlink.py out/<date>-<short> https://blog.peka.ai.id/p/<slug>
 # 3. carousel
 python3 carousel.py out/<date>-<short>/spec.json out/<date>-<short>
-# 4. reel
-python3 build_reel.py out/<date>-<short>/spec.json out/<date>-<short>
+# 4. reel (voiceover; write reel-v2-spec.json in the out dir first)
+python3 build_reel_v2.py out/<date>-<short>/reel-v2-spec.json out/<date>-<short>
+#    (--skip-tts reuses narration.mp3 + words.json already in the out dir)
 # 5. blog
 python3 make_blog.py out/<date>-<short>
 # 6. captions: write the 5 caption files in the out dir
@@ -209,9 +300,12 @@ python3 post_agent.py out/<date>-<short>
 - Blog JSON loads (`json.load`), no em/en dash in the JSON, all
   captions, or any slide text.
 - Blog URL curls 200; shortlink redirects 307 to the blog URL.
-- ffprobe reel: 2160x3840, yuv420p, ~15-16 s.
+- ffprobe reel: 2160x3840, yuv420p, h264 + aac, 45-60 s.
 - All carousel slides 4096x4096; layout QA passes (no overflow,
   no box overlap, nothing in the footer strip).
+- Stills QA: render one still per reel scene and read it (headline
+  spacing, terminal readability, lockup + Piko visible on every
+  theme, tab bar states correct) before the full render.
 - `post-done.txt` absent until posting; no channel broadcast sent
   during a dry-run.
 

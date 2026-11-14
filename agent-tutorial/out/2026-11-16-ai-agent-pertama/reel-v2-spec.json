@@ -1,1 +1,246 @@
-{"character":{"aspect_ratio":1.6728,"poses":{"base":{"closed":"assets/character/piko-anime-base-closed.png","open":"assets/character/piko-anime-base-open.png"},"present":{"closed":"assets/character/piko-anime-present-closed.png","open":"assets/character/piko-anime-present-open.png"},"wave":{"closed":"assets/character/piko-anime-wave-closed.png","open":"assets/character/piko-anime-wave-open.png"}}},"episode":1,"kicker":"TUTORIAL AGENT PEKA","rate":"+25%","scenes":[{"badge":"EDISI #01","bg":"cream","headline":[[{"a":false,"t":"AGENT"},{"a":false,"t":"AI"}],[{"a":true,"t":"PERTAMAMU,"},{"a":false,"t":"30"},{"a":false,"t":"BARIS"}]],"kind":"bigtype","narration":"Chatbot itu nunggu ditanya. Agent AI beda, dia kerja sendiri sampai tujuan tercapai. Edisi pertama ini, kamu bikin agen AI pertamamu dengan Python, cuma 30 baris kode.","pose":"present","sub":"Chatbot nunggu ditanya. Agent kerja sendiri sampai tujuan tercapai.","tab":"KENAPA","tab_index":0,"terminal":{"label":"LOOP INTI","lines":["for i in range(MAX_ITERATIONS):","    response = client.chat.completions.create(","        model=\"gpt-4o-mini\", messages=messages, tools=tools","    )"]}},{"bg":"dark","cards":[{"desc":"model yang mikir","hot":true,"title":"OTAK LLM"},{"desc":"tangan agent","hot":false,"title":"TOOLS"},{"desc":"ingat konteks","hot":false,"title":"MEMORI"},{"desc":"atur langkah","hot":false,"title":"LOOP"}],"headline":[[{"a":true,"t":"EMPAT"}],[{"a":false,"t":"KOMPONEN"}]],"kind":"cards","narration":"Satu agent cuma butuh empat komponen. Otak dari model AI, tools sebagai tangannya, memori buat ingat, dan loop yang ngatur langkahnya. Tanpa tools, agent cuma bisa ngomong.","pose":"base","sub":"Satu agent cuma butuh empat komponen ini.","tab":"ALAT","tab_index":1},{"bg":"yellow","headline":[[{"a":false,"t":"CUMA"},{"a":true,"t":"TIGA"}],[{"a":false,"t":"LANGKAH"},{"a":false,"t":"GAMPANG"}]],"kind":"steps","narration":"Langkahnya cuma tiga, dan gampang. Pertama, pahami keempat komponennya. Kedua, pasang tool cuaca yang bisa dipanggil model. Ketiga, tulis loop think act observe dengan batas lima iterasi.","pose":"present","steps":[{"n":"01","title":"PAHAMI 4 KOMPONEN"},{"n":"02","title":"PASANG TOOL CUACA"},{"n":"03","title":"TULIS LOOP"}],"sub":"Tiga langkah, langsung jalan.","tab":"LANGKAH","tab_index":2},{"bg":"dark","headline":[[{"a":false,"t":"JALANIN"},{"a":false,"t":"AGENTNYA,"}],[{"a":false,"t":"MODEL"},{"a":true,"t":"MANGGIL"},{"a":false,"t":"TOOL"}]],"kind":"terminal","narration":"Terakhir, jalanin agentnya. Model bakal manggil tool cuaca sendiri, baca hasilnya, lalu jawab. Satu agent sederhana yang kamu pahami, lebih berharga dari demo canggih yang tidak bisa kamu debug.","pose":"wave","sub":"Model manggil tool sendiri, lalu jawab.","tab":"JALANKAN","tab_index":3,"terminal":{"label":"LANGKAH 4 · JALANKAN","lines":["$ python agent_cuaca.py","memanggil get_weather Bandung...","Jawaban: pagi ini berawan, 24 derajat."]}},{"band":"AGEN AI PERTAMA: LOOP 30 BARIS","bg":"cream","follow":"Follow @peka.ai.id, gabung lewat s.peka.ai.id/gabung. Save dulu biar gampang dicari pas butuh.","headline":[[{"a":false,"t":"KAMU"},{"a":false,"t":"MAU"},{"a":false,"t":"BIKIN"}],[{"a":false,"t":"AGENT"},{"a":false,"t":"BUAT"},{"a":true,"t":"APA?"}]],"kind":"close","narration":"Kode lengkapnya ada di blog Peka, linknya ada di akhir video. Kamu mau bikin agent buat apa dulu? Follow Peka AI, dan gabung komunitas lewat link itu.","pose":"wave","tab":"JALANKAN","tab_index":3}],"shortlink":"s.peka.ai.id/w9ejEU","slug":"ai-agent-pertama-python"}
+{
+  "character": {
+    "aspect_ratio": 1.6728,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "episode": 1,
+  "kicker": "TUTORIAL AGENT PEKA",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "EDISI #01",
+      "bg": "cream",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "AGENT"
+          },
+          {
+            "a": false,
+            "t": "AI"
+          }
+        ],
+        [
+          {
+            "a": true,
+            "t": "PERTAMAMU,"
+          },
+          {
+            "a": false,
+            "t": "30"
+          },
+          {
+            "a": false,
+            "t": "BARIS"
+          }
+        ]
+      ],
+      "kind": "bigtype",
+      "narration": "Chatbot itu nunggu ditanya. Agent AI beda, dia kerja sendiri sampai tujuan tercapai. Edisi pertama ini, kamu bikin agen AI pertamamu dengan Python, cuma 30 baris kode.",
+      "pose": "present",
+      "sub": "Chatbot nunggu ditanya. Agent kerja sendiri sampai tujuan tercapai.",
+      "tab": "KENAPA",
+      "tab_index": 0,
+      "terminal": {
+        "label": "LOOP INTI",
+        "lines": [
+          "for i in range(MAX_ITERATIONS):",
+          "    response = client.chat.completions.create(",
+          "        model=\"gpt-4o-mini\",",
+          "        messages=messages, tools=tools",
+          "    )"
+        ]
+      }
+    },
+    {
+      "bg": "dark",
+      "cards": [
+        {
+          "desc": "model yang mikir",
+          "hot": true,
+          "title": "OTAK LLM"
+        },
+        {
+          "desc": "tangan agent",
+          "hot": false,
+          "title": "TOOLS"
+        },
+        {
+          "desc": "ingat konteks",
+          "hot": false,
+          "title": "MEMORI"
+        },
+        {
+          "desc": "atur langkah",
+          "hot": false,
+          "title": "LOOP"
+        }
+      ],
+      "headline": [
+        [
+          {
+            "a": true,
+            "t": "EMPAT"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "KOMPONEN"
+          }
+        ]
+      ],
+      "kind": "cards",
+      "narration": "Satu agent cuma butuh empat komponen. Otak dari model AI, tools sebagai tangannya, memori buat ingat, dan loop yang ngatur langkahnya. Tanpa tools, agent cuma bisa ngomong.",
+      "pose": "base",
+      "sub": "Satu agent cuma butuh empat komponen ini.",
+      "tab": "ALAT",
+      "tab_index": 1
+    },
+    {
+      "bg": "yellow",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "CUMA"
+          },
+          {
+            "a": true,
+            "t": "TIGA"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "LANGKAH"
+          },
+          {
+            "a": false,
+            "t": "GAMPANG"
+          }
+        ]
+      ],
+      "kind": "steps",
+      "narration": "Langkahnya cuma tiga, dan gampang. Pertama, pahami keempat komponennya. Kedua, pasang tool cuaca yang bisa dipanggil model. Ketiga, tulis loop think act observe dengan batas lima iterasi.",
+      "pose": "present",
+      "steps": [
+        {
+          "n": "01",
+          "title": "PAHAMI 4 KOMPONEN"
+        },
+        {
+          "n": "02",
+          "title": "PASANG TOOL CUACA"
+        },
+        {
+          "n": "03",
+          "title": "TULIS LOOP"
+        }
+      ],
+      "sub": "Tiga langkah, langsung jalan.",
+      "tab": "LANGKAH",
+      "tab_index": 2
+    },
+    {
+      "bg": "dark",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "JALANIN"
+          },
+          {
+            "a": false,
+            "t": "AGENTNYA,"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "MODEL"
+          },
+          {
+            "a": true,
+            "t": "MANGGIL"
+          },
+          {
+            "a": false,
+            "t": "TOOL"
+          }
+        ]
+      ],
+      "kind": "terminal",
+      "narration": "Terakhir, jalanin agentnya. Model bakal manggil tool cuaca sendiri, baca hasilnya, lalu jawab. Satu agent sederhana yang kamu pahami, lebih berharga dari demo canggih yang tidak bisa kamu debug.",
+      "pose": "wave",
+      "sub": "Model manggil tool sendiri, lalu jawab.",
+      "tab": "JALANKAN",
+      "tab_index": 3,
+      "terminal": {
+        "label": "LANGKAH 4 · JALANKAN",
+        "lines": [
+          "$ python agent_cuaca.py",
+          "memanggil get_weather Bandung...",
+          "Jawaban: pagi ini berawan, 24 derajat."
+        ]
+      }
+    },
+    {
+      "band": "AGEN AI PERTAMA: LOOP 30 BARIS",
+      "bg": "cream",
+      "follow": "Follow @peka.ai.id, gabung lewat s.peka.ai.id/gabung. Save dulu biar gampang dicari pas butuh.",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "KAMU"
+          },
+          {
+            "a": false,
+            "t": "MAU"
+          },
+          {
+            "a": false,
+            "t": "BIKIN"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "AGENT"
+          },
+          {
+            "a": false,
+            "t": "BUAT"
+          },
+          {
+            "a": true,
+            "t": "APA?"
+          }
+        ]
+      ],
+      "kind": "close",
+      "narration": "Kode lengkapnya ada di blog Peka, linknya ada di akhir video. Kamu mau bikin agent buat apa dulu? Follow Peka AI, dan gabung komunitas lewat link itu.",
+      "pose": "wave",
+      "tab": "JALANKAN",
+      "tab_index": 3,
+      "shortlink": "s.peka.ai.id/w9ejEU"
+    }
+  ],
+  "shortlink": "s.peka.ai.id/w9ejEU",
+  "slug": "ai-agent-pertama-python"
+}

@@ -10,3 +10,5 @@ hm/review/
 
 # render venvs created inside edition folders (katalog render) — never commit
 render-venv/
+**/frames/
+**/_tts_tmp/

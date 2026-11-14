@@ -60,7 +60,8 @@
         "lines": [
           "for i in range(MAX_ITERATIONS):",
           "    response = client.chat.completions.create(",
-          "        model=\"gpt-4o-mini\", messages=messages, tools=tools",
+          "        model=\"gpt-4o-mini\",",
+          "        messages=messages, tools=tools",
           "    )"
         ]
       },
@@ -261,6 +262,7 @@
       "pose": "wave",
       "tab": "JALANKAN",
       "tab_index": 3,
+      "shortlink": "s.peka.ai.id/w9ejEU",
       "headline_delays": [
         3.64,
         3.86,

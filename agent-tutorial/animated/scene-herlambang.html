@@ -25,6 +25,10 @@
   .lockup { display: flex; align-items: center; gap: 14px; }
   .lockup img { height: 54px; }
   .lockup span { font-family: PoppinsB; font-size: 34px; color: var(--text); }
+  /* Yellow mascot is invisible on the yellow grid, so the lockup gets a
+     white pill on the yellow theme (theme set on #stage by applyTheme). */
+  #stage[data-theme="yellow"] .lockup { background: #ffffff; border: 4px solid #0d1117;
+    box-shadow: 6px 6px 0 #0d1117; padding: 4px 16px 4px 8px; border-radius: 999px; }
   .tabs { position: absolute; left: 84px; right: 84px; top: 136px; z-index: 5;
     display: flex; gap: 16px; }
   .tab { position: relative; flex: 1; height: 62px; display: flex; align-items: center;
@@ -36,11 +40,11 @@
   .chip { display: inline-block; font-family: DejaVuMonoB; font-size: 28px; letter-spacing: 3px;
     background: var(--chip-bg); color: var(--chip-text); padding: 14px 24px;
     border: 3px solid var(--tab-border); box-shadow: 5px 5px 0 var(--tab-shadow); }
-  .big { font-family: Anton; font-size: 148px; line-height: 1.04; color: var(--text); margin-top: 40px; }
+  .big { font-family: Anton; font-size: 132px; line-height: 1.04; color: var(--text); margin-top: 40px; }
   .big .ln { display: block; }
-  .big .w { display: inline-block; }
+  .big .w { display: inline-block; margin-right: .22em; }
   .big .acc { font-family: Playfair; font-style: italic; font-weight: 700; color: var(--accent); }
-  .sub { font-family: PoppinsSB; font-size: 44px; line-height: 1.4; color: var(--dim); margin-top: 36px; }
+  .sub { font-family: PoppinsSB; font-size: 44px; line-height: 1.4; color: var(--dim); margin-top: 36px; max-width: 700px; }
   .term { margin-top: 44px; background: var(--term-bg); border: 3px solid #000000;
     box-shadow: 8px 8px 0 var(--tab-shadow); padding: 28px 32px 32px 32px; }
   .term .dots { display: flex; gap: 14px; align-items: center; }
@@ -65,7 +69,7 @@
   .srow { display: flex; gap: 28px; align-items: center; border: 3px solid var(--tab-border);
     box-shadow: 8px 8px 0 var(--tab-shadow); background: var(--card); padding: 28px 32px; margin-top: 28px; }
   .srow:first-child { margin-top: 0; }
-  .srow .n { font-family: Anton; font-size: 64px; color: var(--accent); }
+  .srow .n { font-family: Anton; font-size: 64px; color: #10b981; }
   .srow .t { font-family: Anton; font-size: 56px; color: var(--card-text); letter-spacing: 1px; }
   .follow { font-family: PoppinsSB; font-size: 44px; line-height: 1.45; color: var(--dim); margin-top: 56px; }
   .shortlink { display: inline-block; margin-top: 44px; font-family: PoppinsB; font-size: 40px;
@@ -200,6 +204,7 @@
       const sc = el('div', 'scene');
       sc.id = 'scene-' + si;
       if (s.badge) { const c = el('span', 'chip', esc(s.badge)); markIn(c, 0.10, 0.4, 0, 30); sc.appendChild(c); }
+      if (s.kind === 'bigtype' && s.terminal) sc.appendChild(termCard(s.terminal, 1.1));
       if (s.headline) {
         const h = el('h1', 'big');
         const delays = s.headline_delays || [];
@@ -218,7 +223,6 @@
         sc.appendChild(h);
       }
       if (s.sub) { const p = el('p', 'sub', esc(s.sub)); markIn(p, 0.9, 0.5, 0, 40); sc.appendChild(p); }
-      if (s.kind === 'bigtype' && s.terminal) sc.appendChild(termCard(s.terminal, 1.1));
       if (s.kind === 'cards' && s.cards) {
         const box = el('div', 'cards');
         s.cards.forEach((c, i) => {
@@ -304,6 +308,7 @@
 
   function applyTheme(bg) {
     const root = document.getElementById('stage');
+    root.dataset.theme = bg;
     const th = THEMES[bg] || THEMES.cream;
     for (const k of Object.keys(th)) root.style.setProperty(k, th[k]);
   }

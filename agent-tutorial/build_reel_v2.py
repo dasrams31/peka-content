@@ -148,8 +148,9 @@ def main():
     run(["python3", os.path.join(REEL_V2, "encode.py"), frames_dir,
          narration_path, out_mp4, cover, str(FPS)], log)
     # Better cover: scene 1 fully composed (encode.py takes t=1s).
+    log.write("COVER_3S\n")
     run(["ffmpeg", "-y", "-v", "error", "-ss", "3.0", "-i", out_mp4,
-         "-frames:v", "1", "-q:v", "2", cover], "COVER_3S")
+         "-frames:v", "1", "-q:v", "2", cover], log)
     probe = subprocess.run([
         "ffprobe", "-v", "error", "-select_streams", "v:0",
         "-show_entries", "stream=codec_name,width,height,pix_fmt",
