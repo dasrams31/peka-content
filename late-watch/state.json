@@ -1,9 +1,1 @@
-{
-  "date": "2026-11-14",
-  "slots": {
-    "hm": {
-      "alerted": true,
-      "alerted_at": "10:45"
-    }
-  }
-}
+{"date":"2026-11-14","slots":{"hm":{"alerted":true,"alerted_at":"10:45"},"prompt-harian":{"alerted":true,"alerted_at":"13:45"}}}
