@@ -5,6 +5,7 @@ Canvas 1080x1920, background #111111. Cover slide (4096x4096) scaled to
 bottom band carries the headline price + order line, so no band is an
 empty letterbox. Output: story-9x16.png next to this script.
 """
+import json
 import os
 
 from PIL import Image, ImageDraw, ImageFont
@@ -54,8 +55,13 @@ cover = cover.resize((1080, 1080), Image.LANCZOS)
 img.paste(cover, (0, 420))
 
 # ---- bottom band (1500-1920): headline price + order ----
-centered(d, "MULAI 4K.", ImageFont.truetype(FX, 96), YELLOW, 1540)
-centered(d, "23 akun premium ready hari ini.",
+# Harga termurah + jumlah produk dibaca dari prices.json (bukan hardcode):
+# banner "MULAI 4K." pernah salah saat harga termurah turun jadi 3K.
+with open(os.path.join(HERE, "..", "prices.json"), encoding="utf-8") as f:
+    _prices = json.load(f)["products"]
+_cheapest = min(_prices, key=lambda p: float(p["price_num"]))
+centered(d, f"MULAI {_cheapest['price']}.", ImageFont.truetype(FX, 96), YELLOW, 1540)
+centered(d, f"{len(_prices)} akun premium ready hari ini.",
          ImageFont.truetype(FS, 48), CREAM, 1670)
 centered(d, "DM: MAU [nama produk]  ·  s.peka.ai.id/gabung",
          ImageFont.truetype(FS, 40), MUTED, 1760)
