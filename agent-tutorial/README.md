@@ -8,9 +8,16 @@ Working series name: **Tutorial Agent Peka** (folder slug
 `agent-tutorial`). The name can be renamed later; the folder slug,
 spec schema, and scripts do not depend on the display name.
 
-Status: template system built 14 Nov 2026. Build-only: no cron exists
-yet, nothing posts from this folder until a run is ordered from an
-interactive chat session.
+Status: template system built 14 Nov 2026. Cron `peka-agent-tutorial`
+created 14 Nov 2026 (weekly, 19:00, build-only: it never runs
+post_agent.py; posting happens from an interactive chat session).
+Episode #01 debut is fully prepared in
+`out/2026-11-16-ai-agent-pertama/` (real admin shortlink, blog live);
+it posts from chat at 19:00 on 16 Nov 2026. Episode #02 is the
+research-agent topic (topics.md). "Bikin skill Claude sendiri" is NOT
+in the bank: it aired as AI Pekan Ini #01 on 15 Nov 2026 and must not
+be built again in this series (the spec-template.json example topic
+is illustrative only).
 
 ## Visual identity - agent-console
 
