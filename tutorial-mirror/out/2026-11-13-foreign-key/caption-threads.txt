@@ -1,0 +1,9 @@
+Tabel kamu saling nyambung, atau cuma numpuk?
+
+Foreign key itu satpamnya database. Dia pastiin tiap baris di tabel anak punya induk yang beneran ada. Tanpa dia, data yatim numpuk diam-diam dan baru ketahuan pas laporanmu aneh.
+
+Di carousel ini: 3 jenis relasi, cara kerja foreign key, sampai milih ON DELETE.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim pasang foreign key dari awal, atau tim nambahin belakangan? #AI

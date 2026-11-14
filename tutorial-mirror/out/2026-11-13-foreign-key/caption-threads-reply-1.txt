@@ -1,0 +1,1 @@
+Relasi itu ada 3 jenis. One to many paling sering ketemu: satu user punya banyak post. Many to many butuh tabel pivot: satu post punya banyak tag, satu tag dipakai banyak post. One to one paling jarang: satu user punya satu profil.

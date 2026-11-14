@@ -1,0 +1,1 @@
+Kesalahan paling sering: nggak pakai foreign key sama sekali, tipe data foreign key beda dengan primary key, CASCADE dipasang di semua relasi, lupa index di kolom foreign key, dan hapus induk tanpa cek anak dulu. Semuanya ada di blog, lengkap dengan contoh SQL-nya.

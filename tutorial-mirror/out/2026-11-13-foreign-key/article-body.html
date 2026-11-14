@@ -1,0 +1,127 @@
+<p>Hampir semua aplikasi nyimpen data di banyak tabel yang saling berhubungan. Tabel users nyimpen akun, tabel posts nyimpen tulisan, tabel comments nyimpen komentar. Kalau tiga tabel itu nggak diikat dengan jelas, datanya gampang berantakan. Foreign key itu pengikatnya: mekanisme yang bikin tabel-tabel itu jadi satu kesatuan yang konsisten.</p>
+
+<h2>Relasi tabel itu apa sih</h2>
+<p>Relasi itu hubungan antar tabel. Ada tiga jenis yang bakal kamu temuin terus.</p>
+<p><strong>One to many</strong> itu yang paling umum. Satu user punya banyak post, satu post cuma milik satu user. Satu kategori punya banyak produk, satu produk cuma masuk satu kategori.</p>
+<p><strong>Many to many</strong> kejadian kalau dua sisi sama-sama bisa punya banyak pasangan. Satu post bisa punya banyak tag, satu tag bisa dipakai banyak post. Relasi ini nggak bisa diwakilin satu foreign key aja, butuh tabel perantara yang biasa disebut pivot table.</p>
+<p><strong>One to one</strong> paling jarang. Satu user punya satu profil, satu profil cuma milik satu user. Seringkali ini cuma cara mecah tabel yang kelebaran jadi dua bagian.</p>
+<p>Kenapa relasi harus diatur di level database, bukan cuma di kode aplikasi? Karena aplikasi bisa punya bug, tapi database nggak berbohong. Kalau aturannya ketanam di database, data yang nggak konsisten nggak bisa masuk, siapa pun yang nulis datanya.</p>
+
+<h2>Foreign key itu apa</h2>
+<p>Foreign key itu kolom di tabel anak yang nunjuk ke primary key tabel induk. Contoh klasik: tabel posts punya kolom user_id yang nunjuk ke kolom id di tabel users. Setiap nilai user_id di tabel posts harus ada di tabel users. Kalau nggak ada, database nolak.</p>
+<pre><code>CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL
+);
+
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    title VARCHAR(200) NOT NULL,
+    body TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    post_id INTEGER NOT NULL REFERENCES posts(id),
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    body TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);</code></pre>
+<p>Sintaks REFERENCES users(id) itu adalah foreign key. Sederhana, tapi efeknya besar.</p>
+
+<h2>Coba sendiri: masukin user_id yang nggak ada</h2>
+<p>Sekarang coba masukin post dengan user_id yang nggak ada di tabel users:</p>
+<pre><code>INSERT INTO posts (user_id, title, body)
+VALUES (999, 'Judul Tes', 'Isi tulisan.');</code></pre>
+<p>PostgreSQL langsung nolak dengan error violates foreign key constraint. Ini yang disebut referential integrity: database jagain supaya nggak ada data anak yang nunjuk ke induk yang nggak ada.</p>
+<p>Tanpa foreign key, insert di atas bakal berhasil diam-diam. Nanti pas kamu JOIN, post itu hilang dari hasil karena usernya nggak ketemu. Bug kayak gini susah dilacak karena datanya kelihatan normal sampai ada yang komplain.</p>
+
+<h2>ON DELETE, pilih dengan sengaja</h2>
+<p>Pas baris induk dihapus, database harus tahu apa yang dilakukan ke baris anak. Ada tiga pilihan utama, dan milih yang salah bisa ngapus data yang nggak seharusnya hilang.</p>
+<p><strong>RESTRICT</strong> itu perilaku default. Database nolak penghapusan induk selama masih ada anak yang nunjuk ke sana. Aman, tapi kamu harus ngapus anaknya dulu secara manual.</p>
+<p><strong>CASCADE</strong> ikut ngapus semua baris anak pas induk dihapus. Cocok buat data yang memang nggak ada artinya tanpa induknya, kayak komentar milik sebuah post. Hapus post, komentarnya ikut kehapus.</p>
+<p><strong>SET NULL</strong> ngosongin foreign key di baris anak, jadi anaknya tetap ada tapi kehilangan induk. Kolom foreign key harus boleh NULL kalau pakai opsi ini. Cocok buat kasus kayak post yang penulisnya dihapus, tapi tulisannya tetap pengen dipertahankan.</p>
+<pre><code>CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    title VARCHAR(200) NOT NULL,
+    body TEXT NOT NULL
+);
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+    body TEXT NOT NULL
+);</code></pre>
+<p>Di contoh ini, ngapus user nggak ngapus tulisannya, tapi ngapus post ikut ngapus komentarnya. Dua keputusan yang beda buat dua relasi yang beda, dan keduanya ditulis eksplisit di skema, bukan disembunyiin di kode aplikasi.</p>
+
+<h2>Many to many butuh pivot table</h2>
+<p>Satu post bisa punya banyak tag, dan satu tag dipakai banyak post. Foreign key tunggal nggak bisa mewakili ini, jadi buat tabel ketiga yang cuma berisi dua foreign key.</p>
+<pre><code>CREATE TABLE tags (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE post_tag (
+    post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+    tag_id INTEGER NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
+    PRIMARY KEY (post_id, tag_id)
+);</code></pre>
+<p>Primary key gabungan (post_id, tag_id) mencegah pasangan yang sama dimasukin dua kali. Buat ngambil semua tag milik satu post, query-nya jadi sederhana:</p>
+<pre><code>SELECT tags.name
+FROM tags
+JOIN post_tag ON post_tag.tag_id = tags.id
+WHERE post_tag.post_id = 1;</code></pre>
+<p>Pola pivot table ini muncul di mana-mana: produk dan kategori, user dan role, siswa dan mata pelajaran. Begitu kamu hafal polanya, kamu nggak perlu mikir ulang tiap kali ketemu.</p>
+
+<h2>Foreign key di Laravel</h2>
+<p>Di Laravel, foreign key ditulis di migration dan Eloquent makainya buat relasi antar model.</p>
+<pre><code>Schema::create('posts', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('user_id')->constrained()->nullOnDelete();
+    $table->string('title');
+    $table->text('body');
+    $table->timestamps();
+});</code></pre>
+<p>foreignId('user_id')->constrained() bikin kolom user_id plus foreign key ke tabel users secara otomatis. nullOnDelete() setara dengan ON DELETE SET NULL. Alternatifnya, cascadeOnDelete() setara dengan ON DELETE CASCADE.</p>
+<p>Relasi di model Eloquent tinggal dideklarasiin:</p>
+<pre><code>// app/Models/User.php
+public function posts()
+{
+    return $this->hasMany(Post::class);
+}
+
+// app/Models/Post.php
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+public function comments()
+{
+    return $this->hasMany(Comment::class);
+}</code></pre>
+<p>Dengan deklarasi itu, $user->posts ngambil semua tulisan milik user, dan $post->user ngambil penulisnya. Eloquent cuma baca relasi, sedangkan aturan konsistensinya tetap dipegang foreign key di database. Keduanya saling melengkapi.</p>
+<p>Satu hal penting: jalanin migration dalam urutan yang bener. Tabel induk harus dibuat dulu sebelum tabel anak yang merujuk ke sana. Laravel ngurutin migration berdasarkan timestamp di nama file, jadi buat migration users sebelum posts.</p>
+
+<h2>Kesalahan yang paling sering kejadian</h2>
+<p><strong>1. Nggak pakai foreign key sama sekali.</strong> Ini kesalahan paling umum. Alasannya macam-macam: malas, nggak tahu, atau ngerasa cukup jagain relasi di kode aplikasi. Akibatnya data yatim numpuk diam-diam dan baru ketahuan pas laporan atau fitur tertentu nampilin hasil aneh. Selalu pasang foreign key, kecuali ada alasan teknis yang sangat spesifik.</p>
+<p><strong>2. Tipe data foreign key nggak cocok dengan primary key.</strong> Primary key SERIAL itu integer 32 bit, sedangkan BIGSERIAL itu bigint 64 bit. Kalau primary key tabel users pakai id() di Laravel yang hasilnya bigint, foreign key harus foreignId atau unsignedBigInteger, bukan integer biasa.</p>
+<p><strong>3. CASCADE di semua relasi tanpa mikir.</strong> ON DELETE CASCADE itu praktis, tapi bahaya kalau dipasang sembarangan. Ngapus satu kategori nggak seharusnya ngapus semua produk di dalamnya. Ngapus satu user nggak seharusnya ngapus semua order dan riwayat pembayarannya. Pilih CASCADE cuma buat data yang memang nggak bermakna tanpa induknya, kayak komentar pada post atau item pada order.</p>
+<p><strong>4. Lupa index di kolom foreign key.</strong> Di PostgreSQL, foreign key nggak otomatis dibuatin index kayak primary key. Kalau tabel anak punya jutaan baris, query JOIN dan pengecekan foreign key jadi lambat. Tambahin index sendiri:</p>
+<pre><code>CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_comments_post_id ON comments(post_id);</code></pre>
+<p>Di Laravel, foreignId udah bikin index otomatis, jadi masalah ini lebih sering muncul di project yang skemanya ditulis manual.</p>
+<p><strong>5. Ngapus data induk langsung dari database tanpa cek anak.</strong> Ngapus baris lewat SQL manual atau tool database tanpa merhatiin relasi bisa gagal karena RESTRICT, atau ngapus lebih banyak dari yang kamu kira karena CASCADE. Sebelum ngapus data induk, selalu cek dulu berapa baris anak yang terpengaruh:</p>
+<pre><code>SELECT COUNT(*) FROM posts WHERE user_id = 5;
+SELECT COUNT(*) FROM comments WHERE user_id = 5;</code></pre>
+<p>Dua detik ngecek bisa nyelametin kamu dari kehilangan data yang nggak bisa dibalikin.</p>
+
+<h2>Langkah praktis yang bisa langsung dicoba</h2>
+<p>Pertama, buat database latihan dan jalanin skema users, posts, dan comments di atas. Kedua, coba masukin post dengan user_id yang nggak ada dan lihat sendiri error foreign key-nya. Ketiga, coba hapus satu user yang masih punya post, lalu amatin bedanya RESTRICT, CASCADE, dan SET NULL dengan ngubah aturan ON DELETE-nya. Keempat, buat pivot table post_tag dan tulis query buat ngambil semua tag dari satu post. Kelima, kalau kamu pakai Laravel, buat migration yang sama dengan foreignId dan deklarasiin relasi hasMany dan belongsTo di model, lalu coba $user->posts di tinker.</p>
+
+<h2>Penutup</h2>
+<p>Ringkasan singkatnya: foreign key adalah kolom yang nunjuk ke primary key tabel lain, dan fungsinya jagain relasi tetap valid di level database. One to many diwakilin satu foreign key di tabel anak, many to many butuh pivot table, dan one to one adalah kasus khusus yang jarang dipakai. Pilih perilaku ON DELETE dengan sengaja: RESTRICT buat keamanan, CASCADE buat data yang ikut mati bersama induknya, SET NULL buat data yang harus bertahan. Pasang index di foreign key, samain tipe datanya dengan primary key, dan biasain ngecek baris anak sebelum ngapus induk. Kuasai ini, dan skema database kamu udah lebih rapi dari sebagian besar project pemula. Langkah berikutnya yang nyambung: pelajari JOIN buat baca data lintas tabel, karena relasi yang udah kamu bangun di sini adalah fondasi semua query JOIN.</p>

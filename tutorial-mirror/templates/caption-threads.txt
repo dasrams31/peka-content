@@ -1,0 +1,7 @@
+[HOOK: satu kalimat, maks 60 karakter]
+
+[2-3 kalimat inti: masalah yang dipecahkan tutorial ini dan 3 poin ringkasnya. Berdiri sendiri, tanpa perlu melihat slide.]
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+[PERTANYAAN PILIHAN PAKSA: kamu tim A, atau tim B?] #AI

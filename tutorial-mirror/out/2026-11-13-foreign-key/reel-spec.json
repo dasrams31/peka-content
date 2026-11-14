@@ -1,0 +1,24 @@
+{
+ "band": "FOREIGN KEY: RELASI ANTI BERANTAKAN",
+ "date": "13 NOVEMBER 2026",
+ "headline": [
+  "FOREIGN KEY",
+  "DAN RELASI",
+  "TABEL"
+ ],
+ "points": [
+  "Foreign key itu kolom di tabel anak yang nunjuk ke primary key tabel induk.",
+  "One to many cukup satu foreign key, many to many butuh pivot table.",
+  "Aturannya hidup di database, bukan cuma di kode, jadi data nggak konsisten nggak bisa masuk."
+ ],
+ "question": "Kamu tim pasang foreign key dari awal, atau tim nambahin belakangan pas datanya udah berantakan?",
+ "source": "SUMBER: BLOG RAMADANADIPA",
+ "steps": [
+  "Bikin tabel users, posts, dan comments dengan REFERENCES users(id).",
+  "Coba INSERT post dengan user_id 999, lihat PostgreSQL menolak.",
+  "Hapus satu user, bandingkan RESTRICT, CASCADE, dan SET NULL."
+ ],
+ "sub": "Biar database kamu rapi dan nggak ada data yatim.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/foreign-key-dan-relasi-tabel-konsep-database-untuk-pemula.jpg",
+ "shortlink": "https://s.peka.ai.id/W5FuRR"
+}

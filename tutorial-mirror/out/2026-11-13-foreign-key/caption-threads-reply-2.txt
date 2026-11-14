@@ -1,0 +1,1 @@
+Pas induk dihapus, anaknya gimana? RESTRICT nolak hapusnya. CASCADE ikut ngapus anaknya, cocok buat komentar yang nempel di post. SET NULL bikin anak tetap ada tapi kehilangan induk. Pilih dengan sengaja, jangan asal.

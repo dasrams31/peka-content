@@ -1,0 +1,5 @@
+Database kamu rapi, atau cuma numpuk?
+
+Foreign key itu satpamnya database: tiap baris di tabel anak wajib punya induk yang beneran ada. Di video ini: 3 jenis relasi, cara kerja foreign key, sampai milih ON DELETE yang nggak bikin nyesel.
+
+Link blognya ada di akhir video.

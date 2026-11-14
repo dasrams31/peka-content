@@ -1,0 +1,3 @@
+Foreign key itu satpamnya database. Kalau tabel kamu masih numpuk tanpa relasi, video ini buat kamu.
+
+Link blognya ada di akhir video.
