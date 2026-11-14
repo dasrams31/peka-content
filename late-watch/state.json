@@ -1,23 +1,4 @@
 {
-  "date": "2026-11-14",
-  "slots": {
-    "hm": {
-      "alerted": true,
-      "alerted_at": "10:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    },
-    "prompt-harian": {
-      "alerted": true,
-      "alerted_at": "13:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    },
-    "gratisan-ai": {
-      "alerted": true,
-      "alerted_at": "15:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    }
-  }
+  "date": "2026-11-15",
+  "slots": {}
 }
