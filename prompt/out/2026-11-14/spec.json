@@ -1,0 +1,12 @@
+{
+  "episode": 24,
+  "category": "KONTEN",
+  "title": "Bio IG yang bikin orang langsung follow",
+  "prompt": "Buatkan bio Instagram untuk akun [JENIS AKUN, misal: jualan hijab] yang targetnya [AUDIENS, misal: mahasiswi]. Tulis 3 baris: baris 1 manfaat utama akun ini, baris 2 bukti atau keunggulan, baris 3 ajakan follow. Total maksimal 150 karakter, bahasa santai, tanpa emoji berlebihan, dan kasih 2 variasi.",
+  "tips": [
+    "Ganti [JENIS AKUN] dan [AUDIENS] sesuai akunmu biar hasilnya nyambung.",
+    "Pilih variasi yang paling gampang diingat, jangan yang paling panjang.",
+    "Tempel bio-nya, cek follow baru seminggu kemudian."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-14"
+}
