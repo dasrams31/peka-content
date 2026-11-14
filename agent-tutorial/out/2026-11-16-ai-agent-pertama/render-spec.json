@@ -1,0 +1,1260 @@
+{
+  "character": {
+    "aspect_ratio": 1.6728,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "episode": 1,
+  "kicker": "TUTORIAL AGENT PEKA",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "EDISI #01",
+      "bg": "cream",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "AGENT"
+          },
+          {
+            "a": false,
+            "t": "AI"
+          }
+        ],
+        [
+          {
+            "a": true,
+            "t": "PERTAMAMU,"
+          },
+          {
+            "a": false,
+            "t": "30"
+          },
+          {
+            "a": false,
+            "t": "BARIS"
+          }
+        ]
+      ],
+      "kind": "bigtype",
+      "narration": "Chatbot itu nunggu ditanya. Agent AI beda, dia kerja sendiri sampai tujuan tercapai. Edisi pertama ini, kamu bikin agen AI pertamamu dengan Python, cuma 30 baris kode.",
+      "pose": "present",
+      "sub": "Chatbot nunggu ditanya. Agent kerja sendiri sampai tujuan tercapai.",
+      "tab": "KENAPA",
+      "tab_index": 0,
+      "terminal": {
+        "label": "LOOP INTI",
+        "lines": [
+          "for i in range(MAX_ITERATIONS):",
+          "    response = client.chat.completions.create(",
+          "        model=\"gpt-4o-mini\", messages=messages, tools=tools",
+          "    )"
+        ]
+      },
+      "headline_delays": [
+        1.96,
+        2.26,
+        5.73,
+        8.69,
+        9.01
+      ]
+    },
+    {
+      "bg": "dark",
+      "cards": [
+        {
+          "desc": "model yang mikir",
+          "hot": true,
+          "title": "OTAK LLM"
+        },
+        {
+          "desc": "tangan agent",
+          "hot": false,
+          "title": "TOOLS"
+        },
+        {
+          "desc": "ingat konteks",
+          "hot": false,
+          "title": "MEMORI"
+        },
+        {
+          "desc": "atur langkah",
+          "hot": false,
+          "title": "LOOP"
+        }
+      ],
+      "headline": [
+        [
+          {
+            "a": true,
+            "t": "EMPAT"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "KOMPONEN"
+          }
+        ]
+      ],
+      "kind": "cards",
+      "narration": "Satu agent cuma butuh empat komponen. Otak dari model AI, tools sebagai tangannya, memori buat ingat, dan loop yang ngatur langkahnya. Tanpa tools, agent cuma bisa ngomong.",
+      "pose": "base",
+      "sub": "Satu agent cuma butuh empat komponen ini.",
+      "tab": "ALAT",
+      "tab_index": 1,
+      "headline_delays": [
+        1.33,
+        1.52
+      ]
+    },
+    {
+      "bg": "yellow",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "CUMA"
+          },
+          {
+            "a": true,
+            "t": "TIGA"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "LANGKAH"
+          },
+          {
+            "a": false,
+            "t": "GAMPANG"
+          }
+        ]
+      ],
+      "kind": "steps",
+      "narration": "Langkahnya cuma tiga, dan gampang. Pertama, pahami keempat komponennya. Kedua, pasang tool cuaca yang bisa dipanggil model. Ketiga, tulis loop think act observe dengan batas lima iterasi.",
+      "pose": "present",
+      "steps": [
+        {
+          "n": "01",
+          "title": "PAHAMI 4 KOMPONEN"
+        },
+        {
+          "n": "02",
+          "title": "PASANG TOOL CUACA"
+        },
+        {
+          "n": "03",
+          "title": "TULIS LOOP"
+        }
+      ],
+      "sub": "Tiga langkah, langsung jalan.",
+      "tab": "LANGKAH",
+      "tab_index": 2,
+      "headline_delays": [
+        0.79,
+        0.97,
+        1.32,
+        1.67
+      ]
+    },
+    {
+      "bg": "dark",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "JALANIN"
+          },
+          {
+            "a": false,
+            "t": "AGENTNYA,"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "MODEL"
+          },
+          {
+            "a": true,
+            "t": "MANGGIL"
+          },
+          {
+            "a": false,
+            "t": "TOOL"
+          }
+        ]
+      ],
+      "kind": "terminal",
+      "narration": "Terakhir, jalanin agentnya. Model bakal manggil tool cuaca sendiri, baca hasilnya, lalu jawab. Satu agent sederhana yang kamu pahami, lebih berharga dari demo canggih yang tidak bisa kamu debug.",
+      "pose": "wave",
+      "sub": "Model manggil tool sendiri, lalu jawab.",
+      "tab": "JALANKAN",
+      "tab_index": 3,
+      "terminal": {
+        "label": "LANGKAH 4 · JALANKAN",
+        "lines": [
+          "$ python agent_cuaca.py",
+          "memanggil get_weather Bandung...",
+          "Jawaban: pagi ini berawan, 24 derajat."
+        ]
+      },
+      "headline_delays": [
+        1.13,
+        1.5,
+        2.728,
+        3.198,
+        3.428
+      ]
+    },
+    {
+      "band": "AGEN AI PERTAMA: LOOP 30 BARIS",
+      "bg": "cream",
+      "follow": "Follow @peka.ai.id, gabung lewat s.peka.ai.id/gabung. Save dulu biar gampang dicari pas butuh.",
+      "headline": [
+        [
+          {
+            "a": false,
+            "t": "KAMU"
+          },
+          {
+            "a": false,
+            "t": "MAU"
+          },
+          {
+            "a": false,
+            "t": "BIKIN"
+          }
+        ],
+        [
+          {
+            "a": false,
+            "t": "AGENT"
+          },
+          {
+            "a": false,
+            "t": "BUAT"
+          },
+          {
+            "a": true,
+            "t": "APA?"
+          }
+        ]
+      ],
+      "kind": "close",
+      "narration": "Kode lengkapnya ada di blog Peka, linknya ada di akhir video. Kamu mau bikin agent buat apa dulu? Follow Peka AI, dan gabung komunitas lewat link itu.",
+      "pose": "wave",
+      "tab": "JALANKAN",
+      "tab_index": 3,
+      "headline_delays": [
+        3.64,
+        3.86,
+        3.99,
+        4.17,
+        4.46,
+        4.61
+      ]
+    }
+  ],
+  "shortlink": "s.peka.ai.id/w9ejEU",
+  "slug": "ai-agent-pertama-python",
+  "words": [
+    {
+      "text": "Chatbot",
+      "start": 0.095,
+      "end": 0.435,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "itu",
+      "start": 0.435,
+      "end": 0.625,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "nunggu",
+      "start": 0.625,
+      "end": 0.815,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "ditanya.",
+      "start": 0.815,
+      "end": 1.295,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Agent",
+      "start": 1.96,
+      "end": 2.26,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "AI",
+      "start": 2.26,
+      "end": 2.41,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "beda,",
+      "start": 2.41,
+      "end": 2.84,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "dia",
+      "start": 3.06,
+      "end": 3.24,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kerja",
+      "start": 3.24,
+      "end": 3.46,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "sendiri",
+      "start": 3.46,
+      "end": 3.77,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "sampai",
+      "start": 3.77,
+      "end": 3.99,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "tujuan",
+      "start": 3.99,
+      "end": 4.26,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "tercapai.",
+      "start": 4.26,
+      "end": 4.8,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Edisi",
+      "start": 5.48,
+      "end": 5.73,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "pertama",
+      "start": 5.73,
+      "end": 5.98,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "ini,",
+      "start": 5.98,
+      "end": 6.35,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "kamu",
+      "start": 6.59,
+      "end": 6.79,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "bikin",
+      "start": 6.79,
+      "end": 6.97,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "agen",
+      "start": 6.97,
+      "end": 7.17,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "AI",
+      "start": 7.17,
+      "end": 7.3,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "pertamamu",
+      "start": 7.3,
+      "end": 7.68,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "dengan",
+      "start": 7.68,
+      "end": 7.86,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Python,",
+      "start": 7.86,
+      "end": 8.29,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "cuma",
+      "start": 8.5,
+      "end": 8.69,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "30",
+      "start": 8.69,
+      "end": 9.01,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "baris",
+      "start": 9.01,
+      "end": 9.2,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "kode.",
+      "start": 9.2,
+      "end": 9.56,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Satu",
+      "start": 10.643,
+      "end": 10.923,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "agent",
+      "start": 10.923,
+      "end": 11.223,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "cuma",
+      "start": 11.223,
+      "end": 11.383,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "butuh",
+      "start": 11.383,
+      "end": 11.573,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "empat",
+      "start": 11.573,
+      "end": 11.763,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "komponen.",
+      "start": 11.763,
+      "end": 12.293,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Otak",
+      "start": 12.953,
+      "end": 13.183,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "dari",
+      "start": 13.183,
+      "end": 13.313,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "model",
+      "start": 13.313,
+      "end": 13.543,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "AI,",
+      "start": 13.543,
+      "end": 13.883,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "tools",
+      "start": 14.093,
+      "end": 14.303,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "sebagai",
+      "start": 14.303,
+      "end": 14.523,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "tangannya,",
+      "start": 14.523,
+      "end": 15.043,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "memori",
+      "start": 15.253,
+      "end": 15.493,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "buat",
+      "start": 15.493,
+      "end": 15.653,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "ingat,",
+      "start": 15.653,
+      "end": 15.983,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "dan",
+      "start": 16.143,
+      "end": 16.303,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "loop",
+      "start": 16.303,
+      "end": 16.493000000000002,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "yang",
+      "start": 16.493000000000002,
+      "end": 16.593,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "ngatur",
+      "start": 16.593,
+      "end": 16.793,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "langkahnya.",
+      "start": 16.793,
+      "end": 17.353,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Tanpa",
+      "start": 18.023,
+      "end": 18.262999999999998,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "tools,",
+      "start": 18.262999999999998,
+      "end": 18.663,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "agent",
+      "start": 18.843,
+      "end": 19.133000000000003,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "cuma",
+      "start": 19.133000000000003,
+      "end": 19.283,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "bisa",
+      "start": 19.283,
+      "end": 19.442999999999998,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "ngomong.",
+      "start": 19.442999999999998,
+      "end": 19.843,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "Langkahnya",
+      "start": 20.927,
+      "end": 21.317,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "cuma",
+      "start": 21.317,
+      "end": 21.497,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "tiga,",
+      "start": 21.497,
+      "end": 21.917,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "dan",
+      "start": 22.107,
+      "end": 22.337,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "gampang.",
+      "start": 22.337,
+      "end": 22.827,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Pertama,",
+      "start": 23.487000000000002,
+      "end": 24.037,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "pahami",
+      "start": 24.267,
+      "end": 24.577,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "keempat",
+      "start": 24.577,
+      "end": 24.847,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "komponennya.",
+      "start": 24.847,
+      "end": 25.467,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Kedua,",
+      "start": 26.137,
+      "end": 26.627000000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "pasang",
+      "start": 26.857,
+      "end": 27.107,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "tool",
+      "start": 27.107,
+      "end": 27.227,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "cuaca",
+      "start": 27.227,
+      "end": 27.517,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "yang",
+      "start": 27.517,
+      "end": 27.637,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "bisa",
+      "start": 27.637,
+      "end": 27.817,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "dipanggil",
+      "start": 27.817,
+      "end": 28.117,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "model.",
+      "start": 28.117,
+      "end": 28.557000000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Ketiga,",
+      "start": 29.227,
+      "end": 29.757,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "tulis",
+      "start": 29.997,
+      "end": 30.237000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "loop",
+      "start": 30.237000000000002,
+      "end": 30.397,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "think",
+      "start": 30.397,
+      "end": 30.547,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "act",
+      "start": 30.547,
+      "end": 30.677,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "observe",
+      "start": 30.677,
+      "end": 31.117,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "dengan",
+      "start": 31.117,
+      "end": 31.307000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "batas",
+      "start": 31.307000000000002,
+      "end": 31.567,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "lima",
+      "start": 31.567,
+      "end": 31.727,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "iterasi.",
+      "start": 31.727,
+      "end": 32.247,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "Terakhir,",
+      "start": 33.32549999999999,
+      "end": 33.835499999999996,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "jalanin",
+      "start": 34.055499999999995,
+      "end": 34.42549999999999,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "agentnya.",
+      "start": 34.42549999999999,
+      "end": 34.99549999999999,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Model",
+      "start": 35.65299999999999,
+      "end": 35.922999999999995,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "bakal",
+      "start": 35.922999999999995,
+      "end": 36.123,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "manggil",
+      "start": 36.123,
+      "end": 36.352999999999994,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "tool",
+      "start": 36.352999999999994,
+      "end": 36.483,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "cuaca",
+      "start": 36.483,
+      "end": 36.702999999999996,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "sendiri,",
+      "start": 36.702999999999996,
+      "end": 37.163,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "baca",
+      "start": 37.37299999999999,
+      "end": 37.602999999999994,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "hasilnya,",
+      "start": 37.602999999999994,
+      "end": 38.142999999999994,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "lalu",
+      "start": 38.303,
+      "end": 38.532999999999994,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "jawab.",
+      "start": 38.532999999999994,
+      "end": 38.992999999999995,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Satu",
+      "start": 39.66799999999999,
+      "end": 39.897999999999996,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "agent",
+      "start": 39.897999999999996,
+      "end": 40.157999999999994,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "sederhana",
+      "start": 40.157999999999994,
+      "end": 40.507999999999996,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "yang",
+      "start": 40.507999999999996,
+      "end": 40.62799999999999,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "kamu",
+      "start": 40.62799999999999,
+      "end": 40.77799999999999,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "pahami,",
+      "start": 40.77799999999999,
+      "end": 41.24799999999999,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "lebih",
+      "start": 41.477999999999994,
+      "end": 41.657999999999994,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "berharga",
+      "start": 41.657999999999994,
+      "end": 41.98799999999999,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "dari",
+      "start": 41.98799999999999,
+      "end": 42.117999999999995,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "demo",
+      "start": 42.117999999999995,
+      "end": 42.267999999999994,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "canggih",
+      "start": 42.267999999999994,
+      "end": 42.59799999999999,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "yang",
+      "start": 42.59799999999999,
+      "end": 42.708,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "tidak",
+      "start": 42.708,
+      "end": 42.87799999999999,
+      "scene": 3,
+      "line": 18
+    },
+    {
+      "text": "bisa",
+      "start": 42.87799999999999,
+      "end": 43.047999999999995,
+      "scene": 3,
+      "line": 19
+    },
+    {
+      "text": "kamu",
+      "start": 43.047999999999995,
+      "end": 43.208,
+      "scene": 3,
+      "line": 19
+    },
+    {
+      "text": "debug.",
+      "start": 43.208,
+      "end": 43.538,
+      "scene": 3,
+      "line": 19
+    },
+    {
+      "text": "Kode",
+      "start": 44.614999999999995,
+      "end": 44.794999999999995,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "lengkapnya",
+      "start": 44.794999999999995,
+      "end": 45.12499999999999,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "ada",
+      "start": 45.12499999999999,
+      "end": 45.26499999999999,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "di",
+      "start": 45.26499999999999,
+      "end": 45.334999999999994,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "blog",
+      "start": 45.334999999999994,
+      "end": 45.495,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Peka,",
+      "start": 45.495,
+      "end": 45.885,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "linknya",
+      "start": 46.114999999999995,
+      "end": 46.364999999999995,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "ada",
+      "start": 46.364999999999995,
+      "end": 46.525,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "di",
+      "start": 46.525,
+      "end": 46.595,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "akhir",
+      "start": 46.595,
+      "end": 46.754999999999995,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "video.",
+      "start": 46.754999999999995,
+      "end": 47.19499999999999,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "Kamu",
+      "start": 47.855,
+      "end": 48.074999999999996,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "mau",
+      "start": 48.074999999999996,
+      "end": 48.205,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "bikin",
+      "start": 48.205,
+      "end": 48.385,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "agent",
+      "start": 48.385,
+      "end": 48.675,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "buat",
+      "start": 48.675,
+      "end": 48.824999999999996,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "apa",
+      "start": 48.824999999999996,
+      "end": 48.955,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "dulu?",
+      "start": 48.955,
+      "end": 49.315,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "Follow",
+      "start": 49.985,
+      "end": 50.26499999999999,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "Peka",
+      "start": 50.26499999999999,
+      "end": 50.474999999999994,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "AI,",
+      "start": 50.474999999999994,
+      "end": 50.815,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "dan",
+      "start": 51.025,
+      "end": 51.214999999999996,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "gabung",
+      "start": 51.214999999999996,
+      "end": 51.434999999999995,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "komunitas",
+      "start": 51.434999999999995,
+      "end": 51.845,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "lewat",
+      "start": 51.845,
+      "end": 52.01499999999999,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "link",
+      "start": 52.01499999999999,
+      "end": 52.135,
+      "scene": 4,
+      "line": 23
+    },
+    {
+      "text": "itu.",
+      "start": 52.135,
+      "end": 52.495,
+      "scene": 4,
+      "line": 23
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 10.248
+    },
+    {
+      "start": 10.243,
+      "end": 20.532
+    },
+    {
+      "start": 20.527,
+      "end": 32.928
+    },
+    {
+      "start": 32.925,
+      "end": 44.22
+    },
+    {
+      "start": 44.215,
+      "end": 53.184
+    }
+  ],
+  "total": 53.984
+}

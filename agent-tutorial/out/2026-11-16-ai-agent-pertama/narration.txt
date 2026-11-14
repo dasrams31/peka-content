@@ -1,0 +1,15 @@
+[scene 0 - bigtype]
+Chatbot itu nunggu ditanya. Agent AI beda, dia kerja sendiri sampai tujuan tercapai. Edisi pertama ini, kamu bikin agen AI pertamamu dengan Python, cuma 30 baris kode.
+
+[scene 1 - cards]
+Satu agent cuma butuh empat komponen. Otak dari model AI, tools sebagai tangannya, memori buat ingat, dan loop yang ngatur langkahnya. Tanpa tools, agent cuma bisa ngomong.
+
+[scene 2 - steps]
+Langkahnya cuma tiga, dan gampang. Pertama, pahami keempat komponennya. Kedua, pasang tool cuaca yang bisa dipanggil model. Ketiga, tulis loop think act observe dengan batas lima iterasi.
+
+[scene 3 - terminal]
+Terakhir, jalanin agentnya. Model bakal manggil tool cuaca sendiri, baca hasilnya, lalu jawab. Satu agent sederhana yang kamu pahami, lebih berharga dari demo canggih yang tidak bisa kamu debug.
+
+[scene 4 - close]
+Kode lengkapnya ada di blog Peka, linknya ada di akhir video. Kamu mau bikin agent buat apa dulu? Follow Peka AI, dan gabung komunitas lewat link itu.
+
