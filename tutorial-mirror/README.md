@@ -76,20 +76,20 @@ Source: `~/workspace/blog/content/YYYY-MM-DD-<slug>.md` (written by the
 ## Files
 
 - `README.md` (this file)
-- `carousel.py` — Threads carousel designer (PIL, 4096x4096)
-- `make_blog_mirror.py` — blog JSON builder + per-edition backup
-- `make_shortlink.py` — admin shortlink creator (direct DB insert)
-- `post_tutorial.py` — poster (Threads + IG reel + FB reel), idempotent
-- `build_reel.py` — reel orchestrator (music once, render, encode, cover)
-- `animated/scene.html` — 4-scene reel template (Peka yellow/black)
-- `animated/render.py` — Playwright frame renderer (4K, scale 2.0)
-- `animated/assets/` — Poppins + DejaVu fonts, P mascot
-- `templates/` — caption templates with placeholders
-- `out/<date>-<short>/` — per-edition work dir (spec.json,
+- `carousel.py` U+2014 Threads carousel designer (PIL, 4096x4096)
+- `make_blog_mirror.py` U+2014 blog JSON builder + per-edition backup
+- `make_shortlink.py` U+2014 admin shortlink creator (direct DB insert)
+- `post_tutorial.py` U+2014 poster (Threads + IG reel + FB reel), idempotent
+- `build_reel.py` U+2014 reel orchestrator (music once, render, encode, cover)
+- `animated/scene.html` U+2014 4-scene reel template (Peka yellow/black)
+- `animated/render.py` U+2014 Playwright frame renderer (4K, scale 2.0)
+- `animated/assets/` U+2014 Poppins + DejaVu fonts, P mascot
+- `templates/` U+2014 caption templates with placeholders
+- `out/<date>-<short>/` U+2014 per-edition work dir (spec.json,
   article-body.html, shortlinks.json, reel-spec.json, track.txt,
   slide-1..6.png, `<slug>-reel.mp4`, `<slug>-cover.jpg`, captions,
   post-log.txt when posted)
-- `posted.log` — one line per posted edition (written by post_tutorial.py)
+- `posted.log` U+2014 one line per posted edition (written by post_tutorial.py)
 
 ## Locked Peka rules that apply here
 

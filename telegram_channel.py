@@ -70,6 +70,7 @@ TYPE_LABELS = {
     "jualan": "💎 Jualan Prompt",
     "special": "✨ Edisi Khusus Peka AI",
     "weekly": "🎬 AI Pekan Ini",
+    "tutorial": "📚 Tutorial Peka",
 }
 
 
