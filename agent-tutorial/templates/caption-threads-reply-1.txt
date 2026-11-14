@@ -1,0 +1,7 @@
+[KEY CODE SNIPPET dari edisi ini, potongan Python yang bisa disalin.
+Maks ~300 karakter. BUKAN perintah install/terminal.]
+
+Contoh bentuk:
+Potongan kuncinya, tinggal salin:
+for i in range(MAX_ITERATIONS):
+    ...

@@ -1,0 +1,142 @@
+{
+ "carousel": {
+  "slides": [
+   {
+    "sub": "Paham loop think-act-observe dan jalanin agent cuaca sendiri sampai jawab.",
+    "title": [
+     "BIKIN AGEN AI",
+     "PERTAMAMU"
+    ],
+    "try_now": "COBA SEKARANG: tulis loop think-act-observe dan jalanin agent cuaca.",
+    "type": "cover",
+    "result": "HASIL AKHIR: agent cuaca yang jawab sendiri soal lari pagi di Bandung."
+   },
+   {
+    "step": 1,
+    "type": "step"
+   },
+   {
+    "step": 2,
+    "type": "step"
+   },
+   {
+    "step": 3,
+    "type": "step"
+   },
+   {
+    "step": 4,
+    "type": "step"
+   },
+   {
+    "lines": [
+     "Satu agent sederhana yang jalan lebih berharga dari demo canggih yang tidak bisa kamu debug.",
+     "Mulai dari loop 30 baris ini, naik kelas saat kebutuhanmu yang menuntut.",
+     "Edisi berikutnya: research agent sederhana, lengkap dengan tools pencarian."
+    ],
+    "title": [
+     "SEKARANG",
+     "GILIRANMU"
+    ],
+    "type": "closing"
+   }
+  ]
+ },
+ "date": "2026-11-14",
+ "episode": 1,
+ "excerpt": "Chatbot nunggu ditanya, agent kerja sendiri sampai tujuan tercapai. Bikin agent cuaca pertamamu dengan Python dalam 30 baris kode, lengkap dengan loop think-act-observe.",
+ "faq": [
+  [
+   "Apa beda AI agent dan chatbot biasa?",
+   "Chatbot merespons satu pesan dengan satu jawaban. AI agent diberi tujuan, lalu ia merencanakan langkah sendiri, memanggil tools seperti API atau database, mengecek hasilnya, dan mengulang sampai tujuan tercapai."
+  ],
+  [
+   "Harus pakai framework seperti LangGraph atau CrewAI untuk mulai?",
+   "Tidak. Pahami dulu loop dasarnya seperti contoh di tutorial ini. Framework baru dibutuhkan saat agentmu punya state yang rumit, butuh human approval, atau melibatkan banyak agent yang bekerja sama."
+  ],
+  [
+   "Berapa biaya menjalankan AI agent?",
+   "Setiap aksi agent memakan token, jadi biayanya per langkah bukan per pesan. Pakai model kecil untuk langkah sederhana dan selalu pasang batas iterasi agar tagihan tidak meledak karena loop yang tidak selesai."
+  ],
+  [
+   "Bisa bikin AI agent tanpa coding?",
+   "Bisa lewat platform no-code, tapi kontrol dan debugging-nya terbatas. Menulis sendiri seperti contoh Python di tutorial ini memberi kamu kontrol penuh atas tools, batasan, dan biaya."
+  ]
+ ],
+ "goal": "Paham loop think-act-observe dan jalanin agent cuaca sendiri sampai jawab.",
+ "hook": "Agent AI pertamamu, 30 baris kode aja.",
+ "prerequisites": [
+  "Python 3.10+",
+  "API key OpenAI",
+  "pip install openai"
+ ],
+ "reel": {
+  "band": "AGEN AI PERTAMA: LOOP 30 BARIS",
+  "code": "for i in range(MAX_ITERATIONS):\n    response = client.chat.completions.create(\n        model=\"gpt-4o-mini\",\n        messages=messages, tools=tools\n    )",
+  "date": "14 NOVEMBER 2026",
+  "headline": [
+   "AGEN AI",
+   "PERTAMAMU,",
+   "30 BARIS"
+  ],
+  "points": [
+   "Agent itu empat komponen: otak LLM, tools, memori, dan loop kontrol.",
+   "Loopnya sederhana: berpikir, bertindak, amati hasil, ulangi.",
+   "Alur langkahnya tidak ditulis manual, model yang menyusun sendiri."
+  ],
+  "question": "Kamu mau bikin agent buat apa dulu, riset atau kerjaan kantor?",
+  "source": "SUMBER: BLOG RAMADANADIPA",
+  "steps": [
+   "Pahami 4 komponen agent: otak, tools, memori, loop.",
+   "Pasang tool cuaca get_weather yang bisa dipanggil model.",
+   "Tulis loop think-act-observe dengan batas 5 iterasi."
+  ],
+  "sub": "Paham loop think-act-observe dan jalanin sendiri."
+ },
+ "sample": true,
+ "sample_note": "SAMPLE dry-run 14 Nov 2026, tidak dipublish. Sumber: artikel blog ramadanadipa.com 24 Okt 2026.",
+ "slug": "ai-agent-pertama-python",
+ "source_file": "2026-10-24-ai-agent-apa-itu-cara-bikin-agen-ai-sederhana-pertama.md",
+ "source_title": "AI Agent: Apa Itu dan Cara Bikin Agen AI Pertamamu",
+ "sources": [
+  "ramadanadipa.com: AI Agent, 24 Okt 2026",
+  "arahi.ai: AI Agent Frameworks 2026",
+  "flobotics.io: Agentic AI Frameworks 2026"
+ ],
+ "steps": [
+  {
+   "code": null,
+   "detail": "Otak LLM, tools sebagai tangan, memori, dan loop kontrol. Tanpa tools, agent cuma bisa ngomong.",
+   "n": 1,
+   "note": "Framework seperti LangGraph cuma merapikan keempat komponen.",
+   "title": "Pahami 4 komponen agent"
+  },
+  {
+   "code": "def get_weather(city: str) -> str:\n    data = {\n        \"Jakarta\": \"29 derajat, hujan ringan\",\n        \"Bandung\": \"24 derajat, berawan\",\n    }\n    return data.get(city, \"Data tidak tersedia\")",
+   "detail": "Satu fungsi get_weather yang balikin data dari dictionary. Di produksi, ganti dengan API cuaca beneran.",
+   "n": 2,
+   "note": "Tool yang crash bikin seluruh loop gagal, jadi validasi inputnya.",
+   "title": "Pasang tool cuaca"
+  },
+  {
+   "code": "for i in range(MAX_ITERATIONS):\n    response = client.chat.completions.create(\n        model=\"gpt-4o-mini\", messages=messages, tools=tools\n    )",
+   "detail": "Model baca pertanyaan, mutusin manggil tool, baca hasilnya, lalu jawab. Ulangi sampai tujuan tercapai.",
+   "n": 3,
+   "note": "Selalu pasang MAX_ITERATIONS, agent yang bingung bisa loop tanpa henti.",
+   "title": "Tulis loop think-act-observe"
+  },
+  {
+   "code": null,
+   "detail": "Jalanin agent-nya, lihat model manggil get_weather sendiri lalu jawab soal lari pagi di Bandung.",
+   "n": 4,
+   "note": "Satu agent sederhana yang kamu pahami penuh lebih berharga dari demo framework yang tidak bisa kamu debug.",
+   "title": "Jalankan dan baca log tool call"
+  }
+ ],
+ "tags": [
+  "Tutorial",
+  "AI Agent",
+  "Python"
+ ],
+ "tip": "Pakai model kecil buat langkah sederhana, cadangkan model besar buat penalaran akhir yang berat.",
+ "title": "Bikin Agen AI Pertamamu dengan Python"
+}

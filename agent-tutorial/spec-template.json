@@ -1,1 +1,136 @@
-{"carousel":{"slides":[{"sub":"Satu folder, satu file, langsung bisa dipanggil.","title":["BIKIN SKILL","CLAUDE SENDIRI"],"try_now":"COBA SEKARANG: buka ~/.claude/skills, bikin folder skill pertamamu.","type":"cover"},{"step":1,"type":"step"},{"step":2,"type":"step"},{"step":3,"type":"step"},{"step":4,"type":"step"},{"lines":["Skill kecil yang jalan lebih berharga dari skill besar yang cuma rencana.","Follow @peka.ai.id, edisi Tutorial Agent berikutnya tiap minggu.","Gabung komunitas lewat s.peka.ai.id/gabung, share skill pertamamu di sana."],"title":["SEKARANG","GILIRANMU"],"type":"closing"}]},"date":"2026-11-15","episode":1,"faq":[["Apa beda skill dan prompt biasa?","Prompt biasa cuma teks sekali pakai. Skill tersimpan sebagai file, punya deskripsi pemicu, dan bisa dipanggil Claude sendiri saat konteksnya cocok."],["Skill butuh API key tambahan?","Tidak. Skill jalan di dalam sesi Claude Code yang sama, tidak ada biaya atau key tambahan."],["Boleh pakai skill orang lain?","Boleh, tapi baca dulu SKILL.md-nya sebelum pasang, supaya kamu tahu perintah apa yang dijalankan skill itu."],["Skill bisa rusak setelah update Claude?","Bisa, kalau format berubah. Cek ulang skill andalanmu tiap kali ada update besar, lalu perbaiki bagian yang tidak jalan."]],"goal":"Paham struktur satu skill Claude dan pasang skill buatanmu sendiri sampai bisa dipanggil.","hook":"Skill Claude pertamamu, jadi dalam 20 menit.","prerequisites":["Claude Code terpasang","Satu workflow yang sering kamu ulang","Teks editor apa saja"],"reel":{"band":"SKILL CLAUDE: DARI NOL SAMPAI BISA DIPAKAI","date":"15 NOVEMBER 2026","headline":["SKILL CLAUDE","BUATANMU","SENDIRI"],"points":["Skill itu file SKILL.md: nama, deskripsi pemicu, dan langkah kerja.","Deskripsi yang jelas bikin Claude manggil skill di saat yang tepat.","Skill tersimpan, jadi tidak perlu ketik ulang prompt yang sama."],"question":"Kamu mau bikin skill buat apa dulu, review kode atau nulis dokumen?","source":"SUMBER: DOCS ANTHROPIC","steps":["Pilih satu workflow yang kamu ulang tiap minggu.","Tulis SKILL.md, simpan di ~/.claude/skills/.","Uji dengan satu tugas nyata, perbaiki deskripsinya."],"sub":"Satu folder, satu file, langsung bisa dipanggil."},"slug":"bikin-skill-claude-sendiri","sources":["Anthropic docs: Agent Skills","Repo anthropics/skills"],"steps":[{"code":null,"detail":"Skill paling kepakai lahir dari kerjaan yang kamu ulang tiap minggu, bukan dari ide keren yang jarang dipakai.","n":1,"note":"Contoh: review PR, bikin changelog, atau cek ejaan artikel.","title":"Pilih satu workflow yang berulang"},{"code":"---\nname: review-pr\n---","detail":"Nama, deskripsi kapan skill dipakai, dan langkah kerjanya. Deskripsi yang jelas bikin Claude manggil skill ini di saat yang tepat.","n":2,"note":"Frontmatter name wajib cocok dengan nama folder skill.","title":"Tulis SKILL.md tiga bagian"},{"code":"~/.claude/skills/review-pr/SKILL.md","detail":"Satu folder per skill, SKILL.md di dalamnya. Claude baca folder ini tiap sesi, jadi skill baru langsung kebaca.","n":3,"note":"Path ini folder personal; skill tim taruh di .claude/skills repo.","title":"Simpan di folder skills"},{"code":null,"detail":"Minta Claude kerjakan satu tugas beneran pakai skill itu, lalu baca hasilnya. Perbaiki deskripsi kalau Claude salah manggil.","n":4,"note":"Satu putaran uji nyata lebih berharga dari sepuluh kali baca docs.","title":"Uji dengan satu tugas nyata"}],"tags":["Tutorial","AI Agent","Claude"],"tip":"Mulai dari skill kecil yang menyelesaikan satu masalah, jangan skill besar yang mencoba semua hal sekaligus.","title":"Bikin Skill Claude Sendiri dari Nol"}
+{
+ "carousel": {
+  "slides": [
+   {
+    "sub": "Satu folder, satu file, langsung bisa dipanggil.",
+    "title": [
+     "BIKIN SKILL",
+     "CLAUDE SENDIRI"
+    ],
+    "try_now": "COBA SEKARANG: buka ~/.claude/skills, bikin folder skill pertamamu.",
+    "type": "cover",
+    "result": "HASIL AKHIR: skill Claude yang bisa dipanggil kapan saja."
+   },
+   {
+    "step": 1,
+    "type": "step"
+   },
+   {
+    "step": 2,
+    "type": "step"
+   },
+   {
+    "step": 3,
+    "type": "step"
+   },
+   {
+    "step": 4,
+    "type": "step"
+   },
+   {
+    "lines": [
+     "Skill kecil yang jalan lebih berharga dari skill besar yang cuma rencana.",
+     "Mulai dari satu workflow yang kamu ulang tiap minggu.",
+     "Edisi berikutnya: research agent sederhana."
+    ],
+    "title": [
+     "SEKARANG",
+     "GILIRANMU"
+    ],
+    "type": "closing"
+   }
+  ]
+ },
+ "date": "2026-11-15",
+ "episode": 1,
+ "faq": [
+  [
+   "Apa beda skill dan prompt biasa?",
+   "Prompt biasa cuma teks sekali pakai. Skill tersimpan sebagai file, punya deskripsi pemicu, dan bisa dipanggil Claude sendiri saat konteksnya cocok."
+  ],
+  [
+   "Skill butuh API key tambahan?",
+   "Tidak. Skill jalan di dalam sesi Claude Code yang sama, tidak ada biaya atau key tambahan."
+  ],
+  [
+   "Boleh pakai skill orang lain?",
+   "Boleh, tapi baca dulu SKILL.md-nya sebelum pasang, supaya kamu tahu perintah apa yang dijalankan skill itu."
+  ],
+  [
+   "Skill bisa rusak setelah update Claude?",
+   "Bisa, kalau format berubah. Cek ulang skill andalanmu tiap kali ada update besar, lalu perbaiki bagian yang tidak jalan."
+  ]
+ ],
+ "goal": "Paham struktur satu skill Claude dan pasang skill buatanmu sendiri sampai bisa dipanggil.",
+ "hook": "Skill Claude pertamamu, jadi dalam 20 menit.",
+ "prerequisites": [
+  "Claude Code terpasang",
+  "Satu workflow yang sering kamu ulang",
+  "Teks editor apa saja"
+ ],
+ "reel": {
+  "band": "SKILL CLAUDE: DARI NOL SAMPAI BISA DIPAKAI",
+  "date": "15 NOVEMBER 2026",
+  "headline": [
+   "SKILL CLAUDE",
+   "BUATANMU",
+   "SENDIRI"
+  ],
+  "points": [
+   "Skill itu file SKILL.md: nama, deskripsi pemicu, dan langkah kerja.",
+   "Deskripsi yang jelas bikin Claude manggil skill di saat yang tepat.",
+   "Skill tersimpan, jadi tidak perlu ketik ulang prompt yang sama."
+  ],
+  "question": "Kamu mau bikin skill buat apa dulu, review kode atau nulis dokumen?",
+  "source": "SUMBER: DOCS ANTHROPIC",
+  "steps": [
+   "Pilih satu workflow yang kamu ulang tiap minggu.",
+   "Tulis SKILL.md, simpan di ~/.claude/skills/.",
+   "Uji dengan satu tugas nyata, perbaiki deskripsinya."
+  ],
+  "sub": "Satu folder, satu file, langsung bisa dipanggil.",
+  "code": "---\nname: review-pr\n---"
+ },
+ "slug": "bikin-skill-claude-sendiri",
+ "sources": [
+  "Anthropic docs: Agent Skills",
+  "Repo anthropics/skills"
+ ],
+ "steps": [
+  {
+   "code": null,
+   "detail": "Skill paling kepakai lahir dari kerjaan yang kamu ulang tiap minggu, bukan dari ide keren yang jarang dipakai.",
+   "n": 1,
+   "note": "Contoh: review PR, bikin changelog, atau cek ejaan artikel.",
+   "title": "Pilih satu workflow yang berulang"
+  },
+  {
+   "code": "---\nname: review-pr\n---",
+   "detail": "Nama, deskripsi kapan skill dipakai, dan langkah kerjanya. Deskripsi yang jelas bikin Claude manggil skill ini di saat yang tepat.",
+   "n": 2,
+   "note": "Frontmatter name wajib cocok dengan nama folder skill.",
+   "title": "Tulis SKILL.md tiga bagian"
+  },
+  {
+   "code": "~/.claude/skills/review-pr/SKILL.md",
+   "detail": "Satu folder per skill, SKILL.md di dalamnya. Claude baca folder ini tiap sesi, jadi skill baru langsung kebaca.",
+   "n": 3,
+   "note": "Path ini folder personal; skill tim taruh di .claude/skills repo.",
+   "title": "Simpan di folder skills"
+  },
+  {
+   "code": null,
+   "detail": "Minta Claude kerjakan satu tugas beneran pakai skill itu, lalu baca hasilnya. Perbaiki deskripsi kalau Claude salah manggil.",
+   "n": 4,
+   "note": "Satu putaran uji nyata lebih berharga dari sepuluh kali baca docs.",
+   "title": "Uji dengan satu tugas nyata"
+  }
+ ],
+ "tags": [
+  "Tutorial",
+  "AI Agent",
+  "Claude"
+ ],
+ "tip": "Mulai dari skill kecil yang menyelesaikan satu masalah, jangan skill besar yang mencoba semua hal sekaligus.",
+ "title": "Bikin Skill Claude Sendiri dari Nol"
+}

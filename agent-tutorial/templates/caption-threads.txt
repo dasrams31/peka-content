@@ -1,0 +1,28 @@
+TEMPLATE CAPTION THREADS (root) - Tutorial Agent Peka
+Aturan: hook maks 60 karakter, caption mandiri (inti + langkah
+pertama konkret + hasil konkret di teks), TEPAT SATU pertanyaan
+pilihan paksa di penutup, tutup dengan tag #AI, maks 500 karakter,
+TANPA link di teks, TANPA perintah install/terminal di teks.
+Kalimat instruksi link: "Link blognya ada di slide terakhir."
+
+--- ROOT (caption-threads.txt) ---
+[HOOK: satu kalimat, maks 60 karakter, keuntungan pembaca]
+
+[1-2 kalimat cerita relatable pengalaman mencoba, pola Prompt Harian
+yang menang di review 8 Nov 2026. Bukan cerita personal yang tidak
+terjadi.]
+
+[Tutorial ini ngajarin apa + langkah pertama konkret yang bisa
+dicoba dalam hitungan menit + hasil konkret yang didapat.]
+
+Link blognya ada di slide terakhir.
+
+[PERTANYAAN PILIHAN PAKSA: kamu tim A, atau tim B?] #AI
+
+--- REPLY 1 (caption-threads-reply-1.txt) ---
+[Potongan kode Python kunci edisi ini, maks ~300 karakter. BUKAN
+perintah install/terminal: pip install, curl, git clone, dan semua
+perintah terminal HANYA ada di dalam visual, TIDAK PERNAH di caption.
+Balasan ini membawa kode yang bisa disalin, bukan perintah install.]
+
+[KEY CODE SNIPPET, diawali satu baris pengantar pendek]

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: PoppinsB; src: url(assets/Poppins-Bold.ttf); }
+  @font-face { font-family: PoppinsSB; src: url(assets/Poppins-SemiBold.ttf); }
+  @font-face { font-family: DejaVu; src: url(assets/DejaVuSans.ttf); }
+  @font-face { font-family: DejaVuMonoB; src: url(assets/DejaVuSansMono-Bold.ttf); }
+  @font-face { font-family: DejaVuMono; src: url(assets/DejaVuSansMono.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; background: #0d1117; overflow: hidden; }
+  .scene { position: absolute; inset: 0; padding: 96px 96px 0 96px; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .kicker { font-family: DejaVuMonoB; font-size: 32px; color: #10b981; letter-spacing: 4px; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .lockup i { width: 34px; height: 34px; background: #10b981; display: block; }
+  .lockup span { font-family: PoppinsB; font-size: 34px; color: #f0f6fc; }
+  .rule { height: 3px; background: #30363d; margin-top: 28px; position: relative; }
+  .rule b { position: absolute; left: 0; top: 0; height: 3px; width: 220px; background: #10b981; }
+  .meta { display: flex; justify-content: space-between; font-family: DejaVuMonoB; font-size: 24px; color: #8b949e; margin-top: 24px; letter-spacing: 1px; }
+  .term { margin-top: 40px; background: #161b22; border: 2px solid #30363d; padding: 36px 40px 40px 40px; }
+  .term .dots { display: flex; gap: 14px; align-items: center; }
+  .term .dots i { width: 22px; height: 22px; border-radius: 50%; display: block; }
+  .term .dots i:nth-child(1) { background: #ff5f57; }
+  .term .dots i:nth-child(2) { background: #febc2e; }
+  .term .dots i:nth-child(3) { background: #28c840; }
+  .term .dots span { font-family: DejaVuMonoB; font-size: 24px; color: #8b949e; margin-left: 18px; }
+  .term pre { font-family: DejaVuMono; font-size: 30px; line-height: 1.6; color: #10b981; margin-top: 32px; white-space: pre-wrap; }
+  h1 { font-family: PoppinsB; font-size: 100px; line-height: 1.12; color: #f0f6fc; margin-top: 44px; }
+  .sub { font-family: DejaVu; font-size: 44px; line-height: 1.4; color: #8b949e; margin-top: 34px; }
+  .geser { font-family: DejaVuMonoB; font-size: 32px; color: #f0f6fc; margin-top: 54px; letter-spacing: 2px; }
+  .geser i { font-style: normal; color: #10b981; }
+  h2 { font-family: PoppinsB; font-size: 84px; line-height: 1.1; color: #f0f6fc; margin-top: 64px; }
+  .row { display: flex; gap: 28px; align-items: flex-start; margin-top: 56px; }
+  .num { flex: none; font-family: PoppinsB; font-size: 48px; color: #10b981; }
+  .row p { font-family: DejaVu; font-size: 40px; line-height: 1.45; color: #f0f6fc; }
+  .card { background: #161b22; border: 2px solid #30363d; padding: 40px 40px 36px 40px; margin-top: 40px; }
+  .card .row { margin-top: 34px; }
+  .card .row:first-child { margin-top: 0; }
+  .card .num { width: 62px; height: 62px; border: 2px solid #10b981; color: #10b981; font-family: PoppinsB; font-size: 32px; display: flex; align-items: center; justify-content: center; }
+  .q { font-family: PoppinsB; font-size: 80px; line-height: 1.18; color: #f0f6fc; margin-top: 110px; }
+  .next { font-family: DejaVu; font-size: 40px; line-height: 1.5; color: #8b949e; margin-top: 50px; }
+  .shortlink { font-family: PoppinsB; font-size: 38px; color: #10b981; margin-top: 46px; letter-spacing: 1px; }
+  .band { background: #10b981; color: #0d1117; font-family: DejaVuMonoB; font-size: 28px; letter-spacing: 2px; padding: 28px 34px; margin-top: 60px; text-align: center; }
+  .foot { position: absolute; left: 96px; right: 96px; bottom: 56px; font-family: DejaVu; font-size: 24px; color: #8b949e; }
+  #progress { position: absolute; left: 0; bottom: 0; height: 8px; background: #10b981; width: 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene" id="s1">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">TUTORIAL AGENT PEKA</div>
+      <div class="lockup" data-in="0.10,0.40,0,40"><i></i><span>peka.ai.id</span></div>
+    </div>
+    <div class="rule"><b></b></div>
+    <div class="meta"><span id="date"></span><span id="source"></span></div>
+    <div class="term" data-in="0.30,0.50,0,50">
+      <div class="dots"><i></i><i></i><i></i><span>terminal</span></div>
+      <pre id="code"></pre>
+    </div>
+    <h1 id="headline"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="geser" data-in="2.90,0.50,0,30">GESER <i>&rarr;</i></div>
+  </div>
+  <div class="scene" id="s2" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">TUTORIAL AGENT PEKA</div>
+      <div class="lockup" data-in="0.10,0.40,0,40"><i></i><span>peka.ai.id</span></div>
+    </div>
+    <div class="rule"><b></b></div>
+    <h2 data-in="0.30,0.45,0,60">Intinya gini</h2>
+    <div id="points"></div>
+  </div>
+  <div class="scene" id="s3" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">TUTORIAL AGENT PEKA</div>
+      <div class="lockup" data-in="0.10,0.40,0,40"><i></i><span>peka.ai.id</span></div>
+    </div>
+    <div class="rule"><b></b></div>
+    <h2 data-in="0.30,0.45,0,60">Coba langsung</h2>
+    <div class="card" id="steps"></div>
+  </div>
+  <div class="scene" id="s4" style="display:none">
+    <div class="top">
+      <div class="kicker" data-in="0.10,0.40,0,40">TUTORIAL AGENT PEKA</div>
+      <div class="lockup" data-in="0.10,0.40,0,40"><i></i><span>peka.ai.id</span></div>
+    </div>
+    <div class="rule"><b></b></div>
+    <p class="q" id="question"></p>
+    <p class="next" data-in="1.20,0.50,0,40">Follow @peka.ai.id, gabung lewat s.peka.ai.id/gabung. Save dulu biar gampang dicari pas butuh.</p>
+    <p class="shortlink" data-in="1.50,0.50,0,40" id="shortlink"></p>
+    <div class="band" data-in="1.80,0.50,0,30" id="band"></div>
+  </div>
+  <div class="foot">GABUNG KE KOMUNITAS KAMI: S.PEKA.AI.ID/GABUNG</div>
+  <div id="progress"></div>
+</div>
+<script>
+  const SCENE_DUR = 4.0, TOTAL = 16.0;
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  function clamp01(x) { return Math.max(0, Math.min(1, x)); }
+  window.buildScene = function(spec) {
+    document.getElementById('date').textContent = spec.date;
+    document.getElementById('source').textContent = spec.source;
+    document.getElementById('code').textContent = spec.code || '$ agent --start';
+    document.getElementById('headline').innerHTML =
+      spec.headline.map((ln, i) => '<span data-in="' + (0.55 + i * 0.35).toFixed(2) + ',0.50,0,70" style="display:block">' + ln + '</span>').join('');
+    document.getElementById('sub').textContent = spec.sub;
+    document.getElementById('sub').setAttribute('data-in', '2.10,0.50,0,40');
+    document.getElementById('points').innerHTML =
+      spec.points.map((t, i) => '<div class="row" data-in="' + (0.70 + i * 0.55).toFixed(2) + ',0.50,80,0"><div class="num">' + (i + 1) + '</div><p>' + t + '</p></div>').join('');
+    document.getElementById('steps').innerHTML =
+      spec.steps.map((t, i) => '<div class="row" data-in="' + (0.70 + i * 0.55).toFixed(2) + ',0.50,80,0"><div class="num">' + (i + 1) + '</div><p>' + t + '</p></div>').join('');
+    const q = document.getElementById('question');
+    q.textContent = spec.question;
+    q.setAttribute('data-in', '0.30,0.50,0,60');
+    // Blog shortlink printed in the closing scene (no-link rule,
+    // 31 Okt 2026): the link lives in the video, not in any caption.
+    const sl = document.getElementById('shortlink');
+    if (spec.shortlink) {
+      sl.textContent = 'LINK BLOG: ' + spec.shortlink.replace(/^https?:\/\//, '');
+    } else sl.style.display = 'none';
+    document.getElementById('band').textContent = spec.band;
+  };
+  window.renderAt = function(t) {
+    const si = Math.min(3, Math.floor(t / SCENE_DUR));
+    const lt = t - si * SCENE_DUR;
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById('s' + i);
+      if (i === si + 1) {
+        el.style.display = 'block';
+        const fadeIn = clamp01(lt / 0.3), fadeOut = clamp01((SCENE_DUR - lt) / 0.3);
+        el.style.opacity = Math.min(fadeIn, fadeOut);
+      } else el.style.display = 'none';
+    }
+    const scene = document.getElementById('s' + (si + 1));
+    scene.querySelectorAll('[data-in]').forEach(el => {
+      const [d, dur, dx, dy] = el.dataset.in.split(',').map(Number);
+      const p = easeOut(clamp01((lt - d) / dur));
+      el.style.opacity = p;
+      el.style.transform = `translate(${dx * (1 - p)}px, ${dy * (1 - p)}px)`;
+    });
+    document.getElementById('progress').style.width = (t / TOTAL * 1080) + 'px';
+  };
+  renderAt(0);
+</script>
+</body>
+</html>

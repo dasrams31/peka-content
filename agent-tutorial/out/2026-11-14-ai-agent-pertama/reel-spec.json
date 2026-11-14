@@ -1,0 +1,24 @@
+{
+ "band": "AGEN AI PERTAMA: LOOP 30 BARIS",
+ "code": "for i in range(MAX_ITERATIONS):\n    response = client.chat.completions.create(\n        model=\"gpt-4o-mini\",\n        messages=messages, tools=tools\n    )",
+ "date": "14 NOVEMBER 2026",
+ "headline": [
+  "AGEN AI",
+  "PERTAMAMU,",
+  "30 BARIS"
+ ],
+ "points": [
+  "Agent itu empat komponen: otak LLM, tools, memori, dan loop kontrol.",
+  "Loopnya sederhana: berpikir, bertindak, amati hasil, ulangi.",
+  "Alur langkahnya tidak ditulis manual, model yang menyusun sendiri."
+ ],
+ "question": "Kamu mau bikin agent buat apa dulu, riset atau kerjaan kantor?",
+ "source": "SUMBER: BLOG RAMADANADIPA",
+ "steps": [
+  "Pahami 4 komponen agent: otak, tools, memori, loop.",
+  "Pasang tool cuaca get_weather yang bisa dipanggil model.",
+  "Tulis loop think-act-observe dengan batas 5 iterasi."
+ ],
+ "sub": "Paham loop think-act-observe dan jalanin sendiri.",
+ "shortlink": "https://s.peka.ai.id/contoh"
+}

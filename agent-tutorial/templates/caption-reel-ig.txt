@@ -1,0 +1,21 @@
+TEMPLATE CAPTION REEL IG - Tutorial Agent Peka
+Aturan: hook baris pertama maks 60 karakter, gaya FYP, caption
+mandiri (inti + langkah pertama + hasil konkret), TEPAT SATU
+pertanyaan pilihan paksa, ajakan save, 5-10 hashtag relevan, kredit
+musik "Music: <Judul> by Kevin MacLeod", maks 2200 karakter,
+TANPA link di teks, TANPA perintah install/terminal di teks.
+Kalimat instruksi link: "Link blognya ada di akhir video."
+
+[HOOK: satu kalimat, maks 60 karakter]
+
+[1-2 kalimat inti tutorial ini, bahasa santai. Apa yang dipelajari,
+langkah pertama konkret, dan hasil konkret yang didapat.]
+
+Save dulu biar nggak hilang pas butuh.
+
+Link blognya ada di akhir video.
+
+[PERTANYAAN PILIHAN PAKSA: kamu tim A, atau tim B?]
+
+#fyp #[niche1] #[niche2] #[niche3] #AIAgent #Tutorial #PekaAI
+Music: [Judul] by Kevin MacLeod
