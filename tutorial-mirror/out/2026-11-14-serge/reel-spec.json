@@ -1,0 +1,24 @@
+{
+ "band": "SERGE: REVIEW PR PAKAI MODEL LOKAL",
+ "date": "14 NOVEMBER 2026",
+ "headline": [
+  "SERGE",
+  "REVIEWER PR",
+  "AI OPEN SOURCE"
+ ],
+ "points": [
+  "Serge itu reviewer AI open source yang tinggal di workflow GitHub, dipanggil lewat komentar di PR.",
+  "Modelnya bisa kamu pilih sendiri: OpenAI, Hugging Face Router, sampai model lokal di VPS lewat Ollama.",
+  "Aturan review tinggal di repo lewat .ai/review-rules.md, jadi sarannya ngikutin konvensi codebase kamu."
+ ],
+ "question": "Kamu tim review PR manual, atau tim pasang reviewer AI di repo kamu?",
+ "source": "SUMBER: BLOG RAMADANADIPA",
+ "steps": [
+  "Tambah secret LLM_API_KEY dan pasang workflow ai-review.yml di repo kamu.",
+  "Tulis @askserge please review di PR yang masih terbuka.",
+  "Jalankan Ollama di VPS dan arahkan Serge ke model lokal lewat self-hosted runner."
+ ],
+ "sub": "Modelnya bisa kamu pilih sendiri, bahkan yang jalan lokal di VPS kamu.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/serge-hugging-face-code-review-open-source-model-lokal.jpg",
+ "shortlink": "https://s.peka.ai.id/0QFDQj"
+}

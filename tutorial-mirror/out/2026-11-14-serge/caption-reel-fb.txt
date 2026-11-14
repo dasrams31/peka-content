@@ -1,0 +1,5 @@
+PR numpuk, reviewer belum sempat baca?
+
+Serge dari Hugging Face itu reviewer AI open source yang tinggal di workflow GitHub kamu. Modelnya bisa kamu pilih sendiri, bahkan model lokal di VPS lewat Ollama. Di video ini: cara kerja Serge, setup GitHub Action, sampai jebakan model lokal yang paling sering bikin gagal.
+
+Link blognya ada di akhir video.

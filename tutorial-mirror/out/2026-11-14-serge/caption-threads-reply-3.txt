@@ -1,0 +1,1 @@
+Kesalahan paling sering: pakai ubuntu-latest sambil nunjuk localhost, nggak nulis .ai/review-rules.md, dan jadikan AI satu-satunya gate merge. Approval diblokir Serge secara default, keputusan merge tetap di tangan manusia dan test. Semua detailnya ada di blog, lengkap dengan workflow dan contoh aturannya.

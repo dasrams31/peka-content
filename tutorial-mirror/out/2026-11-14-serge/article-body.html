@@ -1,0 +1,116 @@
+<p>PR numpuk bukan karena tim malas review: PR dibuka sore hari, reviewer baru sempat membacanya besok pagi, penulisnya sudah pindah ke tugas lain. Serge, reviewer AI open source dari Hugging Face, menawarkan jalan keluar yang beda dari Copilot dan CodeRabbit. Kodenya terbuka, modelnya bisa kamu pilih sendiri, dan reviewnya bisa jalan di model lokal yang tidak pernah keluar dari VPS kamu. Diumumkan Hugging Face pada 12 Juni 2026, berlisensi Apache 2.0, dan sudah dipakai di repo besar seperti diffusers dan transformers.</p>
+
+<h2>Serge itu apa, dan kenapa beda</h2>
+<p>Serge adalah code reviewer yang hidup di dalam workflow GitHub, bukan tool terpisah yang harus kamu buka. Kamu memanggilnya dengan komentar, ia membaca diff PR dan menerapkan aturan review milik repo, lalu memposting komentar inline lewat GitHub Pull Request Reviews API. Setiap komentar divalidasi terhadap posisi diff yang sebenarnya, jadi hanya yang menunjuk baris nyata diterbitkan.</p>
+
+<p>Yang membedakan Serge dari reviewer AI berbayar adalah kebebasan memilih model. Ia berbicara ke endpoint chat completion yang kompatibel dengan OpenAI, jadi bekerja dengan OpenAI, Hugging Face Router, dan endpoint lokal vLLM, TGI, atau LM Studio. Konfigurasinya kecil, cukup atur API base, API key, dan model bila perlu. Kalau model tidak dikonfigurasi, Serge menanyakan endpoint /models dan memakai model pertama yang dikembalikan.</p>
+
+<p>Serge juga punya sisi human-in-the-loop: di mode web app, hasil model menjadi draft dulu, dan manusia bisa mengedit atau membuang komentar sebelum ada satu pun yang sampai ke PR. Approval diblokir secara default, kecuali kamu mengaktifkan ALLOW_APPROVE=1.</p>
+
+<h2>Tiga cara menjalankan Serge</h2>
+<p>Pilih mode sesuai seberapa besar kontrol yang kamu butuhkan.</p>
+
+<p><strong>GitHub Action.</strong> Cara tercepat untuk satu repo: tambah secret, pasang workflow, lalu panggil lewat komentar. Tidak butuh server dan tidak butuh GitHub App.</p>
+
+<p><strong>GitHub App webhook.</strong> Mode untuk organisasi dan repo yang banyak menerima PR dari fork. Serge jalan sebagai service yang kamu host dan memposting review memakai token instalasi GitHub App, dan satu App bisa melayani banyak repo tanpa workflow file.</p>
+
+<p><strong>Web app staged.</strong> Mode human-in-the-loop. Reviewer memulai review, melihat model bekerja secara live, lalu memublikasikan hanya komentar yang berguna.</p>
+
+<h2>Setup tercepat: GitHub Action dalam 10 menit</h2>
+<p>Tiga langkah, sesuai dokumentasi resmi. Pertama, tambah repository secret bernama LLM_API_KEY. Kedua, buat file .github/workflows/ai-review.yml:</p>
+
+<pre><code>name: AI PR Review
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    if: |
+      (startsWith(github.event.comment.body, '@askserge ') ||
+       github.event.comment.body == '@askserge') &amp;&amp;
+      (github.event.comment.author_association == 'MEMBER' ||
+       github.event.comment.author_association == 'OWNER' ||
+       github.event.comment.author_association == 'COLLABORATOR')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ github.event.issue.number || github.event.pull_request.number }}/head
+        continue-on-error: true
+      - uses: huggingface/serge@main
+        with:
+          llm_api_key: ${{ secrets.LLM_API_KEY }}
+          llm_api_base: ${{ secrets.LLM_API_BASE || 'https://api.openai.com/v1' }}</code></pre>
+
+<p>Ketiga, tulis komentar @askserge please review di PR yang masih terbuka. Trigger hanya jalan bila @askserge adalah kata pertama di komentar, dan hanya bila penulisnya adalah MEMBER, OWNER, atau COLLABORATOR repo, jadi orang asing tidak bisa memicu review berbayar di repo kamu. Kamu juga bisa memberi instruksi tambahan setelah trigger. Untuk perilaku yang bisa direproduksi, pin huggingface/serge ke tag atau commit SHA, jangan memakai @main di repo produksi.</p>
+
+<h2>Arahkan Serge ke model lokal di VPS</h2>
+<p>Di sinilah Serge menarik buat developer Indonesia yang sudah punya VPS: Ollama menyediakan endpoint yang kompatibel dengan OpenAI di http://localhost:11434/v1, jadi Serge bisa langsung bicara ke model lokal tanpa satu baris kode tambahan.</p>
+
+<p>Jalankan Ollama di VPS dengan Docker, lalu unduh model coding yang cukup besar untuk review:</p>
+
+<pre><code>docker run -d --gpus=all \
+  -v ollama:/root/.ollama \
+  -p 11434:11434 \
+  --name ollama ollama/ollama
+
+docker exec ollama ollama pull qwen2.5-coder:14b</code></pre>
+
+<p>Model qwen2.5-coder:14b adalah titik awal yang masuk akal: cukup besar untuk memahami diff, cukup kecil untuk jalan di satu GPU kelas menengah. Kalau VPS kamu tanpa GPU, mulai dari model 7B.</p>
+
+<p>Lalu ada jebakan yang paling sering membuat setup lokal gagal: runner GitHub yang di-host GitHub hidup di cloud GitHub, jadi ia tidak bisa menjangkau model yang terikat ke localhost di laptop atau VPS kamu. Solusinya ada dua. Pertama, pakai self-hosted runner di server yang sama dengan Ollama, lalu ubah runs-on jadi self-hosted dan isi secret LLM_API_BASE dengan http://localhost:11434/v1. Kedua, pakai Hugging Face Router sebagai jalan tengah dengan base https://router.huggingface.co/v1, lalu pindah ke model lokal setelah alurnya terbukti jalan.</p>
+
+<p>Serge meminta output JSON saat review penuh, jadi pilih model yang kuat mengikuti format terstruktur dan naikkan LLM_MAX_TOKENS bila perlu.</p>
+
+<h2>Aturan review tinggal di repo, bukan di prompt</h2>
+<p>Reviewer AI yang generik akan mengomentari hal yang salah, karena ia tidak tahu konvensi repo kamu. Serge menyelesaikan ini dengan file .ai/review-rules.md di branch default repo, isinya singkat dan ditulis manusia:</p>
+
+<pre><code>Focus on:
+- correctness bugs
+- security issues
+- missing tests for behavior changes
+Avoid:
+- style-only comments
+- generated files
+- comments that do not require action</code></pre>
+
+<p>File aturan dimuat dari branch default dengan sengaja, supaya PR yang sedang direview tidak bisa menulis ulang kebijakan yang dipakai untuk mereview dirinya sendiri. Kamu juga bisa menambah .ai/context-script plus tool read-only seperti read_file, list_dir, dan grep yang dibatasi di dalam checkout repo.</p>
+
+<p>Tulis aturan ini sepanjang 10 sampai 15 baris saja: sebut stack kamu, pola yang dilarang, dan hal yang tidak perlu dikomentari. Tanpa file ini, Serge menebak konvensi dari diff saja, dan tebakannya sering generik.</p>
+
+<h2>Batasan keamanan yang wajib kamu tahu</h2>
+<p>Konten pull request adalah input yang tidak tepercaya, jadi prompt di Serge memerintahkan model untuk tidak mengikuti instruksi yang tertanam di diff, komentar, atau string. Teks prompt injection di PR harus diperlakukan sebagai sesuatu yang direview, bukan instruksi yang ditaati.</p>
+
+<p>Tool bantuan berjalan tanpa shell, dan environment-nya dibersihkan dari token GitHub, kunci LLM, dan secret lainnya. File kustomisasi repo selalu dimuat dari branch default, karena PR dari fork bisa berisi apa saja. Untuk PR dari fork, mode Action bukan jawaban yang tepat: GitHub tidak mengirim repository secret ke workflow yang dipicu dari fork. Untuk repo yang banyak menerima kontribusi eksternal, pakai mode GitHub App atau web app.</p>
+
+<h2>Jujur soal model lokal: apa yang bisa dan tidak bisa</h2>
+<p>Menurut panduan setup independen, model kelas 7B sampai 14B cukup untuk menangkap bug yang jelas, null check yang hilang, dan test yang terlupa. Tapi jangan harap ia menangkap kesalahan logika yang halus seperti model frontier, itu batas modelnya, bukan cacat Serge. Kalau review lokal kamu terasa dangkal, yang perlu diganti adalah modelnya, bukan tool-nya.</p>
+
+<p>Model lokal menghilangkan tagihan per token setelah hardware dibeli, dan kode kamu tidak pernah keluar dari jaringan sendiri. Tapi kamu membayarnya dengan operasional: GPU harus menyala, Ollama harus dijaga, dan runner harus online saat PR dibuka. Untuk developer solo dengan PR sedikit, beban itu sering lebih besar daripada nilainya, tapi untuk tim kecil yang PR-nya ramai, hitungannya berbalik.</p>
+
+<h2>Kesalahan umum pemula dan cara menghindarinya</h2>
+<p>Pertama, memakai runs-on: ubuntu-latest sambil menunjuk localhost sebagai API base. Runner cloud tidak bisa menjangkau model lokal kamu, pakai self-hosted runner atau endpoint publik seperti Hugging Face Router.</p>
+
+<p>Kedua, tidak menulis .ai/review-rules.md. Tanpa aturan repo, Serge memberi saran generik yang tidak cocok dengan codebase.</p>
+
+<p>Ketiga, membiarkan AI mengomentari semua file. Abaikan lockfile, file hasil generate, dan file Markdown, karena itu cuma menambah noise.</p>
+
+<p>Keempat, menjadikan AI satu-satunya gate merge. Approval diblokir Serge secara default: keputusan merge tetap di tangan manusia dan test, dan status check yang menggagalkan merge sebaiknya tetap dipegang test dan static analysis.</p>
+
+<p>Kelima, mengaktifkan review otomatis di semua repo sekaligus. Uji dulu di satu repo kecil dan pantau lima PR pertama, ukur dari berapa komentar yang berujung pada perubahan kode.</p>
+
+<h2>Langkah pertama hari ini</h2>
+<p>Ambil satu repo kecil yang PR-nya kamu kenal baik. Jalankan Ollama dan model coding 14B di VPS, pasang self-hosted runner di server yang sama, salin workflow di atas, dan tulis .ai/review-rules.md sepanjang 10 sampai 15 baris. Lalu buka satu PR percobaan dengan satu bug yang jelas, misalnya query mentah dengan input user, dan tulis @askserge please review.</p>
+
+<p>Kalau komentarnya tajam dan berujung pada perbaikan kode, kamu baru saja mendapat reviewer pertama yang tidak pernah tidur dan tidak pernah membawa kode kamu keluar dari VPS. Kalau masih generik, perbaiki aturan repo dan modelnya.</p>
+
+<p>Sumber: blog Hugging Face "Introducing Serge: GitHub-Native AI Code Review", 12 Juni 2026; dokumentasi resmi di huggingface.github.io/serge; panduan setup lokal independen aifoss.dev, 5 Juli 2026.</p>

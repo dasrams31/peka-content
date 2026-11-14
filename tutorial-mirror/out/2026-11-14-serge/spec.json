@@ -1,0 +1,134 @@
+{
+ "carousel": {
+  "slides": [
+   {
+    "sub": "Modelnya bisa kamu pilih sendiri, bahkan yang jalan lokal di VPS kamu.",
+    "title": [
+     "Serge,",
+     "Reviewer PR AI",
+     "Open Source"
+    ],
+    "type": "cover"
+   },
+   {
+    "items": [
+     {
+      "body": "Tulis @askserge please review sebagai kata pertama di PR yang masih terbuka.",
+      "head": "Dipanggil lewat komentar"
+     },
+     {
+      "body": "Baca diff, terapkan aturan repo dari .ai/review-rules.md.",
+      "head": "Baca diff, pakai aturan repo"
+     },
+     {
+      "body": "Hanya komentar yang menunjuk baris nyata yang diterbitkan.",
+      "head": "Komentar inline tervalidasi"
+     }
+    ],
+    "title": "Serge itu apa",
+    "type": "points"
+   },
+   {
+    "body": "Tiga langkah: tambah secret LLM_API_KEY, pasang workflow ai-review.yml, lalu panggil lewat komentar. Trigger cuma jalan kalau penulisnya MEMBER, OWNER, atau COLLABORATOR.",
+    "code": "@askserge please review",
+    "title": "Setup tercepat: GitHub Action",
+    "type": "text"
+   },
+   {
+    "items": [
+     {
+      "body": "Cara tercepat untuk satu repo. Tambah secret, pasang workflow, selesai.",
+      "head": "GitHub Action"
+     },
+     {
+      "body": "Satu App melayani banyak repo, cocok buat PR dari fork.",
+      "head": "GitHub App webhook"
+     },
+     {
+      "body": "Hasil model jadi draft dulu, manusia edit sebelum diterbitkan.",
+      "head": "Web app staged"
+     }
+    ],
+    "title": "Tiga cara jalanin Serge",
+    "type": "points"
+   },
+   {
+    "code": [
+     "docker run -d --gpus=all \\",
+     "  -v ollama:/root/.ollama \\",
+     "  -p 11434:11434 \\",
+     "  --name ollama ollama/ollama",
+     "",
+     "docker exec ollama ollama pull",
+     "  qwen2.5-coder:14b"
+    ],
+    "note": "Runner cloud GitHub tidak bisa menjangkau localhost di VPS kamu. Pakai self-hosted runner di server yang sama, atau Hugging Face Router dulu.",
+    "title": "Model lokal lewat Ollama",
+    "type": "code"
+   },
+   {
+    "lines": [
+     "Workflow lengkap, aturan review repo, sampai 5 kesalahan pemula, semuanya ada di blog Peka.",
+     "Follow @peka.ai.id, save dulu biar gampang dicari pas butuh."
+    ],
+    "shortlink": "https://s.peka.ai.id/0QFDQj",
+    "title": "Baca versi lengkapnya",
+    "type": "closing"
+   }
+  ]
+ },
+ "date": "2026-11-14",
+ "excerpt": "PR numpuk, reviewer belum sempat baca? Serge dari Hugging Face itu reviewer AI open source yang tinggal di workflow GitHub kamu. Modelnya bisa kamu pilih sendiri, bahkan model lokal di VPS kamu, dan reviewnya tidak pernah keluar dari server sendiri.",
+ "faq": [
+  [
+   "Apa itu Serge dari Hugging Face?",
+   "Serge adalah code reviewer AI open source dari Hugging Face yang membaca diff pull request, lalu memposting komentar review inline lewat GitHub Pull Request Reviews API. Ia memakai model AI apa pun yang menyediakan endpoint kompatibel OpenAI, termasuk model lokal."
+  ],
+  [
+   "Apakah Serge bisa jalan dengan model lokal seperti Ollama?",
+   "Bisa. Serge hanya butuh endpoint OpenAI-compatible, dan Ollama menyediakannya di alamat localhost:11434/v1. Syaratnya, mesin yang menjalankan Serge harus bisa menjangkau endpoint itu, jadi untuk model lokal kamu butuh self-hosted runner atau mode GitHub App."
+  ],
+  [
+   "Apakah Serge gratis?",
+   "Ya. Kode Serge berlisensi Apache 2.0 dan bisa dipakai serta di-host sendiri secara gratis. Biaya yang muncul hanya dari model yang kamu pakai, dan nol rupiah bila modelnya jalan lokal di VPS kamu sendiri."
+  ],
+  [
+   "Bagaimana cara memicu review Serge di pull request?",
+   "Tulis komentar @askserge please review sebagai kata pertama di pull request yang masih terbuka. Hanya komentar dari MEMBER, OWNER, atau COLLABORATOR repo yang diproses."
+  ]
+ ],
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/serge-hugging-face-code-review-open-source-model-lokal.jpg",
+ "reel": {
+  "band": "SERGE: REVIEW PR PAKAI MODEL LOKAL",
+  "date": "14 NOVEMBER 2026",
+  "headline": [
+   "SERGE",
+   "REVIEWER PR",
+   "AI OPEN SOURCE"
+  ],
+  "points": [
+   "Serge itu reviewer AI open source yang tinggal di workflow GitHub, dipanggil lewat komentar di PR.",
+   "Modelnya bisa kamu pilih sendiri: OpenAI, Hugging Face Router, sampai model lokal di VPS lewat Ollama.",
+   "Aturan review tinggal di repo lewat .ai/review-rules.md, jadi sarannya ngikutin konvensi codebase kamu."
+  ],
+  "question": "Kamu tim review PR manual, atau tim pasang reviewer AI di repo kamu?",
+  "source": "SUMBER: BLOG RAMADANADIPA",
+  "steps": [
+   "Tambah secret LLM_API_KEY dan pasang workflow ai-review.yml di repo kamu.",
+   "Tulis @askserge please review di PR yang masih terbuka.",
+   "Jalankan Ollama di VPS dan arahkan Serge ke model lokal lewat self-hosted runner."
+  ],
+  "sub": "Modelnya bisa kamu pilih sendiri, bahkan yang jalan lokal di VPS kamu."
+ },
+ "slug": "serge-hugging-face-code-review-open-source-model-lokal",
+ "source_file": "2026-11-14-serge-hugging-face-code-review-open-source-model-lokal.md",
+ "source_title": "Serge Hugging Face: Code Review AI Open Source Model Lokal",
+ "tags": [
+  "Tutorial",
+  "Serge",
+  "AI",
+  "GitHub",
+  "Code Review"
+ ],
+ "title": "Serge dari Hugging Face: Reviewer PR AI Open Source yang Bisa Jalan di VPS Kamu"
+}

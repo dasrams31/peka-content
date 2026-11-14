@@ -1,0 +1,1 @@
+Tiga cara jalanin Serge. GitHub Action paling cepat buat satu repo: tambah secret, pasang workflow, selesai. GitHub App buat organisasi dan repo yang banyak terima PR dari fork, satu App bisa melayani banyak repo. Web app staged buat yang mau ngecek draft dulu sebelum komentarnya sampai ke PR.

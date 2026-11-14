@@ -1,0 +1,9 @@
+PR numpuk, reviewer belum sempat baca?
+
+Serge itu reviewer AI open source dari Hugging Face yang tinggal di workflow GitHub kamu. Dipanggil lewat komentar, baca diff, terapkan aturan repo, lalu komentar inline di baris yang nyata. Modelnya bisa kamu pilih sendiri, bahkan model lokal.
+
+Di carousel ini: cara kerja Serge, setup GitHub Action, sampai model lokal.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim review PR manual, atau tim pasang reviewer AI di repo kamu? #AI

@@ -1,0 +1,1 @@
+Model lokal itu bagian paling menarik buat yang sudah punya VPS. Ollama nyediain endpoint OpenAI-compatible di localhost:11434, jadi Serge bisa langsung bicara ke model lokal tanpa kode tambahan. Tapi hati-hati: runner cloud GitHub nggak bisa menjangkau localhost di VPS kamu, pakai self-hosted runner di server yang sama.
