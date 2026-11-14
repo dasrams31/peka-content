@@ -1,0 +1,9 @@
+Chatbot nunggu ditanya, agent kerja sendiri sampai beres.
+
+Bikin agen AI pertamamu dengan Python, 4 langkah, 30 baris kode. Loop think-act-observe yang dipakai semua agent canggih.
+
+Kode lengkapnya ada di blog Peka. Linknya ada di akhir video.
+
+Kamu tim bikin agent sendiri, atau masih pakai chatbot biasa?
+
+#AI

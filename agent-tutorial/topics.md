@@ -8,9 +8,10 @@ terverifikasi, lewati ke topik berikut dan tulis alasannya di sini.
 
 ## Antrean
 
-- [ ] #01 [HANDS-ON] Bikin skill Claude sendiri - dari repo skills:
-  cara bikin satu skill + cara pasangnya, buat siapa skill ini berguna.
-  Verifikasi: docs Anthropic tentang Agent Skills + repo anthropics/skills.
+- [ ] #01 [HANDS-ON] Bikin Agen AI Pertamamu dengan Python - loop
+  think-act-observe, tool cuaca get_weather, 30 baris kode.
+  DEBUT seri, edisi sudah disiapkan, tayang 16 Nov 19:00.
+  Verifikasi: artikel ramadanadipa.com 24 Okt 2026.
 - [ ] #02 [CONCEPT] Research agent sederhana - apa itu loop
   think-act-observe, kenapa agent beda dari chatbot, satu contoh
   nyata yang bisa diikuti.

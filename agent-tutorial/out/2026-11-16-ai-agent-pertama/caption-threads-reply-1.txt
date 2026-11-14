@@ -1,0 +1,13 @@
+Ini inti agentnya. Loop think-act-observe, cuma 30 baris:
+
+for i in range(5):
+    msg = model(messages, tools)
+    if not msg.tool_calls:
+        break
+    for call in msg.tool_calls:
+        result = get_weather(args["city"])
+        messages.append(tool_result(result))
+
+Model yang mutusin kapan panggil tool. Bukan kamu yang nulis urutannya.
+
+Kode lengkapnya ada di blog, linknya ada di slide terakhir.
