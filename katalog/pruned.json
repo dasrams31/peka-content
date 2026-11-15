@@ -1,0 +1,34 @@
+[
+ {
+  "dur": "3 Bulan",
+  "name": "Gemini Pro",
+  "price": "15K",
+  "price_num": 15,
+  "sec": "GEMINI PRO",
+  "bot_id": 66,
+  "removed_at": "2026-11-15",
+  "reason": "sold out"
+ },
+ {
+  "dur": "Lifetime",
+  "name": "Muse Spark AI",
+  "note": "3-4 Milyar token",
+  "price": "24K",
+  "price_num": 24,
+  "sec": "MUSE SPARK AI",
+  "bot_id": 67,
+  "removed_at": "2026-11-15",
+  "reason": "sold out"
+ },
+ {
+  "dur": "Lifetime",
+  "name": "Muse Spark AI",
+  "note": "1M Token",
+  "price": "16K",
+  "price_num": 16,
+  "sec": "MUSE SPARK AI",
+  "bot_id": 87,
+  "removed_at": "2026-11-15",
+  "reason": "sold out"
+ }
+]
