@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-15
+
+- TOP (n=23): day-counter 4%, question 9%, story 22%, hashtags avg 0.1, words avg 32.
+- REST (n=69): day-counter 4%, question 39%, story 29%, hashtags avg 1.5, words avg 39.
+- Top posts today:
+  - #Kuliah @not_hdin (3891 likes): akhirnya aku bisa kuliah dengan uangku sendiriiii✌️💙😊  setelah beli motor dengan uang sendiri, beli HP dengan uang sendi
+  - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
+  - #Belajar @triwahyunilaihi (3180 likes): In this economy yaa, ada learning app yang bantu anak2 belajar english dengan fitur sebanyak ini, UDAHLAH GRATIS DAN KOK
+  - #Mahasiswa @kagamadki (2078 likes): Kampus harus menjadi ruang aman, bukan ruang kekerasan!  KAGAMA DKI Jakarta mengecam tindakan represif terhadap mahasisw
+  - #AI @iniprompt (1876 likes): [PROMPT Food Photography] Tema : BOLD COLOR SURFACE FEATURE --- Coba prompt ini untuk produk makananmu, caranya: 1. Buka
+
 ## 2026-11-14
 
 - TOP (n=22): day-counter 9%, question 5%, story 27%, hashtags avg 0.3, words avg 36.
@@ -144,14 +155,3 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
   - #AI @ahnaf.faize (3595 likes): Material Design 3 Dari google Sekeren ini kalau diimplementasi
   - #Kuliah @wahyuikbal_m (2176 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
   - #Mahasiswa @wahyuikbal_m (2172 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
-
-## 2026-11-01
-
-- TOP (n=12): day-counter 17%, question 8%, story 25%, hashtags avg 0.5, words avg 41.
-- REST (n=36): day-counter 14%, question 25%, story 39%, hashtags avg 1.1, words avg 39.
-- Top posts today:
-  - #Kuliah @vernandajh_ (4986 likes): wargaa akhirnya aku lulus S2 di umur 25 tahun dengan biaya kuliah full uang sendiri sambil kerja full time 🥹  mau mengap
-  - #AI @ahnaf.faize (3595 likes): Material Design 3 Dari google Sekeren ini kalau diimplementasi
-  - #Kuliah @wahyuikbal_m (2176 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
-  - #Mahasiswa @wahyuikbal_m (2172 likes): Gw udah abisin ratusan jam belajar data science, AI, dan machine learning. Ini platform website yang bikin gw bisa dapet
-  - #Python @mumtazmuizza (1866 likes): Day 1 belajar python, with non-IT background, modal nekat karna tertarik dunia digital.  Para expert tolong share ilmu k
