@@ -394,10 +394,18 @@ def cover(spec):
     cy = 606
     for r in repos:
         d.rectangle([X(70), X(cy), X(1010), X(cy + 62)], fill=INK)
-        d.text((X(94), X(cy + 15)), r["name"], font=f(27), fill="#ffffff")
         sf = f(24)
         st = f"{r['stars']} STAR"
-        d.text((X(986) - d.textlength(st, font=sf), X(cy + 18)), st, font=sf, fill="#ffd60a")
+        st_w = d.textlength(st, font=sf)
+        # Long repo names shrink so the name never collides with the
+        # star label (fix 2026-11-15: EpicGames/unreal-engine-...-plugin).
+        nsize = 27
+        nf = f(nsize)
+        while nsize > 15 and d.textlength(r["name"], font=nf) > X(986) - st_w - 24 - X(94):
+            nsize -= 1
+            nf = f(nsize)
+        d.text((X(94), X(cy + 15)), r["name"], font=nf, fill="#ffffff")
+        d.text((X(986) - st_w, X(cy + 18)), st, font=sf, fill="#ffd60a")
         cy += 76
     footer(d, 1, total)
     return img

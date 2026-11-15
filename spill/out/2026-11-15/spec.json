@@ -1,0 +1,44 @@
+{
+  "agent": "CLAUDE",
+  "next": "HERMES",
+  "episode": 26,
+  "repos": [
+    {
+      "name": "ykdojo/claude-code-tips",
+      "stars": "10RB",
+      "desc": "Kumpulan 45+ tips biar Claude Code kamu kepakai maksimal, dari dasar sampai trik lanjutan. Ada script status line custom biar info sesi selalu kelihatan, plus cara jalanin Claude Code di dalam container. Repo ini juga bawa plugin dx berisi skill buat workflow dev sehari-hari. Semua tips ditulis dari pengalaman nyata pakai, jadi langsung bisa dicoba satu-satu. Cocok buat kamu yang udah pakai Claude Code tiap hari tapi ngerasa masih banyak fitur yang belum kepakai.",
+      "cocok": "Kamu yang pakai Claude Code tiap hari dan pengin kerja lebih cepat pakai trik yang udah terbukti.",
+      "shortlink": "https://s.peka.ai.id/92xuwF"
+    },
+    {
+      "name": "internet-court/internet-court-skill",
+      "stars": "7RB",
+      "desc": "Skill yang jadi lapisan kepercayaan buat jual beli antar agent AI. Agent kamu bisa bikin mandat pakai bahasa sehari-hari, atur izin delegasi ERC-7710, bayar lewat x402, sampai pakai escrow dan penyelesaian sengketa. Semua itu dibungkus jadi satu skill yang bisa dipasang di Claude Code sebagai plugin. Jadi agent bisa transaksi sama agent lain tanpa takut ditipu. Cocok buat developer yang lagi bangun agent yang bisa belanja atau jualan sendiri.",
+      "cocok": "Kamu yang lagi bangun agent AI yang bisa transaksi sendiri dan butuh lapisan kepercayaan antar agent.",
+      "shortlink": "https://s.peka.ai.id/vNRMfy"
+    },
+    {
+      "name": "nateherkai/scroll-craft",
+      "stars": "5RB",
+      "desc": "Skill buat bikin website premium yang gerakannya ngikutin scroll, langsung dari coding agent kamu. Hasilnya web yang imersif kayak situs award-winning, tanpa harus nulis animasi scroll manual. Skill ini jalan di Claude Code, Codex, dan agent lain, plus tersedia sebagai plugin Claude Code. Cara pakainya tinggal pasang skillnya, terus minta agent bikin halaman scroll-driven. Cocok buat developer dan desainer yang pengin webnya terasa hidup pas di-scroll.",
+      "cocok": "Kamu yang bikin landing page atau portfolio dan pengin efek scroll yang terasa premium.",
+      "shortlink": "https://s.peka.ai.id/4O02HR"
+    },
+    {
+      "name": "davepoon/buildwithclaude",
+      "stars": "4RB",
+      "desc": "Satu hub buat nyari semua yang bisa nambahin kemampuan Claude Code: skill, agent, command, hook, plugin, sampai koleksi marketplace. Semua terdaftar rapi di satu tempat, jadi kamu nggak perlu muter-muter GitHub buat nemu yang cocok. Hub ini juga mencakup Claude Desktop, Agent SDK, dan OpenClaw. Tinggal cari kategori yang kamu butuh, terus pasang. Cocok buat kamu yang lagi ngerakit setup Claude Code dan pengin semua tambahannya ketemu di satu tempat.",
+      "cocok": "Kamu yang lagi ngerakit setup Claude Code dan pengin cari skill, agent, dan plugin dari satu hub.",
+      "shortlink": "https://s.peka.ai.id/09N01W"
+    },
+    {
+      "name": "EpicGames/unreal-engine-skills-for-claude-code-plugin",
+      "stars": "2RB",
+      "desc": "Plugin resmi dari Epic Games yang bikin Claude Code bisa ngendaliin Unreal Editor langsung lewat MCP. Ratusan tool kebuka lewat 30+ toolset: actor, blueprint, material, Niagara, Control Rig, Sequencer, sampai testing otomatis. Ada juga hook yang ngasih tahu Claude kalau ini proyek Unreal, jadi dia langsung pakai konvensi C++ dan UObject. Pasangnya lewat marketplace resmi Claude Code, tinggal satu perintah install.",
+      "cocok": "Kamu game developer Unreal Engine yang pengin Claude Code bantuin langsung di dalam editor.",
+      "shortlink": "https://s.peka.ai.id/AtfoUb",
+      "install": "/plugin install unreal-engine-skills-for-claude-code@claude-plugins-official"
+    }
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/carousel"
+}
