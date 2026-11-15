@@ -105,14 +105,14 @@ def main():
          os.path.join(out_dir, "narration.mp3"), out_mp4, cover,
          str(FPS)], log)
     probe = subprocess.run([
-        "ffprobe", "-v", "error", "-select_streams", "v:0",
-        "-show_entries", "stream=codec_name,width,height,pix_fmt",
+        "ffprobe", "-v", "error",
+        "-show_entries", "stream=codec_type,codec_name,width,height,pix_fmt",
         "-show_entries", "format=duration",
         "-of", "json", out_mp4,
     ], capture_output=True, text=True, check=True)
     info = json.loads(probe.stdout)
     log.write("ffprobe: " + json.dumps(info) + "\n")
-    v = info["streams"][0]
+    v = next(s for s in info["streams"] if s.get("codec_type") == "video")
     assert v["codec_name"] == "h264", v
     assert (v["width"], v["height"]) == (2160, 3840), v
     assert v["pix_fmt"] == "yuv420p", v
