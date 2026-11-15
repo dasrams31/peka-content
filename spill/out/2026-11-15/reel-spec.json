@@ -1,0 +1,52 @@
+{
+  "agent": "CLAUDE",
+  "episode": 26,
+  "next": "HERMES",
+  "repos": [
+    {
+      "name": "ykdojo/claude-code-tips",
+      "stars": "10RB",
+      "install": "claude plugin marketplace add ykdojo/claude-code-tips",
+      "penjelasan": "Kumpulan 45+ tips biar Claude Code kamu kepakai maksimal, dari dasar sampai trik lanjutan. Ada script status line custom plus cara jalanin Claude Code di dalam container.",
+      "cocok": "Kamu yang pakai Claude Code tiap hari dan pengin kerja lebih cepat pakai trik yang udah terbukti.",
+      "shortlink": "https://s.peka.ai.id/92xuwF",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/shots/ykdojo-claude-code-tips.png"
+    },
+    {
+      "name": "internet-court/internet-court-skill",
+      "stars": "7RB",
+      "install": "npx skills add internet-court/internet-court-skill",
+      "penjelasan": "Skill yang jadi lapisan kepercayaan buat jual beli antar agent AI. Agent bisa bikin mandat, atur izin delegasi, bayar lewat x402, sampai pakai escrow dan penyelesaian sengketa.",
+      "cocok": "Kamu yang lagi bangun agent AI yang bisa transaksi sendiri dan butuh lapisan kepercayaan antar agent.",
+      "shortlink": "https://s.peka.ai.id/vNRMfy",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/shots/internet-court-internet-court-skill.png"
+    },
+    {
+      "name": "nateherkai/scroll-craft",
+      "stars": "5RB",
+      "install": "npx skills add nateherkai/scroll-craft -g",
+      "penjelasan": "Skill buat bikin website premium yang gerakannya ngikutin scroll, langsung dari coding agent kamu. Hasilnya web imersif kayak situs award-winning, tanpa nulis animasi scroll manual.",
+      "cocok": "Kamu yang bikin landing page atau portfolio dan pengin efek scroll yang terasa premium.",
+      "shortlink": "https://s.peka.ai.id/4O02HR",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/shots/nateherkai-scroll-craft.png"
+    },
+    {
+      "name": "davepoon/buildwithclaude",
+      "stars": "4RB",
+      "install": "npx skills add davepoon/buildwithclaude -g",
+      "penjelasan": "Satu hub buat nyari semua yang bisa nambahin kemampuan Claude Code: skill, agent, command, hook, plugin, sampai koleksi marketplace. Semua terdaftar rapi di satu tempat.",
+      "cocok": "Kamu yang lagi ngerakit setup Claude Code dan pengin cari skill, agent, dan plugin dari satu hub.",
+      "shortlink": "https://s.peka.ai.id/09N01W",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/shots/davepoon-buildwithclaude.png"
+    },
+    {
+      "name": "EpicGames/unreal-engine-skills-for-claude-code-plugin",
+      "stars": "2RB",
+      "install": "/plugin install unreal-engine-skills-for-claude-code@claude-plugins-official",
+      "penjelasan": "Plugin resmi Epic Games yang bikin Claude Code bisa ngendaliin Unreal Editor langsung lewat MCP. Ratusan tool kebuka lewat 30+ toolset, dari actor sampai testing otomatis.",
+      "cocok": "Kamu game developer Unreal Engine yang pengin Claude Code bantuin langsung di dalam editor.",
+      "shortlink": "https://s.peka.ai.id/AtfoUb",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-15/shots/EpicGames-unreal-engine-skills-for-claude-code-plugin.png"
+    }
+  ]
+}
