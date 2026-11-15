@@ -2,13 +2,22 @@
 
 Mirror of the daily ramadanadipa.com blog article into the Peka blog
 (rewritten in Peka voice) plus concise tutorial content on all Peka
-socials. One edition per source article, every day, all modes
-(tutorial AND AI Trends). User decisions, 14 Nov 2026 (locked):
+socials. One edition per AI-related source article. User decisions,
+14 Nov 2026 (locked), amended 15 Nov 2026:
 
-1. Mirror ALL daily articles (tutorial mode and AI Trends mode).
+1. Mirror ONLY AI-related articles (user order 15 Nov 2026, supersedes
+   the 14 Nov "mirror ALL daily articles" rule). Judge the topic from
+   the source article (title/tags/content): AI models, AI tools,
+   prompts, AI agents, AI Trends, and similar count as AI. SQL,
+   databases, general programming, non-AI web dev, and similar do NOT.
+   On a non-AI day there is NO edition: stop the run and report to
+   chat that the topic is not AI; build nothing, post nothing.
 2. IG + FB = REELS (not carousel). Threads = carousel.
 3. Peka blog cover = the reel cover frame (no separate cover).
 4. Daily run in the afternoon, around 15:00 (cron created by parent).
+5. NEVER mention the source blog (ramadanadipa.com) in the chat
+   report, the Peka blog article, or any caption. Present the edition
+   as Peka's own tutorial (user order 15 Nov 2026).
 
 ## Pipeline (one edition)
 
@@ -16,11 +25,14 @@ Source: `~/workspace/blog/content/YYYY-MM-DD-<slug>.md` (written by the
 `blog-daily-article` cron around 07:36). Edition out dir:
 `~/workspace/peka-content/tutorial-mirror/out/<date>-<short>/`.
 
-1. **Spec + rewrite.** Read the source markdown. Rewrite into Peka
-   voice (casual chat style, "AI" never "mesin", no em-dash U+2014 /
-   en-dash U+2013 anywhere): blog article 800-1200 words of prose,
-   code examples kept technically correct (never paraphrase code into
-   wrong code), FAQ 3-4 pairs, tags `["Tutorial", ...topic tags]`.
+1. **Spec + rewrite.** Read the source markdown. FIRST judge the
+   topic: mirror ONLY if it is AI-related (see rule 1 above); a
+   non-AI article ends the run here (stop + report, no edition).
+   Rewrite into Peka voice (casual chat style, "AI" never "mesin",
+   no em-dash U+2014 / en-dash U+2013 anywhere): blog article
+   800-1200 words of prose, code examples kept technically correct
+   (never paraphrase code into wrong code), FAQ 3-4 pairs, tags
+   `["Tutorial", ...topic tags]`.
    Write `spec.json` (fields: slug, title, date, source_file,
    source_title, excerpt, tags, faq [[q, a]], hero, reel {date, source,
    headline[], sub, points[3], steps[3], question, band}, carousel
@@ -72,6 +84,8 @@ Source: `~/workspace/blog/content/YYYY-MM-DD-<slug>.md` (written by the
 8. **Channel + TikTok package.** Broadcast via `telegram_channel.py
    --type tutorial` (channel captions MAY contain links) and deliver
    the TikTok package (slides + caption) to chat, like other pillars.
+   The chat report NEVER mentions the source blog (ramadanadipa.com);
+   present the edition as Peka's own tutorial.
 
 ## Files
 
@@ -107,6 +121,9 @@ Source: `~/workspace/blog/content/YYYY-MM-DD-<slug>.md` (written by the
   (Follow @peka.ai.id + s.peka.ai.id/gabung + save/share).
 - Shortlinks are ALWAYS admin-owned (user_id 1) via direct DB insert,
   never the guest API.
+- AI topics ONLY (15 Nov 2026): a non-AI source article means NO
+  edition that day (stop + report). The source blog is NEVER named
+  in the chat report, the Peka blog article, or any caption.
 
 ## Push (verified 14 Nov 2026, no change needed)
 
