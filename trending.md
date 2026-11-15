@@ -17,71 +17,23 @@ judges the experiments from real metrics.
 
 ## Experiments this week (refresh 2026-11-12)
 
-DINILAI review Minggu 2026-11-15 20:00. Eksperimen refresh 2026-11-09
-sudah dipindah ke Archive di bawah (1 VOID, 1 tidak jalan, 1 jalan
-dan menunggu verdict review ini). Jangan jalankan ulang ketiganya
-tanpa desain baru.
+DINILAI review Minggu 2026-11-15 20:00 — ketiganya dipindah ke Archive
+di bawah dengan verdict-nya. Jangan jalankan ulang ketiganya tanpa
+desain baru. Eksperimen refresh 2026-11-09 sudah dipindah ke Archive
+di bawah (1 VOID, 1 tidak jalan, 1 jalan dan menunggu verdict review
+ini — kini sudah diputuskan, lihat arsip).
 
-Three experiments, one variable each. The run that airs an experiment
-MUST write its exp marker into its posted.log line the same day, with
-the exact theme that aired. If the aired theme differs from the design,
+Three experiments, one variable each — SEMUANYA SUDAH DINILAI review
+Minggu 2026-11-15 20:00, lihat Archive di bawah. Ringkasnya: (1)
+Prompt before/after TIDAK JALAN, (2) HM Carbon try-it VOID, (3) SPILL
+comparison slide TIDAK JALAN. The run that airs an experiment MUST
+write its exp marker into its posted.log line the same day, with the
+exact theme that aired. If the aired theme differs from the design,
 the experiment is VOID, not a result, and the variable is not
-re-proposed. The Sun 2026-11-15 20:00 review judges all three from
-performance.log plus live read-backs. No experiment may break a locked
-rule: brand design, exactly 1 closing hashtag per tag-watch.md, no
-em-dash or en-dash, honest numbers only, fixed slots, no sales posts
-on IG, no link in any post text.
-
-1. Prompt Harian before/after prompt (pillar: Prompt Harian, slot:
-   Fri 13 Nov 12:30). Variable: caption dibuka cerita relatable
-   (aturan menang), lalu slide 1 dan caption membawa perbandingan
-   sebelum/sesudah: satu prompt jelek vs satu prompt bagus untuk
-   tugas yang sama, hasil sampingan, plus forced choice (prompt yang
-   mana yang biasa kamu pakai, A atau B?). Control: Prompt #21
-   (Threads 221 views, 1 like, 1 balasan) dan #20 (43 views).
-   Hypothesis: format perbandingan mengalahkan median rotasi
-   (Threads views sekitar 160, likes sekitar 3), karena format
-   perbandingan menang besar di gelombang mahasiswa (reel IPK 3 vs
-   Cum Laude 2,8 ribu likes, 11 Nov; postingan before/after prompt
-   4.502 likes, 4 Nov). Log marker: "exp: prompt-before-after".
-   Guardrail: kedua prompt benar-benar dicoba dan hasilnya jujur,
-   jangan karang hasil; framing kejujuran akademik tetap; jangan
-   salin cerita personal yang tidak terjadi.
-
-2. HM Gemini 4 Carbon try-it step (pillar: HM, slot: Fri 13 Nov
-   09:36). Variable: root caption membawa SATU langkah coba konkret
-   (buka Gemini, minta Carbon kerjakan satu tugas agent panjang,
-   bandingkan dengan model biasa) plus forced choice (tugas panjang
-   apa yang mau kamu serahkan ke agent?). Control: HM 11 Nov RAISE
-   Act (IG 1 like, FB 4 views) dan HM 10 Nov Anthropic IPO (IG 1
-   like). Hypothesis: langkah coba konkret pada peluncuran model
-   terbesar minggu ini mengangkat IG likes di atas median HM (1-2
-   likes) dan menghasilkan save, karena topik try-it dengan titik
-   bingung sudah terbukti menarik balasan untuk Oracle dan Meta AI x
-   Komdigi. Log marker: "exp: hm-carbon-try-it". Guardrail: Carbon
-   GA 10 Nov terverifikasi dari beberapa roundup; re-verifikasi di
-   blog Google DeepMind pagi hari tayang; harga $2/$10 per juta
-   token sampai 30 Nov lalu naik dua kali lipat, hanya sebut bila
-   terverifikasi hari itu; jangan sajikan Carbon sebagai model
-   gratis biasa bila aksesnya lewat API atau berbayar. NOTE: HM is
-   frozen on Threads 7 Nov to 7 Dec, so this experiment is judged
-   on IG, FB, and blog only, not Threads.
-
-3. SPILL comparison slide (pillar: SPILL Repo, slot: Fri 13 Nov
-   21:30, edisi #24). Variable: slide 1 membawa tabel perbandingan
-   dua kolom dari dua repo paling kepakai di edisi itu (repo A buat
-   X, repo B buat Y, satu baris beda kunci), caption tetap pola #11
-   (repo paling kepakai + langkah pertama konkret + "Repo mana yang
-   mau kamu coba duluan?"). Control: SPILL #22 (Threads 4 likes,
-   257 views; IG 3 likes) dan #21 (Threads 5 likes, 168 views; IG
-   4 likes, 24 jam 92 likes). Hypothesis: slide perbandingan
-   mengangkat swipe-through dan IG likes di atas median SPILL hari
-   yang sama (sekitar 3-4 likes), karena format perbandingan menang
-   besar di gelombang mahasiswa (2,8 ribu likes, 11 Nov). Log
-   marker: "exp: spill-comparison-slide". Guardrail: repo harus
-   fresh dan terverifikasi, sudah ditambah ke tools.json dulu, star
-   count jujur; OpenClaw tetap dikecualikan permanen dari roster
-   SPILL.
+re-proposed. No experiment may break a locked rule: brand design,
+exactly 1 closing hashtag per tag-watch.md, no em-dash or en-dash,
+honest numbers only, fixed slots, no sales posts on IG, no link in
+any post text.
 
 ## Hot topics (refresh 2026-11-12)
 
@@ -224,6 +176,59 @@ vendor's pricing without an official source.
 
 ## Archive (experiments judged by Sunday review)
 
+Judged Sun 2026-11-15 (weekly review, fresh CLI metrics 15 Nov 20:00 WIB;
+pillar medians this week: SPILL Threads 42 likes / 1.533 views, IG 24,5
+likes; Prompt Threads 3 likes / 135 views; HM IG carousel 3 likes;
+Bansos Threads 9 likes; Gratisan Threads 7 likes):
+
+- Prompt Harian before/after prompt (slot Fri 13 Nov 12:30, edisi
+  #23): TIDAK JALAN sesuai desain. Caption Threads #23 ("Foto udah
+  bagus, captionnya malah mentok...") + slide 1 (cover standar + satu
+  prompt) TIDAK membawa perbandingan sebelum/sesudah sama sekali, dan
+  posted.log tidak memuat marker "exp: prompt-before-after". Angka
+  #23 (Threads 1 like / 127 views, IG 2 likes) tidak menguji hipotesis.
+  Variabel belum teruji; jangan ajukan ulang desain slot yang sama
+  tanpa memastikan generator benar-benar membangun slide + caption
+  perbandingan sebelum tayang.
+- HM Gemini 4 Carbon try-it step (slot Fri 13 Nov 09:36): VOID. HM
+  13 Nov yang tayang bertopik Gemini 4 Hydrogen, bukan Carbon; marker
+  di posted.log mencatat VOID. Ini pola berulang: variabel try-it
+  model baru VOID ketiga kalinya karena topik tayang bukan model yang
+  dirancang (6 Nov Perplexity, 10 Nov Anthropic IPO, 13 Nov Hydrogen).
+  Jangan ajukan ulang desain slot yang sama; topik Carbon sendiri
+  tetap layak jadi HM biasa.
+- SPILL comparison slide (slot Fri 13 Nov 21:30, edisi #24): TIDAK
+  JALAN sesuai desain. Slide 1 #24 adalah cover standar (daftar 5
+  repo + star), tanpa tabel perbandingan dua kolom; caption pola #11
+  biasa; posted.log tidak memuat marker "exp: spill-comparison-slide".
+  Angka #24 (Threads 20 likes / 808 views, IG 32 likes / 39 saves /
+  1.309 views) tidak menguji hipotesis. Variabel belum teruji; jangan
+  ajukan ulang desain slot yang sama tanpa memastikan generator
+  benar-benar membangun slide perbandingan sebelum tayang. Catatan
+  samping: format perbandingan TERBUKTI menang di luar eksperimen ini
+  lewat reel benchmark HM Hydrogen 13 Nov (IG 23 likes / 1.817 views
+  vs carousel HM median 3 likes), jadi formatnya dipromosikan lewat
+  jalur HM, bukan SPILL.
+- Gratisan AI honest renewal price (slot Wed 11 Nov 14:00, dari
+  refresh 9 Nov): MENANG PARSIAL. Jalan sesuai desain (harga perpanjang
+  Rp75.000/bulan + sisa 50 hari + garpu SheerID). Threads 11 likes /
+  1.619 views / 4 reposts, dan 1 komentar TERBUKTI balasan penonton
+  asli ("Mauuu", Azmi Hafizharahman, terverifikasi via
+  fetch-post-comments). Views setara kontrol #28 (1.654) dan 5x kontrol
+  7 Nov (308), tapi likes di bawah #28 (18) dan IG/FB lemah (IG 2 likes
+  / 1 save / 210 views, FB 18 views). Verdict: harga perpanjang jujur
+  TIDAK membunuh reach dan menarik balasan penonton, tapi bukan
+  pendongkrak reach. Dipromosikan ke playbook Gratisan sebagai praktik
+  transparansi (cantumkan harga perpanjang jujur), bukan sebagai
+  pendongkrak views.
+- BLUEPRINT first-step framing on agent memory (retry Threads 13 Nov
+  22:20): MENANG. Retry Threads edisi #02 claude-mem tayang: Threads
+  3 likes / 307 views / 3 reposts; IG 7 likes / 7 saves / 353 views
+  vs kontrol #01 (2 likes / 558 views), FB 231 vs 117 views. Framing
+  langkah pertama menang di IG (likes + saves) dan FB (views), dan
+  Threads retry solid. Dipromosikan ke playbook sebagai aturan
+  BLUEPRINT: caption + slide wajib bingkai langkah pertama konkret.
+
 Experiments from the 2026-11-09 refresh (checked 12 Nov from
 posted.log and performance.log; judged Sun 2026-11-15 20:00 unless
 noted VOID or not run):
@@ -254,7 +259,11 @@ noted VOID or not run):
   penonton) terpenuhi secara angka komentar, tapi review Minggu
   yang memutuskan apakah komentar itu balasan penonton asli dan
   apakah verdictnya MENANG, PARSIAL, atau KALAH. Jangan kutip
-  sebagai bukti sebelum verdict.
+  sebagai bukti sebelum verdict. VERDICT review 15 Nov 20:00:
+  MENANG PARSIAL (lihat arsip 15 Nov di atas): komentar TERBUKTI
+  balasan penonton asli ("Mauuu"), views 1.619 setara #28, tapi
+  likes di bawah kontrol; harga perpanjang jujur dipromosikan ke
+  playbook sebagai transparansi, bukan pendongkrak reach.
 
 Judged Sun 2026-11-08 (weekly review, fresh CLI metrics 8 Nov 20:00 WIB;
 pillar medians this week: SPILL Threads 14 likes, IG 31 likes; Prompt
@@ -275,7 +284,10 @@ Threads 3 likes; HM Threads 3 likes):
   7 saves vs kontrol #01 (2 likes / 558 views, usia seminggu), FB
   231 views vs #01 117 views. Hipotesis Threads tidak bisa dinilai;
   TIDAK dipromosikan ke playbook. Uji ulang lewat retry Threads,
-  atau ajukan varian baru dengan pencatatan yang sama.
+  atau ajukan varian baru dengan pencatatan yang sama. UPDATE review
+  15 Nov 20:00: retry Threads tayang 13 Nov 22:20 (3 likes / 307 views
+  / 3 reposts) — verdict kini MENANG (lihat arsip 15 Nov di atas),
+  aturan first-step dipromosikan ke playbook BLUEPRINT.
 - Gratisan AI deadline plus verification catch, Threads re-test (slot
   Sat 7 Nov 14:00): MENANG PARSIAL. Jalan sesuai desain (deadline
   31 Des 2026 + sisa 54 hari + catch SheerID + garpu "mentok di

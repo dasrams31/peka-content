@@ -115,6 +115,13 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
 - HM news: slide 1 (cover) WAJIB mencetak 1 langkah konkret "COBA SEKARANG" yang bisa dilakukan pembaca dalam hitungan menit dari isi berita (ROMBAK, review 8 Nov 2026: median likes 3, hanya edisi dengan langkah coba konkret yang menembus). Close the caption with a light two-sided debate question about
   the story ("Menurutmu ini kemajuan atau ancaman buat kerjaan kita?").
   Never on SARA or party-political fights.
+  REEL BENCHMARK EKSTRA (menang, review 2026-11-15): bila berita membawa
+  angka benchmark/perbandingan antar model, buat JUGA satu reel
+  perbandingan (tabel angka + pertanyaan pilih model, format reel
+  benchmark Hydrogen 13 Nov) sebagai ekstra di samping carousel, posting
+  ke IG + FB (JANGAN ke Threads selama freeze HM 7 Nov-7 Des 2026).
+  Bukti: reel Hydrogen IG 23 likes / 1.817 views dan FB 188 views vs
+  carousel HM minggu ini median 3 likes IG / 47 views dan 3 views FB.
 - Store (jualan): comment trigger is the DM keyword ("DM MAU [produk]")
   plus a low-effort choice question ("Tim bulanan atau tahunan?") and a
   tag-a-friend line. Honest stock/price urgency only.
@@ -126,6 +133,14 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   paling kepakai + langkah pertama konkret yang bisa dicoba dalam hitungan
   menit + pertanyaan pilihan paksa di atas. Daftar spesifikasi tanpa langkah
   pertama bukan caption utama.
+  HOOK STACK SPESIFIK (menang, review 2026-11-15): baris pertama hook WAJIB
+  menyebut stack/tool konkret pembaca (Flutter, Obsidian, terminal, dst) +
+  satu angka spesifik dari sumber resmi. Bukti: SPILL #21 "Agent kamu masih
+  ngoding Flutter asal tebak? ... 36 skill dari dokumentasi resmi" meraih
+  Threads 162 likes / 6.276 views / 30 reposts dan IG 109 likes / 160 saves,
+  terbesar sejak #11; edisi dengan hook generik "agent kamu" tanpa stack
+  mentok 14-20 likes Threads (#22: 14, #24: 20). Hook generik tanpa stack
+  jangan lagi jadi pembuka.
 - Bansos: tag a friend + save trigger (deadlines) + "Ada yang udah
   berhasil daftar?" experience ask.
 - Gratisan AI (menang, review 2026-11-01): utamakan edisi segmen mahasiswa
@@ -138,12 +153,30 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   asli yang menanyakan titik gagal itu persis. Tapi hitung mundur
   deadline saja TIDAK mengangkat reach (308 views vs kontrol 1.654),
   jadi jangan andalkan deadline sebagai pendongkrak views.
+- Gratisan AI (menang parsial, review 2026-11-15): HARGA PERPANJANG JUJUR
+  tetap dicantumkan di caption (transparansi, bukan pendongkrak reach).
+  Bukti 11 Nov 2026 (Google AI Plus): caption membawa harga perpanjang
+  Rp75.000/bulan + sisa 50 hari + garpu SheerID, Threads 11 likes /
+  1.619 views (setara kontrol #28 1.654 views) + 1 balasan penonton asli
+  ("Mauuu", terverifikasi). Harga jujur tidak membunuh reach.
+- Gratisan AI (review 2026-11-15): PEMILIH PENAWARAN — utamakan segmen
+  mahasiswa + tawaran besar dari nama besar (AI Plus gratis 12 bulan:
+  Threads 11 likes / 1.619 views, 11 Nov). Sudut PPT sidang saja TIDAK
+  mengangkat (Gamma AI 14 Nov: 3 likes / 162 views). Pilih penawaran
+  dengan segmen + tawaran sebesar itu dulu; sudut sidang hanya garnish,
+  bukan alasan utama memilih penawaran.
 - Prompt Harian (menang, review 2026-11-08): buka caption Threads dengan
   1-2 kalimat cerita relatable pengalaman mencoba (edisi #14, #16, #17,
   #18: Threads views 111-260, median ~215, vs #11-#13 tanpa cerita
   median 58; likes median 4,5 vs 2), baru judul "salin prompt ini buat
   X". Cerita harus pengalaman nyata mencoba, bukan cerita personal yang
   tidak terjadi. Balasan pertama tetap membawa prompt lengkapnya.
+- BLUEPRINT (menang, review 2026-11-15): caption + slide WAJIB
+  membingkai LANGKAH PERTAMA konkret ("Langkah pertama: ...") sebelum
+  detail repo. Bukti edisi #02 claude-mem: IG 7 likes / 7 saves / 353
+  views vs #01 2 likes / 558 views, FB 231 vs 117 views, Threads retry
+  3 likes / 307 views. Tanpa langkah pertama, caption BLUEPRINT hanya
+  daftar spesifikasi dan tidak mengangkat saves.
 
 ## After posting / weekly loop
 
