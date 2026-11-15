@@ -1,0 +1,24 @@
+{
+ "band": "QUERY AGREGAT SQL: COUNT, SUM, AVG, GROUP BY",
+ "date": "15 NOVEMBER 2026",
+ "headline": [
+  "QUERY AGREGAT",
+  "SQL DARI NOL",
+  "SAMPAI GROUP BY"
+ ],
+ "points": [
+  "COUNT punya tiga bentuk dan ketiganya beda hasil. COUNT(*) hitung semua, COUNT(email) lewatkan NULL, COUNT(DISTINCT city) hitung yang unik.",
+  "SUM dan AVG cuma jalan di kolom numerik, dan jangan lupa filter status = 'paid' dulu sebelum menjumlahkan omzet.",
+  "GROUP BY memecah baris jadi kelompok, WHERE memfilter sebelum agregat, HAVING memfilter sesudah agregat."
+ ],
+ "question": "Kamu tim hitung manual di aplikasi, atau tim agregat langsung di SQL?",
+ "source": "SUMBER: BLOG RAMADANADIPA",
+ "steps": [
+  "Pakai COUNT(*) sebagai default, COUNT(nama_kolom) hanya kalau memang mau melewatkan NULL.",
+  "GROUP BY per kategori atau per bulan, lalu urutkan dengan ORDER BY yang eksplisit.",
+  "Pindah kondisi agregat ke HAVING, karena WHERE tidak boleh berisi COUNT, SUM, atau AVG."
+ ],
+ "sub": "Satu query, langsung dapat jawabannya. Tanpa tarik ribuan baris ke aplikasi.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/query-agregat-sql-count-sum-avg-group-by.jpg",
+ "shortlink": "https://s.peka.ai.id/uhe2HC"
+}

@@ -1,0 +1,122 @@
+<p>Berapa user yang daftar bulan ini? Berapa omzet minggu ini? Kategori mana yang paling laku? Kalau kamu masih menarik ribuan baris dari database lalu menghitungnya satu per satu di aplikasi, kamu kerja dua kali dan hasilnya lebih lambat. SQL punya jawaban yang jauh lebih rapi: fungsi agregat. Satu query, satu jawaban. Artikel ini menjelaskan COUNT, SUM, AVG, GROUP BY, dan HAVING dari nol, dengan contoh toko online sederhana di PostgreSQL. Semua query di sini juga jalan di MySQL dengan penyesuaian kecil.</p>
+
+<h2>Fungsi agregat itu apa</h2>
+<p>Fungsi agregat menerima banyak baris lalu mengembalikan satu nilai ringkasan. Lima yang paling sering dipakai adalah COUNT untuk menghitung baris, SUM untuk menjumlahkan angka, AVG untuk rata-rata, MIN untuk nilai terkecil, dan MAX untuk nilai terbesar. Satu aturan yang wajib diingat: fungsi agregat mengabaikan nilai NULL, kecuali COUNT(*). Perilaku ini sering bikin hasil hitungan terlihat salah padahal querynya benar, jadi hafalkan dari sekarang.</p>
+<p>Contoh paling sederhana: total produk dan harga termahal di katalog, dalam satu query.</p>
+<pre><code>SELECT
+    COUNT(*) AS total_produk,
+    MIN(price) AS harga_termurah,
+    MAX(price) AS harga_termahal,
+    AVG(price) AS harga_rata_rata
+FROM products;</code></pre>
+<p>Hasilnya satu baris berisi empat angka. Kamu tidak perlu tahu isi tiap baris, kamu cuma butuh gambar besarnya. Di sinilah gunanya agregat: mengubah ribuan baris jadi satu jawaban yang langsung bisa dipakai di dashboard.</p>
+
+<h2>COUNT: tiga bentuk, tiga hasil berbeda</h2>
+<p>COUNT punya tiga bentuk dan ketiganya beda hasil. Ini sumber kebingungan paling umum di kalangan pemula, jadi perhatikan baik-baik.</p>
+<pre><code>-- Menghitung semua baris, termasuk yang kolomnya NULL
+SELECT COUNT(*) FROM users;
+
+-- Menghitung baris yang kolom email-nya terisi saja
+SELECT COUNT(email) FROM users;
+
+-- Menghitung nilai unik, duplikat dihitung sekali
+SELECT COUNT(DISTINCT city) FROM users;</code></pre>
+<p>Bedanya nyata kalau ada data kosong. Misal tabel users berisi 100 baris tapi 5 user belum isi email. COUNT(*) menghasilkan 100, COUNT(email) menghasilkan 95. Kalau kamu mau tahu berapa user yang sudah verifikasi email, yang benar adalah COUNT(email). Kalau kamu mau tahu berapa user yang terdaftar, yang benar adalah COUNT(*).</p>
+<p>COUNT(DISTINCT city) berguna untuk pertanyaan seperti dari berapa kota user kita berasal. Tanpa DISTINCT, kota yang sama dihitung berkali-kali dan jawabannya jadi jumlah baris, bukan jumlah kota. Pola yang sering dipakai di dashboard adalah menghitung total order dan pembeli unik dalam satu query, dengan filter bulan berjalan.</p>
+<pre><code>SELECT
+    COUNT(*) AS total_order,
+    COUNT(DISTINCT user_id) AS pembeli_unik
+FROM orders
+WHERE created_at &gt;= DATE_TRUNC('month', CURRENT_DATE);</code></pre>
+
+<h2>SUM dan AVG: total dan rata-rata</h2>
+<p>SUM dan AVG cuma jalan di kolom numerik. Mencoba menjumlahkan kolom teks akan error, dan itu wajar. Contoh menghitung omzet bulan ini:</p>
+<pre><code>SELECT SUM(total_amount) AS omzet_bulan_ini
+FROM orders
+WHERE status = 'paid'
+  AND created_at &gt;= DATE_TRUNC('month', CURRENT_DATE);</code></pre>
+<p>Perhatikan filter status = 'paid'. Order yang batal atau belum bayar tidak boleh masuk omzet. Ini kelihatan sepele, tapi di dunia nyata inilah sumber laporan keuangan yang meleset: orang lupa memfilter status sebelum menjumlahkan.</p>
+<p>AVG menghitung rata-rata, tapi hati-hati dengan pembulatan dan outlier. Rata-rata nilai order dibulatkan ke dua desimal supaya enak dibaca, misalnya 247500.50 bukan 247500.495312. Kalau satu order bernilai 50 juta dan sisanya 100 ribu, rata-ratanya ketarik naik dan tidak mewakili order tipikal. Untuk kasus seperti itu, hitung juga MIN, MAX, dan COUNT di query yang sama supaya kamu bisa menilai apakah rata-ratanya bisa dipercaya.</p>
+<pre><code>SELECT
+    COUNT(*) AS jumlah_order,
+    MIN(total_amount) AS order_terkecil,
+    MAX(total_amount) AS order_terbesar,
+    ROUND(AVG(total_amount), 2) AS rata_rata_order
+FROM orders
+WHERE status = 'paid';</code></pre>
+
+<h2>GROUP BY: agregat per kelompok</h2>
+<p>Satu angka untuk seluruh tabel kadang tidak cukup. Kamu mau tahu omzet per kategori, jumlah order per kota, atau rata-rata rating per produk. Di sinilah GROUP BY bekerja: dia memecah baris jadi kelompok-kelompok, lalu fungsi agregat dihitung per kelompok.</p>
+<pre><code>SELECT
+    category,
+    COUNT(*) AS jumlah_produk,
+    ROUND(AVG(price), 2) AS harga_rata_rata
+FROM products
+GROUP BY category
+ORDER BY jumlah_produk DESC;</code></pre>
+<p>Hasilnya satu baris per kategori, masing-masing dengan jumlah produk dan harga rata-ratanya. ORDER BY jumlah_produk DESC mengurutkan dari kategori terbanyak supaya insight yang paling penting muncul duluan.</p>
+<p>Contoh yang lebih nyata, omzet per bulan, adalah fondasi hampir semua grafik penjualan di dashboard:</p>
+<pre><code>SELECT
+    TO_CHAR(created_at, 'YYYY-MM') AS bulan,
+    COUNT(*) AS jumlah_order,
+    SUM(total_amount) AS omzet
+FROM orders
+WHERE status = 'paid'
+GROUP BY TO_CHAR(created_at, 'YYYY-MM')
+ORDER BY bulan;</code></pre>
+<p>TO_CHAR(created_at, 'YYYY-MM') mengubah timestamp jadi teks seperti 2026-11, jadi order di bulan yang sama masuk satu kelompok. GROUP BY juga bisa mengelompokkan lebih dari satu kolom, misalnya jumlah order per kota per status.</p>
+<p>Aturan emas GROUP BY di PostgreSQL: setiap kolom di SELECT harus masuk ke GROUP BY atau dibungkus fungsi agregat. Query yang menampilkan kolom name tanpa memasukkannya ke GROUP BY akan ditolak, karena PostgreSQL tidak bisa memutuskan nama produk mana yang harus ditampilkan untuk satu kategori yang berisi banyak produk. MySQL versi lama membiarkan query seperti ini dan diam-diam mengambil nilai sembarangan. Itu lebih berbahaya, karena hasilnya terlihat benar padahal acak.</p>
+
+<h2>HAVING: memfilter hasil agregat</h2>
+<p>Setelah dikelompokkan, kadang kamu cuma mau melihat kelompok yang memenuhi syarat, misalnya pelanggan yang total belanjanya di atas 5 juta. Filter seperti ini tidak bisa pakai WHERE, karena WHERE jalan sebelum agregasi dan belum tahu hasil hitungannya. Pakainya HAVING.</p>
+<pre><code>SELECT
+    user_id,
+    COUNT(*) AS jumlah_order,
+    SUM(total_amount) AS total_belanja
+FROM orders
+WHERE status = 'paid'
+GROUP BY user_id
+HAVING SUM(total_amount) &gt; 5000000
+ORDER BY total_belanja DESC;</code></pre>
+<p>Urutan eksekusi logisnya: WHERE dulu memfilter order yang sudah dibayar, lalu GROUP BY mengelompokkan per user, lalu HAVING membuang user yang total belanjanya di bawah 5 juta. Query ini adalah cara standar mencari pelanggan VIP. Di PostgreSQL kamu juga boleh memakai alias di HAVING, jadi HAVING total_belanja &gt; 5000000 sama sahnya dengan HAVING SUM(total_amount) &gt; 5000000.</p>
+<p>Kesalahan klasik pemula adalah menulis kondisi agregat di WHERE, misalnya WHERE COUNT(*) &gt; 5. PostgreSQL menolak ini karena WHERE dievaluasi per baris, sebelum ada kelompok yang bisa dihitung. Begitu kamu butuh kondisi atas hasil COUNT, SUM, atau AVG, pindah ke HAVING.</p>
+
+<h2>Lima kesalahan pemula yang paling sering muncul</h2>
+<p>Pertama, memakai SELECT * bersama GROUP BY. SELECT * menarik semua kolom, dan hampir pasti ada kolom yang tidak masuk GROUP BY. Biasakan menulis kolom yang kamu butuhkan saja, satu per satu. Query jadi lebih jelas dan error seperti ini hilang sendiri.</p>
+<p>Kedua, lupa memfilter sebelum agregat. Menjumlahkan semua order tanpa status = 'paid' membuat omzet terlihat lebih besar dari aslinya. Selalu tanya dulu baris mana yang boleh masuk hitungan, baru tulis querynya.</p>
+<p>Ketiga, mengira AVG menghitung NULL sebagai nol. AVG melewatkan NULL sepenuhnya. Kalau ada 4 nilai yaitu 100, 200, 300, dan NULL, rata-ratanya adalah 200, bukan 150. Kalau kamu memang mau NULL dihitung sebagai nol, bungkus kolomnya dulu dengan COALESCE(nama_kolom, 0).</p>
+<p>Keempat, memakai COUNT(nama_kolom) saat maksudnya COUNT(*). Kalau kolomnya boleh NULL, hasil keduanya beda dan kamu bisa salah baca jumlah data. Pakai COUNT(*) sebagai default, dan pakai COUNT(nama_kolom) hanya saat kamu memang sengaja mau melewatkan NULL.</p>
+<p>Kelima, mengurutkan hasil GROUP BY tanpa ORDER BY. Urutan baris hasil GROUP BY tidak dijamin. Kalau urutan penting buat kamu, selalu tambahkan ORDER BY yang eksplisit.</p>
+
+<h2>Latihan: coba langsung di database kamu</h2>
+<p>Buat tabel products dan orders berikut di database latihanmu, lalu jalankan query-query di artikel ini satu per satu dan perhatikan hasilnya.</p>
+<pre><code>CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    price NUMERIC(12, 2) NOT NULL
+);
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    total_amount NUMERIC(12, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO products (name, category, price) VALUES
+    ('Keyboard Mekanikal', 'Elektronik', 850000),
+    ('Mouse Wireless', 'Elektronik', 350000),
+    ('Kursi Gaming', 'Furniture', 2500000),
+    ('Meja Lipat', 'Furniture', 450000),
+    ('Buku SQL Dasar', 'Buku', 120000);
+
+INSERT INTO orders (user_id, city, status, total_amount) VALUES
+    (1, 'Jakarta', 'paid', 850000),
+    (1, 'Jakarta', 'paid', 350000),
+    (2, 'Bandung', 'paid', 2500000),
+    (3, 'Jakarta', 'cancelled', 120000),
+    (2, 'Bandung', 'pending', 450000);</code></pre>
+<p>Setelah data masuk, coba jawab tiga pertanyaan ini dengan satu query masing-masing: berapa omzet dari order yang sudah dibayar saja, kota mana yang menghasilkan omzet terbesar, dan user mana saja yang total belanjanya di atas 1 juta. Kalau kamu bisa menjawab ketiganya tanpa menarik data ke aplikasi, kamu sudah paham inti fungsi agregat. Selanjutnya, coba gabungkan dengan JOIN untuk menampilkan nama kategori atau nama user di hasil akhirnya.</p>

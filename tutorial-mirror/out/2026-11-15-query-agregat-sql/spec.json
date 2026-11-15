@@ -1,0 +1,135 @@
+{
+ "carousel": {
+  "slides": [
+   {
+    "sub": "Satu query, langsung dapat jawabannya. Tanpa tarik ribuan baris ke aplikasi.",
+    "title": [
+     "Query Agregat",
+     "SQL dari Nol",
+     "sampai GROUP BY"
+    ],
+    "type": "cover"
+   },
+   {
+    "items": [
+     {
+      "body": "Hitung baris. COUNT(*) hitung semua, COUNT(email) lewatkan NULL.",
+      "head": "COUNT, hitung baris"
+     },
+     {
+      "body": "Jumlahkan angka dan cari rata-rata. Cuma jalan di kolom numerik.",
+      "head": "SUM dan AVG"
+     },
+     {
+      "body": "Nilai terkecil dan terbesar, teman wajib AVG biar rata-rata bisa dipercaya.",
+      "head": "MIN dan MAX"
+     }
+    ],
+    "title": "Lima fungsi yang wajib hafal",
+    "type": "points"
+   },
+   {
+    "body": "COUNT(*) hitung semua baris termasuk yang NULL. COUNT(email) cuma hitung yang terisi. COUNT(DISTINCT city) hitung kota unik, duplikat dihitung sekali.",
+    "code": "COUNT(DISTINCT city)",
+    "title": "COUNT(*) bukan COUNT(email)",
+    "type": "text"
+   },
+   {
+    "items": [
+     {
+      "body": "Pecah baris jadi kelompok, lalu agregat dihitung per kelompok.",
+      "head": "GROUP BY per kelompok"
+     },
+     {
+      "body": "Filter baris sebelum agregat. Belum tahu hasil hitungan.",
+      "head": "WHERE dulu"
+     },
+     {
+      "body": "Filter hasil setelah agregat. Di sinilah kondisi COUNT dan SUM tinggal.",
+      "head": "HAVING sesudahnya"
+     }
+    ],
+    "title": "GROUP BY dan HAVING",
+    "type": "points"
+   },
+   {
+    "code": [
+     "SELECT TO_CHAR(created_at,",
+     "  'YYYY-MM') AS bulan,",
+     "  COUNT(*) AS jumlah_order,",
+     "  SUM(total_amount) AS omzet",
+     "FROM orders",
+     "WHERE status = 'paid'",
+     "GROUP BY TO_CHAR(created_at,",
+     "  'YYYY-MM')",
+     "ORDER BY bulan;"
+    ],
+    "note": "Pola ini fondasi hampir semua grafik penjualan di dashboard.",
+    "title": "Omzet per bulan, satu query",
+    "type": "code"
+   },
+   {
+    "lines": [
+     "Lima kesalahan pemula, tabel latihan, dan tiga soal untuk dicoba sendiri, semuanya ada di blog Peka.",
+     "Follow @peka.ai.id, save dulu biar gampang dicari pas butuh."
+    ],
+    "shortlink": "https://s.peka.ai.id/uhe2HC",
+    "title": "Baca versi lengkapnya",
+    "type": "closing"
+   }
+  ]
+ },
+ "date": "2026-11-15",
+ "excerpt": "Berapa user yang daftar bulan ini? Berapa omzet minggu ini? Kategori mana yang paling laku? Fungsi agregat SQL menjawab semuanya dalam satu query: COUNT, SUM, AVG, GROUP BY, dan HAVING, dijelaskan dari nol dengan contoh toko online di PostgreSQL.",
+ "faq": [
+  [
+   "Apa itu fungsi agregat di SQL?",
+   "Fungsi agregat adalah fungsi yang mengambil banyak baris lalu mengembalikan satu nilai ringkasan, misalnya COUNT untuk menghitung baris, SUM untuk menjumlahkan kolom angka, dan AVG untuk menghitung rata-rata."
+  ],
+  [
+   "Apa beda WHERE dan HAVING di SQL?",
+   "WHERE memfilter baris sebelum agregasi, sedangkan HAVING memfilter hasil setelah agregasi. Kalau kondisi kamu memakai COUNT atau SUM, pakainya HAVING, bukan WHERE."
+  ],
+  [
+   "Kenapa GROUP BY error di PostgreSQL?",
+   "PostgreSQL menolak query kalau ada kolom biasa di SELECT yang tidak ada di GROUP BY dan tidak dibungkus fungsi agregat. Solusinya: masukkan semua kolom non-agregat ke GROUP BY atau bungkus dengan fungsi agregat."
+  ],
+  [
+   "Kapan pakai COUNT(*) dan kapan COUNT(nama_kolom)?",
+   "Pakai COUNT(*) untuk menghitung semua baris termasuk yang berisi NULL. Pakai COUNT(nama_kolom) kalau kamu hanya mau menghitung baris yang kolomnya terisi, karena COUNT(nama_kolom) melewatkan NULL."
+  ]
+ ],
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/query-agregat-sql-count-sum-avg-group-by.jpg",
+ "reel": {
+  "band": "QUERY AGREGAT SQL: COUNT, SUM, AVG, GROUP BY",
+  "date": "15 NOVEMBER 2026",
+  "headline": [
+   "QUERY AGREGAT",
+   "SQL DARI NOL",
+   "SAMPAI GROUP BY"
+  ],
+  "points": [
+   "COUNT punya tiga bentuk dan ketiganya beda hasil. COUNT(*) hitung semua, COUNT(email) lewatkan NULL, COUNT(DISTINCT city) hitung yang unik.",
+   "SUM dan AVG cuma jalan di kolom numerik, dan jangan lupa filter status = 'paid' dulu sebelum menjumlahkan omzet.",
+   "GROUP BY memecah baris jadi kelompok, WHERE memfilter sebelum agregat, HAVING memfilter sesudah agregat."
+  ],
+  "question": "Kamu tim hitung manual di aplikasi, atau tim agregat langsung di SQL?",
+  "source": "SUMBER: BLOG RAMADANADIPA",
+  "steps": [
+   "Pakai COUNT(*) sebagai default, COUNT(nama_kolom) hanya kalau memang mau melewatkan NULL.",
+   "GROUP BY per kategori atau per bulan, lalu urutkan dengan ORDER BY yang eksplisit.",
+   "Pindah kondisi agregat ke HAVING, karena WHERE tidak boleh berisi COUNT, SUM, atau AVG."
+  ],
+  "sub": "Satu query, langsung dapat jawabannya. Tanpa tarik ribuan baris ke aplikasi."
+ },
+ "slug": "query-agregat-sql-count-sum-avg-group-by",
+ "source_file": "2026-11-15-query-agregat-sql-count-sum-avg-group-by.md",
+ "source_title": "Query Agregat SQL: COUNT, SUM, AVG, dan GROUP BY",
+ "tags": [
+  "Tutorial",
+  "SQL",
+  "PostgreSQL",
+  "Database"
+ ],
+ "title": "Query Agregat SQL: COUNT, SUM, AVG, dan GROUP BY, Dijelaskan dari Nol"
+}

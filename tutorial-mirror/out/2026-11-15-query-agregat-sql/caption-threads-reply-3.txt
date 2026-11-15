@@ -1,0 +1,1 @@
+Lima jebakan pemula: SELECT * bareng GROUP BY, lupa filter status = 'paid' sebelum menjumlahkan omzet, mengira AVG menghitung NULL sebagai nol, salah pilih COUNT, dan mengurutkan GROUP BY tanpa ORDER BY. Tabel latihannya ada di blog, tinggal copy dan coba.

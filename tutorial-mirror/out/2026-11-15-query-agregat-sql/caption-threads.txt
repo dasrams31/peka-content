@@ -1,0 +1,9 @@
+Berapa omzet bulan ini? Satu query jawab.
+
+Fungsi agregat SQL mengubah ribuan baris jadi satu jawaban: COUNT hitung baris, SUM jumlahkan angka, AVG cari rata-rata. GROUP BY pecah per kelompok, HAVING filter hasil agregatnya.
+
+Di carousel ini: 5 fungsi wajib hafal, beda COUNT(*) dan COUNT(email), sampai omzet per bulan dalam satu query.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim hitung manual di aplikasi, atau tim agregat langsung di SQL? #AI

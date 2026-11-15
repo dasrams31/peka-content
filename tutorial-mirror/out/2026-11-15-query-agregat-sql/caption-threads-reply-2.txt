@@ -1,0 +1,1 @@
+WHERE memfilter baris sebelum agregat. HAVING memfilter hasil sesudah agregat. Kondisi yang memakai COUNT, SUM, atau AVG tidak boleh ditulis di WHERE, PostgreSQL langsung menolak. Begitu butuh kondisi atas hasil hitungan, pindah ke HAVING.

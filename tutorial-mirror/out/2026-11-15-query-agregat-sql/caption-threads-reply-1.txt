@@ -1,0 +1,1 @@
+COUNT(*) hitung semua baris termasuk yang NULL. COUNT(email) cuma hitung yang terisi. COUNT(DISTINCT city) hitung kota unik, duplikat dihitung sekali. Pakai COUNT(*) sebagai default, kecuali kamu memang sengaja mau melewatkan NULL.
