@@ -3,14 +3,6 @@
  "last_posted": "2026-11-13",
  "products": [
   {
-   "dur": "3 Bulan",
-   "name": "Gemini Pro",
-   "price": "15K",
-   "price_num": 15,
-   "sec": "GEMINI PRO",
-   "bot_id": 66
-  },
-  {
    "dur": "1 Bulan · Privat",
    "name": "CapCut Pro",
    "price": "27K",
@@ -25,15 +17,6 @@
    "price_num": 11,
    "sec": "CANVA",
    "bot_id": 26
-  },
-  {
-   "dur": "Lifetime",
-   "name": "Muse Spark AI",
-   "note": "3-4 Milyar token",
-   "price": "24K",
-   "price_num": 24,
-   "sec": "MUSE SPARK AI",
-   "bot_id": 67
   },
   {
    "dur": "1 Tahun",
@@ -138,15 +121,6 @@
    "price_num": 5,
    "sec": "CANVA",
    "bot_id": 78
-  },
-  {
-   "dur": "Lifetime",
-   "name": "Muse Spark AI",
-   "note": "1M Token",
-   "price": "16K",
-   "price_num": 16,
-   "sec": "MUSE SPARK AI",
-   "bot_id": 87
   },
   {
    "dur": "12 Bulan",
