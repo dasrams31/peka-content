@@ -99,14 +99,6 @@
    "bot_id": 75
   },
   {
-   "dur": "18 Bulan (Invite)",
-   "name": "Gemini Pro",
-   "price": "14K",
-   "price_num": 14,
-   "sec": "GEMINI PRO",
-   "bot_id": 86
-  },
-  {
    "dur": "7 Hari",
    "name": "CapCut Pro",
    "price": "7K",
@@ -187,5 +179,5 @@
    "bot_id": 110
   }
  ],
- "updated": "2026-11-15"
+ "updated": "2026-11-16"
 }
