@@ -155,6 +155,13 @@ punctuation. v3 fixes both in `tts.py`:
   (whitespace split, punctuation kept, normalized comparison).
   It handles the known merge (`12 November` arrives as one token
   covering two narration words, by concatenating display words).
+  It also handles the known split: a narration word that TTS
+  splits into two tokens (`SKILL.md` arrives as `SKILL` + `md`).
+  The dot stays on the second token (`.md`), so no false sentence
+  end is created. Without the split handling, the alignment stalls
+  on the split word and every later token in that scene loses its
+  punctuation, which also breaks the sentence-first line grouping
+  (found live 15 Nov 2026 in AI Pekan Ini #01, scenes 2-3).
   A token that matches nothing keeps its own text, so the pipeline
   never crashes and that word falls back to v2 behaviour.
 - `words_per_line(words)`: sentence-first grouping. Words are
