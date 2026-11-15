@@ -1,183 +1,191 @@
 {
- "date_label": "15 November 2026",
- "last_posted": "2026-11-13",
- "products": [
-  {
-   "dur": "1 Bulan · Privat",
-   "name": "CapCut Pro",
-   "price": "27K",
-   "price_num": 27,
-   "sec": "CAPCUT",
-   "bot_id": 38
-  },
-  {
-   "dur": "6 Bulan",
-   "name": "Canva Edu",
-   "price": "11K",
-   "price_num": 11,
-   "sec": "CANVA",
-   "bot_id": 26
-  },
-  {
-   "dur": "1 Tahun",
-   "name": "Microsoft 365",
-   "price": "26K",
-   "price_num": 26,
-   "sec": "MICROSOFT",
-   "bot_id": 41
-  },
-  {
-   "dur": "7 Hari",
-   "name": "Wink",
-   "price": "6K",
-   "price_num": 6,
-   "sec": "WINK",
-   "bot_id": 68
-  },
-  {
-   "dur": "14 Hari",
-   "name": "Wink",
-   "price": "9K",
-   "price_num": 9,
-   "sec": "WINK",
-   "bot_id": 69
-  },
-  {
-   "dur": "7 Hari",
-   "name": "Meitu",
-   "price": "6K",
-   "price_num": 6,
-   "sec": "MEITU",
-   "bot_id": 70
-  },
-  {
-   "dur": "1 Tahun",
-   "name": "Alight Motion",
-   "price": "3K",
-   "price_num": 3,
-   "sec": "ALIGHT MOTION",
-   "bot_id": 71
-  },
-  {
-   "dur": "1 Tahun",
-   "name": "Viu",
-   "price": "5K",
-   "price_num": 5,
-   "sec": "VIU",
-   "bot_id": 72
-  },
-  {
-   "dur": "Lifetime",
-   "name": "Viu",
-   "price": "8K",
-   "price_num": 8,
-   "sec": "VIU",
-   "bot_id": 73
-  },
-  {
-   "dur": "1 Bulan",
-   "name": "Scribd",
-   "price": "7K",
-   "price_num": 7,
-   "sec": "SCRIBD",
-   "bot_id": 44
-  },
-  {
-   "dur": "30 Hari",
-   "name": "Crunchyroll",
-   "price": "6K",
-   "price_num": 6,
-   "sec": "CRUNCHYROLL",
-   "bot_id": 74
-  },
-  {
-   "dur": "1 Bulan",
-   "name": "Apple Music Head",
-   "price": "8K",
-   "price_num": 8,
-   "sec": "APPLE MUSIC",
-   "bot_id": 75
-  },
-  {
-   "dur": "18 Bulan (Invite)",
-   "name": "Gemini Pro",
-   "price": "14K",
-   "price_num": 14,
-   "sec": "GEMINI PRO",
-   "bot_id": 86
-  },
-  {
-   "dur": "7 Hari",
-   "name": "CapCut Pro",
-   "price": "7K",
-   "price_num": 7,
-   "sec": "CAPCUT",
-   "bot_id": 88
-  },
-  {
-   "dur": "1 Bulan",
-   "name": "Canva Pro",
-   "price": "5K",
-   "price_num": 5,
-   "sec": "CANVA",
-   "bot_id": 78
-  },
-  {
-   "dur": "12 Bulan",
-   "name": "Gemini Plus AI",
-   "price": "17K",
-   "price_num": 17,
-   "sec": "GEMINI PLUS",
-   "bot_id": 91
-  },
-  {
-   "sec": "GEMINI PLUS",
-   "dur": "6 Bulan",
-   "name": "Gemini Plus AI",
-   "price": "35K",
-   "price_num": 35,
-   "bot_id": 93
-  },
-  {
-   "dur": "Lifetime",
-   "name": "Canva Edu",
-   "price": "19K",
-   "price_num": 19,
-   "sec": "CANVA",
-   "bot_id": 76
-  },
-  {
-   "dur": "Selamanya",
-   "name": "Prompt Automation",
-   "price": "75K",
-   "price_num": 75,
-   "sec": "PROMPT",
-   "bot_id": 77
-  },
-  {
-   "sec": "DUOLINGO",
-   "dur": "1 Bulan",
-   "name": "Duolingo",
-   "price": "6,5K",
-   "price_num": 6.5,
-   "bot_id": 94
-  },
-  {
-   "sec": "DUOLINGO",
-   "dur": "1 Bulan · Privat",
-   "name": "Duolingo Super Family Plan",
-   "price": "5K",
-   "price_num": 5,
-   "bot_id": 109
-  },
-  {
-   "sec": "GEMINI FLOW",
-   "dur": "30 Hari",
-   "name": "Gemini AI 1000 Flow",
-   "price": "28K",
-   "price_num": 28,
-   "bot_id": 107
-  }
- ],
- "updated": "2026-11-15"
+  "date_label": "15 November 2026",
+  "last_posted": "2026-11-13",
+  "products": [
+    {
+      "dur": "1 Bulan · Privat",
+      "name": "CapCut Pro",
+      "price": "27K",
+      "price_num": 27,
+      "sec": "CAPCUT",
+      "bot_id": 38
+    },
+    {
+      "dur": "6 Bulan",
+      "name": "Canva Edu",
+      "price": "11K",
+      "price_num": 11,
+      "sec": "CANVA",
+      "bot_id": 26
+    },
+    {
+      "dur": "1 Tahun",
+      "name": "Microsoft 365",
+      "price": "26K",
+      "price_num": 26,
+      "sec": "MICROSOFT",
+      "bot_id": 41
+    },
+    {
+      "dur": "7 Hari",
+      "name": "Wink",
+      "price": "6K",
+      "price_num": 6,
+      "sec": "WINK",
+      "bot_id": 68
+    },
+    {
+      "dur": "14 Hari",
+      "name": "Wink",
+      "price": "9K",
+      "price_num": 9,
+      "sec": "WINK",
+      "bot_id": 69
+    },
+    {
+      "dur": "7 Hari",
+      "name": "Meitu",
+      "price": "6K",
+      "price_num": 6,
+      "sec": "MEITU",
+      "bot_id": 70
+    },
+    {
+      "dur": "1 Tahun",
+      "name": "Alight Motion",
+      "price": "3K",
+      "price_num": 3,
+      "sec": "ALIGHT MOTION",
+      "bot_id": 71
+    },
+    {
+      "dur": "1 Tahun",
+      "name": "Viu",
+      "price": "5K",
+      "price_num": 5,
+      "sec": "VIU",
+      "bot_id": 72
+    },
+    {
+      "dur": "Lifetime",
+      "name": "Viu",
+      "price": "8K",
+      "price_num": 8,
+      "sec": "VIU",
+      "bot_id": 73
+    },
+    {
+      "dur": "1 Bulan",
+      "name": "Scribd",
+      "price": "7K",
+      "price_num": 7,
+      "sec": "SCRIBD",
+      "bot_id": 44
+    },
+    {
+      "dur": "30 Hari",
+      "name": "Crunchyroll",
+      "price": "6K",
+      "price_num": 6,
+      "sec": "CRUNCHYROLL",
+      "bot_id": 74
+    },
+    {
+      "dur": "1 Bulan",
+      "name": "Apple Music Head",
+      "price": "8K",
+      "price_num": 8,
+      "sec": "APPLE MUSIC",
+      "bot_id": 75
+    },
+    {
+      "dur": "18 Bulan (Invite)",
+      "name": "Gemini Pro",
+      "price": "14K",
+      "price_num": 14,
+      "sec": "GEMINI PRO",
+      "bot_id": 86
+    },
+    {
+      "dur": "7 Hari",
+      "name": "CapCut Pro",
+      "price": "7K",
+      "price_num": 7,
+      "sec": "CAPCUT",
+      "bot_id": 88
+    },
+    {
+      "dur": "1 Bulan",
+      "name": "Canva Pro",
+      "price": "5K",
+      "price_num": 5,
+      "sec": "CANVA",
+      "bot_id": 78
+    },
+    {
+      "dur": "12 Bulan",
+      "name": "Gemini Plus AI",
+      "price": "17K",
+      "price_num": 17,
+      "sec": "GEMINI PLUS",
+      "bot_id": 91
+    },
+    {
+      "sec": "GEMINI PLUS",
+      "dur": "6 Bulan",
+      "name": "Gemini Plus AI",
+      "price": "35K",
+      "price_num": 35,
+      "bot_id": 93
+    },
+    {
+      "dur": "Lifetime",
+      "name": "Canva Edu",
+      "price": "19K",
+      "price_num": 19,
+      "sec": "CANVA",
+      "bot_id": 76
+    },
+    {
+      "dur": "Selamanya",
+      "name": "Prompt Automation",
+      "price": "75K",
+      "price_num": 75,
+      "sec": "PROMPT",
+      "bot_id": 77
+    },
+    {
+      "sec": "DUOLINGO",
+      "dur": "1 Bulan",
+      "name": "Duolingo",
+      "price": "6,5K",
+      "price_num": 6.5,
+      "bot_id": 94
+    },
+    {
+      "sec": "DUOLINGO",
+      "dur": "1 Bulan · Privat",
+      "name": "Duolingo Super Family Plan",
+      "price": "5K",
+      "price_num": 5,
+      "bot_id": 109
+    },
+    {
+      "sec": "GEMINI FLOW",
+      "dur": "30 Hari",
+      "name": "Gemini AI 1000 Flow",
+      "price": "28K",
+      "price_num": 28,
+      "bot_id": 107
+    },
+    {
+      "sec": "STRAVA",
+      "dur": "1 Bulan",
+      "name": "Strava Premium",
+      "price": "9K",
+      "price_num": 9,
+      "bot_id": 110
+    }
+  ],
+  "updated": "2026-11-15"
 }

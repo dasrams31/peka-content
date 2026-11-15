@@ -177,6 +177,14 @@
    "price": "28K",
    "price_num": 28,
    "bot_id": 107
+  },
+  {
+   "sec": "STRAVA",
+   "dur": "1 Bulan",
+   "name": "Strava Premium",
+   "price": "9K",
+   "price_num": 9,
+   "bot_id": 110
   }
  ],
  "updated": "2026-11-15"
