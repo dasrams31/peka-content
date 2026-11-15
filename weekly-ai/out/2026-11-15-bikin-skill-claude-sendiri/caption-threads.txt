@@ -1,0 +1,7 @@
+Lo capek ngulang instruksi yang sama ke Claude tiap chat? Ada fitur namanya Skill: satu file SKILL.md berisi nama, deskripsi, dan langkah kerja yang lo mau. Sekali bikin, Claude pakai otomatis tiap tugasnya cocok.
+
+Langkah pertamanya: bikin folder, isi file SKILL.md dengan nama dan deskripsi yang jelas, lalu tulis instruksinya.
+
+Skill pertama lo buat apa, nulis caption atau ngerapihin data?
+
+#AI

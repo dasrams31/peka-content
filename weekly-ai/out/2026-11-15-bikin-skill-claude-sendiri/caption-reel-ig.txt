@@ -1,0 +1,9 @@
+Lo capek ngulang-ngulang instruksi yang sama ke Claude tiap chat?
+
+Ternyata ada fitur namanya Skill. Sekali bikin, Claude kerja dengan cara lo, otomatis, tanpa perlu diulang-ulang. Caranya: bikin satu file SKILL.md, isi nama dan deskripsi yang jelas, terus pasang di Claude Code atau upload sebagai ZIP di aplikasi Claude. Repo resmi Anthropic isinya 19 skill contoh, tinggal contek polanya.
+
+Skill pertama lo buat apa? Nulis caption, ngerapihin data, atau yang lain?
+
+Linknya ada di videonya.
+
+#AI #AIPekanIni #Claude #SkillClaude

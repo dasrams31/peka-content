@@ -35,6 +35,21 @@ def _norm(s):
     return re.sub(r"[^0-9a-zA-Z]", "", s).lower()
 
 
+def _split_raw(raw, n_alnum):
+    """Split a raw display word after its n-th alphanumeric char.
+
+    E.g. _split_raw("SKILL.md:", 5) -> ("SKILL", ".md:"). Used when
+    TTS split one narration word across two tokens.
+    """
+    seen = 0
+    for i, ch in enumerate(raw):
+        if ch.isalnum():
+            seen += 1
+            if seen == n_alnum:
+                return raw[: i + 1], raw[i + 1 :]
+    return raw, ""
+
+
 def attach_punctuation(words, narration):
     """Edge TTS WordBoundary tokens strip punctuation ("sekarang" has no
     period, "kemarin," has no comma), so the karaoke never showed it
@@ -42,12 +57,19 @@ def attach_punctuation(words, narration):
     tokens it belongs to by aligning TTS tokens back onto the narration
     words (whitespace split, punctuation kept). Handles the known
     merges: "12 November" arrives as one token covering two narration
-    words. A token that matches nothing keeps its own text, so the
-    pipeline never crashes and the display falls back to v2 behaviour
-    for that word."""
+    words. Also handles the known splits: "SKILL.md" arrives as two
+    tokens ("SKILL" + "md"); the dot stays on the second token so no
+    false sentence end is created. A token that matches nothing keeps
+    its own text, so the pipeline never crashes and the display falls
+    back to v2 behaviour for that word."""
     display = narration.split()
     di = 0
-    for w in words:
+    pending = None  # remainder text for the next token (split-word case)
+    for idx, w in enumerate(words):
+        if pending is not None:
+            w["text"] = pending
+            pending = None
+            continue
         target = _norm(w["text"])
         if not target:
             continue
@@ -61,10 +83,27 @@ def attach_punctuation(words, narration):
                 break
         if acc == target and used:
             w["text"] = " ".join(used)
-        elif used:
-            # No match (e.g. TTS split a narration word): rewind so the
-            # display words stay available for the following tokens.
+            continue
+        # No match: rewind so the display words stay available.
+        if used:
             di -= len(used)
+        # Split case: TTS split one narration word into this token plus
+        # the next (e.g. "SKILL.md" -> "SKILL" + "md"). Without this,
+        # the alignment stalls on the split word and every later token
+        # in the scene loses its punctuation (and the sentence-first
+        # line grouping then straddles the sentence boundary).
+        if di < len(display):
+            disp = display[di]
+            dn = _norm(disp)
+            if dn.startswith(target) and len(dn) > len(target):
+                rest = dn[len(target):]
+                nxt = words[idx + 1] if idx + 1 < len(words) else None
+                if nxt is not None and _norm(nxt["text"]) == rest:
+                    head, tail = _split_raw(disp, len(target))
+                    w["text"] = head
+                    pending = tail
+                    di += 1
+                    continue
     return words
 
 

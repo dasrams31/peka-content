@@ -1,0 +1,43 @@
+AI Pekan Ini #01 — Bikin Skill Claude Sendiri (TUTORIAL)
+Tanggal: 2026-11-15
+Semua fakta di bawah diverifikasi dari sumber resmi pada 15 Nov 2026.
+
+1. Anthropic — Agent Skills overview (docs resmi)
+   https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+   - Skill = resource filesystem yang bisa dipakai ulang; Claude memakai
+     otomatis saat relevan dengan permintaan.
+   - Custom Skills: dibuat di Claude Code, diunggah lewat API, atau
+     ditambahkan di pengaturan claude.ai.
+   - Skill = direktori berisi SKILL.md; frontmatter YAML wajib: name
+     (maks. 64 karakter, huruf kecil/angka/hyphen, tanpa kata
+     "anthropic"/"claude") dan description (maks. 1.024 karakter,
+     wajib berisi apa yang dilakukan skill DAN kapan dipakai).
+   - Progressive disclosure: metadata ~100 token saat startup, isi
+     SKILL.md di bawah 5.000 token saat aktif, resource lain saat perlu.
+   - Claude Code: skill di ~/.claude/skills/ (personal) atau
+     .claude/skills/ (proyek); skill dokumen bawaan TIDAK tersedia
+     di Claude Code.
+   - claude.ai: upload skill sebagai ZIP; paket Pro, Max, Team,
+     Enterprise dengan code execution aktif.
+   - Skill kustom TIDAK sinkron antar permukaan (claude.ai / API /
+     Claude Code terpisah).
+   - Pre-built: pptx, xlsx, docx, pdf.
+
+2. Anthropic — How to create custom skills (Help Center resmi)
+   https://support.claude.com/en/articles/12512198-creating-custom-skills
+   - Setiap skill = direktori berisi minimal skill.md dengan frontmatter
+     name + description; isi Markdown adalah level kedua (instruksi).
+   - Paket skill: ZIP berisi folder skill itu sendiri (bukan file
+     langsung di root ZIP).
+   - Praktik terbaik: fokus satu alur kerja, deskripsi jelas, mulai
+     sederhana, pakai contoh, uji bertahap.
+
+3. Anthropic — github.com/anthropics/skills (repo publik resmi)
+   https://github.com/anthropics/skills
+   - 194.863 stars, 63 commit (per 15 Nov 2026).
+   - 19 skill contoh + template/SKILL.md + spesifikasi Agent Skills
+     + marketplace plugin Claude Code (document-skills, example-skills).
+   - Skill dokumen (docx, pdf, pptx, xlsx) adalah skill yang sama
+     dengan yang menjalankan fitur dokumen Claude di produksi.
+   - Shortlink edisi ini: https://s.peka.ai.id/cYtDfo (admin-DB,
+     user_id 1, terverifikasi 307 ke repo di atas).

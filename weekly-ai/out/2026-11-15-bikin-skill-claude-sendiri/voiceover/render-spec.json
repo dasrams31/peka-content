@@ -1,0 +1,1119 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "BIKIN SKILL CLAUDE",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "TUTORIAL",
+      "headline": [
+        "BIKIN SKILL",
+        "CLAUDE SENDIRI"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Lo capek ngulang-ngulang instruksi yang sama ke Claude di tiap chat? Ada fitur namanya Skill, dan lo bisa bikin sendiri.",
+      "pose": "wave",
+      "sub": "Sekali bikin, Claude kerja dengan cara lo."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Nama, deskripsi,",
+        "langkah kerja yang lo mau."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Skill itu satu folder kecil berisi file SKILL.md: nama, deskripsi, dan langkah kerja yang lo mau. Sekali bikin, Claude pakai otomatis tiap tugasnya cocok.",
+      "pose": "present",
+      "stat": "1 FILE",
+      "stat_label": "SKILL.md, itu aja intinya"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Deskripsi maks. 1.024 karakter,",
+        "itu kuncinya."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Bikin folder, isi file SKILL.md dengan nama dan deskripsi yang jelas, lalu tulis instruksinya. Deskripsi itu kuncinya, soalnya dari situ Claude mutusin pakai skill lo atau nggak.",
+      "pose": "base",
+      "stat": "64",
+      "stat_label": "Karakter maks. nama skill"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Claude Code: taruh di folder <span class=\"mono\">skills</span>.",
+        "Aplikasi Claude: upload <b>ZIP</b>.",
+        "Di menu Customize, Skills."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Pasangnya gimana? Di Claude Code, taruh foldernya di folder skills. Di aplikasi Claude, upload sebagai ZIP di menu Customize, Skills.",
+      "pose": "present"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Dari bikin dokumen",
+        "sampai ngetes web."
+      ],
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Mau contoh? Repo resmi Anthropic di GitHub isinya 19 skill, dari bikin dokumen sampai ngetes web. Tinggal contek polanya, terus ubah sesuai kebutuhan lo.",
+      "pose": "base",
+      "stat": "19",
+      "stat_label": "Skill contoh di repo resmi Anthropic"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Skill pertama lo",
+        "buat apa?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Skill pertama lo buat apa? Nulis caption, ngerapihin data, atau yang lain? Follow Peka AI kalau kontennya kepakai.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/cYtDfo"
+    }
+  ],
+  "theme": {
+    "accent": "#FFD60A",
+    "accent2": "#FFFFFF",
+    "bar_other": "#6E6E68",
+    "bar_track": "#262626",
+    "bg": "#111111",
+    "bg2": "#181818",
+    "card": "#1C1C1C",
+    "card_border": "#36362E",
+    "chip_bg": "#FFD60A",
+    "chip_text": "#111111",
+    "description": "Current Peka brand identity: Peka yellow on black.",
+    "dim": "#A8A8A0",
+    "glow": "rgba(255,214,10,0.22)",
+    "glow2": "rgba(255,214,10,0.08)",
+    "grid": "rgba(255,214,10,0.07)",
+    "label": "Peka Yellow",
+    "mascot": "bottom-right",
+    "mono": "#FFD60A",
+    "progress": "#FFD60A",
+    "text": "#F5F5F0"
+  },
+  "title": "AI Pekan Ini #01: Bikin Skill Claude Sendiri",
+  "theme_name": "peka-yellow",
+  "words": [
+    {
+      "text": "Lo",
+      "start": 0.095,
+      "end": 0.225,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "capek",
+      "start": 0.225,
+      "end": 0.465,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "ngulang-ngulang",
+      "start": 0.465,
+      "end": 0.785,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "instruksi",
+      "start": 0.785,
+      "end": 1.165,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "yang",
+      "start": 1.165,
+      "end": 1.245,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "sama",
+      "start": 1.245,
+      "end": 1.435,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "ke",
+      "start": 1.435,
+      "end": 1.505,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Claude",
+      "start": 1.505,
+      "end": 1.695,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "di",
+      "start": 1.695,
+      "end": 1.765,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "tiap",
+      "start": 1.765,
+      "end": 1.925,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "chat?",
+      "start": 1.925,
+      "end": 2.255,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Ada",
+      "start": 2.92,
+      "end": 3.08,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "fitur",
+      "start": 3.08,
+      "end": 3.3,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "namanya",
+      "start": 3.3,
+      "end": 3.56,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Skill,",
+      "start": 3.56,
+      "end": 3.94,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "dan",
+      "start": 4.16,
+      "end": 4.33,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "lo",
+      "start": 4.33,
+      "end": 4.42,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "bisa",
+      "start": 4.42,
+      "end": 4.59,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "bikin",
+      "start": 4.59,
+      "end": 4.77,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "sendiri.",
+      "start": 4.77,
+      "end": 5.21,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Skill",
+      "start": 6.303999999999999,
+      "end": 6.504,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "itu",
+      "start": 6.504,
+      "end": 6.664,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "satu",
+      "start": 6.664,
+      "end": 6.843999999999999,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "folder",
+      "start": 6.843999999999999,
+      "end": 7.064,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "kecil",
+      "start": 7.064,
+      "end": 7.304,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "berisi",
+      "start": 7.304,
+      "end": 7.544,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "file",
+      "start": 7.544,
+      "end": 7.724,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "SKILL",
+      "start": 7.724,
+      "end": 8.033999999999999,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": ".md:",
+      "start": 8.054,
+      "end": 8.484,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "nama,",
+      "start": 8.693999999999999,
+      "end": 9.144,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "deskripsi,",
+      "start": 9.324,
+      "end": 9.974,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "dan",
+      "start": 10.154,
+      "end": 10.324,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "langkah",
+      "start": 10.324,
+      "end": 10.533999999999999,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "kerja",
+      "start": 10.533999999999999,
+      "end": 10.783999999999999,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "yang",
+      "start": 10.783999999999999,
+      "end": 10.924,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "lo",
+      "start": 10.924,
+      "end": 11.014,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "mau.",
+      "start": 11.014,
+      "end": 11.324,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Sekali",
+      "start": 11.989,
+      "end": 12.269,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "bikin,",
+      "start": 12.269,
+      "end": 12.669,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Claude",
+      "start": 12.908999999999999,
+      "end": 13.099,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "pakai",
+      "start": 13.099,
+      "end": 13.299,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "otomatis",
+      "start": 13.299,
+      "end": 13.699,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "tiap",
+      "start": 13.699,
+      "end": 13.859,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "tugasnya",
+      "start": 13.859,
+      "end": 14.169,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "cocok.",
+      "start": 14.169,
+      "end": 14.599,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Bikin",
+      "start": 15.676,
+      "end": 15.916,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "folder,",
+      "start": 15.916,
+      "end": 16.346,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "isi",
+      "start": 16.536,
+      "end": 16.756,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "file",
+      "start": 16.756,
+      "end": 16.956,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "SKILL",
+      "start": 16.956,
+      "end": 17.196,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": ".md",
+      "start": 17.196,
+      "end": 17.466,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "dengan",
+      "start": 17.466,
+      "end": 17.656,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "nama",
+      "start": 17.656,
+      "end": 17.866,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "dan",
+      "start": 17.866,
+      "end": 17.996000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "deskripsi",
+      "start": 17.996000000000002,
+      "end": 18.346,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "yang",
+      "start": 18.346,
+      "end": 18.446,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "jelas,",
+      "start": 18.446,
+      "end": 18.826,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "lalu",
+      "start": 19.016000000000002,
+      "end": 19.196,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "tulis",
+      "start": 19.196,
+      "end": 19.426000000000002,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "instruksinya.",
+      "start": 19.426000000000002,
+      "end": 20.116,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Deskripsi",
+      "start": 20.781,
+      "end": 21.201,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "itu",
+      "start": 21.201,
+      "end": 21.321,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "kuncinya,",
+      "start": 21.321,
+      "end": 21.851,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "soalnya",
+      "start": 22.071,
+      "end": 22.401,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "dari",
+      "start": 22.401,
+      "end": 22.521,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "situ",
+      "start": 22.521,
+      "end": 22.711,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Claude",
+      "start": 22.711,
+      "end": 22.861,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "mutusin",
+      "start": 22.861,
+      "end": 23.211,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "pakai",
+      "start": 23.211,
+      "end": 23.391000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "skill",
+      "start": 23.391000000000002,
+      "end": 23.581000000000003,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "lo",
+      "start": 23.581000000000003,
+      "end": 23.691000000000003,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "atau",
+      "start": 23.691000000000003,
+      "end": 23.871000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "nggak.",
+      "start": 23.871000000000002,
+      "end": 24.171,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "Pasangnya",
+      "start": 25.2615,
+      "end": 25.6415,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "gimana?",
+      "start": 25.6415,
+      "end": 26.151500000000002,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Di",
+      "start": 26.809,
+      "end": 26.969,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Claude",
+      "start": 26.969,
+      "end": 27.169,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Code,",
+      "start": 27.169,
+      "end": 27.499000000000002,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "taruh",
+      "start": 27.709000000000003,
+      "end": 27.889000000000003,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "foldernya",
+      "start": 27.889000000000003,
+      "end": 28.259,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "di",
+      "start": 28.259,
+      "end": 28.329,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "folder",
+      "start": 28.329,
+      "end": 28.569000000000003,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "skills.",
+      "start": 28.569000000000003,
+      "end": 29.029000000000003,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Di",
+      "start": 29.704,
+      "end": 29.844,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "aplikasi",
+      "start": 29.844,
+      "end": 30.254,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "Claude,",
+      "start": 30.254,
+      "end": 30.584000000000003,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "upload",
+      "start": 30.824,
+      "end": 31.094,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "sebagai",
+      "start": 31.094,
+      "end": 31.364,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "ZIP",
+      "start": 31.364,
+      "end": 31.774,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "di",
+      "start": 31.774,
+      "end": 31.854000000000003,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "menu",
+      "start": 31.854000000000003,
+      "end": 31.994,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Customize,",
+      "start": 31.994,
+      "end": 32.644000000000005,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Skills.",
+      "start": 32.824,
+      "end": 33.354,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Mau",
+      "start": 34.444,
+      "end": 34.664,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "contoh?",
+      "start": 34.664,
+      "end": 35.184000000000005,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Repo",
+      "start": 35.844,
+      "end": 36.074,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "resmi",
+      "start": 36.074,
+      "end": 36.304,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Anthropic",
+      "start": 36.304,
+      "end": 36.674,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "di",
+      "start": 36.674,
+      "end": 36.764,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "GitHub",
+      "start": 36.764,
+      "end": 37.084,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "isinya",
+      "start": 37.084,
+      "end": 37.344,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "19",
+      "start": 37.344,
+      "end": 37.734,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "skill,",
+      "start": 37.734,
+      "end": 38.094,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "dari",
+      "start": 38.314,
+      "end": 38.474000000000004,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "bikin",
+      "start": 38.474000000000004,
+      "end": 38.644,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "dokumen",
+      "start": 38.644,
+      "end": 38.944,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "sampai",
+      "start": 38.944,
+      "end": 39.194,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "ngetes",
+      "start": 39.194,
+      "end": 39.454,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "web.",
+      "start": 39.454,
+      "end": 39.764,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "Tinggal",
+      "start": 40.439,
+      "end": 40.709,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "contek",
+      "start": 40.709,
+      "end": 40.939,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "polanya,",
+      "start": 40.939,
+      "end": 41.449,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "terus",
+      "start": 41.659,
+      "end": 41.829,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "ubah",
+      "start": 41.829,
+      "end": 42.039,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "sesuai",
+      "start": 42.039,
+      "end": 42.279,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "kebutuhan",
+      "start": 42.279,
+      "end": 42.649,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "lo.",
+      "start": 42.649,
+      "end": 42.919,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Skill",
+      "start": 44.0055,
+      "end": 44.2755,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "pertama",
+      "start": 44.2755,
+      "end": 44.5655,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "lo",
+      "start": 44.5655,
+      "end": 44.6455,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "buat",
+      "start": 44.6455,
+      "end": 44.7855,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "apa?",
+      "start": 44.7855,
+      "end": 45.185500000000005,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "Nulis",
+      "start": 45.843,
+      "end": 46.073,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "caption,",
+      "start": 46.073,
+      "end": 46.493,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "ngerapihin",
+      "start": 46.703,
+      "end": 47.063,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "data,",
+      "start": 47.063,
+      "end": 47.483000000000004,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "atau",
+      "start": 47.673,
+      "end": 47.873000000000005,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "yang",
+      "start": 47.873000000000005,
+      "end": 47.983000000000004,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "lain?",
+      "start": 47.983000000000004,
+      "end": 48.323,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "Follow",
+      "start": 48.9955,
+      "end": 49.295500000000004,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "Peka",
+      "start": 49.295500000000004,
+      "end": 49.5155,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "AI",
+      "start": 49.5155,
+      "end": 49.7155,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "kalau",
+      "start": 49.7155,
+      "end": 49.8855,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "kontennya",
+      "start": 49.8855,
+      "end": 50.185500000000005,
+      "scene": 5,
+      "line": 23
+    },
+    {
+      "text": "kepakai.",
+      "start": 50.185500000000005,
+      "end": 50.6755,
+      "scene": 5,
+      "line": 23
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 5.904
+    },
+    {
+      "start": 5.904,
+      "end": 15.276
+    },
+    {
+      "start": 15.276,
+      "end": 24.864
+    },
+    {
+      "start": 24.862,
+      "end": 34.044
+    },
+    {
+      "start": 34.044,
+      "end": 43.608
+    },
+    {
+      "start": 43.605,
+      "end": 51.348
+    }
+  ],
+  "total": 52.148
+}
