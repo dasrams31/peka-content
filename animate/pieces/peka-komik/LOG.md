@@ -1,3 +1,7 @@
 # LOG: Peka AI — Bingung pilih AI? (komik)
 
 - 2026-11-16: Piece created from peka-contoh (same story, cues, score, morph). Scenes rewritten for a comic look: panel frame, halftone, speech bubbles, burst, Piko as a vector. User asked 16 Nov 07:31 WIB whether comic + Peka colors + Piko is possible; no reference image was given, so standard comic conventions were used as the look check.
+- 2026-11-16: Look check round 1 (stills 2.5s/7.0s) caught 4 defects, all fixed in code: burst text "BANYAK" overflowed the star (bigger star, smaller text); morning ground was the same yellow as Piko so he rendered outline-only (ground now cream, sun yellow); a "?" bubble hid behind the tag; a checkmark overlapped Piko's stem.
+- 2026-11-16: Export OK: 192/192 frames in 25.8s, renders/final.mp4 + renders/share.mp4 (1080x1920 yuv420p 24fps 8.0s, 3.2 MB).
+- 2026-11-16: Review PASS — cuts on grid PASS, morph at 4s on grid PASS, story arc PASS (gift loudest p90 -14.4 vs -15.6), text PASS (0 cut-off/overlap, 0 in safe zone after moving the right "AI?" bubble clear of the phone UI strip), dead beats PASS, loudest 5.6s in payoff act, -14.5 LUFS integrated, true peak -2.2 dBFS. Known minor: silence before the loudest hit 0.2s (craft wants 0.5-4s), same as peka-contoh.
+- 2026-11-16: Still a look check, not a posted edition. Next step is the user's call: approve this comic look (then it can become a reusable style + a real edition), ask for changes, or keep it as a one-off example.

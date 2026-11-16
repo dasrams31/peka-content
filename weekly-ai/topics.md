@@ -8,7 +8,7 @@ terverifikasi, lewati ke topik berikut dan tulis alasannya di sini.
 
 ## Antrean
 
-- [ ] #01 [TUTORIAL] Bikin skill Claude sendiri — dari repo skills:
+- [x] #01 [TUTORIAL] Bikin skill Claude sendiri - TAYANG 2026-11-16 (repost dari chat; run 15 Nov gagal) - dari repo skills:
   cara bikin satu skill + cara pasangnya, buat siapa skill ini berguna.
   Verifikasi: docs Anthropic tentang Agent Skills + repo anthropics/skills.
 - [ ] #02 [BERITA] Agentic AI: kenapa semua model berlomba jadi agen —

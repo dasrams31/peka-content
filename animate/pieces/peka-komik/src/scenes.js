@@ -92,7 +92,7 @@ function sceneNight() {
   halftone(LX(0.62), LY(0.02), W, LY(0.3), 46 * u, 7 * u, 'rgba(255,255,255,0.35)');
   cut(ellipsePts(mx, my, mr, mr, 0, 30), '#f6ecc8', { key: 'moon', line: INK, lw: 6 * u });
   // floating "?" bubbles: too many AI choices
-  const qs = [[0.16, 0.24, 'AI?'], [0.56, 0.17, '?'], [0.84, 0.44, 'AI?'], [0.10, 0.46, '?']];
+  const qs = [[0.16, 0.24, 'AI?'], [0.56, 0.17, '?'], [0.80, 0.44, 'AI?'], [0.10, 0.46, '?']];
   qs.forEach(([fx, fy, str], i) => {
     const k = popS(TIMELINE.cues.wake + i * 0.15); if (k <= 0) return;
     const bx = LX(fx), by = LY(fy);
