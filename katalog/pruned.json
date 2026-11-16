@@ -70,5 +70,15 @@
   "bot_id": 114,
   "removed_at": "2026-11-16",
   "reason": "sold out"
+ },
+ {
+  "sec": "GEMINI FLOW",
+  "dur": "30 Hari",
+  "name": "Gemini AI 1000 Flow",
+  "price": "28K",
+  "price_num": 28,
+  "bot_id": 107,
+  "removed_at": "2026-11-16",
+  "reason": "sold out"
  }
 ]
