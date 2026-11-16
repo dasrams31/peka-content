@@ -1,3 +1,7 @@
 # LOG: Peka AI — Bingung pilih AI?
 
 - 2026-11-16: Piece created from the skill's `templates/piece/` starter. Only copy changed (captions, tags, titles, brief); scenes, bridges and score kept from the template. Style cut-paper, 8s, 1080x1920.
+- 2026-11-16: Build OK (index.html, 1255 lines, syntax ok, no external assets). Export OK: 192/192 frames in 34.9s (~182ms/frame), renders/final.mp4 (13.1 MB) + renders/share.mp4 (3.5 MB), h264 1080x1920 yuv420p 24fps 8.0s.
+- 2026-11-16: Review PASS — cuts on grid PASS, morph at 4s on grid PASS, story arc PASS (gift loudest p90 -14.4 vs -15.6), text PASS (0 cut-off/overlap), dead beats PASS, loudest 5.6s in payoff act, -14.5 LUFS integrated, true peak -2.2 dBFS. Note: silence before the loudest hit only 0.2s (craft wants 0.5-4s) — minor, not a failure. Contact sheets viewed: night spark wakes, caption writes on, moon morphs to sun, morning garden with peka.ai.id tag.
+  - Per-shot: shot 1 (Bingung pilih AI?) PASS, shot 2 (Peka pilihkan yang cocok) PASS.
+- Install notes: skill at ~/workspace/custom-skills/animate (copy of cth9191/animate plugins/animate/skills/animate, commit 7e5eb56f). Node playwright 1.65.1 installed globally; Chromium 1255 downloaded via curl -C - (Playwright's own downloader kept failing near 90% through the proxy) and unpacked into ~/.cache/ms-playwright/chromium-1255 + chromium_headless_shell-1255. System /opt/meta-chromium/chrome (Muse Browser 157) does NOT start headless (needs Hatch WebGL domain policy) — not usable as a substitute.
