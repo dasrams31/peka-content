@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 27,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "cocok": "Kamu yang pakai banyak coding agent dan mau satu tempat buat cari skill siap pakai.",
+      "install": "npx skills add LeoYeAI/agent-master-skills -g",
+      "name": "LeoYeAI/agent-master-skills",
+      "penjelasan": "Kumpulan kurasi lebih dari 2700 skill agent terbaik, dari AI sampai finance. Semua skill harness-agnostic, bisa dipakai di Hermes dan agent lain.",
+      "shortlink": "https://s.peka.ai.id/g5Hcpz",
+      "stars": "2RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-16/shots/LeoYeAI-agent-master-skills.png"
+    },
+    {
+      "cocok": "Kamu yang mau agent Hermes-mu ingat konteks lama tanpa kirim data ke cloud.",
+      "install": "pip install mnemosyne-memory",
+      "name": "mnemosyne-oss/mnemosyne",
+      "penjelasan": "Memori AI tanpa cloud berbasis SQLite, satu dependensi Python saja. Agent kamu ingat konteks antar sesi tanpa kirim data ke mana pun.",
+      "shortlink": "https://s.peka.ai.id/vRBXgZ",
+      "stars": "4RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-16/shots/mnemosyne-oss-mnemosyne.png"
+    },
+    {
+      "cocok": "Kamu security researcher yang mau agent bantuin cari celah keamanan secara otonom.",
+      "install": "npm install -g cybermes-mcp",
+      "name": "Zyrexnn/Cybermes",
+      "penjelasan": "Framework bug bounty dan red teaming otonom yang ditenagai Hermes Agent. Skill reasoning keamanan plus orkestrasi multi-model LLM buat uji keamanan sendiri.",
+      "shortlink": "https://s.peka.ai.id/xo3m4V",
+      "stars": "1RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-16/shots/Zyrexnn-Cybermes.png"
+    },
+    {
+      "cocok": "Kamu marketer atau founder yang mau agent bantuin riset pasar dan SEO.",
+      "install": "npx skills add unifapi-agent/agents -g",
+      "name": "unifapi-agent/agents",
+      "penjelasan": "Satu plugin berisi agent marketing buat Claude, ChatGPT, Codex, OpenClaw, dan Hermes. Bisa audit SEO, cek visibilitas AI, sampai competitive intelligence.",
+      "shortlink": "https://s.peka.ai.id/5BXsft",
+      "stars": "618",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-16/shots/unifapi-agent-agents.png"
+    },
+    {
+      "cocok": "Kamu pengguna Hermes yang mau nambah fitur goal, bridge antar agent, dan kontrol biaya.",
+      "install": "npx skills add 42-evey/hermes-plugins -g",
+      "name": "42-evey/hermes-plugins",
+      "penjelasan": "Plugin custom buat hermes-agent: goal management, inter-agent bridge, sampai cost control. Nambah kontrol Hermes di luar bawaan, tinggal pasang.",
+      "shortlink": "https://s.peka.ai.id/fxirbO",
+      "stars": "553",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-16/shots/42-evey-hermes-plugins.png"
+    }
+  ]
+}
