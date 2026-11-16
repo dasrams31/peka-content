@@ -1,0 +1,27 @@
+1
+00:00:00,300 --> 00:00:02,478
+AI buat skripsi, mana yang tier S?
+
+2
+00:00:03,078 --> 00:00:06,139
+Enam nama AI ngepung, tapi batas gratisnya beda-beda.
+
+3
+00:00:06,739 --> 00:00:10,032
+Ada yang gratis selamanya, ada yang sekali pakai langsung habis.
+
+4
+00:00:12,282 --> 00:00:15,247
+Elicit dan ChatGPT tier S. Cek batas gratisnya.
+
+5
+00:00:16,047 --> 00:00:19,529
+NotebookLM dan SciSpace tier A, lima puluh sumber per notebook.
+
+6
+00:00:20,329 --> 00:00:24,323
+Gemini tier B, Gamma tier D, empat ratus kredit sekali saja.
+
+7
+00:00:25,023 --> 00:00:28,566
+Cek kuota dulu sebelum berharap. Peka yang pilihkan.

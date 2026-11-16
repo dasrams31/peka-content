@@ -3,7 +3,7 @@
 - 2026-11-16: 30s rebuild of the 8s episode (user rejected 8s as too
   short, 09:41; chose 30s over 60s, 10:14). Same approved `peka-komik`
   look, same terminal-green variant, same panel layouts (verified in
-  the 8s version). New: 7 voice lines (61 words), morph moved to 14.0s,
+  the 8s version). New: 7 voice lines (59 words), morph moved to 14.0s,
   dialogue advances through bubble swaps + caption-strip swaps
   (`stripAt`), the terminal stages DONE/"1 file jadi" with l4 and the
   benchmark line with l5, one pluck per dialogue pop, a late "MIT?"

@@ -3,7 +3,7 @@
 - 2026-11-16: 30s rebuild of the 8s episode (user rejected 8s as too
   short, 09:41; chose 30s over 60s, 10:14). Same approved `peka-komik`
   look, same cream + red tier variant, same panel layouts (verified in
-  the 8s version). New: 7 voice lines (63 words), morph moved to 12.0s
+  the 8s version). New: 7 voice lines (62 words), morph moved to 12.0s
   (the night era holds three short lines, so it ends earlier than
   #01/#02's 14.0s), chips pop in two per night line, tier rows pop in
   with the morning line that names them (S l4, A l5, B + D l6), dialogue
