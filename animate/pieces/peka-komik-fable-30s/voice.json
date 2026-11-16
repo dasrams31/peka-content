@@ -1,0 +1,472 @@
+{
+ "duration": 29.89,
+ "lead": 0.3,
+ "tail": 0.8,
+ "lines": [
+  {
+   "id": "l1",
+   "text": "Model termurah, tapi jadi nomor satu?",
+   "t0": 0.3,
+   "t1": 2.579,
+   "take": "voice/l1.mp3",
+   "words": [
+    {
+     "w": "Model",
+     "t0": 0.3,
+     "t1": 0.68,
+     "est": true
+    },
+    {
+     "w": "termurah,",
+     "t0": 0.68,
+     "t1": 1.25,
+     "est": true
+    },
+    {
+     "w": "tapi",
+     "t0": 1.25,
+     "t1": 1.566,
+     "est": true
+    },
+    {
+     "w": "jadi",
+     "t0": 1.566,
+     "t1": 1.883,
+     "est": true
+    },
+    {
+     "w": "nomor",
+     "t0": 1.883,
+     "t1": 2.262,
+     "est": true
+    },
+    {
+     "w": "satu?",
+     "t0": 2.262,
+     "t1": 2.579,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "text": "Claude Fable 5.2 baru rilis sembilan November, harganya turun dua puluh persen.",
+   "t0": 3.179,
+   "t1": 7.56,
+   "take": "voice/l2.mp3",
+   "words": [
+    {
+     "w": "Claude",
+     "t0": 3.179,
+     "t1": 3.577,
+     "est": true
+    },
+    {
+     "w": "Fable",
+     "t0": 3.577,
+     "t1": 3.919,
+     "est": true
+    },
+    {
+     "w": "5.2",
+     "t0": 3.919,
+     "t1": 4.089,
+     "est": true
+    },
+    {
+     "w": "baru",
+     "t0": 4.089,
+     "t1": 4.374,
+     "est": true
+    },
+    {
+     "w": "rilis",
+     "t0": 4.374,
+     "t1": 4.715,
+     "est": true
+    },
+    {
+     "w": "sembilan",
+     "t0": 4.715,
+     "t1": 5.227,
+     "est": true
+    },
+    {
+     "w": "November,",
+     "t0": 5.227,
+     "t1": 5.739,
+     "est": true
+    },
+    {
+     "w": "harganya",
+     "t0": 5.739,
+     "t1": 6.251,
+     "est": true
+    },
+    {
+     "w": "turun",
+     "t0": 6.251,
+     "t1": 6.593,
+     "est": true
+    },
+    {
+     "w": "dua",
+     "t0": 6.593,
+     "t1": 6.82,
+     "est": true
+    },
+    {
+     "w": "puluh",
+     "t0": 6.82,
+     "t1": 7.162,
+     "est": true
+    },
+    {
+     "w": "persen.",
+     "t0": 7.162,
+     "t1": 7.56,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "text": "Delapan dolar untuk input, empat puluh dolar untuk output, per juta token.",
+   "t0": 8.16,
+   "t1": 12.279,
+   "take": "voice/l3.mp3",
+   "words": [
+    {
+     "w": "Delapan",
+     "t0": 8.16,
+     "t1": 8.618,
+     "est": true
+    },
+    {
+     "w": "dolar",
+     "t0": 8.618,
+     "t1": 8.961,
+     "est": true
+    },
+    {
+     "w": "untuk",
+     "t0": 8.961,
+     "t1": 9.304,
+     "est": true
+    },
+    {
+     "w": "input,",
+     "t0": 9.304,
+     "t1": 9.647,
+     "est": true
+    },
+    {
+     "w": "empat",
+     "t0": 9.647,
+     "t1": 9.991,
+     "est": true
+    },
+    {
+     "w": "puluh",
+     "t0": 9.991,
+     "t1": 10.334,
+     "est": true
+    },
+    {
+     "w": "dolar",
+     "t0": 10.334,
+     "t1": 10.677,
+     "est": true
+    },
+    {
+     "w": "untuk",
+     "t0": 10.677,
+     "t1": 11.02,
+     "est": true
+    },
+    {
+     "w": "output,",
+     "t0": 11.02,
+     "t1": 11.421,
+     "est": true
+    },
+    {
+     "w": "per",
+     "t0": 11.421,
+     "t1": 11.65,
+     "est": true
+    },
+    {
+     "w": "juta",
+     "t0": 11.65,
+     "t1": 11.936,
+     "est": true
+    },
+    {
+     "w": "token.",
+     "t0": 11.936,
+     "t1": 12.279,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "text": "Skornya enam puluh lima, nomor satu di Artificial Analysis.",
+   "t0": 14.279,
+   "t1": 17.737,
+   "take": "voice/l4.mp3",
+   "words": [
+    {
+     "w": "Skornya",
+     "t0": 14.279,
+     "t1": 14.756,
+     "est": true
+    },
+    {
+     "w": "enam",
+     "t0": 14.756,
+     "t1": 15.054,
+     "est": true
+    },
+    {
+     "w": "puluh",
+     "t0": 15.054,
+     "t1": 15.412,
+     "est": true
+    },
+    {
+     "w": "lima,",
+     "t0": 15.412,
+     "t1": 15.71,
+     "est": true
+    },
+    {
+     "w": "nomor",
+     "t0": 15.71,
+     "t1": 16.068,
+     "est": true
+    },
+    {
+     "w": "satu",
+     "t0": 16.068,
+     "t1": 16.366,
+     "est": true
+    },
+    {
+     "w": "di",
+     "t0": 16.366,
+     "t1": 16.545,
+     "est": true
+    },
+    {
+     "w": "Artificial",
+     "t0": 16.545,
+     "t1": 17.2,
+     "est": true
+    },
+    {
+     "w": "Analysis.",
+     "t0": 17.2,
+     "t1": 17.737,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "text": "Lima poin di atas Gemini 4 Carbon, yang skornya cuma enam puluh.",
+   "t0": 18.337,
+   "t1": 21.898,
+   "take": "voice/l5.mp3",
+   "words": [
+    {
+     "w": "Lima",
+     "t0": 18.337,
+     "t1": 18.62,
+     "est": true
+    },
+    {
+     "w": "poin",
+     "t0": 18.62,
+     "t1": 18.902,
+     "est": true
+    },
+    {
+     "w": "di",
+     "t0": 18.902,
+     "t1": 19.072,
+     "est": true
+    },
+    {
+     "w": "atas",
+     "t0": 19.072,
+     "t1": 19.354,
+     "est": true
+    },
+    {
+     "w": "Gemini",
+     "t0": 19.354,
+     "t1": 19.75,
+     "est": true
+    },
+    {
+     "w": "4",
+     "t0": 19.75,
+     "t1": 19.863,
+     "est": true
+    },
+    {
+     "w": "Carbon,",
+     "t0": 19.863,
+     "t1": 20.259,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 20.259,
+     "t1": 20.541,
+     "est": true
+    },
+    {
+     "w": "skornya",
+     "t0": 20.541,
+     "t1": 20.994,
+     "est": true
+    },
+    {
+     "w": "cuma",
+     "t0": 20.994,
+     "t1": 21.276,
+     "est": true
+    },
+    {
+     "w": "enam",
+     "t0": 21.276,
+     "t1": 21.559,
+     "est": true
+    },
+    {
+     "w": "puluh.",
+     "t0": 21.559,
+     "t1": 21.898,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "text": "Konteksnya satu juta token, ada di aplikasi Claude dan Claude Code.",
+   "t0": 22.498,
+   "t1": 26.173,
+   "take": "voice/l6.mp3",
+   "words": [
+    {
+     "w": "Konteksnya",
+     "t0": 22.498,
+     "t1": 23.111,
+     "est": true
+    },
+    {
+     "w": "satu",
+     "t0": 23.111,
+     "t1": 23.389,
+     "est": true
+    },
+    {
+     "w": "juta",
+     "t0": 23.389,
+     "t1": 23.667,
+     "est": true
+    },
+    {
+     "w": "token,",
+     "t0": 23.667,
+     "t1": 24.001,
+     "est": true
+    },
+    {
+     "w": "ada",
+     "t0": 24.001,
+     "t1": 24.224,
+     "est": true
+    },
+    {
+     "w": "di",
+     "t0": 24.224,
+     "t1": 24.391,
+     "est": true
+    },
+    {
+     "w": "aplikasi",
+     "t0": 24.391,
+     "t1": 24.892,
+     "est": true
+    },
+    {
+     "w": "Claude",
+     "t0": 24.892,
+     "t1": 25.282,
+     "est": true
+    },
+    {
+     "w": "dan",
+     "t0": 25.282,
+     "t1": 25.505,
+     "est": true
+    },
+    {
+     "w": "Claude",
+     "t0": 25.505,
+     "t1": 25.895,
+     "est": true
+    },
+    {
+     "w": "Code.",
+     "t0": 25.895,
+     "t1": 26.173,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l7",
+   "text": "Buka Claude, pilih Fable 5.2.",
+   "t0": 26.673,
+   "t1": 29.09,
+   "take": "voice/l7.mp3",
+   "words": [
+    {
+     "w": "Buka",
+     "t0": 26.673,
+     "t1": 27.121,
+     "est": true
+    },
+    {
+     "w": "Claude,",
+     "t0": 27.121,
+     "t1": 27.747,
+     "est": true
+    },
+    {
+     "w": "pilih",
+     "t0": 27.747,
+     "t1": 28.284,
+     "est": true
+    },
+    {
+     "w": "Fable",
+     "t0": 28.284,
+     "t1": 28.821,
+     "est": true
+    },
+    {
+     "w": "5.2.",
+     "t0": 28.821,
+     "t1": 29.09,
+     "est": true
+    }
+   ]
+  }
+ ]
+}

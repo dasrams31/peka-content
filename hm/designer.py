@@ -727,9 +727,10 @@ def detail_premium(args, points, idx, n):
             if len(lines) <= 6:
                 break
         blocks.append((sz, lines))
-    total = sum(len(lines) * int(sz * 1.45) for sz, lines in blocks)
-    total += (len(blocks) - 1) * (28 + 28 + 2)
-    y = X(200) + max(0, (X(760) - total) // 2)
+    # Top-aligned under DETAIL BERITA (was: vertically centered, but the
+    # centering mixed design units (total) with pixels (X(760)), pushing
+    # the block ~160 units too low and leaving a big void above it).
+    y = X(250)
     for j, (sz, lines) in enumerate(blocks):
         num = f"{base_num + j + 1:02d}"
         d.text((X(120), y), num, font=fs(40), fill=GOLD)

@@ -142,6 +142,34 @@ def section_height(n_rows):
     return 180 + n_rows * 360
 
 
+def page_height(page):
+    h = 0
+    for i, sec in enumerate(page):
+        h += section_height(len(sec[1])) + (SEC_GAP if i else 0)
+    return h
+
+
+# The last slide also carries the CTA band (offset 200 below the content,
+# note at +320, ~90px tall) above the footer rule at y=3560. Reserve that
+# space on the last page only; without it the note lands on the footer
+# (seen 16 Nov with just 3 items on the last slide).
+LAST_PAGE_BUDGET = 3560 - Y_TOP - (200 + 320 + 90 + 40)
+
+
+def split_section(sec):
+    """Split one section into row chunks: full pages (2640 budget) plus a
+    final chunk that fits the last-page budget with the CTA band."""
+    name, items = sec
+    rows = list(items)
+    chunks = []
+    while len(rows) * 360 + 180 > LAST_PAGE_BUDGET and len(rows) > 1:
+        take = min((Y_LIMIT - Y_TOP - 180) // 360, len(rows) - 1)
+        chunks.append((name, rows[:take]))
+        rows = rows[take:]
+    chunks.append((name, rows))
+    return chunks
+
+
 def paginate(sections):
     pages = []
     cur, cur_h = [], 0
@@ -156,6 +184,16 @@ def paginate(sections):
             cur_h += add
     if cur:
         pages.append(cur)
+    # Last page carries the CTA band: if its content would push the note
+    # onto the footer, move its last section to a new final page
+    # (splitting the section by rows if it alone is too tall).
+    while pages and page_height(pages[-1]) > LAST_PAGE_BUDGET:
+        last = pages[-1]
+        if len(last) == 1:
+            pages.pop()
+            pages.extend(split_section(last[0]))
+        else:
+            pages.append([last.pop()])
     return pages
 
 
