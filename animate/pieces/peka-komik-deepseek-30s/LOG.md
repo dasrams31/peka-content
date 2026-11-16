@@ -22,3 +22,4 @@
   year tag and terminal window); re-exported. Lesson: multi-character
   thoughts need r >= text width / 2; the review only checks frame-edge
   cut-off and text-text overlap, not text overflowing its own bubble.
+- 2026-11-16: Mascot fix re-render (user: maskot harus sama dengan logo Peka): local piko() redrawn as the real logo mark (same geometry as the kit's comicPiko, yellow locked to PIKO_Y #ffd60a). Same 30.016s, same voice/script/facts. Review PASS: text 0 cut-off/overlap, narration 59w density PASS, story arc 2/2, dead beats PASS, -13.9 LUFS, true peak -1.7 dBFS. Mascot checks verified from the mp4 (incl. frame 300: "MIT?" thought still clean inside its circle): P = logo, eye solid on stem, antenna yellow/centred/visible, tail anchor clear of the ball.
