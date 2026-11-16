@@ -1,0 +1,12 @@
+PROMPT HARIAN #26: salin prompt ini buat soal latihan ujian dari materimu sendiri
+Hasilnya 10 soal latihan plus kunci jawaban dan penjelasan singkat, jadi belajar buat ujian nggak cuma baca ulang materi.
+
+Buatkan 10 soal latihan [pilihan ganda] dari materi [topik kuliah, contoh: Anatomi Bab 3] beserta kunci jawaban dan penjelasan singkat tiap jawaban. Sesuaikan tingkat kesulitan buat [UTS/UAS] dan tandai soal yang paling mungkin keluar.
+
+Buat latihan UTS dulu atau buat UAS dulu?
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30.
+
+#PromptAI #TipsKuliah #BelajarAI #Mahasiswa #UTS #UAS #AIUntukBelajar #PekaAI #ChatGPT #Produktivitas
+
+Music: Darkling by Kevin MacLeod

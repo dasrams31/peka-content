@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Buatkan 10 soal latihan [pilihan ganda] dari materi [topik kuliah, contoh: Anatomi Bab 3] beserta kunci jawaban dan penjelasan singkat tiap jawaban. Sesuaikan tingkat kesulitan buat [UTS/UAS] dan tandai soal yang paling mungkin keluar.
