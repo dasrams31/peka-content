@@ -13,8 +13,9 @@
   to = 'm';
   pad(0.0, 14.1, ['D3', 'A3', 'Fs4'], 0.035, { type: 'triangle', cut: 800, att: 0.05, rel: 0.2 });
   [['D4', 0], ['A4', E8]].forEach(([n, dt], i) => pluck(cu.wake + dt, nz(n), 0.2, 0.1 - i * 0.1, 0.6, 2600, 0.35));   // the hero's motif
-  // one pluck per dialogue pop: l2 3.23, l3 8.21 (night); l4 14.33, l5 18.39, l6 22.55, l7 26.72 (morning)
-  [[3.23, 'E5'], [8.21, 'Fs5'], [14.33, 'A5'], [18.39, 'B5'], [22.55, 'D6'], [26.72, 'E6']].forEach(([t, n], i) => pluck(t, nz(n), 0.12, 0.2 - i * 0.07, 0.5, 3200, 0.3));
+  // one pluck per dialogue pop: l2 3.23, l3 8.21 (night); l4 14.33, l5 18.39, l6 22.55, l7 26.72 (morning).
+  // Quieter than the morph arpeggio (0.08), so the morph stays the loudest moment.
+  [[3.23, 'E5'], [8.21, 'Fs5'], [14.33, 'A5'], [18.39, 'B5'], [22.55, 'D6'], [26.72, 'E6']].forEach(([t, n], i) => pluck(t, nz(n), 0.06, 0.2 - i * 0.07, 0.5, 3200, 0.3));
   pad(14.0, 30.05, ['D3', 'A3', 'D4', 'Fs4'], 0.05, { cut: 1200, att: 0.3, rel: 0.3, send: 0.4 });
   for (let i = 0; i < 6; i++) pluck(cu.flowers + i * 0.25, nz(['D5', 'E5', 'Fs5', 'A5', 'B5', 'D6'][i]), 0.08, 0.3 - i * 0.12, 0.4, 4200, 0.3);
   to = 's';

@@ -1,0 +1,442 @@
+{
+ "duration": 29.366,
+ "lead": 0.3,
+ "tail": 0.8,
+ "lines": [
+  {
+   "id": "l1",
+   "text": "AI buat skripsi, mana yang tier S?",
+   "t0": 0.3,
+   "t1": 2.478,
+   "take": "voice/l1.mp3",
+   "words": [
+    {
+     "w": "AI",
+     "t0": 0.3,
+     "t1": 0.498,
+     "est": true
+    },
+    {
+     "w": "buat",
+     "t0": 0.498,
+     "t1": 0.828,
+     "est": true
+    },
+    {
+     "w": "skripsi,",
+     "t0": 0.828,
+     "t1": 1.356,
+     "est": true
+    },
+    {
+     "w": "mana",
+     "t0": 1.356,
+     "t1": 1.686,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 1.686,
+     "t1": 2.016,
+     "est": true
+    },
+    {
+     "w": "tier",
+     "t0": 2.016,
+     "t1": 2.346,
+     "est": true
+    },
+    {
+     "w": "S?",
+     "t0": 2.346,
+     "t1": 2.478,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "text": "Enam nama AI ngepung, tapi batas gratisnya beda-beda.",
+   "t0": 3.078,
+   "t1": 6.139,
+   "take": "voice/l2.mp3",
+   "words": [
+    {
+     "w": "Enam",
+     "t0": 3.078,
+     "t1": 3.378,
+     "est": true
+    },
+    {
+     "w": "nama",
+     "t0": 3.378,
+     "t1": 3.678,
+     "est": true
+    },
+    {
+     "w": "AI",
+     "t0": 3.678,
+     "t1": 3.858,
+     "est": true
+    },
+    {
+     "w": "ngepung,",
+     "t0": 3.858,
+     "t1": 4.338,
+     "est": true
+    },
+    {
+     "w": "tapi",
+     "t0": 4.338,
+     "t1": 4.639,
+     "est": true
+    },
+    {
+     "w": "batas",
+     "t0": 4.639,
+     "t1": 4.999,
+     "est": true
+    },
+    {
+     "w": "gratisnya",
+     "t0": 4.999,
+     "t1": 5.599,
+     "est": true
+    },
+    {
+     "w": "beda-beda.",
+     "t0": 5.599,
+     "t1": 6.139,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "text": "Ada yang gratis selamanya, ada yang sekali pakai langsung habis.",
+   "t0": 6.739,
+   "t1": 10.032,
+   "take": "voice/l3.mp3",
+   "words": [
+    {
+     "w": "Ada",
+     "t0": 6.739,
+     "t1": 6.948,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 6.948,
+     "t1": 7.209,
+     "est": true
+    },
+    {
+     "w": "gratis",
+     "t0": 7.209,
+     "t1": 7.575,
+     "est": true
+    },
+    {
+     "w": "selamanya,",
+     "t0": 7.575,
+     "t1": 8.098,
+     "est": true
+    },
+    {
+     "w": "ada",
+     "t0": 8.098,
+     "t1": 8.307,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 8.307,
+     "t1": 8.568,
+     "est": true
+    },
+    {
+     "w": "sekali",
+     "t0": 8.568,
+     "t1": 8.934,
+     "est": true
+    },
+    {
+     "w": "pakai",
+     "t0": 8.934,
+     "t1": 9.248,
+     "est": true
+    },
+    {
+     "w": "langsung",
+     "t0": 9.248,
+     "t1": 9.718,
+     "est": true
+    },
+    {
+     "w": "habis.",
+     "t0": 9.718,
+     "t1": 10.032,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "text": "Elicit dan ChatGPT tier S. Cek batas gratisnya.",
+   "t0": 12.282,
+   "t1": 15.247,
+   "take": "voice/l4.mp3",
+   "words": [
+    {
+     "w": "Elicit",
+     "t0": 12.282,
+     "t1": 12.733,
+     "est": true
+    },
+    {
+     "w": "dan",
+     "t0": 12.733,
+     "t1": 12.991,
+     "est": true
+    },
+    {
+     "w": "ChatGPT",
+     "t0": 12.991,
+     "t1": 13.507,
+     "est": true
+    },
+    {
+     "w": "tier",
+     "t0": 13.507,
+     "t1": 13.829,
+     "est": true
+    },
+    {
+     "w": "S.",
+     "t0": 13.829,
+     "t1": 13.958,
+     "est": true
+    },
+    {
+     "w": "Cek",
+     "t0": 13.958,
+     "t1": 14.216,
+     "est": true
+    },
+    {
+     "w": "batas",
+     "t0": 14.216,
+     "t1": 14.602,
+     "est": true
+    },
+    {
+     "w": "gratisnya.",
+     "t0": 14.602,
+     "t1": 15.247,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "text": "NotebookLM dan SciSpace tier A, lima puluh sumber per notebook.",
+   "t0": 16.047,
+   "t1": 19.529,
+   "take": "voice/l5.mp3",
+   "words": [
+    {
+     "w": "NotebookLM",
+     "t0": 16.047,
+     "t1": 16.665,
+     "est": true
+    },
+    {
+     "w": "dan",
+     "t0": 16.665,
+     "t1": 16.889,
+     "est": true
+    },
+    {
+     "w": "SciSpace",
+     "t0": 16.889,
+     "t1": 17.395,
+     "est": true
+    },
+    {
+     "w": "tier",
+     "t0": 17.395,
+     "t1": 17.676,
+     "est": true
+    },
+    {
+     "w": "A,",
+     "t0": 17.676,
+     "t1": 17.788,
+     "est": true
+    },
+    {
+     "w": "lima",
+     "t0": 17.788,
+     "t1": 18.069,
+     "est": true
+    },
+    {
+     "w": "puluh",
+     "t0": 18.069,
+     "t1": 18.406,
+     "est": true
+    },
+    {
+     "w": "sumber",
+     "t0": 18.406,
+     "t1": 18.799,
+     "est": true
+    },
+    {
+     "w": "per",
+     "t0": 18.799,
+     "t1": 19.024,
+     "est": true
+    },
+    {
+     "w": "notebook.",
+     "t0": 19.024,
+     "t1": 19.529,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "text": "Gemini tier B, Gamma tier D, empat ratus kredit sekali saja.",
+   "t0": 20.329,
+   "t1": 24.323,
+   "take": "voice/l6.mp3",
+   "words": [
+    {
+     "w": "Gemini",
+     "t0": 20.329,
+     "t1": 20.811,
+     "est": true
+    },
+    {
+     "w": "tier",
+     "t0": 20.811,
+     "t1": 21.155,
+     "est": true
+    },
+    {
+     "w": "B,",
+     "t0": 21.155,
+     "t1": 21.293,
+     "est": true
+    },
+    {
+     "w": "Gamma",
+     "t0": 21.293,
+     "t1": 21.706,
+     "est": true
+    },
+    {
+     "w": "tier",
+     "t0": 21.706,
+     "t1": 22.051,
+     "est": true
+    },
+    {
+     "w": "D,",
+     "t0": 22.051,
+     "t1": 22.188,
+     "est": true
+    },
+    {
+     "w": "empat",
+     "t0": 22.188,
+     "t1": 22.601,
+     "est": true
+    },
+    {
+     "w": "ratus",
+     "t0": 22.601,
+     "t1": 23.015,
+     "est": true
+    },
+    {
+     "w": "kredit",
+     "t0": 23.015,
+     "t1": 23.497,
+     "est": true
+    },
+    {
+     "w": "sekali",
+     "t0": 23.497,
+     "t1": 23.979,
+     "est": true
+    },
+    {
+     "w": "saja.",
+     "t0": 23.979,
+     "t1": 24.323,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "l7",
+   "text": "Cek kuota dulu sebelum berharap. Peka yang pilihkan.",
+   "t0": 25.023,
+   "t1": 28.566,
+   "take": "voice/l7.mp3",
+   "words": [
+    {
+     "w": "Cek",
+     "t0": 25.023,
+     "t1": 25.301,
+     "est": true
+    },
+    {
+     "w": "kuota",
+     "t0": 25.301,
+     "t1": 25.718,
+     "est": true
+    },
+    {
+     "w": "dulu",
+     "t0": 25.718,
+     "t1": 26.065,
+     "est": true
+    },
+    {
+     "w": "sebelum",
+     "t0": 26.065,
+     "t1": 26.621,
+     "est": true
+    },
+    {
+     "w": "berharap.",
+     "t0": 26.621,
+     "t1": 27.246,
+     "est": true
+    },
+    {
+     "w": "Peka",
+     "t0": 27.246,
+     "t1": 27.593,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 27.593,
+     "t1": 27.941,
+     "est": true
+    },
+    {
+     "w": "pilihkan.",
+     "t0": 27.941,
+     "t1": 28.566,
+     "est": true
+    }
+   ]
+  }
+ ]
+}

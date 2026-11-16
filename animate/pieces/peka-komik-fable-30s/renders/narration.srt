@@ -1,0 +1,27 @@
+1
+00:00:00,300 --> 00:00:02,579
+Model termurah, tapi jadi nomor satu?
+
+2
+00:00:03,179 --> 00:00:07,560
+Claude Fable 5.2 baru rilis sembilan November, harganya turun dua puluh persen.
+
+3
+00:00:08,160 --> 00:00:12,279
+Delapan dolar untuk input, empat puluh dolar untuk output, per juta token.
+
+4
+00:00:14,279 --> 00:00:17,737
+Skornya enam puluh lima, nomor satu di Artificial Analysis.
+
+5
+00:00:18,337 --> 00:00:21,898
+Lima poin di atas Gemini 4 Carbon, yang skornya cuma enam puluh.
+
+6
+00:00:22,498 --> 00:00:26,173
+Konteksnya satu juta token, ada di aplikasi Claude dan Claude Code.
+
+7
+00:00:26,673 --> 00:00:29,090
+Buka Claude, pilih Fable 5.2.

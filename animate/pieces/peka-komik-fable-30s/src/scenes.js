@@ -47,10 +47,14 @@ function sceneNight() {
   const hx = LX(0.46), hy = LY(0.58);
   comicActionLines(hx, hy, TIMELINE.cues.wake);
   comicPiko(hx, hy, 1.05, 'confused');
-  // the dialogue, one bubble per line (later bubbles pop over earlier ones)
-  comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Model termurah, kok nomor satu?!', 46 * u, hx - 60 * u, hy - 190 * u, 0.35);
-  comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Baru rilis, harga turun 20%!', 46 * u, hx - 60 * u, hy - 190 * u, 3.23);
-  comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Delapan dolar per juta token!', 46 * u, hx - 60 * u, hy - 190 * u, 8.21);
+  // the dialogue, one bubble per line: only the current line's bubble is
+  // drawn (a later bubble pops over the earlier one, so drawing all of
+  // them would stack hidden strings under the visible one and the review
+  // would flag them as overlapping text). The swap is a hard cut + pop:
+  // the comic "new bubble" effect.
+  if (TT < 3.23) comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Model termurah, kok nomor satu?!', 46 * u, hx - 60 * u, hy - 190 * u, 0.35);
+  else if (TT < 8.21) comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Baru rilis, harga turun 20%!', 46 * u, hx - 60 * u, hy - 190 * u, 3.23);
+  else comicBubble(LX(0.44), LY(0.32), 800 * u, 150 * u, 'Delapan dolar per juta token!', 46 * u, hx - 60 * u, hy - 190 * u, 8.21);
   comicPanelFrame();
   comicFlash(M1);
   yearTag('Fable 5.2');
@@ -68,11 +72,13 @@ function sceneMorning() {
   handText(big, LX(0.76) - handW(big, bigSize, 800) / 2, LY(0.42), bigSize, GOLD, { weight: 800, key: 'big65' });
   comicPiko(LX(0.46), LY(0.62), 1.0, 'happy', M1);
   comicBurst(LX(0.75), LY(0.615), 180 * u, 'NOMOR 1', 44 * u, M1 + 0.6);
-  // the dialogue, one bubble per line (later bubbles pop over earlier ones)
-  comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Skor 65, nomor satu!', 50 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 14.33);
-  comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Unggul 5 poin!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 18.39);
-  comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Konteks 1 juta token!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 22.55);
-  comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Buka Claude, cobain!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 26.72);
+  // the dialogue, one bubble per line (same gating as the night scene:
+  // only the current line's bubble is drawn, so the review never sees
+  // two bubbles stacked in the same box).
+  if (TT < 18.39) comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Skor 65, nomor satu!', 50 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 14.33);
+  else if (TT < 22.55) comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Unggul 5 poin!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 18.39);
+  else if (TT < 26.72) comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Konteks 1 juta token!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 22.55);
+  else comicBubble(LX(0.40), LY(0.28), 560 * u, 130 * u, 'Buka Claude, cobain!', 46 * u, LX(0.46) + 30 * u, LY(0.62) - 160 * u, 26.72);
   comicPanelFrame();
   comicFlash(M1);
   yearTag('peka.ai.id');
