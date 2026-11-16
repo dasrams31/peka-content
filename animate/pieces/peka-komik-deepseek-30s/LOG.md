@@ -15,3 +15,10 @@
   past 30s). Timing: l1 0.30-2.31, l2 2.91-7.15, l3 7.75-11.20,
   l4 14.28-17.69, l5 18.09-21.25, l6 21.66-25.16, l7 25.46-29.31;
   total voice 29.81s inside the 30.0s piece.
+- 2026-11-16: Still check caught a real defect the review could not:
+  the "MIT?" thought (12.2s) was drawn with r=56, but the fixed 58px
+  thought font makes "MIT?" ~120px wide, so the text spilled past the
+  112px circle. Fixed to r=90 (180px circle, clear of the bubble,
+  year tag and terminal window); re-exported. Lesson: multi-character
+  thoughts need r >= text width / 2; the review only checks frame-edge
+  cut-off and text-text overlap, not text overflowing its own bubble.

@@ -5,10 +5,12 @@ Usage: python3 post_agent.py <out_dir>
 Run from an interactive chat session so approval cards surface.
 Idempotent: completed steps are recorded in post-done.txt and skipped
 on re-run, so a timed-out command that actually posted is never repeated.
-Order: Threads root carousel + chained reply, IG reel, FB reel.
+Order: Threads root reel + chained reply, IG reel, FB reel.
 Then resolve URLs, patch the blog JSON links, write post-log.txt.
 Exits non-zero on the first failed step.
 DO NOT run during a dry-run: this script posts for real.
+(2026-11-16, user order: Threads shows the REEL video directly, not the
+carousel/cover. The chained replies still go under the reel root.)
 """
 import json
 import os
@@ -75,12 +77,11 @@ def main():
         except (ValueError, KeyError, IndexError, TypeError):
             return post_id
 
-    # --- Threads root carousel ---
+    # --- Threads root reel (2026-11-16 user order: reel, not carousel) ---
     if not done_has("THREADS_ROOT_OK"):
-        cmd = ["/opt/hatch/bin/threads-cli", "publish-post", "--account-id", THR]
-        for s in slides:
-            cmd += ["--media-item", json.dumps({"file": str(s)})]
-        cmd += ["--text", read_caption("caption-threads.txt")]
+        cmd = ["/opt/hatch/bin/threads-cli", "publish-post", "--account-id", THR,
+               "--media-item", json.dumps({"file": str(reel), "cover": str(cover)}),
+               "--text", read_caption("caption-threads.txt")]
         res = run(cmd, "THREADS_ROOT")
         root_id = json.loads(res)["post_id"]
         root_url = threads_resolve(root_id)

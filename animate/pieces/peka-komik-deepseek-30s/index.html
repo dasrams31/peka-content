@@ -1159,8 +1159,10 @@ function sceneNight() {
   cut(rect(668, 812, 24, 44, 4), COMIC.accent, { key: 'curblock', shadow: false, tear: 0 });
   codeLines();
   comicThought(LX(0.81), LY(0.48), '?', TIMELINE.cues.wake + 0.45, 56);
-  // a late thought in the 3.1s quiet gap before the morph (l3 ends 11.20, l4 starts 14.28)
-  comicThought(LX(0.14), LY(0.30), 'MIT?', 12.2, 56);
+  // a late thought in the 3.1s quiet gap before the morph (l3 ends 11.20, l4 starts 14.28).
+  // r=90: the "MIT?" text is ~120px wide at the fixed 58px thought font, so it needs a
+  // 180px circle — r=56 (as in the 8s "?" thought) clips the text at the circle's edge.
+  comicThought(LX(0.14), LY(0.30), 'MIT?', 12.2, 90);
   const hx = LX(0.72), hy = LY(0.60);
   piko(hx, hy, 1.0, 'confused');
   // the dialogue, one bubble per line: only the current line's bubble is
