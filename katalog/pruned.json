@@ -40,5 +40,25 @@
   "bot_id": 86,
   "removed_at": "2026-11-16",
   "reason": "sold out"
+ },
+ {
+  "dur": "1 Tahun",
+  "name": "Viu",
+  "price": "5K",
+  "price_num": 5,
+  "sec": "VIU",
+  "bot_id": 72,
+  "removed_at": "2026-11-16",
+  "reason": "sold out"
+ },
+ {
+  "dur": "Lifetime",
+  "name": "Viu",
+  "price": "8K",
+  "price_num": 8,
+  "sec": "VIU",
+  "bot_id": 73,
+  "removed_at": "2026-11-16",
+  "reason": "sold out"
  }
 ]
