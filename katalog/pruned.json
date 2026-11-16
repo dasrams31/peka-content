@@ -60,5 +60,15 @@
   "bot_id": 73,
   "removed_at": "2026-11-16",
   "reason": "sold out"
+ },
+ {
+  "dur": "1 Bulan (VCC)",
+  "name": "ChatGPT Plus",
+  "price": "80K",
+  "price_num": 80,
+  "sec": "CHATGPT",
+  "bot_id": 114,
+  "removed_at": "2026-11-16",
+  "reason": "sold out"
  }
 ]
