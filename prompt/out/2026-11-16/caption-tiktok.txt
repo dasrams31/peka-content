@@ -1,0 +1,13 @@
+Soal latihan ujian dari materimu sendiri, cuma modal 1 prompt ini
+Tempel prompt ini ke AI favoritmu, 10 soal latihan plus kunci jawaban dan penjelasan langsung jadi. Belajar buat ujian nggak cuma baca ulang materi.
+
+Promptnya:
+Buatkan 10 soal latihan [pilihan ganda] dari materi [topik kuliah, contoh: Anatomi Bab 3] beserta kunci jawaban dan penjelasan singkat tiap jawaban. Sesuaikan tingkat kesulitan buat [UTS/UAS] dan tandai soal yang paling mungkin keluar.
+
+Buat latihan UTS dulu atau buat UAS dulu?
+Save dulu biar nggak hilang pas butuh.
+Prompt baru tiap hari jam 12:30.
+
+#fyp #PromptAI #TipsKuliah #Mahasiswa #BelajarAI #UTS #PekaAI
+
+Music: Darkling by Kevin MacLeod
