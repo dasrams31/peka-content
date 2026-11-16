@@ -4,8 +4,9 @@ The Peka comic look: a two-era comic panel — a dark navy night panel where
 Piko is confused by too many AI choices, morphing into a cream morning
 panel where Peka picks one. Thick black panel frames, halftone corners,
 speech bubbles, a starburst shout, action lines, and Piko drawn as a
-vector (a yellow letter P with one eye, a small smile and an antenna).
-Made from the approved piece `pieces/peka-komik/` (look check + 2 revision
+vector — he IS the Peka logo mark (capsule stem + detached D-bowl, solid
+eye, half-disc smile, yellow antenna), never a font letter. Made from
+the approved piece `pieces/peka-komik/` (look check + 2 revision
 rounds + voice-over, user approved 2026-11-16). Built on the cut-paper
 kit (torn cutouts, paper grain, hand text, paper tags) plus the comic
 helpers below.
@@ -26,6 +27,45 @@ Ground rule (learned in the piece's look check round 1): the morning
 ground must be cream, never yellow — on a yellow ground Piko renders
 outline-only because he is the same yellow as the ground.
 
+## Piko — the logo mark (locked, 2026-11-16)
+
+Piko IS the Peka logo (`~/workspace/peka-logo/mascot-p.png`,
+1080x1080), drawn in vector by `comicPiko`. He is never a font
+letter: the old Arial Black `P` (stem and bowl connected, arc eye,
+white eye highlight, ink outline on the yellow, black antenna line)
+was not the logo and was replaced 2026-11-16 on the user's word
+("maskot Peka harus sama dong sama logo Peka"). Geometry measured
+off `mascot-p.png`, logo px, origin at the stem's top-left, body
+box 290 x 502:
+
+| part | geometry |
+|---|---|
+| stem | capsule x 0–130, y 0–502, corner radius 65 |
+| bowl | D-shape: flat left edge x 150, y −5–275; right edge a semicircle of radius 140 centred at (150, 135); 20px gap to the stem (x 130–150) |
+| notch | black half-disc on the bowl's flat edge, centre (150, 135), radius 40, right half only — the gap stays background |
+| eye | solid black circle, centre (60, 125), radius 45 — no white highlight dot, the logo eye has none |
+| smile | solid black half-disc (lower half), centre (60, 245), radius 33 — not a stroked arc |
+| antenna | yellow line x 57–73 (centre 65), y −80–0, width 16; yellow ball centre (65, −115), radius 28 |
+| colours | yellow `#ffd60a`, face ink `#111` (kit `INK`) |
+
+Rules:
+
+- No `fillText('P')` / `strokeText` anywhere in the style; no ink
+  stroke around any yellow shape (stem, bowl, antenna line, ball).
+- The kit accent must stay `#ffd60a` in every piece that uses
+  `comicPiko` (it fills from `COMIC.accent`); a variant that recolours
+  the accent must draw its own Piko locked to `#ffd60a`, as
+  `peka-komik-deepseek-30s` does with its local `piko()`.
+- Moods: `'happy'` / `'wow'` = the logo face exactly (round eye +
+  half-disc smile); `'confused'` = the same face + the blue sweat drop.
+- The body box is scaled to the old glyph's footprint (height
+  `0.729 * size`, bottom at `y + 0.42 * size`) so scene layouts,
+  bubble positions and tail anchors do not shift; the antenna extends
+  above the body like before, at logo proportions (shorter than the
+  old font-P antenna — the morning tail in `peka-komik-tierlist-30s`
+  now ends ~90px above the ball instead of 15–31px; that is the
+  logo's antenna, not a layout bug).
+
 ## Line and texture
 
 Weights are relative to the frame (`UNIT` = min(W, H) / 1080; at
@@ -35,7 +75,7 @@ Weights are relative to the frame (`UNIT` = min(W, H) / 1080; at
 |---|---|
 | panel frame (`comicPanelFrame`) | 16*UNIT, inset 14*UNIT, round joins |
 | bubble / burst outline | 7*UNIT (bubble), 6*UNIT (burst, "?" bubbles, checks) |
-| Piko letter stroke | 16*UNIT; antenna ball stroke 14*UNIT; antenna line 10*UNIT; eye/smile 8*UNIT |
+| Piko (logo mark) | no outline on the yellow; antenna line 16*k, eye r 45*k, smile half-disc r 33*k, bowl notch r 40*k (k = body height / 502) |
 | sun rays (`comicRays`) | 9*UNIT; action lines 7*UNIT |
 | morph window rim (`STYLE.window`) | 12*UNIT ink |
 
@@ -46,8 +86,8 @@ paper grain in `post()` (2200 specks). No gradients, no glow, no drop
 shadow except the small cutout shadows on bubbles, bursts and checks.
 
 Type: hand text (`handText`, the HAND stack) bold 700–800 for bubbles
-and bursts, 62*UNIT bubble text, 50*UNIT burst text; the Piko letter is
-Arial Black 800, 340*UNIT tall at scale 1. Year tag 80, caption strip 50.
+and bursts, 62*UNIT bubble text, 50*UNIT burst text; Piko is vector
+only, no text. Year tag 80, caption strip 50.
 
 ## Motion habits
 
@@ -73,7 +113,11 @@ Arial Black 800, 340*UNIT tall at scale 1. Year tag 80, caption strip 50.
 - The panel frame is unbroken on all four sides; the halftone corner
   never covers the year tag.
 - Piko's eye and sweat drop are visible at phone scale; his antenna
-  ball never touches the bubble tail.
+  ball never touches the bubble tail. Logo checks: capsule stem +
+  detached D-bowl with a visible gap, solid round eye fully on the
+  stem, black notch on the bowl's flat edge, yellow antenna centred on
+  the stem and clearly visible (not hidden behind a bubble tail), no
+  ink outline on any yellow shape.
 - During a morph, stills taken within ~0.5s of the morph centre show
   the paper backdrop — pick sample times at least 0.6s away from it.
 
@@ -101,7 +145,7 @@ never be redeclared):
 | `comicActionLines(x, y, t0, n?, color?)` | action lines growing one by one |
 | `comicCheck(x, y, t0)` | one checkmark circle, pops in at t0 |
 | `comicRays(x, y, r, n?)` | thick sun rays |
-| `comicPiko(x, y, s, mood, hopT?)` | the hero; mood `'confused'` \| `'happy'` \| `'wow'` (= happy) |
+| `comicPiko(x, y, s, mood, hopT?)` | the hero, drawn as the Peka logo mark (see "Piko — the logo mark"); mood `'confused'` \| `'happy'` \| `'wow'` (= happy) |
 | `comicMotif(x, y, s, t0)` | the episode motif emblem (see Variants) |
 
 `STYLE` hooks: `paper` = cream; `backdrop` = flat fill + faint dots;

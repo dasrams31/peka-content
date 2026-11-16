@@ -21,8 +21,16 @@ const DONE_CIRCLE = () => [LX(0.80), LY(0.17), 80 * UNIT];
 const PIKO_Y = '#ffd60a';
 const WIN = { x: 100, y: 700, w: 880, h: 450 };
 
-// Piko as a vector, yellow P (same drawing as the kit's comicPiko, but
-// the fill is locked to Peka yellow instead of COMIC.accent).
+// Piko IS the Peka logo mark (~/workspace/peka-logo/mascot-p.png) —
+// same drawing as the kit's comicPiko, but the fill is locked to Peka
+// yellow instead of COMIC.accent (terminal green here). NEVER a font P.
+// Geometry measured off mascot-p.png, logo px, origin at the stem's
+// top-left, body box 290 x 502: stem capsule x 0-130, y 0-502, r 65;
+// bowl D, flat edge x 150, y -5..275, semicircle r 140 at (150,135),
+// 20px gap to the stem; black notch half-disc r 40 at (150,135);
+// eye solid circle (60,125) r 45; smile solid half-disc (60,245)
+// r 33; antenna line x 57-73, y -80..0, ball (65,-115) r 28.
+// No outline on any yellow shape. See the kit's comicPiko comment.
 function piko(x, y, s, mood, hopT) {
   const u = UNIT;
   const bob = Math.sin(TT * TAU * 0.9) * 8 * u;
@@ -33,30 +41,47 @@ function piko(x, y, s, mood, hopT) {
   }
   SPARK_AT = toScreen(x, y);
   const size = 340 * s;
-  ink([[x - size * 0.06, y - size * 0.46], [x - size * 0.06, y - size * 0.78]], { w: 10 * u, color: INK, key: 'pkant' });
-  dot(x - size * 0.06, y - size * 0.84, 22 * s * u, PIKO_Y);
+  const Hb = size * 0.729, k = Hb / 502, Wb = 290 * k;
+  const bx = x - Wb / 2, by = y + size * 0.42 - Hb;
+  const Y = PIKO_Y;
+  // antenna (behind the body): yellow line + ball, no outline
   ctx.save();
-  ctx.strokeStyle = INK; ctx.lineWidth = 14 * u;
-  ctx.beginPath(); ctx.arc(x - size * 0.06, y - size * 0.84, 22 * s * u, 0, TAU); ctx.stroke();
+  ctx.strokeStyle = Y; ctx.lineWidth = 16 * k; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(bx + 65 * k, by - 80 * k); ctx.lineTo(bx + 65 * k, by); ctx.stroke();
   ctx.restore();
+  dot(bx + 65 * k, by - 115 * k, 28 * k, Y);
+  // stem: capsule, no outline
   ctx.save();
-  ctx.font = `800 ${size}px "Arial Black", Arial, sans-serif`;
-  ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'center';
-  ctx.lineJoin = 'round';
-  ctx.strokeStyle = INK; ctx.lineWidth = 16 * u;
-  ctx.strokeText('P', x, y + size * 0.42);
-  ctx.fillStyle = PIKO_Y;
-  ctx.fillText('P', x, y + size * 0.42);
+  trace(rect(bx, by, 130 * k, 502 * k, 65 * k), true);
+  ctx.fillStyle = Y; ctx.fill();
   ctx.restore();
-  const ex = x - size * 0.22, ey = y - size * 0.10;
-  if (mood === 'happy' || mood === 'wow') {
-    ink(arcPts(ex, ey, 26 * s * u, Math.PI * 1.15, Math.PI * 1.85, 10), { w: 8 * u, color: INK, key: 'pkeye' });
-  } else {
-    dot(ex, ey, 30 * s * u, INK);
-    dot(ex + 10 * s * u, ey - 10 * s * u, 9 * s * u, '#ffffff');
+  // bowl: D, flat left edge + semicircular right edge, no outline
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(bx + 150 * k, by - 5 * k);
+  ctx.arc(bx + 150 * k, by + 135 * k, 140 * k, -Math.PI / 2, Math.PI / 2, false);
+  ctx.closePath();
+  ctx.fillStyle = Y; ctx.fill();
+  ctx.restore();
+  // the bowl's black notch: right half-disc on its flat edge, at eye height
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(bx + 150 * k, by + 135 * k, 40 * k, -Math.PI / 2, Math.PI / 2, false);
+  ctx.closePath();
+  ctx.fillStyle = INK; ctx.fill();
+  ctx.restore();
+  // the face, exactly as on the logo: solid round eye, solid half-disc smile
+  dot(bx + 60 * k, by + 125 * k, 45 * k, INK);
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(bx + 60 * k, by + 245 * k, 33 * k, 0, Math.PI, false);
+  ctx.closePath();
+  ctx.fillStyle = INK; ctx.fill();
+  ctx.restore();
+  if (mood === 'confused') {
+    // sweat drop, right of the head (unchanged from the old drawing)
     cut(ellipsePts(x + size * 0.42, y - size * 0.34, 16 * s * u, 24 * s * u, 0, 14), '#4c6fb5', { key: 'pksweat', shadow: false, tear: 0 });
   }
-  ink(arcPts(x - size * 0.20, y + size * 0.10, 26 * s * u, Math.PI * 0.15, Math.PI * 0.85, 10), { w: 8 * u, color: INK, key: 'pksmile' });
 }
 // two-line speech bubble (comicBubble is single-line). Lines are centred
 // independently. The tail is a narrow triangle from the bubble's bottom
