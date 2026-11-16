@@ -64,6 +64,8 @@ const TIMELINE = {
     { t: 2.5, title: 'bingung pilih AI', sound: 'a soft pad; a rising fifth', next: 'bulan jadi matahari: Peka pilihkan' },
     { t: 7.0, title: 'taman tumbuh', sound: 'a warm chord', next: 'loops' },
   ],
-  narration: [],
+  // voice-over lines (tools/voice.mjs -> voice.json, injected as VOICE by
+  // the build). The score ducks under them; review checks their density.
+  narration: (typeof VOICE !== 'undefined' ? VOICE.lines : []),
 };
 window.TIMELINE = TIMELINE;

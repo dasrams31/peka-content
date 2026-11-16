@@ -1,0 +1,7 @@
+1
+00:00:00,300 --> 00:00:01,243
+Bingung pilih AI?
+
+2
+00:00:04,303 --> 00:00:06,080
+Peka pilihkan yang cocok buat kamu.

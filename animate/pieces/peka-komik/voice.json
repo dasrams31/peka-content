@@ -1,0 +1,79 @@
+{
+ "duration": 6.88,
+ "lead": 0.3,
+ "tail": 0.8,
+ "lines": [
+  {
+   "id": "night",
+   "text": "Bingung pilih AI?",
+   "t0": 0.3,
+   "t1": 1.243,
+   "take": "voice/night.mp3",
+   "words": [
+    {
+     "w": "Bingung",
+     "t0": 0.3,
+     "t1": 0.744,
+     "est": true
+    },
+    {
+     "w": "pilih",
+     "t0": 0.744,
+     "t1": 1.077,
+     "est": true
+    },
+    {
+     "w": "AI?",
+     "t0": 1.077,
+     "t1": 1.243,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "morning",
+   "text": "Peka pilihkan yang cocok buat kamu.",
+   "t0": 4.303,
+   "t1": 6.08,
+   "take": "voice/morning.mp3",
+   "words": [
+    {
+     "w": "Peka",
+     "t0": 4.303,
+     "t1": 4.557,
+     "est": true
+    },
+    {
+     "w": "pilihkan",
+     "t0": 4.557,
+     "t1": 5.014,
+     "est": true
+    },
+    {
+     "w": "yang",
+     "t0": 5.014,
+     "t1": 5.268,
+     "est": true
+    },
+    {
+     "w": "cocok",
+     "t0": 5.268,
+     "t1": 5.572,
+     "est": true
+    },
+    {
+     "w": "buat",
+     "t0": 5.572,
+     "t1": 5.826,
+     "est": true
+    },
+    {
+     "w": "kamu.",
+     "t0": 5.826,
+     "t1": 6.08,
+     "est": true
+    }
+   ]
+  }
+ ]
+}

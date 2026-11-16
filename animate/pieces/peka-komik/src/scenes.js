@@ -6,8 +6,8 @@
 //  onomatopoeia bursts. Piko = yellow letter P, one black eye, small
 //  smile, antenna with a ball (redrawn from piko-idle.png, not pasted).
 // =====================================================================
-const MOON = () => [LX(0.72), LY(WIDE ? 0.26 : 0.22), 40 * UNIT];
-const SUN = () => [LX(0.72), LY(WIDE ? 0.26 : 0.22), 80 * UNIT];
+const MOON = () => [LX(0.80), LY(WIDE ? 0.20 : 0.17), 40 * UNIT];
+const SUN = () => [LX(0.80), LY(WIDE ? 0.20 : 0.17), 80 * UNIT];
 const INK = '#141210';
 const PEKA_Y = '#ffd60a';
 const PEKA_CREAM = '#f5f1e8';
@@ -32,15 +32,24 @@ function halftone(x0, y0, x1, y1, gap, maxR, color) {
   }
   ctx.restore();
 }
-// speech bubble: white rounded box + tail triangle + hand text
-function bubble(cx, cy, w, h, str, size, tailX, tailY) {
+// speech bubble: white rounded box + tail triangle + hand text.
+// Pops in (back-eased, slight overshoot) at t0, scaled about its centre.
+// t0 is coupled to the voice-over: night 0.35s (line 1 starts 0.30s),
+// morning 4.35s (line 2 starts 4.30s) — see voice/script.json.
+function bubble(cx, cy, w, h, str, size, tailX, tailY, t0) {
+  const k = popS(t0); if (k <= 0.01) return;
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cx, -cy);
   const x = cx - w / 2, y = cy - h / 2;
   cut([[x, y + 26], [tailX, tailY], [x + 90, y + h]], '#ffffff', { key: 'btail' + str, shadow: false, tear: 0, line: INK, lw: 7 * UNIT });
   cut(rect(x, y, w, h, 34), '#ffffff', { key: 'bub' + str, shadow: true, tear: 0, line: INK, lw: 7 * UNIT });
   handText(str, cx - handW(str, size, 700) / 2, cy + size * 0.36, size, INK, { weight: 700, key: 'btxt' + str });
+  ctx.restore();
 }
-// starburst shout (onomatopoeia), e.g. "BANYAK"
-function burst(cx, cy, r, str, size) {
+// starburst shout (onomatopoeia), e.g. "BANYAK". Scales in with a
+// back-eased overshoot at t0, about its centre.
+function burst(cx, cy, r, str, size, t0) {
+  const k = popS(t0); if (k <= 0.01) return;
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cx, -cy);
   const n = 12, pts = [];
   for (let i = 0; i < n * 2; i++) {
     const a = (i / (n * 2)) * TAU - Math.PI / 2, rr = i % 2 === 0 ? r : r * 0.62;
@@ -48,14 +57,31 @@ function burst(cx, cy, r, str, size) {
   }
   cut(pts, PEKA_Y, { key: 'burst' + str, shadow: true, tear: 0, line: INK, lw: 6 * UNIT });
   handText(str, cx - handW(str, size, 800) / 2, cy + size * 0.36, size, INK, { weight: 800, key: 'bt' + str });
+  ctx.restore();
+}
+// brief white flash at the morph: the "kilat" that sells the moon -> sun
+// turn. Window [M1 - 0.1, M1 + 0.3], peak 0.5 alpha at M1 + 0.1.
+function morphFlash() {
+  const f = (TT - (M1 - 0.1)) / 0.4;
+  if (f <= 0 || f >= 1) return;
+  ctx.save();
+  ctx.globalAlpha = 0.5 * Math.sin(Math.PI * f);
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, W, H);
+  ctx.restore();
 }
 // Piko, drawn as a vector: yellow P (strokeText + fillText), one black
 // eye on the stem, small smile, antenna with a ball on top.
-// mood: 'confused' (eye wide + sweat drop) or 'happy' (eye arc, smile)
-function piko(x, y, s, mood) {
+// mood: 'confused' (eye wide + sweat drop) or 'happy' (eye arc, smile).
+// hopT: if set, Piko hops (up 70px and back over 0.5s) starting at hopT.
+function piko(x, y, s, mood, hopT) {
   const u = UNIT;
   const bob = Math.sin(TT * TAU * 0.9) * 8 * u;
   y += bob;
+  if (hopT != null) {
+    const hp = (TT - hopT) / 0.5;
+    if (hp > 0 && hp < 1) y -= 70 * u * Math.sin(Math.PI * hp);
+  }
   const size = 340 * s;
   // antenna: thin line + ball, from the top of the stem
   ink([[x - size * 0.06, y - size * 0.46], [x - size * 0.06, y - size * 0.78]], { w: 10 * u, color: INK, key: 'pkant' });
@@ -92,7 +118,7 @@ function sceneNight() {
   halftone(LX(0.62), LY(0.02), W, LY(0.3), 46 * u, 7 * u, 'rgba(255,255,255,0.35)');
   cut(ellipsePts(mx, my, mr, mr, 0, 30), '#f6ecc8', { key: 'moon', line: INK, lw: 6 * u });
   // floating "?" bubbles: too many AI choices
-  const qs = [[0.16, 0.24, 'AI?'], [0.56, 0.17, '?'], [0.80, 0.44, 'AI?'], [0.10, 0.46, '?']];
+  const qs = [[0.16, 0.24, 'AI?'], [0.56, 0.17, '?'], [0.79, 0.44, 'AI?'], [0.12, 0.46, '?']];
   qs.forEach(([fx, fy, str], i) => {
     const k = popS(TIMELINE.cues.wake + i * 0.15); if (k <= 0) return;
     const bx = LX(fx), by = LY(fy);
@@ -101,16 +127,20 @@ function sceneNight() {
     handText(str, -handW(str, 58 * u, 800) / 2, 20 * u, 58 * u, INK, { weight: 800, key: 'qt' + i });
     ctx.restore();
   });
-  // action lines around the confused hero
+  // action lines around the confused hero: grow in one by one from the wake
   const hx = LX(0.46), hy = LY(0.52);
   for (let i = 0; i < 8; i++) {
     const a = -Math.PI / 2 + (i - 3.5) * 0.22;
-    ink([[hx + Math.cos(a) * 260 * u, hy + Math.sin(a) * 260 * u], [hx + Math.cos(a) * 330 * u, hy + Math.sin(a) * 330 * u]], { w: 7 * u, color: 'rgba(255,255,255,0.75)', key: 'act' + i });
+    const g = ev(TIMELINE.cues.wake + i * 0.04, 0.25); if (g <= 0) continue;
+    const x0 = hx + Math.cos(a) * 260 * u, y0 = hy + Math.sin(a) * 260 * u;
+    const x1 = hx + Math.cos(a) * 330 * u, y1 = hy + Math.sin(a) * 330 * u;
+    ink([[x0, y0], [x0 + (x1 - x0) * g, y0 + (y1 - y0) * g]], { w: 7 * u, color: 'rgba(255,255,255,0.75)', key: 'act' + i });
   }
   piko(hx, hy, 1.05, 'confused');
-  burst(LX(0.76), LY(0.66), 195 * u, 'BANYAK', 50 * u);
-  bubble(LX(0.42), LY(0.30), 620 * u, 150 * u, 'Bingung pilih AI?!', 62 * u, hx - 60 * u, hy - 190 * u);
+  burst(LX(0.76), LY(0.62), 180 * u, 'BANYAK', 50 * u, TIMELINE.cues.wake + 0.6);
+  bubble(LX(0.42), LY(0.30), 620 * u, 150 * u, 'Bingung pilih AI?!', 62 * u, hx - 60 * u, hy - 190 * u, 0.35);
   panelFrame();
+  morphFlash();
   yearTag('Bingung?');
   capStrip('Bingung pilih AI?');
 }
@@ -124,19 +154,22 @@ function sceneMorning() {
     const a = (i / 10) * TAU;
     ink([[sx + Math.cos(a) * (sr + 20 * u), sy + Math.sin(a) * (sr + 20 * u)], [sx + Math.cos(a) * (sr + 90 * u), sy + Math.sin(a) * (sr + 90 * u)]], { w: 9 * u, color: INK, key: 'ray' + i });
   }
-  // checkmarks pop in one by one, spread across the frame
+  // checkmarks pop in one by one, spread across the frame. Row sits
+  // 76px clear of the caption tape (was ~14px: the drop shadow merged
+  // with the tape edge at phone scale and the row read as cut off).
   const gy = LY(0.62);
   for (let i = 0; i < 5; i++) {
     const t0 = TIMELINE.cues.flowers + i * 0.25, k = popS(t0); if (k <= 0) continue;
-    const x = LX([0.10, 0.26, 0.62, 0.78, 0.90][i]), y = gy + 90 * u + (i % 2) * 50 * u;
+    const x = LX([0.12, 0.27, 0.64, 0.78, 0.88][i]), y = gy + 40 * u + (i % 2) * 40 * u;
     ctx.save(); ctx.translate(x, y); ctx.scale(k, k);
     cut(ellipsePts(0, 0, 58 * u, 58 * u, 0, 24), '#ffffff', { key: 'ck' + i, shadow: true, tear: 0, line: INK, lw: 6 * u });
     ink([[-28 * u, 0], [-6 * u, 24 * u], [30 * u, -26 * u]], { w: 10 * u, color: '#3d7c46', key: 'ckm' + i });
     ctx.restore();
   }
-  piko(LX(0.46), gy - 160 * u, 1.15, 'happy');
-  bubble(LX(0.44), LY(0.28), 680 * u, 150 * u, 'Peka pilihkan!', 62 * u, LX(0.46) - 40 * u, gy - 330 * u);
+  piko(LX(0.46), gy - 160 * u, 1.15, 'happy', M1);
+  bubble(LX(0.44), LY(0.28), 680 * u, 150 * u, 'Peka pilihkan!', 62 * u, LX(0.46) - 40 * u, gy - 330 * u, 4.35);
   panelFrame();
+  morphFlash();
   yearTag('peka.ai.id');
   capStrip('Peka pilihkan yang cocok.');
 }

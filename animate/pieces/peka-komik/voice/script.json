@@ -1,0 +1,18 @@
+{
+  "lead": 0.3,
+  "tail": 0.8,
+  "lines": [
+    {
+      "id": "night",
+      "text": "Bingung pilih AI?",
+      "file": "night.mp3",
+      "after": 3.06
+    },
+    {
+      "id": "morning",
+      "text": "Peka pilihkan yang cocok buat kamu.",
+      "file": "morning.mp3",
+      "after": 0.35
+    }
+  ]
+}
