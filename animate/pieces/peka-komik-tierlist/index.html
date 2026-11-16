@@ -606,7 +606,7 @@ function drawAsset(name, x, y, w, h, o = {}) {
 //  Variant: COMIC_MOTIF 'tier', cream ground. The kit accent stays Peka
 //  yellow (#ffd60a) because comicPiko draws Piko in COMIC.accent; the
 //  episode's red accent (#c1272d) is applied locally in src/scenes.js
-//  (tier chips, limit lines, arrow) — see brief.md.
+//  (tier chips, limit lines) — see brief.md.
 // =====================================================================
 const COMIC_PALETTE = {
   ground1: '#141c40',
@@ -1048,8 +1048,10 @@ const STYLE = {
 //  yellow so Piko keeps his yellow P). Scene 1: Piko confused, ringed
 //  by six tool-name chips. Scene 2: the tier list itself — four rows
 //  (S/A/B/D) with a letter chip, the tools, and one short verified
-//  free-limit line per row; Piko happy beside the list, red arrow
-//  pointing up at the S row.
+//  free-limit line per row; Piko happy beside the list. The bubble tail
+//  runs down the clear channel right of the rows to Piko's antenna (see
+//  morningTail); there is no red arrow — it used to share that channel
+//  with the tail and read as one confused gesture.
 //  Layout notes (extra polish pass): every right-hand element ends
 //  at x <= 940 (phone UI strip); the top chip row sits 50px below the
 //  speech bubble; tier rows clear the bubble by 23px and the caption
@@ -1058,7 +1060,7 @@ const STYLE = {
 // =====================================================================
 const MOON = () => [LX(0.80), LY(WIDE ? 0.20 : 0.17), 40 * UNIT];
 const SUN = () => [LX(0.80), LY(WIDE ? 0.20 : 0.17), 80 * UNIT];
-const RED = '#c1272d';   // episode accent: tier chips, limit lines, arrow
+const RED = '#c1272d';   // episode accent: tier chips, limit lines
 // (INK / PEKA_Y / PEKA_CREAM come from the style kit — do not redeclare.)
 
 // a floating tool-name pill (white, ink outline), pops in at t0.
@@ -1094,13 +1096,23 @@ function tierRow(cy, letter, fill, fg, tools, limit, t0) {
   handText(limit, 176 * u, cy + 52 * u, 32 * u, RED, { weight: 700, key: 'tierlim' + letter });
   ctx.restore();
 }
-// red arrow from Piko up toward the S row, pops in at t0.
-function tierArrow(t0) {
+// Morning bubble tail, drawn BEFORE the bubble so the bubble rect covers
+// the tail's base inside the body (same construction as comicBubble's own
+// tail). Base (750,570)-(805,570) sits inside the bubble (x 94-814,
+// y 453-583); the tail emerges from the bottom edge at y 583 and runs
+// straight down the clear channel right of the tier strips (strips end
+// x 740; the tail's left edge is x 760 at the S-row top, x 799 at the
+// S-row bottom) to a tip at (853,960), on Piko's antenna axis (ball
+// centre x 853), 15-31px above the antenna ball top (975-991 with the
+// idle bob), so it points at Piko without touching the ball. Same
+// popS(t0) transform about the bubble centre as comicBubble, so tail and
+// bubble pop in together. The red arrow that used to run in this channel
+// is removed: two near-parallel lines here read as one confused gesture.
+function morningTail(t0) {
   const k = popS(t0); if (k <= 0.01) return;
-  const u = UNIT;
-  ctx.save(); ctx.translate(776 * u, 855 * u); ctx.scale(k, k); ctx.translate(-776 * u, -855 * u);
-  ink([[800 * u, 1010 * u], [752 * u, 700 * u]], { w: 8 * u, color: RED, key: 'arr' });
-  cut([[752 * u, 700 * u], [736 * u, 736 * u], [772 * u, 732 * u]], RED, { key: 'arrhead', shadow: false, tear: 0 });
+  const u = UNIT, cx = LX(0.42), cy = LY(0.27);
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cx, -cy);
+  cut([[750 * u, 570 * u], [853 * u, 960 * u], [805 * u, 570 * u]], '#ffffff', { key: 'btailfix-morning', shadow: false, tear: 0, line: INK, lw: 7 * u });
   ctx.restore();
 }
 function sceneNight() {
@@ -1132,12 +1144,16 @@ function sceneMorning() {
   // the tier emblem (variant motif), top centre-right, clear of the
   // year tag (ends x 542) and the sun (starts x 784)
   comicMotif(LX(0.62), LY(0.10), 0.8, M1 + 0.3);
-  // the speech bubble FIRST: its long tail to Piko runs down the right
-  // side, and the tier strips (drawn after) cover the band where it
-  // crosses rows S/A — otherwise the tail's white fill hides the
-  // "ChatGPT" text. The tip stays visible past the strips, pointing
-  // at Piko. Bubble body (y 453-583) never touches the rows (from 606).
-  comicBubble(LX(0.42), LY(0.27), 720 * u, 130 * u, 'Cek batas gratisnya dulu!', 48 * u, LX(0.80) - 44 * u, LY(0.60) - 252 * u, 4.35);
+  // the speech bubble FIRST, with its built-in tail hidden inside the
+  // bubble body: the tip sits at the bubble centre, 10px above its
+  // bottom edge, so the bubble rect (drawn after the tail by
+  // comicBubble) covers it completely. The visible tail is morningTail(),
+  // drawn just before the bubble down the clear channel right of the
+  // tier strips — the old long tail crossed rows S/A and the strips
+  // covered its middle, so it looked cut off at the S row. Bubble body
+  // (y 453-583) never touches the rows (from 606).
+  morningTail(4.35);
+  comicBubble(LX(0.42), LY(0.27), 720 * u, 130 * u, 'Cek batas gratisnya dulu!', 48 * u, LX(0.42), LY(0.27) + 55 * u, 4.35);
   // the tier list: one row per tier, popping in one by one
   const rows = [
     ['S', RED, '#ffffff', 'Elicit, ChatGPT', 'Cari jurnal + chat teks gratis'],
@@ -1147,7 +1163,6 @@ function sceneMorning() {
   ];
   rows.forEach(([letter, fill, fg, tools, limit], i) =>
     tierRow(LY([0.354, 0.445, 0.536, 0.628][i]), letter, fill, fg, tools, limit, TIMELINE.cues.flowers + i * 0.25));
-  tierArrow(TIMELINE.cues.flowers + 1.0);
   comicPiko(LX(0.80), LY(0.60), 0.55, 'happy', M1);
   comicPanelFrame();
   comicFlash(M1);

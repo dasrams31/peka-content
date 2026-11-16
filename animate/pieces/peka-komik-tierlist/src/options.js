@@ -3,7 +3,7 @@
 //  Variant: COMIC_MOTIF 'tier', cream ground. The kit accent stays Peka
 //  yellow (#ffd60a) because comicPiko draws Piko in COMIC.accent; the
 //  episode's red accent (#c1272d) is applied locally in src/scenes.js
-//  (tier chips, limit lines, arrow) — see brief.md.
+//  (tier chips, limit lines) — see brief.md.
 // =====================================================================
 const COMIC_PALETTE = {
   ground1: '#141c40',
