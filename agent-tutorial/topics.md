@@ -12,6 +12,9 @@ terverifikasi, lewati ke topik berikut dan tulis alasannya di sini.
   think-act-observe, tool cuaca get_weather, 30 baris kode.
   DEBUT seri, edisi sudah disiapkan, tayang 16 Nov 19:00.
   Verifikasi: artikel ramadanadipa.com 24 Okt 2026.
+  DIBANGUN, verifikasi ulang cron 16 Nov 19:00: lengkap, SIAP TAYANG
+  (6 slide 4096, reel v2 53 dtk, blog 200, shortlink w9ejEU 307).
+  Tetap [ ] sampai tayang; [x] + tanggal tayang hanya setelah posting sukses.
 - [ ] #02 [CONCEPT] Research agent sederhana - apa itu loop
   think-act-observe, kenapa agent beda dari chatbot, satu contoh
   nyata yang bisa diikuti.
