@@ -80,5 +80,15 @@
   "bot_id": 107,
   "removed_at": "2026-11-16",
   "reason": "sold out"
+ },
+ {
+  "sec": "GEMINI PLUS",
+  "dur": "6 Bulan",
+  "name": "Gemini Plus AI",
+  "price": "35K",
+  "price_num": 35,
+  "bot_id": 93,
+  "removed_at": "2026-11-16",
+  "reason": "sold out"
  }
 ]
