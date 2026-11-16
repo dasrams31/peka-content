@@ -171,6 +171,14 @@
       "bot_id": 107
     },
     {
+      "sec": "GEMINI PRO",
+      "name": "Gemini Pro",
+      "dur": "18 Bulan (Invite)",
+      "price": "14K",
+      "price_num": 14,
+      "bot_id": 86
+    },
+    {
       "sec": "STRAVA",
       "dur": "1 Bulan",
       "name": "Strava Premium",

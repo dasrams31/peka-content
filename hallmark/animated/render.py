@@ -14,7 +14,7 @@ import sys
 from playwright.async_api import async_playwright
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-CHROME = "/home/hatch/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome"
+CHROME = "/home/hatch/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome"
 
 
 async def main():
