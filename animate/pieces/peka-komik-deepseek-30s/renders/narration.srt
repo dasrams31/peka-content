@@ -1,0 +1,27 @@
+1
+00:00:00,300 --> 00:00:02,311
+Ngoding pakai DeepSeek, bukan Claude?
+
+2
+00:00:02,911 --> 00:00:07,146
+DeepSeek Harness baru rilis, harness agen open-source, lisensi MIT.
+
+3
+00:00:07,746 --> 00:00:11,203
+Satu perintah saja, Web UI-nya langsung kebuka di browser kamu.
+
+4
+00:00:14,283 --> 00:00:17,689
+Open-weight dan murah. Coba satu tugas kecil.
+
+5
+00:00:18,089 --> 00:00:21,255
+Terminal-Bench sembilan puluh koma enam, tapi itu klaim vendor.
+
+6
+00:00:21,655 --> 00:00:25,161
+Kimi K3.1 Pro juga open-weight, konteks satu juta token.
+
+7
+00:00:25,461 --> 00:00:29,309
+Tidak ada yang jelas menang. Coba sendiri, satu tugas kecil.
