@@ -1,0 +1,1 @@
+Dua detail yang sering kelewat: tampilkan jawaban pakai textContent, bukan innerHTML, supaya tidak ada celah XSS. Dan pesan yang gagal dijawab dihapus dari riwayat dengan history.pop().

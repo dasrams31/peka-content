@@ -1,0 +1,24 @@
+{
+ "band": "CHATBOT AI: API + JAVASCRIPT DARI NOL",
+ "date": "16 NOVEMBER 2026",
+ "headline": [
+  "BIKIN CHATBOT",
+  "SENDIRI DENGAN",
+  "API AI + JAVASCRIPT"
+ ],
+ "points": [
+  "Jangan panggil API dari browser. API key yang ditulis di frontend terlihat jelas di DevTools siapa pun dan bisa dipakai orang lain sampai tagihanmu membengkak.",
+  "Arsitektur yang benar punya tiga lapis: frontend cuma tampilkan chat, server proxy pegang API key, API AI yang menjawab.",
+  "Potong riwayat ke 10 pesan terakhir supaya biaya token tetap terkendali, dan tampilkan jawaban dengan textContent, bukan innerHTML, supaya tidak ada celah XSS."
+ ],
+ "question": "Kamu tim panggil API langsung dari browser, atau tim server proxy dulu?",
+ "source": "TUTORIAL PEKA",
+ "steps": [
+  "Siapkan server proxy Node.js dan Express dengan satu endpoint POST /api/chat dan system prompt yang spesifik.",
+  "Buat halaman chat HTML yang minimal: daftar pesan dan satu input saja, percantik belakangan.",
+  "Tulis script.js yang mengirim pesan, menampilkan balasan, dan menghapus pesan gagal dari riwayat."
+ ],
+ "sub": "Satu API key, sekitar seratus baris kode, chatbot kamu sudah jalan di websitemu sendiri.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/membuat-chatbot-sederhana-dengan-api-ai-dan-javascript.jpg",
+ "shortlink": "https://s.peka.ai.id/nJNXmK"
+}

@@ -1,0 +1,1 @@
+Server proxy itu gampang: satu endpoint POST /api/chat, terima array pesan, potong ke 10 pesan terakhir, teruskan ke API AI dengan header Authorization Bearer. Jawaban diteruskan balik ke frontend.

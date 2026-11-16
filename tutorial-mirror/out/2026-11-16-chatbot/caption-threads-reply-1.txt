@@ -1,0 +1,1 @@
+API key yang ditulis di JavaScript frontend terlihat jelas di DevTools siapa pun. Solusinya satu: server proxy. Key cuma tinggal di server, frontend cuma bicara ke server kamu sendiri.

@@ -1,0 +1,5 @@
+API key kamu bocor di frontend? Bahaya.
+
+Bikin chatbot sendiri dengan API AI dan JavaScript ternyata cuma butuh satu API key dan sekitar seratus baris kode. Yang penting arsitekturnya benar: server proxy yang pegang key, frontend cuma tampilkan chat.
+
+Link blognya ada di akhir video.

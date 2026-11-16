@@ -1,0 +1,186 @@
+<p>Chatbot AI sekarang bukan lagi proyek besar yang butuh tim dan server mahal. Dengan satu API key dan sekitar seratus baris JavaScript, kamu sudah bisa punya chatbot yang menjawab pertanyaan di websitemu sendiri. Artikel ini membangun chatbot itu dari nol: server kecil sebagai perantara, halaman chat sederhana, dan JavaScript yang mengirim pesan lalu menampilkan balasan.</p>
+<p>Kita pakai API yang kompatibel dengan format OpenAI. Jadi contoh ini jalan untuk OpenAI, model lokal yang diekspos lewat endpoint OpenAI-compatible, atau penyedia lain yang memakai format pesan yang sama. Yang berubah hanya URL dan nama modelnya.</p>
+<h2>Arsitektur yang benar: jangan panggil API dari browser</h2>
+<p>Kesalahan pertama yang dilakukan hampir semua pemula adalah menulis API key langsung di file JavaScript frontend, lalu memanggil api.openai.com dari browser. Itu jalan, tapi key kamu terlihat jelas di DevTools siapa pun yang membuka websitemu. Orang lain bisa memakai key itu sampai tagihanmu membengkak.</p>
+<p>Arsitektur yang benar punya tiga lapis. Pertama, frontend (HTML dan JavaScript) hanya menampilkan chat dan mengirim pesan ke server kamu sendiri. Kedua, server proxy (Node.js dan Express) menerima pesan, menambahkan API key, lalu meneruskannya ke API AI. Ketiga, API AI menjawab, dan server meneruskan jawaban itu ke frontend.</p>
+<p>Dengan cara ini API key tidak pernah keluar dari server. Bonusnya, server juga jadi tempat yang tepat untuk membatasi jumlah pesan, memotong riwayat yang terlalu panjang, dan mencatat pemakaian.</p>
+<h2>1. Siapkan server proxy dengan Node.js</h2>
+<p>Buat folder proyek dan install dua package: express untuk server dan dotenv untuk menyimpan API key di file .env.</p>
+<pre><code>mkdir chatbot-sederhana &amp;&amp; cd chatbot-sederhana
+npm init -y
+npm install express dotenv</code></pre>
+<p>Isi file .env dengan key kamu. File ini jangan pernah di-commit ke Git.</p>
+<pre><code>AI_API_KEY=sk-isi-dengan-api-key-kamu
+AI_API_URL=https://api.openai.com/v1/chat/completions
+AI_MODEL=gpt-4o-mini
+PORT=3000</code></pre>
+<p>Sekarang tulis server.js. Server ini punya satu endpoint POST /api/chat yang menerima array pesan, memotong riwayat ke 10 pesan terakhir supaya token tidak membengkak, lalu meneruskannya ke API AI.</p>
+<pre><code>require('dotenv').config();
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+app.use(express.static('public'));
+
+const SYSTEM_PROMPT = `Kamu adalah asisten ramah untuk toko kopi kecil.
+Jawab singkat, maksimal 3 kalimat. Kalau tidak tahu jawabannya,
+katakan tidak tahu dan tawarkan untuk menghubungi pemilik toko.`;
+
+app.post('/api/chat', async (req, res) =&gt; {
+  const { messages } = req.body;
+
+  if (!Array.isArray(messages) || messages.length === 0) {
+    return res.status(400).json({ error: 'Pesan tidak boleh kosong.' });
+  }
+
+  // Ambil 10 pesan terakhir saja, supaya biaya token tetap terkendali
+  const recent = messages.slice(-10);
+
+  try {
+    const response = await fetch(process.env.AI_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.AI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: process.env.AI_MODEL,
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          ...recent,
+        ],
+        temperature: 0.7,
+        max_tokens: 300,
+      }),
+    });
+
+    if (!response.ok) {
+      const detail = await response.text();
+      console.error('AI API error:', response.status, detail);
+      return res.status(502).json({ error: 'Layanan AI sedang bermasalah, coba lagi sebentar lagi.' });
+    }
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content?.trim() ?? '';
+    res.json({ reply });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server gagal menghubungi layanan AI.' });
+  }
+});
+
+app.listen(process.env.PORT || 3000, () =&gt; {
+  console.log(`Chatbot jalan di http://localhost:${process.env.PORT || 3000}`);
+});</code></pre>
+<p>Perhatikan tiga detail di kode ini. Pertama, max_tokens: 300 membatasi panjang jawaban supaya biaya terkendali. Kedua, kalau API gagal, server mengembalikan pesan error yang ramah, bukan menumpahkan detail mentah ke user. Ketiga, temperature: 0.7 memberi jawaban yang natural tapi tidak terlalu ngawur. Untuk chatbot customer service, nilai 0.3 sampai 0.7 biasanya paling aman.</p>
+<h2>2. Antarmuka chat di HTML</h2>
+<p>Buat folder public dan isi dengan index.html. Tampilannya sengaja minimal: daftar pesan dan satu input. Kamu bisa mempercantik nanti dengan CSS, logika intinya tidak berubah.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Chatbot Toko Kopi&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    #chat { border: 1px solid #ddd; border-radius: 12px; height: 420px; overflow-y: auto; padding: 1rem; }
+    .msg { margin: 0.5rem 0; padding: 0.6rem 0.9rem; border-radius: 10px; max-width: 80%; }
+    .user { background: #2563eb; color: #fff; margin-left: auto; }
+    .bot { background: #f1f1f1; }
+    form { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    input { flex: 1; padding: 0.7rem; border: 1px solid #ccc; border-radius: 8px; }
+    button { padding: 0.7rem 1.2rem; border: 0; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: wait; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Chatbot Toko Kopi&lt;/h1&gt;
+  &lt;div id="chat"&gt;&lt;/div&gt;
+  &lt;form id="form"&gt;
+    &lt;input id="input" type="text" placeholder="Tanya soal menu, jam buka, atau harga..." autocomplete="off"&gt;
+    &lt;button id="send" type="submit"&gt;Kirim&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>3. JavaScript: kirim pesan dan tampilkan balasan</h2>
+<p>File public/script.js mengatur tiga hal: menyimpan riwayat percakapan, mengirim pesan ke server, dan menampilkan balasan dengan indikator "mengetik" supaya user tahu chatbot sedang bekerja.</p>
+<pre><code>const chatBox = document.getElementById('chat');
+const form = document.getElementById('form');
+const input = document.getElementById('input');
+const sendBtn = document.getElementById('send');
+
+// Riwayat percakapan dalam format yang diminta API AI
+const history = [];
+
+function addMessage(text, who) {
+  const div = document.createElement('div');
+  div.className = `msg ${who}`;
+  div.textContent = text;
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+  return div;
+}
+
+form.addEventListener('submit', async (e) =&gt; {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  input.value = '';
+  sendBtn.disabled = true;
+  addMessage(text, 'user');
+  history.push({ role: 'user', content: text });
+
+  const typing = addMessage('Mengetik...', 'bot');
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history }),
+    });
+    const data = await res.json();
+
+    typing.remove();
+    if (!res.ok) {
+      addMessage(data.error || 'Terjadi kesalahan, coba lagi.', 'bot');
+      history.pop(); // Pesan gagal tidak ikut ke riwayat
+      return;
+    }
+
+    addMessage(data.reply, 'bot');
+    history.push({ role: 'assistant', content: data.reply });
+  } catch (err) {
+    typing.remove();
+    addMessage('Tidak bisa terhubung ke server. Periksa koneksimu lalu coba lagi.', 'bot');
+    history.pop();
+  } finally {
+    sendBtn.disabled = false;
+    input.focus();
+  }
+});
+
+addMessage('Halo! Ada yang bisa saya bantu soal menu atau jam buka toko?', 'bot');</code></pre>
+<p>Detail kecil yang penting: textContent, bukan innerHTML, dipakai untuk menampilkan pesan. Kalau kamu memakai innerHTML, user bisa menyisipkan tag HTML atau script lewat pesan mereka. Ini celah XSS klasik yang sering lolos di tutorial chatbot. Pesan gagal juga dihapus dari riwayat dengan history.pop() supaya percakapan tidak tercemar pesan yang tidak pernah dijawab.</p>
+<p>Jalankan dengan node server.js, buka http://localhost:3000, dan chatbot kamu sudah bisa dipakai.</p>
+<h2>4. Batasi riwayat percakapan supaya biaya tidak membengkak</h2>
+<p>Setiap pesan yang kamu kirim ke API ikut dihitung sebagai token input. Percakapan yang panjang berarti tagihan yang ikut panjang. Server di atas sudah memotong ke 10 pesan terakhir, tapi kamu juga bisa lebih hemat dengan meringkas.</p>
+<p>Aturan praktis yang saya pakai: simpan maksimal 6 sampai 10 pesan terakhir di client, dan potong lagi di server sebagai pengaman ganda. Kalau chatbot kamu butuh ingatan panjang, misalnya asisten belanja yang mengingat preferensi user, simpan ringkasannya di database dan kirim ringkasan itu sebagai bagian dari system prompt, bukan seluruh riwayat mentah.</p>
+<p>Satu hal lagi: jangan simpan data sensitif di riwayat. Kalau user mengetik nomor telepon atau alamat, jangan teruskan mentah-mentah ke API pihak ketiga tanpa alasan yang jelas. Saring dulu di server, atau beri tahu user untuk tidak mengirim data pribadi lewat chat.</p>
+<h2>Kesalahan umum pemula dan cara menghindarinya</h2>
+<p><strong>API key bocor di frontend.</strong> Ini yang paling fatal. Solusinya selalu server proxy seperti di atas, dan tambahkan .env ke .gitignore sejak hari pertama.</p>
+<p><strong>Tidak ada batasan di server.</strong> Tanpa validasi, siapa saja bisa mengirim pesan raksasa atau ribuan request ke endpoint kamu dan menguras kuota API. Tambahkan batas panjang pesan, misalnya 500 karakter, dan rate limit sederhana dengan package express-rate-limit.</p>
+<p><strong>System prompt terlalu umum.</strong> Prompt "kamu adalah asisten AI" menghasilkan jawaban yang generik dan kadang keluar topik. Tulis peran yang spesifik, sebut batasan jawabannya, dan beri contoh gaya bahasa yang kamu mau. Prompt di contoh ini hanya tiga baris tapi sudah jauh lebih baik daripada prompt satu baris.</p>
+<p><strong>Tidak menangani error API.</strong> API bisa down, key bisa kedaluwarsa, kuota bisa habis. Kalau frontend tidak menangani itu, user hanya melihat loading yang tidak pernah selesai. Selalu tampilkan pesan error yang jelas dan beri user jalan untuk mencoba lagi.</p>
+<p><strong>Jawaban ditampilkan mentah sebagai HTML.</strong> Seperti dijelaskan di atas, pakai textContent atau sanitasi dulu. Jangan pernah menempel balasan AI ke DOM dengan innerHTML tanpa sanitasi.</p>
+<h2>Langkah praktis yang bisa dicoba hari ini</h2>
+<p>Mulai dari versi paling sederhana, lalu kembangkan selangkah demi selangkah:</p>
+<ol>
+<li>Jalankan contoh di artikel ini sampai chatbot menjawab di browser kamu.</li>
+<li>Ganti system prompt dengan bisnis atau topik kamu sendiri, lalu uji dengan 10 pertanyaan yang kira-kira ditanyakan pengunjung.</li>
+<li>Tambahkan express-rate-limit supaya satu IP tidak bisa membanjiri endpoint kamu.</li>
+<li>Deploy servernya ke VPS dengan PM2 supaya chatbot tetap jalan setelah kamu menutup terminal.</li>
+<li>Kalau sudah stabil, tambahkan tombol yang sering ditanyakan, misalnya "Lihat menu" atau "Jam buka", supaya user tidak harus mengetik semuanya.</li>
+</ol>
+<p>Chatbot sederhana seperti ini adalah fondasi yang bagus. Setelah arsitekturnya benar, kamu bisa menambah kemampuan tanpa merombak semuanya: ganti modelnya, tambah pencarian dokumen dengan RAG, atau hubungkan ke database produk supaya chatbot bisa menjawab stok dan harga secara langsung. Yang penting, bangun dulu versi yang aman dan jalan, baru tambah fitur.</p>

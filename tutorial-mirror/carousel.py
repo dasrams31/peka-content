@@ -115,9 +115,9 @@ def slide_cover(spec, page, total):
     big_h = int(900 * mas.height / mas.width)
     mas = mas.resize((900, big_h))
     img.paste(mas, (W - MARGIN - 900, H - 260 - big_h), mas)
-    d.text((MARGIN, H - 420), "Tutorial dari blog ramadanadipa.com,",
+    d.text((MARGIN, H - 420), "Tutorial praktis buat kamu,",
            font=body(72), fill=GRAY)
-    d.text((MARGIN, H - 330), "ditulis ulang buat kamu.", font=body(72), fill=GRAY)
+    d.text((MARGIN, H - 330), "langsung bisa dicoba hari ini.", font=body(72), fill=GRAY)
     return img
 
 

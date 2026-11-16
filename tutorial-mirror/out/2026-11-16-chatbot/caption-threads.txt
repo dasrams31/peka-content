@@ -1,0 +1,9 @@
+API key kamu bocor di frontend? Bahaya.
+
+Chatbot AI bisa dibikin sendiri dengan satu API key dan sekitar seratus baris JavaScript. Kuncinya: jangan panggil API dari browser, server proxy yang pegang key.
+
+Di carousel ini: arsitektur 3 lapis yang benar, server proxy, halaman chat, sampai script kirim pesan yang aman dari XSS.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim panggil API langsung dari browser, atau tim server proxy dulu? #AI

@@ -1,0 +1,8 @@
+THREADS_ROOT_OK https://www.threads.com/@peka.ai.id/post/Dfy9j5_DxCD
+THREADS_ROOT_ID 18111168899261042
+THREADS_REPLY_1_OK https://www.threads.com/@peka.ai.id/post/Dfy9mt2j6hm
+THREADS_REPLY_1_ID 18120315239519928
+THREADS_REPLY_2_OK https://www.threads.com/@peka.ai.id/post/Dfy9o-dD7E6
+THREADS_REPLY_2_ID 17880781683633632
+THREADS_REPLY_3_OK https://www.threads.com/@peka.ai.id/post/Dfy90E2j7Ys
+THREADS_REPLY_3_ID 18114277184591357
