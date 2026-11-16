@@ -1,0 +1,7 @@
+1
+00:00:00,300 --> 00:00:02,311
+Ngoding pakai DeepSeek, bukan Claude?
+
+2
+00:00:04,301 --> 00:00:07,146
+Open-weight dan murah. Coba satu tugas kecil.

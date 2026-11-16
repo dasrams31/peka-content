@@ -1,0 +1,7 @@
+1
+00:00:00,300 --> 00:00:03,018
+AI buat skripsi, mana yang tier S?
+
+2
+00:00:04,298 --> 00:00:07,263
+Elicit dan ChatGPT tier S. Cek batas gratisnya.

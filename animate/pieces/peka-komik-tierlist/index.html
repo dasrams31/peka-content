@@ -1071,7 +1071,17 @@ function chip(cx, cy, str, t0) {
   handText(str, cx - handW(str, size, 700) / 2, cy + size * 0.36, size, INK, { weight: 700, key: 'chipt' + str });
   ctx.restore();
 }
-// one tier row: white strip + letter chip + tools + free-limit line.
+// left- / right-aligned chip columns (shared edge, not shared centre,
+// so different name lengths still line up): left edge x 60, right edge
+// x 920 (phone UI strip starts at 940).
+function chipL(xLeft, cy, str, t0) {
+  const w = handW(str, 40 * UNIT, 700) + 56 * UNIT;
+  chip(xLeft + w / 2, cy, str, t0);
+}
+function chipR(xRight, cy, str, t0) {
+  const w = handW(str, 40 * UNIT, 700) + 56 * UNIT;
+  chip(xRight - w / 2, cy, str, t0);
+}
 // Pops in (back-eased) at t0, scaled about the strip centre.
 function tierRow(cy, letter, fill, fg, tools, limit, t0) {
   const k = popS(t0); if (k <= 0.01) return;
@@ -1099,13 +1109,15 @@ function sceneNight() {
   comicHalftone(LX(0.62), LY(0.02), W, LY(0.3), 46 * u, 7 * u, 'rgba(255,255,255,0.35)');
   cut(ellipsePts(mx, my, mr, mr, 0, 30), COMIC.accent2, { key: 'moon', line: INK, lw: 6 * u });
   // six tool chips ringing the confused hero, popping in one by one
-  const chips = [[0.17, 0.36, 'Elicit'], [0.77, 0.36, 'ChatGPT'], [0.16, 0.60, 'NotebookLM'], [0.76, 0.60, 'SciSpace'], [0.17, 0.70, 'Gemini'], [0.77, 0.70, 'Gamma']];
-  chips.forEach(([fx, fy, str], i) => chip(LX(fx), LY(fy), str, TIMELINE.cues.wake + i * 0.15));
+  const chips = [['L', 0.36, 'Elicit'], ['R', 0.36, 'ChatGPT'], ['L', 0.60, 'NotebookLM'], ['R', 0.60, 'SciSpace'], ['L', 0.70, 'Gemini'], ['R', 0.70, 'Gamma']];
+  chips.forEach(([side, fy, str], i) => (side === 'L' ? chipL(60 * u, LY(fy), str, TIMELINE.cues.wake + i * 0.15) : chipR(920 * u, LY(fy), str, TIMELINE.cues.wake + i * 0.15)));
   // action lines around the confused hero: grow in one by one from the wake
   const hx = LX(0.46), hy = LY(0.52);
   comicActionLines(hx, hy, TIMELINE.cues.wake);
   comicPiko(hx, hy, 1.0, 'confused');
-  comicBubble(LX(0.44), LY(0.28), 860 * u, 130 * u, 'AI buat skripsi, mana yang tier S?', 44 * u, hx - 60 * u, hy - 190 * u, 0.35);
+  // short tail to the top of Piko's antenna (hx-20, hy-290): a long tail
+  // to the body reads as a black spike and clips the Elicit chip.
+  comicBubble(LX(0.46), LY(0.28), 840 * u, 130 * u, 'AI buat skripsi, mana yang tier S?', 44 * u, hx - 20 * u, hy - 290 * u, 0.35);
   comicPanelFrame();
   comicFlash(M1);
   yearTag('Tier-list?');
@@ -1120,6 +1132,12 @@ function sceneMorning() {
   // the tier emblem (variant motif), top centre-right, clear of the
   // year tag (ends x 542) and the sun (starts x 784)
   comicMotif(LX(0.62), LY(0.10), 0.8, M1 + 0.3);
+  // the speech bubble FIRST: its long tail to Piko runs down the right
+  // side, and the tier strips (drawn after) cover the band where it
+  // crosses rows S/A — otherwise the tail's white fill hides the
+  // "ChatGPT" text. The tip stays visible past the strips, pointing
+  // at Piko. Bubble body (y 453-583) never touches the rows (from 606).
+  comicBubble(LX(0.42), LY(0.27), 720 * u, 130 * u, 'Cek batas gratisnya dulu!', 48 * u, LX(0.80) - 44 * u, LY(0.60) - 252 * u, 4.35);
   // the tier list: one row per tier, popping in one by one
   const rows = [
     ['S', RED, '#ffffff', 'Elicit, ChatGPT', 'Cari jurnal + chat teks gratis'],
@@ -1131,7 +1149,6 @@ function sceneMorning() {
     tierRow(LY([0.354, 0.445, 0.536, 0.628][i]), letter, fill, fg, tools, limit, TIMELINE.cues.flowers + i * 0.25));
   tierArrow(TIMELINE.cues.flowers + 1.0);
   comicPiko(LX(0.80), LY(0.60), 0.55, 'happy', M1);
-  comicBubble(LX(0.42), LY(0.27), 720 * u, 130 * u, 'Cek batas gratisnya dulu!', 48 * u, LX(0.80) - 44 * u, LY(0.60) - 252 * u, 4.35);
   comicPanelFrame();
   comicFlash(M1);
   yearTag('peka.ai.id');

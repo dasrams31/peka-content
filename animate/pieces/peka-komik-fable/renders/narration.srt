@@ -1,0 +1,7 @@
+1
+00:00:00,300 --> 00:00:02,579
+Model termurah, tapi jadi nomor satu?
+
+2
+00:00:04,299 --> 00:00:07,220
+Fable 5.2, skor 65, harga lebih murah.

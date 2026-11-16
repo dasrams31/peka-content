@@ -1081,16 +1081,29 @@ function piko(x, y, s, mood, hopT) {
   ink(arcPts(x - size * 0.20, y + size * 0.10, 26 * s * u, Math.PI * 0.15, Math.PI * 0.85, 10), { w: 8 * u, color: INK, key: 'pksmile' });
 }
 // two-line speech bubble (comicBubble is single-line). Lines are centred
-// independently; the tail points at Piko. t0 couples to the voice-over:
-// 0.35s (line 1 starts 0.30s) — see voice/script.json.
+// independently. The tail is a narrow triangle from the bubble's bottom
+// edge to Piko (not the kit's wide left-side tail: that diagonal crossed
+// the terminal text). t0 couples to the voice-over: 0.35s (line 1 starts
+// 0.30s) — see voice/script.json.
 function bubble2(cx, cy, w, h, l1, l2, size, tailX, tailY, t0) {
   const k = popS(t0); if (k <= 0.01) return;
   ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cx, -cy);
   const x = cx - w / 2, y = cy - h / 2;
-  cut([[x, y + 26], [tailX, tailY], [x + 90, y + h]], '#ffffff', { key: 'btail2', shadow: false, tear: 0, line: INK, lw: 7 * UNIT });
+  cut([[cx - 35, y + h - 4], [tailX, tailY], [cx + 35, y + h - 4]], '#ffffff', { key: 'btail2', shadow: false, tear: 0, line: INK, lw: 7 * UNIT });
   cut(rect(x, y, w, h, 34), '#ffffff', { key: 'bub2', shadow: true, tear: 0, line: INK, lw: 7 * UNIT });
   handText(l1, cx - handW(l1, size, 700) / 2, cy - size * 0.42, size, INK, { weight: 700, key: 'btxt2a' });
   handText(l2, cx - handW(l2, size, 700) / 2, cy + size * 0.62, size, INK, { weight: 700, key: 'btxt2b' });
+  ctx.restore();
+}
+// single-line speech bubble with the same narrow bottom tail. t0 couples
+// to the voice-over: 4.35s (line 2 starts 4.30s).
+function bubble(cx, cy, w, h, str, size, tailX, tailY, t0) {
+  const k = popS(t0); if (k <= 0.01) return;
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cx, -cy);
+  const x = cx - w / 2, y = cy - h / 2;
+  cut([[cx - 35, y + h - 4], [tailX, tailY], [cx + 35, y + h - 4]], '#ffffff', { key: 'btail1', shadow: false, tear: 0, line: INK, lw: 7 * UNIT });
+  cut(rect(x, y, w, h, 34), '#ffffff', { key: 'bub1', shadow: true, tear: 0, line: INK, lw: 7 * UNIT });
+  handText(str, cx - handW(str, size, 700) / 2, cy + size * 0.36, size, INK, { weight: 700, key: 'btxt1' });
   ctx.restore();
 }
 // fade a drawing in (alpha 0 -> 1 over d seconds from t0)
@@ -1125,13 +1138,13 @@ function sceneNight() {
   handText('>_ ngoding pakai apa?', 150, 850, 52, COMIC.accent, { weight: 800, key: 'prompt' });
   cut(rect(668, 812, 24, 44, 4), COMIC.accent, { key: 'curblock', shadow: false, tear: 0 });
   codeLines();
-  comicThought(LX(0.80), LY(0.44), '?', TIMELINE.cues.wake + 0.45);
-  const hx = LX(0.46), hy = LY(0.60);
+  comicThought(LX(0.81), LY(0.48), '?', TIMELINE.cues.wake + 0.45, 56);
+  const hx = LX(0.72), hy = LY(0.60);
   piko(hx, hy, 1.0, 'confused');
-  bubble2(LX(0.42), LY(0.27), 700 * u, 210 * u, 'Ngoding pakai DeepSeek,', 'bukan Claude?!', 56 * u, hx - 40 * u, hy - 250 * u, 0.35);
+  bubble2(LX(0.56), LY(0.27), 620 * u, 210 * u, 'Ngoding pakai DeepSeek,', 'bukan Claude?!', 54 * u, hx - 8 * u, hy - 202 * u, 0.35);
   comicPanelFrame();
   comicFlash(M1);
-  yearTag('dsh?');
+  yearTag('dsh');
   capStrip('Ngoding pakai DeepSeek, bukan Claude?');
 }
 function sceneMorning() {
@@ -1160,9 +1173,9 @@ function sceneMorning() {
     handText(p1, 150, 1042, 40, COMIC.accent, { weight: 800, key: 'bench' });
     handText('- klaim vendor', 150 + handW(p1, 40, 800) + 14, 1042, 40, 'rgba(255,255,255,0.75)', { weight: 700, key: 'benchv' });
   });
-  const hx = LX(0.46), hy = LY(0.60);
+  const hx = LX(0.72), hy = LY(0.60);
   piko(hx, hy, 1.0, 'happy', M1);
-  comicBubble(LX(0.40), LY(0.29), 720 * u, 150 * u, 'Coba satu tugas kecil dulu!', 54 * u, hx - 40 * u, hy - 250 * u, 4.35);
+  bubble(LX(0.40), LY(0.29), 720 * u, 150 * u, 'Coba satu tugas kecil dulu!', 54 * u, hx - 8 * u, hy - 202 * u, 4.35);
   comicPanelFrame();
   comicFlash(M1);
   yearTag('peka.ai.id');
