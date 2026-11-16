@@ -1,0 +1,18 @@
+{
+ "lead": 0.3,
+ "lines": [
+  {
+   "after": 1.28,
+   "file": "night.mp3",
+   "id": "night",
+   "text": "AI buat skripsi, mana yang tier S?"
+  },
+  {
+   "after": 0.35,
+   "file": "morning.mp3",
+   "id": "morning",
+   "text": "Elicit dan ChatGPT tier S. Cek batas gratisnya."
+  }
+ ],
+ "tail": 0.7
+}

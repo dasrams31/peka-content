@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peka-komik demo</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1b1714; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  PEKA-KOMIK DEMO — 9:16, 6.0s @ 120 BPM, 24fps. Night panel: Piko
+//  confused by too many AI choices; the moon becomes the sun and Peka
+//  picks one. Proves the style kit renders, morphs and stays deterministic.
+//  Build: node <skill>/tools/build.mjs <project>/styles/peka-komik/demo
+// =====================================================================
+const FPS = 24, W = 1080, H = 1920;
+const BPM = 120, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;
+const DURATION = 6.0;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };
+const HAND = '"Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", "Comic Neue", cursive';   // local handwriting fonts: Windows, macOS, Linux
+const CX = 470;
+
+const onBeat = (t) => +(Math.round(t / E8) * E8).toFixed(4);
+const M1 = onBeat(3.0);                                      // the morph: the moon becomes the sun
+const ERA_LIST = [[0, M1, () => sceneNight()], [M1, DURATION, () => sceneMorning()]];
+const SHOTS = [
+  ['night',   0, 0.0, M1,       'bingung pilih AI?'],
+  ['morning', 1, M1,  DURATION, 'Peka pilihkan yang cocok'],
+];
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'morph-chain',
+  shots: SHOTS.map(([key, era, t0, t1, title], i) => ({ id: i + 1, key, era, t0, t1, title })),
+  cuts: [],
+  morphs: [M1],
+  cues: { wake: onBeat(1.0), flowers: onBeat(3.75) },
+  acts: [
+    { name: '1 Bingung',   role: 'build', t0: 0.0, t1: M1 },
+    { name: '2 Peka pilihkan', role: 'gift',  t0: M1, t1: DURATION },
+  ],
+  board: [
+    { t: 2.0, title: 'bingung pilih AI', sound: 'a soft pad, a rising fifth', next: 'bulan jadi matahari: Peka pilihkan' },
+    { t: 5.0, title: 'Peka pilihkan', sound: 'a warm chord, plucks per checkmark', next: 'loops' },
+  ],
+  narration: [],
+};
+window.TIMELINE = TIMELINE;

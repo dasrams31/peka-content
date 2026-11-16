@@ -1,0 +1,103 @@
+{
+ "duration": 7.92,
+ "lead": 0.3,
+ "tail": 0.7,
+ "lines": [
+  {
+   "id": "night",
+   "text": "Model termurah, tapi jadi nomor satu?",
+   "t0": 0.3,
+   "t1": 2.579,
+   "take": "voice/night.mp3",
+   "words": [
+    {
+     "w": "Model",
+     "t0": 0.3,
+     "t1": 0.68,
+     "est": true
+    },
+    {
+     "w": "termurah,",
+     "t0": 0.68,
+     "t1": 1.25,
+     "est": true
+    },
+    {
+     "w": "tapi",
+     "t0": 1.25,
+     "t1": 1.566,
+     "est": true
+    },
+    {
+     "w": "jadi",
+     "t0": 1.566,
+     "t1": 1.883,
+     "est": true
+    },
+    {
+     "w": "nomor",
+     "t0": 1.883,
+     "t1": 2.262,
+     "est": true
+    },
+    {
+     "w": "satu?",
+     "t0": 2.262,
+     "t1": 2.579,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "morning",
+   "text": "Fable 5.2, skor 65, harga lebih murah.",
+   "t0": 4.299,
+   "t1": 7.22,
+   "take": "voice/morning.mp3",
+   "words": [
+    {
+     "w": "Fable",
+     "t0": 4.299,
+     "t1": 4.8,
+     "est": true
+    },
+    {
+     "w": "5.2,",
+     "t0": 4.8,
+     "t1": 5.05,
+     "est": true
+    },
+    {
+     "w": "skor",
+     "t0": 5.05,
+     "t1": 5.467,
+     "est": true
+    },
+    {
+     "w": "65,",
+     "t0": 5.467,
+     "t1": 5.718,
+     "est": true
+    },
+    {
+     "w": "harga",
+     "t0": 5.718,
+     "t1": 6.219,
+     "est": true
+    },
+    {
+     "w": "lebih",
+     "t0": 6.219,
+     "t1": 6.719,
+     "est": true
+    },
+    {
+     "w": "murah.",
+     "t0": 6.719,
+     "t1": 7.22,
+     "est": true
+    }
+   ]
+  }
+ ]
+}

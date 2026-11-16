@@ -1,0 +1,97 @@
+{
+ "duration": 7.946,
+ "lead": 0.3,
+ "tail": 0.8,
+ "lines": [
+  {
+   "id": "night",
+   "text": "Ngoding pakai DeepSeek, bukan Claude?",
+   "t0": 0.3,
+   "t1": 2.311,
+   "take": "voice/night.mp3",
+   "words": [
+    {
+     "w": "Ngoding",
+     "t0": 0.3,
+     "t1": 0.747,
+     "est": true
+    },
+    {
+     "w": "pakai",
+     "t0": 0.747,
+     "t1": 1.082,
+     "est": true
+    },
+    {
+     "w": "DeepSeek,",
+     "t0": 1.082,
+     "t1": 1.585,
+     "est": true
+    },
+    {
+     "w": "bukan",
+     "t0": 1.585,
+     "t1": 1.92,
+     "est": true
+    },
+    {
+     "w": "Claude?",
+     "t0": 1.92,
+     "t1": 2.311,
+     "est": true
+    }
+   ]
+  },
+  {
+   "id": "morning",
+   "text": "Open-weight dan murah. Coba satu tugas kecil.",
+   "t0": 4.301,
+   "t1": 7.146,
+   "take": "voice/morning.mp3",
+   "words": [
+    {
+     "w": "Open-weight",
+     "t0": 4.301,
+     "t1": 5.029,
+     "est": true
+    },
+    {
+     "w": "dan",
+     "t0": 5.029,
+     "t1": 5.293,
+     "est": true
+    },
+    {
+     "w": "murah.",
+     "t0": 5.293,
+     "t1": 5.69,
+     "est": true
+    },
+    {
+     "w": "Coba",
+     "t0": 5.69,
+     "t1": 6.021,
+     "est": true
+    },
+    {
+     "w": "satu",
+     "t0": 6.021,
+     "t1": 6.352,
+     "est": true
+    },
+    {
+     "w": "tugas",
+     "t0": 6.352,
+     "t1": 6.749,
+     "est": true
+    },
+    {
+     "w": "kecil.",
+     "t0": 6.749,
+     "t1": 7.146,
+     "est": true
+    }
+   ]
+  }
+ ]
+}
