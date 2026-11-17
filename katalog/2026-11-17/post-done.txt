@@ -4,3 +4,5 @@ IG_OK https://www.instagram.com/p/Df1Um_HD5xF/
 IG_MEDIA 17970950060994164
 FB_OK https://facebook.com/61594934228841/posts/pfbid02BAQRwsE5CtYHS5Rsakag9ia2ZPtdSzqNy7hk9gnRxwXMJpNeh4KwUqP9Wr4jH456l/
 FB_POST_ID 122121478275497807
+STORY_OK https://instagram.com/stories/peka.ai.id/17905485540607701
+STORY_MEDIA 17905485540607701
