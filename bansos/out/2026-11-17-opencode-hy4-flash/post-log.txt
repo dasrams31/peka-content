@@ -1,0 +1,6 @@
+threads: https://www.threads.com/@peka.ai.id/post/Df2GI3OD09x
+instagram media: 18122139391756388
+instagram: https://www.instagram.com/reel/Df2QT3bE25H/
+facebook: NOT POSTED - facebook-cli pages posts create returned HTTP 403 twice ("command currently unavailable, gated server-side"), nothing created
+shortlink: https://s.peka.ai.id/yxpMH0
+blog: https://blog.peka.ai.id/p/hy4-flash-gratis-di-opencode
