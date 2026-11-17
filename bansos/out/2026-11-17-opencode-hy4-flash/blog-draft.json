@@ -1,0 +1,20 @@
+{
+  "body_html": "<p>OpenCode lagi ngasih model Hy4 Flash (Tencent) gratis, hampir tanpa batas, sampai sekitar 30 November 2026. Penawaran ini dibaca langsung dari tabel model resmi OpenCode di opencode.ai/v2/docs/console/models pada 17 November 2026, dan tanggalnya cocok dengan siaran pers resmi Tencent tanggal 16 November 2026. Hy4 Flash adalah model baru Tencent, 224B total dengan 12B aktif, konteks sampai 1 juta token, dan bisa baca gambar.</p>\n<p><strong>Yang kamu dapat:</strong> model Hy4 flash Free di dalam OpenCode, tanpa daftar, tanpa API key, tanpa kartu. Tinggal install OpenCode, ketik /models, lalu pilih Hy4 flash Free. Model ini juga tersedia di OpenCode Go tanpa memotong jatah Go, menurut akun resmi OpenCode.</p>\n<p><strong>Cara klaimnya:</strong> buka halaman resmi di https://s.peka.ai.id/yxpMH0, install OpenCode dengan perintah curl -fsSL https://opencode.ai/v2/install | bash, jalankan opencode, ketik /models, lalu pilih Hy4 flash Free. Dari HP juga bisa lewat aplikasi pendamping komunitas OpenCode: di VPS jalankan opencode service set password dulu, baru opencode service start dan opencode pair --remote, lalu tempel link pairing di aplikasi. Link pairing cuma berlaku 5 menit dan sekali pakai. Jangan pernah expose server OpenCode ke internet tanpa password.</p>\n<p><strong>Yang perlu diingat:</strong> gratisnya cuma sampai sekitar 30 November 2026, dan kuotanya kuota bersama, jadi bisa kena limit di jam sibuk. Ini bukan benar-benar tanpa batas. Model gratis ini cuma jalan di dalam OpenCode, tidak bisa dipakai sebagai API key di bot atau tools lain. Dan satu peringatan penting: jangan buka folder yang berisi private key wallet di dalam OpenCode.</p>\n<p>Kamu mau pakai Hy4 Flash buat ngoding apa dulu: bikin web, debug, atau belajar Python? Ceritakan di komentar kalau ada yang mentok pas klaim.</p>",
+  "date": "2026-11-17",
+  "datetime": "2026-11-17 17:00",
+  "excerpt": "Model Hy4 Flash (Tencent) gratis di OpenCode sampai sekitar 30 Nov 2026. Konteks 1 juta token, tanpa daftar, tanpa API key, tanpa kartu.",
+  "image": "hy4-flash-gratis-di-opencode.png",
+  "images": [
+    "hy4-flash-gratis-di-opencode.png",
+    "hy4-flash-gratis-di-opencode-2.png",
+    "hy4-flash-gratis-di-opencode-3.png"
+  ],
+  "links": {},
+  "slug": "hy4-flash-gratis-di-opencode",
+  "tags": [
+    "Bansos",
+    "AI",
+    "OpenCode"
+  ],
+  "title": "Hy4 Flash Gratis di OpenCode, Model AI Coding Tanpa Daftar"
+}
