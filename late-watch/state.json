@@ -1,11 +1,4 @@
 {
-  "date": "2026-11-17",
-  "slots": {
-    "prompt-harian": {
-      "alerted": true,
-      "alerted_at": "13:45",
-      "aired_late_noticed": true,
-      "broadcast_checked": true
-    }
-  }
+  "date": "2026-11-18",
+  "slots": {}
 }
