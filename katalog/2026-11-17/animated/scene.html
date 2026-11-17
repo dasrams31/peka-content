@@ -73,7 +73,9 @@
   }
   window.buildScene = function(spec) {
     const ps = spec.products;
-    const minP = Math.min.apply(null, ps.map(p => parseInt(p.price, 10)));
+    const numPrice = p => parseFloat(String(p.price).replace(',', '.'));
+    const minProd = ps.reduce((a, b) => numPrice(a) <= numPrice(b) ? a : b);
+    const minP = minProd.price;
     const chunks = [];
     for (let i = 0; i < ps.length; i += 3) chunks.push(ps.slice(i, i + 3));
     DURATIONS = [3].concat(chunks.map(() => 5)).concat([3]);
@@ -81,7 +83,7 @@
     let html = '<div class="scene">' + header() +
       '<div class="kick" data-in="0.30,0.45,0,40">KATALOG HARI INI</div>' +
       '<h1><span data-in="0.50,0.50,0,70" style="display:block">AKUN PREMIUM</span>' +
-      '<span data-in="0.70,0.50,0,70" style="display:block">MULAI <span class="hl">' + minP + 'K.</span></span></h1>' +
+      '<span data-in="0.70,0.50,0,70" style="display:block">MULAI <span class="hl">' + minP + '.</span></span></h1>' +
       '<p class="sub" data-in="1.05,0.50,0,40">' + ps.length + ' akun ready hari ini.</p>' +
       '<p class="sub-mut" data-in="1.25,0.50,0,40">' + spec.date + '. Harga dalam ribuan rupiah.</p>' +
       '<img class="mascot-big" data-in="1.45,0.50,0,50" src="assets/mascot-keyed.png">' +

@@ -77,6 +77,17 @@
 - Reel paket TikTok: 3 + 5*ceil(22/3) + 3 = 46 detik, 1104 frame
   @24fps, 2160x3840 yuv420p. Musik: pick_reel_track.sh tepat
   sekali, hasil di track.txt (Oppressive Gloom by Kevin MacLeod).
+- BUG COVER REEL DIPERBAIKI: render pertama menampilkan
+  "MULAI 2K." di cover reel (scene.html memakai
+  parseInt(p.price) sehingga "2,4K" terpotong jadi 2).
+  Harga termurah 2,4K adalah desimal pertama di katalog,
+  jadi bug ini baru muncul di edisi ini. Diperbaiki di
+  scene.html edisi ini (pakai string harga asli produk termurah,
+  "2,4K."), lalu render + encode ulang. Fix yang sama diterapkan
+  ke template sumber 2026-10-31 dan auto-20261116-1001 agar
+  edisi berikutnya tidak mengulang. Frame t=1/6/20/34/45
+  render pertama selain cover sudah bersih; frame penutup
+  "Kamu mau yang mana dulu?" + WA + follow terverifikasi.
 
 ## Target metrik (snapshot laporan 22:30)
 - Threads: balasan + repost > 0 (edisi #2: 0 balasan, 84 views;
