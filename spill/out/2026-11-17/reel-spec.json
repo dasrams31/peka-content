@@ -1,0 +1,52 @@
+{
+  "agent": "OPENCODE",
+  "episode": 28,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "name": "career-ops-hq/career-ops",
+      "stars": "83RB",
+      "install": "npm i -g @santifer/career-ops",
+      "penjelasan": "Agen AI open source buat cari kerja, jalan langsung di OpenCode. Dia nyapu lowongan, ngasih skor 1 sampai 5 dari CV kamu, lalu bantu bikin CV ramah ATS sampai latihan wawancara.",
+      "cocok": "Kamu yang lagi cari kerja dan mau agent bantu dari riset lowongan sampai siap wawancara.",
+      "shortlink": "https://s.peka.ai.id/J2fsw7",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/shots/career-ops-hq-career-ops.png"
+    },
+    {
+      "name": "cheaper-inference/OmniRoute",
+      "stars": "88RB",
+      "install": "npm install -g omniroute",
+      "penjelasan": "Gateway AI gratis yang nyatuin 375 provider dan 1.400 lebih model lewat satu endpoint. Kalau satu provider kehabisan kuota, dia otomatis pindah sendiri, jadi ngoding kamu nggak berhenti.",
+      "cocok": "Kamu pengguna OpenCode yang mau gonta-ganti model AI tanpa ribet ganti pengaturan.",
+      "shortlink": "https://s.peka.ai.id/TCuiPY",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/shots/cheaper-inference-OmniRoute.png"
+    },
+    {
+      "name": "YishenTu/claudian",
+      "stars": "16RB",
+      "install": "npx skills add YishenTu/claudian -g",
+      "penjelasan": "Plugin Obsidian yang nempelin Claude Code, Codex, dan agent lain langsung di dalam vault kamu. Vault kamu jadi tempat kerja bareng agent, bukan sekadar arsip catatan.",
+      "cocok": "Kamu pengguna Obsidian yang mau agent AI ikut bantu olah catatan harianmu.",
+      "shortlink": "https://s.peka.ai.id/4YPl7x",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/shots/YishenTu-claudian.png"
+    },
+    {
+      "name": "anbeime/skill",
+      "stars": "10RB",
+      "install": "npx skills add anbeime/skill -g",
+      "penjelasan": "Toko skill AI agent yang isinya paling lengkap dan paling rajin diupdate. Ribuan skill dari GitHub dirapihin berdasarkan kategori, tanggal update, dan jumlah star, tinggal pilih yang kamu butuh.",
+      "cocok": "Kamu yang mau nambah skill ke agent tanpa buang waktu berburu satu-satu.",
+      "shortlink": "https://s.peka.ai.id/s2Gsko",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/shots/anbeime-skill.png"
+    },
+    {
+      "name": "darrenhinde/OpenAgentsControl",
+      "stars": "5RB",
+      "install": "npx skills add darrenhinde/OpenAgentsControl -g",
+      "penjelasan": "Framework agent buat workflow ngoding yang mengutamakan rencana dulu sebelum eksekusi. Setiap langkah jalan lewat persetujuan kamu, jadi agent nggak asal ubah kode tanpa kamu tahu.",
+      "cocok": "Kamu yang mau agent ngoding tetap terkontrol dan tiap perubahan bisa dilacak.",
+      "shortlink": "https://s.peka.ai.id/Z02V1A",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/shots/darrenhinde-OpenAgentsControl.png"
+    }
+  ]
+}

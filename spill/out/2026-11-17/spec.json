@@ -1,0 +1,43 @@
+{
+ "agent": "OPENCODE",
+ "next": "ANTIGRAVITY",
+ "episode": 28,
+ "repos": [
+  {
+   "name": "career-ops-hq/career-ops",
+   "stars": "83RB",
+   "desc": "Career Ops itu agen AI open source buat cari kerja, jalan langsung di OpenCode dan CLI AI lain. Dia nyapu lowongan dari berbagai job board, lalu ngasih skor 1 sampai 5 buat tiap lowongan berdasarkan CV kamu, jadi kamu langsung tahu mana yang layak dilamar. Habis itu dia bantu bikin CV dan surat lamaran yang ramah ATS, plus latihan wawancara dan pelacak lamaran. Semua prosesnya jalan lokal di mesin kamu, dan kamu yang tetap pencet tombol kirim.",
+   "cocok": "Kamu yang lagi cari kerja dan mau agent bantu dari riset lowongan sampai siap wawancara.",
+   "shortlink": "https://s.peka.ai.id/J2fsw7"
+  },
+  {
+   "name": "cheaper-inference/OmniRoute",
+   "stars": "88RB",
+   "desc": "OmniRoute itu gateway AI gratis berlisensi MIT yang nyatuin 375 provider dan 1.400 lebih model lewat satu endpoint. Kamu bisa pakai Claude, GPT, Gemini, Kimi, DeepSeek, dan banyak lagi dari satu tempat, termasuk 150 lebih provider gratis. Kalau satu provider kehabisan kuota, dia otomatis pindah ke provider lain, jadi ngoding kamu nggak berhenti di tengah jalan. Ada juga kompresi yang bisa motong pemakaian token 15 sampai 95 persen, plus dukungan MCP dan A2A.",
+   "cocok": "Kamu pengguna OpenCode yang mau gonta-ganti model AI tanpa ribet ganti pengaturan.",
+   "shortlink": "https://s.peka.ai.id/TCuiPY"
+  },
+  {
+   "name": "YishenTu/claudian",
+   "stars": "16RB",
+   "desc": "Claudian itu plugin Obsidian yang nempelin Claude Code, Codex, dan agent lain langsung di dalam vault kamu. Agent-nya bisa baca dan bantu olah catatan kamu tanpa perlu pindah aplikasi. Plugin ini bikin vault kamu jadi tempat kerja bareng agent, bukan sekadar arsip catatan. Cocok buat yang catatan hariannya tinggal di Obsidian dan mau agent ikut bantu mikir di sana.",
+   "cocok": "Kamu pengguna Obsidian yang mau agent AI ikut bantu olah catatan harianmu.",
+   "shortlink": "https://s.peka.ai.id/4YPl7x"
+  },
+  {
+   "name": "anbeime/skill",
+   "stars": "10RB",
+   "desc": "Skill ini toko skill AI agent yang isinya paling lengkap dan paling rajin diupdate. Ada paket skill pilihan buat olah dokumen, bikin konten, ngoding, machine learning, sampai otomatisasi workflow, semuanya udah dibungkus rapi dan tinggal pasang. Dia juga otomatis ngumpulin ribuan proyek skill dari GitHub, lalu dirapihin berdasarkan kategori, tanggal update, dan jumlah star. Jadi kamu nggak perlu berburu satu-satu, tinggal pilih yang sesuai kebutuhan.",
+   "cocok": "Kamu yang mau nambah skill ke agent tanpa buang waktu berburu satu-satu.",
+   "shortlink": "https://s.peka.ai.id/s2Gsko"
+  },
+  {
+   "name": "darrenhinde/OpenAgentsControl",
+   "stars": "5RB",
+   "desc": "OpenAgentsControl itu framework agent buat workflow ngoding yang mengutamakan rencana dulu sebelum eksekusi. Setiap langkah jalan lewat persetujuan kamu, jadi agent nggak asal ubah kode tanpa kamu tahu. Dia dukung TypeScript, Python, Go, dan Rust, plus ada pengujian otomatis, code review, dan validasi bawaan. Framework ini memang dibangun buat OpenCode, jadi nyambung langsung sama workflow kamu di sana.",
+   "cocok": "Kamu yang mau agent ngoding tetap terkontrol dan tiap perubahan bisa dilacak.",
+   "shortlink": "https://s.peka.ai.id/Z02V1A"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-17/carousel"
+}

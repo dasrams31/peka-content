@@ -1,0 +1,7 @@
+OpenCode kamu masih gonta-ganti model manual? OmniRoute nyatuin 1.400 lebih model dari 375 provider dalam satu endpoint gratis, jadi kamu bisa pakai Claude, GPT, Gemini, sampai DeepSeek dari satu tempat.
+
+Edisi ini ada 5 repo skill OpenCode: Career Ops, agent cari kerja yang ngasih skor 1-5 buat tiap lowongan dari CV kamu; OmniRoute, gateway gratis 1.400 model; Claudian, agent AI di dalam Obsidian; Skill, toko ribuan skill siap pasang; dan OpenAgentsControl, framework ngoding rencana dulu baru eksekusi.
+
+Langkah pertama: daftarin endpoint gratis OmniRoute di pengaturan OpenCode, terus pilih model buat tugas kamu.
+
+Link tiap repo ada di slide-nya masing-masing. Repo mana yang mau kamu coba duluan? Share ke teman yang lagi butuh skill AI.
