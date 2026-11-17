@@ -1,0 +1,2 @@
+Prompt-nya, tinggal salin:
+Tulis deskripsi produk untuk [nama produk] yang dijual ke [target pembeli]. Tonjolkan manfaat utama: [manfaat utama produk]. Format: 1 kalimat pembuka yang bikin penasaran, 3 bullet manfaat, 1 kalimat ajakan beli. Bahasa santai, tanpa kata berlebihan, maksimal 120 kata.
