@@ -1,6 +1,6 @@
 {
  "date_label": "16 November 2026",
- "last_posted": "2026-11-13",
+ "last_posted": "2026-11-17",
  "products": [
   {
    "dur": "1 Bulan · Privat",
@@ -155,14 +155,6 @@
    "bot_id": 109
   },
   {
-   "sec": "GEMINI PRO",
-   "name": "Gemini Pro",
-   "dur": "18 Bulan (Invite)",
-   "price": "14K",
-   "price_num": 14,
-   "bot_id": 86
-  },
-  {
    "sec": "STRAVA",
    "dur": "1 Bulan",
    "name": "Strava Premium",
@@ -179,5 +171,5 @@
    "bot_id": 111
   }
  ],
- "updated": "2026-11-16"
+ "updated": "2026-11-17"
 }
