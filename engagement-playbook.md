@@ -316,6 +316,41 @@ versi carousel/feed post lagi:
 - Berlaku untuk edisi BARU mulai perintah ini, bukan backfill edisi
   lama, kecuali user minta backfill eksplisit.
 
+## STRATEGI FACEBOOK OTOMATIS (2026-11-17, perintah user)
+
+FB dinilai dari views + shares, BUKAN reactions (reactions 0 di hampir
+semua postingan sejak dulu, di semua pilar; live 10 postingan terakhir
+17 Nov: reactions 0, shares 0, comments 0). Page cuma ~29 pengikut,
+distribusi FB bergantung ke shares dan rekomendasi, bukan follower.
+Baseline 17 Nov: median views per pilar 3-40, shares median 0. Target
+4 minggu: median views FB >= 100 dan >= 1 share per edisi.
+
+Format FB per pilar (dari data): SPILL carousel, HM carousel + reel
+benchmark ekstra bila ada angka perbandingan, Prompt reel, Gratisan
+reel, katalog carousel, BLUEPRINT reel, Tutorial Mirror / AI Pekan Ini
+/ Tutorial Agent reel, Bansos carousel bila ada foto bukti, reel bila
+tidak. SATU format per edisi per pilar di FB.
+
+Resep caption FB (maks 1024 char): hook + isi mandiri + TEPAT SATU
+kalimat instruksi link-di-visual + SATU pertanyaan pilihan paksa +
+SATU ajakan share ("Share ke teman yang lagi butuh <topik>."). Tanpa
+hashtag, tanpa link, tanpa perintah install di teks caption.
+
+Loop: `fb_analyzer.py` mingguan baca performance.log 28 hari + cek live
+10 postingan FB terbaru, hitung median views/shares per (pilar,
+format), tulis `fb-state.json`, dan tulis vonis ke learnings.md hanya
+bila ada perubahan. Cron `peka-fb-strategy` (mingguan 19:00) jalankan
+analyzer lalu terapkan perubahan format/hook/CTA (lingkup auto-apply
+sama dengan review mingguan). Promote: format yang median views-nya
+>= 2x format lain di pilar yang sama (n >= 3) jadi default FB pilar
+itu. Kill: format median views < 10 selama 2 bacaan mingguan
+berturut-turut diganti. Kill: format yang kalah >= 2x dari format lain
+di pilar yang sama DAN median views-nya < 10 selama 2 bacaan mingguan
+berturut-turut dihentikan; format pemenang tidak pernah di-kill. Guard: blog JSON 7 hari terakhir yang link
+facebook-nya `/reel/` padahal peta bilang carousel (atau sebaliknya)
+adalah penyimpangan format, laporkan ke chat. Detail lengkap:
+`~/workspace/peka-content/fb-strategy.md`.
+
 ## ATURAN DARI DATA (2026-10-23, dikunci user)
 
 Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Tencent 0 views di hari yang sama) dan WAJIB dipatuhi semua cron konten:
@@ -326,7 +361,7 @@ Tujuh aturan ini hasil analisis angka nyata akun ini (Oracle 13.994 views vs Ten
 4. **Topik dua sisi (dua versi cerita) adalah format pemancing komentar yang terbukti.** Pertanyaan generik tipe "gimana menurutmu" terbukti menghasilkan 0 komentar; jangan jadikan pemicu utama.
 5. **Keputusan berbasis snapshot laporan harian 22:30**, bukan angka menit awal (metrik Threads telat dan berbatch). Tidak ada keputusan hapus/revisi sebelum ada snapshot beberapa jam.
 6. **Jam posting bukan penentu.** Kekuatan tawaran dan caption mengalahkan jam tayang; jangan menggeser jadwal demi mengejar jam ramai.
-7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = reactions + shares. Satu angka dari satu platform tidak memvonis konten.
+7. **Nilai per platform dengan ukurannya sendiri:** IG = likes + saves, Threads = replies + reposts, FB = views + shares (reactions dicatat, bukan target; strategi FB 17 Nov 2026). Satu angka dari satu platform tidak memvonis konten.
 
 ## ATURAN DONGKRAK VIEW THREADS (2026-10-31, dikunci user, perintah "Boleh 1-4")
 
