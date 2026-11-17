@@ -1,0 +1,3 @@
+Di blog ada workflow GitHub Actions lengkap: minta review tiap PR dibuka, tunggu, lalu verifikasi lewat daftar review dengan mencari login bot Copilot. Draft PR dilewati, permission dibatasi ke pull-requests: write.
+
+Follow @peka.ai.id, save dulu biar gampang dicari pas butuh.

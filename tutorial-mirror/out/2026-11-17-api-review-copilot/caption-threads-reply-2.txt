@@ -1,0 +1,1 @@
+Ingat: respons 201 cuma berarti request diterima, bukan review sudah masuk. Kalau masih pending, endpoint jawab 409 supaya tidak ada antrean ganda. Token fine-grained butuh permission Pull requests: write.

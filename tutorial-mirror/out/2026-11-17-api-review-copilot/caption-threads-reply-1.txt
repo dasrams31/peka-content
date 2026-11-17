@@ -1,0 +1,1 @@
+Endpoint baru POST /pulls/{pull_number}/copilot-code-review menerima review_effort di body JSON dan bisa request ulang setelah review selesai. Cara lama lewat requested_reviewers tetap jalan, tapi pakai default repo dan tidak bisa re-review.

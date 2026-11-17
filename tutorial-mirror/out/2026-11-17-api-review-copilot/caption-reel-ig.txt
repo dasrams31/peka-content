@@ -1,0 +1,5 @@
+PR kamu masih nunggu direview manual?
+
+Copilot code review sekarang bisa dipanggil lewat API, lengkap dengan pilihan effort Lite, Balanced, dan Max. Satu request, review jalan, dan workflow bisa verifikasi hasilnya sendiri.
+
+Link blognya ada di akhir video.

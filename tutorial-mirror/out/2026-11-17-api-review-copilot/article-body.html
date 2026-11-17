@@ -1,0 +1,101 @@
+<p>Selama ini minta review Copilot berarti membuka halaman pull request, lalu mengklik tombol Request di samping nama Copilot. Cara itu bekerja, tapi tidak bisa dipanggil dari script, pipeline, atau tool internal. Pada 2 Oktober 2026, GitHub mengubahnya lewat changelog resmi: Copilot code review kini bisa diminta lewat REST dan GraphQL API, lengkap dengan pilihan level effort untuk setiap request.</p>
+<p>Buat kamu yang sudah menjalankan workflow otomatis, ini kabar besar. Review tidak lagi bergantung pada seseorang yang sempat mengklik tombol. PR bisa langsung direview begitu dibuka atau diperbarui, dan hasilnya bisa diverifikasi otomatis sebelum merge. Artikel ini membahas dua jalur REST, dua mutation GraphQL, workflow GitHub Actions yang praktis, sampai lima kesalahan pemula yang wajib dihindari.</p>
+<h2>Dua cara minta review lewat REST</h2>
+<p>GitHub sebenarnya menyediakan dua jalur REST, dan keduanya masih berlaku. Bedanya ada di apa yang bisa kamu atur dan bagaimana GitHub memperlakukan request ulang.</p>
+<p>Endpoint baru adalah <code>POST /repos/{owner}/{repo}/pulls/{pull_number}/copilot-code-review</code>. Kamu mengirim body JSON berisi <code>review_effort</code>, dan GitHub membuat request review baru. Jalur ini direkomendasikan kalau kamu butuh kontrol effort atau review ulang programatik, karena setelah review selesai, request baru bisa dibuat lagi secara otomatis.</p>
+<p>Cara lama memakai <code>POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers</code> dengan body berisi <code>reviewers</code> dan login <code>copilot-pull-request-reviewer[bot]</code>. Cara ini tetap berguna untuk script yang sudah jalan, tapi punya dua batasan: tidak bisa memilih effort karena memakai default repo, dan tidak bisa request ulang setelah review selesai, karena reviewer sudah tidak lagi berstatus requested.</p>
+<p>Keduanya menjawab <code>201</code> saat request diterima. Respons endpoint baru menyertakan <code>node_id</code> dan <code>state</code>, yang berguna kalau kamu lanjut ke GraphQL.</p>
+<h2>Level effort: Lite, Balanced, dan Max</h2>
+<p>Setiap request bisa membawa satu dari tiga level effort, dan pilihan ini langsung memengaruhi biaya serta kedalaman review.</p>
+<p><strong>Lite</strong> adalah review paling hemat. GitHub menggambarkannya sebagai review yang menyasar masalah umum seperti bug, kerentanan keamanan, dan inkonsistensi gaya. Cocok untuk PR kecil, perubahan dokumentasi, atau repo yang PR-nya banyak tapi risikonya rendah.</p>
+<p><strong>Balanced</strong> melakukan analisis lebih dalam pada logika kompleks, kode yang sensitif keamanan, dan perubahan yang menyentuh banyak service. GitHub menyebut Balanced memakai lebih banyak AI credits dan sedikit lebih banyak GitHub Actions minutes dibanding Lite. Level ini kini jadi default.</p>
+<p><strong>Max</strong> adalah level paling teliti. GitHub menambahkannya pada 28 Oktober 2026 dan saat itu masih berstatus public preview, jadi ketersediaannya bisa berubah dan sebaiknya dicek di dokumentasi sebelum dipakai di workflow produksi.</p>
+<p>Ada satu perubahan diam-diam yang memengaruhi tagihan. GitHub mengumumkan pada 28 Agustus 2026 bahwa level Default akan memakai Balanced, dan perubahan itu berlaku 28 September 2026 untuk repo dan organisasi baru maupun yang sudah ada. Repo yang sebelumnya sudah memilih Lite secara eksplisit tetap memakai Lite. Sejak 6 November 2026, GitHub juga menambahkan pengelolaan setting Copilot code review lewat API, termasuk pengaturan default effort di level organisasi dan repo.</p>
+<h2>Minta review lewat REST</h2>
+<p>Contoh paling langsung memakai curl. Ganti <code>$OWNER</code>, <code>$REPO</code>, dan <code>$PR_NUMBER</code> dengan nilai repo kamu, dan simpan token di <code>$GH_TOKEN</code>.</p>
+<pre><code>curl -L -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer $GH_TOKEN" \
+  -H "X-GitHub-Api-Version: 2026-03-10" \
+  "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER/copilot-code-review" \
+  -d '{"review_effort":"balanced"}'</code></pre>
+<p>Kalau kamu sudah memasang GitHub CLI, perintahnya lebih pendek. Opsi <code>-f</code> mengirim field sebagai JSON body.</p>
+<pre><code>gh api "repos/$OWNER/$REPO/pulls/$PR_NUMBER/copilot-code-review" \
+  -X POST -f review_effort=balanced</code></pre>
+<p>Respons <code>201</code> berarti GitHub menerima request dan review akan dibuat. Kalau sebuah review Copilot masih berstatus pending untuk PR itu, endpoint baru menjawab <code>409</code>, jadi script yang sama tidak membuat antrean ganda. Respons <code>422</code> dengan <code>failure_reason</code> bernilai <code>INVALID_REVIEW_EFFORT</code> berarti level effort yang kamu kirim tidak dikenali atau tidak tersedia untuk repo dan akun itu. Respons <code>429</code> berarti kena rate limit, dan <code>503</code> berarti layanan review sedang tidak bisa melayani request.</p>
+<p>Untuk token, GitHub mendokumentasikan fine-grained personal access token serta token GitHub App. Fine-grained token butuh permission repo <strong>Pull requests: write</strong>. Simpan token sebagai repository secret, misalnya <code>REVIEW_TOKEN</code>.</p>
+<p>Cara lama lewat <code>requested_reviewers</code> tetap valid:</p>
+<pre><code>curl -L -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer $GH_TOKEN" \
+  -H "X-GitHub-Api-Version: 2026-03-10" \
+  "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER/requested_reviewers" \
+  -d '{"reviewers":["copilot-pull-request-reviewer[bot]"]}'</code></pre>
+<p>Login <code>copilot-pull-request-reviewer[bot]</code> adalah identitas resmi Copilot sebagai reviewer. Tanpa suffix <code>[bot]</code>, GitHub tidak akan mengenalinya sebagai reviewer Copilot.</p>
+<h2>Minta review lewat GraphQL</h2>
+<p>Tim yang sudah memakai GraphQL GitHub punya dua mutation yang relevan. Yang pertama adalah <code>requestReviewsByLogin</code>, yang menerima login bot secara langsung dan bekerja dengan node ID pull request.</p>
+<pre><code>mutation {
+  requestReviewsByLogin(input: {
+    pullRequestId: "PR_kwDOABC123"
+    botLogins: ["copilot-pull-request-reviewer[bot]"]
+  }) {
+    pullRequest {
+      number
+      title
+    }
+  }
+}</code></pre>
+<p>Nilai <code>pullRequestId</code> adalah node ID pull request. Kamu bisa mendapatkannya dari query pull request biasa atau dari respons endpoint REST baru yang mengembalikan <code>node_id</code>.</p>
+<p>Mutation kedua adalah <code>requestCopilotCodeReview</code>, mutation khusus yang didokumentasikan GitHub untuk meminta Copilot code review. Setiap pemanggilan mencoba memajukan lifecycle review: kalau review terakhir sudah selesai, request baru dibuat otomatis. Kalau request masih pending, mutation ini mengembalikan <code>failureReason</code> bernilai <code>REQUEST_CONFLICT</code> dan tidak membuat request ganda.</p>
+<p>Pilih REST kalau automation kamu sudah bekerja dengan nama repo dan nomor PR. Pilih GraphQL kalau workflow kamu sudah menyimpan node ID dan memakai mutation GraphQL untuk operasi GitHub lainnya.</p>
+<h2>Workflow GitHub Actions praktis</h2>
+<p>Contoh berikut meminta review Copilot setiap PR dibuka atau diperbarui, lalu menunggu dan memverifikasi bahwa review benar-benar masuk. Verifikasi itu penting, karena respons <code>201</code> hanya membuktikan GitHub menerima request, bukan membuktikan review sudah diproduksi.</p>
+<pre><code>name: Copilot Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  request-review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Minta review Copilot
+        env:
+          GH_TOKEN: ${{ secrets.REVIEW_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh api "repos/${{ github.repository }}/pulls/$PR_NUMBER/copilot-code-review" \
+            -X POST -f review_effort=balanced
+      - name: Tunggu dan verifikasi review
+        env:
+          GH_TOKEN: ${{ secrets.REVIEW_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          for i in $(seq 1 12); do
+            sleep 10
+            if gh api "repos/${{ github.repository }}/pulls/$PR_NUMBER/reviews" \
+              --jq '.[] | select(.user.login == "copilot-pull-request-reviewer[bot]") | .id' \
+              | grep -q .; then
+              echo "Review Copilot sudah masuk."
+              exit 0
+            fi
+          done
+          echo "Review belum masuk setelah 2 menit."
+          exit 1</code></pre>
+<p>Ada tiga detail yang sengaja dibuat seperti itu. Pertama, draft PR dilewati, karena mereview kode yang masih berubah hanya menambah noise. Kedua, permission job dibatasi ke <code>pull-requests: write</code>. Ketiga, langkah verifikasi memakai endpoint daftar review dan mencari login bot Copilot, karena begitu Copilot mengirim review, ia tidak lagi muncul di daftar requested reviewers. GitHub menyebut review biasanya selesai kurang dari 30 detik, jadi polling dua menit sudah cukup longgar.</p>
+<p>Kamu juga bisa menyesuaikan effort dengan jenis perubahan. PR yang menyentuh file autentikasi atau pembayaran pantas memakai <code>balanced</code> atau <code>max</code>, sementara PR yang hanya mengubah teks cukup memakai <code>lite</code>. GitHub Actions menyediakan filter <code>paths</code> di trigger workflow untuk memisahkan keduanya.</p>
+<h2>Biaya dan batasan yang perlu dihitung</h2>
+<p>Fitur API ini tersedia untuk Copilot Pro, Pro+, Max, Business, dan Enterprise. Paket Free tidak mendapat pull request review, jadi workflow di atas akan gagal dengan <code>422</code> kalau paketnya tidak memenuhi syarat.</p>
+<p>Biaya mengikuti model AI credits ditambah GitHub Actions minutes untuk repo privat. Balanced lebih mahal dari Lite, dan Max tentu lebih mahal lagi, jadi jangan memakai effort tertinggi untuk semua PR. Aturan praktisnya: Lite untuk PR rutin, Balanced untuk perubahan logika dan keamanan, Max untuk PR yang menyentuh data sensitif atau arsitektur inti. Ukur dulu di satu repo selama seminggu sebelum menetapkan kebijakan effort untuk semua repo.</p>
+<p>Secara default hasil review berupa komentar, bukan approval, dan kemampuan approval otomatis adalah konfigurasi terpisah yang masih berstatus public preview. Pisahkan tiga status ini di workflow kamu: review diminta, review diterima, dan keputusan merge. Keputusan merge tetap dipegang test, static analysis, dan manusia.</p>
+<h2>Kesalahan umum pemula dan cara menghindarinya</h2>
+<p>Pertama, menganggap respons <code>201</code> berarti kode sudah direview. Respons itu hanya berarti request diterima. Selalu verifikasi lewat endpoint daftar review.</p>
+<p>Kedua, memakai effort yang sama untuk semua PR. Tagihan membengkak diam-diam, terutama setelah default berubah ke Balanced pada 28 September 2026. Periksa setting default repo kamu dan tetapkan kebijakan effort berdasarkan jenis perubahan.</p>
+<p>Ketiga, meminta review ulang dengan endpoint lama setelah Copilot selesai mereview. Cara lama tidak membuat request baru karena reviewer sudah tidak berstatus requested. Pakai endpoint baru <code>copilot-code-review</code> atau mutation <code>requestCopilotCodeReview</code> untuk re-review.</p>
+<p>Keempat, memakai token tanpa permission yang benar lalu bingung melihat <code>403</code>. Token fine-grained butuh <strong>Pull requests: write</strong>. Uji token di satu PR percobaan dulu.</p>
+<p>Kelima, membiarkan workflow meminta review untuk setiap push tanpa jeda. Setiap push baru yang memicu review baru memakan kredit dan Actions minutes. Pertimbangkan memicu review hanya saat PR dibuka atau saat label tertentu ditambahkan.</p>
+<h2>Langkah pertama hari ini</h2>
+<p>Ambil satu repo kecil yang PR-nya kamu kenal baik. Buat fine-grained token dengan permission <strong>Pull requests: write</strong>, simpan sebagai secret <code>REVIEW_TOKEN</code>, lalu jalankan perintah curl endpoint baru di satu PR percobaan dengan <code>review_effort</code> bernilai <code>lite</code>. Cek responsnya, tunggu sekitar satu menit, lalu ambil daftar review dan pastikan komentar Copilot masuk. Setelah satu PR berhasil, salin workflow YAML di atas ke repo itu dan buka PR percobaan dengan satu bug yang jelas.</p>
+<p>API review Copilot Oktober 2026 mengubah review dari tombol yang harus diingat menjadi langkah yang bisa dipanggil software. Dipakai dengan benar, PR tidak lagi menunggu seseorang sempat mengklik Request. Dipakai sembarangan, ia menjadi sumber komentar berbayar yang tidak ada yang membaca. Bedanya ada di effort yang kamu pilih, verifikasi yang kamu pasang, dan keputusan merge yang tetap kamu pegang sendiri.</p>

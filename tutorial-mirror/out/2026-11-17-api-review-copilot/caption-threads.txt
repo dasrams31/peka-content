@@ -1,0 +1,9 @@
+PR kamu masih nunggu direview manual?
+
+GitHub Copilot sekarang bisa diminta review lewat REST dan GraphQL API. Ada endpoint baru dengan pilihan effort Lite, Balanced, dan Max, plus dua mutation GraphQL buat tim yang sudah pakai GraphQL.
+
+Di carousel ini: dua jalur REST, level effort, sampai workflow Actions dengan verifikasi.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim klik tombol Request di halaman PR, atau tim panggil API dari workflow? #AI
