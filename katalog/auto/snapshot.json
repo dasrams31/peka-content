@@ -169,6 +169,14 @@
    "price": "2,4K",
    "price_num": 2.4,
    "bot_id": 111
+  },
+  {
+   "sec": "CANVA",
+   "dur": "3 Bulan",
+   "name": "Canva Pro Bisnis",
+   "price": "13K",
+   "price_num": 13,
+   "bot_id": 115
   }
  ],
  "updated": "2026-11-18"
