@@ -67,11 +67,20 @@ BLOG:
 - image/images use slug-based name gpt-6-2-astra-sol.png (cover to be uploaded
   from slide-1.png by the posting step, same convention as Fable).
 
-VERIFICATION (to be completed after reel render):
-- [ ] voiceover-reel.mp4 ffprobe: h264, 2160x3840, yuv420p, aac, 45-60s
-- [ ] voiceover-cover.jpg from ffmpeg -ss 1
-- [ ] hook/mid/closing frames read
-- [ ] slide dimensions 4096x4096 (done: all 6)
-- [ ] shortlink 307 (done)
-- [ ] blog JSON valid (done)
-- [ ] captions clean (done)
+VERIFICATION (completed 18 Nov 2026, ~02:25 WIB):
+- [x] voiceover-reel.mp4 ffprobe: h264, 2160x3840, yuv420p, aac, 51.828s
+      (build_reel verified the same; independent ffprobe re-check confirmed)
+- [x] voiceover-cover.jpg from ffmpeg -ss 1, 2160x3840
+- [x] hook (t=3s), mid (t=21s), closing (t=49s) frames read from the final
+      mp4: identical to the pre-render stills, all clean
+- [x] slide dimensions 4096x4096 (all 6, PIL check)
+- [x] shortlink 307 (re-checked at the end: 307 -> OpenAI target)
+- [x] blog JSON valid (json.load OK)
+- [x] captions clean (programmatic check: no links/dashes/install cmds/"mesin")
+- [x] DESIGN_RULES QA gate: programmatic bbox check passed on all slides +
+      visual read of all 6 slides at 768px + full-res zoom crops (slide 2 bars,
+      slide 3 delta cards, slide 4 loss list). One defect found and fixed
+      (slide 5 access-panel overflow); no known failures remain.
+
+NOTHING POSTED anywhere. seen_models.json and watch.log untouched (parent's job).
+

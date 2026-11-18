@@ -15,6 +15,22 @@
       "handled": "2026-11-13",
       "out_dir": "special/out/2026-11-13-gemini-4-hydrogen",
       "shortlink": "https://s.peka.ai.id/N4DgPp"
+    },
+    {
+      "model": "GPT-6.2 Astra",
+      "vendor": "OpenAI",
+      "released": "2026-11-17",
+      "handled": "2026-11-18",
+      "out_dir": "special/out/2026-11-18-gpt-6-2-astra-sol",
+      "shortlink": "https://s.peka.ai.id/uzBjvq"
+    },
+    {
+      "model": "GPT-6.2 Sol",
+      "vendor": "OpenAI",
+      "released": "2026-11-17",
+      "handled": "2026-11-18",
+      "out_dir": "special/out/2026-11-18-gpt-6-2-astra-sol",
+      "shortlink": "https://s.peka.ai.id/uzBjvq"
     }
   ]
 }
