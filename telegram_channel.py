@@ -56,7 +56,35 @@ CHANNEL_ID = "-1001475296402"  # @peka_aichannel
 API_BASE = "https://api.telegram.org/bot"
 CHANNEL_PAGE = "https://t.me/s/peka_aichannel"
 LEDGER = Path.home() / "workspace/peka-content/broadcasts.log"
+PAUSE_FILE = Path.home() / "workspace/peka-content/channel_broadcast_pause_until.txt"
 WIB = ZoneInfo("Asia/Jakarta")
+
+
+def broadcast_paused() -> str | None:
+    """Jeda broadcast channel (perintah user 18 Nov 2026, 1 hari).
+
+    Baca PAUSE_FILE (baris pertama non-komentar: 'YYYY-MM-DD HH:MM' WIB).
+    Selama waktu WIB sekarang < batas itu, kembalikan batasnya sebagai string;
+    bila file tidak ada / sudah kedaluwarsa / tidak bisa dibaca, kembalikan None
+    (broadcast jalan normal). File korup tidak pernah memblokir broadcast.
+    """
+    try:
+        lines = PAUSE_FILE.read_text().splitlines()
+    except FileNotFoundError:
+        return None
+    except OSError:
+        return None
+    until_raw = next((ln.strip() for ln in lines if ln.strip() and not ln.strip().startswith("#")), "")
+    if not until_raw:
+        return None
+    try:
+        until = datetime.strptime(until_raw, "%Y-%m-%d %H:%M").replace(tzinfo=WIB)
+    except ValueError:
+        print(f"Peringatan: format {PAUSE_FILE} tidak dikenal ({until_raw!r}), jeda diabaikan.", file=sys.stderr)
+        return None
+    if datetime.now(WIB) < until:
+        return until_raw
+    return None
 
 TYPE_LABELS = {
     "hm": "📰 Kabar Harian Peka AI",
@@ -246,6 +274,11 @@ def main() -> int:
     ap.add_argument("--force", action="store_true",
                     help="Lewati cek dedupe (hanya untuk re-post atas perintah user).")
     args = ap.parse_args()
+
+    paused_until = broadcast_paused()
+    if paused_until:
+        print(f"PAUSED broadcast channel ditunda sampai {paused_until} WIB (jeda 1 hari, perintah user 18 Nov 12:48) type={args.type} title={args.title[:60]}")
+        return 0
 
     cover = Path(args.cover)
     if not cover.is_file():
