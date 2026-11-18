@@ -1,0 +1,7 @@
+Antigravity kamu masih bayar API buat ngoding? Free Claude Code ngasih 1,3 miliar token gratis buat 12 harness, termasuk Antigravity, jadi kamu bisa ngoding dibantu AI tanpa langganan bulanan.
+
+Edisi ini ada 5 repo skill Antigravity: Free Claude Code, 1,3 miliar token gratis buat 12 harness; CLIProxyAPI, ubah Antigravity jadi API standar; Antigravity Manager, ganti akun sekali klik; Pstack Claude, workflow agent ketat di 9 harness; dan Antigravity Panel, monitor kuota biar nggak kehabisan mendadak.
+
+Langkah pertama: pasang Free Claude Code, terus pilih Antigravity sebagai harness kamu.
+
+Link tiap repo ada di slide-nya masing-masing. Repo mana yang mau kamu coba duluan? Share ke teman yang lagi butuh skill AI.
