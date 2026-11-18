@@ -1,0 +1,18 @@
+PROMPT HARIAN #28: salin prompt ini buat 90 menit fokus, kerjaan berat kelar tanpa distraksi.
+
+Tempel prompt ini ke AI favoritmu, isi 2 bagian dalam kurung, dan kamu dapat rencana sesi fokus 90 menit: 3 blok kerja 25 menit plus jeda, 1 aturan anti-distraksi per blok, dan cek hasil di akhir.
+
+Promptnya:
+Bertindak sebagai pelatih produktivitas. Aku mau kerja fokus 90 menit buat [TUGAS YANG MAU DIKERJAKAN], tapi gampang terdistraksi sama [GANGGUAN TERBESAR, misal HP atau notifikasi]. Buatkan rencana sesi fokus: 3 blok 25 menit plus jeda, 1 aturan anti-distraksi per blok, dan 1 kalimat cek hasil di akhir. Format: tabel singkat.
+
+Cara pakai:
+1. Isi [TUGAS] dengan satu tugas spesifik, bukan 'kerjaan kantor' doang.
+2. Tulis gangguanmu dengan jujur, biar aturannya beneran ngena.
+3. Jalankan timer beneran, jangan cuma baca rencananya.
+
+Gangguan terbesarmu pas kerja apa: HP atau notifikasi?
+Save dulu biar nggak nyari lagi pas butuh. Prompt baru tiap hari jam 12:30.
+
+#PromptHarian #AI #Produktivitas #FokusKerja #PromptAI #KerjaFokus #TipsProduktif #ChatGPT #PekaAI
+
+Music: Oppressive Gloom by Kevin MacLeod

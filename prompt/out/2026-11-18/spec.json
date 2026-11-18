@@ -1,0 +1,12 @@
+{
+  "episode": 28,
+  "category": "PRODUKTIVITAS",
+  "title": "90 menit fokus, kerjaan berat kelar tanpa distraksi",
+  "prompt": "Bertindak sebagai pelatih produktivitas. Aku mau kerja fokus 90 menit buat [TUGAS YANG MAU DIKERJAKAN], tapi gampang terdistraksi sama [GANGGUAN TERBESAR, misal HP atau notifikasi]. Buatkan rencana sesi fokus: 3 blok 25 menit plus jeda, 1 aturan anti-distraksi per blok, dan 1 kalimat cek hasil di akhir. Format: tabel singkat.",
+  "tips": [
+    "Isi [TUGAS] dengan satu tugas spesifik, bukan 'kerjaan kantor' doang.",
+    "Tulis gangguanmu dengan jujur, biar aturannya beneran ngena.",
+    "Jalankan timer beneran, jangan cuma baca rencananya."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-18"
+}
