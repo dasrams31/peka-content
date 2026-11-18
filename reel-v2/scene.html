@@ -190,12 +190,13 @@
             const row = el('div', 'bar-row');
             const head = el('div', 'bar-head');
             head.appendChild(el('span', 'bar-label', b.label + (b.tag ? '<span class="bar-tag">' + b.tag + '</span>' : '')));
-            const v = el('span', 'bar-val' + (b.accent ? ' hot' : ''), b.value.toFixed(1).replace('.', ',') + '%');
+            const v = el('span', 'bar-val' + (b.accent ? ' hot' : ''), b.display ? b.display : b.value.toFixed(1).replace('.', ',') + '%');
             head.appendChild(v);
             row.appendChild(head);
             const tr = el('div', 'bar-track');
             const fl = el('div', 'bar-fill' + (b.accent ? ' hot' : ''));
-            fl.dataset.w = (b.value / 65 * 100).toFixed(1);
+            fl.dataset.w = (b.value / (b.max || 65) * 100).toFixed(1);
+            if (b.color) fl.style.background = b.color;
             tr.appendChild(fl);
             row.appendChild(tr);
             markIn(row, 0.7 + i * 0.3, 0.5, 40, 0);

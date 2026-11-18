@@ -1,0 +1,15 @@
+GPT-6.2 Astra dan Sol rilis, ini skornya.
+
+OpenAI merilis GPT-6.2 Astra dan Sol, 17 Nov 2026. Astra buat proyek paling berat, Sol buat kerja harian yang hemat.
+
+Di indeks independen Artificial Analysis, Astra 62, nomor dua di bawah Fable 5.2 yang 65. Tapi di AA-3D dia peringkat 1 dengan Elo 1.318, di atas Fable 1.271 dan Sol 1.259.
+
+Tapi jujur saja, tidak semua dia menangkan. Di Coding Agent Index, Astra 53, datar dan di bawah Fable 58. Di Terminal-Bench 4.0, Astra 64.1%, di bawah Carbon 65.2%.
+
+Harga per 1 jt token: Astra $8 masuk dan $40 keluar, Sol $2 masuk dan $10 keluar. Ada di ChatGPT Work dan Codex, bukan di chat ChatGPT biasa.
+
+Linknya ada di slide terakhir.
+
+Buat proyek berat, kamu tim Astra atau tetap Fable 5.2?
+
+Follow @peka.ai.id dan share postingan ini kalau bermanfaat.

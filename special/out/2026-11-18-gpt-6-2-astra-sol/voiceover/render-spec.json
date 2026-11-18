@@ -1,0 +1,1104 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "GPT-6.2 ASTRA + SOL",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "BARU RILIS 17 NOV 2026",
+      "headline": [
+        "GPT-6.2",
+        "ASTRA + SOL"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "OpenAI baru aja rilis GPT 6.2 Astra dan Sol tanggal 17 November kemarin, dan ini flagship terbaru mereka. Lo harus tahu nih.",
+      "pose": "wave",
+      "sub": "Flagship terbaru OpenAI, dua model sekaligus."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Biaya cuma <b>$4.00</b> per tugas",
+        "Fable 5.2: $26.54 per tugas"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Di indeks independen Artificial Analysis, Astra cetak 62, nomor dua di bawah Fable 5.2 yang 65. Tapi biayanya cuma 4 dolar per tugas.",
+      "pose": "present",
+      "stat": "62",
+      "stat_label": "AA Intelligence Index, #2 di bawah Fable 5.2 (65)"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "color": "#FFD60A",
+          "display": "1.318",
+          "label": "GPT-6.2 Astra",
+          "max": 1500,
+          "tag": "TERTINGGI",
+          "value": 1318
+        },
+        {
+          "color": "#E8EDF5",
+          "display": "1.271",
+          "label": "Claude Fable 5.2",
+          "max": 1500,
+          "value": 1271
+        },
+        {
+          "color": "#7DD3FC",
+          "display": "1.259",
+          "label": "GPT-6.2 Sol",
+          "max": 1500,
+          "value": 1259
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Di AA 3D, Astra justru peringkat satu dengan Elo 1.318, di atas Fable 1.271 dan Sol 1.259.",
+      "pose": "base",
+      "stat": "1.318",
+      "stat_label": "AA-3D Elo, peringkat 1"
+    },
+    {
+      "badge": "JUJUR AJA",
+      "compare": [
+        {
+          "a_label": "Fable 5.2",
+          "a_value": "58",
+          "b_label": "Astra",
+          "b_value": "53",
+          "label": "CODING AGENT INDEX"
+        },
+        {
+          "a_label": "Carbon",
+          "a_value": "65,2%",
+          "b_label": "Astra",
+          "b_value": "64,1%",
+          "label": "TERMINAL-BENCH 4.0"
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Tapi jujur aja, nggak semua dia menangin. Di Coding Agent Index, Astra 53, datar dan masih di bawah Fable 58. Sol malah turun 52 ke 49.",
+      "pose": "base"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Astra <b>$40</b> keluar, Sol <b>$10</b> keluar",
+        "Ada di <span class=\"mono\">Work</span> dan Codex, bukan chat biasa."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Harganya, Astra 8 dolar masuk, 40 keluar per sejuta token. Sol cuma 2 masuk, 10 keluar. Ada di Work dan Codex, bukan di chat biasa.",
+      "pose": "present",
+      "stat": "$8 / $2",
+      "stat_label": "Harga masuk per 1 jt token, Astra / Sol"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Lo tim Astra",
+        "atau tetap",
+        "Fable 5.2?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Buat proyek berat, lo tim Astra atau tetap Fable 5.2? Follow Peka AI kalau kontennya kepakai.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/uzBjvq"
+    }
+  ],
+  "theme": {
+    "accent": "#FFD60A",
+    "accent2": "#FFFFFF",
+    "bar_other": "#6E6E68",
+    "bar_track": "#262626",
+    "bg": "#111111",
+    "bg2": "#181818",
+    "card": "#1C1C1C",
+    "card_border": "#36362E",
+    "chip_bg": "#FFD60A",
+    "chip_text": "#111111",
+    "description": "Current Peka brand identity: Peka yellow on black.",
+    "dim": "#A8A8A0",
+    "glow": "rgba(255,214,10,0.22)",
+    "glow2": "rgba(255,214,10,0.08)",
+    "grid": "rgba(255,214,10,0.07)",
+    "label": "Peka Yellow",
+    "mascot": "bottom-right",
+    "mono": "#FFD60A",
+    "progress": "#FFD60A",
+    "text": "#F5F5F0"
+  },
+  "title": "GPT-6.2 Astra + Sol (reel-v2, talking character, yellow theme)",
+  "theme_name": "peka-yellow",
+  "words": [
+    {
+      "text": "OpenAI",
+      "start": 0.1,
+      "end": 0.42,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "baru",
+      "start": 0.42,
+      "end": 0.57,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "aja",
+      "start": 0.57,
+      "end": 0.75,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "rilis",
+      "start": 0.75,
+      "end": 0.97,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "GPT",
+      "start": 0.97,
+      "end": 1.26,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "6.2",
+      "start": 1.26,
+      "end": 1.79,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Astra",
+      "start": 1.79,
+      "end": 2.06,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "dan",
+      "start": 2.06,
+      "end": 2.21,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Sol",
+      "start": 2.21,
+      "end": 2.39,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "tanggal",
+      "start": 2.39,
+      "end": 2.64,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "17 November",
+      "start": 2.64,
+      "end": 3.24,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kemarin,",
+      "start": 3.24,
+      "end": 3.69,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "dan",
+      "start": 3.92,
+      "end": 4.08,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "ini",
+      "start": 4.08,
+      "end": 4.25,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "flagship",
+      "start": 4.25,
+      "end": 4.57,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "terbaru",
+      "start": 4.57,
+      "end": 4.8,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "mereka.",
+      "start": 4.8,
+      "end": 5.22,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Lo",
+      "start": 5.89,
+      "end": 6.08,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "harus",
+      "start": 6.08,
+      "end": 6.29,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "tahu",
+      "start": 6.29,
+      "end": 6.49,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "nih.",
+      "start": 6.49,
+      "end": 6.81,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Di",
+      "start": 7.888,
+      "end": 7.988,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "indeks",
+      "start": 7.988,
+      "end": 8.228,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "independen",
+      "start": 8.228,
+      "end": 8.568,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Artificial",
+      "start": 8.568,
+      "end": 8.998000000000001,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Analysis,",
+      "start": 8.998000000000001,
+      "end": 9.538,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Astra",
+      "start": 9.768,
+      "end": 10.038,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "cetak",
+      "start": 10.038,
+      "end": 10.268,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "62,",
+      "start": 10.268,
+      "end": 10.928,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "nomor",
+      "start": 11.138,
+      "end": 11.358,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "dua",
+      "start": 11.358,
+      "end": 11.548,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "di",
+      "start": 11.548,
+      "end": 11.618,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "bawah",
+      "start": 11.618,
+      "end": 11.818000000000001,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Fable",
+      "start": 11.818000000000001,
+      "end": 12.048,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "5.2",
+      "start": 12.048,
+      "end": 12.648,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "yang",
+      "start": 12.648,
+      "end": 12.808,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "65.",
+      "start": 12.808,
+      "end": 13.468,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Tapi",
+      "start": 14.133,
+      "end": 14.383,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "biayanya",
+      "start": 14.383,
+      "end": 14.793,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "cuma",
+      "start": 14.793,
+      "end": 14.972999999999999,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "4",
+      "start": 14.972999999999999,
+      "end": 15.153,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "dolar",
+      "start": 15.153,
+      "end": 15.363,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "per",
+      "start": 15.363,
+      "end": 15.463000000000001,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "tugas.",
+      "start": 15.463000000000001,
+      "end": 15.933,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Di",
+      "start": 17.020000000000003,
+      "end": 17.150000000000002,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "AA",
+      "start": 17.150000000000002,
+      "end": 17.3,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "3D,",
+      "start": 17.3,
+      "end": 17.82,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Astra",
+      "start": 18.05,
+      "end": 18.310000000000002,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "justru",
+      "start": 18.310000000000002,
+      "end": 18.560000000000002,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "peringkat",
+      "start": 18.560000000000002,
+      "end": 18.8,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "satu",
+      "start": 18.8,
+      "end": 19.03,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "dengan",
+      "start": 19.03,
+      "end": 19.21,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Elo",
+      "start": 19.21,
+      "end": 19.400000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "1.318,",
+      "start": 19.400000000000002,
+      "end": 20.560000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 20.78,
+      "end": 20.87,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "atas",
+      "start": 20.87,
+      "end": 21.07,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Fable",
+      "start": 21.07,
+      "end": 21.32,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "1.271",
+      "start": 21.32,
+      "end": 22.470000000000002,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "dan",
+      "start": 22.470000000000002,
+      "end": 22.64,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Sol",
+      "start": 22.64,
+      "end": 22.82,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "1.259.",
+      "start": 22.82,
+      "end": 24.14,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Tapi",
+      "start": 25.211000000000002,
+      "end": 25.421000000000003,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "jujur",
+      "start": 25.421000000000003,
+      "end": 25.661000000000005,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "aja,",
+      "start": 25.661000000000005,
+      "end": 26.091000000000005,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "nggak",
+      "start": 26.301000000000002,
+      "end": 26.461000000000002,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "semua",
+      "start": 26.461000000000002,
+      "end": 26.691000000000003,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "dia",
+      "start": 26.691000000000003,
+      "end": 26.821000000000005,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "menangin.",
+      "start": 26.821000000000005,
+      "end": 27.291000000000004,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "Di",
+      "start": 27.956000000000003,
+      "end": 28.086000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Coding",
+      "start": 28.086000000000002,
+      "end": 28.306000000000004,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Agent",
+      "start": 28.306000000000004,
+      "end": 28.566000000000003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Index,",
+      "start": 28.566000000000003,
+      "end": 29.016000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Astra",
+      "start": 29.216,
+      "end": 29.466,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "53,",
+      "start": 29.466,
+      "end": 30.196000000000005,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "datar",
+      "start": 30.406000000000002,
+      "end": 30.716,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "dan",
+      "start": 30.716,
+      "end": 30.846000000000004,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "masih",
+      "start": 30.846000000000004,
+      "end": 31.076000000000004,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "di",
+      "start": 31.076000000000004,
+      "end": 31.136000000000003,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "bawah",
+      "start": 31.136000000000003,
+      "end": 31.336000000000002,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Fable",
+      "start": 31.336000000000002,
+      "end": 31.596000000000004,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "58.",
+      "start": 31.596000000000004,
+      "end": 32.356,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Sol",
+      "start": 33.031000000000006,
+      "end": 33.281000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "malah",
+      "start": 33.281000000000006,
+      "end": 33.461000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "turun",
+      "start": 33.461000000000006,
+      "end": 33.651,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "52",
+      "start": 33.651,
+      "end": 34.191,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "ke",
+      "start": 34.191,
+      "end": 34.281000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "49.",
+      "start": 34.281000000000006,
+      "end": 35.081,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Harganya,",
+      "start": 36.167,
+      "end": 36.797000000000004,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Astra",
+      "start": 37.027,
+      "end": 37.297000000000004,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "8",
+      "start": 37.297000000000004,
+      "end": 37.557,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "dolar",
+      "start": 37.557,
+      "end": 37.717000000000006,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "masuk,",
+      "start": 37.717000000000006,
+      "end": 38.077000000000005,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "40",
+      "start": 38.287000000000006,
+      "end": 38.617000000000004,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "keluar",
+      "start": 38.617000000000004,
+      "end": 38.857,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "per",
+      "start": 38.857,
+      "end": 38.957,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "sejuta",
+      "start": 38.957,
+      "end": 39.247,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "token.",
+      "start": 39.247,
+      "end": 39.637,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "Sol",
+      "start": 40.2995,
+      "end": 40.5295,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "cuma",
+      "start": 40.5295,
+      "end": 40.709500000000006,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "2",
+      "start": 40.709500000000006,
+      "end": 40.8295,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "masuk,",
+      "start": 40.8295,
+      "end": 41.23950000000001,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "10",
+      "start": 41.4095,
+      "end": 41.719500000000004,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "keluar.",
+      "start": 41.719500000000004,
+      "end": 42.139500000000005,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Ada",
+      "start": 42.807,
+      "end": 43.017,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "di",
+      "start": 43.017,
+      "end": 43.097,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Work",
+      "start": 43.097,
+      "end": 43.287000000000006,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "dan",
+      "start": 43.287000000000006,
+      "end": 43.437000000000005,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Codex,",
+      "start": 43.437000000000005,
+      "end": 43.897000000000006,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "bukan",
+      "start": 44.067,
+      "end": 44.327000000000005,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "di",
+      "start": 44.327000000000005,
+      "end": 44.397000000000006,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "chat",
+      "start": 44.397000000000006,
+      "end": 44.547000000000004,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "biasa.",
+      "start": 44.547000000000004,
+      "end": 45.017,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "Buat",
+      "start": 46.091,
+      "end": 46.301,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "proyek",
+      "start": 46.301,
+      "end": 46.511,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "berat,",
+      "start": 46.511,
+      "end": 46.881,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "lo",
+      "start": 47.081,
+      "end": 47.201,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "tim",
+      "start": 47.201,
+      "end": 47.331,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "Astra",
+      "start": 47.331,
+      "end": 47.571000000000005,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "atau",
+      "start": 47.571000000000005,
+      "end": 47.701,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "tetap",
+      "start": 47.701,
+      "end": 47.891000000000005,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "Fable",
+      "start": 47.891000000000005,
+      "end": 48.111000000000004,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "5.2?",
+      "start": 48.111000000000004,
+      "end": 48.801,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "Follow",
+      "start": 49.4635,
+      "end": 49.7635,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "Peka",
+      "start": 49.7635,
+      "end": 49.9835,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "AI",
+      "start": 49.9835,
+      "end": 50.1935,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "kalau",
+      "start": 50.1935,
+      "end": 50.3635,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "kontennya",
+      "start": 50.3635,
+      "end": 50.6635,
+      "scene": 5,
+      "line": 22
+    },
+    {
+      "text": "kepakai.",
+      "start": 50.6635,
+      "end": 51.1535,
+      "scene": 5,
+      "line": 22
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 7.488
+    },
+    {
+      "start": 7.488,
+      "end": 16.62
+    },
+    {
+      "start": 16.62,
+      "end": 24.816
+    },
+    {
+      "start": 24.811,
+      "end": 35.772
+    },
+    {
+      "start": 35.767,
+      "end": 45.696
+    },
+    {
+      "start": 45.691,
+      "end": 51.828
+    }
+  ],
+  "total": 52.628
+}

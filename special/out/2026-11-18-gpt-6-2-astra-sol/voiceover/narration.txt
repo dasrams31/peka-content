@@ -1,0 +1,18 @@
+[scene 0 - hook]
+OpenAI baru aja rilis GPT 6.2 Astra dan Sol tanggal 17 November kemarin, dan ini flagship terbaru mereka. Lo harus tahu nih.
+
+[scene 1 - beat]
+Di indeks independen Artificial Analysis, Astra cetak 62, nomor dua di bawah Fable 5.2 yang 65. Tapi biayanya cuma 4 dolar per tugas.
+
+[scene 2 - beat]
+Di AA 3D, Astra justru peringkat satu dengan Elo 1.318, di atas Fable 1.271 dan Sol 1.259.
+
+[scene 3 - beat]
+Tapi jujur aja, nggak semua dia menangin. Di Coding Agent Index, Astra 53, datar dan masih di bawah Fable 58. Sol malah turun 52 ke 49.
+
+[scene 4 - beat]
+Harganya, Astra 8 dolar masuk, 40 keluar per sejuta token. Sol cuma 2 masuk, 10 keluar. Ada di Work dan Codex, bukan di chat biasa.
+
+[scene 5 - close]
+Buat proyek berat, lo tim Astra atau tetap Fable 5.2? Follow Peka AI kalau kontennya kepakai.
+

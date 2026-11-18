@@ -1,0 +1,77 @@
+GPT-6.2 Astra + Sol special edition (2026-11-18) - build log
+=========================================================
+
+FACT SOURCE (parent-verified, used as the single source of truth):
+- Official OpenAI announcement https://openai.com/index/introducing-gpt-6-2-astra-sol/
+- Artificial Analysis Intelligence Index v5.0.1 (independent)
+- No other numbers were added anywhere in the package.
+
+SHORTLINK (early, before visuals):
+- code=uzBjvq, shortlink=https://s.peka.ai.id/uzBjvq
+- target=https://openai.com/index/introducing-gpt-6-2-astra-sol/
+- admin user_id 1, ip_hash 12ca17b49af2289436f303e0166030a2
+- curl -I: 307 -> target (verified 18 Nov 2026)
+- NOTE: direct curl to openai.com returned 000 from this VM (target unreachable
+  from here); the shortlink redirect itself was verified 307 to the exact target URL.
+
+CAROUSEL (gpt62_design.py, adapted from hydrogen_design.py):
+- 6 slides 4096x4096, dark benchmark-lab theme, Peka yellow #FFD60A accent.
+- Programmatic bbox-collision check (check_boxes) passed on every slide.
+- Slide 5 first render FAILED QA: access-panel 5th line overflowed outside the
+  panel into the footer strip. Fixed by moving the knowledge-cutoff line into
+  the footer note; re-rendered and visually verified clean.
+- Visual QA: all 6 slides read at 768px preview; full-res zoom crops checked
+  on slide 2 bars, slide 3 delta cards, slide 4 loss list. No overflow, no
+  collisions, no text touching footer/page numbers.
+- Numbers cross-checked against the fact sheet (AA Index 65/62/60/59/57,
+  AA-3D 1318/1271/1259, Coding Agent 53/58, Sol 52 to 49, TB 4.0 64.1/65.2,
+  Briefcase Elo 1800/1785/1644/1612, hallucination 59%/55%, prices $8/$0.40/$40
+  and $2/$0.10/$10, costs $4.00/$26.54/$1.01).
+- Color legend (same on every chart slide + reel): Astra #FFD60A, Sol #7DD3FC,
+  Fable 5.2 #E8EDF5, Opus 5.5 #8A99B5, Carbon #34D399.
+
+REEL VOICEOVER reel-v2 (theme peka-yellow):
+- Spec: voiceover-spec.json (copied from demo-hydrogen-v3/spec.json).
+- TTS: 128 words, audio 51.828s, total 52.628s (within 45-60s).
+- words.json checked: punctuation attached (e.g. "kemarin,").
+- DEVIATION (template): reel-v2 scene.html bars were hardwired to a % scale
+  (value/65, label + "%"), which cannot render Elo values. Minimal
+  backward-compatible change in ~/workspace/peka-content/reel-v2/scene.html:
+  bars now accept optional display (verbatim label), max (scale denominator,
+  default 65), color (fill color). Specs without those fields behave exactly
+  as before. AA-3D bars use display 1.318/1.271/1.259, max 1500, colors from
+  the carousel legend.
+- DEVIATION (environment): Playwright chromium-1243 binary was missing from
+  ~/.cache/ms-playwright (cache holds 1248/1255 after a VM reset). Created
+  symlink chromium-1243 -> chromium-1255; stills and full render then worked.
+- Stills QA (render.py --still, one per scene, t=3/12/21/30/41/49): all 6
+  checked visually. Mascot never covers text, bars, or the shortlink chip.
+  Karaoke shows punctuation. Numbers exact. Close-scene chip reads
+  "LINK BLOG: s.peka.ai.id/uzBjvq" (template wording; target is the OpenAI
+  announcement, same pattern as the Hydrogen demo).
+- Full render: build_reel.py (see voiceover/build.log).
+
+CAPTIONS (all in out dir):
+- caption-threads.txt (hook 41 chars), reply-1..4, caption-ig.txt,
+  caption-fb.txt, caption-reel-ig.txt, caption-reel-fb.txt,
+  caption-reel-tiktok.txt, caption-tiktok.txt.
+- Checked programmatically: no links, no em/en-dash, no install commands,
+  no "mesin". Threads hook 41 chars (max 60). Exactly one link-instruction
+  sentence per caption. No "Music:" credit line: the voiceover reel has no
+  music (Fable/Hydrogen captions carried a leftover music credit).
+
+BLOG:
+- ~/workspace/peka-content/blog/gpt-6-2-astra-sol-flagship-baru-openai.json
+- slug gpt-6-2-astra-sol-flagship-baru-openai, date 2026-11-18.
+- JSON parses. links contains source (shortlink) only; no social URLs invented.
+- image/images use slug-based name gpt-6-2-astra-sol.png (cover to be uploaded
+  from slide-1.png by the posting step, same convention as Fable).
+
+VERIFICATION (to be completed after reel render):
+- [ ] voiceover-reel.mp4 ffprobe: h264, 2160x3840, yuv420p, aac, 45-60s
+- [ ] voiceover-cover.jpg from ffmpeg -ss 1
+- [ ] hook/mid/closing frames read
+- [ ] slide dimensions 4096x4096 (done: all 6)
+- [ ] shortlink 307 (done)
+- [ ] blog JSON valid (done)
+- [ ] captions clean (done)

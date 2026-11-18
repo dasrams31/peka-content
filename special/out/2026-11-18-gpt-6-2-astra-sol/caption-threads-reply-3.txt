@@ -1,0 +1,2 @@
+Jujur saja, tidak semua dimenangkan Astra. Di Coding Agent Index, Astra 53, datar vs GPT-6 Astra dan di bawah Fable 58. Sol turun 52 ke 49.
+Di Terminal-Bench 4.0, Astra 64.1%, di bawah Carbon 65.2%. Halusinasi Astra 59%, Sol 55%.
