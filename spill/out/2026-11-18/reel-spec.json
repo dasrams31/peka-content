@@ -1,0 +1,52 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 29,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "cocok": "Kamu yang mau ngoding dibantu AI di Antigravity dan harness lain tanpa langganan.",
+      "install": "npx skills add Alishahryar1/free-claude-code -g",
+      "name": "Alishahryar1/free-claude-code",
+      "penjelasan": "Free Claude Code ngasih 1,3 miliar token gratis buat 12 harness, termasuk Antigravity. Pilih harness dan model, lalu ngoding seperti biasa tanpa langganan.",
+      "shortlink": "https://s.peka.ai.id/M4YmOu",
+      "stars": "71RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-18/shots/Alishahryar1-free-claude-code.png"
+    },
+    {
+      "cocok": "Kamu developer yang mau pakai model AI gratis lewat API standar tanpa kunci berbayar.",
+      "install": "npx skills add router-for-me/CLIProxyAPI -g",
+      "name": "router-for-me/CLIProxyAPI",
+      "penjelasan": "CLIProxyAPI ngubah Antigravity dan CLI AI lain jadi layanan API standar. Satu endpoint buat model gratis Gemini, GPT, Grok, dan Claude.",
+      "shortlink": "https://s.peka.ai.id/LiIwo1",
+      "stars": "59RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-18/shots/router-for-me-CLIProxyAPI.png"
+    },
+    {
+      "cocok": "Kamu yang pegang banyak akun Antigravity dan mau ganti akun sekali klik.",
+      "install": "curl -fsSL https://raw.githubusercontent.com/lbjlaq/Antigravity-Manager/main/install.sh | bash",
+      "name": "lbjlaq/Antigravity-Manager",
+      "penjelasan": "Antigravity Manager ganti akun Antigravity sekali klik saat kuota habis. Dia juga bisa jadi relay API lokal dari sesi web kamu.",
+      "shortlink": "https://s.peka.ai.id/mCI7l4",
+      "stars": "33RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-18/shots/lbjlaq-Antigravity-Manager.png"
+    },
+    {
+      "cocok": "Kamu yang mau workflow agent ketat dan konsisten di Antigravity maupun harness lain.",
+      "install": "/plugin marketplace add michael-denyer/pstack-claude",
+      "name": "michael-denyer/pstack-claude",
+      "penjelasan": "Pstack Claude ngasih workflow agent ketat di 9 harness, termasuk Antigravity. Agent kerja ikut langkah jelas, bukan asal jalan.",
+      "shortlink": "https://s.peka.ai.id/gwMZX4",
+      "stars": "4RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-18/shots/michael-denyer-pstack-claude.png"
+    },
+    {
+      "cocok": "Kamu pengguna Antigravity yang mau pantau kuota dan konteks biar nggak kehabisan mendadak.",
+      "install": "npx skills add n2ns/antigravity-panel -g",
+      "name": "n2ns/antigravity-panel",
+      "penjelasan": "Antigravity Panel monitor kuota Gemini, Claude, dan GPT plus batas mingguan. Kamu tahu sisa kuota sebelum kehabisan di tengah kerja.",
+      "shortlink": "https://s.peka.ai.id/YfOyHJ",
+      "stars": "863",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-18/shots/n2ns-antigravity-panel.png"
+    }
+  ]
+}

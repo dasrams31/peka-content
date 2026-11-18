@@ -1,5 +1,0 @@
-2026-11-19 12:48
-# Jeda broadcast channel Peka 1 hari (perintah user 18 Nov 2026 12:48 WIB).
-# Selama waktu WIB sekarang < tanggal di atas, telegram_channel.py TIDAK
-# mengirim broadcast postingan sosmed ke @peka_aichannel (exit 0, PAUSED).
-# Kedaluwarsa sendiri, tidak perlu dihapus manual. Format: YYYY-MM-DD HH:MM WIB.
