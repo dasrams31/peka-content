@@ -1,0 +1,132 @@
+{
+ "carousel": {
+  "slides": [
+   {
+    "sub": "Pola lima bagian biar AI kasih kode yang akurat dan langsung bisa dipakai.",
+    "title": [
+     "Prompt Asal-asalan,",
+     "Kodenya Ikut",
+     "Asal-asalan"
+    ],
+    "type": "cover"
+   },
+   {
+    "items": [
+     {
+      "body": "AI cuma baca teks yang kamu kirim. Prompt 'buatkan API produk' bikin AI menebak framework, bahasa, database, sampai aturan autentikasi.",
+      "head": "AI tidak baca isi kepala kamu"
+     },
+     {
+      "body": "Tanpa Laravel 12, PHP 8.3, atau PostgreSQL, AI menebak sendiri, dan tebakannya sering tidak cocok dengan project kamu.",
+      "head": "Tidak sebut stack dan versi"
+     },
+     {
+      "body": "Kalau tidak dijelaskan seperti apa hasil yang dianggap benar, AI tidak punya patokan buat ngecek jawabannya sendiri.",
+      "head": "Tidak ada definisi benar"
+     }
+    ],
+    "title": "Kenapa prompt samar bikin kode salah",
+    "type": "points"
+   },
+   {
+    "body": "Peran menentukan kedalaman jawaban. Konteks adalah kode dan skema yang sudah ada. Tugas cukup satu per prompt. Batasan melarang hal yang sering salah, misalnya query mentah. Format output menentukan bentuk jawaban yang mudah disalin.",
+    "code": "Peran + Konteks + Tugas + Batasan + Format",
+    "title": "Pola lima bagian yang bisa dipakai ulang",
+    "type": "text"
+   },
+   {
+    "items": [
+     {
+      "body": "Endpoint sederhana atau fungsi utilitas. Tulis prompt pakai pola lima bagian.",
+      "head": "Ambil satu tugas kecil"
+     },
+     {
+      "body": "Model, skema tabel, atau potongan error. AI yang melihat kode kamu akan mengikuti gaya yang sama.",
+      "head": "Tempelkan kode yang relevan"
+     },
+     {
+      "body": "'Fungsi ini gagal saat stock null, beri default 0' jauh lebih efektif daripada mengulang prompt dari awal.",
+      "head": "Uji, lalu perbaiki spesifik"
+     }
+    ],
+    "title": "Tiga langkah praktis hari ini",
+    "type": "points"
+   },
+   {
+    "code": [
+     "Kamu adalah senior Laravel developer.",
+     "Konteks: Laravel 12, PHP 8.3, PostgreSQL.",
+     "Tugas: GET /api/products, cari nama,",
+     "filter category_id, paginasi 15.",
+     "Batasan: Eloquent, jangan query mentah.",
+     "Output: kode controller lengkap."
+    ],
+    "note": "Pencarian case-insensitive dan aman dari wildcard: karakter % dan _ di-escape sebelum masuk query.",
+    "title": "Contoh prompt yang sudah diperbaiki",
+    "type": "code"
+   },
+   {
+    "lines": [
+     "Contoh lengkapnya, dari prompt buruk ke prompt bagus, sampai file instruksi project AGENTS.md, semuanya ada di blog Peka.",
+     "Follow @peka.ai.id, save dulu biar gampang dicari pas butuh."
+    ],
+    "shortlink": "https://s.peka.ai.id/GzQc16",
+    "title": "Baca versi lengkapnya",
+    "type": "closing"
+   }
+  ]
+ },
+ "date": "2026-11-18",
+ "excerpt": "Minta AI buatkan fungsi login, hasilnya meyakinkan, pas dijalankan malah error di tiga tempat. Masalahnya jarang ada di AI-nya, ada di prompt yang kita kirim. Ini pola lima bagian biar AI kasih kode yang akurat: peran, konteks, tugas, batasan, dan format output, lengkap dengan contoh Laravel dan JavaScript.",
+ "faq": [
+  [
+   "Apa itu prompt engineering untuk developer?",
+   "Teknik menulis instruksi yang jelas dan terstruktur ke AI supaya kode yang dikasih akurat, sesuai konteks project, dan minim revisi. Kuncinya ada di konteks, contoh, dan batasan yang eksplisit."
+  ],
+  [
+   "Kenapa AI sering ngasih kode yang salah atau tidak jalan?",
+   "Biasanya karena prompt terlalu umum, tanpa konteks stack, versi, dan batasan. AI menebak bagian yang kosong, dan tebakannya sering tidak cocok dengan project kamu."
+  ],
+  [
+   "Apakah prompt yang bagus harus panjang?",
+   "Tidak harus panjang, tapi harus lengkap. Prompt yang baik berisi peran, konteks, tugas, format output, dan batasan. Lima baris yang padat sering lebih baik daripada satu kalimat yang samar."
+  ],
+  [
+   "Bagaimana cara membuat AI mengikuti gaya kode project saya?",
+   "Tempelkan contoh kode yang sudah ada di project sebagai referensi, sebutkan aturan penamaan dan struktur folder, lalu minta AI mengikuti pola yang sama. Semakin konkret contohnya, semakin konsisten hasilnya."
+  ]
+ ],
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/prompt-engineering-untuk-developer-kode-lebih-akurat.jpg",
+ "reel": {
+  "band": "PROMPT ENGINEERING UNTUK DEVELOPER",
+  "date": "18 NOVEMBER 2026",
+  "headline": [
+   "PROMPT ASAL-ASALAN,",
+   "KODENYA IKUT",
+   "ASAL-ASALAN"
+  ],
+  "points": [
+   "AI cuma baca teks yang kamu kirim, bukan isi kepala kamu. Prompt yang samar bikin AI menebak stack, versi, dan aturan project, dan setiap tebakan adalah peluang salah.",
+   "Pola lima bagian yang bisa dipakai ulang: peran, konteks, tugas, batasan, dan format output. Lima baris padat sering lebih baik daripada satu kalimat samar.",
+   "Tempelkan kode yang sudah ada sebagai konteks, sebut batasan yang jelas, dan pecah tugas besar jadi potongan kecil yang diverifikasi satu per satu."
+  ],
+  "question": "Kamu tim prompt panjang yang lengkap, atau tim prompt pendek yang penting jalan?",
+  "source": "TUTORIAL PEKA",
+  "steps": [
+   "Tulis prompt dengan pola lima bagian: peran, konteks, tugas, batasan, dan format output.",
+   "Tempelkan kode dan skema yang sudah ada sebagai konteks, supaya AI mengikuti gaya project kamu.",
+   "Uji hasilnya, lalu perbaiki dengan satu pesan lanjutan yang spesifik, jangan ulang dari awal."
+  ],
+  "sub": "Prompt yang jelas bikin AI berhenti menebak, dan kode yang dikasih langsung bisa dipakai."
+ },
+ "slug": "prompt-engineering-untuk-developer-kode-lebih-akurat",
+ "source_file": "2026-11-18-prompt-engineering-untuk-developer-kode-lebih-akurat.md",
+ "source_title": "Prompt Engineering untuk Developer: Kode Lebih Akurat",
+ "tags": [
+  "Tutorial",
+  "AI",
+  "Prompt Engineering",
+  "Developer"
+ ],
+ "title": "Prompt Engineering untuk Developer: Biar Kode dari AI Langsung Jalan"
+}

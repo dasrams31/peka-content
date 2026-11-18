@@ -1,0 +1,9 @@
+Prompt asal-asalan, kodenya ikut asal-asalan.
+
+Minta AI buatkan fungsi login, hasilnya meyakinkan, pas dijalankan malah error di tiga tempat. Masalahnya jarang ada di AI-nya, ada di prompt yang kita kirim.
+
+Di carousel ini: kenapa prompt samar bikin kode salah, pola lima bagian yang bisa dipakai ulang, sampai contoh prompt yang sudah diperbaiki.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim prompt panjang yang lengkap, atau tim prompt pendek yang penting jalan? #AI

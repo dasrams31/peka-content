@@ -1,0 +1,124 @@
+<p>Kamu pasti pernah mengalaminya. Minta AI buatkan fungsi login, hasilnya terlihat meyakinkan, lalu saat dijalankan malah error di tiga tempat. Atau minta dibuatkan query, hasilnya pakai sintaks MySQL padahal project kamu PostgreSQL. Masalahnya jarang ada di AI-nya. Masalahnya ada di prompt yang kita kirim.</p>
+<p>Prompt engineering untuk developer bukan soal trik kata ajaib. Ini soal memberi AI semua informasi yang dibutuhkan seorang rekan kerja untuk menyelesaikan tugas dengan benar. Dan kabar baiknya, polanya bisa dipelajari dan dipakai ulang.</p>
+<h2>Kenapa prompt yang samar menghasilkan kode yang salah</h2>
+<p>Model AI tidak membaca isi kepala kamu. Ia hanya membaca teks yang kamu kirim. Kalau prompt kamu berbunyi "buatkan API produk", AI harus menebak framework, bahasa, struktur database, format respons, sampai aturan autentikasi. Setiap tebakan adalah peluang salah.</p>
+<p>Prompt yang buruk biasanya punya tiga ciri. Pertama, tidak menyebut stack dan versi. Kedua, tidak menjelaskan keadaan yang sudah ada, misalnya tabel database atau kode yang sudah ditulis. Ketiga, tidak mendefinisikan seperti apa hasil yang dianggap benar.</p>
+<p>Bandingkan dua prompt ini. Prompt pertama: "Buatkan endpoint untuk tambah produk." Prompt kedua: "Buatkan endpoint POST /api/products di Laravel 12. Tabel products punya kolom name, price, stock, dan category_id. Validasi: name wajib minimal 3 karakter, price angka lebih dari 0, stock integer minimal 0. Kembalikan JSON dengan status 201 dan data produk. Pakai Form Request dan Resource, jangan tulis validasi di controller."</p>
+<p>Prompt kedua jauh lebih panjang, tapi hasilnya hampir selalu langsung bisa dipakai. AI tidak perlu menebak, jadi tidak ada tebakan yang salah.</p>
+<h2>Pola prompt yang bisa dipakai ulang</h2>
+<p>Setelah mencoba berbagai bentuk prompt di project nyata, ada satu pola yang konsisten memberi hasil bagus. Polanya punya lima bagian: peran, konteks, tugas, batasan, dan format output. Kamu tidak harus selalu memakai kelimanya, tapi untuk tugas yang kompleks, kelimanya penting.</p>
+<p><strong>1. Peran: tentukan siapa AI di tugas ini.</strong> Awali dengan peran yang spesifik. "Kamu adalah senior Laravel developer" memberi hasil yang berbeda dengan "Kamu adalah tutor pemula". Peran menentukan kedalaman jawaban, istilah yang dipakai, dan seberapa banyak penjelasan yang diberikan.</p>
+<p><strong>2. Konteks: beri bahan mentah yang relevan.</strong> Ini bagian yang paling sering dilewatkan. Tempelkan kode yang sudah ada, skema tabel, atau potongan error. AI yang melihat kode kamu akan mengikuti gaya dan struktur yang sama.</p>
+<p>Contoh konteks yang berguna:</p>
+<pre><code>// Model yang sudah ada di project
+class Product extends Model
+{
+    protected $fillable = ['name', 'price', 'stock', 'category_id'];
+
+    public function category()
+    {
+        return $this-&gt;belongsTo(Category::class);
+    }
+}</code></pre>
+<p>Dengan konteks ini, AI tidak akan membuat model baru yang bertabrakan dengan yang sudah ada. Ia akan memakai relasi dan field yang benar.</p>
+<p><strong>3. Tugas: satu tugas, satu prompt.</strong> Jangan minta lima hal sekaligus dalam satu prompt. "Buatkan API produk, plus halaman admin, plus export Excel, plus unit test" akan menghasilkan semuanya setengah matang. Pecah jadi beberapa prompt, satu tugas per prompt, dan bangun hasilnya selangkah demi selangkah.</p>
+<p><strong>4. Batasan: sebutkan apa yang tidak boleh dilakukan.</strong> Batasan sama pentingnya dengan instruksi. Sebutkan hal-hal yang sering salah: "Jangan pakai package tambahan", "Jangan ubah struktur tabel", "Pakai Eloquent, jangan query mentah", atau "Kode harus jalan di PHP 8.3".</p>
+<p><strong>5. Format output: tentukan bentuk jawaban.</strong> Minta format yang kamu mau: "Berikan hanya kode lengkap beserta nama file", "Jelaskan dulu pendek, lalu berikan kode", atau "Berikan kode dan daftar perubahan file yang diperlukan". Format yang jelas membuat jawaban mudah disalin ke project.</p>
+<h2>Contoh lengkap: dari prompt buruk ke prompt bagus</h2>
+<p>Misalnya kamu butuh fitur pencarian produk di Laravel. Ini contoh prompt yang sudah diperbaiki dengan pola di atas:</p>
+<pre><code>Kamu adalah senior Laravel developer.
+
+Konteks: project Laravel 12, PHP 8.3, PostgreSQL. Model Product punya
+relasi belongsTo ke Category. Route sudah memakai Route::apiResource.
+
+Tugas: buatkan endpoint GET /api/products dengan fitur pencarian
+berdasarkan nama produk dan filter berdasarkan category_id, plus
+pagination 15 item per halaman.
+
+Batasan: pakai Eloquent query builder, jangan query mentah. Pencarian
+harus case-insensitive dan aman dari karakter wildcard. Jangan ubah
+model yang sudah ada.
+
+Output: kode controller lengkap, dan sebutkan file mana saja yang
+perlu diubah.</code></pre>
+<p>Hasil yang diharapkan terlihat seperti ini:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+    public function index(Request $request)
+    {
+        $request-&gt;validate([
+            'search' =&gt; 'nullable|string|max:100',
+            'category_id' =&gt; 'nullable|integer|exists:categories,id',
+        ]);
+
+        $products = Product::query()
+            -&gt;when($request-&gt;search, function ($query, $search) {
+                $escaped = str_replace(['%', '_'], ['\%', '\_'], $search);
+                $query-&gt;where('name', 'ilike', '%' . $escaped . '%');
+            })
+            -&gt;when($request-&gt;category_id, function ($query, $categoryId) {
+                $query-&gt;where('category_id', $categoryId);
+            })
+            -&gt;with('category')
+            -&gt;paginate(15);
+
+        return response()-&gt;json($products);
+    }
+}</code></pre>
+<p>Ada dua detail penting di kode ini. Pertama, operator <code>ilike</code> dipakai karena PostgreSQL, bukan <code>like</code> yang case-sensitive di Postgres. Prompt yang menyebut PostgreSQL membuat AI memilih operator yang benar. Kedua, karakter <code>%</code> dan <code>_</code> di-escape supaya pengguna tidak bisa menyuntikkan wildcard ke query pencarian. Detail seperti ini jarang muncul kalau promptnya samar.</p>
+<h2>Teknik lanjutan yang benar-benar membantu</h2>
+<p><strong>Beri contoh input dan output.</strong> Kalau kamu butuh fungsi transformasi data, tunjukkan contoh input dan output yang diharapkan. AI jauh lebih akurat ketika melihat bentuk data yang nyata daripada deskripsi verbal.</p>
+<p>Contoh prompt:</p>
+<pre><code>Buatkan fungsi JavaScript yang mengubah array produk berikut menjadi
+objek yang dikelompokkan per kategori.
+
+Input: [{ id: 1, name: "Kaos", category: "Pakaian", price: 50000 }]
+Output: { "Pakaian": [{ id: 1, name: "Kaos", price: 50000 }] }
+
+Fungsi harus menangani array kosong dan kategori yang belum ada.</code></pre>
+<p>Hasilnya langsung bisa dites karena contohnya sudah jelas:</p>
+<pre><code>function groupByCategory(products) {
+  if (!Array.isArray(products) || products.length === 0) {
+    return {};
+  }
+
+  return products.reduce((grouped, product) =&gt; {
+    const { category, ...rest } = product;
+
+    if (!grouped[category]) {
+      grouped[category] = [];
+    }
+
+    grouped[category].push(rest);
+    return grouped;
+  }, {});
+}</code></pre>
+<p><strong>Minta AI berpikir selangkah demi selangkah.</strong> Untuk masalah yang kompleks, tambahkan kalimat: "Jelaskan dulu rencana pendekmu, lalu tulis kodenya." Kalimat ini memaksa model menyusun langkah sebelum menulis kode, dan hasilnya biasanya lebih rapi dan lebih sedikit bug.</p>
+<p><strong>Iterasi, jangan sekali kirim lalu pasrah.</strong> Prompt engineering bukan satu kali tembak. Alur yang sehat adalah: kirim prompt, uji hasilnya, lalu balas dengan koreksi spesifik. "Fungsi ini gagal saat stock bernilai null, perbaiki dengan memberi nilai default 0" jauh lebih efektif daripada mengulang prompt dari awal. Simpan percakapan itu sebagai konteks. Kalau kamu membuka chat baru untuk setiap revisi, AI kehilangan semua konteks yang sudah dibangun.</p>
+<p><strong>Pakai file instruksi di project.</strong> Kalau kamu memakai AI coding assistant di editor seperti VS Code atau Cursor, manfaatkan file instruksi project. File seperti <code>AGENTS.md</code> atau <code>.github/copilot-instructions.md</code> di root project dibaca otomatis dan berlaku untuk semua prompt di repo itu. Isinya bisa aturan sederhana: stack yang dipakai, gaya penamaan, struktur folder, dan hal yang dilarang.</p>
+<p>Contoh isi file instruksi:</p>
+<pre><code># Aturan Project
+
+- Framework: Laravel 12, PHP 8.3, PostgreSQL 16
+- Validasi selalu di Form Request, bukan di controller
+- Jangan menambah package baru tanpa izin
+- Semua query pakai Eloquent, dilarang query mentah
+- Bahasa komentar kode: Bahasa Indonesia</code></pre>
+<p>Dengan file ini, kamu tidak perlu mengulang konteks yang sama di setiap prompt.</p>
+<h2>Kesalahan umum pemula dan cara menghindarinya</h2>
+<p>Pertama, menyalin kode AI tanpa membaca. AI bisa menulis kode yang terlihat benar tapi punya celah keamanan, misalnya query yang rentan injection atau validasi yang bisa dilewati. Baca setiap baris sebelum masuk ke project, terutama bagian yang menyentuh autentikasi, pembayaran, dan database.</p>
+<p>Kedua, memberi prompt yang mengandung asumsi salah. Kalau kamu menulis "di Laravel, fungsi X bekerja seperti ini" padahal sebenarnya tidak, AI akan mengikuti asumsi kamu dan menghasilkan kode yang salah dengan percaya diri. Kalau tidak yakin, tanyakan dulu: "Apakah cara ini benar di Laravel 12?" sebelum meminta kode.</p>
+<p>Ketiga, meminta AI memperbaiki error tanpa menyertakan pesan error lengkap. Tempelkan pesan error, file yang bermasalah, dan baris yang ditunjuk error. "Error saat migrate" tidak cukup. Pesan error lengkap plus stack trace adalah bahan bakar utama debugging.</p>
+<p>Keempat, memakai satu prompt raksasa untuk membangun fitur besar. Pecah fitur jadi potongan kecil: skema database dulu, lalu model, lalu endpoint, lalu test. Setiap potongan diverifikasi sebelum lanjut ke potongan berikutnya.</p>
+<p>Kelima, tidak pernah menyimpan prompt yang berhasil. Kalau satu prompt menghasilkan kode yang bagus, simpan prompt itu di catatan atau di file instruksi project. Prompt yang bagus adalah aset yang bisa dipakai ulang, sama seperti snippet kode.</p>
+<h2>Langkah praktis yang bisa dicoba hari ini</h2>
+<p>Ambil satu tugas kecil dari project kamu, misalnya membuat endpoint sederhana atau fungsi utilitas. Tulis prompt memakai pola lima bagian di atas: peran, konteks, tugas, batasan, dan format output. Tempelkan kode yang relevan sebagai konteks. Jalankan hasilnya, catat apa yang salah, lalu perbaiki dengan satu pesan lanjutan yang spesifik.</p>
+<p>Ulangi proses ini tiga kali dalam seminggu dengan tugas yang berbeda. Kamu akan cepat merasakan perbedaannya: AI berhenti menebak, kode yang dihasilkan makin dekat dengan gaya project kamu, dan waktu yang dihabiskan untuk memperbaiki hasil AI makin sedikit.</p>
+<p>Prompt engineering bukan bakat, tapi kebiasaan. Kebiasaan memberi konteks yang lengkap, tugas yang jelas, dan batasan yang tegas. Semakin baik kamu menjelaskan apa yang kamu mau, semakin akurat kode yang kamu dapat.</p>

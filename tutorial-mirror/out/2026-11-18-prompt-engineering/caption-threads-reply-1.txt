@@ -1,0 +1,1 @@
+Pola lima bagiannya: peran, konteks, tugas, batasan, dan format output. Contoh peran: 'Kamu adalah senior Laravel developer'. Contoh batasan: 'Pakai Eloquent, jangan query mentah'. Lima baris padat sering lebih baik daripada satu kalimat samar.

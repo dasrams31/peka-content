@@ -1,0 +1,1 @@
+Konteks adalah bagian yang paling sering kelewat. Tempelkan model, skema tabel, atau potongan error yang sudah ada. AI yang melihat kode kamu akan mengikuti gaya dan struktur yang sama, bukan bikin yang baru dan bertabrakan.

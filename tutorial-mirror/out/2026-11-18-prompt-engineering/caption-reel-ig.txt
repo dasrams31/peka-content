@@ -1,0 +1,5 @@
+Prompt asal-asalan, kodenya ikut asal-asalan.
+
+Prompt engineering untuk developer bukan soal trik kata ajaib, tapi soal ngasih AI semua info yang dibutuhin buat nyelesaiin tugas dengan benar. Polanya lima bagian: peran, konteks, tugas, batasan, dan format output.
+
+Link blognya ada di akhir video.

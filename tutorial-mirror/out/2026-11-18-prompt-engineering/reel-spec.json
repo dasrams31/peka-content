@@ -1,0 +1,24 @@
+{
+ "band": "PROMPT ENGINEERING UNTUK DEVELOPER",
+ "date": "18 NOVEMBER 2026",
+ "headline": [
+  "PROMPT ASAL-ASALAN,",
+  "KODENYA IKUT",
+  "ASAL-ASALAN"
+ ],
+ "points": [
+  "AI cuma baca teks yang kamu kirim, bukan isi kepala kamu. Prompt yang samar bikin AI menebak stack, versi, dan aturan project, dan setiap tebakan adalah peluang salah.",
+  "Pola lima bagian yang bisa dipakai ulang: peran, konteks, tugas, batasan, dan format output. Lima baris padat sering lebih baik daripada satu kalimat samar.",
+  "Tempelkan kode yang sudah ada sebagai konteks, sebut batasan yang jelas, dan pecah tugas besar jadi potongan kecil yang diverifikasi satu per satu."
+ ],
+ "question": "Kamu tim prompt panjang yang lengkap, atau tim prompt pendek yang penting jalan?",
+ "source": "TUTORIAL PEKA",
+ "steps": [
+  "Tulis prompt dengan pola lima bagian: peran, konteks, tugas, batasan, dan format output.",
+  "Tempelkan kode dan skema yang sudah ada sebagai konteks, supaya AI mengikuti gaya project kamu.",
+  "Uji hasilnya, lalu perbaiki dengan satu pesan lanjutan yang spesifik, jangan ulang dari awal."
+ ],
+ "sub": "Prompt yang jelas bikin AI berhenti menebak, dan kode yang dikasih langsung bisa dipakai.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/prompt-engineering-untuk-developer-kode-lebih-akurat.jpg",
+ "shortlink": "https://s.peka.ai.id/GzQc16"
+}

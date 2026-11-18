@@ -1,0 +1,1 @@
+Dua detail dari contoh lengkapnya: operator ilike dipakai karena PostgreSQL, bukan like yang case-sensitive di Postgres. Dan karakter % dan _ di-escape supaya pengguna tidak bisa menyuntikkan wildcard ke query pencarian.
