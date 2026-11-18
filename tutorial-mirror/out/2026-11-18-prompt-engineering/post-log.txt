@@ -1,0 +1,5 @@
+threads: 
+instagram: https://www.instagram.com/reel/Df4G8jJD6-V/
+facebook: 
+shortlink: https://s.peka.ai.id/GzQc16
+blog: https://blog.peka.ai.id/p/prompt-engineering-untuk-developer-kode-lebih-akurat
