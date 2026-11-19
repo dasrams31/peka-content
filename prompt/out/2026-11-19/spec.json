@@ -1,0 +1,12 @@
+{
+  "episode": 29,
+  "category": "NULIS",
+  "title": "Ide mentah jadi cerita pendek yang selesai dibaca",
+  "prompt": "Tulis cerita pendek 300-500 kata dari ide ini: [IDE ATAU KALIMAT PEMICU]. Tokoh utama [NAMA + SIFAT], latar [TEMPAT + WAKTU], konflik [MASALAH YANG DIHADAPI], dan akhir [TWIST ATAU PELAJARAN]. Pakai bahasa santai yang hidup, dialog natural, dan akhiri dengan kalimat yang bikin pembaca mikir.",
+  "tips": [
+    "Isi kurungnya sedetail mungkin, makin jelas makin hidup ceritanya.",
+    "Minta 3 versi akhir berbeda, lalu pilih yang paling nendang.",
+    "Coba ganti latar ke tempat yang kamu kenal, langsung terasa nyata."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-19"
+}
