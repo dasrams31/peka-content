@@ -44,11 +44,15 @@ ANTI-DOBEL (pelajaran 9 Nov 2026: broadcast dobel di channel):
 - Grup TIDAK punya halaman publik (t.me/s/peka_aigroup kosong), jadi
   dedupe grup hanya via ledger. Kalau kirim ke grup GAGAL, JANGAN
   langsung retry: cek manual di grup dulu, pesan bisa saja sudah sampai
-  sebelum koneksi putus.
+  sebelum koneksi putus. Baris PENDING di ledger menahan retry otomatis
+  sampai dicek manual.
 - Kalau kirim ke channel GAGAL karena koneksi putus, JANGAN langsung
   anggap gagal: pesan bisa saja sudah sampai sebelum koneksi putus.
-  Verifikasi live 1x; kalau ketemu, catat ke ledger dan anggap sukses.
-  Hanya bila TIDAK ketemu, exit 1 (aman di-retry nanti, idempotent).
+  Verifikasi live (Bot API + halaman, 3x jeda 60 detik); kalau ketemu,
+  catat ke ledger dan anggap sukses. Kalau TIDAK ketemu, JANGAN nyatakan
+  "aman di-retry": tulis baris PENDING dan exit 1 — pelajaran 19 Nov
+  2026, broadcast Figma dobel 272/273 karena halaman t.me/s telat
+  tampil (cache) dan retry mengirim salinan kedua.
 - Urutan kirim: channel dulu, baru grup. Bila channel gagal, grup TIDAK
   dikirim (hindari tayang grup-only). Retry nanti akan SKIP channel
   (sudah di ledger) dan hanya mengirim yang belum.
@@ -58,7 +62,6 @@ import argparse
 import html
 import json
 import sys
-import time
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -70,11 +73,15 @@ from telegram_channel import (  # noqa: E402
     API_BASE,
     CHANNEL_ID,
     LEDGER,
+    PENDING_ID,
     WIB,
     broadcast_paused,
     find_in_channel,
+    ledger_append_raw,
     ledger_lookup,
+    ledger_pending,
     read_token,
+    verify_live_after_failure,
 )
 
 GROUP_ID = "-1001167087205"  # @peka_aigroup
@@ -211,10 +218,18 @@ def ledger_append_dest(key: str, message_id: str, source: str, dest: str) -> Non
 
 def already_sent(key: str, marker_title: str, dest: str):
     """Cek ledger (+ live channel bila dest=channel) untuk satu kunci.
-    Kembalikan message_id bila sudah terkirim, None bila belum."""
+    Kembalikan message_id bila sudah terkirim, PENDING_ID bila kirim
+    sebelumnya belum terverifikasi (retry otomatis dilarang), None bila
+    belum."""
     hit = ledger_lookup(key)
     if hit:
         return hit[0]
+    try:
+        _, ktype, ktitle = key.split("|", 2)
+    except ValueError:
+        ktype, ktitle = "", ""
+    if ledger_pending(ktype, ktitle):
+        return PENDING_ID
     if dest != "channel":
         return None
     ns = SimpleNamespace(title=marker_title, blog="", threads="",
@@ -230,14 +245,25 @@ def send_one(token: str, dest: str, chat_id: str, kind: str,
              slides, caption: str, list_text: str, key: str,
              marker_title: str, force: bool):
     """Kirim satu pesan (album atau daftar harga) ke satu tujuan.
-    Kembalikan message_id, atau None bila gagal (pesan error sudah dicetak).
-    """
+    Kembalikan message_id, atau None bila gagal / tertahan PENDING
+    (pesan error sudah dicetak)."""
     if not force:
         mid = already_sent(key, marker_title, dest)
+        if mid == PENDING_ID:
+            print(f"PENDING {kind} {dest} title={marker_title[:60]}: kirim "
+                  "sebelumnya belum terverifikasi. JANGAN kirim ulang "
+                  "otomatis — cek manual dulu di "
+                  + ("https://t.me/peka_aichannel" if dest == "channel"
+                     else "grup @peka_aigroup")
+                  + ". Bila benar belum terkirim, hapus baris PENDING di "
+                  "broadcasts.log atau jalankan dengan --force.",
+                  file=sys.stderr)
+            return None
         if mid:
             print(f"SKIP {kind} already sent {dest} message_id={mid} "
                   f"title={marker_title[:60]}")
             return mid
+    ledger_append_raw(key, PENDING_ID, PENDING_ID, f"{LEDGER_NOTE}-pending")
     if kind == "album":
         ok, mid, err = send_media_group(token, slides, caption, chat_id)
     else:
@@ -245,17 +271,25 @@ def send_one(token: str, dest: str, chat_id: str, kind: str,
     if not ok:
         print(f"Gagal kirim {kind} ke {dest}: {err}", file=sys.stderr)
         if dest == "channel":
-            time.sleep(5)
-            found = already_sent(key, marker_title, dest)
+            ns = SimpleNamespace(title=marker_title, blog="", threads="",
+                                 instagram="", facebook="")
+            found = verify_live_after_failure(token, ns, chat_id)
             if found:
+                ledger_append_dest(key, found, f"{LEDGER_NOTE}-found-after-failure", dest)
                 print(f"OK {kind} {dest} message_id={found} (ditemukan di "
                       "channel setelah kirim gagal, TIDAK dikirim ulang)")
                 return found
-            print(f"{kind} TIDAK ditemukan di channel setelah verifikasi "
-                  "live — aman untuk retry nanti.", file=sys.stderr)
+            print(f"{kind} BELUM TERVERIFIKASI di channel setelah 3x cek "
+                  "(Bot API + halaman live). JANGAN retry otomatis: pesan "
+                  "bisa saja sudah sampai tapi belum tampil di halaman. "
+                  "Cek manual di https://t.me/peka_aichannel — bila sudah "
+                  "ada, catat message_id-nya ke ledger; bila benar belum "
+                  "ada, hapus baris PENDING di broadcasts.log lalu retry.",
+                  file=sys.stderr)
         else:
             print(f"{kind} ke grup TIDAK bisa diverifikasi live (grup tidak "
-                  "punya halaman publik) — cek manual di grup sebelum retry.",
+                  "punya halaman publik) — cek manual di grup sebelum retry. "
+                  "Baris PENDING di ledger menahan retry otomatis.",
                   file=sys.stderr)
         return None
     ledger_append_dest(key, mid, LEDGER_NOTE, dest)
