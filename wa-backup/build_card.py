@@ -17,6 +17,8 @@ WHITE = (255, 255, 255)
 YELLOW = (255, 214, 10)
 GREY = (148, 163, 184)
 GREEN = (37, 211, 102)
+GREEN_DARK = (18, 140, 74)
+INK = (17, 17, 17)
 
 def font(name, size):
     return ImageFont.truetype(f"/usr/share/fonts/truetype/dejavu/{name}.ttf", size)
@@ -24,7 +26,7 @@ def font(name, size):
 F_BIG = font("DejaVuSans-Bold", 120)
 F_SUB = font("DejaVuSans-Bold", 68)
 F_BODY = font("DejaVuSans", 34)
-F_CARD_T = font("DejaVuSans-Bold", 44)
+F_CARD_T = font("DejaVuSans-Bold", 40)
 F_CARD_L = font("DejaVuSans-Bold", 34)
 F_FOOT = font("DejaVuSans-Bold", 30)
 
@@ -72,18 +74,19 @@ d = ImageDraw.Draw(img)
 # title + one line
 tracked_center(560, "GABUNG", F_BIG, YELLOW, tracking=18)
 text_center(700, "Grup WhatsApp", F_SUB, WHITE)
-text_center(800, "Biar transaksi tetap lancar.", F_BODY, GREY)
 
-# two green cards, text only
+# two cards: white with black border (Peka link-hub style), dark title, green link
 def card(y0, h, title, link):
     x0, x1 = 80, 1000
-    d.rounded_rectangle([x0, y0, x1, y0 + h], radius=26, fill=GREEN)
+    d.rounded_rectangle([x0, y0, x1, y0 + h], radius=26, fill=WHITE,
+                        outline=INK, width=4)
+    d.rounded_rectangle([x0 + 6, y0 + 12, x0 + 20, y0 + h - 12], radius=7, fill=GREEN)
     tx = x0 + 60
-    d.text((tx, y0 + 32), title, font=F_CARD_T, fill=WHITE)
-    d.text((tx, y0 + 94), link, font=F_CARD_L, fill=WHITE)
+    d.text((tx, y0 + 32), title, font=F_CARD_T, fill=INK)
+    d.text((tx, y0 + 94), link, font=F_CARD_L, fill=GREEN_DARK)
 
-card(900, 150, "Grup WhatsApp Peka", "s.peka.ai.id/k4iKBr")
-card(1070, 150, "Grup WhatsApp Aeternum", "s.peka.ai.id/7SZw07")
+card(860, 150, "Grup WhatsApp Peka", "s.peka.ai.id/k4iKBr")
+card(1030, 150, "Grup WhatsApp Aeternum PremiApp", "s.peka.ai.id/7SZw07")
 
 # footer
 text_center(1270, "peka.ai.id", F_FOOT, YELLOW)
