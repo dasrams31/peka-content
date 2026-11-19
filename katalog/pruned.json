@@ -140,5 +140,15 @@
   "bot_id": 114,
   "removed_at": "2026-11-19",
   "reason": "sold out"
+ },
+ {
+  "sec": "STRAVA",
+  "dur": "1 Bulan",
+  "name": "Strava Premium",
+  "price": "9K",
+  "price_num": 9,
+  "bot_id": 110,
+  "removed_at": "2026-11-19",
+  "reason": "sold out"
  }
 ]
