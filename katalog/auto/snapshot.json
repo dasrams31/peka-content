@@ -169,6 +169,30 @@
    "price": "7K",
    "price_num": 7,
    "bot_id": 115
+  },
+  {
+   "sec": "CAPCUT",
+   "dur": "1 Bulan",
+   "name": "CapCut Pro",
+   "price": "25K",
+   "price_num": 25,
+   "bot_id": 38
+  },
+  {
+   "sec": "CAPCUT",
+   "dur": "40 Hari",
+   "name": "CapCut Pro Individu",
+   "price": "29K",
+   "price_num": 29,
+   "bot_id": 116
+  },
+  {
+   "sec": "MEITU",
+   "dur": "14 Hari",
+   "name": "Meitu",
+   "price": "10K",
+   "price_num": 10,
+   "bot_id": 117
   }
  ],
  "updated": "2026-11-19"
