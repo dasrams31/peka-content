@@ -1,0 +1,103 @@
+Gemini 4 Neon special edition (2026-11-19) - build log
+=====================================================
+
+FACT SOURCE (parent-verified, used as the single source of truth):
+- Official Google announcement https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/ (published 18 Nov 2026)
+- Artificial Analysis Intelligence Index v5.0.1, Coding Agent Index, Vals Index,
+  Agent Arena Index (independent)
+- No other numbers were added anywhere in the package. March 2026 knowledge
+  cutoff was NOT used (unverified in the model card, dropped per instructions).
+
+RE-VERIFICATION NOTE (Coding Agent Index rivals):
+- AA's own article (artificialanalysis.ai/articles/gemini-4-neon-intelligence-gain,
+  read 19 Nov 2026) confirms Fable 5.2 = 58 on the Coding Agent Index, and
+  reports Neon 59 in the Antigravity CLI harness. The fact-sheet figure Neon
+  58.6 (Google's cited Coding Agent Index value, #1) was kept as authoritative;
+  the AA 59 (different harness) was NOT added to the package.
+- Astra 53 / Sol 49 from the GPT-6.2 edition (Coding Agent Index v2.1, Codex
+  harness) could NOT be re-verified on AA, so per instructions both are shown
+  as "tidak diuji" on slide 3 and in the blog, with no zero bar.
+
+SHORTLINK (early, before visuals):
+- code=QRe0Uu, shortlink=https://s.peka.ai.id/QRe0Uu
+- target=https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/
+- admin user_id 1, ip_hash 12ca17b49af2289436f303e0166030a2
+- curl -I: 307 -> exact target (verified at creation 19 Nov 2026 and re-checked
+  at end of run: 307 -> exact target)
+
+CAROUSEL (neon_design.py, adapted from gpt62_design.py):
+- 6 slides 4096x4096, dark benchmark-lab theme, Peka yellow #FFD60A accent.
+- Programmatic bbox-collision check (check_boxes) passed on every slide.
+- Slide 3 first render FAILED QA twice (programmatic assertion, caught before
+  handover): note text overflowed its max height. Fixed by shortening the note
+  to two lines; re-rendered clean. Slide 4 bottom line needed max_h raised
+  from X(72) to X(110) for its 3 lines; re-rendered clean.
+- Visual QA: all 6 slides read at 768px preview; full-res zoom crops checked
+  on slide 2 bars, slide 3 rows, slide 5 price panel. No overflow, no
+  collisions, no text touching footer/page numbers.
+- Numbers cross-checked against the fact sheet (AA Index 65/62/61/60/59/57,
+  Coding Agent 58,6/58, Vals 70,9%, Agent Arena 1.336, AutomationBench 56,3%,
+  Vending-Bench 2 $16.843, TB Science 70,5%, SWE-sweep 12,8%/39,0%,
+  Chartography 73,5%, Agents Last Exam 75,8%, HLE-Diamond 71,3%,
+  RiemannBench 84,0%, TB 4.1 65,2%, FrontierCode 2.0 46,2%, cyber
+  76%/51,26%/90,5%/70,7%, prices $3/$15/$0,15 and Carbon promo $2/$10 to
+  30 Nov then $4/$20 from 1 Dec, cost per task 32% / 50-80% / 36%+).
+- Color legend (same on every chart slide + reel): Neon #FFD60A,
+  Fable 5.2 #E8EDF5, Astra #7DD3FC, Carbon #34D399, Opus 5.5 #8A99B5,
+  Sol #94A3B8.
+- Honest losses on slides 2, 3, 5, 6: AA Index #3 (61 vs Fable 65, Astra 62);
+  per-token price higher than Carbon promo until 30 Nov; no free tier;
+  cyber variant restricted to Fairwind trusted defenders; all benchmark
+  figures except AA/Vals/Agent Arena labelled as Google claims.
+
+REEL VOICEOVER reel-v2 (theme peka-yellow):
+- Spec: voiceover-spec.json (copied from demo-hydrogen-v3/spec.json pattern).
+- TTS: 124 words, audio 47.388s, total 48.188s (within 45-60s).
+- words.json checked: punctuation attached (e.g. "kemarin,", "58,6,").
+- No environment deviation needed this time: Playwright chromium-1243 was
+  already present in ~/.cache/ms-playwright (the GPT-6.2 symlink fix held).
+- Stills QA (render.py --still, one per scene, t=3/12/21/28/36/44): all 6
+  checked visually. Mascot never covers text, bars, or the shortlink chip.
+  Karaoke shows punctuation. Numbers exact. Close-scene chip reads
+  "LINK BLOG: s.peka.ai.id/QRe0Uu".
+- Compare-scene framing decision: the price row puts Carbon promo $2 as the
+  accent side (a_value) because the lower price is the better deal, so the
+  accent correctly marks Carbon winning on price; narration explains Neon
+  costs more. The AA Index row accents Fable 65 as usual.
+- Full render: build_reel.py (see voiceover/build.log), ~24.5 min,
+  1157 frames, no interruption, no resume needed.
+
+CAPTIONS (all in out dir):
+- caption-threads.txt (hook 33 chars: "Gemini 4 Neon rilis, ini skornya."),
+  reply-1..4, caption-ig.txt, caption-fb.txt, caption-reel-ig.txt,
+  caption-reel-fb.txt, caption-reel-tiktok.txt, caption-tiktok.txt.
+- Checked programmatically: no links (refined check: "@peka.ai.id" handle is
+  allowed, same as the GPT-6.2 edition; no URLs of any kind), no em/en-dash,
+  no install commands, no "mesin". Threads hook 33 chars (max 60). Exactly
+  one link-instruction sentence in each main caption; Threads replies carry
+  none (root carries it, same pattern as GPT-6.2).
+
+BLOG:
+- ~/workspace/peka-content/blog/gemini-4-neon-flagship-baru-google.json
+- slug gemini-4-neon-flagship-baru-google, date 2026-11-19.
+- JSON parses. links contains source (shortlink) only; no social URLs invented.
+- image/images use slug-based name gemini-4-neon.png (cover to be uploaded
+  from slide-1.png by the posting step, same convention as GPT-6.2/Fable).
+
+VERIFICATION (completed 19 Nov 2026, ~02:18 WIB):
+- [x] voiceover-reel.mp4 ffprobe (build_reel + independent re-check):
+      h264, 2160x3840, yuv420p, aac, 47.388s
+- [x] voiceover-cover.jpg from ffmpeg -ss 1, 2160x3840
+- [x] hook (t=3s), mid (t=21s), closing (t=44s) frames read from the final
+      mp4: identical to the pre-render stills, all clean
+- [x] slide dimensions 4096x4096 (all 6, PIL check)
+- [x] shortlink 307 (re-checked at the end: 307 -> Google target)
+- [x] blog JSON valid (json.load OK)
+- [x] captions clean (programmatic check: no links/dashes/install cmds/"mesin")
+- [x] DESIGN_RULES QA gate: programmatic bbox check passed on all slides +
+      visual read of all 6 slides at 768px + full-res zoom crops (slide 2 bars,
+      slide 3 rows, slide 5 price panel). Two defects found by the
+      programmatic gate and fixed before handover (slide 3 note overflow,
+      slide 4 bottom-line height); no known failures remain.
+
+NOTHING POSTED anywhere. seen_models.json and watch.log untouched (parent's job).

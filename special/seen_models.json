@@ -31,6 +31,14 @@
       "handled": "2026-11-18",
       "out_dir": "special/out/2026-11-18-gpt-6-2-astra-sol",
       "shortlink": "https://s.peka.ai.id/uzBjvq"
+    },
+    {
+      "model": "Gemini 4 Neon",
+      "vendor": "Google",
+      "released": "2026-11-18",
+      "handled": "2026-11-19",
+      "out_dir": "special/out/2026-11-19-gemini-4-neon",
+      "shortlink": "https://s.peka.ai.id/QRe0Uu"
     }
   ]
 }

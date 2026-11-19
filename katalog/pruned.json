@@ -110,5 +110,15 @@
   "bot_id": 86,
   "removed_at": "2026-11-17",
   "reason": "sold out"
+ },
+ {
+  "dur": "1 Bulan · Privat",
+  "name": "CapCut Pro",
+  "price": "25K",
+  "price_num": 25,
+  "sec": "CAPCUT",
+  "bot_id": 38,
+  "removed_at": "2026-11-19",
+  "reason": "sold out"
  }
 ]
