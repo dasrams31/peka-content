@@ -147,14 +147,6 @@
    "bot_id": 109
   },
   {
-   "sec": "STRAVA",
-   "dur": "1 Bulan",
-   "name": "Strava Premium",
-   "price": "9K",
-   "price_num": 9,
-   "bot_id": 110
-  },
-  {
    "sec": "MUSE SPARK",
    "dur": "1 Milyar Token",
    "name": "Referral Muse 1 B",
