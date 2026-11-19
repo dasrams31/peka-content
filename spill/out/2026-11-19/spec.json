@@ -1,0 +1,48 @@
+{
+ "agent": "CLAUDE",
+ "next": "HERMES",
+ "episode": 30,
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-19/carousel",
+ "repos": [
+  {
+   "name": "emilkowalski/skills",
+   "stars": "58RB",
+   "desc": "Skill-nya Emil Kowalski itu kumpulan skill buat desainer dan engineer yang kerja bareng AI coding agent. Dia ngajarin Claude Code, Codex, dan Cursor cara ngedesain dan ngoding dengan selera, dari antarmuka sampai animasi. Kamu tinggal pasang skill-nya, lalu agent kamu langsung kerja dengan standar desain yang lebih tinggi. Isinya ringkas dan langsung kepakai. Hasilnya kerjaan kamu di agent terasa lebih rapi dan niat.",
+   "cocok": "Kamu yang ngoding pakai Claude Code dan mau hasil desainnya rapi kayak buatan desainer beneran.",
+   "shortlink": "https://s.peka.ai.id/8qC6bC",
+   "install": "npx skills add emilkowalski/skills -g"
+  },
+  {
+   "name": "NVIDIA/SkillSpector",
+   "stars": "27RB",
+   "desc": "SkillSpector itu pemindai keamanan dari NVIDIA buat skill agent AI, sebelum kamu pasang skill itu. Dia ngecek kerentanan, pola jahat, risiko keamanan, prompt injection, sampai risiko pencurian data dan supply chain di skill Claude Code, Codex, dan MCP. Skill yang lolos pemindaian masuk pipeline NVIDIA Verified Skills dan diterbitkan ke katalog skill NVIDIA. Kamu tinggal pindai dulu, baru pasang dengan tenang. Hasilnya kamu nggak asal pasang skill yang diam-diam bisa nyolong data atau nyelipin perintah jahat.",
+   "cocok": "Kamu yang sering pasang skill dari GitHub dan mau yakin skill itu aman sebelum dipakai.",
+   "shortlink": "https://s.peka.ai.id/5UQ1j4",
+   "install": "uv tool install --python 3.13 git+https://github.com/NVIDIA/skillspector.git"
+  },
+  {
+   "name": "titanwings/distilly",
+   "stars": "27RB",
+   "desc": "Distilly itu cara nyuling cara berpikir seseorang jadi skill yang bisa dipakai ulang sama agent atau bot apa pun. Dia ngambil pola pikir, kebiasaan, dan cara ambil keputusan dari kolega atau tokoh yang kamu pilih, lalu mengubahnya jadi skill. Kamu bisa pasang hasilnya di Claude Code atau OpenClaw, buat proyek sekarang atau semua proyek. Jadi agent kamu nggak cuma pinter, tapi mikir dengan gaya orang yang kamu percaya. Hasilnya agent kamu kerja kayak rekan yang udah paham cara kamu berpikir.",
+   "cocok": "Kamu yang mau agent kamu mikir kayak kolega atau mentor yang kamu percaya.",
+   "shortlink": "https://s.peka.ai.id/KTYsxQ",
+   "install": "npx skills add titanwings/distilly -g"
+  },
+  {
+   "name": "Jeffallan/claude-skills",
+   "stars": "12RB",
+   "desc": "Claude Skills-nya Jeffallan itu 67 skill khusus buat full-stack developer yang mengubah Claude Code jadi pair programmer ahli. Tiap skill fokus ke satu bidang, dari frontend sampai backend, jadi agent kamu ngerti konteks kerjaanmu dan nggak asal jawab. Kamu tinggal pasang skill yang sesuai sama stack yang kamu pakai. Hasilnya Claude Code kamu bantu ngoding dengan arahan yang jauh lebih tajam dan relevan.",
+   "cocok": "Kamu full-stack developer yang mau Claude Code jadi pair programmer yang ngerti stack kamu.",
+   "shortlink": "https://s.peka.ai.id/4cuTbk",
+   "install": "npx skills add Jeffallan/claude-skills -g"
+  },
+  {
+   "name": "elementalsouls/Claude-BugHunter",
+   "stars": "12RB",
+   "desc": "Claude BugHunter itu bundel skill buat cari bug dan kerja red-team eksternal bareng Claude Code. Isinya 82 skill dan 15 slash command, plus 681 pola laporan yang sudah diungkap, dirangkum dari 24 kelas kerentanan inti. Ada juga matriks serangan buat identitas dan infrastruktur perusahaan. Kamu tinggal panggil skill-nya, lalu agent bantu kamu nyari celah dengan cara yang terstruktur. Hasilnya proses bug hunting kamu lebih sistematis dan nggak kelewat pola yang sudah terbukti.",
+   "cocok": "Kamu yang kerja di keamanan atau bug bounty dan mau Claude Code bantu nyari celah secara terstruktur.",
+   "shortlink": "https://s.peka.ai.id/ITDoG8",
+   "install": "npx skills add elementalsouls/Claude-BugHunter -g"
+  }
+ ]
+}
