@@ -1,0 +1,7 @@
+Claude Code kamu masih ngedesain asal tebak? Skill-nya Emil Kowalski udah disukai 58 ribu orang di GitHub, dan ini cuma satu dari 5 skill Claude di edisi ini.
+
+Edisi ini ada 5 repo skill Claude: skill Emil Kowalski buat desain dan engineering; SkillSpector dari NVIDIA buat ngecek skill aman atau nggak sebelum dipasang; Distilly buat nyuling cara berpikir jadi skill; 67 skill full-stack; dan bundel bug hunting dengan 82 skill.
+
+Langkah pertama: pasang skill Emil Kowalski, lalu minta agent kamu rapihin satu tampilan yang lagi kamu kerjain.
+
+Link tiap repo ada di slide-nya masing-masing. Repo mana yang mau kamu coba duluan? Share ke teman yang lagi butuh skill AI.
