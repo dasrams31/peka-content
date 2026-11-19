@@ -1,21 +1,30 @@
 #!/usr/bin/env python3
 """Broadcast Katalog Peka (format baru, perintah user 19 Nov 2026) ke channel
-Telegram @peka_aichannel — SATU-SATUNYA tempat katalog tayang.
+Telegram @peka_aichannel DAN grup @peka_aigroup — SATU-SATUNYA tempat
+katalog tayang.
+
+Perintah user 19 Nov 2026, 08:11: hanya katalog Peka yang di-share ke
+channel + grup Peka. Katalog Aeternum tetap build-only, tidak di-broadcast
+ke mana pun.
 
 Alasan format baru: katalog #6 (17 Nov 2026) kena removed Meta 18 Nov di
 Facebook (404) dan Instagram (carousel hilang dari daftar post); Threads
 ikut restricted (visibility private). Mulai 19 Nov: katalog TIDAK POSTING
 ke Threads/IG/FB, TIDAK ada IG Story, TIDAK ada reel TikTok. Katalog hanya
-muncul sebagai broadcast channel Telegram 2x seminggu (Selasa + Jumat 13:00).
+muncul sebagai broadcast Telegram 2x seminggu (Selasa + Jumat 13:00).
 
-Isi broadcast (2 pesan):
-  1. Album foto: semua slide katalog (4096x4096) + caption singkat
-     (hook + rentang harga + cara order + gabung komunitas).
-  2. Pesan teks: daftar harga lengkap dari prices.json (sumber tunggal)
-     + cara order + gabung komunitas + store.
+Isi broadcast (4 pesan, 2 per tujuan):
+  Channel @peka_aichannel:
+    1. Album foto: semua slide katalog (4096x4096) + caption singkat
+       (hook + rentang harga + cara order + gabung komunitas).
+    2. Pesan teks: daftar harga lengkap dari prices.json (sumber tunggal)
+       + cara order + gabung komunitas + store.
+  Grup @peka_aigroup: sama persis, album + daftar harga (kunci dedupe
+  sendiri, isi sama).
 
-Pengirim: bot @aeternum_premibot (administrator di @peka_aichannel),
-token dibaca dari ~/workspace/mc-portal/config/telegram_premibot_token.
+Pengirim: bot @aeternum_premibot (administrator di @peka_aichannel dan
+@peka_aigroup), token dibaca dari
+~/workspace/mc-portal/config/telegram_premibot_token.
 
 Penggunaan:
   python3 broadcast_katalog_telegram.py --folder <folder edisi auto-*> \
@@ -25,15 +34,24 @@ Penggunaan:
   --force melewati cek dedupe (hanya untuk re-post atas perintah user).
 
 ANTI-DOBEL (pelajaran 9 Nov 2026: broadcast dobel di channel):
-- Album dan pesan daftar harga punya kunci dedupe sendiri-sendiri:
-  tanggal WIB | katalog-album | title  dan  tanggal WIB | katalog-list | title.
-- SEBELUM kirim tiap pesan, cek ledger DAN halaman live channel.
-  Kalau sudah ada di salah satunya, JANGAN kirim, laporkan message_id
-  yang sudah ada (baris SKIP) dan exit 0.
-- Kalau kirim GAGAL karena koneksi putus, JANGAN langsung anggap gagal:
-  pesan bisa saja sudah sampai sebelum koneksi putus. Verifikasi live
-  1x; kalau ketemu, catat ke ledger dan anggap sukses. Hanya bila TIDAK
-  ketemu, exit 1 (aman di-retry nanti, idempotent).
+- Album dan pesan daftar harga punya kunci dedupe sendiri-sendiri, PER
+  TUJUAN: tanggal WIB | katalog-album | title (channel),
+  tanggal WIB | katalog-album-group | title (grup), dan begitu pula
+  untuk daftar harga.
+- SEBELUM kirim tiap pesan, cek ledger; untuk channel, cek JUGA halaman
+  live channel. Kalau sudah ada di salah satunya, JANGAN kirim, laporkan
+  message_id yang sudah ada (baris SKIP) dan exit 0.
+- Grup TIDAK punya halaman publik (t.me/s/peka_aigroup kosong), jadi
+  dedupe grup hanya via ledger. Kalau kirim ke grup GAGAL, JANGAN
+  langsung retry: cek manual di grup dulu, pesan bisa saja sudah sampai
+  sebelum koneksi putus.
+- Kalau kirim ke channel GAGAL karena koneksi putus, JANGAN langsung
+  anggap gagal: pesan bisa saja sudah sampai sebelum koneksi putus.
+  Verifikasi live 1x; kalau ketemu, catat ke ledger dan anggap sukses.
+  Hanya bila TIDAK ketemu, exit 1 (aman di-retry nanti, idempotent).
+- Urutan kirim: channel dulu, baru grup. Bila channel gagal, grup TIDAK
+  dikirim (hindari tayang grup-only). Retry nanti akan SKIP channel
+  (sudah di ledger) dan hanya mengirim yang belum.
 """
 
 import argparse
@@ -51,13 +69,15 @@ sys.path.insert(0, str(Path.home() / "workspace/peka-content"))
 from telegram_channel import (  # noqa: E402
     API_BASE,
     CHANNEL_ID,
+    LEDGER,
     WIB,
     broadcast_paused,
     find_in_channel,
-    ledger_append,
     ledger_lookup,
     read_token,
 )
+
+GROUP_ID = "-1001167087205"  # @peka_aigroup
 
 PRICES = Path.home() / "workspace/peka-content/katalog/prices.json"
 LEDGER_NOTE = "broadcast_katalog_telegram"
@@ -121,8 +141,8 @@ def _post_json(token: str, method: str, payload: dict):
         return json.loads(resp.read())
 
 
-def send_media_group(token: str, photos: list, caption: str):
-    """Kirim album foto. Kembalikan (ok, message_id pertama, error)."""
+def send_media_group(token: str, photos: list, caption: str, chat_id: str):
+    """Kirim album foto ke satu chat. Kembalikan (ok, message_id pertama, error)."""
     boundary = "----peka-katalog-boundary"
     media = []
     body = b""
@@ -134,7 +154,7 @@ def send_media_group(token: str, photos: list, caption: str):
             item["parse_mode"] = "HTML"
         media.append(item)
     body += (f"--{boundary}\r\nContent-Disposition: form-data; "
-             f"name=\"chat_id\"\r\n\r\n{CHANNEL_ID}\r\n").encode("utf-8")
+             f"name=\"chat_id\"\r\n\r\n{chat_id}\r\n").encode("utf-8")
     body += (f"--{boundary}\r\nContent-Disposition: form-data; "
              f"name=\"media\"\r\n\r\n{json.dumps(media, ensure_ascii=False)}\r\n"
              ).encode("utf-8")
@@ -163,11 +183,11 @@ def send_media_group(token: str, photos: list, caption: str):
     return True, str(msgs[0]["message_id"]), ""
 
 
-def send_text(token: str, text: str):
-    """Kirim pesan teks. Kembalikan (ok, message_id, error)."""
+def send_text(token: str, text: str, chat_id: str):
+    """Kirim pesan teks ke satu chat. Kembalikan (ok, message_id, error)."""
     try:
         data = _post_json(token, "sendMessage", {
-            "chat_id": CHANNEL_ID,
+            "chat_id": chat_id,
             "text": text,
             "parse_mode": "HTML",
         })
@@ -178,23 +198,75 @@ def send_text(token: str, text: str):
     return True, str(data["result"]["message_id"]), ""
 
 
-def already_sent(key: str, marker_title: str):
-    """Cek ledger + live channel untuk satu kunci. Kembalikan message_id
-    bila sudah terkirim, None bila belum."""
+def ledger_append_dest(key: str, message_id: str, source: str, dest: str) -> None:
+    """Catat ke ledger dengan URL sesuai tujuan (channel / grup)."""
+    handle = "peka_aichannel" if dest == "channel" else "peka_aigroup"
+    url = f"https://t.me/{handle}/{message_id}"
+    line = (f"{wib_now().strftime('%Y-%m-%d %H:%M')}|{key}|{message_id}|"
+            f"{url}|{source}\n")
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    with LEDGER.open("a") as f:
+        f.write(line)
+
+
+def already_sent(key: str, marker_title: str, dest: str):
+    """Cek ledger (+ live channel bila dest=channel) untuk satu kunci.
+    Kembalikan message_id bila sudah terkirim, None bila belum."""
     hit = ledger_lookup(key)
     if hit:
         return hit[0]
+    if dest != "channel":
+        return None
     ns = SimpleNamespace(title=marker_title, blog="", threads="",
                          instagram="", facebook="")
     live_mid = find_in_channel(ns)
     if live_mid:
-        ledger_append(key, live_mid, f"{LEDGER_NOTE}-found-live")
+        ledger_append_dest(key, live_mid, f"{LEDGER_NOTE}-found-live", dest)
         return live_mid
     return None
 
 
+def send_one(token: str, dest: str, chat_id: str, kind: str,
+             slides, caption: str, list_text: str, key: str,
+             marker_title: str, force: bool):
+    """Kirim satu pesan (album atau daftar harga) ke satu tujuan.
+    Kembalikan message_id, atau None bila gagal (pesan error sudah dicetak).
+    """
+    if not force:
+        mid = already_sent(key, marker_title, dest)
+        if mid:
+            print(f"SKIP {kind} already sent {dest} message_id={mid} "
+                  f"title={marker_title[:60]}")
+            return mid
+    if kind == "album":
+        ok, mid, err = send_media_group(token, slides, caption, chat_id)
+    else:
+        ok, mid, err = send_text(token, list_text, chat_id)
+    if not ok:
+        print(f"Gagal kirim {kind} ke {dest}: {err}", file=sys.stderr)
+        if dest == "channel":
+            time.sleep(5)
+            found = already_sent(key, marker_title, dest)
+            if found:
+                print(f"OK {kind} {dest} message_id={found} (ditemukan di "
+                      "channel setelah kirim gagal, TIDAK dikirim ulang)")
+                return found
+            print(f"{kind} TIDAK ditemukan di channel setelah verifikasi "
+                  "live — aman untuk retry nanti.", file=sys.stderr)
+        else:
+            print(f"{kind} ke grup TIDAK bisa diverifikasi live (grup tidak "
+                  "punya halaman publik) — cek manual di grup sebelum retry.",
+                  file=sys.stderr)
+        return None
+    ledger_append_dest(key, mid, LEDGER_NOTE, dest)
+    handle = "peka_aichannel" if dest == "channel" else "peka_aigroup"
+    print(f"OK {kind} {dest} message_id={mid} title={marker_title[:60]} "
+          f"url=https://t.me/{handle}/{mid}")
+    return mid
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Broadcast Katalog Peka ke channel Telegram.")
+    ap = argparse.ArgumentParser(description="Broadcast Katalog Peka ke channel + grup Telegram.")
     ap.add_argument("--folder", required=True, help="Folder edisi (auto-*) berisi slide peka-katalog-*.png.")
     ap.add_argument("--title", required=True, help="Judul/hook singkat edisi ini.")
     ap.add_argument("--para", default="", help="Ringkasan 2-4 kalimat: rentang harga + produk andalan.")
@@ -234,78 +306,45 @@ def main() -> int:
         return 2
 
     date_key = wib_now().strftime("%Y-%m-%d")
-    album_key = f"{date_key}|katalog-album|{args.title}"
-    list_key = f"{date_key}|katalog-list|{args.title}"
     list_marker = f"Daftar harga \u2014 Katalog Peka {date_label}"
+    keys = {
+        "channel": (f"{date_key}|katalog-album|{args.title}",
+                    f"{date_key}|katalog-list|{args.title}"),
+        "group": (f"{date_key}|katalog-album-group|{args.title}",
+                  f"{date_key}|katalog-list-group|{args.title}"),
+    }
 
     if args.dry_run:
         print(json.dumps({
             "album_caption": caption,
             "album_photos": [str(s) for s in slides],
             "list_text": list_text,
-            "album_key": album_key,
-            "list_key": list_key,
+            "channel": {"album_key": keys["channel"][0],
+                        "list_key": keys["channel"][1]},
+            "group": {"album_key": keys["group"][0],
+                      "list_key": keys["group"][1]},
         }, indent=2, ensure_ascii=False))
         return 0
 
-    # --- Pesan 1: album slide ---
-    album_mid = None
-    if not args.force:
-        album_mid = already_sent(album_key, args.title)
-    if album_mid:
-        print(f"SKIP album already sent channel message_id={album_mid} "
-              f"title={args.title[:60]}")
-    else:
-        token = read_token()
-        ok, album_mid, err = send_media_group(token, slides, caption)
-        if not ok:
-            print(f"Gagal kirim album: {err}", file=sys.stderr)
-            time.sleep(5)
-            found = already_sent(album_key, args.title)
-            if found:
-                album_mid = found
-                print(f"OK album message_id={album_mid} (ditemukan di channel "
-                      "setelah kirim gagal, TIDAK dikirim ulang)")
-            else:
-                print("Album TIDAK ditemukan di channel setelah verifikasi "
-                      "live — aman untuk retry nanti.", file=sys.stderr)
-                return 1
-        else:
-            ledger_append(album_key, album_mid, LEDGER_NOTE)
-            print(f"OK album channel message_id={album_mid} "
-                  f"title={args.title[:60]} "
-                  f"url=https://t.me/peka_aichannel/{album_mid}")
+    token = read_token()
+    sent = {}
+    # Urutan: channel dulu, baru grup. Bila channel gagal, grup tidak dikirim.
+    for dest, chat_id in (("channel", CHANNEL_ID), ("group", GROUP_ID)):
+        album_key, list_key = keys[dest]
+        album_mid = send_one(token, dest, chat_id, "album", slides, caption,
+                             list_text, album_key, args.title, args.force)
+        if album_mid is None:
+            return 1
+        list_mid = send_one(token, dest, chat_id, "list", slides, caption,
+                            list_text, list_key, list_marker, args.force)
+        if list_mid is None:
+            return 1
+        sent[dest] = (album_mid, list_mid)
 
-    # --- Pesan 2: daftar harga lengkap ---
-    list_mid = None
-    if not args.force:
-        list_mid = already_sent(list_key, list_marker)
-    if list_mid:
-        print(f"SKIP daftar harga already sent channel message_id={list_mid} "
-              f"title={args.title[:60]}")
-    else:
-        token = read_token()
-        ok, list_mid, err = send_text(token, list_text)
-        if not ok:
-            print(f"Gagal kirim daftar harga: {err}", file=sys.stderr)
-            time.sleep(5)
-            found = already_sent(list_key, list_marker)
-            if found:
-                list_mid = found
-                print(f"OK daftar harga message_id={list_mid} (ditemukan di "
-                      "channel setelah kirim gagal, TIDAK dikirim ulang)")
-            else:
-                print("Daftar harga TIDAK ditemukan di channel setelah "
-                      "verifikasi live — aman untuk retry nanti.", file=sys.stderr)
-                return 1
-        else:
-            ledger_append(list_key, list_mid, LEDGER_NOTE)
-            print(f"OK daftar harga channel message_id={list_mid} "
-                  f"title={args.title[:60]} "
-                  f"url=https://t.me/peka_aichannel/{list_mid}")
-
-    print(f"ALBUM https://t.me/peka_aichannel/{album_mid}")
-    print(f"LIST https://t.me/peka_aichannel/{list_mid}")
+    print(f"ALBUM channel https://t.me/peka_aichannel/{sent['channel'][0]}")
+    print(f"LIST channel https://t.me/peka_aichannel/{sent['channel'][1]}")
+    print(f"ALBUM group https://t.me/peka_aigroup/{sent['group'][0]}")
+    print(f"LIST group https://t.me/peka_aigroup/{sent['group'][1]}")
     print("BROADCAST KATALOG SELESAI")
     return 0
 
