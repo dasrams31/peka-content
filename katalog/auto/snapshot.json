@@ -169,6 +169,14 @@
    "price": "13K",
    "price_num": 13,
    "bot_id": 115
+  },
+  {
+   "sec": "CHATGPT",
+   "dur": "1 Bulan (VCC)",
+   "name": "ChatGPT Plus",
+   "price": "90K",
+   "price_num": 90,
+   "bot_id": 114
   }
  ],
  "updated": "2026-11-19"
