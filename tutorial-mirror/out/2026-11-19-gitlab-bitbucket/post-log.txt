@@ -1,0 +1,5 @@
+threads: 
+instagram: https://www.instagram.com/reel/Df6rlSRD5wI/
+facebook: 
+shortlink: https://s.peka.ai.id/vMtojm
+blog: https://blog.peka.ai.id/p/ai-review-gitlab-bitbucket-pilihan-tool-di-luar-github
