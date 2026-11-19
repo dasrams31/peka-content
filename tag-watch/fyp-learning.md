@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-19
+
+- TOP (n=24): day-counter 4%, question 21%, story 25%, hashtags avg 1.1, words avg 37.
+- REST (n=73): day-counter 7%, question 40%, story 25%, hashtags avg 1.7, words avg 40.
+- Top posts today:
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #AI @notdeadlysins (3445 likes): DAY 1: Mecut AI
+  - #Mahasiswa @kagamadki (2078 likes): Kampus harus menjadi ruang aman, bukan ruang kekerasan!  KAGAMA DKI Jakarta mengecam tindakan represif terhadap mahasisw
+  - #Kuliah @movien1028 (1882 likes): sbg seorang fresh graduate, ternyata lebih cape cari kerja dibanding kuliah. padahal niatnya mulia ingin memperbaiki eko
+  - #Coding @rizkiifebriaann (1300 likes): nemu web learn coding gratis 1000%🥹, nyangka ga lo pada. thanks to @ivqonsanada udah menciptakan web ini😭
+
 ## 2026-11-18
 
 - TOP (n=24): day-counter 4%, question 17%, story 21%, hashtags avg 0.4, words avg 31.
@@ -138,17 +149,6 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
 
 - TOP (n=22): day-counter 5%, question 23%, story 23%, hashtags avg 0.6, words avg 32.
 - REST (n=67): day-counter 10%, question 27%, story 21%, hashtags avg 1.9, words avg 42.
-- Top posts today:
-  - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
-  - #Kuliah @vernandajh_ (4986 likes): wargaa akhirnya aku lulus S2 di umur 25 tahun dengan biaya kuliah full uang sendiri sambil kerja full time 🥹  mau mengap
-  - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
-  - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
-  - #Belajar @harrypatria_ (4313 likes): Apa jadinya kalau kita enggan beradaptasi di tengah situasi sekarang?   Yang rajin belajar aja ngerasa makin ketinggalan
-
-## 2026-11-05
-
-- TOP (n=25): day-counter 16%, question 20%, story 24%, hashtags avg 0.6, words avg 37.
-- REST (n=76): day-counter 8%, question 30%, story 25%, hashtags avg 1.7, words avg 42.
 - Top posts today:
   - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
   - #Kuliah @vernandajh_ (4986 likes): wargaa akhirnya aku lulus S2 di umur 25 tahun dengan biaya kuliah full uang sendiri sambil kerja full time 🥹  mau mengap
