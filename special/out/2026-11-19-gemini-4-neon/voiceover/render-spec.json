@@ -1,0 +1,1069 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "GEMINI 4 NEON",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "BARU RILIS 18 NOV 2026",
+      "headline": [
+        "GEMINI 4",
+        "NEON"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Google baru aja rilis Gemini 4 Neon tanggal 18 November kemarin, model AI baru buat kerja berat yang selesai cepat. Lo harus tahu nih.",
+      "pose": "wave",
+      "sub": "Flagship baru Google, di antara Carbon dan Hydrogen."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Fable 5.2: <b>65</b>",
+        "Astra: <b>62</b>"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Di indeks independen Artificial Analysis, Neon cetak 61, nomor tiga di bawah Fable 5.2 yang 65 dan Astra 62. Tapi di coding agent, dia nomor satu.",
+      "pose": "present",
+      "stat": "61",
+      "stat_label": "AA Intelligence Index, #3 di bawah Fable 5.2 (65)"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "color": "#FFD60A",
+          "display": "58,6",
+          "label": "Gemini 4 Neon",
+          "max": 100,
+          "tag": "TERTINGGI",
+          "value": 58.6
+        },
+        {
+          "color": "#E8EDF5",
+          "display": "58",
+          "label": "Claude Fable 5.2",
+          "max": 100,
+          "value": 58
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Di Coding Agent Index, Neon 58,6, peringkat satu, di atas Fable 5.2 yang 58.",
+      "pose": "base",
+      "stat": "58,6",
+      "stat_label": "Coding Agent Index, peringkat 1"
+    },
+    {
+      "badge": "JUJUR AJA",
+      "compare": [
+        {
+          "a_label": "Fable 5.2",
+          "a_value": "65",
+          "b_label": "Neon",
+          "b_value": "61",
+          "label": "AA INTELLIGENCE INDEX"
+        },
+        {
+          "a_label": "Carbon promo",
+          "a_value": "$2",
+          "b_label": "Neon",
+          "b_value": "$3",
+          "label": "HARGA MASUK PER 1 JT TOKEN"
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Tapi jujur aja, harganya 3 dolar masuk, lebih mahal dari Carbon promo yang 2 dolar sampai 30 November. Dan nggak ada free tier.",
+      "pose": "base"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "AutomationBench <b>#1</b>, 56,3%",
+        "Agent Arena <b>#2</b>, 1.336"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Tapi dia juga menang banyak. Nomor satu di AutomationBench, Vending-Bench 2, dan Terminal-Bench Science. Di Vals Index dia nomor dua.",
+      "pose": "present",
+      "stat": "70,9%",
+      "stat_label": "Vals Index, peringkat 2"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Lo tim Neon",
+        "atau tetap",
+        "Fable 5.2?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Buat kerja berat yang selesai cepat, lo tim Neon atau tetap Fable 5.2? Follow Peka AI kalau kontennya kepakai.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/QRe0Uu"
+    }
+  ],
+  "theme": {
+    "accent": "#FFD60A",
+    "accent2": "#FFFFFF",
+    "bar_other": "#6E6E68",
+    "bar_track": "#262626",
+    "bg": "#111111",
+    "bg2": "#181818",
+    "card": "#1C1C1C",
+    "card_border": "#36362E",
+    "chip_bg": "#FFD60A",
+    "chip_text": "#111111",
+    "description": "Current Peka brand identity: Peka yellow on black.",
+    "dim": "#A8A8A0",
+    "glow": "rgba(255,214,10,0.22)",
+    "glow2": "rgba(255,214,10,0.08)",
+    "grid": "rgba(255,214,10,0.07)",
+    "label": "Peka Yellow",
+    "mascot": "bottom-right",
+    "mono": "#FFD60A",
+    "progress": "#FFD60A",
+    "text": "#F5F5F0"
+  },
+  "title": "Gemini 4 Neon (reel-v2, talking character, yellow theme)",
+  "theme_name": "peka-yellow",
+  "words": [
+    {
+      "text": "Google",
+      "start": 0.095,
+      "end": 0.365,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "baru",
+      "start": 0.365,
+      "end": 0.505,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "aja",
+      "start": 0.505,
+      "end": 0.685,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "rilis",
+      "start": 0.685,
+      "end": 0.905,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Gemini",
+      "start": 0.905,
+      "end": 1.135,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "4",
+      "start": 1.135,
+      "end": 1.335,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Neon",
+      "start": 1.335,
+      "end": 1.585,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "tanggal",
+      "start": 1.585,
+      "end": 1.835,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "18 November",
+      "start": 1.835,
+      "end": 2.485,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kemarin,",
+      "start": 2.485,
+      "end": 2.935,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "model",
+      "start": 3.165,
+      "end": 3.415,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "AI",
+      "start": 3.415,
+      "end": 3.585,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "baru",
+      "start": 3.585,
+      "end": 3.745,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "buat",
+      "start": 3.745,
+      "end": 3.895,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kerja",
+      "start": 3.895,
+      "end": 4.115,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "berat",
+      "start": 4.115,
+      "end": 4.345,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "yang",
+      "start": 4.345,
+      "end": 4.455,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "selesai",
+      "start": 4.455,
+      "end": 4.735,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "cepat.",
+      "start": 4.735,
+      "end": 5.085,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Lo",
+      "start": 5.75,
+      "end": 5.94,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "harus",
+      "start": 5.94,
+      "end": 6.15,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "tahu",
+      "start": 6.15,
+      "end": 6.35,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "nih.",
+      "start": 6.35,
+      "end": 6.67,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Di",
+      "start": 7.744,
+      "end": 7.844,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "indeks",
+      "start": 7.844,
+      "end": 8.074,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "independen",
+      "start": 8.074,
+      "end": 8.414,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Artificial",
+      "start": 8.414,
+      "end": 8.844,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Analysis,",
+      "start": 8.844,
+      "end": 9.384,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Neon",
+      "start": 9.594,
+      "end": 9.804,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "cetak",
+      "start": 9.804,
+      "end": 10.024000000000001,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "61,",
+      "start": 10.024000000000001,
+      "end": 10.744,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "nomor",
+      "start": 10.964,
+      "end": 11.164,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "tiga",
+      "start": 11.164,
+      "end": 11.414,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "di",
+      "start": 11.414,
+      "end": 11.484,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "bawah",
+      "start": 11.484,
+      "end": 11.684000000000001,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Fable",
+      "start": 11.684000000000001,
+      "end": 11.914,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "5.2",
+      "start": 11.914,
+      "end": 12.494,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "yang",
+      "start": 12.494,
+      "end": 12.634,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "65",
+      "start": 12.634,
+      "end": 13.164,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "dan",
+      "start": 13.164,
+      "end": 13.314,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Astra",
+      "start": 13.314,
+      "end": 13.554,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "62.",
+      "start": 13.554,
+      "end": 14.193999999999999,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Tapi",
+      "start": 14.859,
+      "end": 15.109,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "di",
+      "start": 15.109,
+      "end": 15.179,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "coding",
+      "start": 15.179,
+      "end": 15.369,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "agent,",
+      "start": 15.369,
+      "end": 15.809,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "dia",
+      "start": 15.959,
+      "end": 16.128999999999998,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "nomor",
+      "start": 16.128999999999998,
+      "end": 16.308999999999997,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "satu.",
+      "start": 16.308999999999997,
+      "end": 16.749000000000002,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Di",
+      "start": 17.836000000000002,
+      "end": 17.966,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Coding",
+      "start": 17.966,
+      "end": 18.196,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Agent",
+      "start": 18.196,
+      "end": 18.466,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Index,",
+      "start": 18.466,
+      "end": 18.916,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Neon",
+      "start": 19.086000000000002,
+      "end": 19.276,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "58,6,",
+      "start": 19.276,
+      "end": 20.276,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "peringkat",
+      "start": 20.506,
+      "end": 20.776,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "satu,",
+      "start": 20.776,
+      "end": 21.196,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 21.406,
+      "end": 21.516000000000002,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "atas",
+      "start": 21.516000000000002,
+      "end": 21.726,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Fable",
+      "start": 21.726,
+      "end": 21.946,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "5.2",
+      "start": 21.946,
+      "end": 22.536,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "yang",
+      "start": 22.536,
+      "end": 22.696,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "58.",
+      "start": 22.696,
+      "end": 23.446,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "Tapi",
+      "start": 24.520000000000003,
+      "end": 24.700000000000003,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "jujur",
+      "start": 24.700000000000003,
+      "end": 24.92,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "aja,",
+      "start": 24.92,
+      "end": 25.35,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "harganya",
+      "start": 25.560000000000002,
+      "end": 25.92,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "3",
+      "start": 25.92,
+      "end": 26.1,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "dolar",
+      "start": 26.1,
+      "end": 26.26,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "masuk,",
+      "start": 26.26,
+      "end": 26.64,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "lebih",
+      "start": 26.840000000000003,
+      "end": 27.01,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "mahal",
+      "start": 27.01,
+      "end": 27.220000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "dari",
+      "start": 27.220000000000002,
+      "end": 27.340000000000003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Carbon",
+      "start": 27.340000000000003,
+      "end": 27.590000000000003,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "promo",
+      "start": 27.590000000000003,
+      "end": 27.810000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "yang",
+      "start": 27.810000000000002,
+      "end": 27.94,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "2",
+      "start": 27.94,
+      "end": 28.060000000000002,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "dolar",
+      "start": 28.060000000000002,
+      "end": 28.310000000000002,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "sampai",
+      "start": 28.310000000000002,
+      "end": 28.55,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "30 November.",
+      "start": 28.55,
+      "end": 29.340000000000003,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "Dan",
+      "start": 30.01,
+      "end": 30.23,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "nggak",
+      "start": 30.23,
+      "end": 30.35,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "ada",
+      "start": 30.35,
+      "end": 30.51,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "free",
+      "start": 30.51,
+      "end": 30.68,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "tier.",
+      "start": 30.68,
+      "end": 31.090000000000003,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Tapi",
+      "start": 32.159,
+      "end": 32.419,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "dia",
+      "start": 32.419,
+      "end": 32.569,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "juga",
+      "start": 32.569,
+      "end": 32.769,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "menang",
+      "start": 32.769,
+      "end": 32.959,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "banyak.",
+      "start": 32.959,
+      "end": 33.399,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Nomor",
+      "start": 34.059,
+      "end": 34.278999999999996,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "satu",
+      "start": 34.278999999999996,
+      "end": 34.528999999999996,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "di",
+      "start": 34.528999999999996,
+      "end": 34.619,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "AutomationBench,",
+      "start": 34.619,
+      "end": 35.409,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "Vending-Bench",
+      "start": 35.589,
+      "end": 36.028999999999996,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "2,",
+      "start": 36.028999999999996,
+      "end": 36.399,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "dan",
+      "start": 36.609,
+      "end": 36.819,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Terminal-Bench",
+      "start": 36.819,
+      "end": 37.289,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Science.",
+      "start": 37.289,
+      "end": 37.849000000000004,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "Di",
+      "start": 38.5215,
+      "end": 38.6915,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Vals",
+      "start": 38.6915,
+      "end": 38.911500000000004,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Index",
+      "start": 38.911500000000004,
+      "end": 39.2615,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "dia",
+      "start": 39.2615,
+      "end": 39.411500000000004,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "nomor",
+      "start": 39.411500000000004,
+      "end": 39.6215,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "dua.",
+      "start": 39.6215,
+      "end": 39.9915,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Buat",
+      "start": 41.08,
+      "end": 41.25,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "kerja",
+      "start": 41.25,
+      "end": 41.47,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "berat",
+      "start": 41.47,
+      "end": 41.65,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "yang",
+      "start": 41.65,
+      "end": 41.739999999999995,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "selesai",
+      "start": 41.739999999999995,
+      "end": 42.0,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "cepat,",
+      "start": 42.0,
+      "end": 42.4,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "lo",
+      "start": 42.629999999999995,
+      "end": 42.76,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "tim",
+      "start": 42.76,
+      "end": 42.9,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "Neon",
+      "start": 42.9,
+      "end": 43.099999999999994,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "atau",
+      "start": 43.099999999999994,
+      "end": 43.239999999999995,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "tetap",
+      "start": 43.239999999999995,
+      "end": 43.43,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "Fable",
+      "start": 43.43,
+      "end": 43.65,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "5.2?",
+      "start": 43.65,
+      "end": 44.339999999999996,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "Follow",
+      "start": 45.00749999999999,
+      "end": 45.3075,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "Peka",
+      "start": 45.3075,
+      "end": 45.527499999999996,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "AI",
+      "start": 45.527499999999996,
+      "end": 45.7375,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "kalau",
+      "start": 45.7375,
+      "end": 45.9075,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "kontennya",
+      "start": 45.9075,
+      "end": 46.207499999999996,
+      "scene": 5,
+      "line": 21
+    },
+    {
+      "text": "kepakai.",
+      "start": 46.207499999999996,
+      "end": 46.6975,
+      "scene": 5,
+      "line": 21
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 7.344
+    },
+    {
+      "start": 7.344,
+      "end": 17.436
+    },
+    {
+      "start": 17.436,
+      "end": 24.12
+    },
+    {
+      "start": 24.12,
+      "end": 31.764
+    },
+    {
+      "start": 31.759,
+      "end": 40.68
+    },
+    {
+      "start": 40.68,
+      "end": 47.388
+    }
+  ],
+  "total": 48.188
+}
