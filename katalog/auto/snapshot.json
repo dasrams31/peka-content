@@ -1,5 +1,5 @@
 {
- "date_label": "18 November 2026",
+ "date_label": "19 November 2026",
  "last_posted": "2026-11-17",
  "products": [
   {
@@ -166,8 +166,8 @@
    "sec": "MUSE SPARK",
    "dur": "1 Milyar Token",
    "name": "Referral Muse 1 B",
-   "price": "2,4K",
-   "price_num": 2.4,
+   "price": "2,2K",
+   "price_num": 2.2,
    "bot_id": 111
   },
   {
@@ -179,5 +179,5 @@
    "bot_id": 115
   }
  ],
- "updated": "2026-11-18"
+ "updated": "2026-11-19"
 }
