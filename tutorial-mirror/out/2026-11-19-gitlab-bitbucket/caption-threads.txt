@@ -1,0 +1,9 @@
+Repo di GitLab atau Bitbucket, review AI-nya pakai apa?
+
+Copilot cuma jalan di GitHub. Kalau repo kamu di GitLab atau Bitbucket, pilihannya menyempit, dan banyak tool populer ternyata GitHub saja.
+
+Di carousel ini: GitLab Duo bawaan, CodeRabbit, Greptile, Qodo, sampai PR-Agent gratis yang bisa di-host sendiri.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Repo kamu di GitLab, Bitbucket, atau masih di GitHub? #AI

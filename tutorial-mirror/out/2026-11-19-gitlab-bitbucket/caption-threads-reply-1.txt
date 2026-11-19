@@ -1,0 +1,1 @@
+GitLab Duo punya dua wajah. Code Review Flow yang agentic tersedia di tier Free, Premium, dan Ultimate, ditagih lewat GitLab Credits. Duo Code Review non-agentic butuh seat Duo Enterprise. Aturan review ditulis di .gitlab/duo/mr-review-instructions.yaml, jadi reviewer tidak berkomentar soal gaya di setiap MR.

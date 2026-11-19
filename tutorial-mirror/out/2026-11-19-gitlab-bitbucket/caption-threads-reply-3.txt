@@ -1,0 +1,1 @@
+PR-Agent gratis dan open source, jalan sebagai server webhook dengan Docker, tapi kamu yang urus hosting, API key, dan tuning-nya. Satu hal yang tidak boleh lupa: tidak ada tool di daftar ini yang approval-nya dihitung sebagai required approval. Manusia tetap pegang keputusan merge.

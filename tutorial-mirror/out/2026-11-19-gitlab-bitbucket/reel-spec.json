@@ -1,0 +1,24 @@
+{
+ "band": "AI REVIEW GITLAB DAN BITBUCKET",
+ "date": "19 NOVEMBER 2026",
+ "headline": [
+  "REPO DI GITLAB",
+  "ATAU BITBUCKET,",
+  "REVIEW AI-NYA?"
+ ],
+ "points": [
+  "GitLab punya reviewer AI bawaan, GitLab Duo, yang dipanggil lewat @GitLabDuo di merge request. Code Review Flow-nya tersedia sampai tier Free dengan GitLab Credits.",
+  "CodeRabbit paling luas dukungannya, Greptile membaca konteks seluruh repo, Qodo pakai satu pool kredit buat satu tim. Ketiganya mendukung GitLab dan Bitbucket.",
+  "PR-Agent gratis dan open source, bisa di-host sendiri. Cocok kalau data tidak boleh keluar dari server kamu."
+ ],
+ "question": "Repo kamu di GitLab, Bitbucket, atau masih di GitHub?",
+ "source": "TUTORIAL PEKA",
+ "steps": [
+  "Cek matriks host dulu sebelum beli tool: Copilot tidak mendukung GitLab atau Bitbucket sama sekali.",
+  "Kalau di GitLab, aktifkan Code Review Flow dan tulis tiga aturan review di .gitlab/duo/mr-review-instructions.yaml.",
+  "Kalau di Bitbucket, pasang PR-Agent dengan Docker atau daftar trial CodeRabbit, lalu buka satu MR percobaan dan nilai komentarnya."
+ ],
+ "sub": "Copilot cuma jalan di GitHub. Ini tool AI review yang benar-benar mendukung GitLab dan Bitbucket, lengkap dengan harga dan cara pasangnya.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/ai-review-gitlab-bitbucket-pilihan-tool-di-luar-github.jpg",
+ "shortlink": "https://s.peka.ai.id/vMtojm"
+}

@@ -1,0 +1,69 @@
+<p>Repo kamu di GitLab atau Bitbucket? Kalau iya, urusan AI code review langsung terasa bedanya. Di GitHub, Copilot sudah terpasang dan tinggal dipakai. Begitu repo pindah ke GitLab atau Bitbucket, Copilot tidak ikut. Banyak tool review yang terlihat populer ternyata GitHub saja.</p>
+<p>Artikel ini membandingkan tool yang benar-benar mendukung keduanya per November 2026, lengkap dengan harga dan cara pasangnya.</p>
+<h2>Kenapa GitLab dan Bitbucket beda dari GitHub</h2>
+<p>GitHub punya ekosistem review yang matang karena Copilot terintegrasi langsung ke pull request. GitLab punya jawaban sendiri lewat GitLab Duo, tapi Bitbucket tidak punya reviewer AI bawaan sama sekali. Tim Bitbucket selalu butuh tool pihak ketiga, sementara tim GitLab bisa memilih antara fitur bawaan atau tool eksternal.</p>
+<p>Merge request GitLab bukan sekadar pull request dengan nama lain: ada approval rules, discussion threads yang bisa di-resolve, dan pipeline yang terikat ke MR. Tool review yang bagus harus paham konteks itu, bukan sekadar menempel komentar di diff.</p>
+<h2>GitLab Duo: opsi bawaan yang paling mudah</h2>
+<p>Kalau repo kamu di GitLab, mulai dari sini dulu sebelum membeli tool lain. GitLab Duo adalah reviewer AI bawaan yang dipanggil lewat handle @GitLabDuo di merge request.</p>
+<p>Perlu dibedakan dua fitur yang memakai handle sama. Code Review Flow adalah flow agentic yang tersedia di tier Free, Premium, dan Ultimate, ditagih per pemakaian lewat GitLab Credits. GitLab Duo Code Review adalah versi non-agentic yang butuh seat Duo Enterprise di atas Premium atau Ultimate. Versi ini menganalisis MR dan diff dalam satu pass, sedangkan Code Review Flow memakai penalaran agentic multi-langkah dengan konteks struktur repo dan dependensi lintas file.</p>
+<p>Fitur mana yang jalan tergantung siapa yang memicu review. Kalau user pemicu punya seat Duo Enterprise, Duo Code Review yang jalan. Kalau tidak, Code Review Flow yang jalan.</p>
+<p>Kamu bisa menulis aturan review sendiri di file .gitlab/duo/mr-review-instructions.yaml:</p>
+<pre><code>review_instructions:
+  - "Fokus pada keamanan: periksa SQL injection, XSS, dan validasi input."
+  - "Tandai setiap query database baru yang tidak memakai index."
+  - "Abaikan perubahan di folder docs dan file *.md."
+  - "Jawaban dan komentar review dalam Bahasa Indonesia."</code></pre>
+<p>Ada dua batasan. Pertama, kamu terkunci ke model AI GitLab, tidak bisa memilih Claude, Gemini, atau GPT. Kedua, Duo memposting komentar secara otomatis tanpa alur persetujuan manusia dulu, dan approval-nya masih Beta, tidak dihitung sebagai required approval. Untuk instalasi Self-Managed, Duo butuh GitLab 16.8 ke atas dan konektivitas cloud, jadi instalasi air-gapped tidak bisa memakainya.</p>
+<h2>CodeRabbit: paling luas dukungannya</h2>
+<p>CodeRabbit adalah pilihan komersial yang paling sering direkomendasikan untuk tim di luar GitHub. Ia mendukung GitHub, GitLab, Azure DevOps, dan Bitbucket, termasuk edisi self-managed dari masing-masing host.</p>
+<p>Harga per November 2026: gratis untuk repo publik. Paket Essentials 24 dolar per developer per bulan bila ditagih tahunan, atau 30 dolar bila bulanan. Kelebihannya adalah cakupan host dan review di IDE serta CLI, bukan hanya di merge request. Kekurangannya, harga per seat bisa terasa mahal untuk tim kecil, dan self-hosting hanya tersedia di paket Enterprise dengan minimal 500 seat.</p>
+<h2>Greptile: konteks seluruh repo tanpa biaya seat</h2>
+<p>Greptile memakai pendekatan berbeda. Ia mengindeks seluruh codebase dan membangun graf fungsi, class, dan dependensi, sehingga review-nya mempertimbangkan konteks di luar diff. Ia mendukung GitHub, GitLab, Bitbucket, dan Gitea.</p>
+<p>Paket Starter gratis untuk satu developer dengan 50 kredit per bulan. Paket Pro memakai 1 dolar per kredit tanpa biaya seat, jadi tim tidak membayar untuk anggota yang jarang membuka MR.</p>
+<p>Pilih Greptile kalau review kamu sering gagal karena reviewer hanya melihat diff: fungsi diubah di satu file, tapi pemanggilnya di file lain ikut rusak.</p>
+<h2>Qodo: satu pool kredit untuk satu tim</h2>
+<p>Qodo, dulu bernama CodiumAI, mendukung GitHub, GitLab, Bitbucket, dan Azure DevOps, plus review lewat IDE dan CLI. Paket Pro Team-nya seharga 30 dolar per bulan untuk pool kredit bersama yang dirancang sampai 30 user, bukan per seat. Model ini cocok untuk tim kecil yang pemakaian review-nya tidak merata.</p>
+<p>Qodo tidak punya paket gratis permanen, tapi punya program open source gratis lewat aplikasi.</p>
+<h2>Cursor Bugbot: kalau tim sudah pakai Cursor</h2>
+<p>Cursor Bugbot adalah reviewer dari tim Cursor. Ia mendukung GitHub, GitLab, Bitbucket, dan Azure DevOps, dan ditagih berdasarkan pemakaian di atas paket Cursor, mulai dari paket Premium seharga 30 dolar per bulan. Pilih Bugbot kalau tim kamu sudah membayar Cursor dan memakai IDE-nya setiap hari. Jangan memilihnya hanya demi Bugbot, karena ada opsi yang lebih murah dan lebih transparan harganya.</p>
+<h2>PR-Agent: jalur gratis dan self-hosted</h2>
+<p>PR-Agent adalah jawaban kalau anggaran nol atau data tidak boleh keluar dari server sendiri. Tool ini open source dengan lisensi MIT dan mendukung GitHub, GitLab, Bitbucket, Azure DevOps, dan Gitea. Ia adalah tool paling portabel dalam daftar ini.</p>
+<p>Kamu menjalankannya sebagai server webhook dengan Docker. Contoh minimal untuk GitLab Self-Managed:</p>
+<pre><code>docker run -d --name pr-agent \
+  -e OPENAI_API_KEY="$OPENAI_API_KEY" \
+  -e CONFIG.GIT_PROVIDER="gitlab" \
+  -e CONFIG.GITLAB.URL="https://gitlab.contoh.com" \
+  -e CONFIG.GITLAB.PERSONAL_ACCESS_TOKEN="$GITLAB_TOKEN" \
+  -p 3000:3000 \
+  qodoai/pr-agent:latest</code></pre>
+<p>Setelah server jalan, daftarkan webhook di proyek GitLab yang mengarah ke https://review.contoh.com/webhook, dengan event Merge Request. PR-Agent memberi review otomatis setiap MR dibuka atau diperbarui, atau dipanggil dari CLI untuk satu MR tertentu:</p>
+<pre><code>pr-agent --pr_url="https://gitlab.contoh.com/grup/proyek/-/merge_requests/42" review</code></pre>
+<p>Kekurangannya, kamu yang mengurus semuanya: hosting, API key model, update, dan tuning prompt. Tidak ada dashboard dan tidak ada dukungan resmi, dan kualitas review sangat tergantung model yang kamu pilih.</p>
+<h2>Bitbucket: tidak ada jalan pintas bawaan</h2>
+<p>Bitbucket tidak punya reviewer AI bawaan seperti GitLab Duo, jadi semua tim Bitbucket harus memakai tool pihak ketiga. Untuk Bitbucket Cloud, tool yang mendokumentasikan dukungan adalah CodeRabbit, Cursor Bugbot, Greptile, Qodo, dan PR-Agent. Untuk Bitbucket Data Center, pilihannya menyempit ke CodeRabbit, Cursor Bugbot, Greptile Enterprise, dan Qodo.</p>
+<p>Satu hal yang perlu dicek sebelum membeli: pastikan tool mendukung edisi Bitbucket kamu, Cloud atau Data Center, karena tidak semua paket mencakup keduanya.</p>
+<h2>Tabel perbandingan cepat</h2>
+<table>
+<thead>
+<tr><th>Tool</th><th>GitLab</th><th>Bitbucket</th><th>Harga mulai</th><th>Gratis</th></tr>
+</thead>
+<tbody>
+<tr><td>GitLab Duo Code Review Flow</td><td>Ya, bawaan</td><td>Tidak</td><td>GitLab Credits, Free tersedia</td><td>Ya, tier Free dengan Credits</td></tr>
+<tr><td>CodeRabbit</td><td>Ya, termasuk Self-Managed</td><td>Ya, Cloud dan Data Center</td><td>24 dolar/dev/bulan tahunan</td><td>Repo publik</td></tr>
+<tr><td>Greptile</td><td>Ya</td><td>Ya</td><td>1 dolar per kredit</td><td>Starter 50 kredit/bulan</td></tr>
+<tr><td>Qodo</td><td>Ya</td><td>Ya</td><td>30 dolar/bulan pool kredit</td><td>Program open source</td></tr>
+<tr><td>Cursor Bugbot</td><td>Ya</td><td>Ya</td><td>Paket Cursor dari 30 dolar/bulan</td><td>Tidak dinyatakan</td></tr>
+<tr><td>PR-Agent</td><td>Ya, self-host</td><td>Ya, self-host</td><td>Gratis, bawa model sendiri</td><td>Ya, MIT</td></tr>
+<tr><td>Bito</td><td>Ya</td><td>Ya</td><td>12 sampai 15 dolar/seat/bulan</td><td>Tidak dinyatakan</td></tr>
+</tbody>
+</table>
+<p>Harga dicek 10 sampai 17 November 2026 dari halaman vendor. Selalu konfirmasi di halaman resmi sebelum membeli.</p>
+<h2>Kesalahan umum pemula dan cara menghindarinya</h2>
+<p><strong>Pertama, memilih tool hanya karena populer di GitHub.</strong> Copilot adalah contoh paling jelas: reviewer yang bagus, tapi tidak mendukung GitLab atau Bitbucket sama sekali. Cek matriks host dulu, baru baca fitur.</p>
+<p><strong>Kedua, menganggap review AI menggantikan reviewer manusia.</strong> Tidak ada tool di daftar ini yang approval-nya bisa dihitung sebagai required approval, GitLab Duo sendiri masih Beta dan tidak dihitung. Tetap butuh manusia untuk merge, dan tetap butuh test serta static analysis.</p>
+<p><strong>Ketiga, membiarkan review AI jalan di semua MR tanpa aturan.</strong> Tanpa file instruksi, reviewer akan berkomentar soal gaya penulisan di setiap MR dan tim berhenti membacanya. Tulis tiga sampai lima aturan yang spesifik untuk codebase kamu, lalu evaluasi komentarnya selama seminggu.</p>
+<p><strong>Keempat, mengabaikan soal data.</strong> Review AI mengirim diff kamu ke model pihak ketiga, kecuali kamu self-host seperti PR-Agent dengan model lokal. Kalau codebase berisi data sensitif, cek kebijakan data tool sebelum memasangnya. Duo butuh konektivitas cloud, jadi instalasi air-gapped tidak bisa memakainya.</p>
+<p><strong>Kelima, tidak mengukur kualitas review.</strong> Jangan menilai tool dari jumlah komentar, tapi dari berapa komentar yang benar-benar ditindaklanjuti. Itu yang disebut addressing rate.</p>
+<h2>Langkah pertama hari ini</h2>
+<p>Ambil satu repo GitLab atau Bitbucket yang MR-nya kamu kenal baik. Kalau di GitLab, aktifkan Code Review Flow dan tambahkan file instruksi dengan tiga aturan spesifik. Kalau di Bitbucket, pasang PR-Agent dengan Docker seperti contoh di atas, atau daftar trial CodeRabbit kalau kamu mau tanpa urus server.</p>
+<p>Buka satu MR percobaan, baca semua komentar AI, dan tandai mana yang benar, mana yang salah, dan mana yang noise. Setelah dua minggu, kamu punya data sendiri untuk memutuskan.</p>
