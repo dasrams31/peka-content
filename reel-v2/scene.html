@@ -190,7 +190,9 @@
         if (s.sub) { const p = el('p', 'sub', s.sub); markIn(p, 0.9, 0.5, 0, 40); sc.appendChild(p); }
       }
       if (s.kind === 'beat') {
-        if (s.stat) { const st = el('div', 'stat', s.stat); markIn(st, 0.15, 0.5, 0, 60); sc.appendChild(st); }
+        if (s.stat) { const st = el('div', 'stat', s.stat);
+          if (s.stat.length > 7) st.style.fontSize = '160px'; // long stat (e.g. "1.202 km") fits one line
+          markIn(st, 0.15, 0.5, 0, 60); sc.appendChild(st); }
         if (s.stat_label) { const sl = el('div', 'stat-label', s.stat_label); markIn(sl, 0.45, 0.5, 0, 40); sc.appendChild(sl); }
         if (s.lines) {
           const box = el('div', 'lines');
