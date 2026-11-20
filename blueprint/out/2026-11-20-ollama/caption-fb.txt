@@ -1,0 +1,9 @@
+Model AI mahal, padahal yang gratis bisa jalan di laptopmu.
+
+Ollama itu cara paling gampang jalanin model AI open source di laptop sendiri. Disukai 187,7 ribu orang di GitHub, gratis buat macOS, Windows, dan Linux.
+
+Langkah pertama: download gratis di ollama.com, terus ketik ollama run gemma4. Modelnya keunduh lalu langsung bisa diajak ngobrol, datamu nggak keluar dari laptop. Link repo-nya ada di videonya.
+
+Save dulu, biar gampang dicari lagi. Mau coba model lokal di laptop atau tetap pakai yang online?
+
+Music: Tech Live by Kevin MacLeod

@@ -1,33 +1,77 @@
 {
-  "agent": "OLLAMA",
-  "devices": [
-    {"name": "MACOS", "cap": "download gratis"},
-    {"name": "WINDOWS", "cap": "download gratis"},
-    {"name": "LINUX", "cap": "download + Docker"}
-  ],
-  "edition": 3,
-  "how_body": "Modelnya jalan di komputermu sendiri, datamu nggak keluar rumah.",
-  "how_headline": ["MODEL AI,", "JALAN DI LAPTOPMU."],
-  "how_start": "MULAI: ollama run gemma4",
+ "agent": "OLLAMA",
+ "devices": [
+  {
+   "name": "MACOS",
+   "cap": "download gratis"
+  },
+  {
+   "name": "WINDOWS",
+   "cap": "download gratis"
+  },
+  {
+   "name": "LINUX",
+   "cap": "download + Docker"
+  }
+ ],
+ "edition": 3,
+ "how_body": "Modelnya jalan di komputermu sendiri, datamu nggak keluar rumah.",
+ "how_headline": [
+  "MODEL AI,",
+  "JALAN DI LAPTOPMU."
+ ],
+ "how_start": "MULAI: ollama run gemma4",
+ "language": "Go",
+ "license": "MIT",
+ "name": "ollama/ollama",
+ "note": "Modelnya gratis, tapi makan ruang disk dan RAM.",
+ "out_dir": "/home/hatch/workspace/peka-content/blueprint/out/2026-11-20-ollama/carousel",
+ "stars": "187,7RB",
+ "steps": [
+  {
+   "title": "Download gratis di ollama.com",
+   "desc": "Gratis buat macOS, Windows, dan Linux."
+  },
+  {
+   "title": "Jalanin model pertamamu",
+   "desc": "Ketik ollama run gemma4, modelnya keunduh lalu langsung bisa diajak ngobrol."
+  },
+  {
+   "title": "Sambungin ke agent favoritmu",
+   "desc": "Ollama nyambung ke Claude Code, Codex, OpenCode, sampai OpenClaw."
+  }
+ ],
+ "tagline": [
+  "Model AI open source.",
+  "Jalan lokal, datamu aman."
+ ],
+ "shortlink": "https://s.peka.ai.id/zKa2kd",
+ "repo": {
+  "desc_en": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+  "desc_id": "Jalanin model AI open source di laptop sendiri.",
   "language": "Go",
   "license": "MIT",
-  "name": "ollama/ollama",
-  "note": "Modelnya gratis, tapi makan ruang disk dan RAM.",
-  "out_dir": "/home/hatch/workspace/peka-content/blueprint/out/2026-11-20-ollama/carousel",
-  "stars": "187,7RB",
-  "steps": [
-    {"title": "Download gratis di ollama.com", "desc": "Gratis buat macOS, Windows, dan Linux."},
-    {"title": "Jalanin model pertamamu", "desc": "Ketik ollama run gemma4, modelnya keunduh lalu langsung bisa diajak ngobrol."},
-    {"title": "Sambungin ke agent favoritmu", "desc": "Ollama nyambung ke Claude Code, Codex, OpenCode, sampai OpenClaw."}
+  "stats": [
+   [
+    "187,7RB",
+    "STAR"
+   ],
+   [
+    "19.182",
+    "FORK"
+   ],
+   [
+    "623",
+    "KONTRIBUTOR"
+   ]
   ],
-  "tagline": ["Model AI open source.", "Jalan lokal, datamu aman."],
-  "shortlink": "https://s.peka.ai.id/zKa2kd",
-  "repo": {
-    "desc_en": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-    "desc_id": "Jalanin model AI open source di laptop sendiri.",
-    "language": "Go",
-    "license": "MIT",
-    "stats": [["187,7RB", "STAR"], ["19.182", "FORK"], ["445", "KONTRIBUTOR"]],
-    "topics": ["llm", "llama", "qwen", "deepseek", "gemma", "mistral"]
-  }
+  "topics": [
+   "llm",
+   "llama",
+   "qwen",
+   "deepseek",
+   "gemma",
+   "mistral"
+  ]
+ }
 }

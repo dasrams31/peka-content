@@ -1,32 +1,32 @@
 {
-  "agent": "OLLAMA",
-  "episode": 3,
-  "note": "Modelnya gratis, tapi makan ruang disk dan RAM.",
-  "question": "Mau coba model lokal di laptop atau tetap pakai yang online?",
-  "repos": [
-    {
-      "cocok": "Kamu yang mau coba model AI tanpa langganan bulanan dan datamu nggak keluar dari laptop.",
-      "install": "ollama run gemma4",
-      "language": "Go",
-      "license": "MIT",
-      "name": "ollama/ollama",
-      "penjelasan": "Ollama itu cara paling gampang jalanin model AI open source di laptop sendiri. Download gratis, ketik ollama run gemma4, modelnya langsung bisa diajak ngobrol. Langkah pertama: download gratis di ollama.com, terus jalanin model pertamamu.",
-      "shot": "shots/ollama-ollama.png",
-      "stars": "187,7RB",
-      "desc_en": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-      "desc_id": "Jalanin model AI open source di laptop sendiri.",
-      "forks": "19.182",
-      "contributors": "445",
-      "topics": [
-        "llm",
-        "llama",
-        "qwen",
-        "deepseek",
-        "gemma",
-        "mistral"
-      ]
-    }
-  ],
-  "sub": "Jalanin model AI open source di laptop sendiri, tanpa langganan.",
-  "shortlink": "https://s.peka.ai.id/zKa2kd"
+ "agent": "OLLAMA",
+ "episode": 3,
+ "note": "Modelnya gratis, tapi makan ruang disk dan RAM.",
+ "question": "Mau coba model lokal di laptop atau tetap pakai yang online?",
+ "repos": [
+  {
+   "cocok": "Kamu yang mau coba model AI tanpa langganan bulanan dan datamu nggak keluar dari laptop.",
+   "install": "ollama run gemma4",
+   "language": "Go",
+   "license": "MIT",
+   "name": "ollama/ollama",
+   "penjelasan": "Ollama itu cara paling gampang jalanin model AI open source di laptop sendiri. Download gratis, ketik ollama run gemma4, modelnya langsung bisa diajak ngobrol. Langkah pertama: download gratis di ollama.com, terus jalanin model pertamamu.",
+   "shot": "shots/ollama-ollama.png",
+   "stars": "187,7RB",
+   "desc_en": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+   "desc_id": "Jalanin model AI open source di laptop sendiri.",
+   "forks": "19.182",
+   "contributors": "623",
+   "topics": [
+    "llm",
+    "llama",
+    "qwen",
+    "deepseek",
+    "gemma",
+    "mistral"
+   ]
+  }
+ ],
+ "sub": "Jalanin model AI open source di laptop sendiri, tanpa langganan.",
+ "shortlink": "https://s.peka.ai.id/zKa2kd"
 }
