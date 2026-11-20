@@ -1,5 +1,5 @@
 {
- "date_label": "20 November 2026",
+ "date_label": "21 November 2026",
  "last_posted": "2026-11-20",
  "products": [
   {
@@ -131,6 +131,14 @@
    "bot_id": 115
   },
   {
+   "sec": "MUSE SPARK",
+   "dur": "1 Milyar Token",
+   "name": "Referral Muse 1 B",
+   "price": "2,2K",
+   "price_num": 2.2,
+   "bot_id": 111
+  },
+  {
    "sec": "CAPCUT",
    "dur": "1 Bulan",
    "name": "CapCut Pro",
@@ -163,5 +171,5 @@
    "bot_id": 49
   }
  ],
- "updated": "2026-11-20"
+ "updated": "2026-11-21"
 }
