@@ -1,0 +1,132 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "RUTESTRIP",
+  "rate": "+15%",
+  "scenes": [
+    {
+      "badge": "EDISI KHUSUS",
+      "headline": [
+        "RUTESTRIP",
+        "AI yang ngerti",
+        "gunung."
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "RuteStrip itu AI yang ngerti gunung. Bukan chatbot biasa, tapi asisten pendakian yang jawab pakai data jalur.",
+      "pose": "wave",
+      "sub": "Sistem rekomendasi pendakian + chatbot asisten."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Info berserakan di mana-mana",
+        "Tiap jalur beda <b>jarak, elevasi, durasi</b>",
+        "Salah pilih, bisa <b>kapok</b>"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Mau mendaki, bingung pilih gunung yang mana? Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, kapok.",
+      "pose": "present"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "File GPX masuk, fitur jalur diekstrak",
+        "Model <span class=\"mono\">paraphrase-multilingual-</span>",
+        "<span class=\"mono\">MiniLM-L12-v2</span> paham Bahasa Indonesia",
+        "Cosine Similarity, <b>Top-N</b> naik ke atas"
+      ],
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "File GPX diubah jadi embedding SBERT 384 dimensi, dicocokkan sama pertanyaan kamu pakai Cosine Similarity. Rute paling cocok naik ke atas.",
+      "pose": "base",
+      "stat": "384",
+      "stat_label": "Dimensi embedding SBERT"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Durasi Naismith <b>1,5 jam</b>, jalur <b>Mudah</b>",
+        "Patuha nomor dua: <b>1,24 km</b> dalam 1,1 jam",
+        "Kawah + Hutan Mati yang ikonik"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam, jalurnya mudah. Patuha nomor dua, 1,24 kilometer.",
+      "pose": "present",
+      "stat": "1,79 km",
+      "stat_label": "Papandayan, top pick buat pemula"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Checklist logistik lengkap, tenda sampai P3K",
+        "Itinerary 2 hari 1 malam Papandayan",
+        "Total sekitar <b>Rp250-300 ribu</b> per orang"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Chatbotnya juga bisa bikinin checklist logistik, air 18 liter buat 3 orang 2 hari, sampai itinerary 2 hari 1 malam Papandayan. Totalnya 250 sampai 300 ribu per orang.",
+      "pose": "base",
+      "stat": "18 L",
+      "stat_label": "Air bersih buat 3 orang 2 hari"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> buat konten AI lainnya.",
+      "headline": [
+        "Papandayan",
+        "atau Patuha,",
+        "pilih yang mana?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Coba sendiri, gratis. Papandayan atau Patuha, kamu pilih yang mana? Follow Peka AI.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/TknXVJ",
+      "shortlink2": "s.peka.ai.id/gXbVzB",
+      "shortlink2_label": "CHATBOT: ",
+      "shortlink_label": "WEBSITE: "
+    }
+  ],
+  "theme": "rute-green",
+  "title": "RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme)"
+}

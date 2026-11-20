@@ -1,0 +1,1040 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "RUTESTRIP",
+  "rate": "+15%",
+  "scenes": [
+    {
+      "badge": "EDISI KHUSUS",
+      "headline": [
+        "RUTESTRIP",
+        "AI yang ngerti",
+        "gunung."
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "RuteStrip itu AI yang ngerti gunung. Bukan chatbot biasa, tapi asisten pendakian yang jawab pakai data jalur.",
+      "pose": "wave",
+      "sub": "Sistem rekomendasi pendakian + chatbot asisten."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Info berserakan di mana-mana",
+        "Tiap jalur beda <b>jarak, elevasi, durasi</b>",
+        "Salah pilih, bisa <b>kapok</b>"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Mau mendaki, bingung pilih gunung yang mana? Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, kapok.",
+      "pose": "present"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "File GPX masuk, fitur jalur diekstrak",
+        "Model <span class=\"mono\">paraphrase-multilingual-</span>",
+        "<span class=\"mono\">MiniLM-L12-v2</span> paham Bahasa Indonesia",
+        "Cosine Similarity, <b>Top-N</b> naik ke atas"
+      ],
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "File GPX diubah jadi embedding SBERT 384 dimensi, dicocokkan sama pertanyaan kamu pakai Cosine Similarity. Rute paling cocok naik ke atas.",
+      "pose": "base",
+      "stat": "384",
+      "stat_label": "Dimensi embedding SBERT"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Durasi Naismith <b>1,5 jam</b>, jalur <b>Mudah</b>",
+        "Patuha nomor dua: <b>1,24 km</b> dalam 1,1 jam",
+        "Kawah + Hutan Mati yang ikonik"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam, jalurnya mudah. Patuha nomor dua, 1,24 kilometer.",
+      "pose": "present",
+      "stat": "1,79 km",
+      "stat_label": "Papandayan, top pick buat pemula"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Checklist logistik lengkap, tenda sampai P3K",
+        "Itinerary 2 hari 1 malam Papandayan",
+        "Total sekitar <b>Rp250-300 ribu</b> per orang"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Chatbotnya juga bisa bikinin checklist logistik, air 18 liter buat 3 orang 2 hari, sampai itinerary 2 hari 1 malam Papandayan. Totalnya 250 sampai 300 ribu per orang.",
+      "pose": "base",
+      "stat": "18 L",
+      "stat_label": "Air bersih buat 3 orang 2 hari"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> buat konten AI lainnya.",
+      "headline": [
+        "Papandayan",
+        "atau Patuha,",
+        "pilih yang mana?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Coba sendiri, gratis. Papandayan atau Patuha, kamu pilih yang mana? Follow Peka AI.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/TknXVJ",
+      "shortlink2": "s.peka.ai.id/gXbVzB",
+      "shortlink2_label": "CHATBOT: ",
+      "shortlink_label": "WEBSITE: "
+    }
+  ],
+  "theme": {
+    "label": "Rute Green",
+    "description": "RuteStrip green: dark emerald mountain mood, emerald accent, mint highlights. Layered mountain-silhouette background (mount1 far ridge, mount2 near ridge); other themes leave the layer transparent.",
+    "bg": "#064E3B",
+    "bg2": "#065F46",
+    "card": "#085C40",
+    "card_border": "#147A56",
+    "accent": "#059669",
+    "accent2": "#A7F3D0",
+    "text": "#F5F5F0",
+    "dim": "#B7D9CB",
+    "mono": "#A7F3D0",
+    "chip_bg": "#059669",
+    "chip_text": "#FFFFFF",
+    "bar_other": "#5A8A76",
+    "bar_track": "#0B3D2C",
+    "grid": "rgba(167,243,208,0.06)",
+    "glow": "rgba(5,150,105,0.30)",
+    "glow2": "rgba(167,243,208,0.10)",
+    "progress": "#059669",
+    "mascot": "bottom-right",
+    "mount1": "#0B7A55",
+    "mount2": "#07563F",
+    "mount_sun": "#A7F3D0"
+  },
+  "title": "RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme)",
+  "theme_name": "rute-green",
+  "words": [
+    {
+      "text": "RuteStrip",
+      "start": 0.1,
+      "end": 0.589125,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "itu",
+      "start": 0.589125,
+      "end": 0.839125,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "AI",
+      "start": 0.839125,
+      "end": 1.089125,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "yang",
+      "start": 1.089125,
+      "end": 1.197833,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "ngerti",
+      "start": 1.197833,
+      "end": 1.404333,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "gunung.",
+      "start": 1.404333,
+      "end": 1.849999,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Bukan",
+      "start": 2.576083,
+      "end": 2.836958,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "chatbot",
+      "start": 2.836958,
+      "end": 3.141291,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "biasa,",
+      "start": 3.141291,
+      "end": 3.695624,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "tapi",
+      "start": 3.945666,
+      "end": 4.163041,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "asisten",
+      "start": 4.163041,
+      "end": 4.510874,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "pendakian",
+      "start": 4.510875,
+      "end": 4.869583,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "yang",
+      "start": 4.869583,
+      "end": 4.999999,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "jawab",
+      "start": 5.0,
+      "end": 5.282625,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "pakai",
+      "start": 5.282625,
+      "end": 5.510875,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "data",
+      "start": 5.510875,
+      "end": 5.706541,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "jalur.",
+      "start": 5.706541,
+      "end": 6.173916,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Mau",
+      "start": 7.30875,
+      "end": 7.493541,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "mendaki,",
+      "start": 7.493541,
+      "end": 8.047874,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "bingung",
+      "start": 8.26525,
+      "end": 8.558708,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "pilih",
+      "start": 8.55875,
+      "end": 8.732666,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "gunung",
+      "start": 8.732666,
+      "end": 8.939166,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "yang",
+      "start": 8.939166,
+      "end": 9.058748999999999,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "mana?",
+      "start": 9.05875,
+      "end": 9.460916,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "Info",
+      "start": 10.190249999999999,
+      "end": 10.4185,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "berserakan,",
+      "start": 10.418541,
+      "end": 11.070706999999999,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "tiap",
+      "start": 11.331583,
+      "end": 11.505458,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "jalur",
+      "start": 11.505458,
+      "end": 11.766333,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "beda",
+      "start": 11.766333,
+      "end": 11.961998999999999,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "jarak",
+      "start": 11.962,
+      "end": 12.266333,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "dan",
+      "start": 12.266333,
+      "end": 12.418499,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "durasi.",
+      "start": 12.418541,
+      "end": 12.940290999999998,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Salah",
+      "start": 13.671790999999999,
+      "end": 13.943541,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "pilih,",
+      "start": 13.943541,
+      "end": 14.421790999999999,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "kapok.",
+      "start": 14.606583,
+      "end": 15.063124,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "File",
+      "start": 16.208333,
+      "end": 16.436583,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "GPX",
+      "start": 16.436625,
+      "end": 16.893124999999998,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "diubah",
+      "start": 16.893124999999998,
+      "end": 17.197457999999997,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "jadi",
+      "start": 17.197457999999997,
+      "end": 17.414832999999998,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "embedding",
+      "start": 17.414875,
+      "end": 17.795291,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "SBERT",
+      "start": 17.795291,
+      "end": 18.045291,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "384",
+      "start": 18.045291,
+      "end": 19.045291,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "dimensi,",
+      "start": 19.045291,
+      "end": 19.588749,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "dicocokkan",
+      "start": 19.838791,
+      "end": 20.317041,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "sama",
+      "start": 20.317041,
+      "end": 20.512707,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "pertanyaan",
+      "start": 20.512708,
+      "end": 20.990958,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "kamu",
+      "start": 20.990958,
+      "end": 21.230083,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "pakai",
+      "start": 21.230083,
+      "end": 21.469208,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Cosine",
+      "start": 21.469208,
+      "end": 21.795291,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Similarity.",
+      "start": 21.795291,
+      "end": 22.469206999999997,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Rute",
+      "start": 23.197457999999997,
+      "end": 23.512666,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "paling",
+      "start": 23.512708,
+      "end": 23.708333,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "cocok",
+      "start": 23.708333,
+      "end": 24.001790999999997,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "naik",
+      "start": 24.001832999999998,
+      "end": 24.175749,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "ke",
+      "start": 24.17575,
+      "end": 24.219208000000002,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "atas.",
+      "start": 24.219208000000002,
+      "end": 24.697457999999997,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Aku",
+      "start": 25.838375,
+      "end": 26.099249999999998,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "sudah",
+      "start": 26.099249999999998,
+      "end": 26.294874999999998,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "coba",
+      "start": 26.294874999999998,
+      "end": 26.490540999999997,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "chatbotnya.",
+      "start": 26.490540999999997,
+      "end": 27.175331999999997,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "Tanya",
+      "start": 27.903040999999998,
+      "end": 28.109582,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "gunung",
+      "start": 28.109582999999997,
+      "end": 28.326957999999998,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "buat",
+      "start": 28.326957999999998,
+      "end": 28.479124,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "pemula",
+      "start": 28.479125,
+      "end": 28.76175,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "di",
+      "start": 28.76175,
+      "end": 28.848708,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Jawa",
+      "start": 28.848708,
+      "end": 29.055208,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Barat,",
+      "start": 29.055208,
+      "end": 29.446499,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "jawabannya",
+      "start": 29.674791,
+      "end": 30.229124,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Papandayan.",
+      "start": 30.229124999999996,
+      "end": 30.913916,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Cuma",
+      "start": 31.653040999999998,
+      "end": 31.816081999999998,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "1,79",
+      "start": 31.816083,
+      "end": 32.729124,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "kilometer,",
+      "start": 32.729124999999996,
+      "end": 33.316083,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "1,5",
+      "start": 33.544332999999995,
+      "end": 34.163916,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "jam,",
+      "start": 34.163916,
+      "end": 34.522624,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "jalurnya",
+      "start": 34.750875,
+      "end": 35.185666,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "mudah.",
+      "start": 35.185666,
+      "end": 35.631332,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "Patuha",
+      "start": 36.362832999999995,
+      "end": 36.721541,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "nomor",
+      "start": 36.721541,
+      "end": 36.938916,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "dua,",
+      "start": 36.938916,
+      "end": 37.373706999999996,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "1,24",
+      "start": 37.623708,
+      "end": 38.5149999,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "kilometer.",
+      "start": 38.515,
+      "end": 39.101957999999996,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Chatbotnya",
+      "start": 40.25633299999999,
+      "end": 40.74545799999999,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "juga",
+      "start": 40.74545799999999,
+      "end": 40.941123999999995,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "bisa",
+      "start": 40.94112499999999,
+      "end": 41.10416599999999,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "bikinin",
+      "start": 41.10416599999999,
+      "end": 41.39762399999999,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "checklist",
+      "start": 41.397665999999994,
+      "end": 41.734624,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "logistik,",
+      "start": 41.734624999999994,
+      "end": 42.25637499999999,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "air",
+      "start": 42.473749999999995,
+      "end": 42.70199999999999,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "18",
+      "start": 42.70199999999999,
+      "end": 43.147665999999994,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "liter",
+      "start": 43.147665999999994,
+      "end": 43.35416599999999,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "buat",
+      "start": 43.35416599999999,
+      "end": 43.560706999999994,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "3",
+      "start": 43.56070799999999,
+      "end": 43.75633299999999,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "orang",
+      "start": 43.75633299999999,
+      "end": 43.930248999999996,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "2",
+      "start": 43.930249999999994,
+      "end": 44.04983299999999,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "hari,",
+      "start": 44.04983299999999,
+      "end": 44.46287399999999,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "sampai",
+      "start": 44.70199999999999,
+      "end": 44.99545799999999,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "itinerary",
+      "start": 44.99545799999999,
+      "end": 45.430248999999996,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "2",
+      "start": 45.430249999999994,
+      "end": 45.582415999999995,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "hari",
+      "start": 45.582415999999995,
+      "end": 45.734581999999996,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "1",
+      "start": 45.734624999999994,
+      "end": 45.95199999999999,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "malam",
+      "start": 45.95199999999999,
+      "end": 46.169374999999995,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Papandayan.",
+      "start": 46.169374999999995,
+      "end": 46.832415999999995,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Totalnya",
+      "start": 47.557415999999996,
+      "end": 47.99220699999999,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "250",
+      "start": 47.99220799999999,
+      "end": 48.78566599999999,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "sampai",
+      "start": 48.78570799999999,
+      "end": 49.079165999999994,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "300",
+      "start": 49.079165999999994,
+      "end": 49.49220799999999,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "ribu",
+      "start": 49.49220799999999,
+      "end": 49.687873999999994,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "per",
+      "start": 49.68787499999999,
+      "end": 49.78570799999999,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "orang.",
+      "start": 49.78570799999999,
+      "end": 50.20962399999999,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "Coba",
+      "start": 51.348749999999995,
+      "end": 51.587875,
+      "scene": 5,
+      "line": 17
+    },
+    {
+      "text": "sendiri,",
+      "start": 51.587875,
+      "end": 52.131333,
+      "scene": 5,
+      "line": 17
+    },
+    {
+      "text": "gratis.",
+      "start": 52.359624999999994,
+      "end": 52.990041,
+      "scene": 5,
+      "line": 17
+    },
+    {
+      "text": "Papandayan",
+      "start": 53.711791,
+      "end": 54.233540999999995,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "atau",
+      "start": 54.233540999999995,
+      "end": 54.407416,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "Patuha,",
+      "start": 54.407416,
+      "end": 54.961749,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "kamu",
+      "start": 55.190040999999994,
+      "end": 55.407416,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "pilih",
+      "start": 55.407416,
+      "end": 55.581331999999996,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "yang",
+      "start": 55.581332999999994,
+      "end": 55.70091599999999,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "mana?",
+      "start": 55.70091599999999,
+      "end": 56.092206999999995,
+      "scene": 5,
+      "line": 18
+    },
+    {
+      "text": "Follow",
+      "start": 56.82375,
+      "end": 57.236791,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "Peka",
+      "start": 57.236791,
+      "end": 57.519374,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "AI.",
+      "start": 57.519375,
+      "end": 57.921541,
+      "scene": 5,
+      "line": 19
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 6.912
+    },
+    {
+      "start": 6.909,
+      "end": 15.804
+    },
+    {
+      "start": 15.808,
+      "end": 25.44
+    },
+    {
+      "start": 25.438,
+      "end": 39.852
+    },
+    {
+      "start": 39.856,
+      "end": 50.952
+    },
+    {
+      "start": 50.949,
+      "end": 58.668
+    }
+  ],
+  "total": 59.468
+}
