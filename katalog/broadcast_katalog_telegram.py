@@ -298,11 +298,15 @@ def send_one(token: str, dest: str, chat_id: str, kind: str,
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Broadcast Katalog Peka ke channel + grup Telegram.")
+    ap = argparse.ArgumentParser(description="Broadcast Katalog Peka ke channel Telegram.")
     ap.add_argument("--folder", required=True, help="Folder edisi (auto-*) berisi slide peka-katalog-*.png.")
     ap.add_argument("--title", required=True, help="Judul/hook singkat edisi ini.")
     ap.add_argument("--para", default="", help="Ringkasan 2-4 kalimat: rentang harga + produk andalan.")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--with-group", action="store_true",
+                    help="Kirim juga ke grup (hanya atas perintah eksplisit user; "
+                    "default: channel saja, karena postingan channel auto-forward "
+                    "sendiri ke grup — aturan user 21 Nov).")
     ap.add_argument("--force", action="store_true",
                     help="Lewati cek dedupe (hanya untuk re-post atas perintah user).")
     args = ap.parse_args()
@@ -345,22 +349,29 @@ def main() -> int:
     }
 
     if args.dry_run:
-        print(json.dumps({
+        dry = {
             "cover_caption": caption,
             "cover_photo": str(slides[0]),
             "slides_built_not_sent": [str(s) for s in slides[1:]],
             "list_text": list_text,
+            "destinations": ["channel"] + (["group"] if args.with_group else []),
             "channel": {"album_key": keys["channel"][0],
                         "list_key": keys["channel"][1]},
-            "group": {"album_key": keys["group"][0],
-                      "list_key": keys["group"][1]},
-        }, indent=2, ensure_ascii=False))
+        }
+        if args.with_group:
+            dry["group"] = {"album_key": keys["group"][0],
+                            "list_key": keys["group"][1]}
+        print(json.dumps(dry, indent=2, ensure_ascii=False))
         return 0
 
     token = read_token()
     sent = {}
-    # Urutan: channel dulu, baru grup. Bila channel gagal, grup tidak dikirim.
-    for dest, chat_id in (("channel", CHANNEL_ID), ("group", GROUP_ID)):
+    # Channel SEKALI saja (aturan user 21 Nov): postingan channel auto-forward
+    # sendiri ke grup, jadi grup TIDAK dikirim kecuali --with-group.
+    dests = [("channel", CHANNEL_ID)]
+    if args.with_group:
+        dests.append(("group", GROUP_ID))
+    for dest, chat_id in dests:
         album_key, list_key = keys[dest]
         album_mid = send_one(token, dest, chat_id, "album", slides, caption,
                              list_text, album_key, args.title, args.force)
@@ -374,8 +385,9 @@ def main() -> int:
 
     print(f"ALBUM channel https://t.me/peka_aichannel/{sent['channel'][0]}")
     print(f"LIST channel https://t.me/peka_aichannel/{sent['channel'][1]}")
-    print(f"ALBUM group https://t.me/peka_aigroup/{sent['group'][0]}")
-    print(f"LIST group https://t.me/peka_aigroup/{sent['group'][1]}")
+    if "group" in sent:
+        print(f"ALBUM group https://t.me/peka_aigroup/{sent['group'][0]}")
+        print(f"LIST group https://t.me/peka_aigroup/{sent['group'][1]}")
     print("BROADCAST KATALOG SELESAI")
     return 0
 

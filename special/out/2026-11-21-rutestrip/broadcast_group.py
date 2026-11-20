@@ -112,6 +112,17 @@ def main() -> int:
                     help="Lewati cek dedupe (hanya untuk re-post atas perintah user).")
     args = ap.parse_args()
 
+    # DISABLED 21 Nov (user rule): channel Peka ONCE only — the channel post
+    # auto-forwards to the Peka group by itself, so a separate group send
+    # doubles it (SPILL #31 lesson). This script refuses to send unless
+    # --force is passed on the user's explicit order.
+    if not args.force and not args.dry_run:
+        print("DITOLAK: broadcast grup dimatikan (aturan user 21 Nov). Channel Peka "
+              "sekali saja, postingannya auto-forward sendiri ke grup. Jangan "
+              "pakai script ini tanpa perintah eksplisit user + --force.",
+              file=sys.stderr)
+        return 1
+
     cover = Path(args.cover)
     if not cover.is_file():
         print(f"Cover tidak ditemukan: {cover}", file=sys.stderr)

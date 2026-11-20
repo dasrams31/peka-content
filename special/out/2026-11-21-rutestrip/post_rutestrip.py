@@ -3,7 +3,10 @@
 
 Idempotent via post-done.txt: each completed step is skipped on re-run.
 Order: Threads carousel -> IG carousel -> FB carousel (gate may fail, tolerated)
+-> IG reel + FB reel (extra reel; reel failure does NOT block the rest)
 -> blog links patch -> posted.log -> channel broadcast (type special).
+Channel Peka ONCE only (user rule 21 Nov): the channel post auto-forwards to
+the Peka group by itself, so NO separate group broadcast.
 Run with a generous timeout; approval cards pace the CLI calls.
 """
 import json
@@ -148,6 +151,51 @@ def main():
             if line.startswith("FB_OK "):
                 links["facebook"] = line.split(" ", 1)[1]
 
+    # --- IG reel (extra reel after carousel; failure does NOT block the rest) ---
+    REEL = os.path.join(OUT, "reel", "voiceover-reel.mp4")
+    REEL_COVER = os.path.join(OUT, "reel", "voiceover-cover.jpg")
+    if "REEL_IG_OK" not in markers and "REEL_IG_FAILED" not in markers:
+        cmd = ["/opt/hatch/bin/instagram-cli", "post-feed",
+               "--account-id", IG_ACC,
+               "--file", REEL, "--cover", REEL_COVER,
+               "--caption", read_caption("reel/caption-reel-ig.txt")]
+        rc, out, status = run(cmd, 900, "reel-ig-post.log")
+        if status == "timeout" or rc != 0:
+            print("REEL IG FAILED (rc=%s status=%s); continuing, reel can be posted from chat" % (rc, status))
+            mark("REEL_IG_FAILED")
+        else:
+            url = extract_url(out, [r"https://www\.instagram\.com/[^\"'\s]+"])
+            with open(os.path.join(OUT, "reel", "instagram-url.txt"), "w") as f:
+                f.write(url + "\n")
+            mark("REEL_IG_OK " + url)
+            print("REEL IG OK", url, flush=True)
+    else:
+        for line in markers:
+            if line.startswith("REEL_IG_OK "):
+                links["reel_instagram"] = line.split(" ", 1)[1]
+
+    # --- FB reel (gate known-bad: tolerate failure, continue) ---
+    if "REEL_FB_OK" not in markers and "REEL_FB_FAILED" not in markers:
+        cmd = ["/opt/hatch/bin/facebook-cli", "pages", "posts", "create",
+               "--page-id", FB_PAGE, "--privacy", "PUBLIC",
+               "--text", read_caption("reel/caption-reel-fb.txt"),
+               "--file", REEL]
+        rc, out, status = run(cmd, 300, "reel-fb-post.log")
+        if status == "timeout" or rc != 0:
+            print("REEL FB FAILED (rc=%s status=%s); continuing without FB reel (gate)" % (rc, status))
+            mark("REEL_FB_FAILED")
+        else:
+            url = extract_url(out, [r"https://www\.facebook\.com/[^\"'\s]+"])
+            with open(os.path.join(OUT, "reel", "facebook-url.txt"), "w") as f:
+                f.write(url + "\n")
+            links["reel_facebook"] = url
+            mark("REEL_FB_OK " + url)
+            print("REEL FB OK", url, flush=True)
+    else:
+        for line in markers:
+            if line.startswith("REEL_FB_OK "):
+                links["reel_facebook"] = line.split(" ", 1)[1]
+
     # --- Blog links patch ---
     if "BLOG_OK" not in markers:
         with open(BLOG) as f:
@@ -186,32 +234,17 @@ def main():
         mark("CHANNEL_OK " + mid)
         print("CHANNEL OK", mid, flush=True)
 
-    # --- Group broadcast (type special-group; PENDING-guarded, no double) ---
-    if "GROUP_OK" not in markers:
-        cmd = ["python3", os.path.join(OUT, "broadcast_group.py"),
-               "--type", "special",
-               "--title", "RuteStrip: AI yang Ngerti Gunung",
-               "--para", para,
-               "--cover", SLIDES[0],
-               "--blog", BLOG_URL]
-        if links["threads"]:
-            cmd += ["--threads", links["threads"]]
-        if links["instagram"]:
-            cmd += ["--instagram", links["instagram"]]
-        if links["facebook"]:
-            cmd += ["--facebook", links["facebook"]]
-        rc, out, status = run(cmd, 600, "group-broadcast.log")
-        if status == "timeout" or rc != 0:
-            print("GROUP FAILED (rc=%s status=%s); do NOT blind-retry, check PENDING" % (rc, status))
-            return 4
-        mid = extract_url(out, [r"message_id=(\d+)"])
-        mark("GROUP_OK " + mid)
-        print("GROUP OK", mid, flush=True)
+    # Group broadcast REMOVED 21 Nov (user rule): channel Peka ONCE only, the
+    # channel post auto-forwards to the Peka group by itself. A separate group
+    # send would double it (SPILL #31 lesson). broadcast_group.py is kept only
+    # as a dormant utility and refuses to run without --force.
 
     print("ALL DONE")
     print("threads:", links["threads"])
     print("instagram:", links["instagram"])
     print("facebook:", links["facebook"])
+    print("reel_ig:", links.get("reel_instagram", ""))
+    print("reel_fb:", links.get("reel_facebook", ""))
     print("blog:", BLOG_URL)
     return 0
 
