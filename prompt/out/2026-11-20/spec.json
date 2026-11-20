@@ -1,0 +1,12 @@
+{
+  "episode": 30,
+  "category": "KONTEN",
+  "title": "Jadwal konten seminggu kelar dalam sekali duduk",
+  "prompt": "Buatkan jadwal konten 7 hari untuk akun [NICHE AKUNMU] dengan audiens [TARGET AUDIENS]. Tiap hari berisi 1 ide konten, formatnya (reels/carousel/teks), hook 1 kalimat, dan CTA. Susun dalam tabel hari, ide, format, hook, CTA. Bahasanya santai dan realistis untuk dikerjakan sendiri.",
+  "tips": [
+    "Isi [NICHE AKUNMU] dengan topik yang kamu kuasai, jangan yang umum.",
+    "Minta AI ganti ide yang terasa berat dengan versi 15 menit.",
+    "Simpan tabelnya, tiap minggu tinggal ganti topiknya saja."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-20"
+}
