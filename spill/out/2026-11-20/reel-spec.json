@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 31,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "cocok": "Kamu yang mau Hermes kerja bareng banyak agent sekaligus, bukan sendirian.",
+      "install": "claude plugin install ruflo-core@ruflo --marketplace ruvnet/ruflo",
+      "name": "ruvnet/ruflo",
+      "penjelasan": "Ruflo itu harness agent buat ngejalanin swarm multi-agent. Banyak agent kerja bareng dan koordinasi workflow otonom, plus memori adaptif dan integrasi RAG.",
+      "shortlink": "https://s.peka.ai.id/gZNrgi",
+      "stars": "82RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/shots/ruvnet-ruflo.png"
+    },
+    {
+      "cocok": "Kamu yang capek ngulang penjelasan yang sama ke agent tiap sesi baru.",
+      "install": "npx skills add rohitg00/agentmemory -y",
+      "name": "rohitg00/agentmemory",
+      "penjelasan": "AgentMemory itu memori persisten buat AI coding agent, nomor satu berdasarkan benchmark dunia nyata. Agent kamu ingat semua kerjaan sesi sebelumnya, jadi nggak perlu dijelasin ulang.",
+      "shortlink": "https://s.peka.ai.id/Gsc2yL",
+      "stars": "30RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/shots/rohitg00-agentmemory.png"
+    },
+    {
+      "cocok": "Kamu yang bangun agent buat produksi dan butuh memorinya serius, bukan sekadar catatan.",
+      "install": "pip install memori",
+      "name": "MemoriLabs/Memori",
+      "penjelasan": "Memori itu infrastruktur memori asli buat agent, yang ngubah eksekusi dan percakapan jadi state terstruktur yang tersimpan permanen. Dia agnostik sama model AI apa pun.",
+      "shortlink": "https://s.peka.ai.id/K8Kfvh",
+      "stars": "18RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/shots/MemoriLabs-Memori.png"
+    },
+    {
+      "cocok": "Kamu yang pakai banyak agent sekaligus dan mau semuanya ingat kamu yang sama.",
+      "install": "npx skills add MemTensor/memmy-agent -g",
+      "name": "MemTensor/memmy-agent",
+      "penjelasan": "Memmy itu agent pribadi plus hub memori lokal buat semua AI agent kamu. Semua agent berbagi satu memori yang sama dan sepenuhnya kamu yang kontrol.",
+      "shortlink": "https://s.peka.ai.id/MarAcd",
+      "stars": "2RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/shots/MemTensor-memmy-agent.png"
+    },
+    {
+      "cocok": "Kamu yang pakai Hermes dan mau lihat isi kepala agent kamu dari dashboard, bukan cuma terminal.",
+      "install": "pip install 'hermes-hudui[tui]'",
+      "name": "joeynyc/hermes-hudui",
+      "penjelasan": "Hermes Hudui itu dashboard web buat ngawasin kesadaran Hermes. Kamu bisa lihat apa yang lagi dipikirin dan diinget agent kamu, langsung dari browser.",
+      "shortlink": "https://s.peka.ai.id/19T2Io",
+      "stars": "2RB",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/shots/joeynyc-hermes-hudui.png"
+    }
+  ]
+}
