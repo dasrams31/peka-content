@@ -1,1 +1,21 @@
-{"date":"2026-11-20","slots":{"blueprint":{"alerted":true,"alerted_at":"21:45"},"hm":{"aired_late_noticed":true,"alerted":true,"alerted_at":"10:45","broadcast_checked":true},"spill-repo":{"alerted":true,"alerted_at":"22:45"}}}
+{
+  "date": "2026-11-20",
+  "slots": {
+    "blueprint": {
+      "alerted": true,
+      "alerted_at": "21:45"
+    },
+    "hm": {
+      "aired_late_noticed": true,
+      "alerted": true,
+      "alerted_at": "10:45",
+      "broadcast_checked": true
+    },
+    "spill-repo": {
+      "alerted": true,
+      "alerted_at": "22:45",
+      "aired_late_noticed": true,
+      "broadcast_checked": true
+    }
+  }
+}
