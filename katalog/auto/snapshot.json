@@ -1,6 +1,6 @@
 {
  "date_label": "19 November 2026",
- "last_posted": "2026-11-17",
+ "last_posted": "2026-11-20",
  "products": [
   {
    "dur": "6 Bulan",
@@ -121,14 +121,6 @@
    "price": "6,5K",
    "price_num": 6.5,
    "bot_id": 94
-  },
-  {
-   "sec": "DUOLINGO",
-   "dur": "1 Bulan · Privat",
-   "name": "Duolingo Super Family Plan",
-   "price": "5K",
-   "price_num": 5,
-   "bot_id": 109
   },
   {
    "sec": "CANVA",
