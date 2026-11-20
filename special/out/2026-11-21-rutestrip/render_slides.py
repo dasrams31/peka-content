@@ -142,25 +142,31 @@ def slide1():
     y = 780
     d.text((MARGIN, y), "RUTESTRIP", font=XB(430), fill=WHITE)
     y = 1280
-    y = text_block(d, MARGIN, y, "AI yang ngerti gunung.",
-                   XB(190), MINT3, SIZE - 2 * MARGIN, 1.15)
+    y = text_block(d, MARGIN, y, "Mau mendaki, bingung pilih gunung?",
+                   XB(170), MINT3, SIZE - 2 * MARGIN, 1.15)
     y += 60
     y = text_block(d, MARGIN, y,
-                   "Sistem rekomendasi pendakian + chatbot asisten. "
-                   "Tanya jalur, cuaca, sampai biaya, dijawab pakai data.",
+                   "RuteStrip itu AI yang ngerti gunung. Sistem rekomendasi "
+                   "pendakian + chatbot asisten. Tanya jalur, cuaca, sampai "
+                   "biaya, dijawab pakai data.",
                    SB(105), WHITE, SIZE - 2 * MARGIN, 1.4)
-    box = [MARGIN, 2560, SIZE - MARGIN, 3040]
+    box = [MARGIN, 2100, SIZE - MARGIN, 2580]
     d.rounded_rectangle([box[0] + 22, box[1] + 22, box[2] + 22, box[3] + 22],
                         radius=80, fill=(3, 50, 38))
     d.rounded_rectangle(box, radius=80, fill=GREEN)
-    d.text((MARGIN + 90, 2650), "COBA SEKARANG", font=XB(92), fill=WHITE)
-    text_block(d, MARGIN + 90, 2790,
+    d.text((MARGIN + 90, 2190), "COBA SEKARANG", font=XB(92), fill=WHITE)
+    text_block(d, MARGIN + 90, 2330,
                "Buka chat RuteStrip, tanya gunung buat pemula.",
                SB(92), WHITE, SIZE - 2 * MARGIN - 180, 1.3)
-    d.text((MARGIN, 3200), "GESER", font=B(84), fill=MINT3)
-    gx = MARGIN + 340
-    d.polygon([(gx, 3220), (gx, 3270), (gx + 90, 3245)], fill=MINT3)
-    d.rectangle([gx - 90, 3235, gx + 10, 3255], fill=MINT3)
+    # GESER as a proper button pill, clear of the mountain ridge
+    pill = [MARGIN, 2680, MARGIN + 660, 2680 + 170]
+    d.rounded_rectangle([pill[0] + 14, pill[1] + 14, pill[2] + 14, pill[3] + 14],
+                        radius=85, fill=(3, 50, 38))
+    d.rounded_rectangle(pill, radius=85, fill=WHITE)
+    d.text((MARGIN + 70, 2722), "GESER", font=B(88), fill=DARK)
+    ax = MARGIN + 470
+    d.polygon([(ax, 2730), (ax, 2800), (ax + 80, 2765)], fill=GREEN)
+    d.rectangle([ax - 70, 2755, ax + 10, 2775], fill=GREEN)
     footer(d, "RuteStrip  •  Edisi khusus Peka AI", True)
     img.save(os.path.join(CAR, "slide-01.png"))
 

@@ -3,901 +3,879 @@
   "rate": "+15%",
   "gap": 0.3,
   "tail": 0.8,
-  "duration": 59.468,
-  "audio_duration": 58.668,
+  "duration": 58.712,
+  "audio_duration": 57.912,
   "words": [
     {
-      "text": "RuteStrip",
-      "start": 0.1,
-      "end": 0.589125,
+      "text": "Mau",
+      "start": 0.09675,
+      "end": 0.281541,
       "scene": 0,
       "line": 0
+    },
+    {
+      "text": "mendaki,",
+      "start": 0.281541,
+      "end": 0.846749,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "bingung",
+      "start": 1.064125,
+      "end": 1.34675,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "pilih",
+      "start": 1.34675,
+      "end": 1.520666,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "gunung",
+      "start": 1.520666,
+      "end": 1.727166,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "yang",
+      "start": 1.727166,
+      "end": 1.846749,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "mana?",
+      "start": 1.84675,
+      "end": 2.248916,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "RuteStrip",
+      "start": 2.970666,
+      "end": 3.416291,
+      "scene": 0,
+      "line": 1
     },
     {
       "text": "itu",
-      "start": 0.589125,
-      "end": 0.839125,
+      "start": 3.416291,
+      "end": 3.644541,
       "scene": 0,
-      "line": 0
+      "line": 1
     },
     {
       "text": "AI",
-      "start": 0.839125,
-      "end": 1.089125,
+      "start": 3.644583,
+      "end": 3.829333,
       "scene": 0,
-      "line": 0
+      "line": 1
     },
     {
       "text": "yang",
-      "start": 1.089125,
-      "end": 1.197833,
+      "start": 3.829333,
+      "end": 3.927166,
       "scene": 0,
-      "line": 0
+      "line": 1
     },
     {
       "text": "ngerti",
-      "start": 1.197833,
-      "end": 1.404333,
-      "scene": 0,
-      "line": 0
-    },
-    {
-      "text": "gunung.",
-      "start": 1.404333,
-      "end": 1.849999,
-      "scene": 0,
-      "line": 0
-    },
-    {
-      "text": "Bukan",
-      "start": 2.576083,
-      "end": 2.836958,
+      "start": 3.927166,
+      "end": 4.122832,
       "scene": 0,
       "line": 1
     },
     {
-      "text": "chatbot",
-      "start": 2.836958,
-      "end": 3.141291,
-      "scene": 0,
-      "line": 1
-    },
-    {
-      "text": "biasa,",
-      "start": 3.141291,
-      "end": 3.695624,
-      "scene": 0,
-      "line": 1
-    },
-    {
-      "text": "tapi",
-      "start": 3.945666,
-      "end": 4.163041,
-      "scene": 0,
-      "line": 1
-    },
-    {
-      "text": "asisten",
-      "start": 4.163041,
-      "end": 4.510874,
-      "scene": 0,
-      "line": 1
-    },
-    {
-      "text": "pendakian",
-      "start": 4.510875,
-      "end": 4.869583,
-      "scene": 0,
-      "line": 1
-    },
-    {
-      "text": "yang",
-      "start": 4.869583,
-      "end": 4.999999,
+      "text": "gunung,",
+      "start": 4.122833,
+      "end": 4.546749,
       "scene": 0,
       "line": 1
     },
     {
       "text": "jawab",
-      "start": 5.0,
-      "end": 5.282625,
+      "start": 4.79675,
+      "end": 5.122833,
       "scene": 0,
       "line": 2
     },
     {
       "text": "pakai",
-      "start": 5.282625,
-      "end": 5.510875,
+      "start": 5.122833,
+      "end": 5.340208,
       "scene": 0,
       "line": 2
     },
     {
       "text": "data",
-      "start": 5.510875,
-      "end": 5.706541,
+      "start": 5.340208,
+      "end": 5.524999,
       "scene": 0,
       "line": 2
     },
     {
       "text": "jalur.",
-      "start": 5.706541,
-      "end": 6.173916,
+      "start": 5.525,
+      "end": 6.00325,
       "scene": 0,
       "line": 2
     },
     {
-      "text": "Mau",
-      "start": 7.30875,
-      "end": 7.493541,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "mendaki,",
-      "start": 7.493541,
-      "end": 8.047874,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "bingung",
-      "start": 8.26525,
-      "end": 8.558708,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "pilih",
-      "start": 8.55875,
-      "end": 8.732666,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "gunung",
-      "start": 8.732666,
-      "end": 8.939166,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "yang",
-      "start": 8.939166,
-      "end": 9.058748999999999,
-      "scene": 1,
-      "line": 3
-    },
-    {
-      "text": "mana?",
-      "start": 9.05875,
-      "end": 9.460916,
-      "scene": 1,
-      "line": 3
-    },
-    {
       "text": "Info",
-      "start": 10.190249999999999,
-      "end": 10.4185,
+      "start": 7.14075,
+      "end": 7.455958,
       "scene": 1,
-      "line": 4
+      "line": 3
     },
     {
-      "text": "berserakan,",
-      "start": 10.418541,
-      "end": 11.070706999999999,
+      "text": "berserakan",
+      "start": 7.455958,
+      "end": 7.9450829999999995,
       "scene": 1,
-      "line": 4
+      "line": 3
     },
     {
-      "text": "tiap",
-      "start": 11.331583,
-      "end": 11.505458,
+      "text": "di",
+      "start": 7.9450829999999995,
+      "end": 8.032041,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "mana-mana.",
+      "start": 8.032041,
+      "end": 8.640749,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "Tiap",
+      "start": 9.370083,
+      "end": 9.554874,
       "scene": 1,
       "line": 4
     },
     {
       "text": "jalur",
-      "start": 11.505458,
-      "end": 11.766333,
+      "start": 9.554875,
+      "end": 9.81575,
       "scene": 1,
       "line": 4
     },
     {
       "text": "beda",
-      "start": 11.766333,
-      "end": 11.961998999999999,
+      "start": 9.81575,
+      "end": 10.011375,
       "scene": 1,
       "line": 4
     },
     {
-      "text": "jarak",
-      "start": 11.962,
-      "end": 12.266333,
+      "text": "jarak,",
+      "start": 10.011375,
+      "end": 10.47875,
       "scene": 1,
       "line": 4
     },
     {
-      "text": "dan",
-      "start": 12.266333,
-      "end": 12.418499,
+      "text": "beda",
+      "start": 10.685291,
+      "end": 10.913540999999999,
       "scene": 1,
-      "line": 4
+      "line": 5
+    },
+    {
+      "text": "elevasi,",
+      "start": 10.913583,
+      "end": 11.522291,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "beda",
+      "start": 11.728791,
+      "end": 12.033124,
+      "scene": 1,
+      "line": 5
     },
     {
       "text": "durasi.",
-      "start": 12.418541,
-      "end": 12.940290999999998,
+      "start": 12.033124999999998,
+      "end": 12.576583,
       "scene": 1,
-      "line": 4
+      "line": 5
     },
     {
       "text": "Salah",
-      "start": 13.671790999999999,
-      "end": 13.943541,
+      "start": 13.308125,
+      "end": 13.579875,
       "scene": 1,
-      "line": 5
+      "line": 6
     },
     {
       "text": "pilih,",
-      "start": 13.943541,
-      "end": 14.421790999999999,
+      "start": 13.579875,
+      "end": 14.04725,
       "scene": 1,
-      "line": 5
+      "line": 6
+    },
+    {
+      "text": "bisa",
+      "start": 14.210291,
+      "end": 14.482040999999999,
+      "scene": 1,
+      "line": 6
     },
     {
       "text": "kapok.",
-      "start": 14.606583,
-      "end": 15.063124,
+      "start": 14.482040999999999,
+      "end": 14.916832,
       "scene": 1,
-      "line": 5
+      "line": 6
     },
     {
       "text": "File",
-      "start": 16.208333,
-      "end": 16.436583,
+      "start": 16.064333,
+      "end": 16.292583,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "GPX",
-      "start": 16.436625,
-      "end": 16.893124999999998,
+      "start": 16.292625,
+      "end": 16.803458,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "diubah",
-      "start": 16.893124999999998,
-      "end": 17.197457999999997,
+      "start": 16.803458,
+      "end": 17.107791000000002,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "jadi",
-      "start": 17.197457999999997,
-      "end": 17.414832999999998,
+      "start": 17.107833,
+      "end": 17.346958,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "embedding",
-      "start": 17.414875,
-      "end": 17.795291,
+      "start": 17.346958,
+      "end": 17.727374,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "SBERT",
-      "start": 17.795291,
-      "end": 18.045291,
+      "start": 17.727375000000002,
+      "end": 17.9665,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "384",
-      "start": 18.045291,
-      "end": 19.045291,
+      "start": 17.966541,
+      "end": 18.977375000000002,
       "scene": 2,
-      "line": 6
+      "line": 7
     },
     {
       "text": "dimensi,",
-      "start": 19.045291,
-      "end": 19.588749,
+      "start": 18.977375000000002,
+      "end": 19.520833,
       "scene": 2,
-      "line": 7
+      "line": 8
+    },
+    {
+      "text": "lalu",
+      "start": 19.792625,
+      "end": 20.01,
+      "scene": 2,
+      "line": 8
     },
     {
       "text": "dicocokkan",
-      "start": 19.838791,
-      "end": 20.317041,
+      "start": 20.01,
+      "end": 20.48825,
       "scene": 2,
-      "line": 7
-    },
-    {
-      "text": "sama",
-      "start": 20.317041,
-      "end": 20.512707,
-      "scene": 2,
-      "line": 7
-    },
-    {
-      "text": "pertanyaan",
-      "start": 20.512708,
-      "end": 20.990958,
-      "scene": 2,
-      "line": 7
-    },
-    {
-      "text": "kamu",
-      "start": 20.990958,
-      "end": 21.230083,
-      "scene": 2,
-      "line": 7
+      "line": 8
     },
     {
       "text": "pakai",
-      "start": 21.230083,
-      "end": 21.469208,
+      "start": 20.48825,
+      "end": 20.727375000000002,
       "scene": 2,
-      "line": 7
+      "line": 8
     },
     {
       "text": "Cosine",
-      "start": 21.469208,
-      "end": 21.795291,
+      "start": 20.727375000000002,
+      "end": 21.053458,
       "scene": 2,
-      "line": 7
+      "line": 8
     },
     {
       "text": "Similarity.",
-      "start": 21.795291,
-      "end": 22.469206999999997,
+      "start": 21.053458,
+      "end": 21.727374,
       "scene": 2,
-      "line": 7
+      "line": 8
     },
     {
       "text": "Rute",
-      "start": 23.197457999999997,
-      "end": 23.512666,
+      "start": 22.455666,
+      "end": 22.770874,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "paling",
-      "start": 23.512708,
-      "end": 23.708333,
+      "start": 22.770875,
+      "end": 22.966541,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "cocok",
-      "start": 23.708333,
-      "end": 24.001790999999997,
+      "start": 22.966541,
+      "end": 23.259999,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "naik",
-      "start": 24.001832999999998,
-      "end": 24.175749,
+      "start": 23.26,
+      "end": 23.433916,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "ke",
-      "start": 24.17575,
-      "end": 24.219208000000002,
+      "start": 23.433916,
+      "end": 23.477374,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "atas.",
-      "start": 24.219208000000002,
-      "end": 24.697457999999997,
+      "start": 23.477375000000002,
+      "end": 23.955625,
       "scene": 2,
-      "line": 8
+      "line": 9
     },
     {
       "text": "Aku",
-      "start": 25.838375,
-      "end": 26.099249999999998,
+      "start": 25.094375000000003,
+      "end": 25.35525,
       "scene": 3,
-      "line": 9
+      "line": 10
     },
     {
       "text": "sudah",
-      "start": 26.099249999999998,
-      "end": 26.294874999999998,
+      "start": 25.35525,
+      "end": 25.550875,
       "scene": 3,
-      "line": 9
+      "line": 10
     },
     {
       "text": "coba",
-      "start": 26.294874999999998,
-      "end": 26.490540999999997,
+      "start": 25.550875,
+      "end": 25.746541,
       "scene": 3,
-      "line": 9
+      "line": 10
     },
     {
       "text": "chatbotnya.",
-      "start": 26.490540999999997,
-      "end": 27.175331999999997,
+      "start": 25.746541,
+      "end": 26.431332,
       "scene": 3,
-      "line": 9
+      "line": 10
     },
     {
       "text": "Tanya",
-      "start": 27.903040999999998,
-      "end": 28.109582,
+      "start": 27.159041000000002,
+      "end": 27.365582000000003,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "gunung",
-      "start": 28.109582999999997,
-      "end": 28.326957999999998,
+      "start": 27.365583,
+      "end": 27.582958,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "buat",
-      "start": 28.326957999999998,
-      "end": 28.479124,
+      "start": 27.582958,
+      "end": 27.735124000000003,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "pemula",
-      "start": 28.479125,
-      "end": 28.76175,
+      "start": 27.735125000000004,
+      "end": 28.017750000000003,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "di",
-      "start": 28.76175,
-      "end": 28.848708,
+      "start": 28.017750000000003,
+      "end": 28.104708000000002,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "Jawa",
-      "start": 28.848708,
-      "end": 29.055208,
+      "start": 28.104708000000002,
+      "end": 28.311208,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "Barat,",
-      "start": 29.055208,
-      "end": 29.446499,
+      "start": 28.311208,
+      "end": 28.702499000000003,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "jawabannya",
-      "start": 29.674791,
-      "end": 30.229124,
+      "start": 28.930791000000003,
+      "end": 29.485124000000003,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "Papandayan.",
-      "start": 30.229124999999996,
-      "end": 30.913916,
+      "start": 29.485125000000004,
+      "end": 30.169916,
       "scene": 3,
-      "line": 10
+      "line": 11
     },
     {
       "text": "Cuma",
-      "start": 31.653040999999998,
-      "end": 31.816081999999998,
+      "start": 30.909041000000002,
+      "end": 31.072082,
       "scene": 3,
-      "line": 11
+      "line": 12
     },
     {
       "text": "1,79",
-      "start": 31.816083,
-      "end": 32.729124,
+      "start": 31.072083000000003,
+      "end": 31.995999,
       "scene": 3,
-      "line": 11
+      "line": 12
     },
     {
       "text": "kilometer,",
-      "start": 32.729124999999996,
-      "end": 33.316083,
+      "start": 31.996000000000002,
+      "end": 32.572083,
       "scene": 3,
-      "line": 11
+      "line": 12
     },
     {
       "text": "1,5",
-      "start": 33.544332999999995,
-      "end": 34.163916,
-      "scene": 3,
-      "line": 11
-    },
-    {
-      "text": "jam,",
-      "start": 34.163916,
-      "end": 34.522624,
-      "scene": 3,
-      "line": 11
-    },
-    {
-      "text": "jalurnya",
-      "start": 34.750875,
-      "end": 35.185666,
-      "scene": 3,
-      "line": 11
-    },
-    {
-      "text": "mudah.",
-      "start": 35.185666,
-      "end": 35.631332,
-      "scene": 3,
-      "line": 11
-    },
-    {
-      "text": "Patuha",
-      "start": 36.362832999999995,
-      "end": 36.721541,
+      "start": 32.800333,
+      "end": 33.485124,
       "scene": 3,
       "line": 12
     },
     {
-      "text": "nomor",
-      "start": 36.721541,
-      "end": 36.938916,
-      "scene": 3,
-      "line": 12
-    },
-    {
-      "text": "dua,",
-      "start": 36.938916,
-      "end": 37.373706999999996,
-      "scene": 3,
-      "line": 12
-    },
-    {
-      "text": "1,24",
-      "start": 37.623708,
-      "end": 38.5149999,
-      "scene": 3,
-      "line": 12
-    },
-    {
-      "text": "kilometer.",
-      "start": 38.515,
-      "end": 39.101957999999996,
+      "text": "jam.",
+      "start": 33.485125000000004,
+      "end": 33.865541,
       "scene": 3,
       "line": 12
     },
     {
       "text": "Chatbotnya",
-      "start": 40.25633299999999,
-      "end": 40.74545799999999,
+      "start": 35.01675,
+      "end": 35.538458,
       "scene": 4,
       "line": 13
     },
     {
-      "text": "juga",
-      "start": 40.74545799999999,
-      "end": 40.941123999999995,
+      "text": "bahkan",
+      "start": 35.538458,
+      "end": 35.788458,
       "scene": 4,
       "line": 13
     },
     {
-      "text": "bisa",
-      "start": 40.94112499999999,
-      "end": 41.10416599999999,
-      "scene": 4,
-      "line": 13
-    },
-    {
-      "text": "bikinin",
-      "start": 41.10416599999999,
-      "end": 41.39762399999999,
-      "scene": 4,
-      "line": 13
-    },
-    {
-      "text": "checklist",
-      "start": 41.397665999999994,
-      "end": 41.734624,
-      "scene": 4,
-      "line": 13
-    },
-    {
-      "text": "logistik,",
-      "start": 41.734624999999994,
-      "end": 42.25637499999999,
+      "text": "ngitungin",
+      "start": 35.788458,
+      "end": 36.147166,
       "scene": 4,
       "line": 13
     },
     {
       "text": "air",
-      "start": 42.473749999999995,
-      "end": 42.70199999999999,
+      "start": 36.147166,
+      "end": 36.375416,
       "scene": 4,
-      "line": 14
+      "line": 13
     },
     {
       "text": "18",
-      "start": 42.70199999999999,
-      "end": 43.147665999999994,
+      "start": 36.375416,
+      "end": 36.831957,
       "scene": 4,
-      "line": 14
+      "line": 13
     },
     {
       "text": "liter",
-      "start": 43.147665999999994,
-      "end": 43.35416599999999,
+      "start": 36.831958,
+      "end": 37.081958,
       "scene": 4,
-      "line": 14
+      "line": 13
     },
     {
       "text": "buat",
-      "start": 43.35416599999999,
-      "end": 43.560706999999994,
+      "start": 37.081958,
+      "end": 37.299333000000004,
       "scene": 4,
-      "line": 14
+      "line": 13
     },
     {
       "text": "3",
-      "start": 43.56070799999999,
-      "end": 43.75633299999999,
+      "start": 37.299333000000004,
+      "end": 37.505874,
       "scene": 4,
       "line": 14
     },
     {
       "text": "orang",
-      "start": 43.75633299999999,
-      "end": 43.930248999999996,
+      "start": 37.505875,
+      "end": 37.701541,
       "scene": 4,
       "line": 14
     },
     {
       "text": "2",
-      "start": 43.930249999999994,
-      "end": 44.04983299999999,
+      "start": 37.701541,
+      "end": 37.842832,
       "scene": 4,
       "line": 14
     },
     {
-      "text": "hari,",
-      "start": 44.04983299999999,
-      "end": 44.46287399999999,
+      "text": "hari.",
+      "start": 37.842833,
+      "end": 38.234124,
+      "scene": 4,
+      "line": 14
+    },
+    {
+      "text": "Tenda,",
+      "start": 38.955875,
+      "end": 39.477625,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "gas,",
+      "start": 39.727625,
+      "end": 40.184166000000005,
       "scene": 4,
       "line": 15
     },
     {
       "text": "sampai",
-      "start": 44.70199999999999,
-      "end": 44.99545799999999,
+      "start": 40.368916,
+      "end": 40.651541,
       "scene": 4,
       "line": 15
+    },
+    {
+      "text": "isi",
+      "start": 40.651541,
+      "end": 40.836291,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "kotak",
+      "start": 40.836291,
+      "end": 41.075416000000004,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "P3K.",
+      "start": 41.075416000000004,
+      "end": 41.760207900000005,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Terus",
+      "start": 42.90075,
+      "end": 43.15075,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "dia",
+      "start": 43.15075,
+      "end": 43.313791,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "bikinin",
+      "start": 43.313791,
+      "end": 43.618124,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "itinerary",
-      "start": 44.99545799999999,
-      "end": 45.430248999999996,
-      "scene": 4,
-      "line": 15
+      "start": 43.618125,
+      "end": 44.0855,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "2",
-      "start": 45.430249999999994,
-      "end": 45.582415999999995,
-      "scene": 4,
-      "line": 15
+      "start": 44.085541,
+      "end": 44.259416,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "hari",
-      "start": 45.582415999999995,
-      "end": 45.734581999999996,
-      "scene": 4,
-      "line": 15
+      "start": 44.259416,
+      "end": 44.422457,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "1",
-      "start": 45.734624999999994,
-      "end": 45.95199999999999,
-      "scene": 4,
-      "line": 15
+      "start": 44.422458,
+      "end": 44.650708,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "malam",
-      "start": 45.95199999999999,
-      "end": 46.169374999999995,
-      "scene": 4,
-      "line": 15
+      "start": 44.65075,
+      "end": 44.879000000000005,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "Papandayan.",
-      "start": 46.169374999999995,
-      "end": 46.832415999999995,
-      "scene": 4,
-      "line": 15
+      "start": 44.879000000000005,
+      "end": 45.574666,
+      "scene": 5,
+      "line": 16
     },
     {
       "text": "Totalnya",
-      "start": 47.557415999999996,
-      "end": 47.99220699999999,
-      "scene": 4,
-      "line": 16
+      "start": 46.296375000000005,
+      "end": 46.731166,
+      "scene": 5,
+      "line": 17
+    },
+    {
+      "text": "cuma",
+      "start": 46.731166,
+      "end": 46.915957000000006,
+      "scene": 5,
+      "line": 17
+    },
+    {
+      "text": "sekitar",
+      "start": 46.915958,
+      "end": 47.220291,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "250",
-      "start": 47.99220799999999,
-      "end": 48.78566599999999,
-      "scene": 4,
-      "line": 16
+      "start": 47.220291,
+      "end": 48.024624,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "sampai",
-      "start": 48.78570799999999,
-      "end": 49.079165999999994,
-      "scene": 4,
-      "line": 16
+      "start": 48.024666,
+      "end": 48.318124000000005,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "300",
-      "start": 49.079165999999994,
-      "end": 49.49220799999999,
-      "scene": 4,
-      "line": 16
+      "start": 48.318125,
+      "end": 48.731166,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "ribu",
-      "start": 49.49220799999999,
-      "end": 49.687873999999994,
-      "scene": 4,
-      "line": 16
+      "start": 48.731166,
+      "end": 48.926832000000005,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "per",
-      "start": 49.68787499999999,
-      "end": 49.78570799999999,
-      "scene": 4,
-      "line": 16
+      "start": 48.926833,
+      "end": 49.024666,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "orang.",
-      "start": 49.78570799999999,
-      "end": 50.20962399999999,
-      "scene": 4,
-      "line": 16
+      "start": 49.024666,
+      "end": 49.448582,
+      "scene": 5,
+      "line": 17
     },
     {
       "text": "Coba",
-      "start": 51.348749999999995,
-      "end": 51.587875,
-      "scene": 5,
-      "line": 17
+      "start": 50.59275,
+      "end": 50.831875000000004,
+      "scene": 6,
+      "line": 18
     },
     {
       "text": "sendiri,",
-      "start": 51.587875,
-      "end": 52.131333,
-      "scene": 5,
-      "line": 17
+      "start": 50.831875000000004,
+      "end": 51.375333000000005,
+      "scene": 6,
+      "line": 18
     },
     {
       "text": "gratis.",
-      "start": 52.359624999999994,
-      "end": 52.990041,
-      "scene": 5,
-      "line": 17
+      "start": 51.603625,
+      "end": 52.234041000000005,
+      "scene": 6,
+      "line": 18
     },
     {
       "text": "Papandayan",
-      "start": 53.711791,
-      "end": 54.233540999999995,
-      "scene": 5,
-      "line": 18
+      "start": 52.955791000000005,
+      "end": 53.477541,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "atau",
-      "start": 54.233540999999995,
-      "end": 54.407416,
-      "scene": 5,
-      "line": 18
+      "start": 53.477541,
+      "end": 53.651416000000005,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "Patuha,",
-      "start": 54.407416,
-      "end": 54.961749,
-      "scene": 5,
-      "line": 18
+      "start": 53.651416000000005,
+      "end": 54.205749000000004,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "kamu",
-      "start": 55.190040999999994,
-      "end": 55.407416,
-      "scene": 5,
-      "line": 18
+      "start": 54.434041,
+      "end": 54.651416000000005,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "pilih",
-      "start": 55.407416,
-      "end": 55.581331999999996,
-      "scene": 5,
-      "line": 18
+      "start": 54.651416000000005,
+      "end": 54.825332,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "yang",
-      "start": 55.581332999999994,
-      "end": 55.70091599999999,
-      "scene": 5,
-      "line": 18
+      "start": 54.825333,
+      "end": 54.944916,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "mana?",
-      "start": 55.70091599999999,
-      "end": 56.092206999999995,
-      "scene": 5,
-      "line": 18
+      "start": 54.944916,
+      "end": 55.336207,
+      "scene": 6,
+      "line": 19
     },
     {
       "text": "Follow",
-      "start": 56.82375,
-      "end": 57.236791,
-      "scene": 5,
-      "line": 19
+      "start": 56.067750000000004,
+      "end": 56.480791,
+      "scene": 6,
+      "line": 20
     },
     {
       "text": "Peka",
-      "start": 57.236791,
-      "end": 57.519374,
-      "scene": 5,
-      "line": 19
+      "start": 56.480791,
+      "end": 56.763374,
+      "scene": 6,
+      "line": 20
     },
     {
       "text": "AI.",
-      "start": 57.519375,
-      "end": 57.921541,
-      "scene": 5,
-      "line": 19
+      "start": 56.763375,
+      "end": 57.165541000000005,
+      "scene": 6,
+      "line": 20
     }
   ],
   "scenes": [
     {
-      "start": 0.1,
-      "end": 6.912,
-      "first_word": 0.1,
-      "last_word_end": 6.173916
+      "start": 0.09675,
+      "end": 6.744,
+      "first_word": 0.09675,
+      "last_word_end": 6.00325
     },
     {
-      "start": 7.30875,
-      "end": 15.804,
-      "first_word": 7.30875,
-      "last_word_end": 15.063124
+      "start": 7.14075,
+      "end": 15.66,
+      "first_word": 7.14075,
+      "last_word_end": 14.916832
     },
     {
-      "start": 16.208333,
-      "end": 25.439999999999998,
-      "first_word": 16.208333,
-      "last_word_end": 24.697457999999997
+      "start": 16.064333,
+      "end": 24.696,
+      "first_word": 16.064333,
+      "last_word_end": 23.955625
     },
     {
-      "start": 25.838375,
-      "end": 39.852,
-      "first_word": 25.838375,
-      "last_word_end": 39.101957999999996
+      "start": 25.094375000000003,
+      "end": 34.620000000000005,
+      "first_word": 25.094375000000003,
+      "last_word_end": 33.865541
     },
     {
-      "start": 40.25633299999999,
-      "end": 50.952,
-      "first_word": 40.25633299999999,
-      "last_word_end": 50.20962399999999
+      "start": 35.01675,
+      "end": 42.504000000000005,
+      "first_word": 35.01675,
+      "last_word_end": 41.760207900000005
     },
     {
-      "start": 51.348749999999995,
-      "end": 58.66799999999999,
-      "first_word": 51.348749999999995,
-      "last_word_end": 57.921541
+      "start": 42.90075,
+      "end": 50.196000000000005,
+      "first_word": 42.90075,
+      "last_word_end": 49.448582
+    },
+    {
+      "start": 50.59275,
+      "end": 57.912000000000006,
+      "first_word": 50.59275,
+      "last_word_end": 57.165541000000005
     }
   ],
-  "word_count": 122
+  "word_count": 118
 }

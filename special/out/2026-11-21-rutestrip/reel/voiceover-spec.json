@@ -22,9 +22,9 @@
     {
       "badge": "EDISI KHUSUS",
       "headline": [
-        "RUTESTRIP",
-        "AI yang ngerti",
-        "gunung."
+        "Mau mendaki,",
+        "bingung pilih",
+        "gunung?"
       ],
       "kind": "hook",
       "mascot": {
@@ -32,9 +32,9 @@
         "side": "right",
         "width": 260
       },
-      "narration": "RuteStrip itu AI yang ngerti gunung. Bukan chatbot biasa, tapi asisten pendakian yang jawab pakai data jalur.",
+      "narration": "Mau mendaki, bingung pilih gunung yang mana? RuteStrip itu AI yang ngerti gunung, jawab pakai data jalur.",
       "pose": "wave",
-      "sub": "Sistem rekomendasi pendakian + chatbot asisten."
+      "sub": "RuteStrip: AI yang ngerti gunung."
     },
     {
       "kind": "beat",
@@ -49,7 +49,7 @@
         "side": "left",
         "width": 170
       },
-      "narration": "Mau mendaki, bingung pilih gunung yang mana? Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, kapok.",
+      "narration": "Info berserakan di mana-mana. Tiap jalur beda jarak, beda elevasi, beda durasi. Salah pilih, bisa kapok.",
       "pose": "present"
     },
     {
@@ -66,17 +66,52 @@
         "side": "left",
         "width": 160
       },
-      "narration": "File GPX diubah jadi embedding SBERT 384 dimensi, dicocokkan sama pertanyaan kamu pakai Cosine Similarity. Rute paling cocok naik ke atas.",
+      "narration": "File GPX diubah jadi embedding SBERT 384 dimensi, lalu dicocokkan pakai Cosine Similarity. Rute paling cocok naik ke atas.",
       "pose": "base",
       "stat": "384",
       "stat_label": "Dimensi embedding SBERT"
     },
     {
+      "bars": [
+        {
+          "accent": true,
+          "color": "#059669",
+          "display": "1,79 km",
+          "label": "Papandayan",
+          "max": 2.0,
+          "tag": "TOP PICK",
+          "value": 1.79
+        },
+        {
+          "display": "1,24 km",
+          "label": "Patuha · 1,1 jam",
+          "max": 2.0,
+          "value": 1.24
+        },
+        {
+          "display": "1,92 km",
+          "label": "Lembu",
+          "max": 2.0,
+          "value": 1.92
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam.",
+      "pose": "wave",
+      "stat": "1,79 km",
+      "stat_label": "Papandayan, top pick buat pemula. 1,5 jam, jalur Mudah."
+    },
+    {
       "kind": "beat",
       "lines": [
-        "Durasi Naismith <b>1,5 jam</b>, jalur <b>Mudah</b>",
-        "Patuha nomor dua: <b>1,24 km</b> dalam 1,1 jam",
-        "Kawah + Hutan Mati yang ikonik"
+        "Tenda dome, gas 4 kaleng, 1 kompor",
+        "Logistik 18 porsi + snack energi",
+        "P3K: obat, oxycan, thermal blanket"
       ],
       "mascot": {
         "bottom": 470,
@@ -84,33 +119,33 @@
         "side": "left",
         "width": 170
       },
-      "narration": "Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam, jalurnya mudah. Patuha nomor dua, 1,24 kilometer.",
+      "narration": "Chatbotnya bahkan ngitungin air 18 liter buat 3 orang 2 hari. Tenda, gas, sampai isi kotak P3K.",
       "pose": "present",
-      "stat": "1,79 km",
-      "stat_label": "Papandayan, top pick buat pemula"
+      "stat": "18 L",
+      "stat_label": "Air bersih buat 3 orang 2 hari"
     },
     {
       "kind": "beat",
       "lines": [
-        "Checklist logistik lengkap, tenda sampai P3K",
-        "Itinerary 2 hari 1 malam Papandayan",
-        "Total sekitar <b>Rp250-300 ribu</b> per orang"
+        "Start basecamp 08:00, summit Tegal Alun 06:30",
+        "Simaksi Rp30 ribu weekday, Rp45 ribu weekend",
+        "Total cuma sekitar <b>Rp250-300 ribu</b> per orang"
       ],
       "mascot": {
         "bottom": 470,
         "side": "right",
         "width": 170
       },
-      "narration": "Chatbotnya juga bisa bikinin checklist logistik, air 18 liter buat 3 orang 2 hari, sampai itinerary 2 hari 1 malam Papandayan. Totalnya 250 sampai 300 ribu per orang.",
+      "narration": "Terus dia bikinin itinerary 2 hari 1 malam Papandayan. Totalnya cuma sekitar 250 sampai 300 ribu per orang.",
       "pose": "base",
-      "stat": "18 L",
-      "stat_label": "Air bersih buat 3 orang 2 hari"
+      "stat": "2D1N",
+      "stat_label": "Itinerary Papandayan via Cisurupan"
     },
     {
       "follow": "Follow <b>@peka.ai.id</b> buat konten AI lainnya.",
       "headline": [
         "Papandayan",
-        "atau Patuha,",
+        "atau Patuha?",
         "pilih yang mana?"
       ],
       "kind": "close",
@@ -128,5 +163,5 @@
     }
   ],
   "theme": "rute-green",
-  "title": "RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme)"
+  "title": "RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme, v2 hook + bars)"
 }

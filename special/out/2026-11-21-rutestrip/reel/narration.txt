@@ -1,18 +1,21 @@
 [scene 0 - hook]
-RuteStrip itu AI yang ngerti gunung. Bukan chatbot biasa, tapi asisten pendakian yang jawab pakai data jalur.
+Mau mendaki, bingung pilih gunung yang mana? RuteStrip itu AI yang ngerti gunung, jawab pakai data jalur.
 
 [scene 1 - beat]
-Mau mendaki, bingung pilih gunung yang mana? Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, kapok.
+Info berserakan di mana-mana. Tiap jalur beda jarak, beda elevasi, beda durasi. Salah pilih, bisa kapok.
 
 [scene 2 - beat]
-File GPX diubah jadi embedding SBERT 384 dimensi, dicocokkan sama pertanyaan kamu pakai Cosine Similarity. Rute paling cocok naik ke atas.
+File GPX diubah jadi embedding SBERT 384 dimensi, lalu dicocokkan pakai Cosine Similarity. Rute paling cocok naik ke atas.
 
 [scene 3 - beat]
-Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam, jalurnya mudah. Patuha nomor dua, 1,24 kilometer.
+Aku sudah coba chatbotnya. Tanya gunung buat pemula di Jawa Barat, jawabannya Papandayan. Cuma 1,79 kilometer, 1,5 jam.
 
 [scene 4 - beat]
-Chatbotnya juga bisa bikinin checklist logistik, air 18 liter buat 3 orang 2 hari, sampai itinerary 2 hari 1 malam Papandayan. Totalnya 250 sampai 300 ribu per orang.
+Chatbotnya bahkan ngitungin air 18 liter buat 3 orang 2 hari. Tenda, gas, sampai isi kotak P3K.
 
-[scene 5 - close]
+[scene 5 - beat]
+Terus dia bikinin itinerary 2 hari 1 malam Papandayan. Totalnya cuma sekitar 250 sampai 300 ribu per orang.
+
+[scene 6 - close]
 Coba sendiri, gratis. Papandayan atau Patuha, kamu pilih yang mana? Follow Peka AI.
 
