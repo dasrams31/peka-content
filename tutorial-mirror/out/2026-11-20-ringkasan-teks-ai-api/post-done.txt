@@ -1,2 +1,6 @@
 IG_OK https://www.instagram.com/reel/Df9QfpXD-jF/
 IG_MEDIA 18120501712810872
+THREADS_ROOT_OK https://www.threads.com/@peka.ai.id/post/Df9W1s7kyBA
+THREADS_ROOT_ID 18402246130237490
+THREADS_REPLY_1_OK https://www.threads.com/@peka.ai.id/post/Df9W3Atk82w
+THREADS_REPLY_1_ID 18034816250917226
