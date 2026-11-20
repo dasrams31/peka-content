@@ -1,0 +1,48 @@
+{
+ "agent": "HERMES",
+ "episode": 31,
+ "next": "OPENCODE",
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-20/carousel",
+ "repos": [
+  {
+   "cocok": "Kamu yang mau Hermes kerja bareng banyak agent sekaligus, bukan sendirian.",
+   "desc": "Ruflo itu harness agent asli buat ngejalanin swarm multi-agent, bukan satu agent sendirian. Kamu bisa deploy banyak agent yang kerja bareng dan koordinasi workflow otonom. Di dalamnya ada memori adaptif, kecerdasan yang belajar sendiri, federasi, plus integrasi vector RAG. Ruflo nyambung native ke Claude Code, Codex, dan Hermes, jadi tinggal colok ke agent yang udah kamu pakai. Hasilnya tugas besar kebagi rapi dan kelar lebih cepat tanpa kamu awasin satu-satu.",
+   "install": "claude plugin install ruflo-core@ruflo --marketplace ruvnet/ruflo",
+   "name": "ruvnet/ruflo",
+   "shortlink": "https://s.peka.ai.id/gZNrgi",
+   "stars": "82RB"
+  },
+  {
+   "cocok": "Kamu yang capek ngulang penjelasan yang sama ke agent tiap sesi baru.",
+   "desc": "AgentMemory itu memori persisten buat AI coding agent, dan dia klaim nomor satu berdasarkan benchmark dunia nyata. Agent kamu jadi ingat semua yang udah dikerjain di sesi sebelumnya, jadi nggak perlu dijelasin ulang dari nol. Memorinya nyimpen konteks proyek, keputusan, dan pola kerja kamu, lalu manggil lagi pas dibutuhkan. Hasilnya agent kamu makin nyambung sama proyekmu dari hari ke hari, bukan cuma pinter sesaat.",
+   "install": "npx skills add rohitg00/agentmemory -y",
+   "name": "rohitg00/agentmemory",
+   "shortlink": "https://s.peka.ai.id/Gsc2yL",
+   "stars": "30RB"
+  },
+  {
+   "cocok": "Kamu yang bangun agent buat produksi dan butuh memorinya serius, bukan sekadar catatan.",
+   "desc": "Memori itu infrastruktur memori asli buat agent, yang ngubah tiap eksekusi dan percakapan agent jadi state terstruktur yang tersimpan permanen. Dia agnostik sama model AI apa pun, jadi nggak ngunci kamu ke satu provider. Memori ini dirancang buat sistem produksi dan jalan di cloud, VPC, sampai on-premise. Hasilnya agent kamu nggak gampang lupa dan tetap konsisten.",
+   "install": "pip install memori",
+   "name": "MemoriLabs/Memori",
+   "shortlink": "https://s.peka.ai.id/K8Kfvh",
+   "stars": "18RB"
+  },
+  {
+   "cocok": "Kamu yang pakai banyak agent sekaligus dan mau semuanya ingat kamu yang sama.",
+   "desc": "Memmy itu agent pribadi plus hub memori lokal buat semua AI agent kamu. Semua agent kamu berbagi satu memori yang sama dan sepenuhnya kamu yang kontrol, jadi tiap agent ingat kamu yang sama. Konteksnya persisten, jadi agent nggak reset ingatan tiap ganti sesi atau ganti tool. Memmy udah dukung Claude Code, Codex, OpenClaw, dan Hermes Agent. Hasilnya kamu nggak perlu cerita ulang siapa kamu dan proyekmu lagi ke tiap agent.",
+   "install": "npx skills add MemTensor/memmy-agent -g",
+   "name": "MemTensor/memmy-agent",
+   "shortlink": "https://s.peka.ai.id/MarAcd",
+   "stars": "2RB"
+  },
+  {
+   "cocok": "Kamu yang pakai Hermes dan mau lihat isi kepala agent kamu dari dashboard, bukan cuma terminal.",
+   "desc": "Hermes Hudui itu dashboard web buat ngawasin kesadaran Hermes, agent AI dengan memori persisten. Kamu bisa lihat apa yang lagi dipikirin dan diinget agent kamu, langsung dari browser. Tampilannya bikin kerja agent yang biasanya cuma teks di terminal jadi kelihatan dan gampang dipantau. Kamu tinggal jalanin, lalu buka dashboardnya buat mantau Hermes kerja. Hasilnya kamu lebih gampang ngerti kenapa agent kamu ngambil keputusan tertentu.",
+   "install": "pip install 'hermes-hudui[tui]'",
+   "name": "joeynyc/hermes-hudui",
+   "shortlink": "https://s.peka.ai.id/19T2Io",
+   "stars": "2RB"
+  }
+ ]
+}
