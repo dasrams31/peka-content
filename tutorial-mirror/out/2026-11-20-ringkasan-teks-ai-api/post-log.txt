@@ -1,0 +1,5 @@
+threads: 
+instagram: https://www.instagram.com/reel/Df9QfpXD-jF/
+facebook: 
+shortlink: https://s.peka.ai.id/loM6Pk
+blog: https://blog.peka.ai.id/p/cara-bikin-fitur-ringkasan-teks-otomatis-dengan-ai-api
