@@ -1,0 +1,7 @@
+Agent Hermes kamu masih kerja sendirian? Ruflo udah disukai 82 ribu orang di GitHub, dan ini cuma satu dari 5 skill Hermes di edisi ini.
+
+Edisi ini ada 5 repo skill Hermes: Ruflo buat ngejalanin swarm multi-agent; AgentMemory buat memori persisten antar sesi; Memori buat infrastruktur memori produksi; Memmy buat hub memori lokal semua agent; dan Hermes Hudui buat ngawasin Hermes dari dashboard.
+
+Langkah pertama: pasang Ruflo, lalu jalanin satu swarm kecil buat tugas yang biasa kamu kerjain manual.
+
+Link tiap repo ada di slide-nya masing-masing. Repo mana yang mau kamu coba duluan? Share ke teman yang lagi butuh skill AI.
