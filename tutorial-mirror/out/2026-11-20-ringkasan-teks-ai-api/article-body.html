@@ -1,0 +1,157 @@
+<p>Pernah buka artikel panjang lalu langsung menutupnya karena tidak ada waktu baca sampai habis? Pengguna aplikasimu merasakan hal yang sama. Fitur ringkasan otomatis menyelesaikan masalah itu: pengguna tempel teks atau unggah dokumen, lalu mendapat versi singkatnya dalam hitungan detik.</p>
+<p>Fitur ini tidak butuh model AI sendiri. Cukup panggil AI API dari provider seperti OpenAI, atau endpoint lain yang memakai format yang sama, lalu bungkus hasilnya di aplikasimu. Tutorial ini menunjukkan cara lengkapnya di Laravel, dari memotong teks panjang sampai menampilkannya di frontend.</p>
+<h2>Cara kerja fitur ringkasan</h2>
+<p>Alurnya sederhana dan terdiri dari empat langkah. Pertama, aplikasi menerima teks dari pengguna, entah lewat textarea, file yang diunggah, atau artikel yang sudah tersimpan di database. Kedua, teks dipotong menjadi bagian-bagian kecil kalau terlalu panjang, karena setiap model AI punya batas token input. Ketiga, tiap bagian dikirim ke AI API bersama prompt yang memerintahkan model untuk meringkas. Keempat, hasilnya digabung, dibersihkan, lalu ditampilkan ke pengguna.</p>
+<p>Satu hal penting: jangan kirim seluruh dokumen 50 halaman dalam satu request. Selain berisiko melebihi batas token, biayanya membengkak dan hasilnya cenderung menurun kualitasnya. Potong dulu, ringkas per bagian, lalu ringkas hasil gabungannya. Pola ini akan kita pakai di kode nanti.</p>
+<h2>Siapkan API key dan endpoint</h2>
+<p>Simpan API key di file <code>.env</code>, jangan pernah menulisnya langsung di kode. Tambahkan tiga baris ini:</p>
+<pre><code>AI_API_KEY=sk-isi-api-key-kamu-di-sini
+AI_API_URL=https://api.openai.com/v1
+AI_SUMMARY_MODEL=gpt-4o-mini</code></pre>
+<p>Lalu daftarkan di <code>config/services.php</code> supaya bisa dibaca dari mana saja:</p>
+<pre><code>'ai' =&gt; [
+    'key' =&gt; env('AI_API_KEY'),
+    'url' =&gt; env('AI_API_URL', 'https://api.openai.com/v1'),
+    'summary_model' =&gt; env('AI_SUMMARY_MODEL', 'gpt-4o-mini'),
+],</code></pre>
+<p>Pakai model ringan untuk tugas ringkasan. Model besar memang lebih pintar, tapi untuk meringkas teks biasa selisih kualitasnya kecil sementara harganya bisa sepuluh kali lipat. Model ringan juga merespons lebih cepat, dan kecepatan itu terasa langsung oleh pengguna. Kalau kamu memakai provider lain yang menyediakan endpoint kompatibel OpenAI, cukup ganti <code>AI_API_URL</code> dan nama modelnya. Kode di bawah memakai format request standar, jadi tidak perlu diubah.</p>
+<h2>Potong teks panjang jadi bagian kecil</h2>
+<p>Model AI menghitung input dalam token, bukan kata. Sebagai patokan kasar, 1 token kira-kira sama dengan 4 karakter teks Bahasa Indonesia atau Inggris. Artikel 3.000 kata berarti sekitar 12.000 karakter, atau 3.000 token. Masih aman untuk satu request, tapi dokumen yang lebih panjang harus dipotong.</p>
+<p>Buat service class <code>app/Services/SummarizerService.php</code>. Method pertama memotong teks berdasarkan jumlah kata, bukan karakter, supaya potongan tidak berhenti di tengah kalimat secara brutal:</p>
+<pre><code>&lt;?php
+
+namespace App\Services;
+
+class SummarizerService
+{
+    public function chunkText(string $text, int $maxWords = 1200): array
+    {
+        $words = preg_split('/\s+/', trim($text));
+        $chunks = [];
+
+        foreach (array_chunk($words, $maxWords) as $part) {
+            $chunks[] = implode(' ', $part);
+        }
+
+        return $chunks;
+    }
+}</code></pre>
+<p>Kenapa 1.200 kata per potongan? Satu potongan 1.200 kata kira-kira 1.500 sampai 1.800 token, menyisakan ruang untuk prompt dan jawaban di dalam batas konteks model ringan yang biasanya 128 ribu token. Angka ini aman dan hasilnya tetap koheren, karena tiap potongan masih cukup panjang untuk dipahami konteksnya.</p>
+<h2>Panggil AI API dari Laravel</h2>
+<p>Tambahkan method <code>summarizeChunk</code> di service yang sama. Method ini mengirim satu potongan teks ke AI API dan mengembalikan ringkasannya:</p>
+<pre><code>use Illuminate\Support\Facades\Http;
+
+public function summarizeChunk(string $chunk): string
+{
+    $response = Http::withToken(config('services.ai.key'))
+        -&gt;timeout(60)
+        -&gt;post(config('services.ai.url') . '/chat/completions', [
+            'model' =&gt; config('services.ai.summary_model'),
+            'temperature' =&gt; 0.3,
+            'max_tokens' =&gt; 500,
+            'messages' =&gt; [
+                [
+                    'role' =&gt; 'system',
+                    'content' =&gt; 'Kamu adalah peringkas teks. Ringkas teks berikut '
+                        . 'dalam Bahasa Indonesia, maksimal 5 poin penting. '
+                        . 'Pakai kalimat sendiri, jangan menambah fakta baru, '
+                        . 'dan jangan mengubah angka atau nama yang disebut.',
+                ],
+                ['role' =&gt; 'user', 'content' =&gt; $chunk],
+            ],
+        ]);
+
+    if ($response-&gt;failed()) {
+        throw new \RuntimeException(
+            'Gagal memanggil AI API: ' . $response-&gt;status()
+        );
+    }
+
+    return trim($response-&gt;json('choices.0.message.content', ''));
+}</code></pre>
+<p>Perhatikan tiga detail di kode ini. Nilai <code>temperature</code> 0.3 membuat jawaban lebih konsisten dan faktual, karena ringkasan butuh ketepatan, bukan kreativitas. <code>max_tokens</code> 500 membatasi biaya sekaligus mencegah jawaban bertele-tele. Prompt system secara eksplisit melarang model menambah fakta baru, ini penting untuk mengurangi halusinasi.</p>
+<p>Method utama menggabungkan semuanya dengan pola map-reduce:</p>
+<pre><code>public function summarize(string $text): string
+{
+    $chunks = $this-&gt;chunkText($text);
+
+    $summaries = array_map(
+        fn (string $chunk) =&gt; $this-&gt;summarizeChunk($chunk),
+        $chunks
+    );
+
+    if (count($summaries) === 1) {
+        return $summaries[0];
+    }
+
+    $combined = implode("\n\n", $summaries);
+
+    return $this-&gt;summarizeChunk(
+        "Gabungkan ringkasan-ringkasan berikut menjadi satu ringkasan utuh:\n\n" . $combined
+    );
+}</code></pre>
+<p>Kalau teks hanya menghasilkan satu potongan, hasilnya langsung dikembalikan tanpa request kedua. Kalau ada banyak potongan, tiap potongan diringkas dulu, lalu hasil gabungannya diringkas sekali lagi menjadi satu ringkasan utuh. Dua tahap ini jauh lebih murah daripada mengirim dokumen utuh sekaligus, dan hasilnya lebih rapi.</p>
+<h2>Buat endpoint dan tampilkan di frontend</h2>
+<p>Terakhir, buat endpoint API di <code>routes/api.php</code>:</p>
+<pre><code>use App\Services\SummarizerService;
+use Illuminate\Http\Request;
+
+Route::post('/summarize', function (Request $request, SummarizerService $summarizer) {
+    $validated = $request-&gt;validate([
+        'text' =&gt; 'required|string|min:200|max:100000',
+    ]);
+
+    $summary = $summarizer-&gt;summarize($validated['text']);
+
+    return response()-&gt;json(['summary' =&gt; $summary]);
+});</code></pre>
+<p>Validasi <code>min:200</code> mencegah pengguna mengirim teks dua kalimat lalu protes karena ringkasannya sama panjangnya dengan teks asli. Batas <code>max:100000</code> melindungi server dari input raksasa yang menghabiskan kuota API dalam satu request.</p>
+<p>Di sisi frontend, cukup kirim teks lewat <code>fetch</code> dan tampilkan hasilnya. Contoh dengan JavaScript polos:</p>
+<pre><code>async function summarizeText(text) {
+  const button = document.querySelector('#summarize-btn');
+  button.disabled = true;
+  button.textContent = 'Meringkas...';
+
+  try {
+    const response = await fetch('/api/summarize', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+      },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Server membalas ' + response.status);
+    }
+
+    const data = await response.json();
+    document.querySelector('#summary-result').textContent = data.summary;
+  } catch (error) {
+    document.querySelector('#summary-result').textContent =
+      'Ringkasan gagal dibuat. Coba lagi sebentar lagi.';
+    console.error(error);
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Ringkas Sekarang';
+  }
+}</code></pre>
+<p>Tombol di-disable selama request berjalan supaya pengguna tidak mengirim request yang sama berkali-kali. Pesan error yang ditampilkan ke pengguna dibuat umum, sementara detail teknisnya dicatat di <code>console.error</code> untuk debugging.</p>
+<h2>Kesalahan umum pemula</h2>
+<p>Pertama, mengirim seluruh dokumen dalam satu request. Dokumen 20 ribu kata dikirim mentah-mentah, API membalas error token limit, lalu developer mengira API-nya rusak. Selalu potong dulu seperti contoh di atas, dan tampilkan batas panjang input yang jelas di form.</p>
+<p>Kedua, prompt terlalu longgar. Prompt seperti "ringkas teks ini" memberi model kebebasan terlalu besar. Hasilnya tidak konsisten: kadang satu paragraf, kadang sepuluh poin, kadang malah menerjemahkan. Tulis prompt yang spesifik: sebut bahasa hasil, jumlah poin maksimal, dan larangan menambah fakta. Semakin spesifik promptnya, semakin stabil hasilnya.</p>
+<p>Ketiga, tidak menangani error API. API bisa timeout, kehabisan kuota, atau sedang down. Kalau kode tidak menangani kegagalan, pengguna hanya melihat halaman loading yang tidak pernah selesai. Selalu bungkus pemanggilan API dengan pengecekan status dan berikan pesan error yang jelas.</p>
+<p>Keempat, mengabaikan biaya. Setiap request ada harganya, dan biaya kecil menjadi besar kalau fitur dipakai ribuan kali sehari. Batasi panjang input, pakai model murah, dan simpan hasil ringkasan di cache. Untuk teks yang sama, tidak ada alasan memanggil API dua kali:</p>
+<pre><code>use Illuminate\Support\Facades\Cache;
+
+$summary = Cache::remember(
+    'summary:' . md5($text),
+    now()-&gt;addDays(7),
+    fn () =&gt; $summarizer-&gt;summarize($text)
+);</code></pre>
+<p>Kelima, menampilkan ringkasan tanpa sumber. Ringkasan AI kadang salah, terutama soal angka dan nama. Jangan tampilkan ringkasan sendirian untuk konten yang penting. Tampilkan berdampingan dengan teks asli, atau sertakan tautan ke sumber, supaya pengguna bisa memeriksa sendiri poin yang meragukan.</p>
+<h2>Langkah praktis yang bisa dicoba hari ini</h2>
+<p>Mulai dari yang paling kecil dan uji dengan teks nyata. Buat service class seperti contoh di atas, daftarkan route <code>/api/summarize</code>, lalu uji dengan artikel blog sepanjang 1.500 kata. Bandingkan ringkasan hasil AI dengan ringkasan yang kamu tulis sendiri. Kalau poin pentingnya tertangkap semua, prompt kamu sudah cukup bagus.</p>
+<p>Setelah itu, tambahkan tiga hal secara bertahap. Pertama, cache seperti contoh di atas. Kedua, simpan riwayat ringkasan pengguna ke database supaya mereka bisa membuka lagi tanpa request ulang. Ketiga, tambahkan pilihan gaya ringkasan, misalnya mode singkat tiga poin dan mode detail sepuluh poin, cukup dengan mengubah prompt system.</p>
+<p>Fitur ringkasan teks adalah salah satu integrasi AI paling mudah yang bisa langsung dirasakan manfaatnya oleh pengguna. Tidak butuh infrastruktur khusus, tidak butuh melatih model, dan biayanya kecil. Yang dibutuhkan hanya pemotongan teks yang benar, prompt yang spesifik, dan penanganan error yang rapi. Setelah tiga hal itu beres, fitur ini bisa jalan stabil di production.</p>

@@ -1,0 +1,5 @@
+Artikel panjang, ringkasannya hitungan detik.
+
+Bikin fitur ringkasan teks otomatis pakai AI API di Laravel ternyata tidak butuh model sendiri. Kuncinya ada di tiga hal: potong teks jadi bagian 1.200 kata, prompt yang spesifik, dan penanganan error yang rapi.
+
+Link blognya ada di akhir video.

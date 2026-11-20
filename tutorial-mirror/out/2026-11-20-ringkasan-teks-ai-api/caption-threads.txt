@@ -1,0 +1,9 @@
+Artikel panjang, ringkasannya hitungan detik.
+
+Pernah buka artikel panjang lalu langsung menutupnya karena tidak sempat baca? Fitur ringkasan teks otomatis menyelesaikan masalah itu, tanpa perlu bikin model AI sendiri.
+
+Di carousel ini: kenapa dokumen utuh itu jebakan, pola potong dulu baru ringkas, sampai contoh prompt yang menjaga fakta.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Fitur AI apa yang paling kamu pengin di aplikasimu, ringkasan teks atau chatbot? #AI

@@ -1,0 +1,1 @@
+Tiga langkahnya: buat service SummarizerService, daftarkan route POST /api/summarize dengan validasi min 200 dan max 100.000 karakter, lalu tampilkan hasilnya di frontend. Bonus: simpan hasil ringkasan di cache, teks yang sama tidak perlu memanggil API dua kali.

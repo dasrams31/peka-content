@@ -1,0 +1,1 @@
+Potong dulu, baru ringkas. 1 token kira-kira sama dengan 4 karakter teks. Artikel 3.000 kata berarti sekitar 3.000 token, masih aman satu request, tapi dokumen yang lebih panjang wajib dipotong. Polanya disebut map-reduce: potong jadi bagian 1.200 kata, ringkas tiap bagian, lalu gabungkan dan ringkas sekali lagi.

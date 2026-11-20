@@ -1,0 +1,24 @@
+{
+ "band": "FITUR RINGKASAN TEKS OTOMATIS",
+ "date": "20 NOVEMBER 2026",
+ "headline": [
+  "ARTIKEL PANJANG,",
+  "RINGKASANNYA",
+  "HITUNGAN DETIK"
+ ],
+ "points": [
+  "Pengguna tempel teks atau unggah dokumen, lalu dapat versi singkatnya dalam hitungan detik. Kamu tidak perlu melatih model sendiri, cukup panggil AI API.",
+  "Jangan kirim dokumen 50 halaman dalam satu request. Potong jadi bagian 1.200 kata, ringkas tiap bagian, lalu gabungkan dan ringkas sekali lagi.",
+  "Prompt yang spesifik bikin hasil stabil: sebut bahasa hasil, jumlah poin maksimal, dan larangan menambah fakta. Temperature 0.3 bikin jawaban lebih faktual."
+ ],
+ "question": "Fitur AI apa yang paling kamu pengin ada di aplikasimu, ringkasan teks atau chatbot?",
+ "source": "TUTORIAL PEKA",
+ "steps": [
+  "Buat service SummarizerService: potong teks jadi bagian 1.200 kata supaya tidak melebihi batas token.",
+  "Panggil AI API dengan prompt yang spesifik, temperature 0.3, dan max_tokens 500 buat jaga biaya.",
+  "Daftarkan route /api/summarize, tampilkan hasilnya di frontend, dan simpan ringkasan di cache."
+ ],
+ "sub": "Fitur ringkasan teks otomatis pakai AI API di Laravel, tanpa bikin model sendiri.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/cara-bikin-fitur-ringkasan-teks-otomatis-dengan-ai-api.jpg",
+ "shortlink": "https://s.peka.ai.id/loM6Pk"
+}

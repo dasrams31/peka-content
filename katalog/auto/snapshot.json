@@ -1,5 +1,5 @@
 {
- "date_label": "19 November 2026",
+ "date_label": "20 November 2026",
  "last_posted": "2026-11-20",
  "products": [
   {
@@ -153,6 +153,14 @@
    "price": "10K",
    "price_num": 10,
    "bot_id": 117
+  },
+  {
+   "dur": "1 Bulan",
+   "name": "Amazon Prime Video",
+   "price": "12K",
+   "price_num": 12,
+   "sec": "PRIME VIDEO",
+   "bot_id": 49
   }
  ],
  "updated": "2026-11-20"

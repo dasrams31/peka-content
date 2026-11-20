@@ -1,0 +1,1 @@
+Prompt yang spesifik bikin hasil stabil. Tulis bahasa hasil, jumlah poin maksimal, dan larangan menambah fakta baru. Temperature 0.3 bikin jawaban lebih konsisten dan faktual, max_tokens 500 membatasi biaya sekaligus mencegah jawaban bertele-tele.
