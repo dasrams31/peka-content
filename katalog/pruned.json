@@ -180,5 +180,15 @@
   "bot_id": 75,
   "removed_at": "2026-11-20",
   "reason": "sold out"
+ },
+ {
+  "sec": "DUOLINGO",
+  "dur": "1 Bulan · Privat",
+  "name": "Duolingo Super Family Plan",
+  "price": "5K",
+  "price_num": 5,
+  "bot_id": 109,
+  "removed_at": "2026-11-20",
+  "reason": "sold out"
  }
 ]
