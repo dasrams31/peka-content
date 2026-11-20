@@ -1,1 +1,961 @@
-{"character":{"aspect_ratio":1.6729,"poses":{"base":{"closed":"assets/character/piko-anime-base-closed.png","open":"assets/character/piko-anime-base-open.png"},"present":{"closed":"assets/character/piko-anime-present-closed.png","open":"assets/character/piko-anime-present-open.png"},"wave":{"closed":"assets/character/piko-anime-wave-closed.png","open":"assets/character/piko-anime-wave-open.png"}}},"kicker":"RUTESTRIP","rate":"+15%","scenes":[{"badge":"EDISI KHUSUS","headline":["Mau mendaki,","bingung pilih","gunung?"],"kind":"hook","mascot":{"bottom":470,"side":"right","width":260},"narration":"Mau mendaki, bingung pilih gunung? RuteStrip itu AI yang ngerti gunung.","pose":"wave","sub":"RuteStrip: AI yang ngerti gunung."},{"kind":"beat","lines":["143 jalur dengan data GPX","50 gunung, 4 provinsi di Pulau Jawa","Tiap jalur beda <b>jarak, elevasi, durasi</b>","Salah pilih, bisa <b>kapok</b>"],"mascot":{"bottom":470,"flip":true,"side":"left","width":170},"narration":"Ada 143 jalur di 50 gunung. Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, bisa kapok.","pose":"present","stat":"1.202 km","stat_label":"Total panjang jalur"},{"kind":"beat","lines":["Tulis kebutuhanmu, pakai kalimat biasa","SBERT <b>384 dimensi</b>, paham Bahasa Indonesia","Cosine Similarity, <b>Top-N</b> naik ke atas","Riset terbit di Jurnal Sistemasi (<b>SINTA 3</b>)"],"mascot":{"bottom":480,"flip":true,"side":"left","width":160},"narration":"Tulis kebutuhanmu pakai kalimat biasa. SBERT jadi embedding 384 dimensi, dicocokkan pakai Cosine Similarity.","pose":"base","stat":"384","stat_label":"Dimensi embedding SBERT"},{"bars":[{"accent":true,"color":"#059669","display":"1,79 km","label":"Papandayan","max":2.0,"tag":"TOP PICK","value":1.79},{"display":"1,24 km","label":"Patuha · 1,1 jam","max":2.0,"value":1.24},{"display":"1,92 km","label":"Lembu","max":2.0,"value":1.92}],"kind":"beat","mascot":{"bottom":470,"side":"right","width":170},"narration":"Aku coba chatbotnya. Tanya gunung pemula di Jawa Barat, jawabannya Papandayan. 1,79 kilometer, 1,5 jam.","pose":"wave","stat":"1,79 km","stat_label":"Papandayan, top pick buat pemula. 1,5 jam, jalur Mudah."},{"chat":[{"from":"user","text":"Mau naik Merbabu via Selo 2 hari 1 malam, cuacanya gimana dan perlu porter?"},{"from":"bot","text":"Cuaca basecamp berawan, angin ringan. Sore ada peluang hujan, bawa jas hujan."},{"from":"bot","text":"Hari 1: basecamp ke pos camp, sekitar 5 jam. Hari 2: summit pagi, turun ke basecamp."},{"from":"bot","text":"Porter opsional, berguna kalau bawa tenda dan logistik berat."}],"kind":"chat","mascot":{"bottom":470,"side":"right","width":170},"narration":"Chatbotnya jawab lengkap. Cuaca basecamp, itinerary per hari, sampai perlu porter atau tidak.","pose":"present"},{"kind":"beat","lines":["Air <b>18 liter</b> buat 3 orang 2 hari","Tenda dome, gas 4 kaleng, 1 kompor","Simaksi Rp30 ribu weekday, Rp45 ribu weekend","Total sekitar <b>Rp250-300 ribu</b> per orang"],"mascot":{"bottom":470,"flip":true,"side":"left","width":170},"narration":"Logistik dihitung sampai air 18 liter buat 3 orang 2 hari. Totalnya cuma 250 sampai 300 ribu per orang.","pose":"base","stat":"18 L","stat_label":"Air bersih buat 3 orang 2 hari"},{"follow":"Follow <b>@peka.ai.id</b> buat konten AI lainnya.","headline":["Papandayan","atau Patuha?","pilih yang mana?"],"kind":"close","mascot":{"bottom":620,"side":"right","width":180},"narration":"Coba sendiri, gratis. Papandayan atau Patuha, kamu pilih yang mana? Follow Peka AI.","pose":"wave","shortlink":"rutestrip.ai.id","shortlink2":"chat.rutestrip.ai.id","shortlink2_label":"CHATBOT: ","shortlink_label":"WEBSITE: "}],"theme":"rute-green","title":"RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme, v3 lebih berisi)"}
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "RUTESTRIP",
+  "rate": "+15%",
+  "scenes": [
+    {
+      "badge": "EDISI KHUSUS",
+      "headline": [
+        "Mau mendaki,",
+        "bingung pilih",
+        "gunung?"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Mau mendaki, bingung pilih gunung? RuteStrip itu AI yang ngerti gunung.",
+      "pose": "wave",
+      "sub": "RuteStrip: AI yang ngerti gunung."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "143 jalur dengan data GPX",
+        "50 gunung, 4 provinsi di Pulau Jawa",
+        "Tiap jalur beda <b>jarak, elevasi, durasi</b>",
+        "Salah pilih, bisa <b>kapok</b>"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Ada 143 jalur di 50 gunung. Info berserakan, tiap jalur beda jarak dan durasi. Salah pilih, bisa kapok.",
+      "pose": "present",
+      "stat": "1.202 km",
+      "stat_label": "Total panjang jalur"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Tulis kebutuhanmu, pakai kalimat biasa",
+        "SBERT <b>384 dimensi</b>, paham Bahasa Indonesia",
+        "Cosine Similarity, <b>Top-N</b> naik ke atas",
+        "Riset terbit di Jurnal Sistemasi (<b>SINTA 3</b>)"
+      ],
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Tulis kebutuhanmu pakai kalimat biasa. SBERT jadi embedding 384 dimensi, dicocokkan pakai Cosine Similarity.",
+      "pose": "base",
+      "stat": "384",
+      "stat_label": "Dimensi embedding SBERT"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "color": "#059669",
+          "display": "1,79 km",
+          "label": "Papandayan",
+          "max": 2.0,
+          "tag": "TOP PICK",
+          "value": 1.79
+        },
+        {
+          "display": "1,24 km",
+          "label": "Patuha · 1,1 jam",
+          "max": 2.0,
+          "value": 1.24
+        },
+        {
+          "display": "1,92 km",
+          "label": "Lembu",
+          "max": 2.0,
+          "value": 1.92
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Aku coba chatbotnya. Tanya gunung pemula di Jawa Barat, jawabannya Papandayan. 1,79 kilometer, 1,5 jam.",
+      "pose": "wave",
+      "stat": "1,79 km",
+      "stat_label": "Papandayan, top pick buat pemula. 1,5 jam, jalur Mudah."
+    },
+    {
+      "chat": [
+        {
+          "from": "user",
+          "text": "Mau naik Merbabu via Selo 2 hari 1 malam, cuacanya gimana dan perlu porter?"
+        },
+        {
+          "from": "bot",
+          "text": "Cuaca basecamp berawan, angin ringan. Sore ada peluang hujan, bawa jas hujan."
+        },
+        {
+          "from": "bot",
+          "text": "Hari 1: basecamp ke pos camp, sekitar 5 jam. Hari 2: summit pagi, turun ke basecamp."
+        },
+        {
+          "from": "bot",
+          "text": "Porter opsional, berguna kalau bawa tenda dan logistik berat."
+        }
+      ],
+      "kind": "chat",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Chatbotnya jawab lengkap. Cuaca basecamp, itinerary per hari, sampai perlu porter atau tidak.",
+      "pose": "present"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Air <b>18 liter</b> buat 3 orang 2 hari",
+        "Tenda dome, gas 4 kaleng, 1 kompor",
+        "Simaksi Rp30 ribu weekday, Rp45 ribu weekend",
+        "Total sekitar <b>Rp250-300 ribu</b> per orang"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Logistik dihitung sampai air 18 liter buat 3 orang 2 hari. Totalnya cuma 250 sampai 300 ribu per orang.",
+      "pose": "base",
+      "stat": "18 L",
+      "stat_label": "Air bersih buat 3 orang 2 hari"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> buat konten AI lainnya.",
+      "headline": [
+        "Papandayan",
+        "atau Patuha?",
+        "pilih yang mana?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Coba sendiri, gratis. Papandayan atau Patuha, kamu pilih yang mana? Follow Peka AI.",
+      "pose": "wave",
+      "shortlink": "rutestrip.ai.id",
+      "shortlink2": "chat.rutestrip.ai.id",
+      "shortlink2_label": "CHATBOT: ",
+      "shortlink_label": "WEBSITE: "
+    }
+  ],
+  "theme": {
+    "label": "Rute Green",
+    "description": "RuteStrip green: dark emerald mountain mood, emerald accent, mint highlights. Layered mountain-silhouette background (mount1 far ridge, mount2 near ridge); other themes leave the layer transparent.",
+    "bg": "#064E3B",
+    "bg2": "#065F46",
+    "card": "#085C40",
+    "card_border": "#147A56",
+    "accent": "#059669",
+    "accent2": "#A7F3D0",
+    "text": "#F5F5F0",
+    "dim": "#B7D9CB",
+    "mono": "#A7F3D0",
+    "chip_bg": "#059669",
+    "chip_text": "#FFFFFF",
+    "bar_other": "#5A8A76",
+    "bar_track": "#0B3D2C",
+    "grid": "rgba(167,243,208,0.06)",
+    "glow": "rgba(5,150,105,0.30)",
+    "glow2": "rgba(167,243,208,0.10)",
+    "progress": "#059669",
+    "mascot": "bottom-right",
+    "mount1": "#0B7A55",
+    "mount2": "#07563F",
+    "mount_sun": "#A7F3D0"
+  },
+  "title": "RuteStrip: AI yang Ngerti Gunung (reel-v2, rute-green theme, v3 lebih berisi)",
+  "theme_name": "rute-green",
+  "words": [
+    {
+      "text": "Mau",
+      "start": 0.1,
+      "end": 0.317375,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "mendaki,",
+      "start": 0.317375,
+      "end": 0.893458,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "bingung",
+      "start": 1.1,
+      "end": 1.404333,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "pilih",
+      "start": 1.404333,
+      "end": 1.589124,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "gunung?",
+      "start": 1.589125,
+      "end": 1.991291,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "RuteStrip",
+      "start": 2.713041,
+      "end": 3.202166,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "itu",
+      "start": 3.202166,
+      "end": 3.463041,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "AI",
+      "start": 3.463041,
+      "end": 3.713041,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "yang",
+      "start": 3.713041,
+      "end": 3.821749,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "ngerti",
+      "start": 3.82175,
+      "end": 4.02825,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "gunung.",
+      "start": 4.02825,
+      "end": 4.473916,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Ada",
+      "start": 5.60475,
+      "end": 5.833,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "143",
+      "start": 5.833,
+      "end": 6.691707,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "jalur",
+      "start": 6.691708,
+      "end": 7.039541,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "di",
+      "start": 7.039541,
+      "end": 7.169957,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "50",
+      "start": 7.169958,
+      "end": 7.5177909,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "gunung.",
+      "start": 7.517791,
+      "end": 7.952582,
+      "scene": 1,
+      "line": 2
+    },
+    {
+      "text": "Info",
+      "start": 8.681916000000001,
+      "end": 8.910166,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "berserakan,",
+      "start": 8.910166,
+      "end": 9.562332,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "tiap",
+      "start": 9.823208000000001,
+      "end": 9.997124,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "jalur",
+      "start": 9.997125,
+      "end": 10.258,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "beda",
+      "start": 10.258,
+      "end": 10.453666,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "jarak",
+      "start": 10.453666,
+      "end": 10.768874,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "dan",
+      "start": 10.768875000000001,
+      "end": 10.921040999999999,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "durasi.",
+      "start": 10.921040999999999,
+      "end": 11.442791,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "Salah",
+      "start": 12.174291,
+      "end": 12.446041000000001,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "pilih,",
+      "start": 12.446041000000001,
+      "end": 12.913416,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "bisa",
+      "start": 13.065625,
+      "end": 13.337333000000001,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "kapok.",
+      "start": 13.337333000000001,
+      "end": 13.750374,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Tulis",
+      "start": 14.880750000000003,
+      "end": 15.130750000000003,
+      "scene": 2,
+      "line": 5
+    },
+    {
+      "text": "kebutuhanmu",
+      "start": 15.130750000000003,
+      "end": 15.706833000000003,
+      "scene": 2,
+      "line": 5
+    },
+    {
+      "text": "pakai",
+      "start": 15.706833000000003,
+      "end": 15.967708000000002,
+      "scene": 2,
+      "line": 5
+    },
+    {
+      "text": "kalimat",
+      "start": 15.967708000000002,
+      "end": 16.272041,
+      "scene": 2,
+      "line": 5
+    },
+    {
+      "text": "biasa.",
+      "start": 16.272041,
+      "end": 16.804666,
+      "scene": 2,
+      "line": 5
+    },
+    {
+      "text": "SBERT",
+      "start": 17.534000000000002,
+      "end": 17.838333000000002,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "jadi",
+      "start": 17.838333000000002,
+      "end": 18.099208000000004,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "embedding",
+      "start": 18.099208000000004,
+      "end": 18.457916000000004,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "384",
+      "start": 18.457916000000004,
+      "end": 19.468790900000002,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "dimensi,",
+      "start": 19.468791000000003,
+      "end": 20.044874000000004,
+      "scene": 2,
+      "line": 6
+    },
+    {
+      "text": "dicocokkan",
+      "start": 20.294875000000005,
+      "end": 20.816625000000002,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "pakai",
+      "start": 20.816625000000002,
+      "end": 21.055750000000003,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Cosine",
+      "start": 21.055750000000003,
+      "end": 21.392708000000002,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Similarity.",
+      "start": 21.392708000000002,
+      "end": 22.099249,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Aku",
+      "start": 23.248000000000005,
+      "end": 23.519750000000002,
+      "scene": 3,
+      "line": 8
+    },
+    {
+      "text": "coba",
+      "start": 23.519750000000002,
+      "end": 23.726250000000004,
+      "scene": 3,
+      "line": 8
+    },
+    {
+      "text": "chatbotnya.",
+      "start": 23.726250000000004,
+      "end": 24.400166000000002,
+      "scene": 3,
+      "line": 8
+    },
+    {
+      "text": "Tanya",
+      "start": 25.126250000000002,
+      "end": 25.332791000000004,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "gunung",
+      "start": 25.332791000000004,
+      "end": 25.550166000000004,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "pemula",
+      "start": 25.550166000000004,
+      "end": 25.832791000000004,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 25.832791000000004,
+      "end": 25.919749000000003,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "Jawa",
+      "start": 25.919750000000004,
+      "end": 26.126250000000002,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "Barat,",
+      "start": 26.126250000000002,
+      "end": 26.517541,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "jawabannya",
+      "start": 26.756708000000003,
+      "end": 27.311041000000003,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "Papandayan.",
+      "start": 27.311041000000003,
+      "end": 27.995832000000004,
+      "scene": 3,
+      "line": 9
+    },
+    {
+      "text": "1,79",
+      "start": 28.727333,
+      "end": 29.727333,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "kilometer,",
+      "start": 29.727333,
+      "end": 30.303416000000002,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "1,5",
+      "start": 30.531708000000002,
+      "end": 31.227333,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "jam.",
+      "start": 31.227333,
+      "end": 31.607749000000005,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Chatbotnya",
+      "start": 32.73675,
+      "end": 33.334583,
+      "scene": 4,
+      "line": 11
+    },
+    {
+      "text": "jawab",
+      "start": 33.334583,
+      "end": 33.606291,
+      "scene": 4,
+      "line": 11
+    },
+    {
+      "text": "lengkap.",
+      "start": 33.606291,
+      "end": 34.095416,
+      "scene": 4,
+      "line": 11
+    },
+    {
+      "text": "Cuaca",
+      "start": 34.817166,
+      "end": 35.099791,
+      "scene": 4,
+      "line": 12
+    },
+    {
+      "text": "basecamp,",
+      "start": 35.099791,
+      "end": 35.610666,
+      "scene": 4,
+      "line": 12
+    },
+    {
+      "text": "itinerary",
+      "start": 35.795416,
+      "end": 36.197582,
+      "scene": 4,
+      "line": 12
+    },
+    {
+      "text": "per",
+      "start": 36.197625,
+      "end": 36.306291,
+      "scene": 4,
+      "line": 12
+    },
+    {
+      "text": "hari,",
+      "start": 36.306291,
+      "end": 36.730207,
+      "scene": 4,
+      "line": 12
+    },
+    {
+      "text": "sampai",
+      "start": 36.958458,
+      "end": 37.241083,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "perlu",
+      "start": 37.241083,
+      "end": 37.436749,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "porter",
+      "start": 37.43675,
+      "end": 37.741083,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "atau",
+      "start": 37.741083,
+      "end": 37.925874,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "tidak.",
+      "start": 37.925875,
+      "end": 38.328041,
+      "scene": 4,
+      "line": 13
+    },
+    {
+      "text": "Logistik",
+      "start": 39.46875,
+      "end": 39.892666,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "dihitung",
+      "start": 39.892666,
+      "end": 40.240457,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "sampai",
+      "start": 40.240458,
+      "end": 40.501333,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "air",
+      "start": 40.501333,
+      "end": 40.718708,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "18",
+      "start": 40.71875,
+      "end": 41.175249,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "liter",
+      "start": 41.17525,
+      "end": 41.414375,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "buat",
+      "start": 41.414375,
+      "end": 41.63175,
+      "scene": 5,
+      "line": 14
+    },
+    {
+      "text": "3",
+      "start": 41.631791,
+      "end": 41.838291,
+      "scene": 5,
+      "line": 15
+    },
+    {
+      "text": "orang",
+      "start": 41.838291,
+      "end": 42.033957,
+      "scene": 5,
+      "line": 15
+    },
+    {
+      "text": "2",
+      "start": 42.033958,
+      "end": 42.175249,
+      "scene": 5,
+      "line": 15
+    },
+    {
+      "text": "hari.",
+      "start": 42.17525,
+      "end": 42.577416,
+      "scene": 5,
+      "line": 15
+    },
+    {
+      "text": "Totalnya",
+      "start": 43.299166,
+      "end": 43.733957000000004,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "cuma",
+      "start": 43.733958,
+      "end": 43.940458,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "250",
+      "start": 43.940458,
+      "end": 44.712208,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "sampai",
+      "start": 44.712208,
+      "end": 44.994833,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "300",
+      "start": 44.994833,
+      "end": 45.407833,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "ribu",
+      "start": 45.407875,
+      "end": 45.603541,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "per",
+      "start": 45.603541,
+      "end": 45.701332,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "orang.",
+      "start": 45.701333,
+      "end": 46.125249,
+      "scene": 5,
+      "line": 16
+    },
+    {
+      "text": "Coba",
+      "start": 47.25675,
+      "end": 47.495875,
+      "scene": 6,
+      "line": 17
+    },
+    {
+      "text": "sendiri,",
+      "start": 47.495875,
+      "end": 48.039333,
+      "scene": 6,
+      "line": 17
+    },
+    {
+      "text": "gratis.",
+      "start": 48.267624999999995,
+      "end": 48.898041,
+      "scene": 6,
+      "line": 17
+    },
+    {
+      "text": "Papandayan",
+      "start": 49.619791,
+      "end": 50.141541,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "atau",
+      "start": 50.141541,
+      "end": 50.315416,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "Patuha,",
+      "start": 50.315416,
+      "end": 50.869749,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "kamu",
+      "start": 51.098040999999995,
+      "end": 51.315416,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "pilih",
+      "start": 51.315416,
+      "end": 51.489332,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "yang",
+      "start": 51.489332999999995,
+      "end": 51.608915999999994,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "mana?",
+      "start": 51.608915999999994,
+      "end": 52.000206999999996,
+      "scene": 6,
+      "line": 18
+    },
+    {
+      "text": "Follow",
+      "start": 52.73175,
+      "end": 53.144791,
+      "scene": 6,
+      "line": 19
+    },
+    {
+      "text": "Peka",
+      "start": 53.144791,
+      "end": 53.427374,
+      "scene": 6,
+      "line": 19
+    },
+    {
+      "text": "AI.",
+      "start": 53.427375,
+      "end": 53.829541,
+      "scene": 6,
+      "line": 19
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 5.208
+    },
+    {
+      "start": 5.205,
+      "end": 14.484
+    },
+    {
+      "start": 14.481,
+      "end": 22.848
+    },
+    {
+      "start": 22.848,
+      "end": 32.34
+    },
+    {
+      "start": 32.337,
+      "end": 39.072
+    },
+    {
+      "start": 39.069,
+      "end": 46.86
+    },
+    {
+      "start": 46.857,
+      "end": 54.576
+    }
+  ],
+  "total": 55.376
+}

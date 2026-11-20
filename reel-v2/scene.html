@@ -50,6 +50,12 @@
   .bar-fill { height: 100%; border-radius: 999px; background: var(--bar_other); width: 0; }
   .bar-fill.hot { background: var(--accent); }
   .bar-tag { font-family: DejaVuMonoB; font-size: 24px; color: var(--accent); letter-spacing: 2px; margin-left: 12px; }
+  .chat { margin-top: 40px; display: flex; flex-direction: column; gap: 22px; }
+  .bubble { font-family: DejaVu; font-size: 38px; line-height: 1.45;
+    padding: 24px 30px; border-radius: 28px; max-width: 740px; }
+  .bubble.user { align-self: flex-end; background: var(--accent); color: #FFFFFF; }
+  .bubble.bot { align-self: flex-start; background: var(--card);
+    border: 2px solid var(--card_border); color: var(--text); }
   .cmp { margin-top: 48px; }
   .cmp-row { margin-top: 40px; }
   .cmp-label { font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 2px; color: var(--dim); }
@@ -231,6 +237,17 @@
           });
           sc.appendChild(box);
         }
+      }
+      if (s.kind === 'chat') {
+        const c = el('span', 'chip', s.chat_label || 'CONTOH CHAT ASLI');
+        markIn(c, 0.10, 0.4, 0, 30); sc.appendChild(c);
+        const box = el('div', 'chat');
+        (s.chat || []).forEach((m, i) => {
+          const b = el('div', 'bubble ' + (m.from === 'user' ? 'user' : 'bot'), m.text);
+          markIn(b, 0.15 + i * 0.35, 0.5, m.from === 'user' ? 40 : -40, 0);
+          box.appendChild(b);
+        });
+        sc.appendChild(box);
       }
       if (s.kind === 'close') {
         if (s.follow) { const p = el('p', 'follow', s.follow); markIn(p, 1.0, 0.5, 0, 40); sc.appendChild(p); }
