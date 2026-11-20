@@ -1,0 +1,31 @@
+{
+  "edition": 3,
+  "episode": "BLUEPRINT edisi 03",
+  "repo": "ollama/ollama",
+  "shortlink": "https://s.peka.ai.id/zKa2kd",
+  "music": "Tech Live by Kevin MacLeod",
+  "status": "PARTIAL",
+  "threads": {
+    "status": "LIVE",
+    "url": "https://www.threads.com/@peka.ai.id/post/Df9wsmlE5kf",
+    "post_id": "18038349032880942",
+    "detail": "Publish command hit timeout 600 s at the approval gate, but live profile-threads check proves the carousel (5 slides, caption verbatim) went live. Marker post-threads-done.txt written from the live check."
+  },
+  "instagram": {
+    "status": "LIVE",
+    "url": "https://www.instagram.com/reel/Df9w2lRE7b5/",
+    "media_fbid": "18454212094131785",
+    "detail": "post-feed exited 0 in 26 s. Read-back caption field empty, same as edisi 02 control reel, so that is a read transport quirk, not a missing caption."
+  },
+  "facebook": {
+    "status": "FAILED",
+    "detail": "Attempt 1 killed by a service restart mid-run (no output, no post). Attempt 2 (single clean retry) hung 300 s at the gate with no output and was killed by timeout. Live Page posts list as of 2026-11-20 20:40 WIB shows no Ollama post; newest Page post is still Prompt Harian #27 (17 Nov). No further retry: FB gate still in effect, held for manual Business Suite check / retry from chat."
+  },
+  "tiktok": {
+    "status": "MANUAL_USER",
+    "caption": "caption-tiktok.txt",
+    "reel": "blueprint-reel.mp4"
+  },
+  "bookkeeping": "HELD: series.txt NOT bumped (still 3), posted.log / repos/posted.log / performance.log NOT appended, channel broadcast NOT sent. Per body step 8-9 these wait until Facebook airs and all links verify.",
+  "stats_note": "Contributors corrected 445 -> 623 before posting: 445 is the API named-contributor count, 623 is what GitHub's own og card and repo page display; slide 2 + reel repo-page scene now match the og card."
+}
