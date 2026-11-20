@@ -75,14 +75,6 @@
    "bot_id": 74
   },
   {
-   "dur": "1 Bulan",
-   "name": "Apple Music Head",
-   "price": "8K",
-   "price_num": 8,
-   "sec": "APPLE MUSIC",
-   "bot_id": 75
-  },
-  {
    "dur": "7 Hari",
    "name": "CapCut Pro",
    "price": "6K",
@@ -139,14 +131,6 @@
    "bot_id": 109
   },
   {
-   "sec": "MUSE SPARK",
-   "dur": "1 Milyar Token",
-   "name": "Referral Muse 1 B",
-   "price": "2,2K",
-   "price_num": 2.2,
-   "bot_id": 111
-  },
-  {
    "sec": "CANVA",
    "dur": "3 Bulan",
    "name": "Canva Pro Bisnis",
@@ -179,5 +163,5 @@
    "bot_id": 117
   }
  ],
- "updated": "2026-11-19"
+ "updated": "2026-11-20"
 }
