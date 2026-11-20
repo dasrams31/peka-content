@@ -346,8 +346,8 @@ def slide6():
     y = text_block(d, MARGIN, y, "Coba sendiri, gratis.",
                    XB(210), WHITE, SIZE - 2 * MARGIN, 1.12)
     y += 90
-    links = [("WEBSITE", "rutestrip.ai.id", "s.peka.ai.id/TknXVJ"),
-             ("CHATBOT", "chat.rutestrip.ai.id", "s.peka.ai.id/gXbVzB")]
+    links = [("WEBSITE", "rutestrip.ai.id", "https://rutestrip.ai.id"),
+             ("CHATBOT", "chat.rutestrip.ai.id", "https://chat.rutestrip.ai.id")]
     for label, name, short in links:
         box = [MARGIN, y, SIZE - MARGIN, y + 480]
         d.rounded_rectangle([box[0] + 20, box[1] + 20, box[2] + 20, box[3] + 20],
