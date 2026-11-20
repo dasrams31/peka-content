@@ -61,6 +61,16 @@ Model reported in timing: gemini-3.1-flash-lite.
   +-Rp150.000, tak terduga Rp50.000. Total +-Rp250.000-300.000 (bawa alat sendiri).
 - Timing: retrieval 52 ms, total ~4.5 s, type itinerary.
 
+## Update 21 Nov ~02:50 — fakta homepage buat reel v3 (user: "lebih berisi")
+- Skala (homepage rutestrip.ai.id, live): **143 jalur** dengan data GPX, **50 gunung**, **4 provinsi** di Pulau Jawa, **1.202 km** total panjang jalur.
+- Contoh hasil homepage: Watupayon Muria 2,2 km / puncak 1.488 m / 1 j 15 mnt; Ungaran via Perantunan 3,1 km / 2.020 m / 1 j 51 mnt; Telomoyo via Arsal 2,2 km / 1.757 m / 1 j 15 mnt.
+- Fitur chat (homepage): cuaca live (suhu, angin, hujan basecamp + puncak), itinerary, info porter, peta satelit, rekomendasi jalur.
+- Contoh percakapan homepage (Merbabu via Selo 2D1N): cuaca basecamp berawan, angin ringan, sore peluang hujan, bawa jas hujan; Hari 1 basecamp ke pos camp ~5 jam; Hari 2 summit pagi, turun ke basecamp; porter opsional, berguna kalau bawa tenda + logistik berat.
+- Cara kerja (homepage): 1 SBERT ubah kalimat jadi vektor makna; 2 content-based filtering vs data GPX (jarak, tanjakan, kemiringan), cosine similarity; 3 Naismith: 1 jam per 5 km + 1 jam per 600 m tanjakan; plus peta, profil elevasi, cuaca Open-Meteo.
+- **Riset terbit di Jurnal Sistemasi (SINTA 3)**: R. D. P. Wijaya & A. N. Rahman (2026), "Mountain Hiking Route Recommendation System using Content-based Filtering with SBERT and Cosine Similarity".
+- Fitur lain: upload GPX (single + batch), suka & ulasan, profil elevasi, rating & review rute.
+- Catatan: halaman /arsitektur tulis stack **Laravel 12** (research awal + blog tulis Laravel 11).
+
 ## Content plan (6 slides, 4096x4096, green RuteStrip theme)
 1. Cover: RUTESTRIP, "AI yang ngerti gunung", coba sekarang: buka chat.rutestrip.ai.id
 2. Masalah: milih gunung itu susah (info berserakan, tiap jalur beda jarak/elevasi/durasi)
