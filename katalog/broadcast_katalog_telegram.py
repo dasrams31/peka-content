@@ -15,12 +15,17 @@ muncul sebagai broadcast Telegram 2x seminggu (Selasa + Jumat 13:00).
 
 Isi broadcast (4 pesan, 2 per tujuan):
   Channel @peka_aichannel:
-    1. Album foto: semua slide katalog (4096x4096) + caption singkat
+    1. Satu foto: hanya slide 1 (sampul) + caption singkat
        (hook + rentang harga + cara order + gabung komunitas).
     2. Pesan teks: daftar harga lengkap dari prices.json (sumber tunggal)
        + cara order + gabung komunitas + store.
-  Grup @peka_aigroup: sama persis, album + daftar harga (kunci dedupe
+  Grup @peka_aigroup: sama persis, foto sampul + daftar harga (kunci dedupe
   sendiri, isi sama).
+
+Perintah user 20 Nov 2026, 13:44: foto cukup 1 (hanya slide 1 sampul);
+slide harga 2-7 TIDAK dikirim. Sama seperti aturan digest Aeternum
+"foto cukup 1" (19 Nov). Kunci dedupe "katalog-album" dipertahankan
+apa adanya supaya baris PENDING lama tetap menahan retry.
 
 Pengirim: bot @aeternum_premibot (administrator di @peka_aichannel dan
 @peka_aigroup), token dibaca dari
@@ -148,33 +153,26 @@ def _post_json(token: str, method: str, payload: dict):
         return json.loads(resp.read())
 
 
-def send_media_group(token: str, photos: list, caption: str, chat_id: str):
-    """Kirim album foto ke satu chat. Kembalikan (ok, message_id pertama, error)."""
+def send_photo(token: str, photo, caption: str, chat_id: str):
+    """Kirim SATU foto (slide 1 sampul) ke satu chat.
+    Kembalikan (ok, message_id, error). Aturan 20 Nov 2026: foto cukup 1,
+    slide harga 2-7 tidak dikirim."""
     boundary = "----peka-katalog-boundary"
-    media = []
     body = b""
-    for i, photo in enumerate(photos):
-        name = f"slide{i + 1}"
-        item = {"type": "photo", "media": f"attach://{name}"}
-        if i == 0:
-            item["caption"] = caption
-            item["parse_mode"] = "HTML"
-        media.append(item)
     body += (f"--{boundary}\r\nContent-Disposition: form-data; "
              f"name=\"chat_id\"\r\n\r\n{chat_id}\r\n").encode("utf-8")
     body += (f"--{boundary}\r\nContent-Disposition: form-data; "
-             f"name=\"media\"\r\n\r\n{json.dumps(media, ensure_ascii=False)}\r\n"
-             ).encode("utf-8")
-    for i, photo in enumerate(photos):
-        name = f"slide{i + 1}"
-        body += (f"--{boundary}\r\nContent-Disposition: form-data; "
-                 f"name=\"{name}\"; filename=\"{photo.name}\"\r\n"
-                 f"Content-Type: image/png\r\n\r\n").encode("utf-8")
-        body += photo.read_bytes()
-        body += b"\r\n"
+             f"name=\"caption\"\r\n\r\n{caption}\r\n").encode("utf-8")
+    body += (f"--{boundary}\r\nContent-Disposition: form-data; "
+             f"name=\"parse_mode\"\r\n\r\nHTML\r\n").encode("utf-8")
+    body += (f"--{boundary}\r\nContent-Disposition: form-data; "
+             f"name=\"photo\"; filename=\"{photo.name}\"\r\n"
+             f"Content-Type: image/png\r\n\r\n").encode("utf-8")
+    body += photo.read_bytes()
+    body += b"\r\n"
     body += f"--{boundary}--\r\n".encode("utf-8")
     req = urllib.request.Request(
-        f"{API_BASE}{token}/sendMediaGroup",
+        f"{API_BASE}{token}/sendPhoto",
         data=body,
         headers={"Content-Type": f"multipart/form-data; boundary={boundary}"},
         method="POST",
@@ -186,8 +184,7 @@ def send_media_group(token: str, photos: list, caption: str, chat_id: str):
         return False, None, str(e)
     if not data.get("ok"):
         return False, None, f"Telegram menolak: {data}"
-    msgs = data["result"]
-    return True, str(msgs[0]["message_id"]), ""
+    return True, str(data["result"]["message_id"]), ""
 
 
 def send_text(token: str, text: str, chat_id: str):
@@ -244,7 +241,8 @@ def already_sent(key: str, marker_title: str, dest: str):
 def send_one(token: str, dest: str, chat_id: str, kind: str,
              slides, caption: str, list_text: str, key: str,
              marker_title: str, force: bool):
-    """Kirim satu pesan (album atau daftar harga) ke satu tujuan.
+    """Kirim satu pesan (foto sampul slide 1, atau daftar harga) ke satu
+    tujuan. Kunci ledger "album" dipertahankan demi PENDING lama.
     Kembalikan message_id, atau None bila gagal / tertahan PENDING
     (pesan error sudah dicetak)."""
     if not force:
@@ -265,7 +263,7 @@ def send_one(token: str, dest: str, chat_id: str, kind: str,
             return mid
     ledger_append_raw(key, PENDING_ID, PENDING_ID, f"{LEDGER_NOTE}-pending")
     if kind == "album":
-        ok, mid, err = send_media_group(token, slides, caption, chat_id)
+        ok, mid, err = send_photo(token, slides[0], caption, chat_id)
     else:
         ok, mid, err = send_text(token, list_text, chat_id)
     if not ok:
@@ -320,10 +318,8 @@ def main() -> int:
     if not slides:
         print(f"Tidak ada slide di {folder}", file=sys.stderr)
         return 2
-    if len(slides) > 10:
-        print(f"Album Telegram maks 10 foto, folder ini punya {len(slides)} slide",
-              file=sys.stderr)
-        return 2
+    # Hanya slide 1 (sampul) yang dikirim; slide harga 2-7 tetap dibangun
+    # tapi tidak dipakai broadcast (aturan 20 Nov 2026).
 
     prices = load_prices()
     products = prices["products"]
@@ -350,8 +346,9 @@ def main() -> int:
 
     if args.dry_run:
         print(json.dumps({
-            "album_caption": caption,
-            "album_photos": [str(s) for s in slides],
+            "cover_caption": caption,
+            "cover_photo": str(slides[0]),
+            "slides_built_not_sent": [str(s) for s in slides[1:]],
             "list_text": list_text,
             "channel": {"album_key": keys["channel"][0],
                         "list_key": keys["channel"][1]},

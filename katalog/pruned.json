@@ -160,5 +160,25 @@
   "bot_id": 70,
   "removed_at": "2026-11-19",
   "reason": "sold out"
+ },
+ {
+  "sec": "MUSE SPARK",
+  "dur": "1 Milyar Token",
+  "name": "Referral Muse 1 B",
+  "price": "2,2K",
+  "price_num": 2.2,
+  "bot_id": 111,
+  "removed_at": "2026-11-20",
+  "reason": "sold out"
+ },
+ {
+  "dur": "1 Bulan",
+  "name": "Apple Music Head",
+  "price": "8K",
+  "price_num": 8,
+  "sec": "APPLE MUSIC",
+  "bot_id": 75,
+  "removed_at": "2026-11-20",
+  "reason": "sold out"
  }
 ]
