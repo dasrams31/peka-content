@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Buatkan email lamaran kerja untuk posisi [POSISI] di [NAMA PERUSAHAAN]. Saya lulusan [JURUSAN] dengan pengalaman [PENGALAMAN SINGKAT]. Tulis subjek email yang menarik, pembuka yang sopan, 3 paragraf yang menonjolkan keahlian saya yang relevan, dan penutup yang sopan. Gunakan bahasa formal tapi tidak kaku.

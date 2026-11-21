@@ -1,0 +1,11 @@
+PROMPT HARIAN #31: salin prompt ini buat email lamaran kerja yang dibalas HRD
+
+Hasilnya: email lamaran yang rapi dan sopan, lengkap dengan subjek yang bikin HRD mau buka dan 3 paragraf yang menonjolkan keahlianmu yang paling relevan.
+
+Buatkan email lamaran kerja untuk posisi [POSISI] di [NAMA PERUSAHAAN]. Saya lulusan [JURUSAN] dengan pengalaman [PENGALAMAN SINGKAT]. Tulis subjek email yang menarik, pembuka yang sopan, 3 paragraf yang menonjolkan keahlian saya yang relevan, dan penutup yang sopan. Gunakan bahasa formal tapi tidak kaku.
+
+Buat lamar kerja kantoran dulu atau buat magang dulu?
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30.
+
+Music: Oppressive Gloom by Kevin MacLeod

@@ -1,0 +1,12 @@
+{
+  "episode": 31,
+  "category": "KARIER",
+  "title": "Email lamaran kerja yang dibalas HRD",
+  "prompt": "Buatkan email lamaran kerja untuk posisi [POSISI] di [NAMA PERUSAHAAN]. Saya lulusan [JURUSAN] dengan pengalaman [PENGALAMAN SINGKAT]. Tulis subjek email yang menarik, pembuka yang sopan, 3 paragraf yang menonjolkan keahlian saya yang relevan, dan penutup yang sopan. Gunakan bahasa formal tapi tidak kaku.",
+  "tips": [
+    "Isi semua kurung siku dengan datamu sebelum ditempel ke AI.",
+    "Sesuaikan keahlian dengan syarat yang ada di lowongan.",
+    "Kirim di jam kerja, HRD lebih cepat baca emailmu."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-21"
+}
