@@ -131,7 +131,16 @@ def main():
         ig_url = done_value("IG_OK")
 
     # --- FB reel ---
-    if not done_has("FB_OK"):
+    # FB_HELD marker (written when an FB attempt fails/hangs and a live
+    # check proves it did not post): skip, do not retry blindly. The
+    # Facebook write gate has failed since 17 Nov 2026; a re-run that
+    # retries FB would be a second attempt for the same edition.
+    if done_has("FB_OK"):
+        fb_url = done_value("FB_OK")
+    elif done_has("FB_HELD"):
+        fb_url = ""
+        print("FB held per FB_HELD marker, skipping")
+    else:
         cmd = ["/opt/hatch/bin/facebook-cli", "pages", "posts", "create",
                "--page-id", FB, "--text", read_caption("caption-reel-fb.txt"),
                "--privacy", "PUBLIC", "--file", str(reel)]
@@ -148,8 +157,6 @@ def main():
                 fb_url = ""
         log(f"FB_OK {fb_url or pid}")
         log(f"FB_POST_ID {pid}")
-    else:
-        fb_url = done_value("FB_OK")
 
     # --- Patch blog JSON links ---
     blog = json.loads(blog_json.read_text())

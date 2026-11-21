@@ -1,0 +1,5 @@
+threads: 
+instagram: https://www.instagram.com/reel/Df_1CXpjz6Z/
+facebook: 
+shortlink: https://s.peka.ai.id/w1p71O
+blog: https://blog.peka.ai.id/p/mengukur-kualitas-ai-code-review-addressing-rate-metrik-jujur
