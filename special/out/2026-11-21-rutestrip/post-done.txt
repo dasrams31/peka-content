@@ -1,1 +1,9 @@
 THREADS_OK https://www.threads.com/@peka.ai.id/post/DgAFRZcDqyF
+THREADS_OK https://www.threads.com/@peka.ai.id/post/DgAFhnZjllX
+IG_OK 
+FB_OK 
+REEL_IG_OK 
+REEL_FB_FAILED
+BLOG_OK
+LOG_OK
+CHANNEL_OK message_id=302
