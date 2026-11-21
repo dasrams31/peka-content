@@ -1,22 +1,22 @@
 # Tag watch (Threads, rolling 7 days)
 
-Updated: 2026-11-20 WIB. Sample: 97 posts in 7 days, 16 new today. Search returns only a few posts per tag per day, so one day never ranks a tag alone.
+Updated: 2026-11-21 WIB. Sample: 97 posts in 7 days, 15 new today. Search returns only a few posts per tag per day, so one day never ranks a tag alone.
 
 CURRENT CLOSING TAG: #AI (manual lock by user order 2026-11-06: views dropped with #Mahasiswa; auto-switch disabled until lock removed).
 Content crons apply this tag automatically (user granted full autonomy 2026-10-30). Changes are logged in tag-changes.log.
 
 | Tag | n | avg likes | median | avg reposts | avg replies | max |
 |---|---|---|---|---|---|---|
-| #Kuliah | 9 | 1521.0 | 98 | 129.2 | 213.8 | 11389 |
-| #AI | 12 | 508.8 | 76.5 | 32.2 | 47.0 | 3445 |
-| #Mahasiswa | 10 | 135.5 | 1.0 | 17.5 | 10.0 | 830 |
-| #BelajarAI | 8 | 134.1 | 37.5 | 13.6 | 28.8 | 499 |
-| #Teknologi | 11 | 97.5 | 1 | 30.2 | 29.5 | 517 |
-| #Belajar | 8 | 56.4 | 13.5 | 6.4 | 7.6 | 231 |
-| #ChatGPT | 9 | 55.6 | 13 | 2.6 | 39.4 | 368 |
-| #Coding | 12 | 47.1 | 20.5 | 2.4 | 14.0 | 239 |
-| #Python | 10 | 46.8 | 18.0 | 7.3 | 5.0 | 278 |
-| #Gemini | 8 | 27.9 | 16.0 | 3.4 | 16.6 | 116 |
+| #Kuliah | 9 | 1526.3 | 98 | 129.4 | 214.1 | 11389 |
+| #AI | 13 | 462.4 | 22 | 24.9 | 40.4 | 3445 |
+| #Mahasiswa | 9 | 163.0 | 1 | 19.4 | 12.4 | 830 |
+| #BelajarAI | 9 | 115.7 | 16 | 11.8 | 25.9 | 499 |
+| #Teknologi | 10 | 89.1 | 0.5 | 26.5 | 30.5 | 517 |
+| #Coding | 11 | 52.4 | 24 | 2.5 | 14.7 | 239 |
+| #Python | 11 | 41.0 | 9 | 6.3 | 4.3 | 278 |
+| #Belajar | 7 | 29.3 | 6 | 2.9 | 1.9 | 170 |
+| #Gemini | 9 | 28.9 | 12 | 3.3 | 8.9 | 116 |
+| #ChatGPT | 9 | 15.6 | 10 | 0.7 | 17.4 | 68 |
 
 ## Today
 

@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-21
+
+- TOP (n=24): day-counter 4%, question 17%, story 25%, hashtags avg 1.5, words avg 34.
+- REST (n=73): day-counter 11%, question 36%, story 19%, hashtags avg 1.4, words avg 37.
+- Top posts today:
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #AI @notdeadlysins (3445 likes): DAY 1: Mecut AI
+  - #Kuliah @movien1028 (1882 likes): sbg seorang fresh graduate, ternyata lebih cape cari kerja dibanding kuliah. padahal niatnya mulia ingin memperbaiki eko
+  - #Mahasiswa @nike_endars (830 likes): Halo rekan-rekan Mahasiswa UT,   Belakangan ini aku lihat banyak banget utasan teman-teman Mahasiswa UT yang resah soal 
+  - #AI @oktaviandev (708 likes): Kali ini dari jalur resmi tokopedia yang kasih gemini AI plus 1th
+
 ## 2026-11-20
 
 - TOP (n=24): day-counter 4%, question 21%, story 29%, hashtags avg 1.2, words avg 38.
@@ -144,14 +155,3 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
   - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
   - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
   - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
-
-## 2026-11-07
-
-- TOP (n=22): day-counter 0%, question 23%, story 14%, hashtags avg 0.7, words avg 33.
-- REST (n=68): day-counter 9%, question 25%, story 22%, hashtags avg 1.8, words avg 40.
-- Top posts today:
-  - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
-  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
-  - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
-  - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
-  - #Belajar @harrypatria_ (4313 likes): Apa jadinya kalau kita enggan beradaptasi di tengah situasi sekarang?   Yang rajin belajar aja ngerasa makin ketinggalan
