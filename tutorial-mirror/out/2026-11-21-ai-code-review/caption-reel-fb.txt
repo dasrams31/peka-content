@@ -1,0 +1,5 @@
+Reviewer AI-mu bagus beneran, atau cuma rajin?
+
+Addressing rate saja tidak cukup buat menilai AI code review. Uber mencatat di atas 65 persen, GitHub Actions open source cuma 0,9 sampai 19,2 persen, dan definisinya beda-beda. Di video ini ada lima metrik yang lebih jujur, plus skrip Python buat ngitungnya sendiri di repo kamu.
+
+Link blognya ada di akhir video.

@@ -1,0 +1,3 @@
+Addressing rate adalah persentase komentar review AI yang berujung perubahan kode sebelum merge. Tapi ada tiga batasan: cuma pull request yang sudah merge yang dihitung, komentar dievaluasi pada hari pull request-nya merge, dan komentar di pull request bot umumnya tidak dievaluasi.
+
+Jadi ini metrik merge, bukan metrik review. Komentar yang benar tapi pull request-nya ditutup tanpa merge tidak pernah tercatat sebagai apapun.

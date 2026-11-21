@@ -1,0 +1,3 @@
+Cara mulai minggu ini: simpan tiap temuan ke satu file log JSON, jalankan skrip review_metrics.py tiap Jumat sore selama 4 minggu, lalu bandingkan dengan komentar manusia di repo yang sama. Skrip lengkapnya ada di blog Peka.
+
+Follow @peka.ai.id, save dulu biar gampang dicari pas butuh.

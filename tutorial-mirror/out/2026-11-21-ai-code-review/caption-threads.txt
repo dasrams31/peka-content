@@ -1,0 +1,9 @@
+Reviewer AI-mu bagus beneran, atau cuma rajin?
+
+GitHub menambahkan addressing rate ke Copilot usage metrics API. Tapi angka itu cuma menghitung komentar di pull request yang sudah merge. Uber di atas 65 persen, Actions open source cuma 0,9 sampai 19,2 persen.
+
+Di carousel ini: kenapa angka itu tidak bisa dibandingkan mentah-mentah, dan 5 metrik yang lebih jujur.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Di repo kamu, komentar AI lebih sering ditindaklanjuti atau ditolak? #AI

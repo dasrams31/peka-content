@@ -1,0 +1,90 @@
+<p>AI code review sudah dipakai di mana-mana. Tool-nya rajin memposting komentar di setiap pull request, dashboard-nya hijau, semua orang merasa produktif. Tapi hampir tidak ada tim yang bisa menjawab pertanyaan paling dasar: apakah reviewer AI ini sebenarnya bagus? Tidak ada yang memeriksa apakah komentar itu benar, ditindaklanjuti, atau justru menambah kerja review manusia.</p>
+<p>GitHub membuat pertanyaan ini lebih gampang dijawab. Pada 5 November 2026, GitHub menambahkan field code review ke Copilot usage metrics API, termasuk addressing rate: persentase komentar Copilot code review yang dihitung sudah ditindaklanjuti. Angka ini berguna, tapi hanya kalau kamu paham apa yang sebenarnya dihitung. Tutorial ini menunjukkan cara mengukurnya dengan metrik yang jujur, plus skrip Python buat menghitungnya sendiri di repo kamu.</p>
+<h2>Addressing rate menurut GitHub</h2>
+<p>Di Copilot usage metrics API, setiap baris laporan harian per repo sekarang membawa objek <code>copilot_code_review</code> dengan dua field utama: <code>total_comments_evaluated</code> dan <code>total_comments_addressed</code>. Addressing rate adalah pembagian keduanya, dipecah lagi berdasarkan severity (high, medium, low), review tier (lite, balanced, max), dan tipe komentar (bug, security, performance, custom, dan other).</p>
+<p>Tiga batasan yang sering dilewatkan. Pertama, yang dihitung hanya komentar pada pull request yang sudah merge. Kedua, komentar dievaluasi pada hari pull request-nya merge, bukan pada hari komentar itu diposting. Ketiga, komentar pada pull request yang dibuka bot umumnya tidak dievaluasi.</p>
+<p>Artinya addressing rate GitHub adalah metrik merge, bukan metrik review. Komentar yang benar tapi pull request-nya ditutup tanpa merge tidak pernah tercatat sebagai apapun.</p>
+<h2>Angka dari perusahaan besar</h2>
+<p>Beberapa perusahaan mempublikasikan angka mereka. Perhatikan definisinya, karena definisilah yang menentukan apakah angka itu bisa dibandingkan. Uber, dengan sistem uReview pada Agustus 2025, mencatat lebih dari 65 persen komentar ditindaklanjuti dan 75 persen dinilai berguna. Atlassian, April 2026, mencatat 38,7 persen berujung perubahan kode, dibanding 44,45 persen komentar manusia. Google, dengan AutoCommenter, mencatat sekitar 40 persen resolution rate. Anthropic, 9 Maret 2026, mencatat kurang dari 1 persen temuan ditandai salah, dan pull request dengan komentar substantif naik dari 16 persen ke 54 persen.</p>
+<p>Studi Sun et al. terhadap 16 GitHub Actions di 178 repo dengan 22.326 komentar jauh lebih pesimis: 0,9 persen sampai 19,2 persen, dibanding 60 persen komentar manusia. Cursor, dengan Bugbot, mencatat resolution rate naik dari 52 persen ke lebih dari 70 persen setelah 40 eksperimen.</p>
+<p>Polanya jelas. Tiga sistem yang mencapai 38 persen ke atas, Uber, Google, dan Atlassian, semuanya di-tune untuk codebase mereka sendiri dan punya tahap filter yang membuang komentar lemah sebelum sampai ke developer. Survei Sonar pada Januari 2026 terhadap lebih dari 1.100 developer menemukan AI menulis 42 persen kode yang di-commit, tapi 96 persen developer mengaku tidak sepenuhnya percaya kode AI itu benar secara fungsional. Review adalah tempat ketidakpercayaan itu dibayar.</p>
+<h2>Kenapa angka itu tidak bisa dibandingkan mentah-mentah</h2>
+<p>Masalah pertama adalah definisi. Uber memakai re-run lima kali, Atlassian memakai perubahan di commit berikutnya, GitHub memakai evaluasi saat merge. Tiga definisi ini mengukur tiga hal berbeda, dan tidak ada satu pun yang membuktikan komentar itu benar.</p>
+<p>Masalah kedua adalah konteks. Angka Uber berasal dari sistem yang memproses lebih dari 10.000 commit per minggu dan meninjau lebih dari 90 persen dari sekitar 65.000 diff mingguan. Angka itu bukan target yang masuk akal untuk repo kecil milik tim tiga orang.</p>
+<p>Masalah ketiga adalah apa yang tidak diukur. Addressing rate tidak menghitung isu yang terlewat. Reviewer bisa mencapai 70 persen dengan hanya mengomentari hal aman seperti typo dan format, sambil melewatkan race condition di tengah diff.</p>
+<h2>Lima metrik yang lebih jujur</h2>
+<p><strong>Pertama, addressing rate di repo sendiri, dibanding baseline manusia.</strong> Bandingkan komentar AI dengan komentar manusia di repo yang sama, pada periode yang sama, dengan definisi yang sama. Kalau manusia 60 persen berujung perubahan kode dan AI 15 persen, itu informasi yang jujur. Kalau keduanya sama-sama sekitar 45 persen, tool itu sudah setara manusia di repo kamu.</p>
+<p><strong>Kedua, dismissal rate beserta alasannya.</strong> Dari semua temuan yang diposting, berapa persen yang ditolak tanpa tindakan, dan kenapa? Catat alasannya dengan kosakata tetap: false positive, wont fix, sudah ditangani, dan tidak berlaku untuk service ini. False positive yang tinggi berarti aturan atau prompt harus diperketat. Wont fix yang tinggi berarti reviewer mengomentari hal yang tim sengaja biarkan.</p>
+<p><strong>Ketiga, escaped defects.</strong> Ini metrik yang paling tidak nyaman dan paling penting: apa yang lolos ke merge padahal reviewer sudah menandainya, atau apa yang lolos tanpa ditandai sama sekali. Setiap minggu, ambil sampel pull request yang sudah merge, terutama yang komentarnya ditolak manusia, lalu periksa apakah isu yang ditandai itu nyata.</p>
+<p><strong>Keempat, signal ratio.</strong> Dari temuan yang tidak ditolak, berapa banyak yang berkategori HIGH dibanding noise. Reviewer yang sehat diam sebagian besar waktu dan berisik soal hal yang penting. Kalau 90 persen komentar berkategori low dan medium, tim akan belajar mengabaikan semuanya, termasuk yang high.</p>
+<p><strong>Kelima, time-to-merge delta dan biaya per komentar berguna.</strong> Bandingkan waktu merge pull request sebelum dan sesudah reviewer AI. Reviewer yang bagus memangkas waktu review manusia, reviewer yang berisik menambahnya. Terakhir, hitung biaya per komentar berguna: total biaya tool dan token dibagi jumlah komentar yang benar-benar berujung perbaikan.</p>
+<h2>Cara mengukurnya di repo sendiri</h2>
+<p>Kamu tidak butuh dashboard mahal untuk mulai. Yang dibutuhkan hanya satu file log: satu baris JSON per temuan, ditambahkan oleh job reviewer di CI. Lima field sudah cukup: <code>rule_id</code>, <code>severity</code>, <code>outcome</code> (fixed, dismissed, atau merged-as-flagged), <code>dismissal_reason</code>, dan <code>pr_number</code>.</p>
+<p>Skrip Python berikut membaca log itu dan menghitung metrik di atas. Simpan sebagai <code>scripts/review_metrics.py</code> dan jalankan tiap minggu:</p>
+<pre><code>import json
+import sys
+from collections import Counter, defaultdict
+
+def load_findings(path):
+    findings = []
+    with open(path, encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if line:
+                findings.append(json.loads(line))
+    return findings
+
+def main(path):
+    findings = load_findings(path)
+    total = len(findings)
+    if total == 0:
+        print("Belum ada temuan di log.")
+        return
+
+    fixed = sum(1 for f in findings if f["outcome"] == "fixed")
+    dismissed = sum(1 for f in findings if f["outcome"] == "dismissed")
+    escaped = sum(1 for f in findings if f["outcome"] == "merged-as-flagged")
+
+    print(f"Total temuan: {total}")
+    print(f"Addressing rate: {fixed / total:.1%}")
+    print(f"Dismissal rate: {dismissed / total:.1%}")
+    print(f"Escaped defects: {escaped}")
+
+    reasons = Counter(
+        f.get("dismissal_reason", "tanpa-alasan")
+        for f in findings
+        if f["outcome"] == "dismissed"
+    )
+    print("Alasan penolakan:")
+    for reason, count in reasons.most_common():
+        print(f"  {reason}: {count}")
+
+    by_severity = defaultdict(lambda: {"total": 0, "fixed": 0})
+    for f in findings:
+        bucket = by_severity[f["severity"]]
+        bucket["total"] += 1
+        if f["outcome"] == "fixed":
+            bucket["fixed"] += 1
+
+    print("Signal ratio per severity:")
+    for severity in ("high", "medium", "low"):
+        bucket = by_severity.get(severity, {"total": 0, "fixed": 0})
+        if bucket["total"]:
+            rate = bucket["fixed"] / bucket["total"]
+            print(f"  {severity}: {bucket['total']} temuan, {rate:.1%} ditindaklanjuti")
+
+if __name__ == "__main__":
+    main(sys.argv[1])</code></pre>
+<p>Format tiap baris log terlihat seperti ini:</p>
+<pre><code>{"rule_id": "sql-injection", "severity": "high", "outcome": "fixed", "dismissal_reason": "", "pr_number": 142}
+{"rule_id": "naming-style", "severity": "low", "outcome": "dismissed", "dismissal_reason": "wont-fix", "pr_number": 143}</code></pre>
+<p>Jalankan skrip ini tiap Jumat sore selama empat minggu sebelum memutuskan nasib tool. Yang penting adalah tren: dismissal rate turun, escape datar atau turun, signal ratio stabil, dan addressing rate mendekati baseline manusia di repo yang sama.</p>
+<h2>Kesalahan umum pemula</h2>
+<p><strong>Membandingkan angka antar perusahaan.</strong> Angka Uber, Atlassian, dan GitHub Actions open source dihitung dengan definisi berbeda di codebase berbeda. Satu-satunya pembanding yang sah adalah komentar manusia di repo kamu sendiri.</p>
+<p><strong>Menghitung komentar di pull request bot dan draft.</strong> Pull request dari bot dan draft sering memicu komentar yang tidak pernah ditindaklanjuti siapa pun. Kalau masuk ke perhitungan, addressing rate jatuh karena datanya kotor, bukan karena reviewer buruk. Saring dulu sebelum menghitung.</p>
+<p><strong>Hanya melihat jumlah komentar.</strong> Tool yang memposting 30 komentar per pull request terlihat rajin di dashboard, tapi volume adalah metrik yang paling gampang dimanipulasi. Tiga puluh komentar yang 25 di antaranya ditolak lebih buruk daripada tiga komentar yang semuanya ditindaklanjuti.</p>
+<p><strong>Mengabaikan biaya.</strong> Lisensi tool, token model, dan menit CI semuanya ada harganya. Reviewer yang murah tapi berisik bisa lebih mahal daripada reviewer yang mahal tapi tepat, karena biaya terbesarnya adalah jam engineer yang membaca komentar yang salah.</p>
+<p><strong>Tidak pernah sampling manual.</strong> Tidak ada metrik otomatis yang bisa menggantikan membaca 20 komentar acak dan menilai sendiri apakah komentar itu benar, berguna, dan pantas diposting. Jadwalkan 30 menit seminggu untuk ini.</p>
+<h2>Langkah praktis yang bisa langsung dicoba</h2>
+<p>Mulai minggu ini, tanpa mengganti tool apapun. Pertama, buat file log temuan dan isi secara manual untuk 20 pull request terakhir. Kedua, hitung addressing rate dan dismissal rate repo kamu dengan skrip di atas, lalu hitung angka yang sama untuk komentar manusia di periode yang sama. Ketiga, ambil 10 pull request yang sudah merge dan periksa apakah ada isu yang lolos.</p>
+<p>Setelah empat minggu data terkumpul, keputusannya jadi sederhana. Kalau addressing rate AI mendekati manusia, dismissal rate turun, dan escape tidak naik, pertahankan dan tune aturannya. Kalau dismissal rate didominasi false positive, perketat prompt dan aturan. Kalau addressing rate mentok di bawah 20 persen sementara manusia di atas 50 persen, matikan tool itu dan coba pendekatan lain.</p>

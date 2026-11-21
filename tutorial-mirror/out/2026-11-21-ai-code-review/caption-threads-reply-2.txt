@@ -1,0 +1,3 @@
+Lima metrik yang lebih jujur: addressing rate dibanding baseline komentar manusia di repo yang sama, dismissal rate beserta alasannya, escaped defects alias isu yang lolos ke merge, signal ratio HIGH dibanding noise, dan biaya per komentar berguna.
+
+Reviewer yang sehat diam sebagian besar waktu dan berisik soal hal yang penting.

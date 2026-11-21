@@ -1,0 +1,130 @@
+{
+  "carousel": {
+    "slides": [
+      {
+        "sub": "Cara mengukur kualitas AI code review dengan metrik yang jujur, bukan cuma lihat dashboard hijau.",
+        "title": [
+          "Reviewer AI-mu",
+          "Bagus Beneran,",
+          "atau Cuma Rajin?"
+        ],
+        "type": "cover"
+      },
+      {
+        "items": [
+          {
+            "body": "Addressing rate adalah persentase komentar review AI yang berujung perubahan kode sebelum merge. GitHub menyediakannya di Copilot usage metrics API sejak 5 November 2026.",
+            "head": "Persentase yang ditindaklanjuti"
+          },
+          {
+            "body": "Komentar di pull request yang masih terbuka atau ditutup tanpa merge tidak masuk hitungan. Jadi ini metrik merge, bukan metrik review.",
+            "head": "Hanya pull request yang merge"
+          },
+          {
+            "body": "Developer bisa mengubah kode karena alasan lain, lalu komentar AI yang salah ikut tercatat sebagai ditindaklanjuti.",
+            "head": "Respons, bukan kebenaran"
+          }
+        ],
+        "title": "Addressing rate itu apa sih",
+        "type": "points"
+      },
+      {
+        "body": "Uber mencatat di atas 65 persen, Atlassian 38,7 persen, Google sekitar 40 persen. Sementara 16 GitHub Actions open source di 178 repo cuma 0,9 sampai 19,2 persen, dibanding 60 persen komentar manusia. Bedanya: sistem besar di-tune buat codebase sendiri dan membuang komentar lemah sebelum sampai ke developer. Definisi tiap angka juga beda, jadi jangan dibandingkan mentah-mentah.",
+        "code": "Uber 65% | Atlassian 38,7% | Actions 0,9-19,2%",
+        "title": "Angka besar tidak selalu sebanding",
+        "type": "text"
+      },
+      {
+        "items": [
+          {
+            "body": "Bandingkan komentar AI dengan komentar manusia di repo yang sama, periode yang sama, definisi yang sama. Kalau manusia 60 persen dan AI 15 persen, itu informasi yang jujur.",
+            "head": "Addressing rate vs manusia"
+          },
+          {
+            "body": "Catat kenapa ditolak: false positive, wont fix, sudah ditangani. Tanpa alasan, angka ini cuma keluhan.",
+            "head": "Dismissal rate + alasan"
+          },
+          {
+            "body": "Apa yang lolos ke merge padahal sudah ditandai, atau lolos tanpa ditandai sama sekali. Ini metrik paling penting dan paling tidak nyaman.",
+            "head": "Escaped defects"
+          }
+        ],
+        "title": "Lima metrik yang lebih jujur",
+        "type": "points"
+      },
+      {
+        "code": [
+          "fixed = sum(1 for f in findings",
+          "  if f['outcome'] == 'fixed')",
+          "rate = fixed / total",
+          "print(f'{rate:.1%} ditindaklanjuti')"
+        ],
+        "note": "Log tiap temuan sebagai satu baris JSON: rule_id, severity, outcome, dismissal_reason, pr_number. Jalankan tiap Jumat sore selama 4 minggu.",
+        "title": "Satu file log, semua metrik kehitung",
+        "type": "code"
+      },
+      {
+        "lines": [
+          "Contoh skrip Python lengkapnya, dari load log sampai signal ratio per severity, semuanya ada di blog Peka.",
+          "Follow @peka.ai.id, save dulu biar gampang dicari pas butuh."
+        ],
+        "shortlink": "https://s.peka.ai.id/w1p71O",
+        "title": "Baca versi lengkapnya",
+        "type": "closing"
+      }
+    ]
+  },
+  "date": "2026-11-21",
+  "excerpt": "AI code review sudah dipakai di mana-mana, tapi hampir tidak ada tim yang bisa menjawab pertanyaan paling dasar: apakah reviewer AI ini sebenarnya bagus? Di tutorial ini, kamu akan mengukur kualitasnya dengan metrik yang jujur: addressing rate, dismissal rate, escaped defects, sampai biaya per komentar berguna, plus skrip Python buat menghitungnya sendiri di repo kamu.",
+  "faq": [
+    [
+      "Apa itu addressing rate di AI code review?",
+      "Persentase komentar review AI yang berujung perubahan kode sebelum merge. GitHub menyediakannya di Copilot usage metrics API sejak 5 November 2026, dihitung dari komentar pada pull request yang sudah merge."
+    ],
+    [
+      "Berapa addressing rate yang bagus?",
+      "Tergantung definisi dan konteks repo. Deployment internal perusahaan besar mencatat 38 sampai 65 persen, sementara GitHub Actions open source umum hanya 0,9 sampai 19,2 persen. Bandingkan dengan angka komentar manusia di repo yang sama, bukan dengan angka perusahaan lain."
+    ],
+    [
+      "Kenapa komentar AI yang ditindaklanjuti belum tentu berkualitas?",
+      "Karena developer bisa mengubah kode untuk alasan lain, atau perubahannya trivial. Addressing rate mengukur respons, bukan kebenaran temuan. Lengkapi dengan dismissal rate, escaped defects, dan sampling manual."
+    ],
+    [
+      "Bagaimana cara mengukur kualitas AI code review di repo sendiri?",
+      "Simpan setiap temuan ke log, catat hasilnya, diperbaiki, ditolak, atau lolos ke merge, lalu hitung addressing rate dan dismissal rate per minggu. Contoh skrip Python-nya ada di artikel ini."
+    ]
+  ],
+  "hero": "file:///home/hatch/workspace/blog/static/img/covers/mengukur-kualitas-ai-code-review-addressing-rate-metrik-jujur.jpg",
+  "reel": {
+    "band": "KUALITAS AI CODE REVIEW",
+    "date": "21 NOVEMBER 2026",
+    "headline": [
+      "REVIEWER AI-MU",
+      "BAGUS BENERAN,",
+      "ATAU CUMA RAJIN?"
+    ],
+    "points": [
+      "GitHub menambahkan addressing rate ke Copilot usage metrics API sejak 5 November 2026. Angka ini hanya menghitung komentar di pull request yang sudah merge.",
+      "Uber mencatat di atas 65 persen, Atlassian 38,7 persen, sementara GitHub Actions open source generik cuma 0,9 sampai 19,2 persen. Definisinya beda, jadi angkanya tidak bisa dibandingkan mentah-mentah.",
+      "Lima metrik yang lebih jujur: addressing rate dibanding baseline manusia, dismissal rate beserta alasan, escaped defects, signal ratio, dan biaya per komentar berguna."
+    ],
+    "question": "Di repo kamu, komentar AI lebih sering ditindaklanjuti atau ditolak?",
+    "source": "TUTORIAL PEKA",
+    "steps": [
+      "Simpan tiap temuan ke satu file log JSON, satu baris per temuan, dengan outcome fixed, dismissed, atau merged-as-flagged.",
+      "Jalankan skrip review_metrics.py tiap minggu buat hitung addressing rate, dismissal rate, dan signal ratio per severity.",
+      "Bandingkan dengan komentar manusia di repo yang sama, lalu sampling manual 20 komentar acak tiap minggu."
+    ],
+    "sub": "Addressing rate saja tidak cukup. Ini cara mengukur kualitas AI code review dengan metrik yang jujur."
+  },
+  "slug": "mengukur-kualitas-ai-code-review-addressing-rate-metrik-jujur",
+  "source_file": "2026-11-21-mengukur-kualitas-ai-code-review-addressing-rate-metrik-jujur.md",
+  "source_title": "Mengukur Kualitas AI Code Review: Metrik yang Jujur",
+  "tags": [
+    "Tutorial",
+    "AI",
+    "AI Code Review",
+    "GitHub Copilot"
+  ],
+  "title": "Mengukur Kualitas AI Code Review dengan Metrik yang Jujur"
+}
