@@ -1,0 +1,9 @@
+OpenCode kamu masih jalan tanpa pengaman? cc-safety-net ngeblok perintah Git yang bahaya sebelum kejalan.
+
+cc-safety-net paling kepakai: pasang pengamannya, lalu coba suruh agent kamu hapus file, dia bakal ngeblok duluan sebelum file kamu hilang. Agent kamu tetap bisa kerja cepat, tapi nggak bisa tiba-tiba ngehapus repo.
+
+Repo mana yang mau kamu coba duluan? Link tiap repo ada di videonya masing-masing.
+
+Music: Vortex by Kevin MacLeod
+
+#OpenCode #AIAgent #GitHub #SkillAI #Ngoding #AITools #PekaAI

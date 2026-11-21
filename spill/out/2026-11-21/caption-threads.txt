@@ -1,0 +1,1 @@
+SPILL REPO #32: SKILL OPENCODE. OpenCode kamu masih jalan tanpa pengaman? cc-safety-net ngeblok perintah Git yang bahaya sebelum kejalan, dan dia dukung 14 agent sekaligus. Pasang pengamannya, lalu coba suruh agent kamu hapus file, dia bakal ngeblok duluan sebelum file kamu hilang. Repo mana yang mau kamu coba duluan? Link tiap repo ada di slide-nya masing-masing. #AI

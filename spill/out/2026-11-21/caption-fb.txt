@@ -1,0 +1,7 @@
+OpenCode kamu masih jalan tanpa pengaman? cc-safety-net ngeblok perintah Git yang bahaya sebelum kejalan, dan dia dukung 14 agent sekaligus, dan ini cuma satu dari 5 skill OpenCode di edisi ini.
+
+Edisi ini ada 5 repo skill OpenCode: cc-safety-net buat ngeblok perintah berbahaya sebelum jalan; OpenCode Manager buat ngawasin semua sesi OpenCode dari HP; Oh My Agent buat tim spesialis dan workflow paralel; Awesome LLM Skills buat daftar kurasi skill siap pasang; dan Zhang Xuefeng Skill buat framework rencana jurusan dan karier dari konsultan pendidikan China.
+
+Langkah pertama: pasang cc-safety-net, lalu coba suruh agent kamu hapus file, dia bakal ngeblok duluan sebelum file kamu hilang.
+
+Link tiap repo ada di slide-nya masing-masing. Repo mana yang mau kamu coba duluan? Share ke teman yang lagi butuh skill AI.

@@ -1,0 +1,48 @@
+{
+ "agent": "OPENCODE",
+ "next": "ANTIGRAVITY",
+ "episode": 32,
+ "repos": [
+  {
+   "name": "alchaincyf/zhangxuefeng-skill",
+   "stars": "11RB",
+   "desc": "Zhang Xuefeng Skill ini skill yang ngebawain cara mikir Zhang Xuefeng, konsultan pendidikan terkenal di China, ke dalam agent AI kamu. Isinya framework praktis buat milih jurusan kuliah, nyiapin ujian masuk pascasarjana, sampai ngerencanain karier, lengkap sama logika di balik tiap sarannya. Skill ini dibuat dari Nuwa Skill, jadi agent kamu nggak cuma jawab generik, tapi mikir pakai pola yang sama kayak ahlinya. Kamu tinggal tanya soal jurusan atau rencana karier, agent bakal ngebantuin kamu nimbang pro kontra dengan cara yang terstruktur. Kontennya berbahasa Mandarin, jadi paling enak dipakai bareng agent yang bisa bantu nerjemahin sekalian. Hasilnya keputusan soal pendidikan dan karier jadi lebih jelas, bukan cuma ikut-ikutan.",
+   "cocok": "Kamu yang lagi bingung milih jurusan atau rencana karier dan mau agent kamu mikir kayak konsultan pendidikan.",
+   "shortlink": "https://s.peka.ai.id/kEFNXw",
+   "install": "npx skills add alchaincyf/zhangxuefeng-skill"
+  },
+  {
+   "name": "kenryu42/cc-safety-net",
+   "stars": "2RB",
+   "desc": "CC Safety Net itu pengaman yang duduk di depan agent AI kamu dan ngecek tiap perintah sebelum dijalankan. Dia ngeblok perintah Git yang merusak, perintah file system yang berbahaya, sampai percobaan ngakses file sensitif, sebelum tool agent sempat jalan. Dia dukung 14 agent sekaligus, mulai dari OpenCode, Claude Code, Codex, Cursor, sampai Antigravity CLI, jadi satu pengaman bisa dipakai di semua agent yang kamu pakai. Cara kerjanya simpel, dia jadi penjaga gerbang yang nahan aksi berisiko dan ngasih tahu kamu kenapa aksi itu ditahan. Hasilnya agent kamu tetap bisa kerja cepat, tapi nggak bisa tiba-tiba ngehapus repo atau bocorin file penting.",
+   "cocok": "Kamu yang ngasih agent akses ke repo asli dan nggak mau satu perintah salah ngehapus kerjaan berbulan-bulan.",
+   "shortlink": "https://s.peka.ai.id/9OViHH",
+   "install": "npx skills add kenryu42/cc-safety-net -g"
+  },
+  {
+   "name": "Prat011/awesome-llm-skills",
+   "stars": "2RB",
+   "desc": "Awesome LLM Skills ini daftar kurasi berisi skill, resource, dan tool buat ngatur workflow AI agent kamu. Isinya dikumpulin dari berbagai sumber dan bisa dipakai di Claude Code, Codex, Gemini CLI, sampai agent custom buatan kamu sendiri. Kamu tinggal telusurin daftarnya, pilih skill yang cocok sama kebutuhanmu, lalu pasang ke agent kamu. Daftarnya dirawat terus, jadi kamu nggak perlu nyari satu-satu di GitHub tiap kali butuh skill baru. Hasilnya agent kamu langsung kebuka banyak kemampuan baru tanpa kamu harus nulis skill dari nol.",
+   "cocok": "Kamu yang mau nambahin kemampuan agent kamu tapi males nyari skill satu-satu di GitHub.",
+   "shortlink": "https://s.peka.ai.id/HmBJGl",
+   "install": "npx skills add Prat011/awesome-llm-skills -y"
+  },
+  {
+   "name": "first-fluke/oh-my-agent",
+   "stars": "1RB",
+   "desc": "Oh My Agent ini paket skill dan tim spesialis buat coding agent, mulai dari Claude Code, Codex, Cursor, sampai agent lain yang kamu pakai. Kamu bisa pasang satu skill aja, atau langsung ambil preset per bidang, project hook, dan workflow paralel yang udah dilengkapi test gate. Tiap skill dibikin fokus ke satu tugas, jadi agent kamu nggak bingung dan hasilnya lebih konsisten. Workflow paralelnya bikin beberapa agent bisa kerja bareng di tugas yang berbeda tanpa tabrakan. Hasilnya proyek kamu kelar lebih cepat, dengan pengecekan otomatis di tiap langkah.",
+   "cocok": "Kamu yang mau agent kamu kerja kayak tim, bukan cuma satu asisten yang ngerjain semuanya sendirian.",
+   "shortlink": "https://s.peka.ai.id/u8EV6n",
+   "install": "npx skills add first-fluke/oh-my-agent -y"
+  },
+  {
+   "name": "chriswritescode-dev/opencode-manager",
+   "stars": "1RB",
+   "desc": "OpenCode Manager ini command center buat OpenCode yang jalan sendiri di server kamu. Semua sesi, Git, terminal, dan jadwal ada di satu aplikasi web yang bisa kamu buka dari HP atau desktop. Kamu bisa mantau agent yang lagi jalan, ngecek riwayat sesi, sampai ngatur jadwal tugas tanpa harus buka laptop. Karena self-hosted, datanya tetap di server kamu sendiri, bukan di layanan orang lain. Hasilnya kamu bisa ngawasin dan ngendaliin OpenCode dari mana aja, kapan aja.",
+   "cocok": "Kamu yang jalanin OpenCode di server dan mau ngawasin semua sesinya dari HP.",
+   "shortlink": "https://s.peka.ai.id/DjHDmY",
+   "install": "npx skills add chriswritescode-dev/opencode-manager -g"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/carousel"
+}
