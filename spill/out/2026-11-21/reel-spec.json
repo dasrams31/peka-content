@@ -1,47 +1,52 @@
 {
- "agent": "OPENCODE",
- "episode": 32,
- "next": "ANTIGRAVITY",
- "repos": [
-  {
-   "name": "alchaincyf/zhangxuefeng-skill",
-   "stars": "11RB",
-   "install": "npx skills add alchaincyf/zhangxuefeng-skill",
-   "penjelasan": "Zhang Xuefeng Skill ngebawain cara mikir konsultan pendidikan terkenal di China ke agent kamu. Isinya framework milih jurusan, nyiapin ujian pascasarjana, sampai rencana karier, lengkap sama logikanya.",
-   "cocok": "Kamu yang lagi bingung milih jurusan atau rencana karier dan mau agent kamu mikir kayak konsultan pendidikan.",
-   "shortlink": "https://s.peka.ai.id/kEFNXw"
-  },
-  {
-   "name": "kenryu42/cc-safety-net",
-   "stars": "2RB",
-   "install": "npx skills add kenryu42/cc-safety-net -g",
-   "penjelasan": "CC Safety Net ngecek tiap perintah agent sebelum jalan dan ngeblok perintah Git atau file yang berbahaya. Dia dukung 14 agent sekaligus, jadi satu pengaman buat semua agent kamu.",
-   "cocok": "Kamu yang ngasih agent akses ke repo asli dan nggak mau satu perintah salah ngehapus kerjaan berbulan-bulan.",
-   "shortlink": "https://s.peka.ai.id/9OViHH"
-  },
-  {
-   "name": "Prat011/awesome-llm-skills",
-   "stars": "2RB",
-   "install": "npx skills add Prat011/awesome-llm-skills -y",
-   "penjelasan": "Awesome LLM Skills itu daftar kurasi skill dan resource buat workflow AI agent kamu. Tinggal pilih skill yang cocok, lalu pasang ke agent, tanpa nyari satu-satu di GitHub.",
-   "cocok": "Kamu yang mau nambahin kemampuan agent kamu tapi males nyari skill satu-satu di GitHub.",
-   "shortlink": "https://s.peka.ai.id/HmBJGl"
-  },
-  {
-   "name": "first-fluke/oh-my-agent",
-   "stars": "1RB",
-   "install": "npx skills add first-fluke/oh-my-agent -y",
-   "penjelasan": "Oh My Agent itu paket skill dan tim spesialis buat coding agent, lengkap sama preset per bidang dan workflow paralel. Agent kamu kerja kayak tim, dengan pengecekan otomatis di tiap langkah.",
-   "cocok": "Kamu yang mau agent kamu kerja kayak tim, bukan cuma satu asisten yang ngerjain semuanya sendirian.",
-   "shortlink": "https://s.peka.ai.id/u8EV6n"
-  },
-  {
-   "name": "chriswritescode-dev/opencode-manager",
-   "stars": "1RB",
-   "install": "npx skills add chriswritescode-dev/opencode-manager -g",
-   "penjelasan": "OpenCode Manager itu command center buat OpenCode yang jalan sendiri di server kamu. Semua sesi, Git, terminal, dan jadwal ada di satu aplikasi web yang bisa dibuka dari HP.",
-   "cocok": "Kamu yang jalanin OpenCode di server dan mau ngawasin semua sesinya dari HP.",
-   "shortlink": "https://s.peka.ai.id/DjHDmY"
-  }
- ]
+  "agent": "OPENCODE",
+  "episode": 32,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "name": "alchaincyf/zhangxuefeng-skill",
+      "stars": "11RB",
+      "install": "npx skills add alchaincyf/zhangxuefeng-skill",
+      "penjelasan": "Zhang Xuefeng Skill ngebawain cara mikir konsultan pendidikan terkenal di China ke agent kamu. Isinya framework milih jurusan, nyiapin ujian pascasarjana, sampai rencana karier, lengkap sama logikanya.",
+      "cocok": "Kamu yang lagi bingung milih jurusan atau rencana karier dan mau agent kamu mikir kayak konsultan pendidikan.",
+      "shortlink": "https://s.peka.ai.id/kEFNXw",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/shots/alchaincyf-zhangxuefeng-skill.png"
+    },
+    {
+      "name": "kenryu42/cc-safety-net",
+      "stars": "2RB",
+      "install": "npx skills add kenryu42/cc-safety-net -g",
+      "penjelasan": "CC Safety Net ngecek tiap perintah agent sebelum jalan dan ngeblok perintah Git atau file yang berbahaya. Dia dukung 14 agent sekaligus, jadi satu pengaman buat semua agent kamu.",
+      "cocok": "Kamu yang ngasih agent akses ke repo asli dan nggak mau satu perintah salah ngehapus kerjaan berbulan-bulan.",
+      "shortlink": "https://s.peka.ai.id/9OViHH",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/shots/kenryu42-cc-safety-net.png"
+    },
+    {
+      "name": "Prat011/awesome-llm-skills",
+      "stars": "2RB",
+      "install": "npx skills add Prat011/awesome-llm-skills -y",
+      "penjelasan": "Awesome LLM Skills itu daftar kurasi skill dan resource buat workflow AI agent kamu. Tinggal pilih skill yang cocok, lalu pasang ke agent, tanpa nyari satu-satu di GitHub.",
+      "cocok": "Kamu yang mau nambahin kemampuan agent kamu tapi males nyari skill satu-satu di GitHub.",
+      "shortlink": "https://s.peka.ai.id/HmBJGl",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/shots/Prat011-awesome-llm-skills.png"
+    },
+    {
+      "name": "first-fluke/oh-my-agent",
+      "stars": "1RB",
+      "install": "npx skills add first-fluke/oh-my-agent -y",
+      "penjelasan": "Oh My Agent itu paket skill dan tim spesialis buat coding agent, lengkap sama preset per bidang dan workflow paralel. Agent kamu kerja kayak tim, dengan pengecekan otomatis di tiap langkah.",
+      "cocok": "Kamu yang mau agent kamu kerja kayak tim, bukan cuma satu asisten yang ngerjain semuanya sendirian.",
+      "shortlink": "https://s.peka.ai.id/u8EV6n",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/shots/first-fluke-oh-my-agent.png"
+    },
+    {
+      "name": "chriswritescode-dev/opencode-manager",
+      "stars": "1RB",
+      "install": "npx skills add chriswritescode-dev/opencode-manager -g",
+      "penjelasan": "OpenCode Manager itu command center buat OpenCode yang jalan sendiri di server kamu. Semua sesi, Git, terminal, dan jadwal ada di satu aplikasi web yang bisa dibuka dari HP.",
+      "cocok": "Kamu yang jalanin OpenCode di server dan mau ngawasin semua sesinya dari HP.",
+      "shortlink": "https://s.peka.ai.id/DjHDmY",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-21/shots/chriswritescode-dev-opencode-manager.png"
+    }
+  ]
 }
