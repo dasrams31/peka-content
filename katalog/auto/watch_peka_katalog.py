@@ -248,6 +248,20 @@ def build(prices, out_dir):
 
 
 def main():
+    # Lock dari force-rebuild harian 07:30 (lihat ops/force_rebuild_katalog_harian.py):
+    # selama lock segar (<30 menit), lewati run ini supaya tidak rebuild
+    # berbarengan dengan force build (dua render Playwright sekaligus +
+    # kirim dobel ke chat). Lock kedaluwarsa sendiri, jadi run yang
+    # tertunda tidak macet selamanya bila force job mati mendadak.
+    # Pengecualian: run force itu sendiri (env PEKA_FORCE_RUN=1) lewat.
+    lock = os.path.join(AUTO_DIR, "force.lock")
+    if os.environ.get("PEKA_FORCE_RUN") != "1":
+        try:
+            if os.path.exists(lock) and (datetime.now().timestamp() - os.path.getmtime(lock) < 1800):
+                print("LOCKED: force rebuild in progress, skipping")
+                return 0
+        except OSError:
+            pass
     dry_run = "--dry-run" in sys.argv
     force = "--force" in sys.argv
     prices = load_prices()
