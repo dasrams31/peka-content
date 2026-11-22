@@ -210,5 +210,15 @@
   "bot_id": 118,
   "removed_at": "2026-11-22",
   "reason": "sold out"
+ },
+ {
+  "dur": "30 Hari",
+  "name": "Crunchyroll",
+  "price": "6K",
+  "price_num": 6,
+  "sec": "CRUNCHYROLL",
+  "bot_id": 74,
+  "removed_at": "2026-11-22",
+  "reason": "sold out"
  }
 ]
