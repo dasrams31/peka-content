@@ -1,0 +1,52 @@
+{
+  "agent": "ANTIGRAVITY",
+  "episode": 33,
+  "next": "CLAUDE",
+  "repos": [
+    {
+      "name": "htdt/godogen",
+      "stars": "7RB",
+      "install": "npx skills add htdt/godogen",
+      "penjelasan": "Godogen ngasih 2 skill ke agent AI kamu biar bisa bikin game beneran. Skill engine-guide milih engine yang pas, asset-gen bikin gambar, karakter 3D, sampai voice.",
+      "cocok": "Kamu yang mau bikin game bareng agent AI di Antigravity, Codex, atau Claude Code.",
+      "shortlink": "https://s.peka.ai.id/zS5qzb",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/shots/htdt-godogen.png"
+    },
+    {
+      "name": "PeonPing/peon-ping",
+      "stars": "5RB",
+      "install": "brew install PeonPing/tap/peon-ping",
+      "penjelasan": "Peon Ping bikin agent AI kamu ngomong pakai suara Peon dari Warcraft III tiap kali butuh perhatian kamu. Agent selesai kerja, Peon langsung teriak dari speaker.",
+      "cocok": "Kamu yang suka main game dan mau agent AI ngabarin pakai suara Peon yang ikonik.",
+      "shortlink": "https://s.peka.ai.id/cl45zl",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/shots/PeonPing-peon-ping.png"
+    },
+    {
+      "name": "sandbox-quantum/switch",
+      "stars": "5RB",
+      "install": "npx skills add sandbox-quantum/switch -g",
+      "penjelasan": "Switch ngubah Slack, Teams, atau Discord kamu jadi markas tim agent AI. Agent terhubung ke GitHub, Jira, dan Notion lewat MCP, semuanya self-hosted.",
+      "cocok": "Tim yang mau agent AI kerja bareng di Slack atau Discord tanpa pindah tool.",
+      "shortlink": "https://s.peka.ai.id/CeTuL6",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/shots/sandbox-quantum-switch.png"
+    },
+    {
+      "name": "AgenticResourceRegistry/AgenticResourceRegistry",
+      "stars": "4RB",
+      "install": "uv tool install observal-cli",
+      "penjelasan": "Agentic Resource Registry itu tempat tim berbagi dan nemuin resource buat coding agent. Semua tersimpan di satu tempat yang bisa dicari, jadi nggak perlu bikin ulang.",
+      "cocok": "Tim yang pakai banyak coding agent dan mau berbagi skill serta resource tanpa bikin ulang.",
+      "shortlink": "https://s.peka.ai.id/KCSK8s",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/shots/AgenticResourceRegistry-AgenticResourceRegistry.png"
+    },
+    {
+      "name": "nanaism/yomiyasu",
+      "stars": "3RB",
+      "install": "npx skills add nanaism/yomiyasu",
+      "penjelasan": "Yomiyasu ngerapiin tulisan Jepang hasil AI jadi bahasa Jepang yang natural. Dia olah ulang teks yang kaku sampai enak dibaca kayak ditulis manusia.",
+      "cocok": "Kamu yang nulis konten Jepang bareng AI dan mau hasilnya kebaca natural.",
+      "shortlink": "https://s.peka.ai.id/OsZCXq",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/shots/nanaism-yomiyasu.png"
+    }
+  ]
+}

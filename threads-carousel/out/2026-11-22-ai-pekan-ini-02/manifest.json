@@ -1,0 +1,14 @@
+{
+  "spec": "/home/hatch/workspace/peka-content/weekly-ai/out/2026-11-22-agentic-ai/spec.json",
+  "theme": "peka-yellow",
+  "title": "AI Pekan Ini #02: Agentic AI",
+  "link": null,
+  "slides": [
+    "threads-carousel-01.png",
+    "threads-carousel-02.png",
+    "threads-carousel-03.png",
+    "threads-carousel-04.png",
+    "threads-carousel-05.png",
+    "threads-carousel-06.png"
+  ]
+}

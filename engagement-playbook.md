@@ -305,9 +305,12 @@ versi carousel/feed post lagi:
 - Caption reel: gaya FYP, hook keuntungan pembaca + catatan jujur
   (deadline, syarat) + ajakan save + TEPAT SATU pertanyaan + hashtag
   relevan (IG) / tanpa hashtag (FB) + kredit musik.
-- Threads: carousel/teks seperti biasa, PLUS reel video langsung untuk
-  seri voiceover (AI Pekan Ini, Tutorial Agent, Komik Peka) dan reel
-  pilar lain bila ada. Balasan dirantai di bawah video.
+- Threads: SEMUA konten pakai carousel (aturan 22 Nov 2026, perintah
+  user: video TIDAK TAYANG di Threads). Carousel dibangun dari bahan
+  yang sama dengan reelnya: reel-v2 via threads-carousel/carousel.py
+  (tema/warna ikut spec.json, sama dengan reel), Tutorial Agent pakai
+  6 slide yang sudah dibangun, Komik pakai 6 still dari share.mp4.
+  Balasan dirantai di bawah carousel.
 - Carousel/slide tetap diproduksi sebagai bahan reels + untuk Threads +
   blog, tapi TIDAK diposting ke IG/FB.
 - Pilar yang belum punya pipeline reels animasi memakai fallback
