@@ -504,21 +504,30 @@ def detail_koran(args, points, idx, n):
     d = ImageDraw.Draw(img)
     d = koran_header(img, d, args.badge)
     d.text((X(70), X(196)), "DETAIL BERITA", font=mono(26), fill=INK_SUB)
-    y = X(280)
-    base_num = (idx - 2) * 2
-    for j, p in enumerate(points):
-        num = f"{base_num + j + 1:02d}"
-        d.text((X(70), y), num, font=fs(54), fill=INK)
+    blocks = []
+    for p in points:
         for sz in (40, 36, 32):
             lines = wrap(d, p, fsr(sz), W - X(330))
             if len(lines) <= 5:
                 break
+        blocks.append((sz, lines))
+    # Vertically center the block in the band below DETAIL BERITA and
+    # above the footer (280..970 design units), same fix as
+    # detail_premium: short editions no longer leave a ~35% void.
+    total_h = sum(X(6) + len(lines) * X(int(sz * 1.4)) + X(34)
+                  for sz, lines in blocks)
+    total_h += X(34) * max(0, len(blocks) - 1)
+    y = X(280) + max(0, (X(970) - X(280) - total_h) // 2)
+    base_num = (idx - 2) * 2
+    for j, (sz, lines) in enumerate(blocks):
+        num = f"{base_num + j + 1:02d}"
+        d.text((X(70), y), num, font=fs(54), fill=INK)
         ty = y + X(6)
         for ln in lines:
             d.text((X(230), ty), ln, font=fsr(sz), fill=INK)
             ty += X(int(sz * 1.4))
         y = ty + X(34)
-        if j < len(points) - 1:
+        if j < len(blocks) - 1:
             d.rectangle([X(70), y, X(1010), y + X(2)], fill="#d8d2c2")
             y += X(34)
     koran_footer(d, idx, n)
@@ -727,10 +736,15 @@ def detail_premium(args, points, idx, n):
             if len(lines) <= 6:
                 break
         blocks.append((sz, lines))
-    # Top-aligned under DETAIL BERITA (was: vertically centered, but the
-    # centering mixed design units (total) with pixels (X(760)), pushing
-    # the block ~160 units too low and leaving a big void above it).
-    y = X(250)
+    # Vertically center the block in the band below DETAIL BERITA and
+    # above the footer (250..970 design units, all in the same unit
+    # system — the old centering mixed units and pushed the block ~160
+    # too low). Short editions no longer leave a ~35% void at the
+    # bottom; full editions have no slack and stay top-aligned.
+    total_h = sum(X(4) + len(lines) * X(int(sz * 1.45)) + X(28)
+                  for sz, lines in blocks)
+    total_h += X(28) * max(0, len(blocks) - 1)
+    y = X(250) + max(0, (X(970) - X(250) - total_h) // 2)
     for j, (sz, lines) in enumerate(blocks):
         num = f"{base_num + j + 1:02d}"
         d.text((X(120), y), num, font=fs(40), fill=GOLD)

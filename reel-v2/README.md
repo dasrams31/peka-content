@@ -3,7 +3,10 @@
 A second reel system next to the v1 template reels (15-16s, music-led).
 Reel-v2 is built for the longer voiceover-led explainer format: 45-60s,
 one Indonesian voiceover driving the reel, word-by-word karaoke captions
-synced to real TTS word boundaries, dark textured visuals, no music.
+synced to real TTS word boundaries, dark textured visuals, plus a low
+background music bed (one track per edition, picked from the brand
+music lanes in `~/workspace/peka-content/brand/music/`; see "Music"
+below). The bed sits under the voiceover and never competes with it.
 
 ADOPTED 13 Nov 2026 (user order, after demo v3): the voiceover reel
 is now part of the template for NEW AI MODEL NEWS editions
@@ -35,8 +38,10 @@ other running pillars keep the v1 format.
   Also has a `--still <t> <out.jpg>` mode for theme comparison.
 - `encode.py` - ffmpeg: frames + narration to h264 2160x3840 yuv420p
   + aac, faststart; cover jpg from t=1s.
-- `build_reel.py` - orchestrator: spec -> TTS -> render -> encode ->
-  ffprobe verify (h264, 2160x3840, yuv420p, aac, 45-60s) -> delete frames.
+- `build_reel.py` - orchestrator: spec -> TTS -> pick music track ->
+  render -> encode -> ffprobe verify (h264, 2160x3840, yuv420p, aac,
+  45-60s) -> delete frames. Writes `track.txt` in the out dir (full
+  music path + display title) for the caption music credit.
 - `demo-hydrogen/` - the demo edition (Gemini 4 Hydrogen, dark-grid).
   v1: flat Piko mascot, fixed bottom-right, voiceover aku/kamu +15%.
 - `demo-hydrogen-v2/` - the same topic, second demo: anime Piko
@@ -211,8 +216,11 @@ punctuation. v3 fixes both in `tts.py`:
      reference reels); keep the visual text consistent with the
      spoken words (e.g. the closing headline says "Lo tim Hydrogen"
      because the voiceover says "lo").
-2. Run: `python3 build_reel.py <spec.json> <out_dir> [--theme <name>]`
+2. Run: `python3 build_reel.py <spec.json> <out_dir> [--theme <name>] [--music-lane <cyberpunk|light>]`
    (about 40 minutes: ~30s TTS, ~37 min frame render, ~1 min encode).
+   The music lane defaults to `cyberpunk`; pass `--music-lane light`
+   (or set `"music_lane": "light"` in spec.json) for the lighter
+   series (Coba Dulu, Tanya Jawab). `--no-music` builds without a bed.
 3. Check `build.log` + ffprobe output, then eyeball frames: extract
    with `ffmpeg -ss <t> -i <out>/reel.mp4 -frames:v 1 check.jpg`
    at the hook, mid-beat, and closing scene. **For a talking-
@@ -225,6 +233,28 @@ punctuation. v3 fixes both in `tts.py`:
 4. Write `caption-tiktok.txt` in the out dir (FYP pattern: hook fact
    first, ~35 words, 3 hashtags, exactly one forced-choice question,
    no link in the text; the link lives in the closing scene only).
+
+## Music (since 2026-11-22, user order: add music so each content differs)
+
+Reel-v2 used to have no music. Now every build mixes one background
+track under the voiceover: `encode.py` trims the track to the
+narration length (looped if shorter), volume 0.12, 1s fade in and
+1s fade out, mixed with the voiceover at full volume
+(`amix duration=first`, so the voiceover still defines the length).
+
+- Lanes live in `~/workspace/peka-content/brand/music/`:
+  `CYBERPUNK_TRACKS.txt` (16 tracks, tech/AI mood, default) and
+  `LIGHT_TRACKS.txt` (16 tracks, cheerful/playful mood). Each lane
+  has its own persistent counter, so consecutive builds always get a
+  different track within the lane. See `brand/music/README.md`.
+- Series mapping: cyberpunk for Bandingin Model, AI Pekan Ini,
+  Tutorial Agent, model specials; light for Coba Dulu, Tanya Jawab.
+- The picked track is printed by `build_reel.py` and recorded in
+  `<out_dir>/track.txt` — use its title for the caption credit
+  (`Music: <Title> by Kevin MacLeod`), same rule as the v1 reels.
+- To add a new track: `brand/music/fetch_track.sh "<Track Name>"
+  <cyberpunk|light>` (downloads from incompetech, verifies with
+  ffprobe, appends to the lane; no counter reset).
 
 ## Rules that still apply (do not break)
 

@@ -59,12 +59,15 @@
   .cmp { margin-top: 48px; }
   .cmp-row { margin-top: 40px; }
   .cmp-label { font-family: DejaVuMonoB; font-size: 30px; letter-spacing: 2px; color: var(--dim); }
-  .cmp-vals { display: flex; gap: 28px; margin-top: 16px; align-items: baseline; }
-  .cmp-vals .a { font-family: PoppinsB; font-size: 64px; color: var(--accent); }
-  .cmp-vals .vs { font-family: DejaVu; font-size: 34px; color: var(--dim); }
-  .cmp-vals .b { font-family: PoppinsB; font-size: 64px; color: var(--text); }
-  .cmp-names { display: flex; gap: 28px; margin-top: 8px; }
-  .cmp-names span { font-family: DejaVuMonoB; font-size: 26px; color: var(--dim); }
+  /* One shared grid for values + names so the "lawan" separator lands
+     at the same x in both rows (two separate flex rows let it drift
+     with the width of the value/label above it). */
+  .cmp-grid { display: grid; grid-template-columns: auto auto 1fr; column-gap: 28px; row-gap: 8px;
+    margin-top: 16px; align-items: baseline; }
+  .cmp-grid .a { font-family: PoppinsB; font-size: 64px; color: var(--accent); }
+  .cmp-grid .vs { font-family: DejaVu; font-size: 34px; color: var(--dim); }
+  .cmp-grid .b { font-family: PoppinsB; font-size: 64px; color: var(--text); }
+  .cmp-grid .an, .cmp-grid .bn { font-family: DejaVuMonoB; font-size: 26px; color: var(--dim); }
   .q { font-family: PoppinsB; font-size: 96px; line-height: 1.14; color: var(--text); margin-top: 48px; }
   .q .hl { color: var(--accent); }
   .follow { font-family: PoppinsSB; font-size: 46px; line-height: 1.4; color: var(--dim); margin-top: 52px; }
@@ -77,10 +80,15 @@
   #mascot img { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
   #mascot img.on { display: block; }
   #karaoke { position: absolute; left: 84px; right: 84px; bottom: 168px; z-index: 6;
-    min-height: 250px; display: flex; align-items: flex-start; justify-content: center; }
+    min-height: 250px; display: flex; align-items: flex-start; justify-content: center;
+    /* Lower-third scrim: on rute-green the mountain ridge + sun sit
+       right behind this zone and wash out the dim/accent words
+       (measured ~1.6:1 for dim words over the light ridge). The band
+       is invisible on the near-black themes. */
+    background: linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.48) 100%); }
   .klines { text-align: center; }
   .kline { display: none; font-family: PoppinsSB; font-size: 56px; line-height: 1.42; }
-  .kline .w { color: var(--dim); opacity: 0.55; transition: none; }
+  .kline .w { color: var(--dim); opacity: 0.55; transition: none; text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
   .kline .w.past { color: var(--text); opacity: 1; }
   .kline .w.now { color: var(--accent); opacity: 1; }
   .foot { position: absolute; left: 84px; right: 84px; bottom: 58px; z-index: 5; text-align: center;
@@ -224,16 +232,14 @@
           s.compare.forEach((c, i) => {
             const row = el('div', 'cmp-row');
             row.appendChild(el('div', 'cmp-label', c.label));
-            const vals = el('div', 'cmp-vals');
-            vals.appendChild(el('span', 'a', c.a_value));
-            vals.appendChild(el('span', 'vs', 'lawan'));
-            vals.appendChild(el('span', 'b', c.b_value));
-            row.appendChild(vals);
-            const nm = el('div', 'cmp-names');
-            nm.appendChild(el('span', null, c.a_label));
-            nm.appendChild(el('span', 'vs', 'lawan'));
-            nm.appendChild(el('span', null, c.b_label));
-            row.appendChild(nm);
+            const grid = el('div', 'cmp-grid');
+            grid.appendChild(el('span', 'a', c.a_value));
+            grid.appendChild(el('span', 'vs', 'lawan'));
+            grid.appendChild(el('span', 'b', c.b_value));
+            grid.appendChild(el('span', 'an', c.a_label));
+            grid.appendChild(el('span', 'vs', 'lawan'));
+            grid.appendChild(el('span', 'bn', c.b_label));
+            row.appendChild(grid);
             markIn(row, 0.7 + i * 0.4, 0.5, 40, 0);
             box.appendChild(row);
           });

@@ -508,7 +508,11 @@ def repo_slide(spec, idx, repo):
     f_pen = _font("Poppins-SemiBold.ttf", 84)
     f_cocok_lbl = _font("Poppins-Bold.ttf", 88)
     f_cocok = _font("Poppins-SemiBold.ttf", 84)
-    cocok_lines = wrap(d, repo["cocok"], f_cocok, W - 2 * MX)
+    # Reserve the ghost-numeral column (right ~680px): the big "01"
+    # watermark sits at x >= W-MX-~580, y >= H-736, and the text is
+    # drawn over it, so a long COCOK BUAT line used to run underneath
+    # the digits (e.g. "...mau agent kamu" under "01" in edisi #32).
+    cocok_lines = wrap(d, repo["cocok"], f_cocok, W - 2 * MX - 680)
     cocok_h = 112 + len(cocok_lines) * 112 + 40
     pen_lines = wrap(d, repo["desc"], f_pen, W - 2 * MX)
     max_pen = max(1, (3860 - fy - cocok_h) // 112)

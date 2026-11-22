@@ -164,10 +164,20 @@ def pill(d, x, y, text, font, fill=None, txt=None, outline=None, pad_x=64, pad_y
 
 
 def stamp(d, cx, cy, text):
-    """Red double-outline GRATIS stamp, rotated -8 degrees, drawn in place."""
+    """Red double-outline GRATIS stamp, rotated -8 degrees, drawn in place.
+
+    The stamp's right edge is clamped to x=3000 so it never covers the
+    ticket-stub barcode (barcode left edge ~3042 canvas; measured
+    overlap before the clamp was 32px for '100% GRATIS' and 108px
+    for 'TANPA KARTU'). The visible rect after the 8-degree rotation
+    extends ~w/2*cos(8) + h/2*sin(8) right of the center.
+    """
     tf = f(128)
     tw = d.textlength(text, font=tf)
     w, h = int(tw + 168), 276
+    edge = cx + (w / 2) * 0.990 + (h / 2) * 0.139
+    if edge > 3000:
+        cx -= edge - 3000
     layer = Image.new("RGBA", (w + 120, h + 120), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     ld.rounded_rectangle([60, 60, 60 + w, 60 + h], radius=52, outline=RED, width=18)

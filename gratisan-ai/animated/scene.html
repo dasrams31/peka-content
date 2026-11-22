@@ -41,9 +41,18 @@
   .vlabel { writing-mode: vertical-rl; transform: rotate(180deg); font-family: DejaVuMonoB; font-size: 28px; color: #161616; letter-spacing: 2px; }
   .barcode { flex: 1; height: 380px; background: repeating-linear-gradient(90deg, #161616 0 5px, transparent 5px 9px, #161616 9px 15px, transparent 15px 19px, #161616 19px 22px, transparent 22px 30px); }
   .stubnote { font-family: DejaVu; font-size: 26px; color: #696962; margin-top: 24px; line-height: 1.4; }
-  .stubnote b { font-family: DejaVuMonoB; color: #161616; font-size: 24px; overflow-wrap: anywhere; }
+  /* Shortlink on one line: the stub content box is only 206px wide
+     (236px stub minus 4px border and 26px padding), so
+     "s.peka.ai.id/gabung" (19 chars) needs 17px mono (~195px); at
+     24px it broke mid-word ("s.peka.ai.id/g" / "abung"). */
+  .stubnote b { font-family: DejaVuMonoB; color: #161616; font-size: 17px; overflow-wrap: anywhere; }
   .nextline { font-family: PoppinsB; font-size: 34px; color: #ffd60a; margin-top: 44px; letter-spacing: 1px; }
-  .stamp { position: absolute; z-index: 3; border: 7px solid #d63026; border-radius: 22px; outline: 3px solid #d63026; outline-offset: 8px; color: #d63026; font-family: PoppinsB; font-size: 36px; padding: 18px 26px; transform: rotate(-8deg); background: rgba(255, 253, 244, 0.94); text-align: center; line-height: 1.15; white-space: nowrap; }
+  /* Stamp sits in the empty lower stub (top:700px, set inline): the
+     stub's upper half is barcode (y 48..428) and stubnote (y ~452..660),
+     so any stamp at top:370 crossed the barcode's bottom bars; at
+     28px a 14-char stamp also reached into a 3-line title's last line.
+     The lower stub is empty paper down to the ticket bottom. */
+  .stamp { position: absolute; z-index: 3; border: 7px solid #d63026; border-radius: 22px; outline: 3px solid #d63026; outline-offset: 8px; color: #d63026; font-family: PoppinsB; font-size: 28px; padding: 14px 20px; transform: rotate(-8deg); background: rgba(255, 253, 244, 0.94); text-align: center; line-height: 1.15; white-space: nowrap; }
   .deadline { font-family: DejaVu; font-size: 34px; color: #ffffff; margin-top: 44px; }
   .deadline b { color: #ffd60a; font-family: PoppinsB; }
   .card { background: #fffdf4; border-radius: 36px; padding: 48px 52px 56px 52px; }
@@ -96,7 +105,7 @@
           </div>
           <div class="stubnote">verified<br>gabung ke<br>komunitas kami:<br><b>s.peka.ai.id/gabung</b></div>
         </div>
-        <div class="stamp" id="stamp" data-pop="2.55,0.35" style="right:16px; top:370px">GRATIS<br>SETAHUN</div>
+        <div class="stamp" id="stamp" data-pop="2.55,0.35" style="right:16px; top:700px">GRATIS<br>SETAHUN</div>
       </div>
       <div class="deadline" id="deadline" data-in="3.10,0.40,0,30"></div>
       <div class="nextline" data-in="3.40,0.40,0,30">SYARAT DAN CARA KLAIMNYA, LANJUT &rarr;</div>

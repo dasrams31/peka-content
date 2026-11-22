@@ -174,17 +174,21 @@ def slide2(spec):
     d.rounded_rectangle([box_x, box_y, box_x + box_w, box_y + box_h], radius=112, fill=YELLOW)
     d.polygon([(box_x + 260, box_y + box_h - 4), (box_x + 600, box_y + box_h - 4),
                (box_x + 350, box_y + box_h + 128)], fill=YELLOW)
-    # copy glyph lives in the band above the text so it never touches it
+    # copy glyph lives in the band above the text so it never touches it;
+    # the band also carries its label (it used to be empty except for the
+    # glyph, which read as a mistake on the render).
     gx, gy = box_x + box_w - 380, box_y + 72
     d.rounded_rectangle([gx + 52, gy, gx + 192, gy + 140], radius=24, outline=INK, width=14)
     d.rounded_rectangle([gx, gy + 52, gx + 140, gy + 192], radius=24, outline=INK, width=14, fill=YELLOW)
+    d.text((box_x + 130, box_y + 110), "SALIN PROMPT INI", font=mono(88, bold=True), fill=INK)
     ty = box_y + 320
     for ln in lines:
         d.text((box_x + 130, ty), ln, font=pf, fill=INK)
         ty += int(size * 1.42)
 
-    # tips
-    y = box_y + box_h + 260
+    # tips (gaps widened so a short prompt does not leave a ~450px
+    # black void between the last tip and the footer hairline)
+    y = box_y + box_h + 320
     d.text((220, y), "CARA PAKAI", font=f(104), fill=YELLOW)
     y += 184
     for tip in spec["tips"][:3]:
@@ -193,7 +197,7 @@ def slide2(spec):
         for ln in tl:
             d.text((370, y), ln, font=fr(112), fill=WHITE)
             y += 148
-        y += 52
+        y += 72
 
     # footer trigger
     d.line([220, S - 600, 3876, S - 600], fill=(70, 70, 70), width=6)

@@ -49,3 +49,25 @@ Format per lesson:
 - DEVIASI FORMAT: spill-repo-skill-antigravity-edisi-25 (spill-repo): FB posted as reel, map says carousel
 - DEVIASI FORMAT: spill-repo-skill-claude-edisi-26 (spill-repo): FB posted as reel, map says carousel
 - DEVIASI FORMAT: spill-repo-skill-hermes-edisi-27 (spill-repo): FB posted as reel, map says carousel
+
+## 2026-11-22 — Musik beda tiap konten (perintah user 18:44)
+- Library musik diperluas: 19 -> 32 trek Kevin MacLeod (CC-BY, incompetech), 13 trek baru diunduh + diverifikasi ffprobe (7 cyberpunk, 6 light). 'Concentration' dibuang (57 MB / 30 mnt, tidak cocok untuk reel pendek).
+- Dua lane: CYBERPUNK_TRACKS.txt (16, tech/AI) + LIGHT_TRACKS.txt (16, ceria). pick_reel_track.sh terima argumen lane (default cyberpunk), counter terpisah per lane, panggil TEPAT SATU KALI per render. 10 trek lama yang tidak pernah terpakai (hanya 9 cyberpunk yang dibaca picker lama) kini masuk lane LIGHT.
+- reel-v2 kini pakai musik latar (sebelumnya TANPA musik): build_reel.py pilih 1 trek per build (--music-lane / spec music_lane, default cyberpunk), encode.py mix di bawah voiceover (volume 0.12, fade in/out 1 dtk, trim ke durasi narasi). Judul trek dicatat ke <out>/track.txt untuk kredit caption. Terverifikasi encode uji 10 dtk (narasi AI Pekan Ini #02 + Carefree): hash audio beda dari versi tanpa musik (musik masuk), durasi 10.0 dtk, h264 2160x3840 yuv420p + aac.
+- Pemetaan lane: LIGHT = Gratisan AI, Gratisan Mahasiswa, Prompt Harian, Coba Dulu, Tanya Jawab. CYBERPUNK = SPILL, HM, Tutorial Mirror, BLUEPRINT, Bandingin Model, AI Pekan Ini, Tutorial Agent, Bansos. 5 body cron di-update (gratisan-ai, prompt-harian, gratisan-mahasiswa, coba-dulu, tanya-jawab).
+- Tambah trek baru kapan pun: brand/music/fetch_track.sh "<Nama Trek>" <cyberpunk|light> (unduh dari incompetech + verifikasi ffprobe + masuk lane, tanpa reset counter; nama tidak ada = gagal bersih). Aturan lengkap di brand/music/README.md.
+
+## FACEBOOK (otomatis, fb_analyzer.py) - 2026-11-22
+- KILL spill-repo|reel: median views 2 (n=10) kalah >= 2x dari format lain pilar yang sama dan di bawah 10 dua minggu berturut-turut; hentikan format ini di FB spill-repo
+
+## 2026-11-22 — Audit desain template (perintah user 18:44)
+- 9 perbaikan layout di 7 template, semua terverifikasi re-render/still dari spec asli:
+  - bansos_design.py stamp(): stempel GRATIS menutupi barcode (overlap 32-108px di render tayang) — clamp tepi kanan stempel maks x=3000.
+  - spill_repo_carousel.py repo_slide(): teks COCOK BUAT lari ke angka hantu '01' — lebar wrap dikurangi 680px.
+  - hm/designer.py detail premium/koran: setengah bawah slide kosong ~38% — blok di-center vertikal dalam band konten (satuan diseragamkan).
+  - prompt_harian.py slide2(): band ikon salin kosong + tips melayang jauh dari footer — tambah label 'SALIN PROMPT INI', jarak tips diperbesar.
+  - reel-v2/scene.html: karaoke tenggelam di atas ridge terang (rute-green) — scrim lower-third + text-shadow; separator 'lawan' di compare-row tidak sejajar — satu grid bersama.
+  - gratisan-ai/animated/scene.html: stempel menutupi barcode + shortlink stub terpotong tengah kata — stempel pindah ke stub bawah, font shortlink 17px.
+  - spill/animated/scene.html: screenshot .og tanpa batas tinggi — max-height 560px + object-fit cover.
+- Dicek bersih, tanpa perbaikan: bansos animated, prompt animated, hm animated.
+- Risiko sisa (belum pernah terjadi di edisi nyata): wrapLines judul gratisan-animated pakai estimasi karakter — judul sangat lebar secara teori bisa meluber ke stub.

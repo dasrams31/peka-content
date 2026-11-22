@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-22",
   "stats_28d": {
     "bansos|carousel": {
       "pillar": "bansos",
@@ -44,10 +44,10 @@
     "blueprint|unknown": {
       "pillar": "blueprint",
       "format": "unknown",
-      "n": 2,
-      "views_median": 174.0,
+      "n": 3,
+      "views_median": 117,
       "views_max": 231,
-      "shares_median": 0.0,
+      "shares_median": 0,
       "shares_max": 0,
       "likes_total": 0
     },
@@ -64,22 +64,12 @@
     "edisi-khusus|unknown": {
       "pillar": "edisi-khusus",
       "format": "unknown",
-      "n": 5,
-      "views_median": 18,
+      "n": 4,
+      "views_median": 35.0,
       "views_max": 53,
-      "shares_median": 0,
+      "shares_median": 0.0,
       "shares_max": 1,
       "likes_total": 1
-    },
-    "giveaway|unknown": {
-      "pillar": "giveaway",
-      "format": "unknown",
-      "n": 1,
-      "views_median": 10,
-      "views_max": 10,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
     },
     "gratisan-ai|reel": {
       "pillar": "gratisan-ai",
@@ -94,10 +84,10 @@
     "gratisan-ai|unknown": {
       "pillar": "gratisan-ai",
       "format": "unknown",
-      "n": 11,
-      "views_median": 16,
+      "n": 12,
+      "views_median": 15.5,
       "views_max": 117,
-      "shares_median": 0,
+      "shares_median": 0.0,
       "shares_max": 0,
       "likes_total": 0
     },
@@ -114,10 +104,10 @@
     "hm|carousel": {
       "pillar": "hm",
       "format": "carousel",
-      "n": 18,
-      "views_median": 3.0,
+      "n": 19,
+      "views_median": 3,
       "views_max": 34,
-      "shares_median": 0.0,
+      "shares_median": 0,
       "shares_max": 1,
       "likes_total": 0
     },
@@ -134,8 +124,8 @@
     "hm|unknown": {
       "pillar": "hm",
       "format": "unknown",
-      "n": 18,
-      "views_median": 40.0,
+      "n": 20,
+      "views_median": 33.0,
       "views_max": 204,
       "shares_median": 0.0,
       "shares_max": 0,
@@ -174,10 +164,10 @@
     "katalog|carousel": {
       "pillar": "katalog",
       "format": "carousel",
-      "n": 2,
-      "views_median": 3.5,
+      "n": 3,
+      "views_median": 0,
       "views_max": 7,
-      "shares_median": 0.0,
+      "shares_median": 0,
       "shares_max": 0,
       "likes_total": 0
     },
@@ -194,15 +184,15 @@
     "katalog|unknown": {
       "pillar": "katalog",
       "format": "unknown",
-      "n": 5,
-      "views_median": 3,
+      "n": 6,
+      "views_median": 1.5,
       "views_max": 8,
-      "shares_median": 0,
+      "shares_median": 0.0,
       "shares_max": 0,
       "likes_total": 0
     },
-    "koreksi|unknown": {
-      "pillar": "koreksi",
+    "komik-peka|unknown": {
+      "pillar": "komik-peka",
       "format": "unknown",
       "n": 1,
       "views_median": 0,
@@ -254,9 +244,9 @@
     "pancingan|unknown": {
       "pillar": "pancingan",
       "format": "unknown",
-      "n": 4,
+      "n": 2,
       "views_median": 3.0,
-      "views_max": 12,
+      "views_max": 4,
       "shares_median": 0.0,
       "shares_max": 0,
       "likes_total": 0
@@ -274,20 +264,20 @@
     "prompt-harian|reel": {
       "pillar": "prompt-harian",
       "format": "reel",
-      "n": 9,
-      "views_median": 10,
+      "n": 10,
+      "views_median": 8.0,
       "views_max": 40,
-      "shares_median": 0,
+      "shares_median": 0.0,
       "shares_max": 1,
       "likes_total": 1
     },
     "prompt-harian|unknown": {
       "pillar": "prompt-harian",
       "format": "unknown",
-      "n": 35,
-      "views_median": 22,
+      "n": 38,
+      "views_median": 21.5,
       "views_max": 185,
-      "shares_median": 0,
+      "shares_median": 0.0,
       "shares_max": 2,
       "likes_total": 1
     },
@@ -317,6 +307,16 @@
       "n": 1,
       "views_median": 5,
       "views_max": 5,
+      "shares_median": 0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "special|reel": {
+      "pillar": "special",
+      "format": "reel",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
       "shares_median": 0,
       "shares_max": 0,
       "likes_total": 0
@@ -354,11 +354,11 @@
     "spill-repo|unknown": {
       "pillar": "spill-repo",
       "format": "unknown",
-      "n": 23,
-      "views_median": 9,
+      "n": 26,
+      "views_median": 5.5,
       "views_max": 122,
-      "shares_median": 0,
-      "shares_max": 2,
+      "shares_median": 0.0,
+      "shares_max": 1,
       "likes_total": 1
     },
     "tools|carousel": {
@@ -394,8 +394,8 @@
     "tutorial-mirror|unknown": {
       "pillar": "tutorial-mirror",
       "format": "unknown",
-      "n": 1,
-      "views_median": 53,
+      "n": 5,
+      "views_median": 0,
       "views_max": 53,
       "shares_median": 0,
       "shares_max": 0,
@@ -423,78 +423,8 @@
     }
   },
   "stats_7d": {
-    "bansos|reel": {
-      "pillar": "bansos",
-      "format": "reel",
-      "n": 3,
-      "views_median": 31,
-      "views_max": 56,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
     "bansos|unknown": {
       "pillar": "bansos",
-      "format": "unknown",
-      "n": 3,
-      "views_median": 216,
-      "views_max": 220,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "blueprint|unknown": {
-      "pillar": "blueprint",
-      "format": "unknown",
-      "n": 1,
-      "views_median": 231,
-      "views_max": 231,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "gratisan-ai|reel": {
-      "pillar": "gratisan-ai",
-      "format": "reel",
-      "n": 2,
-      "views_median": 9.5,
-      "views_max": 10,
-      "shares_median": 0.0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "gratisan-ai|unknown": {
-      "pillar": "gratisan-ai",
-      "format": "unknown",
-      "n": 2,
-      "views_median": 14.5,
-      "views_max": 18,
-      "shares_median": 0.0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "hm|carousel": {
-      "pillar": "hm",
-      "format": "carousel",
-      "n": 12,
-      "views_median": 2.0,
-      "views_max": 7,
-      "shares_median": 0.0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "hm|reel": {
-      "pillar": "hm",
-      "format": "reel",
-      "n": 2,
-      "views_median": 94.5,
-      "views_max": 188,
-      "shares_median": 0.0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "katalog|unknown": {
-      "pillar": "katalog",
       "format": "unknown",
       "n": 2,
       "views_median": 0.0,
@@ -503,11 +433,81 @@
       "shares_max": 0,
       "likes_total": 0
     },
+    "blueprint|unknown": {
+      "pillar": "blueprint",
+      "format": "unknown",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "gratisan-ai|unknown": {
+      "pillar": "gratisan-ai",
+      "format": "unknown",
+      "n": 2,
+      "views_median": 0.0,
+      "views_max": 0,
+      "shares_median": 0.0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "hm|carousel": {
+      "pillar": "hm",
+      "format": "carousel",
+      "n": 3,
+      "views_median": 1,
+      "views_max": 1,
+      "shares_median": 0,
+      "shares_max": 1,
+      "likes_total": 0
+    },
+    "hm|unknown": {
+      "pillar": "hm",
+      "format": "unknown",
+      "n": 4,
+      "views_median": 0.0,
+      "views_max": 0,
+      "shares_median": 0.0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "katalog|carousel": {
+      "pillar": "katalog",
+      "format": "carousel",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "katalog|unknown": {
+      "pillar": "katalog",
+      "format": "unknown",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "komik-peka|unknown": {
+      "pillar": "komik-peka",
+      "format": "unknown",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
+      "likes_total": 0
+    },
     "prompt-harian|reel": {
       "pillar": "prompt-harian",
       "format": "reel",
-      "n": 6,
-      "views_median": 18.0,
+      "n": 2,
+      "views_median": 20.0,
       "views_max": 40,
       "shares_median": 0.0,
       "shares_max": 0,
@@ -516,51 +516,31 @@
     "prompt-harian|unknown": {
       "pillar": "prompt-harian",
       "format": "unknown",
-      "n": 6,
-      "views_median": 31.5,
-      "views_max": 53,
-      "shares_median": 0.0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "special|carousel": {
-      "pillar": "special",
-      "format": "carousel",
-      "n": 1,
-      "views_median": 5,
-      "views_max": 5,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "special|unknown": {
-      "pillar": "special",
-      "format": "unknown",
-      "n": 1,
-      "views_median": 5,
-      "views_max": 5,
-      "shares_median": 0,
-      "shares_max": 0,
-      "likes_total": 0
-    },
-    "spill-repo|reel": {
-      "pillar": "spill-repo",
-      "format": "reel",
-      "n": 3,
+      "n": 5,
       "views_median": 0,
-      "views_max": 2,
+      "views_max": 39,
       "shares_median": 0,
-      "shares_max": 1,
+      "shares_max": 0,
+      "likes_total": 0
+    },
+    "special|reel": {
+      "pillar": "special",
+      "format": "reel",
+      "n": 1,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
       "likes_total": 0
     },
     "spill-repo|unknown": {
       "pillar": "spill-repo",
       "format": "unknown",
-      "n": 7,
-      "views_median": 5,
-      "views_max": 24,
-      "shares_median": 1,
-      "shares_max": 1,
+      "n": 5,
+      "views_median": 0,
+      "views_max": 0,
+      "shares_median": 0,
+      "shares_max": 0,
       "likes_total": 0
     },
     "tutorial-mirror|reel": {
@@ -576,8 +556,8 @@
     "tutorial-mirror|unknown": {
       "pillar": "tutorial-mirror",
       "format": "unknown",
-      "n": 1,
-      "views_median": 53,
+      "n": 5,
+      "views_median": 0,
       "views_max": 53,
       "shares_median": 0,
       "shares_max": 0,
@@ -596,11 +576,7 @@
   },
   "verdicts": [
     "PROMOTE spill-repo: carousel median 8 views (n=6) >= 2x reel 2; carousel jadi format FB default spill-repo",
-    "DEVIASI FORMAT: spill-repo-skill-opencode-edisi-20 (spill-repo): FB posted as reel, map says carousel",
-    "DEVIASI FORMAT: spill-repo-skill-antigravity-edisi-21 (spill-repo): FB posted as reel, map says carousel",
-    "DEVIASI FORMAT: spill-repo-skill-hermes-edisi-23 (spill-repo): FB posted as reel, map says carousel",
-    "DEVIASI FORMAT: spill-repo-skill-opencode-edisi-24 (spill-repo): FB posted as reel, map says carousel",
-    "DEVIASI FORMAT: spill-repo-skill-antigravity-edisi-25 (spill-repo): FB posted as reel, map says carousel",
+    "KILL spill-repo|reel: median views 2 (n=10) kalah >= 2x dari format lain pilar yang sama dan di bawah 10 dua minggu berturut-turut; hentikan format ini di FB spill-repo",
     "DEVIASI FORMAT: spill-repo-skill-claude-edisi-26 (spill-repo): FB posted as reel, map says carousel",
     "DEVIASI FORMAT: spill-repo-skill-hermes-edisi-27 (spill-repo): FB posted as reel, map says carousel"
   ],
@@ -612,14 +588,13 @@
     "blueprint|unknown": 0,
     "edisi-khusus|carousel": 0,
     "edisi-khusus|unknown": 0,
-    "giveaway|unknown": 0,
     "gratisan-ai|reel": 0,
     "gratisan-ai|unknown": 0,
     "hallmark|reel": 0,
     "hm-ekstra|carousel": 0,
     "hm-ekstra|unknown": 0,
     "huashu|reel": 0,
-    "koreksi|unknown": 0,
+    "komik-peka|unknown": 0,
     "lainnya|reel": 0,
     "log-peka|reel": 0,
     "log-peka|unknown": 0,
@@ -630,9 +605,10 @@
     "rea-custom|unknown": 0,
     "rotw-01|reel": 0,
     "special|carousel": 0,
+    "special|reel": 0,
     "special|unknown": 0,
     "spill-repo|carousel": 0,
-    "spill-repo|reel": 1,
+    "spill-repo|reel": 2,
     "spill-repo|unknown": 0,
     "tools|carousel": 0,
     "tools|reel": 0,
@@ -643,7 +619,7 @@
   },
   "live_fb": {
     "ok": true,
-    "raw_chars": 16833,
+    "raw_chars": 16836,
     "zero_reaction_mentions": 0
   }
 }
