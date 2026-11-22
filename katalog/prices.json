@@ -19,6 +19,14 @@
       "bot_id": 41
     },
     {
+      "sec": "MICROSOFT",
+      "name": "Outlook.com",
+      "dur": "Lifetime",
+      "price": "1K",
+      "price_num": 1,
+      "bot_id": 121
+    },
+    {
       "dur": "7 Hari",
       "name": "Wink",
       "price": "6K",
@@ -129,6 +137,14 @@
       "price": "7K",
       "price_num": 7,
       "bot_id": 115
+    },
+    {
+      "sec": "CANVA",
+      "name": "Akun Canva Edu",
+      "dur": "Lifetime",
+      "price": "21K",
+      "price_num": 21,
+      "bot_id": 120
     },
     {
       "sec": "CAPCUT",
