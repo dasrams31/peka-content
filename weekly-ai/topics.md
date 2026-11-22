@@ -11,10 +11,11 @@ terverifikasi, lewati ke topik berikut dan tulis alasannya di sini.
 - [x] #01 [TUTORIAL] Bikin skill Claude sendiri - TAYANG 2026-11-16 (repost dari chat; run 15 Nov gagal) - dari repo skills:
   cara bikin satu skill + cara pasangnya, buat siapa skill ini berguna.
   Verifikasi: docs Anthropic tentang Agent Skills + repo anthropics/skills.
-- [ ] #02 [BERITA] Agentic AI: kenapa semua model berlomba jadi agen —
+- [x] #02 [BERITA] Agentic AI: kenapa semua model berlomba jadi agen —
   konsepnya apa, contoh nyatanya (Hydrogen, Sonnet 5.5, Fable 5.2),
   dan apa artinya buat kerjaan sehari-hari.
   Verifikasi: pengumuman resmi masing-masing vendor.
+  TAYANG 2026-11-22 (edisi #02; FB gagal 403 gate, IG/Threads/blog/channel live).
 - [ ] #03 [TUTORIAL] NotebookLM buat riset skripsi — dari PDF jadi
   ringkasan + audio overview, langkahnya dari nol sampai jadi.
   Verifikasi: notebooklm.google.com + halaman bantuan resmi.
