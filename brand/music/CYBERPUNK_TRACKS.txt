@@ -1,8 +1,11 @@
-# Reel music lane (active since 2026-10-25, user order: cyberpunk-style,
-# a DIFFERENT track for every reel). One track per reel render, cycling
-# in order via pick_reel_track.sh (persistent counter), NOT per day.
+# Reel music lane: CYBERPUNK (tech/AI mood)
+# Active since 2026-10-25, user order: cyberpunk-style, a DIFFERENT
+# track for every reel. One track per reel render, cycling in order
+# via pick_reel_track.sh (persistent counter), NOT per day.
 # All tracks CC-BY Kevin MacLeod (incompetech.com); credit the title
-# in every reel caption.
+# in every reel caption ("Music: <Title> by Kevin MacLeod").
+# Lane expanded 2026-11-22 (9 -> 16 tracks) so tech series stop
+# repeating the same 9 tracks. See LIGHT_TRACKS.txt for the other lane.
 aitech-kevin-macleod.mp3
 mechanolith-kevin-macleod.mp3
 oppressive-gloom-kevin-macleod.mp3
@@ -12,3 +15,10 @@ tech-live-kevin-macleod.mp3
 black-vortex-kevin-macleod.mp3
 vortex-kevin-macleod.mp3
 darkling-kevin-macleod.mp3
+electrodoodle-kevin-macleod.mp3
+faster-does-it-kevin-macleod.mp3
+mystery-bazaar-kevin-macleod.mp3
+the-complex-kevin-macleod.mp3
+investigations-kevin-macleod.mp3
+funk-game-loop-kevin-macleod.mp3
+brittle-rille-kevin-macleod.mp3

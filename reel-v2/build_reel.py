@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """Orchestrator for one reel-v2 edition: TTS -> render -> encode -> verify.
 
-Usage: python3 build_reel.py <spec.json> <out_dir> [--theme <name>] [--no-render]
+Usage: python3 build_reel.py <spec.json> <out_dir> [--theme <name>] [--no-render] [--music-lane <cyberpunk|light>] [--no-music]
 
 - Resolves the theme name from themes.json and embeds the theme object.
 - Synthesizes the voiceover (Piko venv python + tts.py).
+- Picks one background music track (pick_reel_track.sh, lane from
+  --music-lane or spec "music_lane", default cyberpunk) and mixes it
+  under the voiceover at low volume via encode.py. The picked track
+  is recorded in <out_dir>/track.txt (full path + display title) for
+  the caption music credit. --no-music builds without a bed track.
 - Computes scene spans from measured word timings (scene starts 0.4s
   before its first word so the headline can stagger in).
 - Renders frames with Playwright (megumi venv python + render.py),
@@ -23,8 +28,26 @@ import sys
 BASE = os.path.dirname(os.path.abspath(__file__))
 PIKO_PY = "/home/hatch/workspace/piko-app/venv/bin/python"
 MEGUMI_PY = "/home/hatch/workspace/megumi/venv/bin/python"
+MUSIC_PICKER = "/home/hatch/workspace/peka-content/brand/music/pick_reel_track.sh"
 FPS = 24
 SCALE = 2.0
+MUSIC_LANES = ("cyberpunk", "light")
+
+
+def track_title(path):
+    name = os.path.basename(path)
+    if name.endswith("-kevin-macleod.mp3"):
+        name = name[: -len("-kevin-macleod.mp3")]
+    return name.replace("-", " ").title()
+
+
+def pick_music_track(lane):
+    r = subprocess.run([MUSIC_PICKER, lane], capture_output=True,
+                       text=True, check=True)
+    path = r.stdout.strip()
+    if not os.path.isfile(path):
+        raise RuntimeError(f"picked music track missing: {path}")
+    return path
 
 
 def run(cmd, log):
@@ -45,6 +68,8 @@ def main():
     args = sys.argv[3:]
     theme_name = "dark-grid"
     no_render = False
+    music_lane = None
+    no_music = False
     i = 0
     while i < len(args):
         if args[i] == "--theme":
@@ -53,6 +78,12 @@ def main():
         elif args[i] == "--no-render":
             no_render = True
             i += 1
+        elif args[i] == "--music-lane":
+            music_lane = args[i + 1]
+            i += 2
+        elif args[i] == "--no-music":
+            no_music = True
+            i += 1
         else:
             i += 1
     os.makedirs(out_dir, exist_ok=True)
@@ -60,6 +91,10 @@ def main():
 
     with open(spec_path, encoding="utf-8") as fh:
         spec = json.load(fh)
+    if music_lane is None:
+        music_lane = spec.get("music_lane", "cyberpunk")
+    assert music_lane in MUSIC_LANES, f"unknown music lane {music_lane}"
+    spec["music_lane"] = music_lane
     with open(os.path.join(BASE, "themes.json"), encoding="utf-8") as fh:
         themes = json.load(fh)
     assert theme_name in themes, f"unknown theme {theme_name}"
@@ -70,6 +105,20 @@ def main():
     run([PIKO_PY, os.path.join(BASE, "tts.py"), spec_path, out_dir], log)
     with open(os.path.join(out_dir, "words.json"), encoding="utf-8") as fh:
         words_data = json.load(fh)
+
+    # 1b. Background music: one track per build, lane from
+    # --music-lane / spec "music_lane". Recorded in track.txt so the
+    # caption can credit it ("Music: <Title> by Kevin MacLeod").
+    music_path = None
+    if not no_music:
+        music_path = pick_music_track(music_lane)
+        title = track_title(music_path)
+        with open(os.path.join(out_dir, "track.txt"), "w",
+                  encoding="utf-8") as fh:
+            fh.write(f"{music_path}\nMusic: {title} by Kevin MacLeod\n")
+        log.write(f"music lane={music_lane} track={music_path}\n")
+        log.flush()
+        print(f"music: {music_path} ({title} by Kevin MacLeod)")
 
     # 2. Scene spans: each scene starts 0.4s before its first word.
     spans = []
@@ -101,9 +150,12 @@ def main():
          frames_dir, str(FPS), str(SCALE)], log)
     out_mp4 = os.path.join(out_dir, "reel.mp4")
     cover = os.path.join(out_dir, "reel-cover.jpg")
-    run(["python3", os.path.join(BASE, "encode.py"), frames_dir,
-         os.path.join(out_dir, "narration.mp3"), out_mp4, cover,
-         str(FPS)], log)
+    encode_cmd = ["python3", os.path.join(BASE, "encode.py"), frames_dir,
+                  os.path.join(out_dir, "narration.mp3"), out_mp4, cover,
+                  str(FPS)]
+    if music_path:
+        encode_cmd.append(music_path)
+    run(encode_cmd, log)
     probe = subprocess.run([
         "ffprobe", "-v", "error",
         "-show_entries", "stream=codec_type,codec_name,width,height,pix_fmt",

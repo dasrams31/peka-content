@@ -1,0 +1,28 @@
+# Reel music lane: LIGHT (cheerful / playful mood)
+# Created 2026-11-22, user order: music must differ per content,
+# not the same cyberpunk lane for everything. Lighter series use
+# this lane: Gratisan AI, Gratisan Mahasiswa, Prompt Harian,
+# Coba Dulu, Tanya Jawab Nyata (reel-v2: --music-lane light).
+# One track per reel render, cycling in order via
+# pick_reel_track.sh light (own persistent counter).
+# All tracks CC-BY Kevin MacLeod (incompetech.com); credit the title
+# in every reel caption ("Music: <Title> by Kevin MacLeod").
+# The 10 first tracks were already in the folder but never picked
+# (the old picker only read CYBERPUNK_TRACKS.txt); the last 6 were
+# downloaded 2026-11-22. See README.md to add new tracks.
+bossa-antigua-kevin-macleod.mp3
+carefree-kevin-macleod.mp3
+cheery-monday-kevin-macleod.mp3
+digital-lemonade-kevin-macleod.mp3
+fluffing-a-duck-kevin-macleod.mp3
+happy-boy-end-theme-kevin-macleod.mp3
+local-forecast-kevin-macleod.mp3
+monkeys-spinning-monkeys-kevin-macleod.mp3
+pixelland-kevin-macleod.mp3
+sneaky-snitch-kevin-macleod.mp3
+sneaky-adventure-kevin-macleod.mp3
+marty-gots-a-plan-kevin-macleod.mp3
+happy-bee-kevin-macleod.mp3
+dreamy-flashback-kevin-macleod.mp3
+quirky-dog-kevin-macleod.mp3
+shaving-mirror-kevin-macleod.mp3
