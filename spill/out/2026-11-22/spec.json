@@ -1,0 +1,43 @@
+{
+ "agent": "ANTIGRAVITY",
+ "next": "CLAUDE",
+ "episode": 33,
+ "repos": [
+  {
+   "name": "htdt/godogen",
+   "stars": "7RB",
+   "desc": "Godogen ngasih 2 skill ke agent AI kamu biar bisa bikin game beneran, bukan cuma kode mentah. Skill engine-guide bantu milih engine yang pas, Godot, Bevy, Babylon.js, atau three.js, plus bikin sketsa proyek dan nangkep hasilnya jadi screenshot dan video. Skill asset-gen bikin gambar, sprite, karakter 3D, efek suara, sampai voice, gratis di GPU kamu sendiri atau lewat API berbayar. Agent tinggal dikasih brief, dia yang ngurusin aset dan kode gamenya. Hasilnya game yang bisa dimainin, bukan sekadar demo setengah jadi.",
+   "cocok": "Kamu yang mau bikin game bareng agent AI di Antigravity, Codex, atau Claude Code.",
+   "shortlink": "https://s.peka.ai.id/zS5qzb"
+  },
+  {
+   "name": "PeonPing/peon-ping",
+   "stars": "5RB",
+   "desc": "Peon Ping bikin agent AI kamu ngomong pakai suara Peon dari Warcraft III tiap kali butuh perhatian kamu. Agent selesai kerja atau butuh persetujuan, Peon langsung teriak dari speaker, jadi kamu nggak perlu mantengin terminal terus. Dia jalan di Claude Code, Codex, IDE apa pun, dan agent AI lainnya. Instalasinya gampang, tinggal pasang sekali terus jalan di latar belakang. Hasilnya kamu bisa ngerjain hal lain sambil nunggu agent, tanpa takut kelewat momen penting.",
+   "cocok": "Kamu yang suka main game dan mau agent AI ngabarin pakai suara Peon yang ikonik.",
+   "shortlink": "https://s.peka.ai.id/cl45zl"
+  },
+  {
+   "name": "sandbox-quantum/switch",
+   "stars": "5RB",
+   "desc": "Switch ngubah Slack, Teams, Discord, Telegram, atau Mattermost kamu jadi markas tim agent AI. Kamu bisa bawa Claude Code, Codex, Gemini, Cursor, GitHub Copilot, atau agent kamu sendiri ke dalam chat tim. Agent-agent itu terhubung ke GitHub, Jira, Notion, Linear, dan Google Workspace lewat MCP. Semuanya self-hosted, jadi datanya tetap di server kamu. Hasilnya tim kamu bisa kerja bareng agent AI langsung dari chat yang udah dipakai sehari-hari.",
+   "cocok": "Tim yang mau agent AI kerja bareng di Slack atau Discord tanpa pindah tool.",
+   "shortlink": "https://s.peka.ai.id/CeTuL6"
+  },
+  {
+   "name": "AgenticResourceRegistry/AgenticResourceRegistry",
+   "stars": "4RB",
+   "desc": "Agentic Resource Registry itu tempat tim kamu berbagi dan nemuin resource buat coding agent, dari skill, prompt, sampai konfigurasi. Semua resource tersimpan di satu tempat yang bisa dicari, jadi anggota tim nggak perlu bikin ulang hal yang sama. Dia jalan self-hosted dengan lisensi Apache 2.0, dan dukung Claude Code, Kiro, Cursor, Codex, Pi, dan banyak lagi. Resource bisa dibagikan ke seluruh tim atau dipakai sendiri-sendiri. Hasilnya tim kamu punya satu katalog resource yang rapi dan gampang dipakai ulang.",
+   "cocok": "Tim yang pakai banyak coding agent dan mau berbagi skill serta resource tanpa bikin ulang.",
+   "shortlink": "https://s.peka.ai.id/KCSK8s"
+  },
+  {
+   "name": "nanaism/yomiyasu",
+   "stars": "3RB",
+   "desc": "Yomiyasu itu skill buat ngerapiin tulisan Jepang hasil AI jadi bahasa Jepang yang natural. Dia baca teks yang kaku dan kayak mesin, terus diolah ulang sampai enak dibaca kayak ditulis manusia. Skill ini jalan di agent yang dukung Agent Skills, dan fokusnya khusus ke bahasa Jepang. Cara kerjanya ngikutin aturan penulisan Jepang yang natural, bukan sekadar ganti kata. Hasilnya artikel atau cerita Jepang kamu kebaca halus dan nggak ketahuan ditulis AI.",
+   "cocok": "Kamu yang nulis konten Jepang bareng AI dan mau hasilnya kebaca natural.",
+   "shortlink": "https://s.peka.ai.id/OsZCXq"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-22/carousel"
+}
