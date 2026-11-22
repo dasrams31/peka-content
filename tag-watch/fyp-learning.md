@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-22
+
+- TOP (n=21): day-counter 5%, question 19%, story 24%, hashtags avg 1.4, words avg 36.
+- REST (n=65): day-counter 11%, question 34%, story 20%, hashtags avg 1.5, words avg 38.
+- Top posts today:
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #AI @notdeadlysins (3445 likes): DAY 1: Mecut AI
+  - #AI @carnage4life (2194 likes): Apple, the world’s most valuable company, looking down at all the people that said it missed AI now that the AI bubble i
+  - #Kuliah @movien1028 (1882 likes): sbg seorang fresh graduate, ternyata lebih cape cari kerja dibanding kuliah. padahal niatnya mulia ingin memperbaiki eko
+  - #AI @_neutronfish (1241 likes): Anthropic: “We’ve solved the Riemann hypothesis with AI. The proof is 250,000 pages long and no one has completely evalu
+
 ## 2026-11-21
 
 - TOP (n=24): day-counter 4%, question 17%, story 25%, hashtags avg 1.5, words avg 34.
@@ -144,14 +155,3 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
   - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
   - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
   - #Belajar @harrypatria_ (4313 likes): Apa jadinya kalau kita enggan beradaptasi di tengah situasi sekarang?   Yang rajin belajar aja ngerasa makin ketinggalan
-
-## 2026-11-08
-
-- TOP (n=22): day-counter 0%, question 23%, story 18%, hashtags avg 0.9, words avg 35.
-- REST (n=68): day-counter 9%, question 32%, story 22%, hashtags avg 1.8, words avg 43.
-- Top posts today:
-  - #Mahasiswa @rsastraaji (44368 likes): INI BENERAN AKSI NANTI 10 NOVEMBER DIPIMPIN LANGSUNG SAMA ALUMNI MAHASISWA TERDAHULU?  GOKIL ! PERLAWANAN DIHARI PAHLAWA
-  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
-  - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
-  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
-  - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
