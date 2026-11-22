@@ -115,6 +115,15 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
 - HM news: slide 1 (cover) WAJIB mencetak 1 langkah konkret "COBA SEKARANG" yang bisa dilakukan pembaca dalam hitungan menit dari isi berita (ROMBAK, review 8 Nov 2026: median likes 3, hanya edisi dengan langkah coba konkret yang menembus). Close the caption with a light two-sided debate question about
   the story ("Menurutmu ini kemajuan atau ancaman buat kerjaan kita?").
   Never on SARA or party-political fights.
+  COBA SEKARANG WAJIB LANGKAH EKSEKUSI (review 2026-11-22): langkahnya
+  harus bisa dijalankan dalam hitungan menit DI SEBUAH TOOL (buka X,
+  ketik Y, hasilnya Z) — mencatat/menyiapkan/menunggu rilis TIDAK dihitung
+  sebagai langkah coba. Bukti 20 Nov: COBA SEKARANG "catat 3 tugas
+  berulang" (persiapan) cuma IG 2 likes / 34 views, Threads 1 like /
+  47 views. JANGAN ULANG SUDUT (review 2026-11-22): jangan tayang dua
+  edisi dengan sudut berita yang sama dalam seminggu (IPO 19 + 22 Nov
+  sama-sama datar: 19 Nov carousel hilang dari IG, 22 Nov IG 1 like /
+  48 views); sudut kedua ganti topik atau tidak tayang (gate selektif).
   REEL BENCHMARK EKSTRA (menang, review 2026-11-15): bila berita membawa
   angka benchmark/perbandingan antar model, buat JUGA satu reel
   perbandingan (tabel angka + pertanyaan pilih model, format reel
@@ -165,6 +174,16 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   mengangkat (Gamma AI 14 Nov: 3 likes / 162 views). Pilih penawaran
   dengan segmen + tawaran sebesar itu dulu; sudut sidang hanya garnish,
   bukan alasan utama memilih penawaran.
+- Gratisan AI (menang parsial, review 2026-11-22): perbandingan
+  GRATIS-VS-BERBAYAR boleh jadi varian caption opsional — bila satu tool
+  punya tier gratis dan berbayar yang jelas, caption membawa perbandingan
+  singkat yang jujur ("Gratis dapat X, Plus dapat Y") + pertanyaan "Tim
+  gratis atau tim Pro?". Bukti JetBrains 21 Nov: Threads 6 likes / 398
+  views, 2,5x kontrol Gamma (162) tapi 0 balasan penonton dan di bawah
+  target pilar 562. Perbandingan mengangkat views di atas kontrol lemah
+  tapi TIDAK menggantikan seleksi tawaran: segmen mahasiswa + nama besar
+  + tawaran besar tetap dipilih dulu (Figma 19 Nov: 22 likes / 873 views
+  dengan caption standar).
 - Prompt Harian (menang, review 2026-11-08): buka caption Threads dengan
   1-2 kalimat cerita relatable pengalaman mencoba (edisi #14, #16, #17,
   #18: Threads views 111-260, median ~215, vs #11-#13 tanpa cerita
@@ -177,6 +196,14 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   views vs #01 2 likes / 558 views, FB 231 vs 117 views, Threads retry
   3 likes / 307 views. Tanpa langkah pertama, caption BLUEPRINT hanya
   daftar spesifikasi dan tidak mengangkat saves.
+- BLUEPRINT (menang besar, review 2026-11-22): utamakan repo/tool GRATIS +
+  LOKAL/self-hosted (jalan di laptop sendiri, tanpa bayar, tanpa kartu)
+  dengan langkah pertama konkret. Bukti edisi #03 Ollama (20 Nov):
+  Threads 51 likes / 4.590 views / 7 balasan penonton / 9 follows / 24
+  shares, 5,6x target pilar 820 views, balasan penonton terbanyak minggu
+  ini; IG 8 likes / 10 saves / 589 views. Sudut gratis-lokal kini yang
+  terkuat di pilar, lebih kuat dari repo agent generik; pilih topik
+  BLUEPRINT berikutnya dari sudut ini dulu.
 
 ## After posting / weekly loop
 

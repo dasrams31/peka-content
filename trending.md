@@ -82,6 +82,11 @@ in any post text. Judged by the Sunday review 22 Nov 20:00.
    limits, no promise the free tier does everything. If the aired
    caption has no comparison, mark VOID.
 
+VERDICT review Minggu 22 Nov 20:00 (lihat Archive): exp 1 VOID (tantangan
+5 menit tidak tayang, 0 balasan), exp 2 VOID (hook = headline, bukan langkah
+coba), exp 3 MENANG PARSIAL (views 398 vs kontrol Gamma 162, 0 balasan
+penonton; dipromosikan ke playbook sebagai varian opsional Gratisan).
+
 Note: the 19 Nov ~14:36 Gratisan Threads one-off (Figma Pro, student
 segment + big named offer) is NOT an experiment slot. It applies the
 15 Nov review lesson as-is, so it stays a clean control for
@@ -255,6 +260,44 @@ pricing without an official source.
   carousel.
 
 ## Archive (experiments judged by Sunday review)
+
+Judged Sun 2026-11-22 (weekly review, fresh CLI metrics 22 Nov ~20:00 WIB;
+pillar medians this week: SPILL Threads 12 likes / 604 views, IG 15 likes /
+711 views; Prompt Threads 5 likes / 191 views; HM IG 2,5 likes / 58,5 views;
+Bansos Threads 7 likes / 257 views; Gratisan Threads 14 likes / 635,5 views;
+Tutorial Mirror Threads 3,5 likes / 151,5 views; BLUEPRINT #03 51 likes /
+4.590 views):
+
+- SPILL first-reply 5-minute challenge (slot 19 Nov 21:30, edisi #30):
+  TIDAK JALAN / VOID. Balasan pertama berisi tantangan 5 menit TIDAK PERNAH
+  tayang: `fetch-post-comments` root #30 (id 17875021917648704) total_count 0,
+  tidak ada teks tantangan di folder out edisi, tidak ada marker exp di
+  posted.log. Angka root #30 (Threads 12 likes / 246 views, IG 10 likes /
+  505 views) tidak menguji hipotesis. Variabel belum teruji; jangan ajukan
+  ulang desain slot yang sama tanpa memastikan balasan pertama benar-benar
+  dibangun + terkirim sebelum dinilai.
+- HM try-it step as the hook line (slot 20 Nov 09:36, IG + FB + blog):
+  VOID. Hook caption IG yang tayang (media Df8ndq5j38U) adalah headline
+  berita biasa ("Apple lagi bikin agen AI yang bisa menjalankan Mac kamu
+  sendiri."), bukan langkah coba konkret; blok COBA SEKARANG di badan caption
+  pun hanya persiapan ("catat 3 tugas berulang"), bukan eksekusi di tool.
+  Angka (IG 2 likes / 34 views, Threads 1 like / 47 views) tidak menguji
+  hipotesis. VOID kelima beruntun buat desain slot HM; jangan ajukan ulang
+  desain slot yang sama tanpa memastikan hook benar-benar ditulis sebagai
+  langkah coba sebelum tayang. Pelajaran yang dipetik dicatat di learnings.md
+  22 Nov: COBA SEKARANG wajib langkah yang bisa dieksekusi, bukan persiapan.
+- Gratisan AI free-vs-paid comparison caption (slot 21 Nov 14:00,
+  JetBrains Student Pack): MENANG PARSIAL. JALAN sesuai desain (caption
+  Threads memuat "Gratis dapat completion + trial AI chat dan agent. Pro
+  $10/bulan dapat 10 kredit AI/bulan + Junie, Claude Agent, Codex." +
+  "Tim gratis atau tim Pro?"). Threads 6 likes / 398 views — 2,5x kontrol
+  Gamma (162 views), hipotesis views TERPENUHI; tapi 0 balasan penonton,
+  hipotesis balasan GAGAL, dan views tetap di bawah target pilar 562 serta
+  jauh di bawah Figma (873) dan AI Plus (1.619). Verdict: perbandingan
+  gratis-vs-berbayar mengangkat views di atas kontrol lemah tapi bukan
+  pendongkrak reach dan tidak menarik balasan. Dipromosikan ke playbook
+  Gratisan sebagai varian caption OPSIONAL (bukan pengganti seleksi tawaran:
+  segmen mahasiswa + nama besar + tawaran besar tetap didahulukan).
 
 Checked 2026-11-19 (trend watch refresh, from posted.log and
 performance.log; Sunday review 22 Nov 20:00 confirms the verdicts):
