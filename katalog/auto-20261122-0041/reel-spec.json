@@ -1,5 +1,5 @@
 {
-  "date": "19 November 2026",
+  "date": "22 November 2026",
   "products": [
     {
       "sec": "CANVA",
@@ -56,12 +56,6 @@
       "price": "6K"
     },
     {
-      "sec": "APPLE MUSIC",
-      "name": "Apple Music Head",
-      "dur": "1 Bulan",
-      "price": "8K"
-    },
-    {
       "sec": "CAPCUT",
       "name": "CapCut Pro",
       "dur": "7 Hari",
@@ -110,6 +104,12 @@
       "price": "7K"
     },
     {
+      "sec": "MUSE SPARK",
+      "name": "Referral Muse 1 B",
+      "dur": "1 Milyar Token",
+      "price": "2,2K"
+    },
+    {
       "sec": "CAPCUT",
       "name": "CapCut Pro",
       "dur": "1 Bulan",
@@ -126,6 +126,12 @@
       "name": "Meitu",
       "dur": "14 Hari",
       "price": "10K"
+    },
+    {
+      "sec": "PRIME VIDEO",
+      "name": "Amazon Prime Video",
+      "dur": "1 Bulan",
+      "price": "12K"
     }
   ]
 }

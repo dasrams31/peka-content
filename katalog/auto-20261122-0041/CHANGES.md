@@ -1,12 +1,11 @@
-# Katalog Peka — auto rebuild 20 Nov 2026 06:54 WIB
+# Katalog Peka — auto rebuild 22 Nov 2026 00:49 WIB
 
 Sumber: `prices.json` (pemicu = list harga berubah).
 Build-only: slide + story + reel + caption DRAF diantar ke chat, TIDAK diposting. Posting tetap lewat cron Selasa/Jumat 13:00.
 
 ## Yang berubah
 
-- DIHAPUS: Referral Muse 1 B 1 Milyar Token 2,2K (MUSE SPARK)
-- Total: 21 produk.
+- Total: 22 produk.
 
 ## Catatan caption
 
