@@ -71,3 +71,10 @@ Format per lesson:
   - spill/animated/scene.html: screenshot .og tanpa batas tinggi — max-height 560px + object-fit cover.
 - Dicek bersih, tanpa perbaikan: bansos animated, prompt animated, hm animated.
 - Risiko sisa (belum pernah terjadi di edisi nyata): wrapLines judul gratisan-animated pakai estimasi karakter — judul sangat lebar secara teori bisa meluber ke stub.
+
+## 2026-11-22 — Sistem FYP + engagement (perintah user 19:05)
+- Playbook diperbarui: bagian CHECKLIST FYP + target median per pilar (dari data 9-22 Nov). Bukti FYP tag-watch: postingan TOP dibuka cerita/pengakuan (~25%), pertanyaan cuma 17-19% di TOP vs 34-40% di biasa — pertanyaan pilihan paksa jadi PENUTUP, bukan pembuka; caption Threads TOP ~36 kata, ~1,4 hashtag.
+- Bagian musik playbook diperbaiki (dua lane 32 trek, bukan cyberpunk-only 9 trek); baris Threads diperbaiki (reel video kini tayang untuk seri voiceover + Komik).
+- 6 cron konten yang belum membaca playbook/fyp-learning/tag-watch (bansos-research, tutorial-mirror, weekly-ai, komik-peka, agent-tutorial, model-watch) disambungkan — tiap run wajib baca playbook + learnings + tag-watch + fyp-learning sebelum tulis hook/caption.
+- Daftar cron di peka-engagement-review langkah 7 diperluas dari 7 ke 16 pilar, jadi taktik menang diterapkan ke semua pilar termasuk 4 seri baru.
+- Review mingguan malam ini 20:00 menilai edisi minggu ini terhadap target median baru.

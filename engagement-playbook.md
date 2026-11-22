@@ -261,24 +261,26 @@ versi carousel/feed post lagi:
 - FB: pages posts create dengan MP4 TERBIT SEBAGAI REEL (terverifikasi
   2026-10-25: URL facebook.com/reel/), jadi FB hanya dapat reel post,
   TANPA carousel post (kecuali SPILL, lihat carve-out 4 di bawah).
-- Musik: CYBERPUNK, BEDA TIAP REELS (perintah user 2026-10-25).
-  Semua reels ke depan pakai lane cyberpunk saja (9 track CC-BY
-  Kevin MacLeod di brand/music/CYBERPUNK_TRACKS.txt: Aitech,
-  Mechanolith, Oppressive Gloom, Volatile Reaction, Crypto,
-  Tech Live, Black Vortex, Vortex, Darkling). Tiap render reels
-  panggil SATU KALI ~/workspace/peka-content/brand/music/pick_reel_track.sh
-  (counter persisten + flock, jadi reels berurutan selalu beda lagu
-  sampai lane 9 lagu itu muter penuh). IG dan FB mempublish file
-  yang sama, jadi satu pick per konten, bukan per platform.
-  Kredit "Music: <Judul> by Kevin MacLeod" ditulis di caption reel
+- Musik: DUA LANE, BEDA TIAP REELS (diperbarui 2026-11-22, perintah user).
+  Library 32 trek CC-BY Kevin MacLeod di brand/music/: lane CYBERPUNK
+  (16 trek, tech/AI) + lane LIGHT (16 trek, ceria). pick_reel_track.sh
+  [cyberpunk|light] (counter terpisah per lane, flock); reel-v2 pilih
+  lewat build_reel.py --music-lane / spec music_lane (default cyberpunk).
+  LIGHT: Gratisan AI, Gratisan Mahasiswa, Prompt Harian, Coba Dulu,
+  Tanya Jawab. CYBERPUNK: SPILL, HM, Tutorial Mirror, BLUEPRINT,
+  Bandingin Model, AI Pekan Ini, Tutorial Agent, Bansos. Tiap render
+  panggil SATU KALI (satu pick per konten, bukan per platform; IG dan
+  FB mempublish file yang sama). Judul trek dicatat ke <out>/track.txt
+  dan kredit "Music: <Judul> by Kevin MacLeod" ditulis di caption reel
   (judul = nama file tanpa "-kevin-macleod.mp3", dash jadi spasi,
-  title case). Jangan pakai musik berhak cipta lain. Lagu ceria lama
-  (Carefree, Cheery Monday, dst) sudah pensiun dari rotasi reels.
+  title case). Trek baru: brand/music/fetch_track.sh "<Nama>" <lane>.
+  Jangan pakai musik berhak cipta lain.
 - Caption reel: gaya FYP, hook keuntungan pembaca + catatan jujur
   (deadline, syarat) + ajakan save + TEPAT SATU pertanyaan + hashtag
   relevan (IG) / tanpa hashtag (FB) + kredit musik.
-- Threads TIDAK berubah: tetap carousel/teks seperti biasa, tidak ada
-  reels lewat tools.
+- Threads: carousel/teks seperti biasa, PLUS reel video langsung untuk
+  seri voiceover (AI Pekan Ini, Tutorial Agent, Komik Peka) dan reel
+  pilar lain bila ada. Balasan dirantai di bawah video.
 - Carousel/slide tetap diproduksi sebagai bahan reels + untuk Threads +
   blog, tapi TIDAK diposting ke IG/FB.
 - Pilar yang belum punya pipeline reels animasi memakai fallback
@@ -384,6 +386,67 @@ BLUEPRINT, katalog, LOG PEKA), dan tiap cron body mengulanginya:
 Data 31 Okt kotor (caption HM kosong + 429), jadi eksperimen
 tanpa-link dinilai di review Minggu 1 Nov 20:00 dengan data bersih,
 bukan dari angka 31 Okt.
+
+## CHECKLIST FYP + TARGET ENGAGEMENT (2026-11-22, perintah user)
+
+Tidak ada jaminan FYP; algoritma tidak bisa dipaksa. Sistem ini
+memaksimalkan peluang dari data akun sendiri + data FYP harian, dan
+loop mingguan mematikan pola yang kalah. Setiap edisi WAJIB lolos
+checklist ini SEBELUM posting; draf yang gagal satu poin ditulis
+ulang, bukan dipaksakan tayang.
+
+### Bukti FYP (tag-watch, 9-22 Nov 2026, top post per tag)
+- Postingan TOP dibuka CERITA/pengakuan relatable (~25%), BUKAN
+  pertanyaan: pertanyaan cuma 17-19% di TOP vs 34-40% di postingan
+  biasa. Jadi: baris pertama = cerita/pengakuan/angka spesifik,
+  pertanyaan pilihan paksa disimpan sebagai PENUTUP, bukan pembuka.
+- Caption Threads TOP rata-rata ~36 kata, ~1,4 hashtag. Jaga caption
+  root 30-40 kata; hashtag tetap tepat 1 #AI (terkunci).
+- Tag penutup tetap #AI (terkunci 6 Nov); #Kuliah memang ramai
+  (median likes 101) tapi closing tag tidak diganti tanpa perintah user.
+
+### Bukti akun sendiri (performance.log, 9-22 Nov 2026)
+- SPILL adalah mesin like/save: hook WAJIB sebut stack konkret +
+  angka spesifik (#21: Threads 162 likes / 6.276 views / 30 reposts,
+  IG 109 likes / 160 saves). IG SPILL top diraih lewat SAVES (160,
+  133, 70 saves): slide harus padat info yang layak disimpan, bukan
+  sekadar daftar nama.
+- BLUEPRINT Threads median 820 views (n=3), Gratisan Threads 562
+  views: dua pilar ini buktinya topik praktis + langkah pertama
+  konkret yang menang.
+- HM IG paling lemah (median 2 likes / 52 views), Tutorial Mirror
+  Threads mati (0,5 likes / 28 views): dua pilar ini butuh hook
+  terkuat; bila tidak ada langkah coba konkret, edisi tidak tayang
+  (gate selektif 22 Nov).
+- Komentar hampir 0 di semua pilar: pemicu komentar harus pilihan
+  paksa + garpu pengalaman, bukan opini terbuka (aturan 23 Okt).
+
+### Checklist pra-posting (semua pilar, semua platform)
+1. Hook baris 1 <= 60 karakter, bawa stack konkret ATAU angka
+   spesifik ATAU pengakuan relatable. Hook generik tanpa keduanya
+   = tulis ulang.
+2. Caption mandiri: fakta inti + langkah pertama konkret + hasil
+   konkret, di teks. "Cek slide" = gagal.
+3. Tepat SATU pemicu interaksi, SELALU pilihan paksa (biner /
+   hitungan / pilih-satu-dari-N / garpu pengalaman "mentok di
+   langkah berapa?"). Opini terbuka dilarang jadi penutup.
+4. Pemicu SAVE (IG): info padat yang layak disimpan (daftar,
+   cheat sheet, langkah). Pemicu SHARE (FB + Bansos + katalog):
+   "Share ke teman yang lagi butuh <topik>." + ajakan tag teman.
+5. Balasan pertama Threads membawa nilai ekstra (fakta tambahan /
+   prompt lengkap / langkah berikut), tanpa link.
+6. Musik: lane benar per seri (lihat bagian musik di atas) +
+   kredit di caption dari track.txt.
+7. Tanpa link di teks, tanpa perintah install, tanpa em-dash,
+   Threads tepat 1 #AI di penutup.
+
+### Target median per pilar (penilaian review mingguan)
+- SPILL: Threads >= 10 likes / 282 views; IG >= 13 likes / 1.309 views.
+- Gratisan AI: Threads >= 562 views. BLUEPRINT: Threads >= 820 views.
+- HM: IG di atas 2 likes / 52 views (lantai yang harus dilewati).
+- Prompt Harian: Threads >= 212 views.
+- Di bawah target 2 minggu berturut-turut = hook/topik dirombak di
+  review mingguan, bukan dibiarkan jalan.
 
 Seri LOG PEKA (Sabtu 16:00, edisi perdana 7 Nov 2026): log eksperimen
 jujur bernomor hari. Angka WAJIB dari performance.log + bacaan live,
