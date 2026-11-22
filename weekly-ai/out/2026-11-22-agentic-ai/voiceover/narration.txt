@@ -1,0 +1,18 @@
+[scene 0 - hook]
+Lo sadar nggak, semua model AI sekarang berlomba jadi agen. Bukan lagi sekadar jawab pertanyaan, tapi kerja sendiri sampai selesai.
+
+[scene 1 - beat]
+Google rilis Gemini 4 Hydrogen tanggal 12 November kemarin. Dibangun buat kerja agen sehari-hari, 2,5 kali lebih cepat dari Gemini 3.8 Flash.
+
+[scene 2 - beat]
+Anthropic nggak mau kalah. Claude Sonnet 5.5 cetak 70,6 persen di tes coding agen Terminal-Bench, pendahulunya cuma 10,3 persen.
+
+[scene 3 - beat]
+Terus ada Claude Fable 5.2, buat kerja paling berat. Di tes FrontierCode dia cetak 49,1 persen, tertinggi sejauh ini, dan seribu agennya pernah bangun sistem operasi dari nol.
+
+[scene 4 - beat]
+Jadi agen itu artinya lo kasih tujuan, AI yang ngatur langkahnya, pakai tools, cek hasilnya, terus lanjut. Kerjaan lo berubah dari ngerjain jadi ngarahin.
+
+[scene 5 - close]
+Nah, buat kerjaan lo sehari-hari, lo tim delegasi penuh atau tetap cek tiap langkah? Follow Peka AI kalau kontennya kepakai.
+

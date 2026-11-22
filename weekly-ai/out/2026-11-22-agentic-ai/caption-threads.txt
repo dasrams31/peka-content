@@ -1,0 +1,5 @@
+Semua model AI sekarang berlomba jadi agen. Hydrogen 2,5x lebih cepat, Sonnet 5.5 cetak 70,6% di tes coding agen, Fable 5.2 ngordinir seribu agen buat bangun OS dari nol.
+
+Langkah pertama: pilih satu tugas berulang lo, tulis tujuannya dengan jelas, terus serahin ke AI dan cek hasilnya.
+
+Lo tim delegasi penuh atau tetap cek tiap langkah? #AI

@@ -1,0 +1,58 @@
+AI Pekan Ini #02 — Agentic AI: kenapa semua model berlomba jadi agen (BERITA)
+Tanggal: 2026-11-22
+Semua fakta di bawah diverifikasi dari sumber resmi pada 22 Nov 2026.
+Topik TIDAK diganti: ketiga model contoh (Hydrogen, Sonnet 5.5, Fable 5.2)
+terverifikasi ada di pengumuman resmi vendor.
+
+1. Google — Introducing Gemini 4 Hydrogen for Agentic Workflows (blog resmi)
+   https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
+   - Rilis 12 November 2026; dibangun untuk "everyday coding and agentic
+     workflows"; model eksekusi cepat di keluarga Gemini 4, sementara
+     Carbon dan Argon untuk penalaran mendalam jangka panjang.
+   - Harga flat di seluruh konteks 1 juta token: $1.50 per 1 juta token
+     masuk, $7.50 per 1 juta token keluar.
+   - Empat level berpikir: low, medium, high (default), dan xhigh (baru).
+   - Artificial Analysis Intelligence Index: 51 di high (vs Argon 50),
+     54 di xhigh.
+   - 2,5 kali lebih cepat dari Gemini 3.8 Flash di level high; skor
+     Terminal-Bench 4.1 naik lebih dari 3x lipat (57% vs 18,2%).
+   - HLE-Diamond 58,8%, memimpin di kelasnya.
+   - Tersedia di Gemini API, Google AI Studio, aplikasi Gemini, Google
+     Search, dan Google Antigravity; Orchestrator di Antigravity bisa
+     ganti model otomatis dalam satu sesi (mis. Carbon koordinasi,
+     Hydrogen eksekusi).
+
+2. Anthropic — Claude Sonnet 5.5, pengumuman + system card resmi
+   https://www.anthropic.com/claude-sonnet-5-5-system-card
+   (system card 28 September 2026; pengumuman peluncuran 28 September 2026)
+   - Rilis 28 September 2026, model kedua di keluarga Claude 5.5
+     (setelah Opus 5.5); API id claude-sonnet-5-5.
+   - Harga sama dengan Sonnet 5: $2 masuk / $10 keluar per 1 juta token;
+     cache read $0.10 (turun dari $0.20); konteks 1 juta token.
+   - Output 30%+ lebih cepat dari Sonnet 5; biaya per tugas sampai 30%
+     lebih murah karena memakai token lebih sedikit.
+   - Terminal-Bench 4.0 (tes coding agen multi-langkah): 70,6% vs
+     Sonnet 5 10,3% dan Opus 5.5 66,4%.
+   - Diposisikan untuk "well-scoped everyday tasks, fixing bugs, and
+     creating polished documents, slides, and spreadsheets".
+
+3. Anthropic — Introducing Claude Fable 5.2 and Claude Mythos 5.2
+   https://www.anthropic.com/claude-fable-and-mythos-5-2
+   - Rilis 9 November 2026; Fable dan Mythos adalah model dasar yang
+     sama, dibedakan oleh safeguards (Fable tersedia luas, Mythos hanya
+     untuk organisasi terverifikasi).
+   - Harga $8 masuk / $40 keluar per 1 juta token, turun 20% dari
+     Fable 5.1 ($10 / $50); output sampai 30% lebih cepat; fast mode
+     opsional sampai 2,5x lebih cepat ($16 / $80).
+   - FrontierCode 2.0 (tes coding agen): 49,1% di effort Xhigh, tertinggi
+     dari semua model yang diuji Anthropic (Opus 5.5 45,5%, GPT-6 Astra
+     42,8%, Gemini 4 Carbon 41,1%).
+   - Konteks 1 juta token, output maks 128 ribu token.
+   - Contoh kerja nyata dari pengumuman: lebih dari 1.000 agen
+     terkoordinasi membangun sistem operasi dari nol; bukti Teorema
+     Terakhir Fermat diformalkan dalam 30 jam; tiga perangkat elektronik
+     dirancang dari nol.
+
+Catatan: tidak ada shortlink eksternal di edisi ini. Ketiga sumber resmi
+di atas tercantum di artikel blog; visual penutup hanya memuat ajakan
+follow + gabung komunitas (s.peka.ai.id/gabung, footer di semua frame).
