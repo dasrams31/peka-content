@@ -200,5 +200,15 @@
   "bot_id": 111,
   "removed_at": "2026-11-22",
   "reason": "sold out"
+ },
+ {
+  "sec": "GEMINI PRO",
+  "name": "Gemini Pro",
+  "dur": "3 Bulan (Invite)",
+  "price": "14K",
+  "price_num": 14,
+  "bot_id": 118,
+  "removed_at": "2026-11-22",
+  "reason": "sold out"
  }
 ]
