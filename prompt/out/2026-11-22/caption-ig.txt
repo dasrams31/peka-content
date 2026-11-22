@@ -1,0 +1,12 @@
+PROMPT HARIAN #32: salin prompt ini buat jadwal belajar UAS 7 hari yang realistis
+
+Hasilnya: jadwal belajar 7 hari yang rapi dalam bentuk tabel, sesi 50 menit plus istirahat, latihan soal tiap sesi, dan hari terakhir khusus revisi total.
+
+Buatkan jadwal belajar UAS 7 hari untuk [MATA KULIAH] dengan [JUMLAH BAB] bab. Bagi tiap hari jadi sesi 50 menit + istirahat 10 menit, sertakan latihan soal di akhir tiap sesi, dan hari ke-7 khusus revisi total. Format tabel: hari, topik, durasi, target selesai.
+
+Mulai dari mata kuliah tersulit dulu atau yang paling gampang dulu?
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru tiap hari jam 12:30.
+
+#PromptHarian #AI #Kuliah #UAS #JadwalBelajar #TipsKuliah #Mahasiswa #BelajarAI
+Music: Crypto by Kevin MacLeod

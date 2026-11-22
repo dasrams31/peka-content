@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Buatkan jadwal belajar UAS 7 hari untuk [MATA KULIAH] dengan [JUMLAH BAB] bab. Bagi tiap hari jadi sesi 50 menit + istirahat 10 menit, sertakan latihan soal di akhir tiap sesi, dan hari ke-7 khusus revisi total. Format tabel: hari, topik, durasi, target selesai.

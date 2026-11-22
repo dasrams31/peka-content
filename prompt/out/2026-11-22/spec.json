@@ -1,0 +1,12 @@
+{
+  "episode": 32,
+  "category": "KULIAH",
+  "title": "Jadwal belajar UAS 7 hari yang realistis",
+  "prompt": "Buatkan jadwal belajar UAS 7 hari untuk [MATA KULIAH] dengan [JUMLAH BAB] bab. Bagi tiap hari jadi sesi 50 menit + istirahat 10 menit, sertakan latihan soal di akhir tiap sesi, dan hari ke-7 khusus revisi total. Format tabel: hari, topik, durasi, target selesai.",
+  "tips": [
+    "Isi mata kuliah dan jumlah bab sebelum ditempel ke AI.",
+    "Minta AI sesuaikan jam belajar dengan jam fokusmu.",
+    "Tempel jadwalnya di dinding biar gampang dicek tiap hari."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-22"
+}
