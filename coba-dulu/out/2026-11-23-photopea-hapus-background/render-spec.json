@@ -1,0 +1,1005 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "PHOTOPEA",
+  "music_lane": "light",
+  "rate": "+25%",
+  "scenes": [
+    {
+      "badge": "COBA DULU #01",
+      "headline": [
+        "FOTO PRODUK",
+        "BERANTAKAN?"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Foto produkku di meja berantakan, mau dipajang di katalog kok malah kayak foto barang hilang. Jadi aku coba hapus background-nya pakai Photopea, gratis, tanpa daftar.",
+      "pose": "wave",
+      "sub": "Aku coba hapus background-nya, gratis."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Select > Magic Cut",
+        "Hijau di botol, merah di meja"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Caranya: buka photopea.com, pilih foto, terus Select, Magic Cut. Coret hijau di botolnya, coret merah di mejanya. Sembilan menit, background-nya udah hilang sebagian besar.",
+      "pose": "present",
+      "stat": "9 MENIT",
+      "stat_label": "dari buka photopea.com sampai PNG keunduh"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Sebelum: botol kejepit buku,",
+        "kabel, sama cangkir kopi",
+        "Sesudah: tinggal botolnya doang"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 170
+      },
+      "narration": "Sebelumnya: botol kejepit buku, kabel, sama cangkir kopi. Sesudahnya: tinggal botolnya doang di atas kotak-kotak transparan, siap tempel ke katalog.",
+      "pose": "base",
+      "stat": "PNG",
+      "stat_label": "transparan, siap tempel ke katalog"
+    },
+    {
+      "badge": "JUJUR AJA",
+      "kind": "beat",
+      "lines": [
+        "Belum rapi banget,",
+        "masih ada sisa meja di bawah",
+        "botol + halo putih di tepinya.",
+        "Rapihin dikit pakai Eraser."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Tapi jujur aja, hasilnya belum rapi banget. Masih ada sisa meja di bawah botol sama halo putih di tepinya. Jadi habis ini masih perlu dirapihin dikit pakai Eraser.",
+      "pose": "base"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Kamu mau coba",
+        "buat foto apa",
+        "dulu?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Langkah pertamamu: buka photopea.com, upload satu foto produkmu, coba Magic Cut sekarang. Kamu mau coba buat foto apa dulu, produk jualan atau foto profil?",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/dr2RJb"
+    }
+  ],
+  "theme": {
+    "accent": "#FFD60A",
+    "accent2": "#FFFFFF",
+    "bar_other": "#6E6E68",
+    "bar_track": "#262626",
+    "bg": "#111111",
+    "bg2": "#181818",
+    "card": "#1C1C1C",
+    "card_border": "#36362E",
+    "chip_bg": "#FFD60A",
+    "chip_text": "#111111",
+    "description": "Current Peka brand identity: Peka yellow on black.",
+    "dim": "#A8A8A0",
+    "glow": "rgba(255,214,10,0.22)",
+    "glow2": "rgba(255,214,10,0.08)",
+    "grid": "rgba(255,214,10,0.07)",
+    "label": "Peka Yellow",
+    "mascot": "bottom-right",
+    "mono": "#FFD60A",
+    "progress": "#FFD60A",
+    "text": "#F5F5F0"
+  },
+  "title": "Coba Dulu #01: Photopea hapus background foto produk",
+  "theme_name": "peka-yellow",
+  "words": [
+    {
+      "text": "Foto",
+      "start": 0.1,
+      "end": 0.3,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "produkku",
+      "start": 0.3,
+      "end": 0.59,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "di",
+      "start": 0.59,
+      "end": 0.66,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "meja",
+      "start": 0.66,
+      "end": 0.86,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "berantakan,",
+      "start": 0.86,
+      "end": 1.42,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "mau",
+      "start": 1.65,
+      "end": 1.8,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "dipajang",
+      "start": 1.8,
+      "end": 2.15,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "di",
+      "start": 2.15,
+      "end": 2.2,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "katalog",
+      "start": 2.2,
+      "end": 2.46,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kok",
+      "start": 2.46,
+      "end": 2.6,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "malah",
+      "start": 2.6,
+      "end": 2.76,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "kayak",
+      "start": 2.76,
+      "end": 2.94,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "foto",
+      "start": 2.94,
+      "end": 3.13,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "barang",
+      "start": 3.13,
+      "end": 3.31,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "hilang.",
+      "start": 3.31,
+      "end": 3.7,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Jadi",
+      "start": 4.365,
+      "end": 4.605,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "aku",
+      "start": 4.605,
+      "end": 4.735,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "coba",
+      "start": 4.735,
+      "end": 4.915,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "hapus",
+      "start": 4.915,
+      "end": 5.125,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "background-nya",
+      "start": 5.125,
+      "end": 5.555,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "pakai",
+      "start": 5.555,
+      "end": 5.775,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Photopea,",
+      "start": 5.775,
+      "end": 6.355,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "gratis,",
+      "start": 6.545,
+      "end": 7.095,
+      "scene": 0,
+      "line": 4
+    },
+    {
+      "text": "tanpa",
+      "start": 7.265,
+      "end": 7.515,
+      "scene": 0,
+      "line": 4
+    },
+    {
+      "text": "daftar.",
+      "start": 7.515,
+      "end": 7.985,
+      "scene": 0,
+      "line": 4
+    },
+    {
+      "text": "Caranya:",
+      "start": 9.059000000000001,
+      "end": 9.629000000000001,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "buka",
+      "start": 9.849,
+      "end": 10.099,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "photopea.com,",
+      "start": 10.099,
+      "end": 10.909,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "pilih",
+      "start": 11.129000000000001,
+      "end": 11.319,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "foto,",
+      "start": 11.319,
+      "end": 11.759,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "terus",
+      "start": 11.969000000000001,
+      "end": 12.139,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Select,",
+      "start": 12.139,
+      "end": 12.449,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Magic",
+      "start": 12.579,
+      "end": 12.899000000000001,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Cut.",
+      "start": 12.899000000000001,
+      "end": 13.239,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Coret",
+      "start": 13.899000000000001,
+      "end": 14.119,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "hijau",
+      "start": 14.119,
+      "end": 14.409,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "di",
+      "start": 14.409,
+      "end": 14.479,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "botolnya,",
+      "start": 14.479,
+      "end": 15.029,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "coret",
+      "start": 15.249,
+      "end": 15.479,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "merah",
+      "start": 15.479,
+      "end": 15.699000000000002,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "di",
+      "start": 15.699000000000002,
+      "end": 15.769,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "mejanya.",
+      "start": 15.769,
+      "end": 16.299,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "Sembilan",
+      "start": 16.969,
+      "end": 17.299,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "menit,",
+      "start": 17.299,
+      "end": 17.659,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "background-nya",
+      "start": 17.869,
+      "end": 18.319000000000003,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "udah",
+      "start": 18.319000000000003,
+      "end": 18.489,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "hilang",
+      "start": 18.489,
+      "end": 18.698999999999998,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "sebagian",
+      "start": 18.698999999999998,
+      "end": 19.039,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "besar.",
+      "start": 19.039,
+      "end": 19.448999999999998,
+      "scene": 1,
+      "line": 9
+    },
+    {
+      "text": "Sebelumnya:",
+      "start": 20.519000000000002,
+      "end": 21.169000000000004,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "botol",
+      "start": 21.389000000000003,
+      "end": 21.689000000000004,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "kejepit",
+      "start": 21.689000000000004,
+      "end": 21.979000000000003,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "buku,",
+      "start": 21.979000000000003,
+      "end": 22.409000000000002,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "kabel,",
+      "start": 22.609,
+      "end": 23.069000000000003,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "sama",
+      "start": 23.249000000000002,
+      "end": 23.519000000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "cangkir",
+      "start": 23.519000000000002,
+      "end": 23.769000000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "kopi.",
+      "start": 23.769000000000002,
+      "end": 24.169000000000004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Sesudahnya:",
+      "start": 24.829000000000004,
+      "end": 25.519000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "tinggal",
+      "start": 25.739000000000004,
+      "end": 25.969,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "botolnya",
+      "start": 25.969,
+      "end": 26.279000000000003,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "doang",
+      "start": 26.279000000000003,
+      "end": 26.509000000000004,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "di",
+      "start": 26.509000000000004,
+      "end": 26.559000000000005,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "atas",
+      "start": 26.559000000000005,
+      "end": 26.729000000000003,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "kotak-kotak",
+      "start": 26.729000000000003,
+      "end": 27.089000000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "transparan,",
+      "start": 27.089000000000002,
+      "end": 27.679000000000002,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "siap",
+      "start": 27.889000000000003,
+      "end": 28.109,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "tempel",
+      "start": 28.109,
+      "end": 28.369000000000003,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "ke",
+      "start": 28.369000000000003,
+      "end": 28.419000000000004,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "katalog.",
+      "start": 28.419000000000004,
+      "end": 28.849000000000004,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "Tapi",
+      "start": 29.939000000000004,
+      "end": 30.159000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "jujur",
+      "start": 30.159000000000006,
+      "end": 30.399000000000004,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "aja,",
+      "start": 30.399000000000004,
+      "end": 30.839000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "hasilnya",
+      "start": 31.039000000000005,
+      "end": 31.429000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "belum",
+      "start": 31.429000000000006,
+      "end": 31.579000000000004,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "rapi",
+      "start": 31.579000000000004,
+      "end": 31.739000000000004,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "banget.",
+      "start": 31.739000000000004,
+      "end": 32.159000000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Masih",
+      "start": 32.819,
+      "end": 33.099000000000004,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "ada",
+      "start": 33.099000000000004,
+      "end": 33.229000000000006,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "sisa",
+      "start": 33.229000000000006,
+      "end": 33.409000000000006,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "meja",
+      "start": 33.409000000000006,
+      "end": 33.669000000000004,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "di",
+      "start": 33.669000000000004,
+      "end": 33.739000000000004,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "bawah",
+      "start": 33.739000000000004,
+      "end": 33.919000000000004,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "botol",
+      "start": 33.919000000000004,
+      "end": 34.229000000000006,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "sama",
+      "start": 34.229000000000006,
+      "end": 34.419000000000004,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "halo",
+      "start": 34.419000000000004,
+      "end": 34.57900000000001,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "putih",
+      "start": 34.57900000000001,
+      "end": 34.809000000000005,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "di",
+      "start": 34.809000000000005,
+      "end": 34.86900000000001,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "tepinya.",
+      "start": 34.86900000000001,
+      "end": 35.319,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Jadi",
+      "start": 35.989000000000004,
+      "end": 36.25900000000001,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "habis",
+      "start": 36.25900000000001,
+      "end": 36.46900000000001,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "ini",
+      "start": 36.46900000000001,
+      "end": 36.659000000000006,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "masih",
+      "start": 36.659000000000006,
+      "end": 36.849000000000004,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "perlu",
+      "start": 36.849000000000004,
+      "end": 37.029,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "dirapihin",
+      "start": 37.029,
+      "end": 37.389,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "dikit",
+      "start": 37.389,
+      "end": 37.599000000000004,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "pakai",
+      "start": 37.599000000000004,
+      "end": 37.789,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "Eraser.",
+      "start": 37.789,
+      "end": 38.289,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "Langkah",
+      "start": 39.364000000000004,
+      "end": 39.614000000000004,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "pertamamu:",
+      "start": 39.614000000000004,
+      "end": 40.184000000000005,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "buka",
+      "start": 40.404,
+      "end": 40.644000000000005,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "photopea.com,",
+      "start": 40.644000000000005,
+      "end": 41.42400000000001,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "upload",
+      "start": 41.654,
+      "end": 41.934000000000005,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "satu",
+      "start": 41.934000000000005,
+      "end": 42.134,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "foto",
+      "start": 42.134,
+      "end": 42.314,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "produkmu,",
+      "start": 42.314,
+      "end": 42.814,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "coba",
+      "start": 43.024,
+      "end": 43.244,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Magic",
+      "start": 43.244,
+      "end": 43.504000000000005,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Cut",
+      "start": 43.504000000000005,
+      "end": 43.624,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "sekarang.",
+      "start": 43.624,
+      "end": 44.074000000000005,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "Kamu",
+      "start": 44.739000000000004,
+      "end": 44.929,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "mau",
+      "start": 44.929,
+      "end": 45.029,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "coba",
+      "start": 45.029,
+      "end": 45.239000000000004,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "buat",
+      "start": 45.239000000000004,
+      "end": 45.399,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "foto",
+      "start": 45.399,
+      "end": 45.569,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "apa",
+      "start": 45.569,
+      "end": 45.699000000000005,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "dulu,",
+      "start": 45.699000000000005,
+      "end": 46.079,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "produk",
+      "start": 46.29900000000001,
+      "end": 46.539,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "jualan",
+      "start": 46.539,
+      "end": 46.829,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "atau",
+      "start": 46.829,
+      "end": 46.959,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "foto",
+      "start": 46.959,
+      "end": 47.129000000000005,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "profil?",
+      "start": 47.129000000000005,
+      "end": 47.559000000000005,
+      "scene": 4,
+      "line": 22
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 8.664
+    },
+    {
+      "start": 8.659,
+      "end": 20.124
+    },
+    {
+      "start": 20.119,
+      "end": 29.544
+    },
+    {
+      "start": 29.539,
+      "end": 38.964
+    },
+    {
+      "start": 38.964,
+      "end": 48.24
+    }
+  ],
+  "total": 49.04
+}

@@ -1,0 +1,15 @@
+[scene 0 - hook]
+Foto produkku di meja berantakan, mau dipajang di katalog kok malah kayak foto barang hilang. Jadi aku coba hapus background-nya pakai Photopea, gratis, tanpa daftar.
+
+[scene 1 - beat]
+Caranya: buka photopea.com, pilih foto, terus Select, Magic Cut. Coret hijau di botolnya, coret merah di mejanya. Sembilan menit, background-nya udah hilang sebagian besar.
+
+[scene 2 - beat]
+Sebelumnya: botol kejepit buku, kabel, sama cangkir kopi. Sesudahnya: tinggal botolnya doang di atas kotak-kotak transparan, siap tempel ke katalog.
+
+[scene 3 - beat]
+Tapi jujur aja, hasilnya belum rapi banget. Masih ada sisa meja di bawah botol sama halo putih di tepinya. Jadi habis ini masih perlu dirapihin dikit pakai Eraser.
+
+[scene 4 - close]
+Langkah pertamamu: buka photopea.com, upload satu foto produkmu, coba Magic Cut sekarang. Kamu mau coba buat foto apa dulu, produk jualan atau foto profil?
+
