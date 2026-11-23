@@ -1,0 +1,52 @@
+{
+  "agent": "CLAUDE",
+  "episode": 34,
+  "next": "HERMES",
+  "repos": [
+    {
+      "name": "heydamir/unslop",
+      "stars": "21RB",
+      "install": "claude plugin install unslop --marketplace heydamir/unslop",
+      "penjelasan": "Unslop ngubah UI hasil vibe coding yang kelihatan banget buatan AI jadi interface yang beneran didesain. Dia nyari dulu ciri slop-nya terus ngeberesin layarnya selangkah demi selangkah kayak desainer lagi review.",
+      "cocok": "Kamu yang bikin UI bareng Claude Code dan mau hasilnya kelihatan didesain beneran, bukan template AI.",
+      "shortlink": "https://s.peka.ai.id/36bWvh",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/shots/heydamir-unslop.png"
+    },
+    {
+      "name": "teng-lin/notebooklm-py",
+      "stars": "20RB",
+      "install": "npx skills add teng-lin/notebooklm-py",
+      "penjelasan": "Notebooklm-py ngasih akses programatik penuh ke Gemini Notebook lewat Python, CLI, dan agent AI. Kamu bisa impor sumber massal terus ngolahnya otomatis dari kode.",
+      "cocok": "Kamu yang riset pakai NotebookLM dan mau ngolah banyak sumber otomatis dari kode.",
+      "shortlink": "https://s.peka.ai.id/7lBmfY",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/shots/teng-lin-notebooklm-py.png"
+    },
+    {
+      "name": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "stars": "20RB",
+      "install": "claude plugin install aris@aris",
+      "penjelasan": "ARIS itu skill ringan berbasis Markdown buat riset ML yang jalan sendiri semalaman. Dia ngatur loop review antar model sampai ngotomatisasi eksperimen, tanpa framework dan tanpa lock-in.",
+      "cocok": "Kamu yang riset ML dan mau agent AI jalanin eksperimen sendiri semalaman.",
+      "shortlink": "https://s.peka.ai.id/mQ9qS8",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/shots/wanshuiyin-Auto-claude-code-research-in-sleep.png"
+    },
+    {
+      "name": "nidhinjs/prompt-master",
+      "stars": "16RB",
+      "install": "npx skills add nidhinjs/prompt-master -g",
+      "penjelasan": "Prompt Master nulisin prompt yang akurat buat tool AI apa pun, jadi kamu nggak buang token buat re-prompt berkali-kali. Dia gali 9 dimensi maksud kamu terus nanya maksimal 3 pertanyaan klarifikasi.",
+      "cocok": "Kamu yang capek re-prompt berkali-kali dan mau jawaban bener dari percobaan pertama.",
+      "shortlink": "https://s.peka.ai.id/xxtd3v",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/shots/nidhinjs-prompt-master.png"
+    },
+    {
+      "name": "Jakeschincariol/replica-skill",
+      "stars": "10RB",
+      "install": "git clone https://github.com/Jakeschincariol/replica-skill.git",
+      "penjelasan": "Replica Skill itu 11 skill Claude gratis yang ngebantu kamu nge-klon aplikasi apa pun, dari riset sampai live. Yang diklon itu fungsi dan alurnya, bukan kode atau aset milik orang.",
+      "cocok": "Kamu yang mau bangun aplikasi dengan belajar dari app yang udah sukses, terus bikin versi kamu sendiri.",
+      "shortlink": "https://s.peka.ai.id/zjDl39",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/shots/Jakeschincariol-replica-skill.png"
+    }
+  ]
+}
