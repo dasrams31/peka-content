@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-23
+
+- TOP (n=23): day-counter 0%, question 17%, story 30%, hashtags avg 1.7, words avg 40.
+- REST (n=69): day-counter 14%, question 36%, story 23%, hashtags avg 1.6, words avg 40.
+- Top posts today:
+  - #Mahasiswa @manusia_masihdibumi (20372 likes): Hallo, perkenalkan Aku Anggun. Mahasiswi Politeknik Negeri Semarang yang sedang mencoba untuk survive. Kalian yg di temc
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #AI @carnage4life (2194 likes): Apple, the world’s most valuable company, looking down at all the people that said it missed AI now that the AI bubble i
+  - #Kuliah @movien1028 (1882 likes): sbg seorang fresh graduate, ternyata lebih cape cari kerja dibanding kuliah. padahal niatnya mulia ingin memperbaiki eko
+  - #AI @_neutronfish (1241 likes): Anthropic: “We’ve solved the Riemann hypothesis with AI. The proof is 250,000 pages long and no one has completely evalu
+
 ## 2026-11-22
 
 - TOP (n=21): day-counter 5%, question 19%, story 24%, hashtags avg 1.4, words avg 36.
@@ -144,14 +155,3 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
   - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
   - #Mahasiswa @angga1203_hidayat (2667 likes): 4 Strategi untuk Mahasiswa Baru S3 Sejak Tahun Pertama (Biar Gak Buang-Buang Waktu)  Editing: Claude code, Opus 5.5, ext
   - #ChatGPT @iniprompt (1864 likes): [PROMPT Food Photography] Tema : BOLD COLOR SURFACE FEATURE --- Coba prompt ini untuk produk makananmu, caranya: 1. Buka
-
-## 2026-11-09
-
-- TOP (n=20): day-counter 0%, question 15%, story 30%, hashtags avg 0.9, words avg 37.
-- REST (n=63): day-counter 8%, question 30%, story 24%, hashtags avg 1.7, words avg 44.
-- Top posts today:
-  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
-  - #AI @suciindhri_17 (4834 likes): warga threads, stlh menimbang lama, AKHIRNYAAA aku memutuskan gabung jd warga claude pro, boleh sharing ga tips n trik a
-  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
-  - #ChatGPT @putstywd (4502 likes): gabut karena lagi bedrest, promptingnya super simple 👀💬‼️  ai : chatgpt after • before :
-  - #Belajar @harrypatria_ (4313 likes): Apa jadinya kalau kita enggan beradaptasi di tengah situasi sekarang?   Yang rajin belajar aja ngerasa makin ketinggalan
