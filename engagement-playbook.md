@@ -128,7 +128,8 @@ terasa maksa. Perintah keras diganti ajakan bersyarat:
   angka benchmark/perbandingan antar model, buat JUGA satu reel
   perbandingan (tabel angka + pertanyaan pilih model, format reel
   benchmark Hydrogen 13 Nov) sebagai ekstra di samping carousel, posting
-  ke IG + FB (JANGAN ke Threads selama freeze HM 7 Nov-7 Des 2026).
+  ke IG + FB (freeze Threads HM sudah dicabut 19 Nov 2026; reel benchmark
+  tetap IG + FB saja sesuai langkah 6c cron HM).
   Bukti: reel Hydrogen IG 23 likes / 1.817 views dan FB 188 views vs
   carousel HM minggu ini median 3 likes IG / 47 views dan 3 views FB.
 - Store (jualan): comment trigger is the DM keyword ("DM MAU [produk]")
