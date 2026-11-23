@@ -14,6 +14,8 @@ terverifikasi, lewati ke topik berikut dan tulis alasannya di sini.
   Verifikasi: artikel ramadanadipa.com 24 Okt 2026.
   DIBANGUN, verifikasi ulang cron 16 Nov 19:00: lengkap, SIAP TAYANG
   (6 slide 4096, reel v2 53 dtk, blog 200, shortlink w9ejEU 307).
+  Verifikasi ulang cron 23 Nov 19:00: lengkap, SIAP TAYANG (semua cek
+  lolos; live Threads + IG dicek, edisi ini BELUM tayang di mana pun).
   Tetap [ ] sampai tayang; [x] + tanggal tayang hanya setelah posting sukses.
 - [ ] #02 [CONCEPT] Research agent sederhana - apa itu loop
   think-act-observe, kenapa agent beda dari chatbot, satu contoh
