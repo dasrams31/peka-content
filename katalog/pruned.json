@@ -230,5 +230,15 @@
   "bot_id": 118,
   "removed_at": "2026-11-22",
   "reason": "sold out"
+ },
+ {
+  "sec": "CANVA",
+  "name": "Akun Canva Edu",
+  "dur": "Lifetime",
+  "price": "21K",
+  "price_num": 21,
+  "bot_id": 120,
+  "removed_at": "2026-11-23",
+  "reason": "sold out"
  }
 ]
