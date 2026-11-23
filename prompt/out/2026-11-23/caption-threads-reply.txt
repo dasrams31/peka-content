@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Hitung harga jual [PRODUK] yang modalnya [MODAL] per unit. Pakai margin untung [PERSEN]%, lalu bandingkan dengan harga kompetitor [HARGA KOMPETITOR]. Tampilkan tabel berisi modal, harga jual, untung per unit, dan saran harga promo. Akhiri dengan satu kalimat kenapa harga itu masuk akal buat pembeli.

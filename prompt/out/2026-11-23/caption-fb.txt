@@ -1,0 +1,11 @@
+PROMPT HARIAN #33: salin prompt ini buat harga jual yang pas, untung tetap jalan
+
+Hasilnya: tabel harga jual yang rapi, modal, untung per unit, dan saran harga promo, plus satu kalimat kenapa harga itu masuk akal buat pembeli.
+
+Hitung harga jual [PRODUK] yang modalnya [MODAL] per unit. Pakai margin untung [PERSEN]%, lalu bandingkan dengan harga kompetitor [HARGA KOMPETITOR]. Tampilkan tabel berisi modal, harga jual, untung per unit, dan saran harga promo. Akhiri dengan satu kalimat kenapa harga itu masuk akal buat pembeli.
+
+Hitung harga produkmu dulu atau cek harga kompetitor dulu?
+Save dulu biar nggak nyari lagi pas butuh.
+Prompt baru Senin, Rabu, Jumat jam 12:30.
+
+Music: Cheery Monday by Kevin MacLeod
