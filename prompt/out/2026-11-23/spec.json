@@ -1,0 +1,12 @@
+{
+  "episode": 33,
+  "category": "BISNIS",
+  "title": "Harga jual yang pas, untung tetap jalan",
+  "prompt": "Hitung harga jual [PRODUK] yang modalnya [MODAL] per unit. Pakai margin untung [PERSEN]%, lalu bandingkan dengan harga kompetitor [HARGA KOMPETITOR]. Tampilkan tabel berisi modal, harga jual, untung per unit, dan saran harga promo. Akhiri dengan satu kalimat kenapa harga itu masuk akal buat pembeli.",
+  "tips": [
+    "Isi modal dengan angka asli, jangan kira-kira.",
+    "Cek harga kompetitor dulu sebelum tentukan margin.",
+    "Minta 3 skenario margin: hemat, standar, premium."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-23"
+}
