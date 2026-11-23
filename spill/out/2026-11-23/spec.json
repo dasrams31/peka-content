@@ -1,0 +1,43 @@
+{
+ "agent": "CLAUDE",
+ "next": "HERMES",
+ "episode": 34,
+ "repos": [
+  {
+   "name": "heydamir/unslop",
+   "stars": "21RB",
+   "desc": "Unslop itu skill buat Claude Code, Codex, dan Google Antigravity yang ngubah UI hasil vibe coding yang kelihatan banget buatan AI jadi interface yang beneran didesain. Dia nyari dulu ciri slop-nya, gradien ungu, glow berlebihan, label emoji, copy yang teriak-teriak, sama spacing yang nggak rata, terus nentuin arah desain dari produk kamu dan ngeberesin layarnya selangkah demi selangkah kayak desainer lagi review. Dia jalan di Next.js, React, Vue, Svelte, Tailwind, sampai HTML dan CSS polos, buat dashboard, aplikasi, landing page, bahkan situs yang udah live cuma dari link. Instalasinya gampang, pasang sebagai plugin sekali terus kepakai di semua proyek. Hasilnya UI kamu punya karakter sendiri, bukan lagi template AI yang itu-itu aja.",
+   "cocok": "Kamu yang bikin UI bareng Claude Code dan mau hasilnya kelihatan didesain beneran, bukan template AI.",
+   "shortlink": "https://s.peka.ai.id/36bWvh"
+  },
+  {
+   "name": "teng-lin/notebooklm-py",
+   "stars": "20RB",
+   "desc": "Notebooklm-py itu API Python tidak resmi plus skill agent buat Google Gemini Notebook, dulu namanya NotebookLM. Dia ngasih akses programatik penuh ke semua fitur NotebookLM, termasuk yang nggak ada di web UI, lewat Python, CLI, dan agent AI kayak Claude Code. Kamu bisa impor sumber massal, URL, PDF, YouTube, dan dokumen Google, terus ngolahnya otomatis dari kode. Paketnya juga nyediain skill NotebookLM yang bisa dipasang ke Claude Code biar agent langsung bisa makai. Hasilnya riset kamu yang sumbernya banyak nggak perlu diklik satu-satu di browser lagi.",
+   "cocok": "Kamu yang riset pakai NotebookLM dan mau ngolah banyak sumber otomatis dari kode.",
+   "shortlink": "https://s.peka.ai.id/7lBmfY"
+  },
+  {
+   "name": "wanshuiyin/Auto-claude-code-research-in-sleep",
+   "stars": "20RB",
+   "desc": "ARIS itu kumpulan skill ringan berbasis Markdown buat riset ML yang jalan sendiri, bahkan sambil kamu tidur. Dia ngatur loop review antar model, nyari ide riset baru, sampai ngotomatisasi eksperimen, tanpa framework dan tanpa lock-in. Skill ini jalan di Claude Code, Codex, dan agent LLM apa pun, dan metodenya udah jadi paper arXiv yang sempat jadi Paper of the Day di Hugging Face. Kamu cukup kasih arah risetnya, agent yang ngerjain eksperimen dan review-nya. Hasilnya riset kamu tetap jalan semalaman, bangun tidur tinggal cek hasilnya.",
+   "cocok": "Kamu yang riset ML dan mau agent AI jalanin eksperimen sendiri semalaman.",
+   "shortlink": "https://s.peka.ai.id/mQ9qS8"
+  },
+  {
+   "name": "nidhinjs/prompt-master",
+   "stars": "16RB",
+   "desc": "Prompt Master itu skill Claude yang nulisin prompt yang akurat buat tool AI apa pun, jadi kamu nggak buang token dan kredit cuma buat re-prompt berkali-kali. Dia jalan di Claude, ChatGPT, Codex, Grok, Gemini, Cursor, Copilot, sampai Midjourney, Sora, dan ElevenLabs. Cara kerjanya rapi, dia kenalin dulu tool tujuannya, gali 9 dimensi maksud kamu, terus nanya maksimal 3 pertanyaan klarifikasi kalau ada yang kurang. Hasilnya prompt yang keluar langsung tajam, tiap katanya punya fungsi, bukan sekadar makin panjang. Kamu bisa panggil langsung dengan perintah /prompt-master atau ngobrol biasa aja.",
+   "cocok": "Kamu yang capek re-prompt berkali-kali dan mau jawaban bener dari percobaan pertama.",
+   "shortlink": "https://s.peka.ai.id/xxtd3v"
+  },
+  {
+   "name": "Jakeschincariol/replica-skill",
+   "stars": "10RB",
+   "desc": "Replica Skill itu 11 skill Claude gratis yang ngebantu kamu nge-klon aplikasi apa pun, dari riset sampai live. Satu skill ngebongkar aplikasi target, satu lagi ngebangun ulangnya, satu ngetes bug, dan satu lagi baca keluhan user aplikasi aslinya biar versi kamu lebih bagus. Di tengahnya ada skill buat rencanain stack dan database, ngebangun design system, nyambungin auth dan pembayaran, sampai nulis landing page dan nerbitin ke domain kamu. Semuanya gratis, lisensi MIT, tanpa daftar dan tanpa API key. Yang diklon itu fungsi dan alurnya, bukan kode atau aset milik orang, jadi tetap clean-room.",
+   "cocok": "Kamu yang mau bangun aplikasi dengan belajar dari app yang udah sukses, terus bikin versi kamu sendiri.",
+   "shortlink": "https://s.peka.ai.id/zjDl39"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-23/carousel"
+}
