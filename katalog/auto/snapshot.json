@@ -85,8 +85,8 @@
   {
    "dur": "1 Bulan",
    "name": "Canva Pro",
-   "price": "5K",
-   "price_num": 5,
+   "price": "2K",
+   "price_num": 2,
    "sec": "CANVA",
    "bot_id": 78
   },
@@ -134,8 +134,8 @@
    "sec": "CANVA",
    "dur": "3 Bulan",
    "name": "Canva Pro Bisnis",
-   "price": "7K",
-   "price_num": 7,
+   "price": "4K",
+   "price_num": 4,
    "bot_id": 115
   },
   {
