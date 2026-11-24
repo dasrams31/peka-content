@@ -1,0 +1,24 @@
+{
+ "band": "KEAMANAN DATA AI",
+ "date": "24 NOVEMBER 2026",
+ "headline": [
+  "KODE KAMU",
+  "DIKIRIM KE",
+  "SERVER SIAPA?"
+ ],
+ "points": [
+  "Tool AI code review mengirim lebih dari potongan kode yang kamu sorot: konteks editor, indeks repo, bacaan agen, tempelan manual, sampai tool yang terhubung.",
+  "Copilot Free, Pro, dan Pro+ dipakai buat training sejak 24 April 2026 kecuali dimatikan di pengaturan. Paket Business dan Enterprise tidak kena perubahan ini.",
+  "Daftar merahnya jelas: API key, file .env, private key, connection string, JWT, data pelanggan nyata, dan dump database production. Jangan pernah kirim itu."
+ ],
+ "question": "Kamu tim cek dulu baru kirim, atau tim tempel dulu, cek belakangan?",
+ "source": "TUTORIAL PEKA",
+ "steps": [
+  "Aktifkan content exclusion buat .env dan folder secrets, di Copilot Business atau .cursorignore di Cursor.",
+  "Pasang Gitleaks sebagai pre-commit hook, lalu ganti semua data asli di test dan seeder dengan Faker.",
+  "Buat repo paling sensitif, siapkan model lokal dengan Ollama dan Continue supaya datamu tidak keluar dari laptop."
+ ],
+ "sub": "Review kode pakai AI itu praktis, tapi datamu ikut terbang ke server vendor. Ini yang boleh dan tidak boleh dikirim.",
+ "hero": "file:///home/hatch/workspace/blog/static/img/covers/ai-code-review-dan-keamanan-data-apa-yang-boleh-dikirim-ke-model.jpg",
+ "shortlink": "https://s.peka.ai.id/97Qbfr"
+}

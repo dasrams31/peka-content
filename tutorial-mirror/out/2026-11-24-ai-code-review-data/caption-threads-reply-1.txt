@@ -1,0 +1,3 @@
+Yang sebenarnya terkirim itu lebih luas dari potongan kode yang kamu sorot. Ada lima jalur: konteks editor di sekitar kursor, indeks repo yang diambil dari mana saja, bacaan agen plus output perintah yang dia jalankan, tempelan manual seperti log dan screenshot, sampai data yang mengalir lewat MCP server atau integrasi lain.
+
+Aturan praktisnya: kalau tool itu bisa membaca sesuatu, anggap saja ia sudah mengirimkannya.

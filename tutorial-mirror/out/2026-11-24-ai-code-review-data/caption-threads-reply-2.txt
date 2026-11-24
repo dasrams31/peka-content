@@ -1,0 +1,3 @@
+Daftar merah, jangan pernah kirim: API key dan token apa pun, file .env, private key, connection string database, JWT yang masih berlaku, data pelanggan nyata, dump database production, dan log yang memuat token.
+
+Daftar hijau, aman dikirim: kode aplikasi umum tanpa secret, diff pull request yang sudah dibersihkan, pesan error yang sudah disanitasi, skema database tanpa isi barisnya, dan test pakai data dummy.

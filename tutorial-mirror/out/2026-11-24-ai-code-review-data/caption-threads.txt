@@ -1,0 +1,7 @@
+Aku pernah hampir nempel isi .env ke chatbot AI. Untung sadar sebelum enter.
+
+Mulai 24 April 2026, Copilot Free dan Pro dipakai buat training kecuali dimatikan di pengaturan. Paket Business dan Enterprise tidak kena. Cek paketmu, aktifkan content exclusion buat .env dan folder secrets.
+
+Versi lengkap di blog Peka, linknya ada di slide terakhir.
+
+Kamu tim cek dulu baru kirim, atau tim tempel dulu, cek belakangan? #AI

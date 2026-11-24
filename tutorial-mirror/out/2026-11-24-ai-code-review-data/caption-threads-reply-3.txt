@@ -1,0 +1,3 @@
+Langkah hari ini: aktifkan content exclusion buat .env dan secrets, pasang Gitleaks sebagai pre-commit hook, ganti data asli di test dan seeder dengan Faker, dan buat repo paling sensitif, siapkan model lokal pakai Ollama dan Continue.
+
+Checklist lengkap 6 langkahnya ada di blog Peka. Follow @peka.ai.id, save dulu biar gampang dicari pas butuh.

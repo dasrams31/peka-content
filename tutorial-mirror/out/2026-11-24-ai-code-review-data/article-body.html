@@ -1,0 +1,58 @@
+<p>Aku pernah hampir nempel isi file .env ke chatbot AI saat debugging, karena lagi buru-buru dan chatbot itu terasa seperti rekan kerja yang bisa dipercaya. Untung sempat sadar sebelum menekan enter. Sejak hari itu aku memakai satu asumsi: apa pun yang bisa dibaca tool itu, anggap saja sudah terkirim ke server vendor.</p>
+<p>Asumsi itu bukan paranoia. Modelnya jalan di data center, bukan di laptopmu, jadi kode harus sampai ke sana dulu sebelum bisa di-review. Tutorial ini membahas apa saja yang sebenarnya terkirim, mana yang boleh dan tidak boleh dikirim, dan bagaimana menyiapkan repo supaya aman dipakai bersama AI.</p>
+<h2>Yang sebenarnya terkirim saat kamu minta review</h2>
+<p>Banyak developer mengira yang terkirim hanya potongan kode yang mereka sorot. Kenyataannya jauh lebih luas. Ada lima jalur data yang masuk ke model saat kamu memakai AI code review.</p>
+<p>Pertama, konteks editor. Tool autocomplete mengirim kode di sekitar kursor dan sering juga potongan dari file lain yang sedang terbuka. Kedua, konteks yang diambil dari repo. Tool yang mengindeks repository mengirim potongan kode yang relevan dari mana saja di repo, dan sebagian vendor membangun indeks itu di server mereka sendiri. Ketiga, bacaan dan output agen. Agen AI membaca file apa pun yang ia anggap relevan. Kalau ia menjalankan perintah env atau test yang menulis baris database ke log, output itu ikut terkirim.</p>
+<p>Keempat, tempelan manual. Log, stack trace, perintah curl lengkap dengan header, screenshot, dan baris database yang kamu tempel ke chat semuanya terkirim. Ini jalur paling sering bikin bocor karena terasa sepele. Kelima, tool yang terhubung. Data yang mengalir lewat MCP server atau integrasi lain bisa diteruskan ke pihak ketiga di luar penyedia model.</p>
+<h2>Paket personal vs bisnis: aturannya beda jauh</h2>
+<p>Ini bagian yang paling sering disalahpahami. Kebijakan data AI coding tool tidak sama untuk semua paket, dan perbedaan terbesar ada di garis personal lawan bisnis.</p>
+<p>GitHub mengumumkan pada 25 Maret 2026 bahwa mulai 24 April 2026, interaksi Copilot Free, Pro, dan Pro+ dipakai untuk melatih model kecuali pengguna mematikannya di pengaturan. Yang dipakai termasuk prompt, saran kode yang diterima, potongan kode, dan konteks terkait. Paket Business dan Enterprise tidak kena perubahan ini. GitHub menyatakan tidak memakai data Business dan Enterprise untuk melatih model AI.</p>
+<p>Soal penyimpanan, Copilot Business dan Enterprise tidak menyimpan chat IDE dan code completion. Permukaan lain, termasuk CLI dan Coding Agent, menyimpan prompt dan saran selama 28 hari.</p>
+<p>Cursor punya saklar Privacy Mode. Tanpa Privacy Mode, kontenmu bisa dipakai untuk perbaikan model. Dengan Privacy Mode aktif, ada perjanjian zero data retention dengan penyedia model dan retensi sekitar 30 hari. Di paket Teams dan Enterprise, Privacy Mode aktif secara default dan admin bisa memaksakannya.</p>
+<p>Claude Code di bawah ketentuan komersial menyatakan tidak melatih model dari konten pelanggan, dengan retensi default 30 hari. Paket konsumen memakai ketentuan berbeda, jadi akun personal dan akun tim tidak punya perlindungan yang sama.</p>
+<p>Kenapa ini penting? Stack Overflow Developer Survey 2026 mencatat 66 persen responden memakai Claude Code dalam setahun terakhir, 59 persen memakai Copilot, dan 73 persen memakai asisten coding setiap hari. Mayoritas dari kita sudah mengirim kode ke server vendor tiap hari kerja, sering kali tanpa sadar paket apa yang sebenarnya dipakai.</p>
+<p>Kebijakan vendor bisa berubah. GitHub mengubah default training-nya pada April 2026 setelah bertahun-tahun tidak melatih dari interaksi Copilot. Jangan mengandalkan ingatan atau artikel lama, termasuk artikel ini. Kalau kodemu sensitif, cek halaman kebijakan resmi vendor saat kamu membaca ini.</p>
+<h2>Daftar merah: jangan pernah kirim ini</h2>
+<p>Apapun tool dan paketnya, ada data yang tidak boleh keluar dari laptopmu. Simpan daftar ini di kepala: API key, secret key, dan token akses apa pun, termasuk yang sudah tidak aktif. File .env dan semua file konfigurasi berisi kredensial. Private key, sertifikat, dan file .pem. Connection string database lengkap dengan password. JWT dan session token yang masih berlaku. Data pelanggan nyata: nama, email, nomor HP, NIK, IBAN, alamat. Dump database production dan file CSV ekspor berisi data asli. Log production yang memuat token, cookie, atau baris data. Screenshot yang menampilkan secret, token, atau data pelanggan. Kredensial CI/CD, webhook secret, dan kunci deploy.</p>
+<p>Perhatikan satu pola yang berulang: kebocoran paling sering bukan dari kode aplikasi itu sendiri, tapi dari data yang menempel di sekitar kode. File fixture test berisi email karyawan asli, dump CSV yang disimpan di working tree untuk reproduksi bug, dan log yang ditempel mentah ke chat.</p>
+<h2>Daftar hijau: aman dikirim</h2>
+<p>Sebaliknya, ini data yang umumnya aman dikirim ke model untuk review: kode aplikasi umum tanpa secret dan tanpa data pelanggan, diff pull request yang sudah dibersihkan, pesan error dan stack trace yang sudah disanitasi, skema database tanpa isi barisnya, konfigurasi contoh seperti .env.example, potongan log yang token dan emailnya sudah diganti placeholder, dan test dengan data dummy dari Faker.</p>
+<p>Prinsipnya sederhana. Kalau data itu boleh kamu tampilkan di screenshot untuk artikel blog publik, kemungkinan besar aman dikirim ke model. Kalau tidak, bersihkan dulu.</p>
+<h2>Bersihkan dulu sebelum kirim: empat langkah</h2>
+<p>Jangan mengandalkan niat baik dan ingatan. Pasang pengaman yang jalan otomatis.</p>
+<p>Pertama, aktifkan content exclusion. Copilot Business dan Enterprise punya content exclusion di level organisasi dan repository. Daftarkan path seperti .env dan secrets/ di sana. Di Cursor, buat .cursorignore yang sama. Ingat satu celah: exclusion tidak menutup semua jalur. Agen dan tool terminal masih bisa membaca file yang di-ignore. Jangan simpan file sensitif di repo sama sekali.</p>
+<p>Kedua, pasang pemindai secret di pre-commit. Gitleaks memindai staged file sebelum commit dan menggagalkan commit kalau menemukan pola secret. Pasang lewat pre-commit hook supaya kebocoran tertangkap sebelum masuk git history.</p>
+<p>Ketiga, ganti data asli dengan Faker di test dan seeder. Ini perbaikan paling murah untuk kebocoran lewat fixture. Jangan pernah memakai data pelanggan asli sebagai contoh di test. Di Laravel, factory bawaan sudah memakai Faker, jadi manfaatkan itu dan jangan menimpanya dengan data nyata.</p>
+<pre><code>// database/factories/UserFactory.php
+public function definition(): array
+{
+    return [
+        'name' =&gt; fake()-&gt;name(),
+        'email' =&gt; fake()-&gt;unique()-&gt;safeEmail(),
+    ];
+}</code></pre>
+<p>Keempat, model lokal untuk repo yang benar-benar sensitif. Kalau repo-mu berisi logika bisnis inti, data pelanggan, atau kode yang terikat NDA, jalankan model lokal. Continue dengan Ollama adalah kombinasi paling gampang di laptop. Kualitasnya di bawah model cloud besar, tapi datamu tidak keluar dari laptop.</p>
+<pre><code># .continue/config.yaml
+name: Local Reviewer
+version: 1.0.0
+models:
+  - name: Qwen2.5 Coder 7B
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles: [chat, edit, apply]
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase</code></pre>
+<h2>Kesalahan umum pemula</h2>
+<p>Pertama, menempel .env ke chat AI saat debugging error koneksi database. Kirim .env.example dan pesan errornya saja, lalu isi sendiri nilai yang hilang di kepalamu.</p>
+<p>Kedua, memakai akun personal untuk kode kantor. Kebijakan bisnis melekat pada seat-nya, bukan pada orangnya. Developer yang login dengan Copilot Pro personal di repo perusahaan berada di bawah ketentuan konsumen, dan tidak ada kebijakan organisasi yang bisa menjangkaunya.</p>
+<p>Ketiga, percaya .gitignore melindungi dari AI. File yang di-ignore memang tidak masuk git, tapi agen AI masih bisa membacanya dari disk. File sensitif harus tidak ada di working tree saat AI bekerja, bukan sekadar di-ignore.</p>
+<p>Keempat, mengirim seluruh repository ke chat web untuk minta review. Chat web punya kebijakan data yang berbeda dari API, dan konteks yang kamu kirim di sana biasanya disimpan lebih lama. Review di IDE atau lewat API dengan paket yang tepat selalu lebih aman.</p>
+<h2>Langkah praktis hari ini</h2>
+<p>Kerjakan checklist ini sekali, lalu jadikan kebiasaan. Cek paket AI coding yang kamu pakai. Kalau masih paket personal untuk kode kantor, matikan pengaturan training-nya dan ajukan seat bisnis. Aktifkan content exclusion untuk .env, secrets/, dan folder ekspor data. Di Cursor, buat .cursorignore yang sama. Pasang Gitleaks sebagai pre-commit hook dan jalankan sekali untuk seluruh repo. Hapus file berisi data asli dari repo: dump, CSV ekspor, dan fixture. Ganti dengan Faker. Sebelum menempel log ke AI, ganti token, email, dan nama pelanggan dengan placeholder. Untuk repo paling sensitif, siapkan model lokal dengan Ollama dan Continue.</p>
+<p>AI code review adalah alat yang bagus. Ia menemukan bug yang luput dari mataku dan mempercepat review pull request yang membosankan. Tapi ia bukan rekan kerja yang duduk di sebelahmu. Ia adalah layanan di server orang lain, dan setiap potongan konteks yang kamu berikan adalah data yang keluar dari laptopmu. Perlakukan ia seperti itu.</p>
