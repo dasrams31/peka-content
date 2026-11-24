@@ -1,0 +1,43 @@
+{
+ "agent": "HERMES",
+ "next": "OPENCODE",
+ "episode": 35,
+ "repos": [
+  {
+   "name": "ClaudioDrews/memory-os",
+   "stars": "1RB",
+   "desc": "Memory-OS itu sistem memori 7 lapis buat Hermes Agent, jadi agent kamu ingat konteks lama tanpa kirim data ke cloud. Dia nyimpen memori persisten pakai Qdrant, nyusun fakta terstruktur, dan ngambil ingatan yang relevan pas dibutuhkan lewat fabric recall. Ada wiki yang dikurasi otomatis dari percakapan kamu, plus injeksi konteks yang presisi biar agent nggak kebanjiran info nggak penting. Semuanya jalan lokal di mesin kamu dan bisa pakai provider LLM apa aja. Sekali pasang, Hermes kamu makin kenal cara kerja kamu dari waktu ke waktu.",
+   "cocok": "Kamu yang pakai Hermes buat kerja jangka panjang dan mau agent kamu ingat konteks tanpa data keluar dari laptop.",
+   "shortlink": "https://s.peka.ai.id/ryxAPN"
+  },
+  {
+   "name": "Adolanium/hermes-gadget-sdk",
+   "stars": "583",
+   "desc": "Hermes Gadget SDK itu toolkit buat bikin perangkat suara dan teks yang nyambung langsung ke Hermes Agent kamu. Dia nyediain firmware ESP32, klien Linux, dan simulator desktop, jadi kamu bisa bikin alat fisik yang bisa diajak ngobrol sama agent kamu. Perangkatnya bisa dengerin perintah suara, nampilin balasan teks, dan jalan sebagai perpanjangan Hermes di meja atau di rumah. SDK-nya open source dan gampang diutak-atik buat proyek hardware sendiri. Hasilnya Hermes kamu keluar dari layar dan jadi benda nyata yang bisa kamu pegang.",
+   "cocok": "Kamu yang suka main hardware dan mau Hermes kamu bisa diajak ngobrol lewat perangkat sendiri.",
+   "shortlink": "https://s.peka.ai.id/USClr1"
+  },
+  {
+   "name": "stainlu/hermes-labyrinth",
+   "stars": "312",
+   "desc": "Hermes Labyrinth itu plugin observability read-only buat Hermes Agent, jadi kamu bisa ngelihat jejak kerja agent kamu tanpa ganggu jalannya. Dia nampilin perjalanan agent, titik persimpangan keputusan, penanda penting, dan laporan yang rapi. Semua tampilannya read-only, jadi aman, nggak ada risiko plugin ini ngubah apa pun di agent kamu. Cocok buat debug saat agent nyasar atau sekadar pengin paham kenapa agent ngambil jalan tertentu. Hasilnya kerja agent kamu jadi transparan dan gampang ditelusuri.",
+   "cocok": "Kamu yang agent Hermes-nya sering jalan panjang dan mau ngelihat jejak keputusannya dengan jelas.",
+   "shortlink": "https://s.peka.ai.id/FpL6N4"
+  },
+  {
+   "name": "ogallotti/rtk-hermes",
+   "stars": "304",
+   "desc": "RTK Hermes itu plugin buat Hermes Agent yang nulis ulang perintah shell biar token LLM kamu hemat 60 sampai 90 persen. Dia motong perintah yang boros, ganti dengan versi yang lebih ringkas, tapi hasilnya tetap sama. Hemat token artinya biaya jalan agent turun drastis, apalagi kalau agent kamu sering manggil shell. Pluginnya ringan dan langsung kepakai begitu dipasang. Hasilnya agent kamu kerja sama cepatnya dengan tagihan token yang jauh lebih kecil.",
+   "cocok": "Kamu yang agent Hermes-nya boros token gara-gara sering jalanin perintah shell.",
+   "shortlink": "https://s.peka.ai.id/tBTAWz"
+  },
+  {
+   "name": "GumbyEnder/hermes-kanban",
+   "stars": "276",
+   "desc": "Hermes Kanban itu plugin Obsidian plus skill Hermes yang ngubah agent kamu jadi eksekutor proyek otonom lewat papan Kanban di vault kamu. Kamu tulis tugas di kartu Kanban, Hermes yang jalanin satu-satu, dari ngerjain sampai mindahin kartu ke kolom selesai. Semua tugas dan progresnya tersimpan di Obsidian, jadi kamu tetap pegang kendali penuh lewat catatan sendiri. Cocok buat yang ngatur proyek di Obsidian dan mau agent yang beneran ngeberesin kerjaan, bukan cuma ngasih saran. Hasilnya papan Kanban kamu bergerak sendiri sementara kamu fokus ke hal lain.",
+   "cocok": "Kamu yang ngatur proyek di Obsidian dan mau Hermes yang ngeberesin tugas dari papan Kanban kamu.",
+   "shortlink": "https://s.peka.ai.id/sdA80d"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/carousel"
+}
