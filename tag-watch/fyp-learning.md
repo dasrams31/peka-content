@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-24
+
+- TOP (n=23): day-counter 0%, question 22%, story 26%, hashtags avg 1.5, words avg 42.
+- REST (n=71): day-counter 13%, question 37%, story 23%, hashtags avg 1.7, words avg 38.
+- Top posts today:
+  - #Mahasiswa @manusia_masihdibumi (20372 likes): Hallo, perkenalkan Aku Anggun. Mahasiswi Politeknik Negeri Semarang yang sedang mencoba untuk survive. Kalian yg di temc
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #AI @carnage4life (2194 likes): Apple, the world’s most valuable company, looking down at all the people that said it missed AI now that the AI bubble i
+  - #AI @_neutronfish (1241 likes): Anthropic: “We’ve solved the Riemann hypothesis with AI. The proof is 250,000 pages long and no one has completely evalu
+  - #Kuliah @alfiahnurhidayati (777 likes): Salah satu hal yg gw syukuri bangettt adalah bisa dikasih kesempatan kuliah di UGM
+
 ## 2026-11-23
 
 - TOP (n=23): day-counter 0%, question 17%, story 30%, hashtags avg 1.7, words avg 40.
@@ -144,14 +155,3 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
   - #Kuliah @not_hdin (3891 likes): akhirnya aku bisa kuliah dengan uangku sendiriiii✌️💙😊  setelah beli motor dengan uang sendiri, beli HP dengan uang sendi
   - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
   - #Belajar @triwahyunilaihi (3180 likes): In this economy yaa, ada learning app yang bantu anak2 belajar english dengan fitur sebanyak ini, UDAHLAH GRATIS DAN KOK
-
-## 2026-11-10
-
-- TOP (n=20): day-counter 0%, question 5%, story 30%, hashtags avg 0.7, words avg 39.
-- REST (n=63): day-counter 8%, question 32%, story 27%, hashtags avg 1.7, words avg 45.
-- Top posts today:
-  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
-  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
-  - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
-  - #Mahasiswa @angga1203_hidayat (2667 likes): 4 Strategi untuk Mahasiswa Baru S3 Sejak Tahun Pertama (Biar Gak Buang-Buang Waktu)  Editing: Claude code, Opus 5.5, ext
-  - #ChatGPT @iniprompt (1864 likes): [PROMPT Food Photography] Tema : BOLD COLOR SURFACE FEATURE --- Coba prompt ini untuk produk makananmu, caranya: 1. Buka
