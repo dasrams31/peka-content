@@ -1,12 +1,11 @@
-# Katalog Peka — auto rebuild 22 Nov 2026 06:38 WIB
+# Katalog Peka — auto rebuild 24 Nov 2026 00:37 WIB
 
 Sumber: `prices.json` (pemicu = list harga berubah).
 Build-only: slide + story + reel + caption DRAF diantar ke chat, TIDAK diposting. Posting tetap lewat cron Selasa/Jumat 13:00.
 
 ## Yang berubah
 
-- DIHAPUS: Crunchyroll 30 Hari 6K (CRUNCHYROLL)
-- Total: 21 produk.
+- Total: 22 produk.
 
 ## Catatan caption
 
