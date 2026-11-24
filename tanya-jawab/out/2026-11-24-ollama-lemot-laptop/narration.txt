@@ -1,0 +1,15 @@
+[scene 0 - hook]
+Kemarin ada yang nanya di Threads, dia udah nyoba Ollama di laptop 8 core, RAM 16 GB, VGA Quadro 2 GB. Katanya asli lemot, wawasannya juga kurang luas.
+
+[scene 1 - beat]
+Model 7 sampai 8B filenya sekitar 5 GB, VGA kamu cuma 2 GB. Ollama bagi-bagi, sebagian di VGA, sisanya dilempar ke CPU. Makanya lemot.
+
+[scene 2 - beat]
+Solusinya, pakai model kecil. Qwen 2.5 1.5b, filenya 986 MB, atau Llama 3.2 1b, 1,3 GB. Dua-duanya muat penuh di VGA 2 GB, jadi ngebut lagi.
+
+[scene 3 - beat]
+Wawasan kurang luas? Tempel teks atau dokumen yang mau dibahas, terus tanya satu hal spesifik. Model kecil pinter kalau dikasih konteks.
+
+[scene 4 - close]
+LibreChat itu bener, datanya tetap di laptop, tapi dia cuma tampilan chat. Kalau masih mentok, tugas berat pindahin ke cloud gratis, yang sensitif tetap di laptop. Kamu pernah mentok di langkah yang mana?
+

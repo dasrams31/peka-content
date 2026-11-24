@@ -1,0 +1,1 @@
+Kemarin ada yang nanya di Threads: Ollama lemot di laptop 8 core, RAM 16 GB, VGA Quadro 2 GB. Jawabannya: model 7B itu filenya 5 GB, VGA kamu cuma 2 GB, jadi Ollama bagi-bagi ke CPU. Ganti ke qwen2.5 1.5b, filenya 986 MB, muat penuh di VGA. Linknya ada di slide terakhir. Kamu pernah mentok di langkah yang mana? #AI

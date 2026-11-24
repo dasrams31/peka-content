@@ -1,0 +1,6 @@
+Ollama lemot di laptop kamu? Ini penyebabnya.
+Model 7B filenya 5 GB, VGA kamu cuma 2 GB, jadi Ollama bagi-bagi ke CPU. Solusinya: pakai qwen2.5 1.5b, cuma 986 MB, muat penuh di VGA.
+Save dulu biar nggak hilang.
+Kamu pernah mentok di langkah yang mana?
+Music: Fluffing A Duck by Kevin MacLeod
+#fyp #AI #Ollama #AILokal #BelajarAI

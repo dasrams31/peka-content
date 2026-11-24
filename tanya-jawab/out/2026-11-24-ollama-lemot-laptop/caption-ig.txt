@@ -1,0 +1,8 @@
+Kemarin ada yang nanya di Threads: Ollama lemot di laptop 8 core, RAM 16 GB, VGA Quadro 2 GB.
+Ternyata penyebabnya simpel: model 7B itu filenya sekitar 5 GB, VGA kamu cuma 2 GB. Ollama jadi bagi-bagi, sebagian di VGA, sisanya dilempar ke CPU. Makanya lemot.
+Solusinya: pakai model kecil yang muat penuh di VGA. Qwen 2.5 1.5b, filenya 986 MB, atau Llama 3.2 1b, 1,3 GB.
+Buat wawasan yang kurang luas, tempel teks atau dokumen yang mau dibahas, terus tanya satu hal spesifik.
+Save dulu, biar gampang dicari lagi.
+Kamu pernah mentok di langkah yang mana?
+Music: Fluffing A Duck by Kevin MacLeod
+#AI #Ollama #AILokal #BelajarAI #Teknologi

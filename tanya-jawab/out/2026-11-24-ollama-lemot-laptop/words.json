@@ -1,0 +1,932 @@
+{
+  "voice": "id-ID-ArdiNeural",
+  "rate": "+15%",
+  "gap": 0.3,
+  "tail": 0.8,
+  "duration": 56.672,
+  "audio_duration": 55.872,
+  "words": [
+    {
+      "text": "Kemarin",
+      "start": 0.104333,
+      "end": 0.376083,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "ada",
+      "start": 0.376083,
+      "end": 0.517374,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "yang",
+      "start": 0.517375,
+      "end": 0.636958,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "nanya",
+      "start": 0.636958,
+      "end": 0.821749,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "di",
+      "start": 0.82175,
+      "end": 0.897833,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Threads,",
+      "start": 0.897833,
+      "end": 1.354374,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "dia",
+      "start": 1.560875,
+      "end": 1.713041,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "udah",
+      "start": 1.713041,
+      "end": 1.865207,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "nyoba",
+      "start": 1.865208,
+      "end": 2.039124,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Ollama",
+      "start": 2.039125,
+      "end": 2.332583,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "di",
+      "start": 2.332625,
+      "end": 2.408708,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "laptop",
+      "start": 2.408708,
+      "end": 2.658708,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "8",
+      "start": 2.658708,
+      "end": 2.952166,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "core,",
+      "start": 2.952166,
+      "end": 3.256499,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "RAM",
+      "start": 3.473916,
+      "end": 3.669582,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "16 GB,",
+      "start": 3.669583,
+      "end": 4.571749,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "VGA",
+      "start": 4.8,
+      "end": 5.180416,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Quadro",
+      "start": 5.180416,
+      "end": 5.528249,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "2 GB.",
+      "start": 5.52825,
+      "end": 6.245624,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Katanya",
+      "start": 6.97825,
+      "end": 7.304333,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "asli",
+      "start": 7.304333,
+      "end": 7.521708,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "lemot,",
+      "start": 7.52175,
+      "end": 7.956541,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "wawasannya",
+      "start": 8.173916,
+      "end": 8.641291,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "juga",
+      "start": 8.641291,
+      "end": 8.858666,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "kurang",
+      "start": 8.858708,
+      "end": 9.065208,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "luas.",
+      "start": 9.065208,
+      "end": 9.499999,
+      "scene": 0,
+      "line": 3
+    },
+    {
+      "text": "Model",
+      "start": 10.652333,
+      "end": 10.891458,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "7",
+      "start": 10.891458,
+      "end": 11.184916,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "sampai",
+      "start": 11.184958,
+      "end": 11.445833,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "8B",
+      "start": 11.445833,
+      "end": 11.837124,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "filenya",
+      "start": 11.837125,
+      "end": 12.163208000000001,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "sekitar",
+      "start": 12.163208000000001,
+      "end": 12.478416,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "5 GB,",
+      "start": 12.478416,
+      "end": 13.195791,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "VGA",
+      "start": 13.434958,
+      "end": 13.858874,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "kamu",
+      "start": 13.858875,
+      "end": 14.07625,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "cuma",
+      "start": 14.07625,
+      "end": 14.271916000000001,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "2 GB.",
+      "start": 14.271916000000001,
+      "end": 14.858873899999999,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Ollama",
+      "start": 14.858875000000001,
+      "end": 15.163208000000001,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "bagi-bagi,",
+      "start": 15.163208000000001,
+      "end": 15.804499,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "sebagian",
+      "start": 16.021916,
+      "end": 16.424082,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "di",
+      "start": 16.424083,
+      "end": 16.489291,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "VGA,",
+      "start": 16.489291,
+      "end": 17.032749,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "sisanya",
+      "start": 17.217583,
+      "end": 17.587124,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "dilempar",
+      "start": 17.587125,
+      "end": 17.913208,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "ke",
+      "start": 17.913208,
+      "end": 17.978416,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "CPU.",
+      "start": 17.978416,
+      "end": 18.456666,
+      "scene": 1,
+      "line": 7
+    },
+    {
+      "text": "Makanya",
+      "start": 19.184958,
+      "end": 19.619749,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "lemot.",
+      "start": 19.61975,
+      "end": 20.098,
+      "scene": 1,
+      "line": 8
+    },
+    {
+      "text": "Solusinya,",
+      "start": 21.240750000000002,
+      "end": 21.969,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "pakai",
+      "start": 22.19725,
+      "end": 22.44725,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "model",
+      "start": 22.44725,
+      "end": 22.69725,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "kecil.",
+      "start": 22.69725,
+      "end": 23.164625,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Qwen",
+      "start": 23.894000000000002,
+      "end": 24.046166000000003,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "2.5",
+      "start": 24.046166000000003,
+      "end": 24.5787909,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "1",
+      "start": 24.578791000000002,
+      "end": 24.796166000000003,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": ".5b,",
+      "start": 24.796166000000003,
+      "end": 25.317916000000004,
+      "scene": 2,
+      "line": 10
+    },
+    {
+      "text": "filenya",
+      "start": 25.600541,
+      "end": 25.926624000000004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "986",
+      "start": 25.926625,
+      "end": 27.024416000000002,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "MB,",
+      "start": 27.024416000000002,
+      "end": 27.426582000000003,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "atau",
+      "start": 27.654875000000004,
+      "end": 27.904875000000004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Llama",
+      "start": 27.904875000000004,
+      "end": 28.089666,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "3.2",
+      "start": 28.089666,
+      "end": 28.665706900000004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "1b,",
+      "start": 28.665750000000003,
+      "end": 29.209208000000004,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "1,3 GB.",
+      "start": 29.394000000000002,
+      "end": 30.676583,
+      "scene": 2,
+      "line": 11
+    },
+    {
+      "text": "Dua-duanya",
+      "start": 31.408125000000002,
+      "end": 31.875500000000002,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "muat",
+      "start": 31.875541000000002,
+      "end": 32.038582000000005,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "penuh",
+      "start": 32.038583,
+      "end": 32.266833000000005,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "di",
+      "start": 32.266833000000005,
+      "end": 32.353791,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "VGA",
+      "start": 32.353791,
+      "end": 32.647249,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "2 GB,",
+      "start": 32.64725,
+      "end": 33.342916,
+      "scene": 2,
+      "line": 12
+    },
+    {
+      "text": "jadi",
+      "start": 33.582041000000004,
+      "end": 33.842916,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "ngebut",
+      "start": 33.842916,
+      "end": 34.049416,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "lagi.",
+      "start": 34.049416,
+      "end": 34.462457,
+      "scene": 2,
+      "line": 13
+    },
+    {
+      "text": "Wawasan",
+      "start": 35.608,
+      "end": 36.05366599999999,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "kurang",
+      "start": 36.05366599999999,
+      "end": 36.24929099999999,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "luas?",
+      "start": 36.24929099999999,
+      "end": 36.716666,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Tempel",
+      "start": 37.44279099999999,
+      "end": 37.714541,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "teks",
+      "start": 37.714541,
+      "end": 37.94279099999999,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "atau",
+      "start": 37.94279099999999,
+      "end": 38.116707,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "dokumen",
+      "start": 38.116707999999996,
+      "end": 38.44279099999999,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "yang",
+      "start": 38.44279099999999,
+      "end": 38.551457,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "mau",
+      "start": 38.551458,
+      "end": 38.660166,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "dibahas,",
+      "start": 38.660166,
+      "end": 39.181915999999994,
+      "scene": 3,
+      "line": 15
+    },
+    {
+      "text": "terus",
+      "start": 39.38841599999999,
+      "end": 39.573207,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "tanya",
+      "start": 39.573207999999994,
+      "end": 39.779748999999995,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "satu",
+      "start": 39.77974999999999,
+      "end": 39.997125,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "hal",
+      "start": 39.997125,
+      "end": 40.105833,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "spesifik.",
+      "start": 40.105833,
+      "end": 40.69279099999999,
+      "scene": 3,
+      "line": 16
+    },
+    {
+      "text": "Model",
+      "start": 41.425915999999994,
+      "end": 41.73024899999999,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "kecil",
+      "start": 41.730290999999994,
+      "end": 41.958541,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "pinter",
+      "start": 41.958541,
+      "end": 42.262874,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "kalau",
+      "start": 42.262874999999994,
+      "end": 42.436791,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "dikasih",
+      "start": 42.436791,
+      "end": 42.73024899999999,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "konteks.",
+      "start": 42.730290999999994,
+      "end": 43.262916,
+      "scene": 3,
+      "line": 17
+    },
+    {
+      "text": "LibreChat",
+      "start": 44.40833299999999,
+      "end": 44.799623999999994,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "itu",
+      "start": 44.799665999999995,
+      "end": 44.951831999999996,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "bener,",
+      "start": 44.95183299999999,
+      "end": 45.353998999999995,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "datanya",
+      "start": 45.571374999999996,
+      "end": 45.90833299999999,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "tetap",
+      "start": 45.90833299999999,
+      "end": 46.11487399999999,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "di",
+      "start": 46.114875,
+      "end": 46.190957999999995,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "laptop,",
+      "start": 46.190957999999995,
+      "end": 46.62574899999999,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "tapi",
+      "start": 46.832249999999995,
+      "end": 47.04962499999999,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "dia",
+      "start": 47.049665999999995,
+      "end": 47.18008199999999,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "cuma",
+      "start": 47.180082999999996,
+      "end": 47.343123999999996,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "tampilan",
+      "start": 47.34312499999999,
+      "end": 47.680082999999996,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "chat.",
+      "start": 47.680082999999996,
+      "end": 48.027916,
+      "scene": 4,
+      "line": 19
+    },
+    {
+      "text": "Kalau",
+      "start": 48.75291599999999,
+      "end": 48.937706999999996,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "masih",
+      "start": 48.93770799999999,
+      "end": 49.13333299999999,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "mentok,",
+      "start": 49.13333299999999,
+      "end": 49.589873999999995,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "tugas",
+      "start": 49.807249999999996,
+      "end": 50.068124999999995,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "berat",
+      "start": 50.068124999999995,
+      "end": 50.231165999999995,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "pindahin",
+      "start": 50.231165999999995,
+      "end": 50.578998999999996,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "ke",
+      "start": 50.57899999999999,
+      "end": 50.655083,
+      "scene": 4,
+      "line": 20
+    },
+    {
+      "text": "cloud",
+      "start": 50.655083,
+      "end": 50.818124,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "gratis,",
+      "start": 50.818124999999995,
+      "end": 51.318124999999995,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "yang",
+      "start": 51.513791,
+      "end": 51.65508199999999,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "sensitif",
+      "start": 51.655083,
+      "end": 52.11162399999999,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "tetap",
+      "start": 52.111625,
+      "end": 52.33987499999999,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "di",
+      "start": 52.33987499999999,
+      "end": 52.415957999999996,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "laptop.",
+      "start": 52.415957999999996,
+      "end": 52.88333299999999,
+      "scene": 4,
+      "line": 21
+    },
+    {
+      "text": "Kamu",
+      "start": 53.611625,
+      "end": 53.861625,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "pernah",
+      "start": 53.861625,
+      "end": 54.07899999999999,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "mentok",
+      "start": 54.07899999999999,
+      "end": 54.318124999999995,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "di",
+      "start": 54.318124999999995,
+      "end": 54.38333299999999,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "langkah",
+      "start": 54.38333299999999,
+      "end": 54.600708,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "yang",
+      "start": 54.60074999999999,
+      "end": 54.720290999999996,
+      "scene": 4,
+      "line": 22
+    },
+    {
+      "text": "mana?",
+      "start": 54.720290999999996,
+      "end": 55.122457,
+      "scene": 4,
+      "line": 22
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0.104333,
+      "end": 10.248,
+      "first_word": 0.104333,
+      "last_word_end": 9.499999
+    },
+    {
+      "start": 10.652333,
+      "end": 20.844,
+      "first_word": 10.652333,
+      "last_word_end": 20.098
+    },
+    {
+      "start": 21.240750000000002,
+      "end": 35.208,
+      "first_word": 21.240750000000002,
+      "last_word_end": 34.462457
+    },
+    {
+      "start": 35.608,
+      "end": 44.004,
+      "first_word": 35.608,
+      "last_word_end": 43.262916
+    },
+    {
+      "start": 44.40833299999999,
+      "end": 55.87199999999999,
+      "first_word": 44.40833299999999,
+      "last_word_end": 55.122457
+    }
+  ],
+  "word_count": 127
+}
