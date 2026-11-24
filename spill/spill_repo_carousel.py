@@ -145,17 +145,78 @@ LANG_COLORS = {
     "Dockerfile": (56, 77, 84),
 }
 
-INSTALL_PATTERNS = [
-    r"npx\s+skills\s+add\b",
-    r"(?:claude|codex|copilot|gemini)\s+plugin\s+(?:marketplace\s+add|install|add)\b",
-    r"npm\s+(?:install|i)\s+-g\b",
-    r"pip\s+install\b",
-    r"go\s+install\b",
-    r"cargo\s+install\b",
-    r"brew\s+install\b",
-    r"(?:bunx|npx)\s+\S+@latest\s+install\b",
-    r"uv\s+tool\s+install\b",
+_PKG = r'"?[\w.@/:\-\[\]+]+"?'  # package / repo token, quotes + [extras] allowed
+_FLAG = r'(?:--?[\w][\w.-]*(?:=\S+)?)'  # --flag or --flag=value
+# Strict whole-command shapes, in the order a SPILL slide prefers them:
+# skill-install routes first (npx skills add, plugin install), then the
+# plain package-manager installs. A candidate must match one of these
+# end to end, so prose that merely mentions an install verb can never
+# be returned as the command.
+_INSTALL_RES = [
+    re.compile(rf"npx skills add {_PKG}(?: -g)?$"),
+    re.compile(rf"(?:claude|codex|copilot|gemini)? ?/?plugin install {_PKG}(?: --marketplace {_PKG})?$"),
+    re.compile(rf"uv tool install {_PKG}$"),
+    re.compile(rf"pipx install {_PKG}$"),
+    re.compile(rf"npm (?:install|i) -g {_PKG}$"),
+    re.compile(rf"pip install {_PKG}(?: {_FLAG})*$"),
+    re.compile(rf"go install {_PKG}@[\w.-]+$"),
+    re.compile(rf"cargo install {_PKG}$"),
+    re.compile(rf"brew install (?:--cask )?{_PKG}$"),
+    re.compile(rf"(?:bunx|npx) {_PKG}@latest install(?: {_PKG}| {_FLAG})*$"),
 ]
+_MARKETPLACE_RE = re.compile(
+    rf"(?:claude|codex|copilot|gemini) plugin marketplace add {_PKG}$")
+
+
+def _clean_candidate(raw):
+    """Normalise one raw line / backtick span into a command candidate."""
+    cmd = (raw or "").strip().strip("`").strip()
+    cmd = re.sub(r"^\$\s*", "", cmd)          # "$ npx ..." prompt prefix
+    cmd = re.sub(r"^>\s*", "", cmd)           # "> npx ..." quote prefix
+    cmd = re.sub(r"\s+#.*$", "", cmd)         # trailing shell comment
+    cmd = re.sub(r"\s+", " ", cmd).strip()
+    return cmd
+
+
+def _valid_install(cmd):
+    """Return (rank, cmd) if cmd is exactly one install command, else None.
+
+    Rank is the index into _INSTALL_RES, so skill-install routes
+    (npx skills add, plugin install) beat plain package installs even
+    when the README mentions the package install first.
+    """
+    if not cmd or len(cmd) > 120:
+        return None
+    if any(ch in cmd for ch in "[],(){}<>|&;→—"):
+        return None
+    for rank, rx in enumerate(_INSTALL_RES):
+        if rx.fullmatch(cmd):
+            return (rank, cmd)
+    return None
+
+
+def _scan_install_commands(text):
+    """Yield (rank, is_marketplace, cmd) candidates, document order.
+
+    Only two shapes count: a line that IS a command (after stripping a
+    "$ "/"> " prefix) and an inline `code span` that is a command.
+    A prose sentence that merely contains an install verb mid-sentence
+    is never a candidate, however early in the README it appears.
+    """
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            continue
+        for raw in [stripped] + re.findall(r"`([^`]+)`", line):
+            cmd = _clean_candidate(raw)
+            if not cmd:
+                continue
+            valid = _valid_install(cmd)
+            if valid:
+                rank, cmd = valid
+                yield (rank, False, cmd)
+            elif _MARKETPLACE_RE.fullmatch(cmd):
+                yield (len(_INSTALL_RES), True, cmd)
 
 
 def readme_install(full):
@@ -171,20 +232,37 @@ def readme_install(full):
     bunx/npx `<pkg>@latest install` is recognised, so repos whose
     README has no npx-skills/npm/pip/go/cargo/brew line no longer fall
     back to a wrong generic `npx skills add` command.
+
+    Fix 2026-11-24 (SPILL #34 defect): the old code matched the install
+    verb anywhere in the README and took the rest of that line, so a
+    prose sentence mentioning the verb became the "command" on the
+    slide, e.g. notebooklm-py returned
+    `npx skills add` + "discovery, local `notebooklm skill install` ...",
+    ARIS returned a whole `->`-chained sentence, and replica-skill
+    returned `pip install.` from "Nothing to pip install.". Now only
+    a line that IS a command, or an inline code span that is a command,
+    counts, it must match a strict whole-command shape, skill-install
+    routes win over plain package installs, and `marketplace add` is
+    only a fallback when no install command exists, so an unparseable
+    README returns None and the caller uses the generic fallback.
     """
     for branch in ("main", "master"):
         try:
             text = _get_text(f"https://raw.githubusercontent.com/{full}/{branch}/README.md")
         except Exception:
             continue
-        for pat in INSTALL_PATTERNS:
-            for m in re.finditer(pat, text):
-                line = text[m.start():].split("\n", 1)[0]
-                cmd = line.strip().strip("`$").strip()
-                cmd = re.sub(r"\s+#.*$", "", cmd)
-                cmd = re.sub(r"\s+", " ", cmd).rstrip("`").strip()
-                if cmd:
-                    return cmd
+        fallback = None
+        best = None
+        for rank, is_marketplace, cmd in _scan_install_commands(text):
+            if is_marketplace:
+                if fallback is None:
+                    fallback = cmd
+            elif best is None or rank < best[0]:
+                best = (rank, cmd)
+        if best is not None:
+            return best[1]
+        if fallback:
+            return fallback
     return None
 
 
