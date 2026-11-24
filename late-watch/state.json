@@ -1,9 +1,4 @@
 {
-  "date": "2026-11-24",
-  "slots": {
-    "spill-repo": {
-      "alerted": true,
-      "alerted_at": "22:45"
-    }
-  }
+  "date": "2026-11-25",
+  "slots": {}
 }
