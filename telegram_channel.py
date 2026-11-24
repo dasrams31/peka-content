@@ -106,6 +106,7 @@ TYPE_LABELS = {
     "special": "✨ Edisi Khusus Peka AI",
     "weekly": "🎬 AI Pekan Ini",
     "tutorial": "📚 Tutorial Peka",
+    "tanya-jawab": "❓ Tanya Jawab Nyata",
 }
 
 
