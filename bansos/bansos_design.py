@@ -451,22 +451,30 @@ def slide3(spec):
     ctas = ["Tag teman yang lagi butuh ini",
             "Save postingan ini buat pas daftar nanti",
             "Follow @peka.ai.id, bansos baru tiap ada yang verified",
+            "Arsip semua bansos: bansos.peka.ai.id",
             "Gabung ke komunitas kami: s.peka.ai.id/gabung"]
     if spec.get("store_cta"):
         ctas.append(spec["store_cta"])
     # Hitung baris hasil wrap dulu: CTA panjang (mis. shortlink komunitas
-    # s.peka.ai.id/gabung) bisa membungkus ke 2 baris, dan spasi normal
-    # membuat baris shortlink menabrak footer. Pakai spasi rapat bila
-    # total baris CTA > 4 (kasus Freestyle 13 Nov 2026: 6 baris).
+    # s.peka.ai.id/gabung) bisa membungkus ke 2 baris. Spasi dipilih dari
+    # total baris supaya blok CTA + shortlink selalu berakhir di atas
+    # footer (pelajaran 24 Nov 2026: 6 baris dengan spasi lama membuat
+    # shortlink menabrak footer di edisi Caffeine AI).
     wrapped_ctas = [wrap(d, c, f(128), 3120) for c in ctas]
-    tight = sum(len(cl) for cl in wrapped_ctas) > 4
-    line_h = 156 if tight else 168
-    gap = 72 if tight else 88
-    yy = 2320 if tight else 2360
+    total_lines = sum(len(cl) for cl in wrapped_ctas)
+    if total_lines <= 4:
+        cta_font, line_h, gap, yy = 128, 168, 88, 2360
+    elif total_lines <= 6:
+        cta_font, line_h, gap, yy = 128, 148, 56, 2320
+    else:
+        # 7+ baris: bungkus ulang dengan font lebih kecil + spasi padat.
+        wrapped_ctas = [wrap(d, c, f(116), 3120) for c in ctas]
+        cta_font, line_h, gap, yy = 116, 136, 44, 2240
+    tight = total_lines > 4
     for cl in wrapped_ctas:
-        d.rectangle([300, yy + 40, 380, yy + 120], fill=PAL["ink"])
+        d.rectangle([300, yy + 32, 380, yy + line_h - 32], fill=PAL["ink"])
         for ln in cl:
-            d.text((490, yy), ln, font=f(128), fill=PAL["ink"])
+            d.text((490, yy), ln, font=f(cta_font), fill=PAL["ink"])
             yy += line_h
         yy += gap
     # Shortlink printed on the slide (Threads no-link rule, 31 Okt 2026):

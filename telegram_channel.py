@@ -132,6 +132,10 @@ def build_caption(args) -> str:
         links.append(f"📘 Facebook: {args.facebook}")
     if args.blog:
         links.append(f"📝 Blog: {args.blog}")
+    if args.bansos:
+        links.append(f"📄 Detail edisi ini: {args.bansos}")
+    if args.type == "bansos":
+        links.append("🎟️ Katalog Bansos: bansos.peka.ai.id")
     if links:
         lines.append("Lengkapnya di sini:")
         lines.extend(links)
@@ -366,6 +370,8 @@ def main() -> int:
     ap.add_argument("--instagram", default="")
     ap.add_argument("--facebook", default="")
     ap.add_argument("--blog", default="")
+    ap.add_argument("--bansos", default="",
+                    help="URL halaman detail edisi ini di bansos.peka.ai.id (khusus type bansos).")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true",
                     help="Lewati cek dedupe (hanya untuk re-post atas perintah user).")
