@@ -329,7 +329,7 @@ def render_bars(spec, scene, theme, idx, total, num):
         if b.get("tag"):
             s.chip(lx + 44, y - 6, b["tag"], size=76,
                    bg=theme["accent"], fg=theme["chip_text"])
-        vtxt = f"{val:g}%".replace(".", ",")
+        vtxt = b.get("display") or f"{val:g}%".replace(".", ",")
         vf = F_MONO(140)
         s.d.text((SIZE - MARGIN - vf.getlength(vtxt), y - 10), vtxt,
                  font=vf, fill=theme["accent"] if b.get("accent")

@@ -1,0 +1,13 @@
+{
+  "spec": "/home/hatch/workspace/peka-content/tanya-jawab/out/2026-11-24-ollama-lemot-laptop/spec.json",
+  "theme": "dark-grid",
+  "title": "Tanya Jawab #01: Ollama lemot di laptop",
+  "link": "S.PEKA.AI.ID/FdsieZ",
+  "slides": [
+    "threads-carousel-01.png",
+    "threads-carousel-02.png",
+    "threads-carousel-03.png",
+    "threads-carousel-04.png",
+    "threads-carousel-05.png"
+  ]
+}
