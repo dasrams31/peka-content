@@ -1,0 +1,52 @@
+{
+  "agent": "HERMES",
+  "episode": 35,
+  "next": "OPENCODE",
+  "repos": [
+    {
+      "name": "ClaudioDrews/memory-os",
+      "stars": "1RB",
+      "install": "npx skills add ClaudioDrews/memory-os -g",
+      "penjelasan": "Memory-OS itu sistem memori 7 lapis buat Hermes Agent, jadi agent kamu ingat konteks lama tanpa kirim data ke cloud. Dia nyimpen memori persisten pakai Qdrant dan ngambil ingatan yang relevan pas dibutuhkan.",
+      "cocok": "Kamu yang pakai Hermes buat kerja jangka panjang dan mau agent kamu ingat konteks tanpa data keluar dari laptop.",
+      "shortlink": "https://s.peka.ai.id/ryxAPN",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/shots/ClaudioDrews-memory-os.png"
+    },
+    {
+      "name": "Adolanium/hermes-gadget-sdk",
+      "stars": "583",
+      "install": "npx skills add Adolanium/hermes-gadget-sdk -g",
+      "penjelasan": "Hermes Gadget SDK itu toolkit buat bikin perangkat suara dan teks yang nyambung langsung ke Hermes Agent kamu. Dia nyediain firmware ESP32, klien Linux, dan simulator desktop.",
+      "cocok": "Kamu yang suka main hardware dan mau Hermes kamu bisa diajak ngobrol lewat perangkat sendiri.",
+      "shortlink": "https://s.peka.ai.id/USClr1",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/shots/Adolanium-hermes-gadget-sdk.png"
+    },
+    {
+      "name": "stainlu/hermes-labyrinth",
+      "stars": "312",
+      "install": "npx skills add stainlu/hermes-labyrinth -g",
+      "penjelasan": "Hermes Labyrinth itu plugin observability read-only buat Hermes Agent, jadi kamu bisa ngelihat jejak kerja agent kamu tanpa ganggu jalannya. Dia nampilin perjalanan agent dan laporan yang rapi.",
+      "cocok": "Kamu yang agent Hermes-nya sering jalan panjang dan mau ngelihat jejak keputusannya dengan jelas.",
+      "shortlink": "https://s.peka.ai.id/FpL6N4",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/shots/stainlu-hermes-labyrinth.png"
+    },
+    {
+      "name": "ogallotti/rtk-hermes",
+      "stars": "304",
+      "install": "brew install rtk",
+      "penjelasan": "RTK Hermes itu plugin buat Hermes Agent yang nulis ulang perintah shell biar token LLM kamu hemat 60 sampai 90 persen. Hemat token artinya biaya jalan agent turun drastis.",
+      "cocok": "Kamu yang agent Hermes-nya boros token gara-gara sering jalanin perintah shell.",
+      "shortlink": "https://s.peka.ai.id/tBTAWz",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/shots/ogallotti-rtk-hermes.png"
+    },
+    {
+      "name": "GumbyEnder/hermes-kanban",
+      "stars": "276",
+      "install": "npx skills add GumbyEnder/hermes-kanban -g",
+      "penjelasan": "Hermes Kanban itu plugin Obsidian plus skill Hermes yang ngubah agent kamu jadi eksekutor proyek otonom lewat papan Kanban di vault kamu. Kamu tulis tugas di kartu, Hermes yang jalanin satu-satu.",
+      "cocok": "Kamu yang ngatur proyek di Obsidian dan mau Hermes yang ngeberesin tugas dari papan Kanban kamu.",
+      "shortlink": "https://s.peka.ai.id/sdA80d",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-24/shots/GumbyEnder-hermes-kanban.png"
+    }
+  ]
+}
