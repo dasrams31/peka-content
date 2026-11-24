@@ -1,0 +1,1 @@
+Tambahan angka dari tabel yang sama: Terminal-Bench-Science 58,7% lawan 52,6%, SWE-bench Multilingual 93,9% lawan 89,1%. Semua angka dari System Card resmi Anthropic, Tabel 8.1.A. Catatan jujur: ini angka vendor sendiri, jadi jangan ditelan mentah-mentah.

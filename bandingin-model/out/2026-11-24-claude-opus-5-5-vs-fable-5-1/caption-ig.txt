@@ -1,0 +1,9 @@
+89,9% lawan 81,2%. Itu skor SWE-bench Pro, Opus 5.5 lawan Fable 5.1.
+Opus 5.5: 89,9% SWE-bench Pro, 66,4% Terminal-Bench 4.0, $4/$20 per 1 jt token
+Fable 5.1: 81,2% SWE-bench Pro, 55,8% Terminal-Bench 4.0, $10/$50 per 1 jt token
+Verdict jujur: mulai dari Opus 5.5 dulu. Fable 5.1 cuma kalau eval kamu mentok di effort tertinggi. Angka-angka ini dari Anthropic sendiri, jadi jangan ditelan mentah-mentah.
+Save dulu, tabelnya kepakai pas milih model.
+Linknya ada di akhir video.
+Kamu tim Opus 5.5 atau tetap Fable 5.1?
+#AI #Claude #Anthropic #BenchmarkAI #CodingAI #AIAgent
+Music: Tech Live by Kevin MacLeod
