@@ -1,0 +1,1053 @@
+{
+  "character": {
+    "aspect_ratio": 1.6729,
+    "poses": {
+      "base": {
+        "closed": "assets/character/piko-anime-base-closed.png",
+        "open": "assets/character/piko-anime-base-open.png"
+      },
+      "present": {
+        "closed": "assets/character/piko-anime-present-closed.png",
+        "open": "assets/character/piko-anime-present-open.png"
+      },
+      "wave": {
+        "closed": "assets/character/piko-anime-wave-closed.png",
+        "open": "assets/character/piko-anime-wave-open.png"
+      }
+    }
+  },
+  "kicker": "CLAUDE OPUS 5.5 VS FABLE 5.1",
+  "rate": "+15%",
+  "scenes": [
+    {
+      "badge": "BARU RILIS 22 SEP 2026",
+      "headline": [
+        "OPUS 5.5",
+        "VS FABLE 5.1"
+      ],
+      "kind": "hook",
+      "mascot": {
+        "bottom": 470,
+        "side": "right",
+        "width": 260
+      },
+      "narration": "Anthropic baru aja rilis Claude Opus 5.5, dan angkanya bikin Fable 5.1 yang harganya dua setengah kali lipat jadi kelihatan mahal.",
+      "pose": "wave",
+      "sub": "Model Claude terbaru lawan yang termahal."
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Fable 5.1 cuma <b>81,2%</b>",
+        "selisih hampir 9 poin"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Di SWE-bench Pro, tes benerin kode beneran, Opus 5.5 cetak 89,9 persen. Fable 5.1 cuma 81,2 persen. Selisihnya hampir sembilan poin.",
+      "pose": "present",
+      "stat": "89,9%",
+      "stat_label": "SWE-bench Pro, tes benerin kode beneran"
+    },
+    {
+      "bars": [
+        {
+          "accent": true,
+          "label": "Opus 5.5",
+          "tag": "MENANG",
+          "value": 66.4
+        },
+        {
+          "label": "Fable 5.1",
+          "value": 55.8
+        }
+      ],
+      "kind": "beat",
+      "mascot": {
+        "bottom": 480,
+        "flip": true,
+        "side": "left",
+        "width": 160
+      },
+      "narration": "Di Terminal-Bench 4.0 juga sama, 66,4 lawan 55,8 persen. Kerja di terminal, Opus 5.5 tetap di depan.",
+      "pose": "base",
+      "stat": "66,4%",
+      "stat_label": "Terminal-Bench 4.0, kerja di terminal"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Fable 5.1: <b>$10 / $50</b>",
+        "dua setengah kali lipat"
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Dan ini yang paling bikin mikir. Opus 5.5 cuma 4 dolar masuk, 20 dolar keluar per sejuta token. Fable 5.1 dua setengah kali lipat: 10 masuk, 50 keluar.",
+      "pose": "present",
+      "stat": "$4/$20",
+      "stat_label": "per 1 juta token masuk / keluar"
+    },
+    {
+      "kind": "beat",
+      "lines": [
+        "Angka dari Anthropic sendiri,",
+        "jangan ditelan mentah-mentah.",
+        "Mulai dari <b>Opus 5.5</b> dulu."
+      ],
+      "mascot": {
+        "bottom": 470,
+        "flip": true,
+        "side": "left",
+        "width": 170
+      },
+      "narration": "Jujur aja, angka-angka ini dari Anthropic sendiri, jadi jangan ditelan mentah-mentah. Tapi arahnya jelas, buat kerja agentic, mulai dari Opus 5.5 dulu.",
+      "pose": "base",
+      "stat": "60%",
+      "stat_label": "lebih murah dari Fable 5.1"
+    },
+    {
+      "follow": "Follow <b>@peka.ai.id</b> kalau kontennya kepakai.",
+      "headline": [
+        "Kamu tim Opus 5.5",
+        "atau tetap",
+        "Fable 5.1?"
+      ],
+      "kind": "close",
+      "mascot": {
+        "bottom": 620,
+        "side": "right",
+        "width": 180
+      },
+      "narration": "Kamu tim Opus 5.5 atau tetap Fable 5.1? Follow Peka AI kalau kontennya kepakai.",
+      "pose": "wave",
+      "shortlink": "s.peka.ai.id/FoKV5e"
+    }
+  ],
+  "sources": [
+    "Anthropic, Claude Opus 5.5 System Card, Table 8.1.A, 22 Sep 2026 (SWE-bench Pro 89.9 vs 81.2, SWE-bench Multilingual 93.9 vs 89.1, Terminal-Bench 4.0 66.4 vs 55.8, Terminal-Bench-Science 58.7 vs 52.6)",
+    "Anthropic, Introducing Claude Opus 5.5, 22 Sep 2026 (harga Opus 5.5 $4 masuk / $20 keluar per 1 jt token, 40% lebih murah dari Opus 5)",
+    "Anthropic, Claude Platform pricing (Fable 5.1 $10 masuk / $50 keluar per 1 jt token)"
+  ],
+  "theme": {
+    "accent": "#FF4D4D",
+    "accent2": "#FF8A5C",
+    "bar_other": "#6E6E7E",
+    "bar_track": "#23232F",
+    "bg": "#0A0A10",
+    "bg2": "#101019",
+    "card": "#14141D",
+    "card_border": "#2C2C3A",
+    "chip_bg": "#FF4D4D",
+    "chip_text": "#FFFFFF",
+    "description": "Closest to the reference reels: black textured grid, strong red accent, GitHub-style mockups.",
+    "dim": "#9C9CA8",
+    "glow": "rgba(229,72,77,0.30)",
+    "glow2": "rgba(255,138,92,0.14)",
+    "grid": "rgba(255,255,255,0.055)",
+    "label": "Dark Grid",
+    "mascot": "bottom-right",
+    "mono": "#FF8A5C",
+    "progress": "#FF4D4D",
+    "text": "#F5F5F0"
+  },
+  "title": "Bandingin Model: Claude Opus 5.5 vs Claude Fable 5.1",
+  "music_lane": "cyberpunk",
+  "theme_name": "dark-grid",
+  "words": [
+    {
+      "text": "Anthropic",
+      "start": 0.104333,
+      "end": 0.517374,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "baru",
+      "start": 0.517375,
+      "end": 0.680416,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "aja",
+      "start": 0.680416,
+      "end": 0.897791,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "rilis",
+      "start": 0.897833,
+      "end": 1.115208,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Claude",
+      "start": 1.115208,
+      "end": 1.299999,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "Opus",
+      "start": 1.3,
+      "end": 1.57175,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "5.5,",
+      "start": 1.57175,
+      "end": 2.310874,
+      "scene": 0,
+      "line": 0
+    },
+    {
+      "text": "dan",
+      "start": 2.582625,
+      "end": 2.745666,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "angkanya",
+      "start": 2.745666,
+      "end": 3.060874,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "bikin",
+      "start": 3.060875,
+      "end": 3.256541,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "Fable",
+      "start": 3.256541,
+      "end": 3.495666,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "5.1",
+      "start": 3.495666,
+      "end": 4.1152079,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "yang",
+      "start": 4.115208,
+      "end": 4.234791,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "harganya",
+      "start": 4.234791,
+      "end": 4.582624,
+      "scene": 0,
+      "line": 1
+    },
+    {
+      "text": "dua",
+      "start": 4.582625,
+      "end": 4.77825,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "setengah",
+      "start": 4.77825,
+      "end": 5.05,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "kali",
+      "start": 5.05,
+      "end": 5.202166,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "lipat",
+      "start": 5.202166,
+      "end": 5.473916,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "jadi",
+      "start": 5.473916,
+      "end": 5.680416,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "kelihatan",
+      "start": 5.680416,
+      "end": 6.028249,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "mahal.",
+      "start": 6.02825,
+      "end": 6.463041,
+      "scene": 0,
+      "line": 2
+    },
+    {
+      "text": "Di",
+      "start": 7.604333,
+      "end": 7.843458,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "SWE-bench",
+      "start": 7.843458,
+      "end": 8.354333,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "Pro,",
+      "start": 8.354333,
+      "end": 8.713041,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "tes",
+      "start": 8.963041,
+      "end": 9.158707,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "benerin",
+      "start": 9.158708,
+      "end": 9.430416,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "kode",
+      "start": 9.430416,
+      "end": 9.593457,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "beneran,",
+      "start": 9.593458,
+      "end": 10.049999,
+      "scene": 1,
+      "line": 3
+    },
+    {
+      "text": "Opus",
+      "start": 10.289125,
+      "end": 10.57175,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "5.5",
+      "start": 10.57175,
+      "end": 11.115207,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "cetak",
+      "start": 11.115207999999999,
+      "end": 11.419541,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "89,9",
+      "start": 11.419583,
+      "end": 12.604333,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "persen.",
+      "start": 12.604333,
+      "end": 13.093458,
+      "scene": 1,
+      "line": 4
+    },
+    {
+      "text": "Fable",
+      "start": 13.818458,
+      "end": 14.111916,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "5.1",
+      "start": 14.111958,
+      "end": 14.796707999999999,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "cuma",
+      "start": 14.79675,
+      "end": 15.014125,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "81,2",
+      "start": 15.014125,
+      "end": 16.0902069,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "persen.",
+      "start": 16.090208,
+      "end": 16.611958,
+      "scene": 1,
+      "line": 5
+    },
+    {
+      "text": "Selisihnya",
+      "start": 17.340208,
+      "end": 17.894541,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "hampir",
+      "start": 17.894583,
+      "end": 18.188041,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "sembilan",
+      "start": 18.188041,
+      "end": 18.546749,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "poin.",
+      "start": 18.54675,
+      "end": 18.970666,
+      "scene": 1,
+      "line": 6
+    },
+    {
+      "text": "Di",
+      "start": 20.120333000000002,
+      "end": 20.261624,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "Terminal-Bench",
+      "start": 20.261666,
+      "end": 20.848624,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "4.0",
+      "start": 20.848625000000002,
+      "end": 21.4572909,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "juga",
+      "start": 21.457291,
+      "end": 21.663832000000003,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "sama,",
+      "start": 21.663833,
+      "end": 22.109499000000003,
+      "scene": 2,
+      "line": 7
+    },
+    {
+      "text": "66,4",
+      "start": 22.370333000000002,
+      "end": 23.326874000000004,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "lawan",
+      "start": 23.326875,
+      "end": 23.566000000000003,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "55,8",
+      "start": 23.566000000000003,
+      "end": 24.58775,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "persen.",
+      "start": 24.58775,
+      "end": 25.076875,
+      "scene": 2,
+      "line": 8
+    },
+    {
+      "text": "Kerja",
+      "start": 25.801875000000003,
+      "end": 26.095333000000004,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 26.095333000000004,
+      "end": 26.171416,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "terminal,",
+      "start": 26.171416,
+      "end": 26.693166,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Opus",
+      "start": 26.943166,
+      "end": 27.236624000000003,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "5.5",
+      "start": 27.236666,
+      "end": 27.8236239,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "tetap",
+      "start": 27.823625,
+      "end": 28.073625,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "di",
+      "start": 28.073625,
+      "end": 28.149708000000004,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "depan.",
+      "start": 28.149708000000004,
+      "end": 28.595374,
+      "scene": 2,
+      "line": 9
+    },
+    {
+      "text": "Dan",
+      "start": 29.728000000000005,
+      "end": 29.945375000000002,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "ini",
+      "start": 29.945375000000002,
+      "end": 30.151916000000003,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "yang",
+      "start": 30.151916000000003,
+      "end": 30.260624000000004,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "paling",
+      "start": 30.260625000000005,
+      "end": 30.456250000000004,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "bikin",
+      "start": 30.456250000000004,
+      "end": 30.651916000000003,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "mikir.",
+      "start": 30.651916000000003,
+      "end": 31.097582000000003,
+      "scene": 3,
+      "line": 10
+    },
+    {
+      "text": "Opus",
+      "start": 31.823666000000003,
+      "end": 32.09537400000001,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "5.5",
+      "start": 32.095375000000004,
+      "end": 32.68233300000001,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "cuma",
+      "start": 32.68233300000001,
+      "end": 32.888874,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "4",
+      "start": 32.888875000000006,
+      "end": 33.084541,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "dolar",
+      "start": 33.084541,
+      "end": 33.269291,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "masuk,",
+      "start": 33.269291,
+      "end": 33.693207,
+      "scene": 3,
+      "line": 11
+    },
+    {
+      "text": "20",
+      "start": 33.943208000000006,
+      "end": 34.269291,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "dolar",
+      "start": 34.269291,
+      "end": 34.475832000000004,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "keluar",
+      "start": 34.475833,
+      "end": 34.758416000000004,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "per",
+      "start": 34.758416000000004,
+      "end": 34.867124000000004,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "sejuta",
+      "start": 34.867125,
+      "end": 35.160583,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "token.",
+      "start": 35.160625,
+      "end": 35.584541,
+      "scene": 3,
+      "line": 12
+    },
+    {
+      "text": "Fable",
+      "start": 36.323666,
+      "end": 36.584541,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "5.1",
+      "start": 36.584541,
+      "end": 37.2258329,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "dua",
+      "start": 37.225833,
+      "end": 37.388874,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "setengah",
+      "start": 37.388875000000006,
+      "end": 37.693208000000006,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "kali",
+      "start": 37.693208000000006,
+      "end": 37.856249000000005,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "lipat:",
+      "start": 37.85625,
+      "end": 38.247541000000005,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "10",
+      "start": 38.475833,
+      "end": 38.780166,
+      "scene": 3,
+      "line": 13
+    },
+    {
+      "text": "masuk,",
+      "start": 38.780166,
+      "end": 39.149749,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "50",
+      "start": 39.334541,
+      "end": 39.725832000000004,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "keluar.",
+      "start": 39.725833,
+      "end": 40.160624000000006,
+      "scene": 3,
+      "line": 14
+    },
+    {
+      "text": "Jujur",
+      "start": 41.30475,
+      "end": 41.609083,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "aja,",
+      "start": 41.609083,
+      "end": 42.076457999999995,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "angka-angka",
+      "start": 42.326457999999995,
+      "end": 42.663416,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "ini",
+      "start": 42.663416,
+      "end": 42.848206999999995,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "dari",
+      "start": 42.848208,
+      "end": 43.000374,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "Anthropic",
+      "start": 43.000375,
+      "end": 43.304708,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "sendiri,",
+      "start": 43.30475,
+      "end": 43.80475,
+      "scene": 4,
+      "line": 15
+    },
+    {
+      "text": "jadi",
+      "start": 44.033,
+      "end": 44.30475,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "jangan",
+      "start": 44.30475,
+      "end": 44.543875,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "ditelan",
+      "start": 44.543875,
+      "end": 44.793875,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "mentah-mentah.",
+      "start": 44.793875,
+      "end": 45.435165999999995,
+      "scene": 4,
+      "line": 16
+    },
+    {
+      "text": "Tapi",
+      "start": 46.156915999999995,
+      "end": 46.396041,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "arahnya",
+      "start": 46.396041,
+      "end": 46.656915999999995,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "jelas,",
+      "start": 46.656915999999995,
+      "end": 47.102582,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "buat",
+      "start": 47.319958,
+      "end": 47.504749,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "kerja",
+      "start": 47.50475,
+      "end": 47.722125,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "agentic,",
+      "start": 47.722125,
+      "end": 48.25475,
+      "scene": 4,
+      "line": 17
+    },
+    {
+      "text": "mulai",
+      "start": 48.46125,
+      "end": 48.689499999999995,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "dari",
+      "start": 48.689541,
+      "end": 48.819957,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Opus",
+      "start": 48.819958,
+      "end": 49.080833,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "5.5",
+      "start": 49.080833,
+      "end": 49.646041,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "dulu.",
+      "start": 49.646041,
+      "end": 50.015624,
+      "scene": 4,
+      "line": 18
+    },
+    {
+      "text": "Kamu",
+      "start": 51.156749999999995,
+      "end": 51.406749999999995,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "tim",
+      "start": 51.406749999999995,
+      "end": 51.558915999999996,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "Opus",
+      "start": 51.558915999999996,
+      "end": 51.819790999999995,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "5.5",
+      "start": 51.819790999999995,
+      "end": 52.461082999999995,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "atau",
+      "start": 52.461082999999995,
+      "end": 52.656749,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "tetap",
+      "start": 52.656749999999995,
+      "end": 52.863249999999994,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "Fable",
+      "start": 52.863249999999994,
+      "end": 53.12412499999999,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "5.1?",
+      "start": 53.12412499999999,
+      "end": 53.917623999999996,
+      "scene": 5,
+      "line": 19
+    },
+    {
+      "text": "Follow",
+      "start": 54.640958,
+      "end": 54.967040999999995,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "Peka",
+      "start": 54.967082999999995,
+      "end": 55.206208,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "AI",
+      "start": 55.206208,
+      "end": 55.43445799999999,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "kalau",
+      "start": 55.43445799999999,
+      "end": 55.619248999999996,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "kontennya",
+      "start": 55.619249999999994,
+      "end": 55.967082999999995,
+      "scene": 5,
+      "line": 20
+    },
+    {
+      "text": "kepakai.",
+      "start": 55.967082999999995,
+      "end": 56.499708,
+      "scene": 5,
+      "line": 20
+    }
+  ],
+  "scene_spans": [
+    {
+      "start": 0.0,
+      "end": 7.2
+    },
+    {
+      "start": 7.204,
+      "end": 19.716
+    },
+    {
+      "start": 19.72,
+      "end": 29.328
+    },
+    {
+      "start": 29.328,
+      "end": 40.908
+    },
+    {
+      "start": 40.905,
+      "end": 50.76
+    },
+    {
+      "start": 50.757,
+      "end": 57.228
+    }
+  ],
+  "total": 58.028
+}

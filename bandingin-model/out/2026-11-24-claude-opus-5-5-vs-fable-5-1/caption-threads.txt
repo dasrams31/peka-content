@@ -1,0 +1,5 @@
+Opus 5.5 cetak 89,9% di SWE-bench Pro, Fable 5.1 cuma 81,2%. Harganya malah 60% lebih murah: $4/$20 lawan $10/$50 per 1 jt token.
+Verdict jujur: mulai dari Opus 5.5 dulu, Fable 5.1 cuma kalau eval kamu mentok.
+Linknya ada di slide terakhir.
+Kamu tim Opus 5.5 atau tetap Fable 5.1?
+#AI

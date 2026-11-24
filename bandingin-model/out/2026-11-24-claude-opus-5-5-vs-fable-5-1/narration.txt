@@ -1,0 +1,18 @@
+[scene 0 - hook]
+Anthropic baru aja rilis Claude Opus 5.5, dan angkanya bikin Fable 5.1 yang harganya dua setengah kali lipat jadi kelihatan mahal.
+
+[scene 1 - beat]
+Di SWE-bench Pro, tes benerin kode beneran, Opus 5.5 cetak 89,9 persen. Fable 5.1 cuma 81,2 persen. Selisihnya hampir sembilan poin.
+
+[scene 2 - beat]
+Di Terminal-Bench 4.0 juga sama, 66,4 lawan 55,8 persen. Kerja di terminal, Opus 5.5 tetap di depan.
+
+[scene 3 - beat]
+Dan ini yang paling bikin mikir. Opus 5.5 cuma 4 dolar masuk, 20 dolar keluar per sejuta token. Fable 5.1 dua setengah kali lipat: 10 masuk, 50 keluar.
+
+[scene 4 - beat]
+Jujur aja, angka-angka ini dari Anthropic sendiri, jadi jangan ditelan mentah-mentah. Tapi arahnya jelas, buat kerja agentic, mulai dari Opus 5.5 dulu.
+
+[scene 5 - close]
+Kamu tim Opus 5.5 atau tetap Fable 5.1? Follow Peka AI kalau kontennya kepakai.
+
