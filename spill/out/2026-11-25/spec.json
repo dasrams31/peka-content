@@ -1,0 +1,43 @@
+{
+ "agent": "OPENCODE",
+ "next": "ANTIGRAVITY",
+ "episode": 36,
+ "repos": [
+  {
+   "name": "waybarrios/opencode-power-pack",
+   "stars": "558",
+   "desc": "OpenCode Power Pack itu paket 55 skill ketat buat Claude Code, Codex, OpenCode 1 dan 2, plus Pi. Isinya workflow portabel buat code review, audit keamanan, bikin fitur, desain frontend, sampai tool MCP dan training ML di Hugging Face. Tiap skill ditulis sebagai alur kerja yang disiplin, jadi agent kamu nggak asal jawab tapi ngikutin langkah yang teruji. Kamu tinggal pasang paketnya, terus panggil skill yang dibutuhin sesuai tugas. Hasilnya kerja agent kamu lebih konsisten dan gampang diaudit, walau ganti-ganti proyek.",
+   "cocok": "Kamu yang pakai OpenCode tiap hari dan mau 55 workflow siap pakai dalam satu paket.",
+   "shortlink": "https://s.peka.ai.id/FErXZ9"
+  },
+  {
+   "name": "nanocoai/nanoclaw",
+   "stars": "31RB",
+   "desc": "Nanoclaw itu asisten AI pribadi yang selalu nyala, self-hosted, open source, dan ringan. Tiap agent jalan di container sendiri di mesin kamu, di harness pilihan kamu, dari Claude Code, Codex, Cursor, sampai OpenCode. Kamu bisa ngobrol sama dia dari WhatsApp, Telegram, atau Discord, jadi asisten kamu ikut ke mana-mana. Karena self-hosted, data dan konteks kamu tetap di mesin sendiri. Sekali jalan, Nanoclaw jadi asisten yang selalu siap tanpa langganan bulanan.",
+   "cocok": "Kamu yang mau asisten AI pribadi yang selalu online dan jalan di mesin sendiri.",
+   "shortlink": "https://s.peka.ai.id/DeHruI"
+  },
+  {
+   "name": "manaflow-ai/cmux",
+   "stars": "29RB",
+   "desc": "cmux itu terminal macOS open source berbasis Ghostty yang dibuat khusus buat multitasking bareng AI coding agent. Dia punya tab vertikal dan notifikasi, jadi kamu bisa ngawasin banyak agent jalan bareng tanpa kehilangan jejak. Dibangun buat organisasi dan programmability, jadi workflow terminal kamu bisa diatur sesuai kebiasaan sendiri. Cocok buat yang sering jalanin beberapa agent sekaligus di proyek yang beda-beda. Hasilnya layar kamu tetap rapi walau agent yang jalan makin banyak.",
+   "cocok": "Kamu yang pakai Mac dan sering jalanin banyak AI coding agent sekaligus.",
+   "shortlink": "https://s.peka.ai.id/deFDxN"
+  },
+  {
+   "name": "Spielewoy/autoprompt-skill",
+   "stars": "1RB",
+   "desc": "Autoprompt itu skill coding-agent yang motong angka kegagalan sampai 45 persen di tugas agentic coding. Dia ngerombak cara agent kamu nerima tugas, dari perintah yang kabur jadi instruksi yang tajam dan gampang dieksekusi. Ada CLI-nya juga, jadi kamu bisa pakai langsung dari terminal tanpa ribet. Skill ini didukung 11 provider, jadi fleksibel walau kamu ganti-ganti model. Hasilnya agent kamu lebih jarang gagal dan lebih jarang butuh perbaikan manual.",
+   "cocok": "Kamu yang agent-nya sering gagal di tengah tugas dan mau angka kegagalannya turun drastis.",
+   "shortlink": "https://s.peka.ai.id/JZ6uyI"
+  },
+  {
+   "name": "NyxTides/ppt-image-first",
+   "stars": "1RB",
+   "desc": "PPT Image-First itu skill yang ngajarin agent kamu bikin presentasi dengan gambar dulu, baru teks. Dia jalan di Codex, Claude Code, dan OpenCode CLI, jadi tinggal pasang terus suruh bikin slide. Pendekatannya gambar dulu bikin slide kamu nggak kelihatan kayak dokumen yang ditempel ke PPT. Cocok buat deck presentasi, materi kuliah, atau pitch yang butuh visual kuat. Hasilnya slide yang langsung enak dilihat tanpa perlu utak-atik desain manual.",
+   "cocok": "Kamu yang sering bikin PPT lewat AI dan mau slide yang visualnya kuat, bukan cuma teks.",
+   "shortlink": "https://s.peka.ai.id/JygkfU"
+  }
+ ],
+ "out_dir": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/carousel"
+}
