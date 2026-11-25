@@ -1,0 +1,15 @@
+[scene 0 - hook]
+Foto produkku rusak gara-gara kabel. Sepatu putih di meja kayu, kabel hitam kusut numpuk di depannya. Jadi aku coba hapus kabelnya pakai Cleanup.pictures, gratis tanpa daftar.
+
+[scene 1 - beat]
+Caranya: buka cleanup.pictures, upload fotonya, sapu kabelnya pakai kuas. Nggak ada tombol hapus, AI-nya langsung kerja tiap sapuan, 5 sampai 15 detik.
+
+[scene 2 - beat]
+Tiga sapuan, empat menit. Kabel di meja hilang, kayunya balik bersih. Tapi sol sepatunya ikut lumer, transparan kayak asap. Kabel yang nempel di sepatu kehapus bareng solnya.
+
+[scene 3 - beat]
+Hasil ini belum bisa dipakai buat katalog. Masih sisa dua helai kabel di ujung sepatu. Pelajarannya: sapunya jangan kena produk, kabel yang nempel di produk mending foto ulang.
+
+[scene 4 - close]
+Langkah pertamamu: buka cleanup.pictures, upload satu fotomu, sapu objek ganggunya tapi jangan kena produknya. Kamu mau coba buat foto apa dulu, hapus kabel atau hapus orang lewat?
+
