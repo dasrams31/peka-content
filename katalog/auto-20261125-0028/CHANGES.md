@@ -1,11 +1,10 @@
-# Katalog Peka — auto rebuild 22 Nov 2026 13:39 WIB
+# Katalog Peka — auto rebuild 25 Nov 2026 00:37 WIB
 
 Sumber: `prices.json` (pemicu = list harga berubah).
 Build-only: slide + story + reel + caption DRAF diantar ke chat, TIDAK diposting. Posting tetap lewat cron Selasa/Jumat 13:00.
 
 ## Yang berubah
 
-- DITAMBAH: Akun Canva Edu Lifetime 21K (CANVA)
 - Total: 22 produk.
 
 ## Catatan caption
