@@ -1,0 +1,6 @@
+threads: PENDING (re-run dari chat utama; threads-cli media gagal dari worker)
+instagram media: 17895169956684487
+instagram: https://www.instagram.com/reel/DgKnG_rT_rG/
+facebook: FAILED (gate 403, "Facebook blocked this action", tidak tayang, tanpa retry)
+shortlink: https://s.peka.ai.id/6fnVH5
+blog: https://blog.peka.ai.id/p/altare-vps-gratis-selamanya
