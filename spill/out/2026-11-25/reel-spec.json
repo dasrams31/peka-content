@@ -1,0 +1,52 @@
+{
+  "agent": "OPENCODE",
+  "episode": 36,
+  "next": "ANTIGRAVITY",
+  "repos": [
+    {
+      "name": "waybarrios/opencode-power-pack",
+      "stars": "558",
+      "install": "/plugin install opencode-power-pack@opencode-power-pack",
+      "penjelasan": "Paket 55 skill ketat buat OpenCode 1 dan 2, dari code review sampai audit keamanan. Tiap skill jalan sebagai workflow disiplin yang bikin kerja agent konsisten.",
+      "cocok": "Kamu yang pakai OpenCode tiap hari dan mau 55 workflow siap pakai dalam satu paket.",
+      "shortlink": "https://s.peka.ai.id/FErXZ9",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/shots/waybarrios-opencode-power-pack.png"
+    },
+    {
+      "name": "nanocoai/nanoclaw",
+      "stars": "31RB",
+      "install": "npx skills add nanocoai/nanoclaw -g",
+      "penjelasan": "Asisten AI pribadi yang selalu online, self-hosted di mesin kamu sendiri. Ngobrol dari WhatsApp, Telegram, atau Discord, tanpa langganan bulanan.",
+      "cocok": "Kamu yang mau asisten AI pribadi yang selalu online dan jalan di mesin sendiri.",
+      "shortlink": "https://s.peka.ai.id/DeHruI",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/shots/nanocoai-nanoclaw.png"
+    },
+    {
+      "name": "manaflow-ai/cmux",
+      "stars": "29RB",
+      "install": "brew install --cask cmux",
+      "penjelasan": "Terminal macOS berbasis Ghostty buat multitasking bareng banyak AI coding agent. Tab vertikal dan notifikasi bikin semua agent gampang diawasin.",
+      "cocok": "Kamu yang pakai Mac dan sering jalanin banyak AI coding agent sekaligus.",
+      "shortlink": "https://s.peka.ai.id/deFDxN",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/shots/manaflow-ai-cmux.png"
+    },
+    {
+      "name": "Spielewoy/autoprompt-skill",
+      "stars": "1RB",
+      "install": "npm install -g https://github.com/Spielewoy/autoprompt-skill/releases/download/v2.1.0/autoprompt-skill-2.1.0.tgz",
+      "penjelasan": "Skill yang motong angka gagal sampai 45 persen di tugas agentic coding. Perintah kabur diubah jadi instruksi tajam yang gampang dieksekusi.",
+      "cocok": "Kamu yang agent-nya sering gagal di tengah tugas dan mau angka kegagalannya turun drastis.",
+      "shortlink": "https://s.peka.ai.id/JZ6uyI",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/shots/Spielewoy-autoprompt-skill.png"
+    },
+    {
+      "name": "NyxTides/ppt-image-first",
+      "stars": "1RB",
+      "install": "npx skills add NyxTides/ppt-image-first -g",
+      "penjelasan": "Skill bikin PPT dengan gambar dulu, baru teks, langsung dari OpenCode CLI. Slide kamu langsung enak dilihat tanpa utak-atik desain.",
+      "cocok": "Kamu yang sering bikin PPT lewat AI dan mau slide yang visualnya kuat, bukan cuma teks.",
+      "shortlink": "https://s.peka.ai.id/JygkfU",
+      "shot": "/home/hatch/workspace/peka-content/spill/out/2026-11-25/shots/NyxTides-ppt-image-first.png"
+    }
+  ]
+}
