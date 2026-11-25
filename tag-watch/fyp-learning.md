@@ -2,6 +2,17 @@
 
 Daily dated findings from the tag-watch collector. Patterns here are OBSERVED from sampled top posts, not rules. Caption decisions stay with the playbook + user approval.
 
+## 2026-11-25
+
+- TOP (n=23): day-counter 0%, question 26%, story 22%, hashtags avg 1.7, words avg 38.
+- REST (n=72): day-counter 14%, question 39%, story 19%, hashtags avg 1.9, words avg 37.
+- Top posts today:
+  - #Mahasiswa @manusia_masihdibumi (20372 likes): Hallo, perkenalkan Aku Anggun. Mahasiswi Politeknik Negeri Semarang yang sedang mencoba untuk survive. Kalian yg di temc
+  - #Kuliah @fridahasel (11389 likes): JURUSAN KULIAH yg paling WORTH IT & PENGHASILANNYA BESAR SAAT INI APA SIH GUYS ?
+  - #Belajar @ipootre (2945 likes): pengen belajar Claude dan GitHub mulai darimana ya?
+  - #AI @carnage4life (2194 likes): Apple, the world’s most valuable company, looking down at all the people that said it missed AI now that the AI bubble i
+  - #AI @_neutronfish (1241 likes): Anthropic: “We’ve solved the Riemann hypothesis with AI. The proof is 250,000 pages long and no one has completely evalu
+
 ## 2026-11-24
 
 - TOP (n=23): day-counter 0%, question 22%, story 26%, hashtags avg 1.5, words avg 42.
@@ -138,17 +149,6 @@ Daily dated findings from the tag-watch collector. Patterns here are OBSERVED fr
 
 - TOP (n=20): day-counter 5%, question 5%, story 25%, hashtags avg 0.5, words avg 35.
 - REST (n=63): day-counter 5%, question 33%, story 32%, hashtags avg 1.2, words avg 40.
-- Top posts today:
-  - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
-  - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
-  - #Kuliah @not_hdin (3891 likes): akhirnya aku bisa kuliah dengan uangku sendiriiii✌️💙😊  setelah beli motor dengan uang sendiri, beli HP dengan uang sendi
-  - #AI @coffeeheadddd (3888 likes): Sebagai pekerja kantoran full-time, sekarang mulai kepikiran buat seriusin freelance AI 😭  Lagi eksplor platform kayak O
-  - #Belajar @triwahyunilaihi (3180 likes): In this economy yaa, ada learning app yang bantu anak2 belajar english dengan fitur sebanyak ini, UDAHLAH GRATIS DAN KOK
-
-## 2026-11-11
-
-- TOP (n=19): day-counter 5%, question 5%, story 26%, hashtags avg 0.7, words avg 38.
-- REST (n=60): day-counter 8%, question 32%, story 30%, hashtags avg 1.5, words avg 43.
 - Top posts today:
   - #AI @scottsmahon (4917 likes): My favourite unpaid intern right now 😉  #ai #automation
   - #Kuliah @samuelkevin_97 (4512 likes): Jujur, keuntungan terbesar kuliah di top uni itu adalah koneksi dan opportunity. Misal, peraih nobel atau tokoh2 besar b
