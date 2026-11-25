@@ -1,0 +1,1 @@
+Prompt-nya, tinggal salin: Tulis sinopsis novel [genre] tentang [tokoh utama] yang [konflik utama], dalam 150 kata. Mulai dari kejadian pemicu, tunjukkan taruhannya, akhiri dengan pertanyaan yang belum terjawab. Nada [serius/lucu/mencekam]. Jangan bocorkan akhir cerita.

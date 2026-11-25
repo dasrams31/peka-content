@@ -1,0 +1,12 @@
+{
+  "episode": 33,
+  "category": "NULIS",
+  "title": "Sinopsis novel yang bikin penerbit minta naskah lengkap",
+  "prompt": "Tulis sinopsis novel [genre] tentang [tokoh utama] yang [konflik utama], dalam 150 kata. Mulai dari kejadian pemicu, tunjukkan taruhannya, akhiri dengan pertanyaan yang belum terjawab. Nada [serius/lucu/mencekam]. Jangan bocorkan akhir cerita.",
+  "tips": [
+    "Isi [genre] dengan genre yang kamu tulis, biar nadanya pas.",
+    "Tulis konfliknya satu kalimat dulu, baru tempel ke prompt.",
+    "Minta 3 versi sinopsis, pilih yang paling bikin penasaran."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-25"
+}
