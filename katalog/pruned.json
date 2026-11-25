@@ -250,5 +250,15 @@
   "bot_id": 93,
   "removed_at": "2026-11-25",
   "reason": "sold out"
+ },
+ {
+  "sec": "CAPCUT",
+  "name": "CapCut Pro",
+  "dur": "45 Hari",
+  "price": "34K",
+  "price_num": 34,
+  "bot_id": 119,
+  "removed_at": "2026-11-25",
+  "reason": "sold out"
  }
 ]
