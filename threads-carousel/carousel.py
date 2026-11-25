@@ -261,6 +261,18 @@ def render_cover(spec, theme, idx, total):
     return s.img
 
 
+def fit_stat_font(text, size, max_w=CW):
+    """Shrink the stat font until the text fits the content width.
+
+    Long stats (e.g. "KABEL HILANG" at 520-560px) overflowed the right
+    edge and got clipped (Coba Dulu #02, 2026-11-25). Auto-shrink instead
+    of clipping; keep the same layout, only the size changes.
+    """
+    while size > 120 and F_XB(size).getlength(text) > max_w:
+        size -= 20
+    return F_XB(size)
+
+
 def render_stat(spec, scene, theme, idx, total, num):
     s = Slide(theme, idx, total)
     badge = scene.get("badge")
@@ -280,7 +292,7 @@ def render_stat(spec, scene, theme, idx, total, num):
     stat = scene.get("stat", "")
     y = 1150
     if stat:
-        s.d.text((MARGIN, y), stat, font=F_XB(560), fill=theme["accent"])
+        s.d.text((MARGIN, y), stat, font=fit_stat_font(stat, 560), fill=theme["accent"])
         y += 640
     label = scene.get("stat_label", "")
     if label:
@@ -310,7 +322,7 @@ def render_bars(spec, scene, theme, idx, total, num):
     stat = scene.get("stat", "")
     y = 1150
     if stat:
-        s.d.text((MARGIN, y), stat, font=F_XB(520), fill=theme["accent"])
+        s.d.text((MARGIN, y), stat, font=fit_stat_font(stat, 520), fill=theme["accent"])
         y += 610
     label = scene.get("stat_label", "")
     if label:
