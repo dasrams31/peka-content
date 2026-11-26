@@ -1,0 +1,67 @@
+[
+ {
+  "name": "rynfar/meridian",
+  "owner": "rynfar",
+  "repo": "meridian",
+  "url": "https://github.com/rynfar/meridian",
+  "stars": 2220,
+  "stars_display": "2RB",
+  "forks": 255,
+  "language": "TypeScript",
+  "license": "MIT",
+  "desc": "Meridian itu jembatan API lokal yang bikin kamu bisa pakai Claude dan Antigravity dari client coding lain kayak Pi dan OpenCode. Dia jalan lokal di mesin kamu, jadi request tetap lewat mesin sendiri, plus ada dashboard pemakaian dan aplikasi Mac. Versi 1.74.0 sudah bawa preview Antigravity, jadi kamu bisa nyobain Antigravity tanpa pindah IDE. Cocok buat yang mau satu pintu buat banyak agent tanpa gonta-ganti aplikasi. Hasilnya workflow kamu tetap di client favorit, tapi otaknya bisa ganti-ganti.",
+  "cocok": "Kamu yang mau pakai Antigravity bareng Claude dari client coding favoritmu tanpa pindah aplikasi."
+ },
+ {
+  "name": "INK-Q/agy-fast",
+  "owner": "INK-Q",
+  "repo": "agy-fast",
+  "url": "https://github.com/INK-Q/agy-fast",
+  "stars": 1661,
+  "stars_display": "2RB",
+  "forks": 92,
+  "language": "TypeScript",
+  "license": "MIT",
+  "desc": "agy-fast itu plugin akselerator MCP buat Google Antigravity yang bikin agent kamu lebih hemat dan cepat. Dia motong putaran LLM sampai 34 persen, kuota token sampai 31 persen, dan traffic upload sampai 40 persen, tanpa mengubah tampilan atau diff bawaan Antigravity. Cara kerjanya non-invasif, jadi tinggal pasang dan dia kerja di belakang layar. Buat kamu yang kuota Antigravity-nya sering mepet, ini penghemat yang kerasa langsung. Hasilnya agent tetap jalan normal, tapi token yang kebakar jauh lebih sedikit.",
+  "cocok": "Kamu yang kuota Antigravity-nya sering mepet dan mau token lebih awet tanpa ubah workflow."
+ },
+ {
+  "name": "docker/skills",
+  "owner": "docker",
+  "repo": "skills",
+  "url": "https://github.com/docker/skills",
+  "stars": 658,
+  "stars_display": "658",
+  "forks": 43,
+  "language": "Python",
+  "license": "Apache-2.0",
+  "desc": "Docker Skills itu kumpulan skill buat agent AI coding yang kerja sama aplikasi container. Isinya workflow siap pakai buat build, test, debug, sampai optimasi aplikasi yang jalan di container, dengan cara yang konsisten dan bisa dipakai ulang. Kamu tinggal pasang skill-nya, terus agent kamu ngikutin langkah yang sudah teruji buat urusan Docker. Cocok buat proyek yang sudah pakai container dari awal sampai deploy. Hasilnya agent kamu nggak asal nebak perintah Docker, tapi ngikutin praktik yang bener.",
+  "cocok": "Kamu yang proyeknya jalan di Docker dan mau agent yang ngerti container, bukan cuma nebak perintah."
+ },
+ {
+  "name": "yuting0624/antigravity-for-claude-code",
+  "owner": "yuting0624",
+  "repo": "antigravity-for-claude-code",
+  "url": "https://github.com/yuting0624/antigravity-for-claude-code",
+  "stars": 532,
+  "stars_display": "532",
+  "forks": 57,
+  "language": "Shell",
+  "license": "MIT",
+  "desc": "Plugin ini bikin CLI Antigravity (Gemini) jalan sebagai sub-agent kolaborator di dalam Claude Code. Dia ngatur routing model secara pintar di tiap tahap pengembangan software, jadi tugas dilempar ke model yang paling cocok. Kamu tetap kerja dari Claude Code, tapi dapat tenaga ekstra dari Gemini lewat Antigravity CLI. Proyek ini bikinan komunitas, bukan resmi Google atau Anthropic. Hasilnya dua agent kerja bareng di satu tempat, tanpa kamu harus pindah-pindah jendela.",
+  "cocok": "Kamu yang pakai Claude Code tiap hari dan mau nambah tenaga Gemini dari Antigravity CLI di tempat yang sama."
+ },
+ {
+  "name": "google-deepmind/robotics-antigravity-plugin",
+  "owner": "google-deepmind",
+  "repo": "robotics-antigravity-plugin",
+  "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+  "stars": 372,
+  "stars_display": "372",
+  "forks": 34,
+  "language": "Python",
+  "license": "Apache-2.0",
+  "desc": "Plugin resmi Google DeepMind ini bawa skill robotika ke Antigravity buat workflow agentik di robot. Dia dipakai buat simulasi sampai robot beneran, jadi agent kamu bisa bantu ngoding alur kerja robot dari dunia virtual sampai hardware nyata. Skill-nya dirancang buat workflow robotika yang butuh langkah terstruktur dan bisa diulang. Cocok buat yang lagi garap robot atau riset embodied AI. Hasilnya agent kamu ngerti konteks robotika, bukan cuma ngoding umum.",
+  "cocok": "Kamu yang garap robot atau riset embodied AI dan mau Antigravity yang ngerti workflow robotika."
+ }
+]

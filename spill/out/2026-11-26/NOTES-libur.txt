@@ -1,0 +1,7 @@
+SPILL #37 (2026-11-26) MODE LIBUR blog-only.
+Blog + channel tayang. IG / Threads / FB / TikTok DILEWATI (bukan ditunda ke 30 Nov).
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-antigravity-edisi-37
+Channel: https://t.me/peka_aichannel/337
+Repos: rynfar/meridian, INK-Q/agy-fast, docker/skills, yuting0624/antigravity-for-claude-code, google-deepmind/robotics-antigravity-plugin.
+Catatan: GitHub API rate limit (unauthenticated, IP bersama) sempat habis saat render; 2 repo terakhir pakai fallback enrichment (kartu digambar, install generik). Shortlink tetap 5/5 terverifikasi 307.
+Catatan: 4 kandidat awal (ui-ux-pro-max-skill, addyosmani/agent-skills, K-Dense-AI/scientific-agent-skills, Graphify-Labs/graphify) sudah pernah tayang di edisi CLAUDE/OPENCODE, jadi dibuang sesuai aturan tanpa ulangan.
