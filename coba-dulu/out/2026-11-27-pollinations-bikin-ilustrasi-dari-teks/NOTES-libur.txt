@@ -1,0 +1,18 @@
+COBA DULU #03 (2026-11-27) MODE LIBUR blog-only.
+Blog + channel tayang. IG / Threads / FB / TikTok DILEWATI (bukan ditunda ke 30 Nov).
+Reel TIDAK di-build, carousel sosial TIDAK di-posting, paket TikTok TIDAK disusun.
+Blog: https://blog.peka.ai.id/p/pollinations-bikin-ilustrasi-dari-teks (200, cover 200)
+Channel: https://t.me/peka_aichannel/340 (type coba-dulu; kirim pertama putus koneksi tapi pesan ketemu live, TIDAK dikirim ulang, anti-dobel)
+Pasangan: Pollinations, bikin ilustrasi dari satu kalimat teks.
+
+Finalisasi #02 dulu di run ini: series.txt 2 ke 3 (posted.log #02 sudah lengkap di kedua file), lalu #03 naik ke 4.
+
+Coba beneran (semua diverifikasi langsung hari ini):
+- Gambar 1 robot: prompt "a cute yellow robot mascot watering a small green plant, flat vector illustration, plain dark background", seed 7. Hasil 200, JPEG 768x768, 41963 byte. Robot kuning hijau nyiram tanaman pot, latar gelap. Cacat jujur: mata tidak simetris, alat siram abstrak mirip tas, gaya flat vector tidak dipatuhi (jadi kartun 3D lembut).
+- Gambar 2 kedai kopi: prompt "a cozy Indonesian coffee shop at sunrise, warm morning light, flat vector illustration, clean simple shapes", seed 7. Hasil 200, JPEG 768x768, 45918 byte. Interior kedai, cahaya oranye hangat, siluet orang di kasir. Cacat jujur: gaya flat vector tidak dipatuhi (lukisan lembut), sosok tengah seperti dua kepala nempel.
+- Batasan gratis terverifikasi: 1 gambar/45 detik per IP, kena 402 FREE_LIMIT 3x sebelum dua gambar jadi (total sekitar 9 menit); ukuran mentok 768 walau minta 1024; watermark pollinations.ai tetap nempel walau nologo=true; model flux yang diminta dilayani sana (EXIF manufacturer=sana).
+- Cover blog 2048x1152 dibangun dari gambar robot + judul, QA baca cover: revisi pertama judul "Jadi Ilustrasi." menabrak frame, diperbaiki pakai auto-fit, QA ulang bersih.
+Artikel blog 1113 kata (batas 800-1200), tanpa em-dash/en-dash, semua tautan shortlink admin.
+Kalimat penutup blog mengikuti preseden libur bandingin-model: "Visual edisi ini ada di sampul artikel ini."
+
+Shortlink admin (user_id 1, semua terverifikasi 307): blog KdVNdf, tool 35cfBq, contoh robot 8Zv1Rm, contoh kedai 0XOuYl.
