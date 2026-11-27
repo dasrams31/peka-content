@@ -1,0 +1,22 @@
+{
+ "blog": {
+  "code": "KdVNdf",
+  "short": "https://s.peka.ai.id/KdVNdf",
+  "target_url": "https://blog.peka.ai.id/p/pollinations-bikin-ilustrasi-dari-teks"
+ },
+ "tool": {
+  "code": "35cfBq",
+  "short": "https://s.peka.ai.id/35cfBq",
+  "target_url": "https://pollinations.ai/"
+ },
+ "contoh_robot": {
+  "code": "8Zv1Rm",
+  "short": "https://s.peka.ai.id/8Zv1Rm",
+  "target_url": "https://image.pollinations.ai/prompt/a%20cute%20yellow%20robot%20mascot%20watering%20a%20small%20green%20plant%2C%20flat%20vector%20illustration%2C%20plain%20dark%20background?width=1024&height=1024&seed=7&nologo=true"
+ },
+ "contoh_kedai": {
+  "code": "0XOuYl",
+  "short": "https://s.peka.ai.id/0XOuYl",
+  "target_url": "https://image.pollinations.ai/prompt/a%20cozy%20Indonesian%20coffee%20shop%20at%20sunrise%2C%20warm%20morning%20light%2C%20flat%20vector%20illustration%2C%20clean%20simple%20shapes?width=1024&height=1024&seed=7&nologo=true"
+ }
+}
