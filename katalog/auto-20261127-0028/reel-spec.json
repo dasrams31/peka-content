@@ -1,5 +1,5 @@
 {
-  "date": "24 November 2026",
+  "date": "27 November 2026",
   "products": [
     {
       "sec": "CANVA",
@@ -65,19 +65,13 @@
       "sec": "CANVA",
       "name": "Canva Pro",
       "dur": "1 Bulan",
-      "price": "5K"
-    },
-    {
-      "sec": "GEMINI PLUS",
-      "name": "Gemini Plus AI",
-      "dur": "6 Bulan",
-      "price": "18K"
+      "price": "2K"
     },
     {
       "sec": "CANVA",
       "name": "Canva Edu",
       "dur": "Lifetime",
-      "price": "19K"
+      "price": "14K"
     },
     {
       "sec": "PROMPT",
@@ -101,7 +95,7 @@
       "sec": "CANVA",
       "name": "Canva Pro Bisnis",
       "dur": "3 Bulan",
-      "price": "7K"
+      "price": "4K"
     },
     {
       "sec": "CAPCUT",
@@ -114,12 +108,6 @@
       "name": "CapCut Pro Individu",
       "dur": "40 Hari",
       "price": "29K"
-    },
-    {
-      "sec": "CAPCUT",
-      "name": "CapCut Pro",
-      "dur": "45 Hari",
-      "price": "34K"
     },
     {
       "sec": "MEITU",

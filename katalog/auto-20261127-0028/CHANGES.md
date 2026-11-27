@@ -1,11 +1,11 @@
-# Katalog Peka — auto rebuild 24 Nov 2026 00:37 WIB
+# Katalog Peka — auto rebuild 27 Nov 2026 00:36 WIB
 
 Sumber: `prices.json` (pemicu = list harga berubah).
 Build-only: slide + story + reel + caption DRAF diantar ke chat, TIDAK diposting. Posting tetap lewat cron Selasa/Jumat 13:00.
 
 ## Yang berubah
 
-- Total: 22 produk.
+- Total: 20 produk.
 
 ## Catatan caption
 
