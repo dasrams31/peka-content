@@ -1,0 +1,29 @@
+{
+  "program": "Google Cloud Free Trial",
+  "category": "VPS / CLOUD",
+  "stamp": "100% GRATIS",
+  "band": "GOOGLE CLOUD - KREDIT $300 GRATIS 90 HARI",
+  "fields": {
+    "nilai": "$300 kredit gratis, 90 hari",
+    "deadline": "Kredit hangus 90 hari setelah daftar",
+    "untuk": "Buat yang mau coba cloud Google",
+    "sumber": "cloud.google.com/free"
+  },
+  "syarat": [
+    "Belum pernah jadi pelanggan berbayar Google Cloud",
+    "Resource dihapus permanen kalau tidak upgrade",
+    "Siapin kartu buat verifikasi identitas",
+    "Kredit tidak bisa buat Gemini / Vertex AI"
+  ],
+  "steps": [
+    "Buka cloud.google.com/free",
+    "Klik mulai trial, daftar pakai akun Google",
+    "Verifikasi kartu (cuma hold $0-1, bukan tagihan)",
+    "Dapat $300 kredit, langsung bisa dipakai 90 hari"
+  ],
+  "catch": "Butuh kartu pas daftar, cuma hold $0-1, bukan tagihan. Kredit hangus setelah 90 hari atau habis dipakai, resource berhenti dan dihapus permanen setelah masa tenggang 30 hari kalau tidak upgrade. Selama trial tidak bisa tambah GPU, pakai Marketplace, atau naik kuota. Kredit tidak berlaku buat layanan Gemini / Vertex AI dan Gemini API di AI Studio.",
+  "shortlink": "https://s.peka.ai.id/IVrCpG",
+  "shortlink_label": "Link klaim: ",
+  "theme": "tiket",
+  "out_dir": "/home/hatch/workspace/peka-content/bansos/out/2026-11-27-google-cloud-300-credit"
+}
