@@ -1,0 +1,12 @@
+{
+  "episode": 34,
+  "category": "KARIER",
+  "title": "Jawaban interview yang bikin HRD ingat kamu",
+  "prompt": "Bertindaklah sebagai HRD berpengalaman. Buatkan jawaban interview untuk pertanyaan 'Ceritakan tentang dirimu' untuk posisi [posisi] di [nama perusahaan]. Jawaban maksimal 90 detik, berisi [pengalaman relevan] dan satu pencapaian terukur. Nada percaya diri, bukan sombong. Akhiri dengan alasan kenapa aku cocok untuk peran ini.",
+  "tips": [
+    "Isi [posisi] dan [nama perusahaan] sesuai lowonganmu.",
+    "Latih dengan suara keras, jangan dibaca dari catatan.",
+    "Minta 2 versi jawaban, pilih yang paling natural."
+  ],
+  "out_dir": "/home/hatch/workspace/peka-content/prompt/out/2026-11-27"
+}
