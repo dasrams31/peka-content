@@ -1,0 +1,22 @@
+BANSOS (2026-11-27) MODE LIBUR blog-only.
+Blog + arsip + channel tayang. IG / Threads / FB / TikTok DILEWATI (bukan ditunda ke 30 Nov).
+Reel TIDAK di-build, carousel sosial TIDAK di-posting, paket TikTok TIDAK disusun, caption sosial TIDAK ditulis.
+Blog: https://blog.peka.ai.id/p/google-cloud-kredit-300-dolar-90-hari (200, 3 cover 200)
+Arsip: https://bansos.peka.ai.id/bansos/google-cloud-kredit-300-dolar-90-hari (200, cover 200; peka-bansos-web restart 20:09 karena data dibaca saat startup)
+Channel: https://t.me/peka_aichannel/341 (type bansos)
+
+Tawaran: Google Cloud Free Trial, kredit $300, 90 hari. Riset segar (antrean Caffeine 23 Nov + Altare 25 Nov sudah habis).
+Verifikasi angka (semua dibaca langsung di halaman resmi hari ini):
+- Kredit sambutan $300, berlaku 90 hari sejak daftar (cloud.google.com/free + docs free-cloud-features).
+- Syarat: belum pernah jadi pelanggan berbayar Google Cloud / Maps / Firebase, belum pernah daftar Free Trial.
+- Kartu wajib buat verifikasi identitas; hold sementara $0-1, BUKAN tagihan, lepas dalam beberapa hari sampai sebulan.
+- Selama trial tidak ada tagihan; kalau 90 hari lewat atau kredit habis dan tidak upgrade, resource berhenti, masa tenggang 30 hari, lalu dihapus permanen.
+- Batasan trial: tanpa GPU, tanpa Marketplace, tanpa naik kuota, tanpa VM Windows Server, tanpa mining kripto.
+- Kredit TIDAK berlaku buat layanan Gemini platform (Vertex AI) dan Gemini API di AI Studio (aturan berlaku buat pendaftaran pada/setelah 16 Nov 2026).
+- Free Tier terpisah: 20+ produk gratis selamanya dalam batas bulanan (e2-micro 1/bln, Cloud Run 2 jt request/bln, BigQuery 1 TB query/bln).
+- Bar seleksi: LOLOS (a) 90 hari dan (b) $300 nama besar. Belum pernah tayang di Bansos, tidak bentrok pilar 27 Nov.
+
+Perbaikan visual: render pertama slide 2 belum memuat catch eksplisit (design tidak merender field catch); syarat dirombak jadi baris catch (kartu, resource dihapus permanen, larangan Gemini/Vertex AI), re-render, QA ulang slide 2 bersih. Slide 1 + 3 QA bersih (judul besar, stempel tidak menabrak barcode, shortlink + baris arsip terbaca).
+
+Shortlink admin (user_id 1, terverifikasi 307): IVrCpG -> https://cloud.google.com/free
+Blog 384 kata, tanpa em-dash/en-dash, semua tautan shortlink admin.
