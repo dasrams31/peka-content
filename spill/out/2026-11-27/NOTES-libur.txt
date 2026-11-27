@@ -1,0 +1,7 @@
+SPILL #38 (2026-11-27) MODE LIBUR blog-only.
+Blog + channel tayang. IG / Threads / FB / TikTok DILEWATI (bukan ditunda ke 30 Nov).
+Blog: https://blog.peka.ai.id/p/spill-repo-skill-claude-edisi-38
+Channel: https://t.me/peka_aichannel/342
+Repos: OpenMontageInc/OpenMontage, op7418/Humanizer-zh, KKKKhazix/khazix-skills, ConardLi/garden-skills, yusufkaraaslan/Skill_Seekers.
+Catatan: riset segar GitHub API (rate limit tersisa 47, aman). Hampir semua hasil top search sudah pernah tayang, jadi 5 repo diambil dari halaman 1-3 hasil pencarian + verifikasi ulang via API. Shortlink 5/5 terverifikasi 307. Slide repo-02 desc terpotong ellipsis standar generator (bukan overflow).
+Catatan finalisasi #36: sudah selesai sebelum run ini (5 repo #36 sudah ada di spill/repos/posted.log, #37 sudah tayang 26 Nov, series.txt sudah 38 saat run mulai). Tidak ada penulisan ganda.
