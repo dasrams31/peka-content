@@ -1,0 +1,25 @@
+BANDINGIN MODEL #02 (2026-11-27) MODE LIBUR blog-only.
+Blog + channel tayang. IG / Threads / FB / TikTok DILEWATI (bukan ditunda ke 30 Nov).
+Reel TIDAK di-build, carousel sosial TIDAK di-posting.
+Blog: https://blog.peka.ai.id/p/gpt-6-2-astra-vs-gemini-4-neon (200, cover 200)
+Channel: https://t.me/peka_aichannel/338 (type special, preseden #01 karena telegram_channel.py tidak punya type bandingin)
+Pasangan: GPT-6.2 Astra vs Gemini 4 Neon.
+
+Finalisasi #01 dulu di run ini: series.txt 1 ke 2 (posted.log #01 sudah lengkap di kedua file), lalu #02 naik ke 3.
+
+Verifikasi angka (semua dibaca langsung di halaman resmi hari ini):
+- AA Intelligence Index 62 vs 61 (Artificial Analysis, max/xhigh; desimal 62.2 vs 61.5 di cermin OpenRouter, data AA diperbarui 25 Nov).
+- Vals Index: Neon 69,2% vs Astra 66,3% (vals.ai, diperbarui 21 Nov 2026). CATATAN: topics.md masih mencatat snapshot 18 Nov (70,87% vs 67,66%); leaderboard diperbarui 21 Nov, angka baru dipakai, selisih tetap sekitar 3 poin buat Neon. Jangan pakai angka lama lagi.
+- Biaya per tugas AA: Astra $4,00 vs Neon $6,44 (AA).
+- Waktu per tugas AA: Astra 16,0 mnt (halaman model AA hari ini) vs Neon 21,5 mnt. CATATAN: topics.md mencatat 13,9 mnt buat Astra dari bacaan 23 Nov; AA mengukur ulang terus, angka live hari ini 16,0 mnt, jadi yang dipakai 16,0 mnt.
+- Harga API: Astra $8/$40 vs Neon $3/$15 (pengumuman resmi OpenAI 17 Nov + Google 18 Nov).
+- Konteks: 1.050.000 vs 1.048.576 token (sekitar 1,05 jt keduanya).
+- Coding Agent Index: Neon 58,6 peringkat 1 (Google); Astra belum ada skor headline.
+- FrontierCode-AA 2.0: Astra 49,0% vs Neon 44,4% (AA via OpenRouter).
+- Token output per tugas: Astra 65,8 jt vs Neon 283 jt (AA), ini yang bikin tagihan Astra lebih murah walau harga token lebih mahal.
+
+Perbaikan visual: render pertama slide 3 mencetak "4%" dan "6,44%" di bar biaya (sufiks % otomatis). Spec diperbaiki pakai field display "$4,00"/"$6,44", re-render, QA ulang slide 3 bersih. Slide 1 dipakai jadi cover blog (identik md5 dengan images/gpt-6-2-astra-vs-gemini-4-neon.png, preseden #01).
+Artikel blog 1181 kata (batas 800-1200), tanpa em-dash/en-dash, semua tautan sumber shortlink admin.
+Kalimat penutup blog diubah dari template #01 ("visual ada di akun Peka AI") jadi "Visual perbandingan edisi ini ada di sampul artikel ini." karena edisi libur tanpa posting sosial.
+
+Shortlink admin (user_id 1, semua terverifikasi 307): blog opVcBs, AA Astra g30PVp, Vals b9SzOg, AA Neon XncLGJ; reuse QRe0Uu (Google) + uzBjvq (OpenAI).
