@@ -1,13 +1,11 @@
-# Katalog Peka — auto rebuild 24 Nov 2026 04:59 WIB
+# Katalog Peka — auto rebuild 28 Nov 2026 00:36 WIB
 
 Sumber: `prices.json` (pemicu = list harga berubah).
 Build-only: slide + story + reel + caption DRAF diantar ke chat, TIDAK diposting. Posting tetap lewat cron Selasa/Jumat 13:00.
 
 ## Yang berubah
 
-- BERUBAH: Canva Pro 1 Bulan (harga: 5K -> 2K)
-- BERUBAH: Canva Pro Bisnis 3 Bulan (harga: 7K -> 4K)
-- Total: 22 produk.
+- Total: 20 produk.
 
 ## Catatan caption
 

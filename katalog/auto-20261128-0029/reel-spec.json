@@ -1,5 +1,5 @@
 {
-  "date": "24 November 2026",
+  "date": "28 November 2026",
   "products": [
     {
       "sec": "CANVA",
@@ -68,12 +68,6 @@
       "price": "2K"
     },
     {
-      "sec": "GEMINI PLUS",
-      "name": "Gemini Plus AI",
-      "dur": "6 Bulan",
-      "price": "18K"
-    },
-    {
       "sec": "CANVA",
       "name": "Canva Edu",
       "dur": "Lifetime",
@@ -114,12 +108,6 @@
       "name": "CapCut Pro Individu",
       "dur": "40 Hari",
       "price": "29K"
-    },
-    {
-      "sec": "CAPCUT",
-      "name": "CapCut Pro",
-      "dur": "45 Hari",
-      "price": "34K"
     },
     {
       "sec": "MEITU",
